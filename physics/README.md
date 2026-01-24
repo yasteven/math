@@ -3,6 +3,32 @@
 
 ---
 
+## Main Predictions:
+
+GR predicts (1) metric of spacetime is what curves the path of light.
+  ***I postulate that empty space is eculedian, only the time metric can change truely change. Apparent stretching of distances is only an optical effect, and is due to choosing EM matter as the reference frames and clocks.***
+
+GR predicts (2) gravitationally lensed light blueshifts on the way into the well and redshifts on the way out, keeping a net zero change in the redshift.
+  My hypothesis is that the only thing that can be massless and interact with mass is information; If light is bending around EM matter gravity fields withough a bending of the space metric, it is the time metric that is bending. time needed to exchange information. if the direction of the photon changed, then the information about it changed; the original direction information lost to the mass. Light path can only change with an excahnge of information; thus the light loses frequency as it changes direction.
+
+  ***I postulate that for light paths that get bent via gravity, the light in that path will redshift .***
+
+Light that gets redshifted during gravitational lensing, explains all
+the open issues in cosmology. The main model of a spacially expanding
+universe with a big bang, is completely wrong. Instead, we have empty
+space that remains static and empty and imparts nothing on matter but
+the canvas on which we paint the full picture: a collection of galaxy
+clusters and matter, arranged as the surfaces of empty space bubbles.
+Light diffuses through these bubbles with random walk; deflected from 
+the matter boundries. The deflections redshift all of the lucky paths
+of light that reach us. Once the deflections sap enough wavelength to
+get to CMB, the interactions with matter that would cause absorbition 
+stops, and so our view of the universe is fileld with the thermal CMB
+bath. This model explains many other troublesome cosmos observations.
+
+
+---
+
 ## Prelude: The Question That Started It All
 
 About ten years ago, a simple question wouldn't leave me alone: **Why do we keep telling a story about an expanding universe when the data doesn't actually require it?**
