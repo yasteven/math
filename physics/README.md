@@ -1,5 +1,6 @@
 # How I Got Here: From Questions About Redshift to Quantum Gravity
-## A Journey Through Cosmology, Infinity, and the Nature of Light
+## A Journey Through Cosmology, Infinity, and the Nature of Light 
+### Without fractals
 
 ---
 
@@ -330,33 +331,9 @@ There's something about that simplicity that feels right. We don't need to invok
 
 ## What Comes Next
 
-I've published two papers: one on the cosmological framework (SEE), one on the quantum gravity derivation (EES). I'm now working on:
-
-1. **Rigorous mathematical formalism**: Explicit equations for foam transport, virtual coherence, and emergent gravity.
-
-2. **Comparison with observation**: Testing predictions against JWST, CMB, LIGO data.
-
-3. **Experimental proposals**: Designing precision tests that could falsify or strengthen the framework.
-
-4. **Void charge distribution**: Novel test unique to this model.
-
-This is a long game. But it's one I believe in.
-
----
-
-## Epilogue: A Note on Intellectual Humility
-
-I want to be clear: I don't know if I'm right.
-
-I might be completely wrong. The math might not work out. The observations might contradict every prediction I'm making.
-
-But I'm confident about one thing: **the question itself is worth asking.** We've been assuming for a century that space expands, and we've built elaborate structures on that assumption. It's worth stopping and asking: **Does the data actually require that assumption, or did we just choose it as the simplest-seeming interpretation?**
-
-If this theory is wrong, at least it will generate better questions. If it's right—or even partly right—it could fundamentally reshape how we understand gravity, quantum mechanics, cosmology, and the nature of light itself.
-
-Either way, I'm grateful to have had the freedom to ask the question. Science depends on people willing to challenge consensus, gently but persistently.
-
-This is my attempt.
+Some things are wrong here. Some things are right. The thread binding
+the right things together make sense as soon as you give the model an
+phractal requirement.
 
 ---
 
