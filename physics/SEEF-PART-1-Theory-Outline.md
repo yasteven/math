@@ -3,7 +3,18 @@
 
 ### Abstract
 
-This paper presents Steven E. Elliott's Fractal Universal Cosmological Kinematics (SEEF), a revolutionary theoretical model proposing that our universe exhibits perfect fractal self-similarity across infinite scales. We demonstrate that gravity and electromagnetism exchange roles at fractal boundaries, that electron clouds ARE dark matter, and that the quantization of light emerges from the atomic composition of stars. This framework is not merely analogous—it is a true 1-to-1 correspondence where quantum mechanics and gravity are the same phenomenon viewed from different fractal levels. **SEEF falsifies General Relativity** and replaces it with a complete fractal quantum gravity theory that unifies all forces and scales.
+This paper presents Steven E Elliott's Fractal Universal Cosmological
+Kinematics (SEEF), a revolutionary theoretical model, postulating our
+universe exhibits fractal self-similarity across an infinite scale.
+
+We demonstrate that gravity and electromagnetism exchange roles at 
+fractal boundaries, that electron clouds ARE dark matter, and that 
+the quantization of light emerges from the atomic composition of 
+stars. This framework is not merely analogous—it is a true 1-to-1 
+correspondence where quantum mechanics and gravity are the same 
+phenomenon viewed from different fractal levels. **SEEF falsifies 
+General Relativity** and replaces it with a complete fractal quantum 
+gravity theory that unifies all forces and scales.
 
 ---
 
