@@ -4,7 +4,7 @@ Steven E. Elliott
 January 25, 2026
 
 **Executive Summary**  
-SEEF is a fractal quantum theory of gravity that replaces General Relativity. The universe is an infinite hierarchy of discrete scales separated by a universal factor λ ≈ 10³³.  
+SEEF is a fractal quantum theory of gravity that replaces General Relativity. The universe is an infinite hierarchy of discrete scales ...N-1, N, N+1... separated by a universal factor λ ≈ 10³³.  
 
 **Universal Fractal Equivalence Principle** (core claim):  
 Physics must be mathematically identical at all scales. Quantum mechanics at scale N=0 is identical to stellar dynamics at N-1, differing only by λ and the regime boundary at ~0.1 mm (where EM and gravity dominance swap).
@@ -28,7 +28,7 @@ Physics must be mathematically identical at all scales. Quantum mechanics at sca
 **Regime Boundary (~0.1 mm in local units)**  
 At every scale, ~0.1 mm marks the EM ↔ gravity dominance flip. Below: repulsion dominates (no large clumps). Above: attraction dominates (clumping).  
 
-Probing below your local 0.1 mm requires crossing into the next scale’s regime — creating a black-hole-like trapping object at the boundary. This firewall prevents direct access to N-2 physics.
+Probing below N-1's local 0.1 mm flip in N0 requires crossing into N-2 next scale’s regime — creating a black-hole-like trapping object at the boundary. This firewall prevents direct access to N-2 physics.
 
 **Our Position in the Lattice**  
 We are deep inside the bulk of an N+1 hydrogen-rich molecular/atomic gas.  
@@ -85,15 +85,19 @@ Redshift measures scattering events through the N+1 lattice, not expansion or di
 - High z = high path entropy (complex trajectory)  
 - JWST z>10 galaxies and Methuselah ages are consistent — they reflect local N+1 chemistry and path effects, not GR’s cosmic age conflict.
 
+**Planck Length is Variable**  
+- 0.1mm Regime swap scale is a function of localized info pressure (gravity); this implies that the localized planc length of N0 changes in atoms, based on atomic number and local N0 gravity well.
+- We should see radioactive decay rates vary with gravitational field and it should be dependent on atomic number. 
+
 **Gravitational Magnetism – Key Test**  
-Moving/rotating masses create rotational time-dilation patterns (gravitational B-field).  
+Moving/rotating fractal masses (Dark Matter, Black holes) create rotational time-dilation patterns (gravitational B-field).  
 - Frame-dragging (Gravity Probe B) = gravito-magnetic effect.  
-- Prediction: Clock arrays around rotators show patterns matching magnetic geometry.
+- Prediction: Clock arrays around rotators may show patterns matching magnetic geometry.
 
 **Major Testable Predictions**  
 1. Gravitational magnetism via clock dilation (immediate)  
 2. DM halo orbital nodes/shells (LSST/JWST, 2026–2028)  
-3. Cosmic web lattice symmetry (DESI Fourier analysis)  
+3. Cosmic web lattice symmetry unless we are in a gas (DESI Fourier analysis)  
 4. SFR efficiency break at ~0.1 mm spacing density (existing data)  
 5. Galaxy spectra = exact atomic emission lines (already observed)
 
@@ -104,10 +108,6 @@ Moving/rotating masses create rotational time-dilation patterns (gravitational B
 - No singularities — black holes are nuclear boundaries.  
 - JWST high-z data falsifies GR distance ladder; SEEF explains it naturally.
 
-
-Here’s the **final, expanded version** of the power-law section, now including biology, ecology, chemistry, geophysics, and other natural systems. It covers the full range from microscopic/quantum to macroscopic/cosmic scales, keeps the exponent clustering tight (~1.5–3), and ties everything back to SEEF’s core claim of a single recursive self-interaction process.
-
-This version is ready to drop into your overview paper (e.g., after the scale-factor table or before unification claims). It’s ~400 words — concise yet comprehensive.
 
 ### Recurring Power Laws: The Universal Fingerprint of Fractal Equivalence
 
