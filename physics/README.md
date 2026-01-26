@@ -89,10 +89,38 @@ Redshift measures scattering events through the N+1 lattice, not expansion or di
 - 0.1mm Regime swap scale is a function of localized info pressure (gravity); this implies that the localized planc length of N0 changes in atoms, based on atomic number and local N0 gravity well.
 - We should see radioactive decay rates vary with gravitational field and it should be dependent on atomic number. 
 
-**Gravitational Magnetism – Key Test**  
-Moving/rotating fractal masses (Dark Matter, Black holes) create rotational time-dilation patterns (gravitational B-field).  
-- Frame-dragging (Gravity Probe B) = gravito-magnetic effect.  
-- Prediction: Clock arrays around rotators may show patterns matching magnetic geometry.
+
+
+**Gravitational Magnetism — Key Test**  
+Moving/rotating fractal masses (stars, dark matter halos, black holes) create rotational time-dilation patterns (gravitational B-field).
+
+**Scale Hierarchy of Observable B_grav:**
+
+**Tier 1 (Strongest):** Black holes, dark matter halos, stars, neutron stars
+- These objects exist simultaneously at N and N+1 scales
+- Stars are literally photons at N+1 — their motion/rotation crosses fractal boundaries
+- Create maximum asymmetric interference patterns
+- Observable with current/near-future technology
+
+**Tier 1.5 (Strong):** Binary stars, stellar streams, accretion disks
+- Collective motion of fractal objects
+- Rotating photon pairs at N+1 create strong B_grav signatures
+
+**Tier 2 (Weak):** Planets, ordinary matter
+- Single-scale objects produce symmetric time dilation
+- Require extreme precision to detect B_grav effects
+- Frame-dragging (Gravity Probe B) = gravito-magnetic effect from Earth's rotation (barely detectable)
+
+**Key Tests:**
+- **Stellar rotation**: Fast-rotating stars should show B_grav-confined circumstellar disks (testable now with interferometry)
+- **Binary star precession**: Orbital planes align with combined B_grav fields (already observed, needs reinterpretation)
+- **Pulsar timing arrays**: Clock-rate variations perpendicular to spin axis (NANOGrav, EPTA data)
+- **Dark matter wake asymmetry**: Moving galaxies show compressed/extended halos (LSST, Euclid weak lensing)
+- **Black hole jets**: Rotation axis correlates with jet direction via B_grav geometry (EHT + LIGO)
+- **Lab tests**: Clock arrays around rotators may show patterns matching magnetic geometry (extreme precision required)
+
+**Prediction:** Stars create strong gravitational magnetic fields because they ARE photons at N+1. Their rotation and orbital motion should show clear B_grav signatures in disk geometries, binary dynamics, and stellar wind structures.
+
 
 **Major Testable Predictions**  
 1. Gravitational magnetism via clock dilation (immediate)  
