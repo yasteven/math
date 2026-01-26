@@ -7,7 +7,7 @@ This paper presents Steven E Elliott's Fractal Universal Cosmological
 Kinematics (SEEF), a revolutionary theoretical model, postulating our
 universe exhibits fractal self-similarity across an infinite scale.
 
-We demonstrate that gravity and electromagnetism exchange roles at 
+We postulate that gravity and electromagnetism exchange roles at 
 fractal boundaries, that electron clouds ARE dark matter, and that 
 the quantization of light emerges from the atomic composition of 
 stars. This framework is not merely analogous—it is a true 1-to-1 
@@ -944,7 +944,6 @@ At scale N-1, this same mechanism operates on stars:
 - Stars are photons at N+1
 - "Gravity" pulls on stars
 - Stars change direction (acceleration)
-- This creates the twin paradox at N-1
 
 **Twin Paradox Mechanism:**
 - Star A stays in galactic center (low velocity)
@@ -961,7 +960,7 @@ At scale N-1, this same mechanism operates on stars:
 "Gravity"(N) = QED_interference_pressure(N, from all scales)
 
 NOT:
-Gravity = curved spacetime  ← EINSTEIN WAS WRONG
+Gravity = curved spacetime
 
 Mechanism:
 QED wavefunction interference → Information pressure → 
@@ -1158,14 +1157,14 @@ Steven E. Elliott's Fractal Universal Cosmological Kinematics is not an extensio
 
 We have demonstrated:
 
-1. Gravity is not spacetime curvature; it is QED wavefunction interference acting across infinite fractal scales.  
+1. Gravity is not spacetime curvature; it is QED wavefunction interference acting across infinite fractal scales at ... N-1, N, N+1, ...  
 2. Space is perfectly flat; only time warps through information pressure from QED probability gradients.  
 3. Dark matter halos are literally the electron probability clouds (and wakes) of atoms at scale N+1.  
 4. Light quantization arises from the discrete atomic composition of stars; stellar fusion creates the spectrum of photon energies we observe.  
 5. The Milky Way is an ionized hydrogen ion (H⁺) at N+1; the observable universe is a hydrogen-rich molecular cloud; we live inside one atom preparing to bond.  
 6. An infinite fractal hierarchy is required for isotropic gravitational influence on massless photons.  
 7. True 1-to-1 correspondence allows quantum predictions from cosmic structure and cosmic predictions from quantum measurements.  
-8. Ultra-light dark matter may be the collective signature of life-like entities at N+1, with masses and sizes corresponding to human-scale beings.  
+8. Ultra-light dark matter may be the collective signature of life-like entities at N-1, with masses and sizes corresponding to human-scale beings.  
 9. Electricity at every scale flows along gravity superhighways (dark matter wakes left by moving stars/photons), explaining cosmic filaments, skin effect, and conductor-like behavior.  
 10. Moving gravitational objects produce gravitational magnetism — rotational, velocity-dependent clock dilation patterns perpendicular to motion. Frame-dragging is this gravito-magnetic field.  
 11. General Relativity is fundamentally incorrect: spacetime does not curve; the equivalence principle fails on finite patches; singularities are atomic nuclei at N+1; dark energy emerges from thermal/ionic effects and cumulative dilation.  
