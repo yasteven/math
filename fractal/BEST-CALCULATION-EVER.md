@@ -53,6 +53,19 @@ P_{fluid} \propto \frac{\Phi_{stars}}{\mu_{drag}}
 \end{equation}
 As $c$ is slowed, the viscous resistance becomes insurmountable. The "Proton-Black Holes" are forced to merge or rearrange into new fractal configurations (Transmutation) as the electron-repulsion is crushed by the incoming star-mass.
 
+\section{Viscous Equilibrium and the Electron-Sea}
+The 31\% "Time-Drag" is the universal constant of fluid equilibrium. In this framework, the Electron-Sea (Dark Matter) possesses a Kinematic Viscosity $\nu$ that perfectly balances the Le Sage gravitational pressure.
+
+\subsection{Mass as Displacement}
+The "Mass" of a Galaxy-Atom is redefined as the total displacement of the Electron-Sea by the central vortex. 
+\begin{equation}
+M_{observed} = \oint \rho_{e} \cdot \mathbf{v}_{vortex} \, dA
+\end{equation}
+This explains the "Dark Matter" rotation curves: at the galactic edge, the electron-fluid density $\rho_e$ drops, reducing the viscous resistance and allowing stars to maintain "flat" orbital velocities without the need for hidden mass.
+
+\subsection{The Fusion/Transmutation Constant}
+In the "Slow Light" regime ($c \to 0.001$ m/s), the Electron-Sea becomes a \textbf{Bose-Einstein Condensate} of infinite viscosity. At this limit, the repulsion-pressure ($P_{repel}$) is overcome by the "Star-Rain" accretion, forcing the central sinks to merge.
+
 \section{Conclusion}
 The universe is a high-mass Electron Sea punctuated by Black Hole sinks. Inertia is a property of the fluid medium, and the "Fine Structure" is the mechanical limit of wave propagation within that medium.
 
