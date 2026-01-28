@@ -47,6 +47,8 @@ inconsitency of GR as an effective theory of realitiy. Please have fun reading!
 
 ### 0. The final papers will go in the root of the repo when finished
 
+Most recent versions are in fractal/Final-5/ and compute/
+
 ### 1. **physics/**
 
 Rough drafts from AI discussions, mainly AI-generated exploratory work and concept development.
