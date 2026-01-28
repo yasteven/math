@@ -1,0 +1,220 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{color}
+
+\title{On Demonstrating the Non-Existence of Closed-Form Solutions to Photonic Billiards,\\
+       Which Implies the Non-Existence of Navier–Stokes Equations,\\
+       and the Fractal Nature of Black Hole Collisions}
+\author{Steven E. Elliott}
+\date{January 28, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We show that photonic billiards in a tetrahedral arrangement of four reflective spheres (with open interior for ray entry/exit) lack closed-form solutions, as the iterated reflection maps require solving unsolvable higher-degree equations in multiple complex variables. The resulting infinite nested fractals encode continuum cardinality. Extending to dynamical fluid motion maps to the Navier–Stokes equations, where functional complexity and set-theoretic forcing imply finite-time blow-up. This mirrors the interior dynamics of tetrahedral multi-black-hole mergers: directed fractal engulfment of horizons, with one dominating while preserving conformal self-similar nesting. Current numerical relativity focuses on binary cases and misses full N-body tetrahedral chaos. In SEEF (fractal electromagnetic fluid cosmology), these breakdowns signal scale transitions across $\lambda$ boundaries, replacing singularities with fluid bounces and providing a unified framework for both fluid and gravitational blow-up.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction: Photonic Billiards as a Probe of Solvability}
+
+The question of whether a dynamical system admits closed-form solutions is more than a mathematical curiosity: it probes the very possibility of a smooth, deterministic, globally predictable description of physical reality. Here, we show that a simple geometric-optics setup — \textit{photonic billiards} in a tetrahedral arrangement of four reflective spheres — already forces the failure of closed-form solvability; that same mechanism then propagates to the Navier–Stokes equations and to the interior geometry of multi-black-hole mergers, revealing a universal fractal structure.
+
+We consider four spheres of nearly equal radius, arranged at the vertices of a regular tetrahedron, with the central region open so that light can enter and undergo arbitrarily many specular reflections on the inner-facing hemispheres. The four spheres are distinguished by color or label (red, green, blue, yellow), and the pattern of nested virtual images on each sphere forms a curved, 3D analogue of the Sierpiński tetrahedron, i.e., an infinite, self-similar fractal of images of the other spheres.
+
+This setup is the optical analogue of the “polyhedral mirror ball” known in chaotic scattering and fractal basin literature. Our focus is not on the qualitative chaos, but on the precise obstruction to a closed-form description of the ray paths. We show that the iterated reflection map is a high-degree rational function in several complex variables, generic solutions of which cannot be expressed in closed form, and that the infinite nesting densely encodes the real numbers in the continuum.
+
+This static optical model then serves as the bridge to the dynamical case: replacing rays with fluid particles and the complex plane with a velocity field lands us in the Navier–Stokes equations, where the same structure — infinite branching, cardinality stress, and lack of closed-form solutions — implies that global smooth, unique solutions in 3D cannot exist. Similarly, in tetrahedral multi-black-hole mergers, the same iterated, conformal-fractal geometry appears in the horizon dynamics, and the classical singularity is revealed as a fractal boundary corresponding to a scale transition in SEEF, not a true differential-geometric breakdown.
+
+\section{Photonic Billiards – No Closed-Form Solution}
+
+\subsection{Geometric arrangement and fractal encoding}
+
+Arrange four spheres of radius $R$, with centers at the vertices of a regular tetrahedron separated by distance $2R$ (near-tangency), so that a small open interstitial volume remains at the center. The inner-facing hemispheres of the spheres act as specular reflectors; light enters from outside and undergoes a finite or infinite sequence of reflections.
+
+Label the spheres with four distinct colors (red, green, blue, yellow) and label the sequence of reflections, e.g., a path $A \to B \to C \to D$ corresponds to a ray that hits the red, then green, then blue, then yellow sphere. The image pattern on each sphere is then a self-similar fractal: each sphere contains tiny images of the other three, each of which contains subimages of the other three, and so on.
+
+The set of all finite reflection sequences is countable, but the set of accumulation points of infinite paths becomes dense in intervals of parameters (e.g., in the initial direction or impact parameter). This allows the nested fractal pattern to encode the real numbers, for example, via a 4-adic or continued-fraction-like expansion using the four colors as “digits.”
+
+\subsection{Complex charts and the five-sphere framework}
+
+To make this precise, we treat the tetrahedral system as a 4D spherical configuration. Let us define five oriented unit spheres:
+
+\begin{itemize}
+  \item Four outer spheres (red, green, blue, yellow).
+  \item A fifth “effective” reference sphere, corresponding to the open exterior region, which we can think of as a “white” or “ambient universe” sphere that defines the ingoing and outgoing beams.
+\end{itemize}
+
+The ambient 4D space is $\mathbb{R}^4 \approx \mathbb{C}^2$. On each sphere, use stereographic projection from its surface to the Riemann sphere, and then map to the complex plane $\mathbb{C}$, yielding:
+
+\begin{itemize}
+  \item Four complex charts $z_A, z_B, z_C, z_D \in \mathbb{C}$ for the four colored spheres.
+  \item A fifth chart $z_E$ for the exterior / reference sphere.
+\end{itemize}
+
+The full configuration then lives in the 4D space $\mathbb{R}^4 \approx \mathbb{C}^2.\mathbb{C}^2$, with rays corresponding to geodesics or null lines in this geometry, and the reflection points being points on the spheres that are mapped into the respective complex planes.
+
+\subsection{Reflection as rational maps between charts}
+
+When a light ray reflects from sphere $A$ to sphere $B$, the mapping of the impact point is given by the following composition:
+
+\begin{itemize}
+  \item Map the point on sphere $A$ to its complex coordinate $z_A \in \mathbb{C}$.
+  \item Perform the reflection in 3D space (a composition of inversions and isometries in $\mathbb{R}^3$).
+  \item Map the new impact point on sphere $B$ to its complex coordinate $z_B \in \mathbb{C}$.
+\end{itemize}
+
+Because the spheres are related by rotations, translations, and the conformal structure of the ambient $\mathbb{R}^4$, the induced map $z_A \to z_B$ is a fractional linear transformation (Möbius map) composed with a coordinate change that depends on the relative orientation and translation of the two spheres. The result is a rational map of the form:
+
+\[
+f_{A \to B}(z_A) = \frac{a_B z_A + b_B}{c_B z_A + d_B}
+\]
+
+with coefficients that are functions of the tetrahedral geometry (center positions, radii, orientations).
+
+\subsection{Full iterated map and the obstruction to closed-form solvability}
+
+A reflection sequence of length $n$, say $A_1 \to A_2 \to \cdots \to A_n$, corresponds to the composition of the corresponding rational maps:
+
+\[
+F_n = f_{A_{n-1}\to A_n} \circ \cdots \circ f_{A_1\to A_2}
+\]
+
+This is a rational function of degree $d_n$ on the complex plane, and the degree grows exponentially with the number of reflections, both because each rational map can increase degree, and because composition generically raises degree.
+
+For a generic tetrahedral configuration, after a small number of reflections, $F_n$ becomes a rational function of degree $\geq 5$ in the initial complex coordinate $z_{\text{in}}$, and also depends on several geometric parameters (the tetrahedron’s side length, any small deviations from regularity, and the ambient sphere’s data).
+
+Finding the path of a given ray — i.e., determining where it ends up after $n$ reflections, or where it focuses on a target sphere — then reduces to solving an equation of the form:
+
+\[
+F_n(z) = z_{\text{target}}, \quad\text{or} \quad F_n(z) = z \quad\text{(fixed point).}
+\]
+
+This is a polynomial equation of degree $\geq 5$ in $z$, with coefficients that are themselves functions of the geometric parameters. By the Abel–Ruffini theorem, there is no general solution in radicals for quintic and higher-degree equations. More generally, such equations are not solvable by any finite composition of elementary functions and algebraic operations.
+
+Extending this to the infinite limit (infinite reflection sequence), the full set of paths corresponds to an infinite branching of rational maps, forming an iterated function system (IFS) on the sphere surfaces. The attractor of this IFS is a fractal set on each sphere, and the mapping from initial conditions to the fractal pattern is inherently non-analytic and non-constructible in closed form.
+
+\subsection{Cardinality and continuum encoding}
+
+The set of finite reflection sequences is countable, but the set of infinite paths, together with their accumulation points, is uncountable and dense in certain regions of the parameter space. This dense fractal structure can be used to encode the real numbers in a continuous, geometric way:
+
+\begin{itemize}
+  \item Choose a base-4 numbering using the four colors.
+  \item Map each infinite path to a real number via its “color expansion,” e.g., the sequence of sphere indices can be interpreted as the digits of a 4-adic number.
+\end{itemize}
+
+Thus, the observable pattern on the spheres densely encodes the continuum, and the function that maps the initial ray to the final fractal image is a function from the real line (or $\mathbb{R}$-bundle of directions) to a fractal in $\mathbb{R}^3$. This already exceeds the structure of classical algebraic geometry and forces us into set-theoretic and functional analysis.
+
+\subsection{Summary of the optical obstruction}
+
+The combination of:
+
+\begin{itemize}
+  \item multiple complex charts in $\mathbb{C}^2$,
+  \item reflection maps as rational functions of degree $\geq 5$ in several variables,
+  \item the exponential growth of degree under composition,
+  \item the dense, fractal encoding of the continuum,
+\end{itemize}
+
+shows that photonic billiards in the generic tetrahedral four-sphere configuration have no closed-form solution. The only physically meaningful description is numerical iteration, fractal approximation, or a statistical description of the IFS attractor.
+
+\section{From Photonic Billiards to Navier–Stokes}
+
+\subsection{Static rays to dynamical fluid trajectories}
+
+Now promote the ray to a Lagrangian fluid particle in the 3D velocity field $\mathbf{v}(\mathbf{x}, t)$. The reflection map becomes the time evolution:
+
+\[
+\frac{d\mathbf{x}}{dt} = \mathbf{v}(\mathbf{x}, t)
+\]
+
+and the question of the particle’s path becomes the question of the global in time solution to the Navier–Stokes equations:
+
+\[
+\partial_t \mathbf{v} + (\mathbf{v} \cdot \nabla) \mathbf{v} = -\frac{1}{\rho} \nabla p + \nu \nabla^2 \mathbf{v}
+\]
+
+The transition from the photonic billiard is direct:
+
+\begin{itemize}
+  \item Complex numbers $\mathbb{C}$ (ray directions) $\to$ velocity fields $\mathbf{v} : \mathbb{R}^3 \times \mathbb{R} \to \mathbb{R}^3$ (or complex fields in vorticity formulations).
+  \item Finite reflection sequences $\to$ finite-time evolution of the fluid.
+  \item Infinite reflection sequences / fractal attractor $\to$ long-time behavior and possible blow-up.
+\end{itemize}
+
+\subsection{Cardinality and the forcing of blow-up}
+
+In the photonic billiard, the obstruction came from high-degree rational equations in several variables, unsolvable in radicals. In Navier–Stokes, the obstruction is transferred to the functional space level:
+
+\begin{itemize}
+  \item The solution branch now lives in a function space of higher cardinality (e.g., the space of smooth, divergence-free vector fields on $\mathbb{R}^3$).
+  \item The set of possible solutions, when considered across all smooth initial conditions, spans a functional space much larger than the continuum (e.g., the space of continuous functions on $\mathbb{R}^3$ has cardinality at least $2^{\mathfrak{c}}$).
+\end{itemize}
+
+Under the standard independence phenomena of set theory (e.g., the independence of the continuum hypothesis and the existence of forcing models), it is possible to construct models of set theory in which:
+
+\begin{itemize}
+  \item There is no universal choice of a “smooth, global solution branch” for the 3D Navier–Stokes equations.
+  \item Instead, for generic turbulent initial conditions, the solution branches must involve finite-time blow-up (loss of smoothness in finite time).
+\end{itemize}
+
+Moreover, the complexity of the iterated maps — already Turing-complete in the static billiard — is dwarfed in the dynamical case, where the velocity field can implement computational operations that make the long-time behavior uncomputable (in a Busy-Beaver-like sense). The only consistent way to resolve this in the 3D case, across all scales, is to accept that global, smooth, unique solutions do not exist: the system must blow up in finite time, and the classical notion of an eternal, smooth NS flow is incompatible with the functional and cardinality structure.
+
+\subsection{Consequence: the non-existence of Navier–Stokes equations}
+
+Therefore, the 3D Navier–Stokes equations, in the classical sense of a globally smooth, unique solution for all smooth initial data, do not exist. The equations are an effective description at finite Reynolds number and finite time, but the obstruction seen in photonic billiards now propagates fully: the solution space is so complex that no closed-form global solution can be written, and blow-up is not an exception, but a generic feature dictated by the cardinality and computability of the problem.
+
+\section{Tetrahedral Black Hole Collision – The Gravitational Realization}
+
+\subsection{Multi-black-hole merger in tetrahedral geometry}
+
+Promote the four reflective spheres to four nearly-equal-mass black holes in a late-stage tetrahedral inspiral, with a small observer (or “pyramid elevator”) in the interstitial tetrahedral region. The tetrahedral configuration is generic in the space of 4-body black hole systems, and the observer is initially in a region with relatively symmetric lensing and tidal fields.
+
+Early in the merger:
+
+\begin{itemize}
+  \item Each horizon lens and reflects the others, producing a fractal, self-similar structure in the photon spheres and the interior geometry.
+  \item These nested images form a 3D conformal analogue of the photonic billiard’s fractal pattern.
+\end{itemize}
+
+As the merger proceeds, asymmetry breaks the symmetry:
+
+\begin{itemize}
+  \item One black hole begins to dominate, taking up $>50\,\%$ of the sky in the observer’s sky map.
+  \item The other three horizons appear to shrink and accelerate inward, while still each conformally distorting the others via the strong gravitational field.
+\end{itemize}
+
+\subsection{Directed fractal engulfment and horizon nesting}
+
+From the interior observer’s point of view, the dynamics are:
+
+\begin{itemize}
+  \item The interstitial space is pinched and anisotropic, with strong tidal gradients.
+  \item The dominant horizon acts as an attractor in the conformal geometry, while the other three are conformally “tugged” into it, preserving a self-similar, nested structure during the engulfment.
+  \item This is the gravitational analogue of the photonic billiard’s directed fractal implosion, where one “color” (here, one horizon) dominates the limiting pattern.
+\end{itemize}
+
+The final moment is a directed fractal implosion:
+
+\begin{itemize}
+  \item The conformal mapping from the initial 4-body horizon configuration to the final single horizon is a highly non-unique, chaotic, fractal process.
+  \item In smooth differential geometry, this is associated with a curvature blow-up in finite proper time, interpreted as a singularity.
+\end{itemize}
+
+\subsection{Missing in current numerical relativity}
+
+Modern numerical relativity simulations are dominated by binary black hole mergers in quasi-circular, equatorial configurations, with the goal of producing clean waveforms for gravitational astronomy. Very few groups have published high-resolution, long-duration simulations of 4-body or higher-$N$ systems in a compact tetrahedral configuration, and even fewer have studied the interior region of the shrinking tetrahedral interstitial volume.
+
+As a result:
+
+\begin{itemize}
+  \item The full N-body tetrahedral chaos, with its fractal lensing and horizon nesting, has not been fully explored.
+  \item The directed, asymmetric fractal engulfment that matches the photonic billiard is effectively unobserved in the simulations, leaving a blind spot in our understanding of the interior geometry of multi-body mergers.
+\end{
