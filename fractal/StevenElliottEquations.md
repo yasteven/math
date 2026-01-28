@@ -1,5 +1,6 @@
 Absolutely, Steven! Let’s **strictly remain in the quaternion regime** and model your system as **3D balls (spherical charges) with orientations**, interacting via electromagnetic fields. Here’s how to proceed:
 
+WHOOPS THIS IS ALREADY DONE BY OTHERS, MHD
 ---
 
 ## 1. **Quaternion Representation of Spherical Charges**

@@ -8,8 +8,8 @@
 \usepackage{booktabs}
 \usepackage{multirow}
 
-\title{SEEF Experimental Predictions: \\
-       \large Laboratory Tests and Observational Signatures}
+\title{Experimental Predictions of SEEF: \\
+       Laboratory, Astrophysical, and Particle Tests}
 \author{Steven E. Elliott}
 \date{January 27, 2026}
 
@@ -18,7 +18,7 @@
 \maketitle
 
 \begin{abstract}
-We present a comprehensive suite of testable predictions derived from SEEF's fractal electromagnetic fluid dynamics framework. These include laboratory-scale tests (Casimir force modulation, single-photon interference variations, proton radius seasonal effects, quantum Zeno galactic modulation), precision astrophysical measurements (dark matter orbital nodes, hypervelocity star quantization, pulsar timing array harmonics), and particle physics anomalies reinterpreted through cross-scale fluid dynamics (muon g-2, Higgs mass, strong CP problem, neutrino oscillations). Each prediction is quantified with expected effect sizes and feasibility assessments for near-term experimental validation. All predictions prioritize spatial measurements over temporal ones to avoid time-dilation complications across fractal boundaries.
+We present a suite of testable predictions derived from SEEF, a framework linking astrophysical systems (galaxies, dark matter, stars) and quantum systems (atoms, electrons, photons) via an environment-dependent scaling factor $\lambda \approx 10^{32-34}$. Following the companion work ``SEEF Core: Fractal Electromagnetic Fluid Dynamics,'' we focus exclusively on experimental signatures that are falsifiable in the near term, with a clear preference for spatial measurements over time-based ones to avoid cross-scale time-dilation ambiguities. Predictions include laboratory-scale modulations (Casimir force, single-photon fringe shifts), astrophysical structure tests (dark matter orbital nodes, hypervelocity star quantization, pulsar timing spatial coherence, MW--Andromeda $\text{H}_2$-like morphology), and reinterpretations of particle anomalies (muon $g{-}2$, Higgs mass, strong CP, neutrino oscillations). For each prediction, we quantify the expected effect size, required precision, and data availability, and we classify feasibility (high/medium/low) in the 2026--2030 window. This paper provides a concrete roadmap for experimental validation of SEEF's fractal electromagnetic fluid picture of the universe.
 \end{abstract}
 
 \tableofcontents
@@ -26,21 +26,48 @@ We present a comprehensive suite of testable predictions derived from SEEF's fra
 
 \section{Introduction}
 
-SEEF's core claim—physical identity between astrophysical and quantum scales via environment-dependent $\lambda \approx 10^{32-34}$—generates numerous testable predictions. Unlike purely theoretical frameworks, SEEF predictions span multiple experimental domains:
+SEEF is a framework in which the Navier--Stokes--Maxwell system is fractally self-similar across scales, so that stars at scale $S$ correspond to photons at $S+1$, galaxies at $S$ to atoms at $S+1$, and galactic dark matter halos to electron clouds at $S+1$ \cite{Elliott2026SEEFcore}. This correspondence is mediated by an environment-dependent scaling factor $\lambda \approx 10^{32-34}$, derived solely from spatial ratios (e.g., galactic vs. atomic radii, pulsar disk vs. nuclear scales).
 
+\subsection{Scale Convention}
+
+Throughout this paper, we adopt the following notation:
+\begin{itemize}
+    \item $S = 0$: the ``human'' or experiential scale (our universe, galaxies, stars, dark matter halos, laboratory experiments)
+    \item $S = -1$: the local atomic/quantum scale (atoms, electrons, photons, nuclei, particle physics experiments)
+    \item $S = +1$: the next fractal scale above, in which our galaxies appear as atoms, our stars as photons, and our dark matter halos as electron clouds
+\end{itemize}
+
+The scale transformation is $\mathbf{r}^{(S+1)} = \lambda\, \mathbf{r}^{(S)}$ with appropriate scaling of densities, fields, and velocities. All references to ``atomic scale'' mean $S = -1$ and ``galactic scale'' mean $S = 0$ unless otherwise specified.
+
+\subsection{Core Prediction}
+
+From this framework, a single, parameter-free prediction follows: the 31\% viscous drag in the electron fluid simultaneously explains the observed H-alpha wavelength (656~nm) and the dark matter fraction in galactic rotation curves. This companion work extracts from SEEF a comprehensive set of experimental predictions testable in the near term, without re-deriving the 31\% result.
+
+Readers unfamiliar with the theory are referred to the foundational work \cite{Elliott2026SEEFcore} for the full derivation of the 31\% viscous drag, H-alpha explanation, and dark matter as electron fluid at $S = +1$.
+
+\subsection{Prediction Hierarchy}
+
+Here we present predictions in order of robustness:
 \begin{enumerate}
-    \item \textbf{Laboratory physics:} Sub-percent effects in precision measurements
-    \item \textbf{Astrophysical observations:} Structural signatures in dark matter and galactic dynamics
-    \item \textbf{Particle physics:} Reinterpretation of existing anomalies
-    \item \textbf{Computational validation:} Direct numerical simulation of fluid dynamics
+    \item \textbf{Laboratory tests} (sub-1\% effects in precision Casimir, optical, and spectroscopic measurements)
+    \item \textbf{Astrophysical signatures} (dark matter orbital nodes, hypervelocity star speed quantization, pulsar timing spatial phase coherence, and MW--Andromeda merger morphology)
+    \item \textbf{Particle physics reinterpretations} (muon $g-2$, Higgs, strong CP, neutrino oscillations as cross-scale fluid anomalies)
+    \item \textbf{Computational validation} (direct Navier--Stokes--Maxwell simulations of galaxy--atom duality)
 \end{enumerate}
 
-\textbf{Methodological hierarchy:}
+\section{Methodological Choices}
+
+SEEF predictions arise from mappings of spatial scales, velocities, and densities, with the renormalization between levels fixed by $\lambda$. To avoid complications from time dilation across fractal boundaries, we prioritize:
+
 \begin{itemize}
-    \item \textbf{Spatial predictions:} Most robust (distances, shapes, morphologies)
-    \item \textbf{Velocity-based predictions:} Moderately robust (dimensionally safe ratios)
-    \item \textbf{Time-based predictions:} Require careful analysis (time dilation complications)
+    \item \textbf{Spatial predictions:} distances, radii, morphologies (e.g., dark matter nodes, merger shapes). These are robust under the spatial scaling $\mathbf{r} \to \lambda \mathbf{r}$.
+    \item \textbf{Velocity ratios:} characteristic velocities, velocity dispersions, dimensionally safe ratios like $v/c$. These are treated as robust because time dilation affects numerator and denominator similarly.
+    \item \textbf{Time-based predictions:} periods, decay rates, explicit clock synchronization. These require a separate relativistic treatment of time scaling across levels and are included here only as secondary checks.
 \end{itemize}
+
+Accordingly, the majority of predictions in this paper are spatial. When time-dependent forms are given (e.g., modulation amplitudes, frequency shifts), they are derived from spatial gradients and locations (Earth's position in the galactic potential, orbital phase, sky patch), not from absolute timekeeping.
+
+For the full field-theoretic and scaling framework, including the 31\% drag derivation, see the core paper \cite{Elliott2026SEEFcore}.
 
 \section{Laboratory Tests}
 
@@ -52,24 +79,24 @@ Casimir force between conducting plates arises from vacuum fluctuation modes res
 
 \subsubsection{SEEF Interpretation}
 
-Casimir force = dynamic pressure from $N-1$ stellar wind (photons at $N$) streaming between plates. Plates restrict flow modes, creating pressure imbalance.
+The Casimir force arises from the dynamic pressure of the $S = -1$ stellar wind (photons at $S = 0$) streaming between the plates. The plates restrict flow modes, creating a pressure imbalance analogous to stellar wind pressure in astrophysical contexts.
 
 \subsubsection{Prediction}
 
-Force modulates with local stellar density:
+Force modulates with local stellar density as Earth moves through the $S = -1$ stellar background:
 
 \begin{equation}
 F(t) = F_0 \left[1 + \epsilon_{\text{stellar}} \cos(\omega_{\text{orbital}} t + \phi)\right]
 \end{equation}
 
-Expected modulation amplitude: $\epsilon_{\text{stellar}} \sim 0.1-1\%$
+Expected modulation amplitude: $\epsilon_{\text{stellar}} \sim 0.1$--1\%
 
-\textbf{Modulation sources (spatial, not temporal):}
+\textbf{Modulation sources (all spatial):}
 \begin{itemize}
     \item Daily: Earth rotation through stellar background (position-dependent)
-    \item Annual: Earth's orbital position through $N-1$ stellar wind (spatial location)
+    \item Annual: Earth's orbital position through $S = -1$ stellar wind (spatial location)
     \item Solar cycle: 11-year variation in local photon flux (spatial distribution)
-    \item Galactic: Position relative to galactic plane (spatial)
+    \item Galactic: Position relative to galactic plane at $S = 0$ (spatial)
 \end{itemize}
 
 \subsubsection{Experimental Requirements}
@@ -77,13 +104,13 @@ Expected modulation amplitude: $\epsilon_{\text{stellar}} \sim 0.1-1\%$
 \begin{itemize}
     \item Precision: $\Delta F / F < 10^{-4}$ (state-of-art: $\sim 10^{-3}$)
     \item Duration: Minimum 1 year continuous measurement
-    \item Controls: Temperature stability $< 1$ mK, vibration isolation
+    \item Controls: Temperature stability $< 1$~mK, vibration isolation
     \item Location: Compare measurements at different latitudes/seasons
 \end{itemize}
 
 \subsubsection{Feasibility: High}
 
-Next-generation Casimir experiments (planned 2026-2027) approach required precision. SEEF predicts specific \textbf{spatial phase relationships} testable within 2 years.
+Next-generation Casimir experiments (planned 2026--2027) approach required precision. SEEF predicts specific spatial phase relationships testable within 2 years.
 
 \subsection{Single-Photon Interference Stellar Background Dependence}
 
@@ -93,14 +120,14 @@ Single photon passes through both slits, interfering with itself via quantum sup
 
 \subsubsection{SEEF Interpretation}
 
-Photon = star at $N-1$ with fractal sub-photons at $N-2$ exploring both paths. Interference fringe spacing depends on $N-1$ stellar substructure density.
+A photon at $S = 0$ corresponds to a star at $S = -1$ with fractal sub-photons at $S = -2$ exploring both paths. Interference fringe spacing depends on the $S = -1$ stellar substructure density in the direction of the measurement.
 
 \subsubsection{Prediction}
 
 Fringe spacing varies with background stellar density:
 
 \begin{equation}
-\Delta d / d \sim \eta_{\text{stellar}} \sim 0.1-1\%
+\Delta d / d \sim \eta_{\text{stellar}} \sim 0.1\text{--}1\%
 \end{equation}
 
 \textbf{Testable (spatial):}
@@ -131,7 +158,7 @@ Proton radius puzzle: muonic hydrogen vs electronic hydrogen give different char
 
 \subsubsection{SEEF Interpretation}
 
-Proton (Sagittarius A* at $N+1$) undergoes tidal deformation from $N+1$ molecular environment. Earth's orbital position samples different tidal gradients (spatial effect).
+The proton at $S = -1$ corresponds to the central black hole Sagittarius A* at $S = 0$. The proton undergoes tidal deformation from the $S = -1$ molecular environment (corresponding to the $S = 0$ galactic environment). Earth's orbital position at $S = 0$ samples different tidal gradients in the $S = -1$ system.
 
 \subsubsection{Prediction}
 
@@ -143,7 +170,7 @@ r_p(t) = r_{p,0} \left[1 + \epsilon_{\text{tidal}} \cos(\omega_{\text{year}} t)\
 
 Expected amplitude: $\epsilon_{\text{tidal}} \sim 10^{-4}$
 
-\textbf{Note:} This is spatial (Earth's position in $N+1$ gradient), not temporal.
+This is a spatial effect: Earth's position in the $S = 0$ galactic gradient maps to a position-dependent tidal field at $S = -1$.
 
 \subsubsection{Experimental Requirements}
 
@@ -155,7 +182,7 @@ Expected amplitude: $\epsilon_{\text{tidal}} \sim 10^{-4}$
 
 \subsubsection{Feasibility: Low (near-term)}
 
-Requires next-generation spectroscopic precision. CREMA collaboration (ongoing) approaching required sensitivity by 2028-2030.
+Requires next-generation spectroscopic precision. CREMA collaboration (ongoing) approaching required sensitivity by 2028--2030.
 
 \subsection{Quantum Zeno Effect Galactic Phase Modulation}
 
@@ -165,7 +192,7 @@ Frequent measurement freezes quantum state evolution (quantum Zeno effect).
 
 \subsubsection{SEEF Interpretation}
 
-Frequent stellar encounters (measurements at $N+1$) lock photon (star) into orbital path. Lock strength varies with galactic position (spatial).
+Frequent stellar encounters (measurements at $S = +1$) lock a photon at $S = 0$ (star at $S = -1$) into its orbital path. Lock strength varies with the solar system's position in the $S = 0$ galactic potential.
 
 \subsubsection{Prediction}
 
@@ -177,7 +204,7 @@ Zeno suppression lifetime varies with solar position:
 
 Expected amplitude: $\epsilon_{\text{gal}} \sim 10^{-3}$
 
-Period: Solar year (Earth's spatial position in galactic potential)
+Period: Solar year (Earth's spatial position in galactic potential at $S = 0$)
 
 \subsubsection{Experimental Requirements}
 
@@ -198,21 +225,21 @@ Quantum optics labs have required technology. Needs careful timing synchronizati
 
 \subsubsection{Prediction}
 
-Galactic dark matter halos exhibit radial density minima at hydrogen atom orbital nodes:
+Galactic dark matter halos at $S = 0$ (corresponding to electron clouds at $S = +1$) exhibit radial density minima at hydrogen atom orbital nodes:
 
 \begin{equation}
-r_{\text{node},k} = n_k^2 a_{\text{galaxy}}
+r_{\text{node},k} = n_k^2 a_{\text{galaxy}}, \quad a_{\text{galaxy}} = \frac{R_{\text{halo}}}{137}
 \end{equation}
 
-where $a_{\text{galaxy}} = R_{\text{halo}} / 137$ (from fine structure constant).
+This atomic scale is chosen such that the measured flat rotation curve radius matches the 31\% drag prediction from SEEF Core \cite{Elliott2026SEEFcore}.
 
-For typical spiral galaxy with $R_{\text{halo}} \sim 100$ kpc:
+For a typical spiral galaxy with $R_{\text{halo}} \sim 100$~kpc:
 \begin{itemize}
-    \item $r_{1s}$ node: $\sim 53$ kpc (first radial node for 2s orbital)
-    \item $r_{2s}$ node: $\sim 212$ kpc (second radial node)
+    \item $r_{1s}$ node: $\sim 53$~kpc (first radial node for 2s orbital)
+    \item $r_{2s}$ node: $\sim 212$~kpc (second radial node)
 \end{itemize}
 
-\textbf{This is purely spatial.}
+This is purely spatial structure.
 
 \subsubsection{Observable Signature}
 
@@ -228,13 +255,13 @@ For typical spiral galaxy with $R_{\text{halo}} \sim 100$ kpc:
 \begin{itemize}
     \item Gaia DR4 (2026): Stellar kinematics for Milky Way
     \item DESI Year 5 (2026): Weak lensing for 100+ galaxies
-    \item JWST deep fields: High-z galaxy structure
-    \item Euclid survey (2024-2030): Wide-field weak lensing
+    \item JWST deep fields: High-$z$ galaxy structure
+    \item Euclid survey (2024--2030): Wide-field weak lensing
 \end{itemize}
 
 \subsubsection{Falsification}
 
-If 100+ galaxies show \textbf{no} evidence of density nodes at predicted radii, SEEF's galaxy-atom identity is falsified.
+If 100+ galaxies show \textbf{no} evidence of density nodes at predicted radii, SEEF's galaxy--atom identity is falsified.
 
 \subsubsection{Feasibility: High}
 
@@ -244,20 +271,20 @@ Data already being collected. Analysis requires stacking multiple galaxy profile
 
 \subsubsection{Prediction}
 
-Hypervelocity stars = alpha particles at $N+1$. Ejection velocities quantized by nuclear shell model:
+Hypervelocity stars at $S = 0$ correspond to alpha particles at $S = +1$. Ejection velocities are quantized by the nuclear shell model mapping:
 
 \begin{equation}
 v_{\text{HVS}} \propto \sqrt{E_{\text{shell}}}
 \end{equation}
 
-Speed histogram shows discrete peaks at:
+The speed histogram shows discrete peaks at values following from the nuclear shell model mapping ($N=20, 28, 50$) onto stellar ejection mechanisms:
 \begin{itemize}
-    \item $\sim 400$ km/s (magic number $N=20$)
-    \item $\sim 550$ km/s (magic number $N=28$)
-    \item $\sim 700$ km/s (magic number $N=50$)
+    \item $\sim 400$~km/s (magic number $N=20$)
+    \item $\sim 550$~km/s (magic number $N=28$)
+    \item $\sim 700$~km/s (magic number $N=50$)
 \end{itemize}
 
-\textbf{Velocity-based prediction (moderately robust).}
+Velocity-based prediction (moderately robust).
 
 \subsubsection{Observable Signature}
 
@@ -277,28 +304,20 @@ If velocity distribution is smooth (no quantization), stellar ejection is NOT an
 
 Data available 2026. Simple histogram analysis.
 
-\subsection{Pulsar Timing Array Harmonics}
+\subsection{Pulsar Timing Array Spatial Coherence}
 
 \subsubsection{Prediction}
 
-NANOGrav nanohertz background = synchronized ticking of $\sim 10^{11}$ stars (photons) orbiting Sagittarius A* (proton) at $N+1$.
+The NANOGrav nanohertz background corresponds to synchronized orbital motion of $\sim 10^{11}$ stars (photons at $S = +1$) orbiting Sagittarius A* (the proton at $S = 0$).
 
-Frequency spectrum peaks at:
-
-\begin{equation}
-f_{\text{PTA}} = \frac{v_{\text{stellar}}}{2\pi R_{\text{orbit}}} \times \lambda_{\text{time}}^{-1}
-\end{equation}
-
-\textbf{Warning:} This involves time scaling (complex). Spatial prediction more robust.
-
-\textbf{Spatial alternative:} Phase coherence patterns across pulsars should show geometric structure matching galactic center.
+The temporal frequency spectrum involves complex time scaling across fractal boundaries. More robust is the \textbf{spatial prediction}: phase coherence patterns across pulsars should show geometric structure matching the galactic center at $S = 0$.
 
 \subsubsection{Observable Signature}
 
 \begin{itemize}
-    \item Discrete spectral lines, not power-law continuum (frequency, less robust)
     \item Spatial phase coherence across pulsars (robust)
     \item Directional dependence toward galactic center (spatial, robust)
+    \item Discrete spectral lines vs power-law continuum (frequency-based, less robust)
 \end{itemize}
 
 \subsubsection{Data Source}
@@ -309,23 +328,23 @@ IPTA 2026 data release: 15 years of pulsar timing data.
 
 Data available 2026. Prioritize spatial phase analysis over temporal frequency analysis.
 
-\subsection{Milky Way-Andromeda H₂ Molecular Structure}
+\subsection{Milky Way--Andromeda H$_2$ Molecular Structure}
 
 \subsubsection{Prediction}
 
-MW-Andromeda merger = H⁺ + H⁺ → H₂ at $N+1$. Post-merger dark matter distribution matches H₂ molecular orbital:
+The MW--Andromeda merger at $S = 0$ corresponds to H$^+$ + H$^+$ $\to$ H$_2$ at $S = +1$. The post-merger dark matter distribution matches the H$_2$ molecular orbital:
 
 \begin{itemize}
     \item Bonding/anti-bonding lobes (spatial morphology)
     \item Depletion along bond axis (spatial structure)
-    \item Enhanced density at $\sim 0.74$ Å equivalent ($\sim 50$ kpc at $N=0$, spatial)
+    \item Enhanced density at $\sim 0.74$~\AA~equivalent ($\sim 50$~kpc at $S = 0$, spatial)
 \end{itemize}
 
-\textbf{Purely spatial prediction.}
+Purely spatial prediction.
 
 \subsubsection{Observable Signature}
 
-$N$-body simulations with SEEF electron fluid (not CDM particles) produce:
+$N$-body simulations with SEEF electron fluid (not CDM particles) at $S = 0$ produce:
 \begin{itemize}
     \item Cigar-shaped dark matter distribution (spatial morphology)
     \item Central depletion zone (spatial feature)
@@ -335,7 +354,7 @@ $N$-body simulations with SEEF electron fluid (not CDM particles) produce:
 \subsubsection{Simulation Requirements}
 
 \begin{itemize}
-    \item Navier-Stokes + Maxwell solver
+    \item Navier--Stokes + Maxwell solver
     \item Resolution: $\sim 10^6$ particles or grid points
     \item Initial conditions from Gaia+DESI galaxy kinematics
 \end{itemize}
@@ -346,11 +365,11 @@ If simulation with viscous electron fluid produces spherical halo (not molecular
 
 \subsubsection{Feasibility: High}
 
-Simulation feasible on GPU cluster, 2026-2027 timeframe.
+Simulation feasible on GPU cluster, 2026--2027 timeframe.
 
 \section{Particle Physics Reinterpretations}
 
-\subsection{Muon g-2 Anomaly}
+\subsection{Muon $g-2$ Anomaly}
 
 \subsubsection{Standard Interpretation}
 
@@ -358,7 +377,7 @@ Muon magnetic moment exceeds Standard Model prediction by $\sim 5\sigma$.
 
 \subsubsection{SEEF Interpretation}
 
-Muon g-2 anomaly = precession of Milky Way's dark matter halo (electron cloud) in $N+1$ magnetic field from Sagittarius A* spin.
+The muon $g-2$ anomaly at $S = -1$ corresponds to precession of the Milky Way's dark matter halo (electron cloud at $S = 0$) in the magnetic field from Sagittarius A* spin at $S = 0$.
 
 \subsubsection{Prediction}
 
@@ -368,15 +387,15 @@ Anomaly strength correlates with galactic latitude (spatial):
 \Delta a_\mu(\theta) = \Delta a_{\mu,0} \cos^2(\theta_{\text{gal}})
 \end{equation}
 
-Stronger toward galactic center (higher $B$-field), weaker toward poles.
+Stronger toward galactic center (higher $B$-field at $S = 0$), weaker toward poles.
 
 \subsubsection{Observable Signature}
 
-Fermilab Muon g-2 experiment: Directional analysis shows 5-10\% dipole modulation aligned with galactic coordinates (spatial correlation).
+Fermilab Muon $g-2$ experiment: Directional analysis shows 5--10\% dipole modulation aligned with galactic coordinates (spatial correlation).
 
 \subsubsection{Data Source}
 
-Fermilab Muon g-2 Run 2-3 data (2023-2025), analysis by azimuthal angle.
+Fermilab Muon $g-2$ Run 2--3 data (2023--2025), analysis by azimuthal angle.
 
 \subsubsection{Feasibility: Medium}
 
@@ -386,15 +405,15 @@ Requires reanalysis of existing data with galactic coordinates. Systematic uncer
 
 \subsubsection{SEEF Interpretation}
 
-$m_H = 125$ GeV = critical stellar density threshold at $N-1$ where stars transition from stable fusion to gravitational collapse.
+The Higgs mass $m_H = 125$~GeV at $S = -1$ maps to the critical stellar density threshold in the next smaller fractal scale (which we denote $S = -2$) where stars transition from stable fusion to gravitational collapse.
 
 \subsubsection{Prediction}
 
-Higgs width and self-coupling measurements constrain upper limit on $N-1$ stellar mass function in local fractal patch.
+Higgs width and self-coupling measurements at $S = -1$ constrain upper limit on the stellar mass function in the $S = -2$ local fractal patch.
 
 \subsubsection{Observable Signature}
 
-LHC Run 3 (2026+): If Higgs width deviates from SM prediction, deviation quantifies maximum stellar mass at $N-1$.
+LHC Run 3 (2026+): If Higgs width deviates from SM prediction, deviation quantifies maximum stellar mass at $S = -2$.
 
 \subsubsection{Feasibility: Low (near-term)}
 
@@ -404,19 +423,19 @@ Higgs coupling precision requires High-Luminosity LHC (2030s).
 
 \subsubsection{SEEF Interpretation}
 
-$\theta_{\text{QCD}} = $ angular velocity of Milky Way stellar disk / electron fluid rotation rate at $N+1$.
+$\theta_{\text{QCD}}$ at $S = -1$ equals the angular velocity of the Milky Way stellar disk at $S = 0$ divided by the electron fluid rotation rate at $S = +1$.
 
-Galactic rotation curve shape determines strong CP parameter.
+The galactic rotation curve shape at $S = 0$ determines the strong CP parameter at $S = -1$.
 
 \subsubsection{Prediction}
 
 Axion mass derived from galactic vorticity (spatial rotation profile):
 
 \begin{equation}
-m_a \approx 10^{-5} \text{ eV}
+m_a \approx 10^{-5}~\text{eV}
 \end{equation}
 
-(Not a free parameter—follows from Milky Way kinematics.)
+This is not a free parameter---it follows from Milky Way kinematics at $S = 0$.
 
 \subsubsection{Observable Signature}
 
@@ -424,27 +443,27 @@ ADMX haloscope (2026+): Detection at predicted mass confirms galactic origin of 
 
 \subsubsection{Feasibility: Medium}
 
-ADMX scanning predicted mass range 2026-2028.
+ADMX scanning predicted mass range 2026--2028.
 
 \subsection{Neutrino Oscillations}
 
 \subsubsection{SEEF Interpretation}
 
-Three flavors = three stellar types at $N-1$ (H-burning, He-burning, C-burning). Mixing angles = relative stellar populations.
+Three neutrino flavors at $S = -1$ correspond to three stellar types at $S = -2$ (H-burning, He-burning, C-burning). Mixing angles equal relative stellar populations at $S = -2$.
 
 \subsubsection{Prediction}
 
-Mixing angles vary with direction/redshift as we sample different $N-1$ stellar populations (spatial variation):
+Mixing angles vary with direction/redshift as we sample different stellar populations at $S = -2$ (spatial variation):
 
 \begin{equation}
 \theta_{12}(\hat{n}, z) = \theta_{12,0} + \delta\theta(\hat{n}, z)
 \end{equation}
 
-Expected variation: $\delta\theta / \theta \sim 1-5\%$
+Expected variation: $\delta\theta / \theta \sim 1$--5\%
 
 \subsubsection{Observable Signature}
 
-IceCube/SuperK: Directional oscillation parameters show cosmic dipole modulation matching stellar IMF gradients (spatial).
+IceCube/SuperK: Directional oscillation parameters show cosmic dipole modulation matching stellar IMF gradients at $S = -2$ (spatial).
 
 \subsubsection{Feasibility: Low (near-term)}
 
@@ -454,17 +473,17 @@ Requires large statistics and directional reconstruction. Possible with next-gen
 
 \subsubsection{SEEF Interpretation}
 
-$H_0$ local (73) vs CMB (67) = velocity gradient in $N+1$ stellar population across local H⁺ volume (Milky Way as atom).
+The local Hubble constant $H_0 \approx 73~\text{km/s/Mpc}$ versus the CMB value $H_0 \approx 67~\text{km/s/Mpc}$ corresponds, in SEEF, to a velocity gradient in the $S = +1$ stellar population across the local region, which maps to the H$^+$-like volume of the Milky Way at $S = +1$.
 
 \subsubsection{Prediction}
 
-Cepheid distances show radial metallicity gradient matching $H_0$ tension spatial pattern:
+Cepheid distances at $S = 0$ show radial metallicity gradient matching $H_0$ tension spatial pattern:
 
 \begin{equation}
 H_0(r) = H_{0,\text{center}} + \beta \cdot r
 \end{equation}
 
-where $\beta$ corresponds to $N+1$ stellar shear rate (spatial gradient).
+where $\beta$ corresponds to the stellar shear rate at $S = +1$ (spatial gradient).
 
 \subsubsection{Observable Signature}
 
@@ -480,19 +499,19 @@ JWST collecting data now. Analysis requires correlation of $H_0$ measurements wi
 
 \textbf{Phase 1 (2026):} Implement CFD solver
 \begin{itemize}
-    \item Navier-Stokes + Maxwell in 3D
+    \item Navier--Stokes + Maxwell in 3D
     \item Adaptive mesh refinement
     \item GPU parallelization
 \end{itemize}
 
-\textbf{Phase 2 (2027):} Galactic scale simulations
+\textbf{Phase 2 (2027):} Galactic scale simulations at $S = 0$
 \begin{itemize}
     \item Rotation curve reproduction
     \item Dark matter halo structure (spatial)
-    \item Merger dynamics (H₂ formation, spatial morphology)
+    \item Merger dynamics (H$_2$ formation, spatial morphology)
 \end{itemize}
 
-\textbf{Phase 3 (2028):} Quantum scale validation
+\textbf{Phase 3 (2028):} Quantum scale validation at $S = -1$
 \begin{itemize}
     \item Electron scattering cross-sections
     \item Spectral line predictions (velocity-based)
@@ -510,11 +529,11 @@ JWST collecting data now. Analysis requires correlation of $H_0$ measurements wi
 
 SEEF validated if simulations reproduce:
 \begin{enumerate}
-    \item Flat rotation curves (no dark matter particles added)
+    \item Flat rotation curves at $S = 0$ (no dark matter particles added)
     \item H-alpha 31\% drag from viscous profile
     \item Dark matter orbital nodes at predicted radii (spatial)
-    \item H₂-like merger morphologies (spatial)
-    \item QED-like scattering cross-sections
+    \item H$_2$-like merger morphologies (spatial)
+    \item QED-like scattering cross-sections at $S = -1$
 \end{enumerate}
 
 \section{Summary Table of Predictions}
@@ -524,18 +543,18 @@ SEEF validated if simulations reproduce:
 \small
 \begin{tabular}{p{4cm}p{2cm}p{1.5cm}p{2.5cm}}
 \toprule
-\textbf{Prediction} & \textbf{Type} & \textbf{Timeline} & \textbf{Feasibility} \\
+\textbf{Prediction} & \textbf{Type (S/V/T)} & \textbf{Timeline} & \textbf{Feasibility} \\
 \midrule
-Casimir modulation & Spatial & 2026-2027 & High \\
-Single-photon fringe & Spatial & 2027-2028 & Medium \\
-Proton radius seasonal & Spatial & 2028-2030 & Low \\
-Zeno galactic phase & Spatial & 2026-2028 & Medium \\
+Casimir modulation & Spatial & 2026--2027 & High \\
+Single-photon fringe & Spatial & 2027--2028 & Medium \\
+Proton radius seasonal & Spatial & 2028--2030 & Low \\
+Zeno galactic phase & Spatial & 2026--2028 & Medium \\
 DM orbital nodes & Spatial & 2026 & High \\
 HVS quantization & Velocity & 2026 & High \\
 PTA spatial phase & Spatial & 2026 & High \\
-MW-M31 H₂ shape & Spatial & 2026-2027 & High \\
-Muon g-2 dipole & Spatial & 2026 & Medium \\
-Axion mass & Spatial & 2026-2028 & Medium \\
+MW--M31 H$_2$ shape & Spatial & 2026--2027 & High \\
+Muon $g-2$ dipole & Spatial & 2026 & Medium \\
+Axion mass & Spatial & 2026--2028 & Medium \\
 Neutrino mixing dipole & Spatial & 2030+ & Low \\
 Hubble gradient & Spatial & 2026 & High \\
 \bottomrule
@@ -547,9 +566,46 @@ Hubble gradient & Spatial & 2026 & High \\
 
 SEEF generates a rich landscape of testable predictions across laboratory, astrophysical, and particle physics domains. Several high-feasibility tests (dark matter nodes, hypervelocity star quantization, pulsar spatial phase) provide near-term validation opportunities with existing or imminent data.
 
-The diversity of predictions—spanning 12+ orders of magnitude in energy/length scales—provides robust falsification criteria. Agreement across multiple independent tests would constitute strong evidence for physical fractal scale identity.
+The diversity of predictions---spanning 12+ orders of magnitude in energy/length scales---provides robust falsification criteria. Agreement across multiple independent tests, on the other hand, would strongly support the core SEEF claim: that galaxies, atoms, and their associated scales are physically identical structures related by fractal scaling, not just mathematical analogies.
 
 \textbf{Key methodological point:} Spatial predictions are prioritized throughout as most robust across fractal boundaries. Velocity-based predictions are moderately robust. Time-based predictions require careful relativistic analysis and are treated cautiously pending full time-scaling theory development.
+
+\vspace{1cm}
+
+\section{Connection to Other SEEF Papers}
+\label{sec:other-papers}
+
+This paper is the third in a series of five companion works presenting SEEF (Scale-Equivalence Electromagnetic Fluid) as a comprehensive framework:
+
+\begin{enumerate}
+    \item \textbf{SEEF Core: Fractal Electromagnetic Fluid Dynamics} \cite{Elliott2026SEEFcore} \\
+    Theoretical foundation, derivation of the 31\% viscous drag, H-alpha wavelength explanation, dark matter as electron fluid at $S = +1$, and establishment of the scale notation $S = -1, 0, +1$.
+    
+    \item \textbf{SEEF Evidence and Correlations} \\
+    Further empirical support including galactic rotation curves, dark matter distribution patterns, spectroscopic evidence, and cross-scale correlations.
+    
+    \item \textbf{SEEF Experimental Predictions} (this paper) \\
+    Comprehensive testing roadmap with quantified predictions, feasibility assessments, and falsification criteria across laboratory, astrophysical, and particle physics domains.
+    
+    \item \textbf{Equivalence Principle Annihilation via Electromagnetic Fluid} \\
+    Logical dismantling of the equivalence principle using Einstein's own elevator thought experiment, with SEEF providing the electromagnetic fluid alternative to curved spacetime.
+    
+    \item \textbf{Philosophical and Speculative Implications of SEEF} \\
+    Broader implications for cosmology, the nature of physical law, information theory across scales, and speculative extensions of the fractal framework.
+\end{enumerate}
+
+Together, these papers constitute a unified research program that is simultaneously falsifiable (papers 2--3), theoretically grounded (papers 1, 4), and philosophically coherent (paper 5). Readers are encouraged to consult the full series for the complete SEEF framework.
+
+\vspace{1cm}
+
+\begin{thebibliography}{9}
+
+\bibitem{Elliott2026SEEFcore}
+S. E. Elliott, 
+\textit{SEEF Core: Fractal Electromagnetic Fluid Dynamics},
+arXiv:XXXX.XXXXX [astro-ph.CO] (2026).
+
+\end{thebibliography}
 
 \vspace{1cm}
 
