@@ -51,7 +51,7 @@ Most recent versions are in fractal/Final-5/ and compute/
 
 ### 1. **physics/**
 
-Rough drafts from AI discussions, mainly AI-generated exploratory work and concept development.
+Rough drafts from recent AI discussions, mainly AI-generated exploratory work and concept development.
 
 ### 2. **fractal/**
 
