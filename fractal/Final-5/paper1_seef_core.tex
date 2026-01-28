@@ -21,7 +21,7 @@
 \maketitle
 
 \begin{abstract}
-SEEF (Steven E. Elliott's Fractal Universal Cosmological Kinematics, or by expansion: SEEF Explains Every Force) posits a direct physical correspondence between astrophysical and quantum phenomena, mediated by an environment-dependent scale factor $\lambda \approx 10^{33}$ (ranging from $\sim 10^{32}$ in hydrogen-dominated regions to $\sim 10^{34}$ in heavy-element environments). By extending the Madelung--Bohm--Nelson fluid interpretation of quantum mechanics, SEEF identifies stars as photons, galaxies as atoms, dark matter halos as electron clouds, and black holes as atomic nuclei at adjacent fractal scales.
+SEEF (Steven E. Elliott's Fractal Universal Cosmological Kinematics; by expansion: SEEF Explains Every Force) posits a direct physical correspondence between astrophysical and quantum phenomena, mediated by an environment-dependent scale factor $\lambda \approx 10^{33}$ (ranging from $\sim 10^{32}$ in hydrogen-dominated regions to $\sim 10^{34}$ in heavy-element environments). By extending the Madelung--Bohm--Nelson fluid interpretation of quantum mechanics, SEEF identifies stars as photons, galaxies as atoms, dark matter halos as electron clouds, and black holes as atomic nuclei at adjacent fractal scales.
 
 A central, parameter-free prediction emerges: \textbf{viscous drag in the electron fluid induces a 31\% frequency shift}, simultaneously explaining both the observed H-alpha wavelength (656\,nm) and the dark matter fraction in inner galactic rotation curves. This result is derived solely from empirically measured spatial scales and local velocities---eliminating the need for time-based quantities to avoid cross-scale dilation ambiguities.
 
@@ -69,6 +69,28 @@ This 31\% drag matches:
 \end{itemize}
 
 This is not a fitted parameter—it's a first-principles prediction with zero free parameters that simultaneously explains atomic spectroscopy and galactic dynamics.
+
+\subsection{Scale Convention}
+
+Throughout this paper and the companion SEEF series, we use the following scale notation:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+\toprule
+Symbol & Meaning \\
+\midrule
+$S = -1$ & Atomic/quantum scale (atoms, electrons, photons, nuclei) \\
+$S = 0$  & ``Human'' scale (galaxies, dark matter, stars, labs, Earth) \\
+$S = +1$ & Next fractal scale (our galaxies as atoms, our stars as photons, \\
+         & \quad our dark matter as electron clouds) \\
+\bottomrule
+\end{tabular}
+\caption{SEEF scale convention used in this series.}
+\label{tab:scale_convention}
+\end{table}
+
+At each scale $S$, the same Navier-Stokes + Maxwell equations govern the dynamics, related by the environment-dependent scale factor $\lambda$.
 
 \section{Mathematical Foundation}
 
@@ -293,17 +315,18 @@ f_{H\alpha} = \frac{c}{\lambda} = \frac{3 \times 10^8}{656.3 \times 10^{-9}} \ap
 The discrepancy defines the viscous drag in the electron fluid:
 
 \begin{equation}
-\boxed{\mu_{\text{drag}} = 1 - \frac{f_{\text{measured}}}{f_{\text{ideal}}} = 1 - \frac{4.57 \times 10^{14}}{6.6 \times 10^{14}} \approx 0.31 = 31\%}
+\mu_{\text{drag}} = 1 - \frac{f_{\text{measured}}}{f_{\text{ideal}}} = 1 - \frac{4.57 \times 10^{14}}{6.6 \times 10^{14}} \approx 0.31 = 31\%
+\label{eq:31percent_drag}
 \end{equation}
 
-\textbf{This 31\% drag is the exact magnitude of the "dark matter" effect in inner spiral galaxy rotation curves!}
+\textbf{This 31\% drag (Eq.~\ref{eq:31percent_drag}) is the exact magnitude of the "dark matter" effect in inner spiral galaxy rotation curves!}
 
 \subsection{Physical Interpretation}
 
 The electron fluid (dark matter at our scale) creates viscous resistance that:
 
 \begin{enumerate}
-    \item Slows effective orbital frequency of star-photons by 31\%
+    \item Slows effective orbital frequency of star-photons by 31\% (Eq.~\ref{eq:31percent_drag})
     \item Produces "missing mass" signature in rotation curves
     \item Maintains hydrostatic equilibrium via EM repulsion
     \item Sets fine structure of atomic spectra via fluid wave mechanics
@@ -425,7 +448,8 @@ This is standard Navier-Stokes fluid pressure dynamics.
 \subsection{Fine Structure Constant as Galactic Mach Number}
 
 \begin{equation}
-\boxed{\alpha = \frac{v_{\text{star}}}{c} \approx \frac{1}{137.036}}
+\alpha = \frac{v_{\text{star}}}{c} \approx \frac{1}{137.036}
+\label{eq:fine_structure}
 \end{equation}
 
 The fine structure constant is the galactic Mach number—ratio of stellar orbital velocity to EM fluid sound speed ($c$ at our scale).
@@ -598,7 +622,7 @@ Several key aspects of the environment-dependent scale factor $\lambda$ remain t
 SEEF provides:
 \begin{enumerate}
     \item Unified framework: All physics from Navier-Stokes + Maxwell at different scales
-    \item Parameter-free prediction: 31\% drag explains both H-alpha and dark matter
+    \item Parameter-free prediction: 31\% drag (Eq.~\ref{eq:31percent_drag}) explains both H-alpha and dark matter
     \item Environment-dependent scaling: $\lambda \approx 10^{32-34}$ from spatial measurements only
     \item Testable via simulation: CFD validation before expensive observations
     \item Ontological simplification: Fewer fundamental entities
@@ -616,7 +640,7 @@ SEEF provides:
 
 \subsection{The Critical Test}
 
-The 31\% drag calculation stands as the theory's most immediate validation. If other spectral lines match the predicted viscous profile from galactic dynamics, SEEF's central claim—physical identity across scales with environment-dependent $\lambda$—is confirmed.
+The 31\% drag calculation (Eq.~\ref{eq:31percent_drag}) stands as the theory's most immediate validation. If other spectral lines match the predicted viscous profile from galactic dynamics, SEEF's central claim—physical identity across scales with environment-dependent $\lambda$—is confirmed.
 
 \vspace{1cm}
 
