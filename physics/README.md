@@ -48,8 +48,8 @@ We are deep inside the bulk of an N+1 hydrogen-rich molecular/atomic gas.
 | 0.1 mm boundary → Planck length      | 10⁻⁴ m / 10³³ ≈ 10⁻³⁷ m            | 10³³             | Order match ✓   |
 
 **Galaxies Are Atoms; Stars Are Photons**  
-- N0 Galaxy = N+1 Atom 
-- N0 Star = N+1 Photon 
+- N0 Galaxy = S+1 Atom 
+- N0 Star = S+1 Photon 
 - N0 Dark matter halo = N+1 electron probability density |ψ|² 
 - N0 Intergalctic dust clouds = N+1 vaccum energy soup 
 
