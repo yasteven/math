@@ -1062,14 +1062,13 @@ The strength and detectability of gravitational magnetism depends critically on 
 - **Black holes**: Atomic nuclei at N+1; rotation = nuclear spin across scales
 - **Dark matter halos**: Electron probability clouds from N+1 spanning fractal boundaries
 - **Stars**: Photons at N+1; their motion/rotation creates strong cross-scale interference
-- **Neutron stars**: Approaching nuclear density; maximum fractal boundary effects before becoming black holes
 
 These objects create **maximum asymmetric interference patterns** because they exist simultaneously at multiple fractal scales. Stars are literally light at the next level up, making their motion inherently cross-scale.
 
 **Tier 1.5: Stellar Systems (Strong B_grav)**
 - **Binary stars**: Orbital motion of photons at N+1 creates rotating interference patterns
 - **Stellar streams**: Moving collections of photons generate collective wakes
-- **Accretion disks**: Spiraling stellar matter (photon flow at N+1) around black holes/neutron stars
+- **Accretion disks**: Spiraling stellar matter (photon flow at N+1) around black holes
 
 **Tier 2: Ordinary Baryonic Matter (Weak B_grav)**
 - **Planets, asteroids, lab masses**: Exist primarily at single scale N=0
@@ -1145,7 +1144,6 @@ Rotating stars → f_fractal ~ 10³–10⁶ enhancement over planetary bodies
   - Fast rotators should show stronger B_grav effects
   - Test via precise astrometry of stellar positions (aberration patterns)
 - **Dark matter halo rotation**: Asymmetric lensing in moving galaxy clusters (LSST, Euclid)
-- **Neutron star binary orbits**: Orbital decay + B_grav precession (LIGO/Virgo)
 
 **Tier 1.5 Tests (Strong Signals, New Analysis):**
 - **Binary star mass transfer**: Accretion streams follow B_grav field lines
@@ -1164,14 +1162,6 @@ Rotating stars → f_fractal ~ 10³–10⁶ enhancement over planetary bodies
 - **Resonant cavity rotation**: Frequency shifts from rotational time dilation
 
 **New Critical Prediction: Stellar Rotation B_grav**
-
-**Test 1: Fast-rotating stars (Be stars, neutron stars)**
-- Rotation rates v_eq ~ 0.5–0.7c at surface
-- Should create strong B_grav fields perpendicular to rotation axis
-- **Prediction**: Circumstellar disk material preferentially orbits in equatorial plane
-  - Not just from centrifugal effects
-  - B_grav creates time-dilation "channel" that confines matter
-  - Disk thickness inversely proportional to rotation rate (stronger B_grav → thinner disk)
 
 **Test 2: Binary stars with misaligned spins**
 - Each star creates its own B_grav field
@@ -1302,7 +1292,6 @@ These active or upcoming projects could confirm or refute SEEF within the next 5
 3. **Gravitational magnetism / clock dilation tests**  
    - Gravity Probe B frame-dragging already hints at rotational effects; reinterpret as B_grav.  
    - Lab: atomic-clock arrays around large rotating masses (flywheels, cylinders).  
-   - Astro: clock-rate mapping around pulsars, neutron stars, spinning BHs (via pulsar timing arrays or future space clocks).  
    - Target: anisotropic Δτ/τ ⊥ rotation/motion axis, matching solenoid-like geometry.
 
 4. **High-redshift structure & age analysis (JWST, Roman, Rubin)**  

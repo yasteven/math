@@ -15,7 +15,7 @@ In the SEEF framework, star formation at our scale (N=0) is not a local gravitat
 ## 1. The 0.1 mm Regime Boundary as the Universal Trigger
 At our scale (N=0), the electromagnetic force dominates below ~0.1 mm (10^{-4} m), preventing large-scale clumping of neutral matter due to repulsion. Above this scale, gravity dominates, allowing stable macroscopic structures. This crossover is macroscopic but fundamental: it marks the transition from a quantum-like, repulsive regime to a classical, attractive one.
 
-In SEEF, this same boundary repeats at every fractal level. When scaled by λ ≈ 10^{33} (derived independently from neutron/neutron-star radii, Bohr radius/DM halos, and vacuum energy matching), the N=0 0.1 mm boundary corresponds to the Planck length (~10^{-35} m) at N+1, creating the observational firewall: probing below one’s local regime boundary requires crossing into the next level’s regime, which generates a black-hole-like trapping object at the boundary.
+In SEEF, this same boundary repeats at every fractal level. When scaled by λ ≈ 10^{33} (derived independently from  Bohr radius/DM halos, and vacuum energy matching), the N=0 0.1 mm boundary corresponds to the Planck length (~10^{-35} m) at N+1, creating the observational firewall: probing below one’s local regime boundary requires crossing into the next level’s regime, which generates a black-hole-like trapping object at the boundary.
 
 Star formation is the macroscopic expression of this boundary crossing in reverse: when local gas density becomes high enough, the system approaches the regime flip from the other direction.
 

@@ -181,47 +181,6 @@ R_pulsar ≈ 5 kiloparsecs
         = 1.54×10^{20} meters
 ```
 
-Observable nuclear neutron orbital scale:
-```
-r_neutron ≈ 5 femtometers = 5×10^{-15} meters
-```
-
-Scale factor calculation:
-```
-λ = R_pulsar / r_neutron
-  = 1.54×10^{20} m / 5×10^{-15} m
-  = 3.08×10^{34}
-  ≈ 10^{33-34} ✓
-```
-
-**Consistent with first derivation.** Two independent observables converge on the same scale factor.
-
----
-
-**Derivation 3: Neutron Star Radius ↔ Neutron Radius (Direct Test)**
-
-Observable neutron star radius (measured by NICER X-ray telescope):
-```
-R_ns ≈ 10-12 kilometers = 10^4 meters
-```
-
-Observable neutron radius (nuclear physics):
-```
-r_n ≈ 0.87×10^{-15} meters
-```
-
-Predicted neutron star radius from scaling:
-```
-R_ns(predicted) = r_n × λ
-                = 0.87×10^{-15} × 10^{33}
-                = 8.7×10^{17}
-                = 8.7 kilometers ✓
-```
-
-Observed neutron star radius: 10-12 km
-
-**Agreement within 20% without any free parameters.** This is direct observational confirmation.
-
 ---
 
 **Why This Proves λ ≈ 10^33 is Not Arbitrary:**

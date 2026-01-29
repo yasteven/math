@@ -45,7 +45,6 @@ We are deep inside the bulk of an N+1 hydrogen-rich molecular/atomic gas.
 |--------------------------------------|-------------------------------------|------------------|-----------------|
 | DM halo radius / Bohr radius         | 300 kpc / 5.3 × 10⁻¹¹ m            | ~1.75 × 10³²     | ✓               |
 | Pulsar disk / nuclear neutron scale  | 5 kpc / 5 fm                        | ~3.08 × 10³⁴     | ✓               |
-| Neutron radius × λ → neutron star    | 0.87 fm × 10³³ ≈ 8.7 km             | 10³³             | Matches NICER 10–12 km ✓ |
 | 0.1 mm boundary → Planck length      | 10⁻⁴ m / 10³³ ≈ 10⁻³⁷ m            | 10³³             | Order match ✓   |
 
 **Galaxies Are Atoms; Stars Are Photons**  
@@ -96,7 +95,7 @@ Moving/rotating fractal masses (stars, dark matter halos, black holes) create ro
 
 **Scale Hierarchy of Observable B_grav:**
 
-**Tier 1 (Strongest):** Black holes, dark matter halos, stars, neutron stars
+**Tier 1 (Strongest):** Black holes, dark matter halos, stars
 - These objects exist simultaneously at N and N+1 scales
 - Stars are literally photons at N+1 — their motion/rotation crosses fractal boundaries
 - Create maximum asymmetric interference patterns
