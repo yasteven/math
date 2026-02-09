@@ -21,11 +21,11 @@ Z_\text{base} = 4\pi^3 + \pi^2 \approx 124.025 + 9.870 = 133.895,
 \end{equation}
 where $4\pi^3$ is volumetric flux of 3D poloidal-toroidal circulation and $\pi^2$ is planar stability of 2D orbital disk.
 \subsection{Naive 3+1 Drag}
-Real motion encounters 3 spatial + 1 temporal dimensions:
+Real motion encounters 3 spatial dimensions + 1 temporal dimension, but FSEP identifies the temporal component as fractal scale latency:
 \begin{equation}
-Z_\text{naive} = 4\pi^3 + \pi^2 + (3_\text{space} + 1_\text{time}) = 137.895 \quad (0.62\%\,\text{error}).
+Z_\text{naive} = 4\pi^3 + \pi^2 + (3_\text{space} + 1_\text{FSF}) = 136.8947 \quad (0.103\%\,\text{error}),
 \end{equation}
-Note the difference between naive 4 and $\pi \approx 3.141$ is ~0.141, numerically close to the small FSF adjustment needed for exact match.
+where $1_\text{FSF} \approx 10^{-33}$ is the naive temporal drag. The spatial component remains $3$, but FSEP refinement replaces this with $\pi \approx 3.142$ (Apollonian curvilinear propagation), yielding the difference $3.142 - 3 = 0.142$ needed for exact match.
 \subsection{Fractal Scale Factor (FSF) Correction}
 FSEP replaces $3+1$ with curvilinear + cross-scale drag:
 \begin{equation}
