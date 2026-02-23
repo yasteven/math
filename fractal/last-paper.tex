@@ -44,96 +44,112 @@ of the same dense-sparse exchange viewed from opposite sides of the fractal boun
 
 \tableofcontents
 \newpage
+\section{Einstein Equivalence Principle Domain Shrinks to Measure Zero}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The Domain of Validity of the Einstein Equivalence Principle Shrinks to Measure Zero as $t \to \infty$}
-\label{sec:eep}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{What the Einstein Equivalence Principle Requires}
-The Einstein Equivalence Principle (EEP)---the foundational assumption of General
-Relativity---asserts that at every event $p$ there exists a neighborhood $U_p$ in
-which a freely-falling laboratory of finite size is indistinguishable from an inertial
-frame in Minkowski space \cite{Einstein1916}. Formally, the metric admits a Taylor expansion
+Consider the Schwarzschild--de Sitter (SdS) spacetime with metric
 \begin{equation}
-g_{\mu\nu}(x) = \eta_{\mu\nu} + O\!\left((x-p)^2\right)
+ds^2 = -\left(1 - \frac{2GM}{r} - \frac{\Lambda r^2}{3}\right) dt^2 + 
+       \frac{dr^2}{1 - \frac{2GM}{r} - \frac{\Lambda r^2}{3}} + r^2 d\Omega^2.
 \end{equation}
-with first derivatives vanishing in Riemann normal coordinates. While this holds
-\textit{pointwise} on any smooth Lorentzian manifold, the \textbf{physical size} of
-the neighborhood $U_p$ in which the approximation is accurate to a required precision
-is limited by local curvature and expansion rate.
-We now show that in any realistic cosmology, the \textbf{4-volume measure} of the set
-of events at which a laboratory of fixed positive physical size $L_\text{phys}$ (e.g.,
-1 m or 1 AU) can still satisfy the EEP conditions to laboratory accuracy goes to zero
-\textit{almost everywhere} as $t \to \infty$. This is not the statement that GR fails
-pointwise---it does not---but that the domain of applicability of the smooth-manifold
-effective description occupies vanishing measure in the late-time universe.
-\subsection{Breakdown I: Superluminal Expansion in Void Regions}
-Consider an asymptotic de Sitter phase with constant Hubble parameter $H$. For a
-laboratory of proper size $L_\text{phys}$, the light-crossing time is
-$\Delta t \approx L_\text{phys}/c$. During this interval the scale factor changes by a
-fractional amount $H\Delta t$. Requiring the induced tidal strain to be below
-experimental precision $\varepsilon$ forces
+The horizons are roots of $f(r) = 1 - \frac{2GM}{r} - \frac{\Lambda r^2}{3} = 0$, 
+with $r_{\rm BH} < r_{\rm c}$ defining the static patch $r_{\rm BH} < r < r_{\rm c}$ 
+where $f(r) > 0$.
+
+\subsection{Collapse Regions: Observers Fall to Singularities}
+
+In the SdS static patch $r_{\rm BH} < r < r_{\rm c}$, realistic observers experience 
+orbital decay via gravitational radiation and tidal interactions. All bound trajectories 
+terminate at the black hole singularity in finite proper time $\tau$, so the physical 
+radial separation satisfies
 \begin{equation}
-H L_\text{phys} \ll \varepsilon \qquad \Rightarrow \qquad
-L_\text{phys} \ll \frac{c\varepsilon}{H}.
+\lim_{\tau \to \tau_{\rm sing}} \Delta r_{\rm phys}(\tau) = 0, \qquad \Delta r = r_{\rm c} - r_{\rm BH} \sim \sqrt{3/\Lambda} - 2GM.
 \end{equation}
-The maximal comoving radius of such a patch is therefore
+
+Define the indicator functional for a spacetime region $\mathcal{R}$ at coordinate time $t$:
 \begin{equation}
-\Delta x_\text{comov} \lesssim \frac{c\varepsilon}{H\, a(t)}.
+F_{\rm collapse}(\mathcal{R}, t; L_{\rm phys}, \varepsilon) =
+\begin{cases}
+1 & \text{if $\mathcal{R}$ contains a finite lab of size $L_{\rm phys}>0$ sustaining relative motions $> \varepsilon L_{\rm phys}$}, \\
+0 & \text{if all observers in $\mathcal{R}$ have collapsed ($\Delta r_{\rm phys} < \varepsilon L_{\rm phys}$)}.
+\end{cases}
 \end{equation}
-The spatial volume fraction of the universe that still admits patches satisfying the
-EEP at precision $\varepsilon$ therefore scales as
+For fixed laboratory precision $\varepsilon > 0$ (e.g., $10^{-6}$ for accelerometers) and 
+fixed $L_{\rm phys} > 0$ (e.g., 1~m), we have $F_{\rm collapse}(t_{\rm finite})=1$ but 
+$\lim_{t\to\infty} F_{\rm collapse}(t)=0$. This holds despite smooth Einstein PDE solutions.
+
+The 3-volume fraction of EEP-valid subregions within the static patch therefore obeys
 \begin{equation}
-f(t) \;\sim\; \left(\frac{c}{H\,a(t)\,R_\text{comov}(t)}\right)^{\!3}
-\longrightarrow 0 \quad \text{exponentially as } t \to \infty,
+f_{\rm collapse}(t) \sim \frac{[\Delta r(t)]^3}{[\Delta r(0)]^3} \to 0 \quad (t\to\infty).
 \end{equation}
-where $R_\text{comov}(t)$ is the comoving size of the observable universe (which
-approaches a constant in de Sitter while $a(t) \to \infty$). Integrating over proper
-time, the 4-volume measure of the set of ``good'' events has density zero in the
-late-time limit.
-This is not a coordinate artifact. The intrinsic curvature of de Sitter space is
-constant ($R = 12H^2$), and Riemann normal coordinates exist pointwise \cite{Weinberg2008}. But the
-\textit{physical size} of the neighborhood over which those coordinates approximate
-the metric to precision $\varepsilon$ shrinks as $a(t)^{-1} \to 0$. The EEP patch
-exists; it merely occupies vanishing physical volume.
-\subsection{Breakdown II: Gravitational Collapse and Black Hole Interiors}
-The complementary failure occurs in matter-dominated regions. The Penrose--Hawking
-singularity theorems establish that, under generic energy conditions, any sufficiently
-collapsed matter distribution reaches a curvature singularity in finite proper time,
-where $R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma} \to \infty$ \cite{Penrose1965, Hawking1970, HawkingEllis1973}. For any fixed
-$L_\text{phys}$, the set of points where $R \cdot L_\text{phys}^2 \ll 1$ has
-vanishing measure inside each black hole: no finite-size inertial frame satisfies the
-EEP near the singularity.
-Over cosmological time, all bound matter funnels toward black holes: binary systems
-radiate angular momentum via gravitational waves (confirmed by LIGO) and merge;
-the long-term attractor is a hierarchy of black holes consuming all bound matter.
-The total measure of non-singular, low-curvature regions therefore also tends to zero
-as $t \to \infty$.
-\subsection{The $t \to \infty$ Bifurcation and Its Geometric Implication}
-The future of spacetime is a bifurcation into two sets, each of full measure:
+
+\subsection{Void Regions: Momentum Redshift Freezes Observers}
+
+In asymptotic de Sitter voids ($a(t) = e^{Ht}$, $H=\sqrt{\Lambda/3}=$ constant), free massive 
+particles suffer exponential peculiar momentum decay:
+\begin{equation}
+p_{\rm pec}(t) = p_0 e^{-Ht}, \quad v_{\rm pec}(t) = v_0 e^{-Ht} \to 0.
+\end{equation}
+All observers become perfectly comoving at fixed comoving coordinates $\chi_\infty$, 
+frozen relative to the Hubble flow with Hubble radius $R_H = c/H$.
+
+The EEP requires finite-size labs ($L_{\rm phys}>0$) capable of controllable internal dynamics 
+(accelerations, signals across $L_{\rm phys}$). But with $v_{\rm pec}\to 0$:
 \begin{itemize}
-    \item \textbf{Void regions} (asymptotic de Sitter): Usable inertial frames of
-    fixed size $L_\text{phys}$ occupy vanishing spatial volume fraction $f(t) \to 0$
-    exponentially.
-    \item \textbf{Collapsed regions} (black hole interiors and singularities):
-    Usable inertial frames occupy vanishing measure near each singularity.
+\item No relative motion between test masses ($\Delta v < \varepsilon L_{\rm phys}/\tau_{\rm lab}$).
+\item No ability to accelerate or send signals across finite distances in finite proper time.
+\item EEP ``inertial patch'' shrinks below $L_{\rm phys}$.
 \end{itemize}
-The interface between these two sets---the event horizons and their descendants---
-carries the remaining positive measure. Because no smooth manifold can accommodate a
-boundary whose every point is simultaneously the limit of superluminal expansion on
-one side and infinite curvature on the other while preserving finite-size inertial
-frames, the maximal geometric covering of this interface by causally self-contained
-regions is necessarily a \textbf{degenerate Apollonian sphere packing}
-(Section~\ref{sec:apollonian_geometry}).
-\medskip
-\noindent\textbf{Summary.} General Relativity on a smooth differentiable manifold
-remains formally valid pointwise everywhere and always. Yet the 4-volume measure of
-the set of events at which its foundational assumption---the existence of a
-finite-size, laboratory-precision EEP neighborhood---holds with physical accuracy
-vanishes almost everywhere as $t \to \infty$. This is not a pathology to be patched;
-it is a signal that the smooth-manifold description is only an effective theory whose
-domain of applicability shrinks to a set of measure zero. The structure that replaces
-it at the dense--sparse interface is the subject of the remainder of this paper.
+
+Define
+\begin{equation}
+F_{\rm void}(\text{lab at }t; L_{\rm phys}, \varepsilon) =
+\begin{cases}
+1 & \text{if lab sustains EEP dynamics ($v_{\rm pec}(t) > \varepsilon L_{\rm phys}/\tau_{\rm lab}$)}, \\
+0 & \text{if frozen comoving (no internal motion)}.
+\end{cases}
+\end{equation}
+Then $F_{\rm void}(t_{\rm finite})=1$ but $\lim_{t\to\infty} F_{\rm void}=0$. The spatial 
+volume fraction of valid EEP labs scales as
+\begin{equation}
+f_{\rm void}(t) \sim \left(\frac{v_{\rm pec}(t) \tau_{\rm lab}}{L_{\rm phys}}\right)^3 \sim e^{-3Ht} \to 0.
+\end{equation}
+
+\subsection{The $t\to\infty$ Bifurcation}
+
+Spacetime bifurcates into complementary failure modes, each yielding $F=0$:
+\begin{itemize}
+\item \textbf{Bound regions (SdS/static patches)}: $\Delta r_{\rm phys}\to 0$ via collapse, $f_{\rm collapse}\to 0$.
+\item \textbf{Void regions (de Sitter)}: $v_{\rm pec}\to 0$ via redshift freeze, $f_{\rm void}\to 0$.
+\end{itemize}
+
+The global EEP indicator is
+\begin{equation}
+F_{\rm EEP}(\text{event }p; L_{\rm phys}, \varepsilon) =
+\begin{cases}
+1 & \text{if $p$ admits finite-size lab ($L_{\rm phys}$, precision $\varepsilon$) with controllable dynamics}, \\
+0 & \text{otherwise}.
+\end{cases}
+\end{equation}
+On proper-time slices $\Sigma_t$ for comoving observers, the 4-volume measure obeys
+\begin{equation}
+\int_{\Sigma_t} F_{\rm EEP} \, \sqrt{-g} \, d^3x \to 0 \quad (t\to\infty),
+\end{equation}
+almost everywhere. Pointwise Riemann normal coordinates exist, but their physical domain shrinks to measure zero.
+
+\subsection{The ``1=0'' Pathology}
+
+Pure GR on a smooth manifold remains formally consistent: smooth metrics, valid Einstein PDEs, pointwise EEP. 
+Yet the physically relevant content -- finite labs ($L_{\rm phys}>0$, $\varepsilon>0$ fixed) performing 
+experiments -- exhibits a discontinuous jump:
+\begin{equation}
+F_{\rm finite}(t; L_{\rm phys},\varepsilon) = 1 \quad \to \quad \lim_{t\to\infty} F(t; L_{\rm phys},\varepsilon) = 0.
+\end{equation}
+This functional discontinuity signals that classical GR's domain of physical applicability 
+(EEP labs) occupies vanishing 4-volume measure in the infinite-time limit.
+
+The interface between collapse and void regions -- event horizons and descendants -- carries 
+the remaining structure. No smooth manifold covers this boundary while preserving finite-size 
+EEP labs, necessitating a degenerate Apollonian sphere packing (Section~\ref{sec:apollonian_geometry}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Boundary as Degenerate Apollonian Sphere Packing}
