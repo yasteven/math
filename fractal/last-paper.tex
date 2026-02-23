@@ -25,9 +25,8 @@
 \begin{document}
 \maketitle
 \pagestyle{plain}
-\footnote{In the companion popular book \textit{Universal Fractality} we use a cleaner notation: $\Su{1}{A}$ for atom at the scale above, $\Sd{1}{G}$ for galaxy at the scale below, and $\Sd{1}{V}$ for succ-space. The present v1 retains the familiar $\pm$ style for immediate readability; v2 will convert throughout.}
 \begin{abstract}
-We propose the Fractal Substrate Equivalence Physics (FSEP), a geometric framework in which spacetime is modeled as an infinite recursive degenerate Apollonian sphere packing of dense and sparse regions. We argue that in spacetimes evolving toward $t \to \infty$, the global domain of validity of the Einstein Equivalence Principle (EEP) contracts to measure zero, forcing a breakdown of smooth-manifold descriptions at the dense–sparse interface. The maximal geometric covering of this interface is an Apollonian sphere packing, which we take as fundamental rather than emergent.
+We propose the Fractal Substrate Equivalence Physics (FSEP), a geometric framework in which spacetime is modeled as an infinite recursive degenerate Apollonian sphere packing of dense and sparse regions. We argue that in spacetimes evolving toward $t \to \infty$, the global domain of validity of the Einstein Equivalence Principle (EEP) contracts to measure zero, forcing a breakdown of smooth-manifold descriptions at the dense--sparse interface. The maximal geometric covering of this interface is an Apollonian sphere packing, which we take as fundamental rather than emergent.
 
 At each tangency boundary, physical evolution is governed by spherical inversion, a M\"obius transformation, a discrete scale flip $r \mapsto r/\lambda$ (with $\lambda \gg 1$), and strict angular-momentum conservation. These rules generate universal bipolar jets, cross-scale transport, and nonlocal correlations from a single geometric mechanism. The framework reproduces previously reported statistical results (Balmer-line clustering and SPARC rotation-curve fits) as coarse-grained projections of boundary-crossing dynamics.
 
@@ -78,8 +77,9 @@ at the singularity in finite proper time $\tau$, so the physical radial separati
 satisfies
 \begin{equation}
 \lim_{\tau\to\tau_{\rm sing}}\Delta r_{\rm phys}(\tau)=0,\qquad
-\Delta r = r_{\rm c}-r_{\rm BH}\sim\sqrt{3/\Lambda}-2GM.
+\Delta r = r_{\rm c}-r_{\rm BH},
 \end{equation}
+a finite function of $(M,\Lambda)$; for small $M$ one has $\Delta r\approx\sqrt{3/\Lambda}-2GM$.
 Define the indicator functional:
 \begin{equation}
 F_{\rm collapse}(\mathcal{R},t;L_{\rm phys},\varepsilon)=
@@ -132,7 +132,8 @@ The $t\to\infty$ state partitions spacetime into superluminally expanding voids 
 gravitationally collapsed interiors, causally disconnected by their respective
 horizons. The maximal covering of this partition by closed spheres---each lying
 entirely within one region, tangent to spheres of the opposite type at the shared
-boundary---is precisely an \textbf{Apollonian sphere packing}:
+boundary---can be modeled as a degenerate \textbf{Apollonian sphere packing} which
+maximizes coverage under these constraints:
 \begin{itemize}
 \item \textbf{Dense spheres} (collapsed/matter-dominated): gravitationally bound
     structures enclosed within their own gravitational horizon.
@@ -225,8 +226,8 @@ the effect arises from scale-shifted plasma structure.
 \item \textbf{Particle ontology is reinterpreted.}
 Electrons, protons, and photons are stable fractal boundary configurations:
 long-lived M\"obius pole structures within the recursive packing.
-What appears as “discrete particle” at one scale is a boundary-crossing
-event or dense–sparse configuration at another.
+What appears as ``discrete particle'' at one scale is a boundary-crossing
+event or dense--sparse configuration at another.
 
 \item \textbf{Black-hole solutions in GR}
 correspond to extreme dense-boundary configurations in FSEP.
@@ -247,8 +248,10 @@ defined algebraic transformation.
 The fundamental geometry is the infinite recursive 3D Apollonian sphere packing in
 Euclidean $\mathbb{R}^3$. Empty space has no intrinsic properties; only tangencies
 and conserved angular momentum exist.
+
 The curvature $k_5$ of a fifth sphere tangent to four mutually tangent spheres
-(Descartes--Soddy relation):
+(Descartes--Soddy relation), where $k_i = 1/r_i$ are the curvatures and $C_i$ the
+centers:
 \begin{equation}
 k_5 = k_1+k_2+k_3+k_4 \pm 2\sqrt{\sum_{i<j}k_i k_j},\qquad
 |C_5-C_i|=|r_5\pm r_i|.
@@ -369,10 +372,10 @@ vacuum at speed $c$, lands on another $S{=}+1$ atom (another galaxy from our
 perspective), and emerges from that galaxy's jets. The void between galaxies at
 $S{=}0$ is the $S{=}+1$ transmission medium through which stars travel as photons.
 This correspondence is exact under the scale transformation defined in Section~\ref{sec:mobius}.
-The ejected plasma carries the dominant fuel composition of its parent galaxy, 
+The ejected plasma carries the dominant fuel composition of its parent galaxy,
 as prescribed by the Fuel Inheritance Principle---mixing with local
 halo plasma upon arrival and coalescing into new stars whose spectral type reflects
-this blended inheritance in the destination galaxy's halo
+this blended inheritance in the destination galaxy's halo.
 \subsection{The M\"{o}bius Inversion at the Fractal Boundary}
 \label{sec:mobius}
 The incoming stellar plasma arrives at the galactic core through a finite entry
@@ -402,7 +405,7 @@ predictions.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Tensions Resolved}
 \subsubsection{The Incompatibility of Quantum Mechanics and General Relativity}
-Within this framework, the tension is reinterpreted as arising from differing domains of validity. 
+Within this framework, the tension is reinterpreted as arising from differing domains of validity.
 QM describes the fractal's behavior near the dense substrate boundary (atomic scales); GR describes it in the smooth interior of
 large sparse or dense regions (cosmological and stellar scales). Neither is valid at
 the fractal boundary itself, where the Wada basin topology (every boundary point is
@@ -425,13 +428,13 @@ rotation-curve fits in \cite{FSEP-I} are statistical approximations to this
 boundary-friction mechanism; the exact functional form is derivable from
 eq.~\eqref{eq:soddy} and eq.~\eqref{eq:Lcons}, and is the subject of the
 companion computational analysis in Paper III.
-The theory asserts: observed spectral lines are not eigen-energies of an isolated
-atom. They are the resonant ejection frequencies of stellar plasma crossing the
-M\"obius boundary, quantized by angular-momentum conservation at the specific
-$\lambda_{\rm local}$ of that atomic species. Each element's spectrum is derivable
-from the orbital velocity of its corresponding fractal-layer galaxy, corrected for
-local fluid density and fuel type---a zero-parameter prediction of the full periodic
-table from galactic dynamics, as outlined in \cite{FSEP-I} Section 5.4.2.
+The theory suggests a route to predicting observed spectral lines as the resonant
+ejection frequencies of stellar plasma crossing the M\"obius boundary, quantized by
+angular-momentum conservation at the specific $\lambda_{\rm local}$ of that atomic
+species. Each element's spectrum would then be derivable from the orbital velocity of
+its corresponding fractal-layer galaxy, corrected for local fluid density and fuel
+type. The derivation for hydrogen and helium, as outlined in \cite{FSEP-I}
+Section 5.4.2, provides an initial test of this correspondence.
 \subsubsection{Dark Matter, Electron Clouds, and Void Substrate}
 \label{sec:darkmatter}
 In FSEP, the dark matter halo of a galaxy \textbf{is} the electron cloud of the
@@ -452,13 +455,14 @@ Rotation curves of merging systems show declining (Keplerian) outer profiles,
 consistent with Gaia DR3 data: the Milky Way's curve declines steeply beyond
 $\sim$19~kpc, reaching Keplerian by $\sim$26~kpc, and Andromeda's outer halo shows
 a factor $\sim$1.6 deficit relative to isolated-spiral predictions \cite{Jiao2023}.
-The merger is mathematically analogous to hydrogen molecular bonding under the cross-scale mapping. 
-Just as two hydrogen atoms forming H$_2$ draw their electron orbitals
-inward between the nuclei, the Milky Way and Andromeda draw their void-substrate
-halos into the shared bonding region. The depletion is therefore not symmetric:
-the facing halo edges show greater depletion than the trailing edges, exactly as
-electron density in H$_2$ is enhanced between the nuclei. The Keplerian decline in
-Gaia DR3 data is the rotation-curve signature of an H$_2$ molecule in formation.
+The merger is naturally interpreted within the cross-scale mapping as analogous to
+hydrogen molecular bonding. Just as two hydrogen atoms forming H$_2$ draw their
+electron orbitals inward between the nuclei, the Milky Way and Andromeda draw their
+void-substrate halos into the shared bonding region. The depletion is therefore not
+symmetric: the facing halo edges show greater depletion than the trailing edges,
+exactly as electron density in H$_2$ is enhanced between the nuclei. The Keplerian
+decline in Gaia DR3 data is, in this framework, the rotation-curve signature of an
+H$_2$-like bonding configuration in formation.
 \subsubsection{Bipolar Astrophysical Jets, Filament Alignment, and the Scale Ladder}
 Bipolar jets are the M\"obius-transformed poles of the isotropic stellar-plasma
 infall on the fractal surface. Their universality across all galaxy morphologies
@@ -487,7 +491,7 @@ lensing null}---a point of anomalously low lensing convergence at the geometric
 center of large supervoids. Void cores are tangent to galactic cores in the
 sphere packing. Because the void core is a distant sparse region wrapped around
 our local dense marble via the global Möbius inversion, its apparent geometry in
-our frame is toroidal (sphere × sphere topology). Void cores should therefore
+our frame is toroidal (sphere $\times$ sphere topology). Void cores should therefore
 appear as ring-like or donut-shaped lensing inversions rather than point-like
 underdensities.
 \textbf{Void-core crossing as wormhole (as seen from our layer).}
@@ -644,15 +648,15 @@ $\sim 2$~mm lies in this same spectral regime under scale compression.
 Two independent transport channels populate the $\sim2$~mm band.
 
 First, hydrogen fusion at $S=-1$ excites discrete eigenmodes of the
-$S=0$ dense–sparse boundary. The lowest-order hydrogen-compatible
+$S=0$ dense--sparse boundary. The lowest-order hydrogen-compatible
 mode lies near the observed CMB peak and is continuously driven by
 micro-stellar activity below the scale boundary.
 
 Second, in a temporally unbounded fractal substrate, photons emitted
-at $S=0$ undergo repeated interactions at dense–sparse interfaces.
+at $S=0$ undergo repeated interactions at dense--sparse interfaces.
 Each boundary crossing redistributes energy while preserving total
-angular momentum. The frequency shift follows from angular-momentum-preserving 
-radial inversion at each crossing, which rescales the effective propagation wavelength. 
+angular momentum. The frequency shift follows from angular-momentum-preserving
+radial inversion at each crossing, which rescales the effective propagation wavelength.
 Successive scatterings preferentially shift radiation
 toward the lowest-loss transparency window of the $S=0$ layer.
 That window coincides with the same $\sim2$~mm eigenmode selected
@@ -666,13 +670,29 @@ The observed blackbody spectrum reflects equilibrium between these
 bidirectional flows rather than relic radiation from a single
 primordial epoch.
 
+\medskip
+\noindent\textbf{Cosmic birefringence from boundary rotations.}
+The downward scattering channel naturally produces cosmic birefringence.
+Each dense--sparse boundary crossing applies a small polarization rotation
+$\delta\phi_i$ determined by the local M\"obius geometry $\theta' = \theta + \pi$,
+$\phi' = -\phi$ and void-core/pole orientation $\hat{u}_{\rm pole}$.
+The observed isotropic rotation angle $\beta \approx 0.3^\circ$ (Planck 2018
+TB/EB power \cite{MinamiKomatsu2020}) emerges from the cumulative effect along
+typical lines of sight. If the Apollonian packing exhibits even slight global
+parity bias in pole orientation statistics (natural for recursive sphere packings),
+$\langle\beta\rangle \neq 0$. Anisotropic $\beta(\hat{n})$ correlates with
+large-scale void/filament directions via the void-core alignment mechanism of
+Section~\ref{sec:voidcorrelations}, distinguishing this geometric origin from
+uniform axion-like fields. \textbf{Falsifier}: No correlation between reconstructed
+$\beta(\hat{n})$ maps and SDSS/DESI void catalogs rules out this
+boundary-scattering mechanism.
 
 \medskip
 \noindent\textbf{Acoustic structure.}
 The observed acoustic peaks in the angular power spectrum
 (first peak near $\ell \approx 220$ with harmonic structure and damping tail)
 are interpreted as active standing pressure modes in the present substrate,
-confined by the dense–sparse boundary geometry at multiple scales.
+confined by the dense--sparse boundary geometry at multiple scales.
 
 \medskip
 \noindent\textbf{Falsifiable spectral prediction.}
@@ -705,7 +725,8 @@ $S{=}+1$-scale object in mid-transit. Upon arrival at the destination galaxy, th
 stellar plasma is deposited into that galaxy's core---enough fuel to ignite a new
 star. \textbf{The work function is the minimum stellar fuel energy required to
 overcome the destination galaxy's fractal boundary at its specific $Z$-type
-substrate}; it is not an eigenvalue of an isolated potential well.
+substrate}; it is not an eigenvalue of an isolated potential well. In the
+low-energy limit this recovers the usual linear relation $K_{\rm max}=h\nu-\Phi$.
 The probability wave is not a mystery; it is galactic mechanics. As stellar plasma
 enters the galactic core, it smears across the core's equatorial accretion region.
 The core spins along its jet axis as successive stellar masses accumulate, imparting
@@ -785,10 +806,10 @@ future evolution from atomic physics---without free parameters.
 
 In FSEP, the scale-crossover length is a local quantity determined by
 substrate density rather than a universal constant. Regions with
-elevated dense–sparse interface density may modify effective barrier
+elevated dense--sparse interface density may modify effective barrier
 conditions for sub-scale boundary crossings.
 
-The terrestrial core–mantle boundary (CMB in the geophysical sense)
+The terrestrial core--mantle boundary (CMB in the geophysical sense)
 is a candidate high-density interface. Seismology indicates a complex,
 thermally and chemically heterogeneous layer at $\sim2900$ km depth.
 If fractal boundary density is enhanced in this region, small but
@@ -805,7 +826,7 @@ Observable consequences would include:
 \item A modest excess of terrestrial heat flux relative to purely radiogenic models.
 \item Isotopic anomalies (e.g., elevated $^3$He/$^4$He) in deep mantle plumes
 that cannot be fully explained by primordial reservoirs.
-\item Localized heavy-element enrichment near the core–mantle boundary.
+\item Localized heavy-element enrichment near the core--mantle boundary.
 \end{itemize}
 
 These effects are testable against high-resolution mantle geochemistry
@@ -912,7 +933,7 @@ crossing.
 \label{sec:conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-This work has proposed a geometric reformulation of fundamental physics based on a single structural observation: in spacetimes evolving toward $t \to \infty$, the global domain of validity of the Einstein Equivalence Principle contracts toward a set of measure zero. If smooth-manifold descriptions fail asymptotically at the dense–sparse interface, then the boundary structure itself must be taken as fundamental rather than emergent.
+This work has proposed a geometric reformulation of fundamental physics based on a single structural observation: in spacetimes evolving toward $t \to \infty$, the global domain of validity of the Einstein Equivalence Principle contracts toward a set of measure zero. If smooth-manifold descriptions fail asymptotically at the dense--sparse interface, then the boundary structure itself must be taken as fundamental rather than emergent.
 
 We have argued that the maximal geometric covering of this interface is an infinite recursive Apollonian sphere packing. Physical evolution across tangency boundaries is then governed by a precise algebraic sequence: spherical inversion, M\"obius transformation, discrete scale flip $r \mapsto r/\lambda$, and strict angular-momentum conservation. These rules constitute the full dynamical content of the Fractal Substrate Equivalence Physics (FSEP) framework.
 
@@ -924,7 +945,7 @@ The theory makes concrete, falsifiable predictions. It is excluded if correlated
 
 FSEP therefore stands or falls on observational confrontation. If the predicted boundary signatures are observed, the smooth-manifold description of spacetime must be regarded as an effective interior approximation to a deeper fractal substrate. If they are not observed, the framework is ruled out.
 
-The proposal is geometric at root: the universe is structured by recursive dense–sparse tangencies, and physical law is the algebra of crossing them.
+The proposal is geometric at root: the universe is structured by recursive dense--sparse tangencies, and physical law is the algebra of crossing them.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1003,5 +1024,8 @@ Phys.\ Rev.\ D \textbf{110}, 103540 (2024).
 \bibitem{ATLASGAL2014}
 T.~Cs\'asz\'ar \textit{et~al.},
 Astron.\ Astrophys.\ \textbf{565}, A75 (2014).
+\bibitem{MinamiKomatsu2020}
+Y.~Minami and E.~Komatsu,
+Phys.\ Rev.\ Lett.\ \textbf{125}, 221301 (2020).
 \end{thebibliography}
 \end{document}
