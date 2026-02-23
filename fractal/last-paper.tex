@@ -9,6 +9,16 @@
 \usepackage{mdframed}
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
 
+% -------------------------------------------------------
+% FSEP Scale Notation
+% Upward scales: capital S with number AFTER (right subscript)  \Su{1}{A} -> S_1 A
+% Downward scales: number BEFORE small s (pre-subscript)        \Sd{1}{G} -> _1 s G
+\newcommand{\Su}[2]{\mathrm{S}_{#1}\mathrm{#2}}
+\newcommand{\Sd}[2]{{}_{#1}\mathrm{s}\mathrm{#2}}
+% Convenience shorthands
+\newcommand{\Szero}{\mathrm{S}_0}   % our scale
+% -------------------------------------------------------
+
 \title{\textbf{The Fractal Substrate Equivalence Physics}\\[0.5em]
 \large Exiting the Fractal Atom Through the Galactic Core\\[0.2em]
 M\"obius Transformation at Fractal Tangencies}
@@ -19,6 +29,8 @@ M\"obius Transformation at Fractal Tangencies}
 \begin{document}
 \maketitle
 \pagestyle{plain}
+
+\footnote{In the companion popular book \textit{Universal Fractality} we use a cleaner notation: $\Su{1}{A}$ for atom at the scale above, $\Sd{1}{G}$ for galaxy at the scale below, and $\Sd{1}{V}$ for succ-space. The present v1 retains the familiar $\pm$ style for immediate readability; v2 will convert throughout.}
 
 \begin{abstract}
 The Fractal Substrate Equivalence Physics (FSEP) asserts that the fundamental
@@ -52,10 +64,30 @@ a single mechanism. Fourth, cross-void quasar correlations with lags scaling
 \textit{linearly} with void diameter establish a true cosmic distance ladder resolving
 the Hubble tension. Fifth, the CMB is identified as the ongoing resonant blackbody
 emission and acoustic vibration spectrum of the fractal hydrogen plasma substrate in
-which we are immersed. The apparent \textit{Big Bang}. is a local stellar ejection event at
+which we are immersed. The apparent \textit{Big Bang} is a local stellar ejection event at
 $S{=}+1$---the nucleosynthesis explosion that seeded our hydrogen clump---not a
 global cosmic origin or singular expansion.
 \end{abstract}
+
+\medskip
+\begin{mdframed}[backgroundcolor=gray!10]
+\textbf{Notation at a Glance.}
+Everything is described from our everyday human scale $\Su{0}{}$.\\[2pt]
+\begin{tabular}{@{}ll@{\qquad}ll@{}}
+$\Su{0}{G}$ & our galaxy &
+$\Su{1}{A}$ & atom at the scale above \\
+$\Su{0}{L}$ & our star / light &
+$\Su{1}{p}$ & photon at the scale above \\
+$\Su{0}{A}$ & our atom &
+$\Sd{1}{G}$ & galaxy at the scale below \\
+$\Su{0}{p}$ & our photon &
+$\Sd{1}{L}$ & star at the scale below \\
+$\Su{0}{V}$ & our vacuum &
+$\Sd{1}{V}$ & succ-space (extra-empty void one layer down) \\
+\end{tabular}\\[4pt]
+\textit{Rule:} capital \textbf{S} + number \textit{after} = one layer \textbf{up} (larger scale);
+number \textit{before} small \textbf{s} = one layer \textbf{down} (smaller scale).
+\end{mdframed}
 
 \tableofcontents
 \newpage
@@ -75,11 +107,6 @@ ds^2 = -\!\left(1 - \frac{2GM}{r} - \frac{\Lambda r^2}{3}\right)dt^2
 The horizons are roots of $f(r)=1-\tfrac{2GM}{r}-\tfrac{\Lambda r^2}{3}=0$, with
 $r_{\rm BH}<r_{\rm c}$ defining the static patch $r_{\rm BH}<r<r_{\rm c}$ where
 $f(r)>0$.
-
-Standard cosmology's tensions---QM/GR incompatibility, dark matter, flat rotation
-curves, bipolar jets, the Hubble tension, JWST early galaxies, quantum
-non-locality---dissolve under FSEP. No inflation, no cosmological constant, and no
-$\Lambda$ are required.
 
 \subsection{Collapse Regions: Observers Fall to Singularities}
 In the SdS static patch, realistic observers experience orbital decay via
@@ -194,10 +221,10 @@ Axiom (i) tells you the structure they move through.
 
 \begin{mdframed}
 \textbf{Fuel Inheritance Principle (New Axiom):}
-Stellar plasma ejected from one galaxy (atom) at $$   S{=}+1   $$ becomes fuel for the
-next. The $$   S{=}+1   $$ transit appears instantaneous from $$   S{=}0   $$ due to scale-factor
-speed-up: $$   \Delta t_{S=0} = D_{\rm void}/c_{S+1} \cdot (\lambda_{S+1}/\lambda_{S=0})   $$,
-where $$   \lambda \gg 1   $$ compresses the observed lag far below the $$   S{=}0   $$ light-travel
+Stellar plasma ejected from one galaxy (atom) at $S{=}+1$ becomes fuel for the
+next. The $S{=}+1$ transit appears instantaneous from $S{=}0$ due to scale-factor
+speed-up: $\Delta t_{S=0} = D_{\rm void}/c_{S+1} \cdot (\lambda_{S+1}/\lambda_{S=0})$,
+where $\lambda \gg 1$ compresses the observed lag far below the $S{=}0$ light-travel
 time across the void. The cycle is fully causal and conserved. Crucially, the
 \textbf{fuel composition} of the ejected plasma imprints directly onto the recipient
 galaxy's micro-star population, determining its dominant stellar fuel type, spectral
@@ -310,11 +337,9 @@ Star--photon--star loop across one void:
 E'=E\cdot(r_{\rm out}/r_{\rm in}).
 \label{eq:loop}
 \end{align}
-
-These equations and the three co-axioms constitute the complete engine of FSEP. All
-predictions follow from substituting local geometry into \eqref{eq:Lcons}--\eqref{eq:loop}.
-The time dilation from $S{=}+1$'s $c$ makes coalescence and jet ejection appear
-instantaneous from $S{=}0$, preserving causality at every rung of the scale ladder.
+These equations and the three co-axioms constitute the complete engine of FSEP.
+All predictions follow from substituting local geometry into \eqref{eq:Lcons}--\eqref{eq:loop}. 
+The $S{=}+1$ transit time $\tau=D_{\rm void}/c_{S{=+1}}$ is finite at every layer (speed of light finite per rung), but scale-factor compression $\Delta t_{S=0}\propto(D_{\rm void}/c_{S{=+1}})\cdot(\lambda_{S{=+1}}/\lambda_{S=0})$ with $\lambda\gg1$ renders coalescence and jet ejection effectively instantaneous from $S{=}0$, preserving causality while producing void-diameter-dependent lags $\tau_{\rm obs}\propto D_{\rm void}$ observable in paired quasar correlations. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Physical Picture: Rain, Skylights, and the Oneness of Infall}
@@ -337,6 +362,7 @@ Each $S{=}{-1}$ star generates its own $S{=}{-1}$ sparse substrate, which is
 $S{=}{-2}$ photons/plasma. The pressure gradient is therefore fractal in depth:
 it is not a surface phenomenon but a nested stack of inward-pulling densities at
 every scale below. The prediction this generates for motion through void-substrate
+(succ-space $= \Sd{1}{V}$, the extra-empty successor vacuum one layer down)
 is developed as a named conjecture in Section~\ref{sec:succ_space}.
 
 \subsection{The Skylight That Wraps Into a Marble}
@@ -390,9 +416,10 @@ vacuum at speed $c$, lands on another $S{=}+1$ atom (another galaxy from our
 perspective), and emerges from that galaxy's jets. The void between galaxies at
 $S{=}0$ is the $S{=}+1$ transmission medium through which stars travel as photons.
 This is not a correspondence; it is the same event described from adjacent rungs of
-the scale ladder. The ejected plasma carries the fuel composition of its parent
-galaxy, as prescribed by the Fuel Inheritance Principle---coalescing into new
-stars of the same type in the destination galaxy's halo.
+the scale ladder. The ejected plasma carries the dominant fuel composition of its 
+parent galaxy, as prescribed by the Fuel Inheritance Principle---mixing with local
+halo plasma upon arrival and coalescing into new stars whose spectral type reflects 
+this blended inheritance in the destination galaxy's halo
 
 \subsection{The M\"{o}bius Inversion at the Fractal Boundary}
 \label{sec:mobius}
@@ -469,14 +496,14 @@ table from galactic dynamics, as outlined in \cite{FSEP-I} Section 5.4.2.
 In FSEP, the dark matter halo of a galaxy \textbf{is} the electron cloud of the
 $S{=}0$ atom. This is not analogy. The outer sparse Apollonian layer surrounding
 the dense galactic disk is composed of two components: void substrate at $S{=}{-1}$
-(succ-space: one-layer-down emptiness), and cooled $S{=}{-1}$ stellar plasma---the
-fuel residue of photons that have lost too much energy to traverse voids at $c$ and
-have instead settled into the halo region. Neither component is visible at $S{=}0$:
-the cooled plasma does not release $S{=}0$ photons because its interactions occur
-entirely at $S{=}{-1}$, and the void substrate by definition emits nothing at our
-scale. Their gravitational influence on $S{=}0$ orbital dynamics is real, however,
-and constitutes what we observe as the dark matter halo. The physical mechanism by
-which this produces the observed rotation curve anomalies is developed in
+(succ-space $\Sd{1}{V}$: one-layer-down emptiness), and cooled $S{=}{-1}$ stellar
+plasma---the fuel residue of photons that have lost too much energy to traverse voids
+at $c$ and have instead settled into the halo region. Neither component is visible
+at $S{=}0$: the cooled plasma does not release $S{=}0$ photons because its
+interactions occur entirely at $S{=}{-1}$, and the void substrate by definition emits
+nothing at our scale. Their gravitational influence on $S{=}0$ orbital dynamics is
+real, however, and constitutes what we observe as the dark matter halo. The physical
+mechanism by which this produces the observed rotation curve anomalies is developed in
 Section~\ref{sec:succ_space}.
 
 When galaxies merge (the Milky Way and Andromeda approach at $\sim$110~km/s and
@@ -506,9 +533,9 @@ measurements of the local scale ratio $\lambda_{\rm local}$.
 \hline
 $S$ & Physical object (our view) & Literal identity \\
 \hline
-$-1$ & Photon & Star at $S{=}{-1}$ \\
-$0$ & Human/laboratory & Boundary pivot (Wada basin) \\
-$+1$ & Galaxy & Hydrogen atom at $S{=}+1$ \\
+$-1$ & Photon ($\Sd{1}{p}$) & Star at scale below ($\Sd{1}{L}$) \\
+$0$ & Human/laboratory ($\Su{0}{}$) & Boundary pivot (Wada basin) \\
+$+1$ & Galaxy ($\Su{0}{G}$) & Hydrogen atom at scale above ($\Su{1}{A}$) \\
 \hline
 \end{tabular}
 \end{center}
@@ -521,7 +548,11 @@ curvature; the void core is the point of maximum sparse-space curvature.
 From our $S{=}0$ perspective, the void core appears as a \textbf{gravitational
 lensing null}---a point of anomalously low lensing convergence at the geometric
 center of large supervoids. Void cores are tangent to galactic cores in the
-sphere packing.
+sphere packing. Because the void core is a distant sparse region wrapped around 
+our local dense marble via the global Möbius inversion, its apparent geometry in 
+our frame is toroidal (sphere × sphere topology). Void cores should therefore 
+appear as ring-like or donut-shaped lensing inversions rather than point-like 
+underdensities.
 
 \textbf{Void-core crossing as wormhole (as seen from our layer).}
 When a star falls into a galactic core at $S{=}0$, crosses the M\"obius boundary,
@@ -723,10 +754,12 @@ the nucleosynthesis explosion that produced our hydrogen and flung it outward. W
 are embedded in the resulting intergalactic hydrogen gas puddle. This is not a
 cosmic origin; it is a local ejection event. The CMB dipole ($\Delta T/T\sim 10^{-3}$,
 $v\approx 370$~km/s toward Leo \cite{Lineweaver1996, Planck2014}) is the geometric
-arrow pointing back to that ejection event---our entire gas clump has been coasting
-outward from the parent star's position in the Milky Way ever since. In $\Lambda$CDM
-this is an unexplained coincidence; in FSEP it is the expected kinematic signature
-of hydrogen atoms carrying the memory of their origin.
+arrow pointing back to that ejection event---
+
+our entire gas clump has been coasting outward from the parent star's position in the 
+\textbf{Maxy Way} (the $S{=+1}$ galaxy---our hydrogen atom's host star source) ever since. 
+In $\Lambda$CDM this is an unexplained coincidence; in FSEP it is the expected kinematic 
+signature of hydrogen atoms carrying the memory of their origin.
 
 Observable properties (average hydrogen density, ionization state, apparent cooling)
 constrain our location within the \textbf{fractal habitable zone}---the transitional
@@ -737,21 +770,35 @@ atom/m$^3$ in the intergalactic medium, consistent with our position near the ou
 corona/void border of the $S{=}+1$ parent structure.
 
 \medskip
-\noindent\textbf{Olbers' paradox dissolved.}
-The night sky is dark at optical wavelengths because those photons are actively
-scattering through the fractal substrate, losing energy until they reach the
-transparent floor at $\sim 2$~mm. The CMB is that floor: the resonant eigenmode
-emission of the fractal layer below at the wavelength to which the $S{=}0$
-substrate is transparent.
+\noindent\textbf{Olbers' paradox dissolved -- double trouble for $\Lambda$CDM.} 
+The night sky is dark at optical wavelengths because those photons are actively 
+scattering through the fractal substrate, losing energy until they reach the 
+transparent floor at $\sim 2$~mm. Olbers' demands a fully bright starlit sky; 
+instead we see dark ``vacuum'' at optical -- yet that same ``nothing'' glows 
+precisely at 2.725~K in the CMB. Two paradoxes for the price of one: dark where 
+stars should blaze, bright where vacuum should be cold. 
+
+FSEP resolves both: the voids are filled with $S{=}{-1}$ micro-stellar hydrogen 
+plasma in resonant equilibrium -- the CMB floor is that plasma's eigenmode 
+emission at the $S{=}0$ transparent wavelength. No empty nothing, no cosmic 
+coincidence.
+
 
 \medskip
 \noindent\textbf{Falsifiable prediction (CMB distortions).}
-If PIXIE-class instruments detect CMB spectral distortions, those distortions will
-cluster at frequencies corresponding to fractal subharmonics of the 2~mm hydrogen
-recombination line, not at the $\mu$- and $y$-distortion frequencies predicted by
-$\Lambda$CDM's thermal history. If PIXIE instead detects $\mu$/$y$-distortions
-consistent with a recombination epoch, this directly falsifies the FSEP substrate-
-equilibrium interpretation of the CMB.
+If future high-sensitivity spectral-distortion missions (PIXIE-class or successors) 
+detect distortions beyond current Planck limits, FSEP predicts that any such features 
+should appear as faint signatures tied to the primary 2~mm hydrogen recombination line 
+(or its low-order subharmonics), rather than the characteristic $\mu$- and $y$-type 
+distortions expected from a $\Lambda$CDM recombination-era thermal history. Deeper 
+fractal-cascade harmonics (red-shifted by successive factors of $\lambda \gg 1$) are 
+expected to be exponentially suppressed — by factors of $\sim\lambda^n$ for $n\ge 2$ — and 
+therefore undetectable with foreseeable technology, effectively confining observable 
+distortions to the first (or at most second) resonant layer. If detected distortions 
+are found to match only the standard $\mu$/y templates with no connection to the 
+hydrogen 2~mm line family, the FSEP substrate-equilibrium interpretation of the CMB 
+would be falsified.
+
 
 \subsubsection{JWST Early Massive Galaxies}
 JWST's anomalously massive, luminous galaxies at $z>10$ \cite{Huang2024} are
@@ -797,13 +844,28 @@ $Z{+}1$ to strip it away entirely and eject the electron. The work function is
 the minimum $Z$-matched fuel energy for this stripping event, derivable from
 $\lambda_{\rm local}$ at the atomic boundary.
 
-\textit{Quantum tunneling} is a sub-scale Apollonian sphere traversing a
-dense-sparse interface via a pre-existing interstice in the Apollonian packing.
-The fractal boundary is a Wada basin: everywhere simultaneously on the boundary
-of all four neighboring regions. A sphere approaching this boundary finds, at
-sufficiently fine scales, a fractal shortcut that a smooth manifold would forbid.
-The exponential suppression of tunneling probability with barrier width is the
-exponential suppression of finding such an interstice as thickness increases.
+\subsubsection{Quantum Tunneling as a Sub-Scale Möbius Marble Crossing}
+\label{sec:tunneling}
+
+Quantum tunneling is a sub-scale Apollonian sphere traversing a dense-sparse 
+interface via a pre-existing interstice in the Apollonian packing. The fractal 
+boundary is a Wada basin: every point lies simultaneously on the boundary of all 
+four neighboring regions. A sphere approaching from the dense side therefore finds, 
+at sufficiently fine scales, a fractal shortcut that a smooth manifold would forbid. 
+The exponential suppression of tunneling probability with barrier width is the 
+exponential suppression of locating a usable interstice as thickness increases.
+
+\textbf{Galactic painting.} What appears as quantum tunneling at $S{=}0$ is
+ literally a small, off-center Möbius Marble embedded somewhere in the galactic 
+ disk (not at the central core ``front door''). This mini dense core functions as 
+ a local ``secret side door'' through the barrier. The incoming sub-scale sphere 
+ finds this nearby fractal interstice, crosses via local Möbius inversion, and 
+ emerges on the far side as an allowed trajectory. The central galactic-core 
+ Möbius Marble is the ``main door'' for large-scale infall and jets; the 
+ disk-embedded ones provide the low-probability, local shortcuts we interpret as 
+ tunneling events. The exponential suppression reflects how rapidly sparse pathways 
+ thin out away from the main symmetry axis.
+
 
 \subsubsection{Quantum and Galactic Non-Locality as Cross-Scale Causality}
 \label{sec:nonlocality}
@@ -906,13 +968,13 @@ Dense stuff sticks to dense stuff; void stuff sticks to void stuff. An $S{=}0$
 dense object (a star, a plasma ball) moving through normal $S{=}0$ vacuum
 exchanges momentum with the $S{=}{-1}$ micro-stellar plasma that fills it---standard
 inertial resistance. But consider instead a channel of \textbf{void substrate}
-(\textit{succ-space}): a region of $S{=}{-1}$ vacuum embedded inside $S{=}0$
-space. An $S{=}0$ dense object moving through succ-space therefore experiences
-dramatically lower resistance. As it moves, it displaces $S{=}0$ vacuum on its
-trailing side, and that displaced vacuum---being now in a region of higher local
-void concentration---accelerates away behind the object, acting as effective rocket
-exhaust. The object is propelled forward through the succ-space channel with lower
-energy expenditure than travel through normal $S{=}0$ vacuum.
+(\textit{succ-space} $\Sd{1}{V}$): a region of $S{=}{-1}$ vacuum embedded inside
+$S{=}0$ space. An $S{=}0$ dense object moving through succ-space therefore
+experiences dramatically lower resistance. As it moves, it displaces $S{=}0$
+vacuum on its trailing side, and that displaced vacuum---being now in a region of
+higher local void concentration---accelerates away behind the object, acting as
+effective rocket exhaust. The object is propelled forward through the succ-space
+channel with lower energy expenditure than travel through normal $S{=}0$ vacuum.
 
 This effect predicts anomalous acceleration at void boundaries---a Pioneer-like
 deviation if deep-space probes cross fractal density gradients at the edge of our
@@ -923,8 +985,9 @@ existing deep-space probe data.
 
 The theory asserts that \textbf{magnetic field lines are the directed flow of void
 substrate through aligned void-cores}. The field direction is the void-core axis;
-the field strength is the local succ-space flux density; and field line continuity
-is the Apollonian tangency condition linking void-cores along their packing geometry.
+the field strength is the local succ-space ($\Sd{1}{V}$) flux density; and field
+line continuity is the Apollonian tangency condition linking void-cores along their
+packing geometry.
 
 \textbf{Electric fields are the dual}: directed flow of dense substrate (stellar
 plasma) through aligned galactic cores at $S{=}{-1}$. Electric charge at $S{=}0$
@@ -1013,7 +1076,7 @@ not analogies; they are the same fractal objects observed from the same scale ru
 What we call gravity and what we call light are two descriptions of the same
 dense-sparse exchange viewed from opposite sides of the fractal boundary.
 Electricity is a third description: supervelocity stellar transport through
-succ-space bypassing the core boundary entirely.
+succ-space ($\Sd{1}{V}$) bypassing the core boundary entirely.
 
 The standing tensions of modern physics are not independent mysteries. They are the
 shadows cast on smooth-manifold physics by the fractal substrate beneath it. The
