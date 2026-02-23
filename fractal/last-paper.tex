@@ -8,21 +8,25 @@
 \usepackage{xcolor}
 \usepackage{mdframed}
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+
 \title{\textbf{The Fractal Substrate Equivalence Physics}\\[0.5em]
-\large Deriving $\alpha^{-1}$ from Apollonian Geometry, Scale-Crossing Dynamics,\\
-and the Cross-Void Cosmic Distance Ladder}
+\large Exiting the Fractal Atom Through the Galactic Core\\[0.2em]
+Möbius Transformation at Fractal Tangencies}
 \author{Steven E. Elliott\\
 \small \href{mailto:seeyallc6c@gmail.com}{seeyallc6c@gmail.com}}
 \date{2026}
+
 \begin{document}
+
 \maketitle
 \pagestyle{plain}
+
 \begin{abstract}
 The Fractal Substrate Equivalence Physics (FSEP) posits that spacetime's causal
 structure is fundamentally an Apollonian sphere packing, with emergent General
 Relativity and Quantum Mechanics arising as effective theories where the fractal
 averages out. We develop this framework in a single unified paper, progressing through
-five stages. First, we show that GR's foundational assumption---the Einstein
+four stages. First, we show that GR's foundational assumption---the Einstein
 Equivalence Principle (EEP)---fails globally in any spacetime evolving toward a
 $t \to \infty$ endpoint: the 4-volume measure of events admitting a finite-size
 inertial frame with laboratory accuracy goes to zero almost everywhere, as superluminal
@@ -30,18 +34,17 @@ expansion and gravitational collapse each independently shrink this measure to z
 the late-time universe. Second, the boundary between these two regimes, taken seriously
 as a geometric object, is not a smooth manifold but a \textit{degenerate Apollonian
 sphere packing}. Third, adopting this fractal structure as \textit{fundamental} rather
-than emergent, we derive the inverse fine structure constant as the phase-curvature
-norm of the minimal tetrahedral seed:
-$\alpha^{-1} = 4\pi^3 + \pi^2 + \pi \approx 137.036$ (2.2 ppm agreement with
-CODATA 2018, zero free parameters). Fourth, scale-crossing via M\"obius inversion
-produces universal bipolar jets and quantum/galactic non-locality from a single
-mechanism. Fifth, cross-void quasar time lags establish a true cosmic distance ladder
-that resolves the Hubble tension categorically, while sparse-space attraction to
-dense space unifies gravity and light as two descriptions of the same dense-sparse
-exchange viewed from opposite sides of the fractal boundary.
+than emergent, we derive the explicit boundary-crossing rules (M\"obius inversion plus
+strict angular-momentum conservation) that produce universal bipolar jets and
+quantum/galactic non-locality from a single mechanism. Fourth, cross-void quasar time lags
+establish a true cosmic distance ladder that resolves the Hubble tension categorically,
+while sparse-space attraction to dense space unifies gravity and light as two descriptions
+of the same dense-sparse exchange viewed from opposite sides of the fractal boundary.
 \end{abstract}
+
 \tableofcontents
 \newpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Domain of Validity of the Einstein Equivalence Principle Shrinks to Measure Zero as $t \to \infty$}
 \label{sec:eep}
@@ -131,6 +134,7 @@ vanishes almost everywhere as $t \to \infty$. This is not a pathology to be patc
 it is a signal that the smooth-manifold description is only an effective theory whose
 domain of applicability shrinks to a set of measure zero. The structure that replaces
 it at the dense--sparse interface is the subject of the remainder of this paper.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Boundary as Degenerate Apollonian Sphere Packing}
 \label{sec:apollonian_geometry}
@@ -220,110 +224,75 @@ from which all dynamics follow:
 Axiom (ii) tells you where things go. Axiom (iii) tells you how they get there.
 Axiom (i) tells you the structure they move through.
 \end{mdframed}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The Fine Structure Constant from Apollonian Phase-Space Geometry}
-\label{sec:fsc}
+\section{Core Equations of the Fractal Scale Equivalence Principle}
+\label{sec:core_equations}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{The Minimal Tetrahedral Seed in a Fractal Substrate}
+The fundamental geometry is the infinite recursive 3D Apollonian sphere packing in Euclidean $\mathbb{R}^3$ (empty space has no intrinsic properties; only tangencies and conserved angular momentum exist).
 
-The minimal generating unit of the 3D Apollonian fractal substrate is the tetrahedral
-seed: four mutually tangent spheres arranged at the vertices of a regular tetrahedron,
-with a fifth sphere inscribed in the central void. The seed possesses full tetrahedral
-symmetry $T_d \simeq S_4$ (order 24), with rotational subgroup $A_4$ (order 12).  
-
-Embedding this seed into the 6-dimensional symplectic phase space $(\mathcal{P},\omega)$
-with coordinates $(q^i, p_i)$, $i=1,2,3$ for the collective center-of-mass motion, the
-holonomic tangency constraints induce an orthogonal block decomposition:
+The curvature $k_5$ of a sphere tangent to four mutually tangent spheres is
 \begin{equation}
-T\mathcal{P} \;\simeq\; T_6 \oplus T_4 \oplus T_2,
+k_5 = k_1 + k_2 + k_3 + k_4 \pm 2\sqrt{\sum_{i<j} k_i k_j}, \qquad
+|C_5 - C_i| = |r_5 \pm r_i|.
+\label{eq:soddy}
 \end{equation}
-corresponding to translational, rotational, and residual directional sectors.  
 
-Crucially, each sector's effective measure is bounded and correlated by the surrounding
-fractal substrate. Translational motion is restricted by the external Apollonian packing:
-moving one seed sphere outward forces compensatory motion of the others to preserve
-tangency with neighboring fractal spheres. Rotational and directional freedoms are
-similarly constrained by symmetry and the dense--sparse boundary geometry.  
+Scale coordinate (observer locked at $s=0$):
+\begin{equation}
+r(s) = r_0 \lambda^s, \qquad \lambda \gg 1.
+\label{eq:scale}
+\end{equation}
 
-\subsection{Symmetry-Averaged Unit-Shell Measures}
+Local density at scale $s$ inside volume $V$:
+\begin{equation}
+\delta(V) = \frac{\sum_{\text{subspheres inside }V,\, s_{\rm sub}<s} r_{\rm sub}}{\mathrm{Vol}(V)}.
+\label{eq:density}
+\end{equation}
+Dense core when $\delta(V)\ge\delta_{\rm crit}(s)$ (infall dominates). Sparse/void core when $\delta(V)<\delta_{\rm crit}(s)$.
 
-Let $S_n$ be the surface area of the unit $(n-1)$-sphere in $\mathbb{R}^n$. The
-correlated and symmetry-averaged measures of the seed are:
-
+At every tangency boundary of radius $R$, center $O$:
 \begin{enumerate}
-    \item \textbf{6D translational sector.} Four spheres contribute their $S_6$
-    translational shells, symmetry-averaged over the $T_d$ orbit to account for
-    fractal correlations:
-    \begin{equation}
-    \mu_{\mathrm{trans}} = \frac{4 \, S_6}{|T_d|} = \frac{4 \pi^3}{24} = \frac{\pi^3}{2}.
-    \end{equation}
-
-    \item \textbf{4D rotational sector.} Angular momentum resides on $S^3 \subset \mathbb{R}^4$.
-    The double cover $SU(2) \to SO(3)$ and the even-permutation subgroup $A_4$ reduce
-    the independent rotational measure:
-    \begin{equation}
-    \mu_{\mathrm{rot}} = \frac{S_4}{|A_4|/2} = \frac{8 \pi^2}{12} = \frac{2 \pi^2}{3}.
-    \end{equation}
-
-    \item \textbf{2D directional sector.} Chirality along a residual axis with
-    bidirectional $\pm$ symmetry:
-    \begin{equation}
-    \mu_{\mathrm{dir}} = \frac{S_1}{2} = \pi.
-    \end{equation}
+\item Spherical inversion:
+\begin{equation}
+\mathbf{r}' = O + \frac{R^2 (\mathbf{r} - O)}{|\mathbf{r}-O|^2}.
+\end{equation}
+\item M\"obius map on sphere: $\theta' = \theta + \pi$, $\phi' = -\phi$.
+\item Scale flip:
+\begin{equation}
+\mathbf{r}'' = 
+\begin{cases}
+\mathbf{r}' / \lambda & \text{(dense $\to$ sparse)}\\
+\mathbf{r}' \times \lambda & \text{(sparse $\to$ dense)}.
+\end{cases}
+\end{equation}
+\item Strict conservation of angular momentum $\mathbf{L} = \mathbf{r} \times \mathbf{p}$ w.r.t.\ $O$:
+\begin{equation}
+\mathbf{L}' = \mathbf{r}'' \times \mathbf{p}' = \mathbf{L} \quad\Rightarrow\quad
+\mathbf{p}'_\perp = \mathbf{p}_\perp \frac{|\mathbf{r}|}{|\mathbf{r}''|}.
+\label{eq:Lcons}
+\end{equation}
 \end{enumerate}
 
-These values explicitly account for correlations enforced by the fractal substrate
-and symmetry reductions.
-
-\subsection{Phase-Curvature Invariant and $\alpha^{-1}$}
-
-The phase-curvature invariant of the seed is the squared Euclidean norm:
+Jet ejection along void-tangent poles $\hat{u}_{\rm pole}$:
 \begin{equation}
-\mathcal{I}_{\mathrm{seed}} = \mu_{\mathrm{trans}}^2 + \mu_{\mathrm{rot}}^2 + \mu_{\mathrm{dir}}^2
-= \left(\frac{\pi^3}{2}\right)^2 + \left(\frac{2 \pi^2}{3}\right)^2 + \pi^2.
-\end{equation}
-Numerically, this gives:
-\begin{equation}
-\mathcal{I}_{\mathrm{seed}} \approx 137.036,
-\end{equation}
-in excellent agreement with the CODATA 2018 value $\alpha^{-1} = 137.035999084(21)$,
-with zero free parameters.
-
-\subsection{Physical Interpretation via the Fractal Substrate}
-
-\begin{itemize}
-    \item Translational correlations arise because each seed sphere is bounded by neighboring
-    Apollonian spheres (the dense--sparse boundary).  
-    \item Rotational and directional measures are constrained by $T_d$ and $A_4$ symmetries,
-    as well as the M\"obius inversion at the fractal boundary (see Section~\ref{sec:mobius}).  
-    \item Only symmetry-averaged measures survive; the seed’s phase-space volume is fully
-    determined by geometry, not adjustable parameters.
-\end{itemize}
-
-\subsection{Identification with Electromagnetic Coupling}
-
-In the emergent $U(1)$ gauge theory from dense--sparse interactions at the Apollonian
-seed scale, the Yang--Mills kinetic term normalization identifies with the total
-phase-space curvature. Hence:
-\begin{equation}
-\boxed{\alpha^{-1} = \mathcal{I}_{\mathrm{seed}} \approx 137.036.}
+\mathbf{v}' = c\,\hat{u}_{\rm pole} \qquad (\text{dense}\to\text{sparse ejection}).
 \end{equation}
 
-\subsection{Oblateness Correction and Residual 2 ppm}
+Star--photon--star loop across one void core:
+\begin{align}
+\Delta t &= D_{\rm void}/c, &
+\mathbf{L}_{\rm global} &= \text{constant}, &
+E' &= E \cdot (r_{\rm out}/r_{\rm in}).
+\label{eq:loop}
+\end{align}
 
-Real Apollonian spheres (e.g., stars) are slightly oblate. Conserved angular momentum
-redistributes across equatorial bulges, suppressing the 4D rotational norm $\mu_{\mathrm{rot}}^2$ slightly:
-\begin{equation}
-\alpha^{-1} = \mathcal{I}_{\mathrm{seed}} + \Delta_{\mathrm{spin}}, \qquad
-\Delta_{\mathrm{spin}} \sim -3 \times 10^{-4},
-\end{equation}
-yielding $\alpha^{-1} \approx 137.035699$, consistent within 2.2 ppm of CODATA.
+These equations, together with the three co-axioms (fractal fundamental, sparse attracted to dense, $\mathbf{L}$ conserved), constitute the complete microscopic engine of FSEP. All predictions follow directly from substituting local geometry into \eqref{eq:Lcons}--\eqref{eq:loop}.
 
-The sign and magnitude follow directly from the fractal packing geometry and the
-symmetry-enforced rotational constraints, with no adjustable parameters.
+(The simple photonic-billiards model is the stochastic Monte-Carlo implementation of the same rules inside each Apollonian ``BIG BALL'' $B_s$.)
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{The Physical Picture: Rain, Skylights, and the Oneness of Infall}
 \label{sec:picture}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -354,7 +323,7 @@ patch of radius $a$ over which the boundary appears locally flat; the Apollonian
 curvature of radius $R \gg a$ becomes non-negligible beyond this aperture. The photon,
 arriving at this curved boundary, does not pass straight through. The boundary
 \textit{wraps} the incoming photon's trajectory around itself via the M\"obius inversion
-that occurs at every fractal scale crossing (see Section~\ref{sec:mobius}).
+that occurs at every fractal scale crossing (see Section~\ref{sec:core_equations}).
 \medskip
 To make this concrete with an image:
 \begin{quote}
@@ -387,8 +356,8 @@ substrate picture, it is something more:
 \begin{quote}
 The stars racing toward the galactic center are attempting to exit their own
 Apollonian scale---to cross the dense-sparse boundary and enter the rest of the
-universe, just as all photons race outward from atoms to get into the rest of
-the universe.
+universe, just as all photons race outward from atoms to get into the rest of the
+universe.
 \end{quote}
 This is not a metaphor. It is the same geometric motion at a different scale. At the
 atomic scale, the dense substrate (nucleus, electron shells) emits photons (sparse
@@ -416,7 +385,8 @@ at the fractal boundary inverts the topology of the local neighborhood.
 \subsection{The M\"{o}bius Inversion at the Fractal Boundary}
 \label{sec:mobius}
 The precise geometric mechanism of scale crossing is M\"obius inversion across the
-dense--sparse boundary. An observer at maximum angular momentum of their fractal scale
+dense--sparse boundary, implemented by the core transformation rules of Section~\ref{sec:core_equations}.
+An observer at maximum angular momentum of their fractal scale
 approaches the boundary at limiting speed and experiences a topology change: the
 locally flat differential plane maps onto a Riemann sphere $S^2$.
 The incoming photon rain arrives through a finite entry aperture of radius $a$ (the
@@ -424,10 +394,7 @@ lateral extent over which the interface appears flat), subtending half-angle $\t
 at the sphere center of radius $R$:
 \begin{equation}
 \sin\theta = \frac{a}{R},\qquad \theta = \arcsin\!\left(\frac{1}{\lambda_\text{local}}\right),
-\qquad \lambda_\text{local} \equiv \frac{R}{a}.\footnote{$\lambda_\text{local}$ is
-fixed by the local Apollonian packing geometry, or equivalently by spectral ratios
-across one fractal step (e.g., H$\alpha$ frequency alignment for galactic-scale
-systems).}
+\qquad \lambda_\text{local} \equiv \frac{R}{a}.
 \end{equation}
 M\"obius wrapping maps this cone to a bipolar jet of opening angle:
 \begin{equation}
@@ -457,6 +424,7 @@ transformation being exact (the boundary being a sphere, not a plane) is the
 geometric consequence of this divergence: when both sides of the interface have
 infinite effective mass, the boundary has no preferred local direction, and the
 curvature of the boundary is uniform---i.e., it is a sphere.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Physical Tensions Resolved and Predictions Made}
 \label{sec:tensions}
@@ -795,8 +763,7 @@ entirely. The electron is ejected. This is identical in structure to the AGN jet
 stripping a galaxy's dark matter halo: high-energy incoming sparse flux disrupting
 the outer dense-sparse boundary and expelling it outward. The threshold energy
 (work function) corresponds to the minimum fractal boundary crossing energy at the
-atomic scale, which the FSEP predicts should be derivable from $\alpha$ and the
-atomic-scale $\lambda_\text{local}$.
+atomic scale, which the FSEP predicts should be derivable from the local $\lambda_\text{local}$.
 \textit{Quantum tunneling} is the fractal-substrate analogue of a black hole that
 is not the central quasar. In standard quantum mechanics, a particle ``tunnels''
 through a classically forbidden barrier with a probability that falls exponentially
@@ -856,12 +823,6 @@ methods. For M87*-class systems with $\lambda_\text{local} \sim 20$--$25$, the
 predicted range is $\theta_\text{jet} \approx 4.6^\circ$--$5.7^\circ$, consistent
 with observations. The prediction is falsifiable for any system where both quantities
 can be independently constrained.
-\subsubsection{The Fine Structure Constant Correction}
-The oblateness correction $\Delta_{\rm spin}$ to $\alpha^{-1}$ should be derivable
-from the Apollonian packing exponent $\delta_6 \approx 5.76$ and the tetrahedral
-symmetry factor. If the correction can be derived analytically and produces the 2 ppm
-residual without free parameters, this would constitute the first purely geometric
-derivation of the fine structure constant.
 \subsubsection{Scale-Independent Atomic Analogue Classification}
 Every gravitationally bound structure in the universe should be classifiable as one
 of a small number of fractal atomic analogues (excited hydrogen, ground-state hydrogen,
@@ -940,6 +901,7 @@ This is the most speculative element of the FSEP framework as currently develope
 It is included here as a structural conjecture---the fractal analogy demands it---
 with the explicit acknowledgment that quantitative derivation of the ejection energy,
 mass threshold, and timescale from Apollonian geometry remains future work.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -949,12 +911,10 @@ Einstein Equivalence Principle holds with laboratory accuracy vanishes almost
 everywhere as $t \to \infty$: this is not a deficiency to be repaired but an arrow
 pointing toward structure. The boundary between gravitationally collapsed and
 superluminally expanding regions is not a smooth surface but a degenerate Apollonian
-sphere packing. Taking this fractal structure as fundamental rather than emergent,
-we derive the inverse fine structure constant as the squared norm of the minimal
-seed's phase curvature vector ($4\pi^3 + \pi^2 + \pi \approx 137.036$) without free
-parameters, with every numerical prefactor grounded in the geometric symmetry of the
-tetrahedral seed. We identify the 2 ppm residual as a physically motivated oblateness
-correction.
+sphere packing. Taking this fractal structure as \textit{fundamental} rather than emergent, 
+the explicit boundary-crossing rules of Section~\ref{sec:core_equations} produce universal 
+bipolar jets and quantum/galactic non-locality from a single mechanism.
+
 The physical picture that emerges is simple and radical. One fact---sparse space is
 attracted to dense space---drives all observable dynamics at every scale. Stars racing
 toward galactic centers are the galactic-scale image of photons racing outward from
@@ -964,6 +924,7 @@ expanding away from us; the fractal substrate is, at every scale, simultaneously
 collapsing (dense regions attracting sparse) and dispersing (sparse regions propagating
 through dense). What we call gravity and what we call light are two descriptions of
 the same dense-sparse exchange, viewed from opposite sides of the fractal boundary.
+
 The standing tensions of modern physics---the QM/GR incompatibility, dark matter, flat
 rotation curves, bipolar jets, the Hubble tension, JWST early galaxies, and quantum
 non-locality---are not independent mysteries. They are the shadows cast on smooth
@@ -972,112 +933,7 @@ lags provide the first rung of a true cosmic distance ladder rooted in the causa
 geometry of the substrate, bypassing the redshift-distance conflation that generates
 the Hubble tension. Bell correlations and large-scale void spin alignments are the
 same cross-scale causal mechanism viewed at different positions on the scale ladder.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\appendix
-\section{Unit-Ball Volumes and Hypersurface Measures}
-\label{app:spheres}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The volume of the unit $n$-ball in $\mathbb{R}^n$ is given by
-\begin{equation}
-V_n = \frac{\pi^{n/2}}{\Gamma(n/2+1)},
-\end{equation}
-and the surface measure (area) of the unit $(n-1)$-sphere---the hypersurface of the
-unit energy shell in phase space---is
-\begin{equation}
-S_n = n\, V_n = \frac{2\pi^{n/2}}{\Gamma(n/2)}.
-\end{equation}
-The factor of $n$ in $S_n = n V_n$ exactly cancels the $\Gamma$-function denominator
-in every case, leaving pure integer powers of $\pi$. We verify this explicitly for
-the three sectors used in Section~\ref{sec:fsc}:
-\medskip
-\noindent\textbf{6D translational sector ($n=6$):}
-\begin{equation}
-\Gamma(4) = 3! = 6, \qquad
-V_6 = \frac{\pi^3}{6}, \qquad
-S_6 = 6 \times \frac{\pi^3}{6} = \pi^3.
-\end{equation}
-\noindent\textbf{4D quaternionic rotational sector ($n=4$):}
-\begin{equation}
-\Gamma(3) = 2! = 2, \qquad
-V_4 = \frac{\pi^2}{2}, \qquad
-S_4 = 4 \times \frac{\pi^2}{2} = 2\pi^2.
-\end{equation}
-\noindent\textbf{2D directional sector ($n=2$):}
-\begin{equation}
-\Gamma(2) = 1! = 1, \qquad
-V_2 = \pi, \qquad
-S_2 = 2 \times \pi = 2\pi.
-\end{equation}
-\medskip
-In each sector the $\Gamma$-function denominator is precisely cancelled by the
-prefactor $n$, yielding the pure powers of $\pi$ that appear in the main text.
-These raw shell measures $S_6$, $S_4$, $S_2$ are then scaled by the geometric
-symmetry factors of the tetrahedral seed---multiplicity 4 for $T_6$, the $SU(2)$
-double-cover weight $\frac{1}{2}$ for $T_4$, and the $A_4$ even-permutation plus
-bidirectional-line weight $\frac{1}{2}$ for $T_2$---to produce the three components
-$K_6^2 = 4\pi^3$, $K_4^2 = \pi^2$, $K_2^2 = \pi$ used in Section~\ref{sec:fsc}.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Back-of-Envelope Estimate of the Oblateness Correction $\Delta_{\rm spin}$}
-\label{app:oblateness}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The 2 ppm residual $\alpha^{-1}_{\rm CODATA} - \mathcal{I}_{\rm seed}
-= 137.035\,999 - 137.036\,307 \approx -0.000308$ has a definite sign and
-magnitude that the oblate-deformation mechanism must reproduce. Here we sketch the
-leading-order estimate.
-\paragraph{Setup.} The 4D rotational sector contributes $K_4^2 = \pi^2$ to
-$\mathcal{I}_{\rm seed}$ under the idealised assumption of spherical symmetry in
-each seed sphere. An oblate deformation of the seed spheres (flattening ratio
-$\epsilon \ll 1$) redirects a fraction of the angular momentum budget from the
-$S^3$ rotational shell into the equatorial bulge mode. In the phase-space
-language this shifts the effective $K_4^2$ by
-\begin{equation}
-\delta K_4^2 = -\epsilon \cdot K_4^2 = -\epsilon \pi^2,
-\end{equation}
-with $\epsilon$ to be estimated from the packing geometry.
-\paragraph{Packing exponent.} The 3D Apollonian gasket has a residual (or
-``exponent'') $\delta_6 \approx 5.76$ \cite{Borkovec1994}, which measures how rapidly the total
-number of interstices grows with the inverse of their radius. Under the
-$A_4$-symmetric deformation of the tetrahedral seed, the oblate correction
-to the packing weight at the $n$th generation scales as $\delta_6^{-2}$ at
-leading order (the first subleading term in the curvature expansion of the
-Apollonian recursion). The $A_4$ symmetry factor $\beta = 4$ counts the number of
-distinct oriented deformation modes consistent with the even-permutation
-subgroup; for four spheres at tetrahedral vertices with $A_4$ acting freely,
-$\beta = 4$.
-\paragraph{Estimate.} Combining:
-\begin{equation}
-\epsilon \;\approx\; \frac{\beta}{\delta_6^{\,2}}
-= \frac{4}{(5.76)^2} = \frac{4}{33.18} \approx 0.1206,
-\end{equation}
-\begin{equation}
-\Delta_{\rm spin}
-= \delta K_4^2
-= -\epsilon \pi^2
-\approx -0.1206 \times 9.8696
-\approx -0.000304 \times \pi^2 \times \pi^2 / \pi^2.
-\end{equation}
-More carefully, the fractional suppression $\epsilon$ applies to the sector
-contribution $K_4^2 = \pi^2 \approx 9.8696$, giving
-\begin{equation}
-\Delta_{\rm spin} = -\frac{\beta}{\delta_6^{\,2}} \cdot \frac{\pi^2}{\mathcal{I}_{\rm seed}}
-\cdot \mathcal{I}_{\rm seed}
-= -\frac{4 \times \pi^2}{(5.76)^2}
-\approx -\frac{39.478}{33.18}
-\approx -0.000\,304
-\end{equation}
-(since $\pi^2/\mathcal{I}_{\rm seed} \approx 9.87/137.04 \approx 0.072$ and we
-absorb the remaining factor into the definition of $\epsilon$ as a fractional
-correction to the full $\mathcal{I}_{\rm seed}$, yielding
-$\Delta_{\rm spin} \approx -\beta/\delta_6^2 \approx -0.1206$ scaled by the
-fractional weight of the 4D sector: $-0.1206 \times (9.87/137.04) \approx
--0.000\,304$).
-This single-parameter estimate, using only the known Apollonian residual exponent
-$\delta_6$ and the $A_4$ orbit count $\beta = 4$, reproduces
-$|\Delta_{\rm spin}| \approx 3 \times 10^{-4}$ to within the expected
-leading-order accuracy. Subleading terms (cross-sector mixing between the 4D and 2D
-sectors under oblate deformation, corrections from higher Apollonian generations)
-will refine the estimate; this is left for future work.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{thebibliography}{99}
 \bibitem{FSEP-I}
 S.~E.~Elliott,
@@ -1090,13 +946,13 @@ J.~E.~Marsden and T.~S.~Ratiu,
 \emph{Introduction to Mechanics and Symmetry},
 2nd ed.\ (Springer, New York, 1999).
 \bibitem{Einstein1916}
-A. Einstein, 
+A. Einstein,
 Ann. Phys. (Leipzig) 49, 769 (1916).
 \bibitem{Penrose1965}
-R. Penrose, 
+R. Penrose,
 Phys. Rev. Lett. 14, 57 (1965).
 \bibitem{Hawking1970}
-S. W. Hawking, 
+S. W. Hawking,
 Phys. Rev. Lett. 26, 1344 (1970).
 \bibitem{HawkingEllis1973}
 S. W. Hawking and G. F. R. Ellis,
@@ -1123,4 +979,5 @@ Astrophys. J. 470, 38 (1996).
 H.-L. Huang \textit{et al.},
 Phys. Rev. D 110, 103540 (2024).
 \end{thebibliography}
+
 \end{document}
