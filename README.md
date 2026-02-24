@@ -1,9 +1,6 @@
 # MATHICCS / FSEP Repository
 *You want proof? I'll give you proof.*
 
-![Fractal substrate visualization](https://via.placeholder.com/800x400?text=Apollonian+Fractal+Substrate)  
-*(Add a real image here: e.g., 3D Apollonian packing render or Möbius boundary diagram)*
-
 ## Overview
 This repository is the living workspace and archival home for the foundational papers establishing a **new ontology for reality**.
 
