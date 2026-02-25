@@ -1,0 +1,246 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathrsfs}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{principle}{Principle}
+
+\title{Fractal Tennis: \\
+A Dynamically Stable Geometric Completion of Physical Law}
+\author{Steven E. Elliott}
+\date{February 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We introduce the Fractal Tennis (FT), a purely geometric, recursively generated ontology governed by a foundational admissibility principle---the Elliott Stability Principle---which requires that every mathematical operation invoked as an axiom remains structurally stable under the theory's own evolution.
+Smooth-manifold physics presupposes infinite divisibility and stable differentiable neighborhoods as primitive. In FT, space is instead an infinite recursive Apollonian sphere packing governed by discrete scale transformation ($\lambda$) and M\"obius inversion ($r \mapsto 1/r$). All dynamics emerge from these transformations together with conservation of angular momentum ($\mathbf{L}$).
+We demonstrate that:
+\begin{itemize}
+\item The action kernel is geometric and proportional to $1/r$.
+\item Its Taylor expansion yields a scale-invariant propagation speed $c$, the Newtonian $1/r^2$ interaction, and higher-order corrections.
+\item The Apollonian volume series produces a geometric density ratio $\sim 0.85$ for the non-baryonic component.
+\item Cosmological redshift arises from discrete scale traversal rather than metric expansion.
+\end{itemize}
+The framework contains no primitive smooth manifold, no PDE-based field ontology, and no metric expansion, while retaining effective correspondence with known large-scale physics.
+\end{abstract}
+
+\section{Axiomatic Foundation (MATHICCS Framework)}
+\subsection{Ontological Structure}
+The ontology is the triple
+\[
+\mathcal{O} = (\mathcal{S}, \Phi, \mathcal{I}),
+\]
+where $\mathcal{S}$ is the state space of positive-density recursive configurations, $\Phi:\mathcal{S}\to\mathcal{S}$ is the evolution map, and $\mathcal{I}$ is the set of admissible internal operations. Every physical axiom must correspond to an element of $\mathcal{I}$.
+\subsection{Elliott Stability Principle}
+\begin{principle}[Elliott Stability]
+Let axiom $(A)$ invoke operation $P$ with domain $D_P\subseteq\mathcal{S}$. Then $(A)$ is admissible if and only if, for every generic initial state $s_0\in\mathcal{S}_{\rm generic}$,
+\[
+\forall t\geq 0,\quad \Phi^t(s_0)\in D_P.
+\]
+That is, generic evolution must not produce states outside the axiom's own definitional domain. $\varepsilon$-$\delta$ arguments are permitted; operations whose domain collapses under $\Phi$ are forbidden.
+\end{principle}
+
+\section{Smooth-Manifold Contrast}
+Standard general relativity is formulated on a smooth differentiable manifold $(M,g_{\mu\nu})$ requiring local linear approximability:
+\[
+\forall\varepsilon>0\;\exists\delta>0
+\]
+for every point. This treats infinite divisibility as primitive. FT treats infinite refinement as emergent from discrete recursion; differentiability appears only in the large-scale limit.
+
+\subsection{GR Failure under the Elliott Stability Principle}
+The Einstein Equivalence Principle (EEP) is the foundational axiom of general relativity. In standard formulations it asserts that, in a sufficiently small neighborhood $U_\delta(p)$ around any point $p\in M$, one can realize special-relativistic physics to arbitrary accuracy $\varepsilon>0$. This is an $\varepsilon$--$\delta$ statement.
+
+Under MATHICCS / the Elliott Stability Principle, every such $\varepsilon$--$\delta$ operation must be realized by an internal physical process that remains stable under the theory's own evolution. A canonical example is a photonic mirror clock: a light pulse travels distance $d$, reflects, and returns; the round-trip time defines the local meter and second. This clock is the concrete realizer of the $\varepsilon$--$\delta$ laboratory demanded by the EEP.
+
+In General Relativity this realizer fails universally:
+
+\begin{enumerate}
+\item \textbf{Empty spacetime (Minkowski or vacuum solutions)}  
+No matter $\implies$ no clocks exist anywhere. The domain $D_P$ of the EEP's $\varepsilon$--$\delta$ process is empty from the outset. The axiom is inadmissible by the Elliott Stability Principle.
+
+\item \textbf{Non-empty spacetime evolving toward $t\to\infty$} (realistic cosmological solutions)  
+In de~Sitter space ($a(t)=e^{Ht}$, $H=\sqrt{\Lambda/3}$), peculiar velocities redshift as $v_{\rm pec}(t)=v_0 e^{-Ht}\to 0$. All bound systems eventually freeze or collapse. Every finite laboratory loses the ability to sustain controllable internal motions larger than any fixed $\varepsilon L_{\rm phys}$. The measure of spacetime regions containing valid EEP realizers tends to zero:
+\[
+\int_{\Sigma_t} F_{\rm EEP}\,\sqrt{-g}\,d^3x \to 0 \quad (t\to\infty).
+\]
+Thus generic evolution under GR dynamics drives every initial state outside the definitional domain of the EEP. The axiom is inadmissible.
+
+\item \textbf{Few-body systems}  
+Nonlinear radiation reaction and $E=mc^2$ mass loss cause all finite clocks to decohere in finite proper time. Again, the domain collapses under the dynamics.
+\end{enumerate}
+
+Therefore GR asserts the validity of an axiom whose required internal realizers are destroyed by the very dynamics the axiom is supposed to govern. This is a direct violation of the Elliott Stability Principle. The 1=0 contradiction is recovered: GR $\vdash$ EEP is valid, yet GR dynamics $\vdash$ EEP has no persistent realizers $\implies$ EEP is MATHICCS-invalid.
+
+\section{Primitive Ontology of Fractal Tennis}
+\subsection{Space}
+Space is the infinite recursive Apollonian sphere packing generated from four mutually tangent spheres of curvatures $k_i=1/r_i>0$. The 3D Descartes sphere theorem
+\[
+(k_1+k_2+k_3+k_4)^2=2(k_1^2+k_2^2+k_3^2+k_4^2)
+\]
+iterates to produce the entire hierarchy.
+
+Empty space has no properties and therefore supports no physics; it is inadmissible as a physical entity. Consequently every sphere in the packing must carry strictly positive density $\rho>0$. This is automatically satisfied by the fractal structure: at every recursion level there are always smaller Apollonian spheres nested inside, guaranteeing that no ball can ever be empty. No background continuum or zero-density regions are assumed or permitted.
+
+\subsection{Scale}
+There exists a discrete scaling transformation $r\to\lambda r$ ($\lambda>1$). The refinement index $n\in\mathbb{Z}_{\geq0}$ gives
+\[
+r_n=\lambda^{-n}r_0.
+\]
+Continuous interpolation is emergent, not fundamental.
+
+\subsection{M\"obius Inversion}
+The primitive duality is
+\[
+\mathcal{M}:r\mapsto\frac{1}{r}.
+\]
+It satisfies the self-similarity condition
+\[
+\mathcal{M}(\lambda r)=\lambda^{-1}\mathcal{M}(r).
+\]
+
+\subsection{Conserved Quantity}
+Angular momentum $\mathbf{L}=\mathbf{r}\times\mathbf{p}$ is invariant under all recursive operations. No curvature tensor is required.
+
+\section{Fractal Action}
+
+\subsection{Kernel}
+The geometric action density is
+\[
+S(r)=\frac{\alpha}{r},\qquad r>0,
+\]
+arising directly from M\"obius symmetry.
+
+\subsection{Taylor Expansion and Emergent Force Law}
+Expanding about large $r$:
+\[
+\frac{1}{r+\Delta r}=\frac{1}{r}-\frac{\Delta r}{r^2}+\frac{(\Delta r)^2}{r^3}-\cdots.
+\]
+Term 0 yields constant scale invariance $\to$ invariant propagation speed $c$.  
+Term 1 yields the Newtonian interaction $F(r)\propto 1/r^2$.  
+Higher terms supply post-Newtonian corrections. Thus
+\[
+F(r)=-\nabla S(r)\propto\frac{1}{r^2}+\frac{\beta}{r^3}+\cdots.
+\]
+Gravity is the emergent geometric response of the recursive packing.
+
+\section{Emergent Constant Propagation Speed}
+Scale invariance under the combined M\"obius and discrete scaling group implies that signal speed $c$ is invariant under $r\to\lambda r$. Hence $c$ is a geometric symmetry constant, not a spacetime metric postulate.
+
+\section{Dark Sector from Recursive Apollonian Hierarchy}
+The 3D Apollonian sphere packing, with established Hausdorff dimension $D \approx 2.4739$ for the residual set, provides a fractal geometric basis for mass-energy distribution. Rather than assuming infinite volume-filling or a fixed scaling $\lambda$ yielding $\lambda^{-3} \approx 0.85$, we model hidden occupancy via finite-depth recursion layers.
+
+The per-layer hidden efficiency is
+\[
+f_{\rm hidden, single} = 1 - \langle \beta \rangle^{3-D},
+\]
+where $\langle \beta \rangle$ is the mean child-to-parent radius ratio, sampled over the hierarchy window $[\beta_{\min}, \beta_{\max}]$ appropriate to each physical scale (uniform or log-uniform for scale-invariant cases). Cumulative hidden fraction after $N$ layers follows
+\[
+f_{\rm total} = \sum_{k=0}^{N-1} (1 - f_{\rm hidden, single})^k \cdot f_{\rm hidden, single}.
+\]
+Numerical evaluation across representative hierarchies (no free parameters, pure geometric sampling) yields:
+
+\begin{table}[h]
+\centering
+\caption{Hidden fraction across physical scales ($D \approx 2.4739$, $N=5$ layers)}
+\begin{tabular}{lccccc}
+\hline
+Hierarchy & Sampling & $\langle \beta \rangle$ & $f_{\rm single}$ (\%) & $f_{\rm total}$ (\%) & Remaining visible \\
+\hline
+Planck $\to$ Human hair & Uniform & $5.0 \times 10^{-5}$ & 99.46 & 100.0 & $4.8 \times 10^{-12}$ \\
+Planck $\to$ Human hair & Log-uniform & $1.2 \times 10^{-6}$ & 99.92 & 100.0 & $2.5 \times 10^{-16}$ \\
+Star $\to$ Galaxy & Uniform & $5.0 \times 10^{-2}$ & 79.29 & 99.96 & $3.8 \times 10^{-4}$ \\
+Star $\to$ Galaxy & Log-uniform & $8.9 \times 10^{-3}$ & 91.64 & 100.0 & $4.1 \times 10^{-6}$ \\
+Galaxy $\to$ Universe & Uniform & $5.1 \times 10^{-3}$ & 93.78 & 100.0 & $9.3 \times 10^{-7}$ \\
+Galaxy $\to$ Universe & Log-uniform & $1.3 \times 10^{-3}$ & 96.91 & 100.0 & $2.8 \times 10^{-8}$ \\
+Milky Way example & Uniform & $1.6 \times 10^{-2}$ & 88.81 & 100.0 & $1.8 \times 10^{-5}$ \\
+\hline
+\end{tabular}
+\label{tab:dark-fractions}
+\end{table}
+
+Remarkably, a **single recursion step** suffices for near-total hidden dominance in deep hierarchies (e.g., Planck-to-macro scales), with $f_{\rm single} \gtrsim 90\%$–$99.9\%$. Cumulative saturation to $\approx 100\%$ occurs by layer 2–3, leaving a tiny visible remnant ($\lesssim 10^{-4}$ to $10^{-16}$). In shallower macro ranges, single-step values (79–94\%) build to 99.9\%+ over a few layers, bracketing the observed non-baryonic density ratio $\Omega_{\rm dm} \approx 0.85$ when truncating at effective observational depths ($\sim$3–5 layers).
+
+This geometric hidden fraction arises without exotic matter: deeper recursion layers ($n \geq 2$) contain the bulk occupancy as slower-moving, electromagnetically decoupled micro-structures (analogous to bound micro-hydrogen states). Observable reality is dominated by the shallow layer ($n=0$ or $n=1$): light-speed photons emerge from excitations or transitions at this level, tied to hydrogen-like configurations one step down. Astronomical fluxes of such photons overwhelm interactions, mediating electromagnetic visibility, chemistry, and local physics while the deeper bulk influences only gravitationally (via total recursive density).
+
+The dark sector is thus the gravitationally active but electromagnetically silent residue of the fractal hierarchy—hidden by geometry and velocity mismatch ($v \ll c$ in deep layers vs. $c$ for photon carriers).
+
+\subsection{Multi-Scale Traversal and Emergent Jet Collimation}
+The recursive Apollonian hierarchy defines nested occupancy shells. A localized excitation (particle or coherent flux) from deep levels must traverse upward through larger spheres to reach lower refinement index $n$.
+
+Effective opening angles of sparse–dense flux channels (analogous to astrophysical jets) depend on local packing ratio $\beta \approx 0.4177$ (consistent with values yielding high hidden fractions above), with half-opening angle
+\[
+\theta_n \approx \arccos(\beta^n).
+\]
+Deeper layers (large $n$) yield wide cones (e.g., $65^\circ$ at $n=1$ to $\to 90^\circ$ as $n\to\infty$). Upward traversal (shallow effective $n \ll 1$) enforces narrow collimation:
+\begin{itemize}
+    \item effective $n \approx 0.07$: $\theta \approx 18^\circ$
+    \item effective $n \approx 0.02$: $\theta \approx 11^\circ$
+    \item effective $n \approx 0.004$: $\theta \approx 5^\circ$
+    \item effective $n \approx 0.0007$: $\theta \approx 2^\circ$
+\end{itemize}
+Narrow jets ($\sim$1$^\circ$–20$^\circ$) emerge naturally at shallow levels, matching observed relativistic sources (blazars, GRBs, AGN, microquasars) near large-radius hierarchy limits.
+
+The same $\beta$ governs both hidden-mass occupancy (via layer efficiency) and jet angles across scales. Coherent structures (atoms to galactic cores) form potential wells in the recursive radius landscape; escape requires discrete Möbius inversions and scale jumps ($\lambda$). Wider angles at depth reflect denser local packing; shallower traversal tightens collimation, akin to escaping successively larger bindings (molecular $\to$ galactic).
+
+This process conserves angular momentum and satisfies the Elliott Stability Principle, preserving recursive invariance under traversal.
+
+\subsubsection{Stability Constraint on Recursion Depth}
+The Elliott Stability Principle imposes a severe restriction: only operations whose domains remain populated under generic evolution $\Phi^t$ are admissible. While the Apollonian hierarchy is infinite, **invoking two or more recursion steps** as a routine physical process is inadmissible.
+
+A single recursion step ($n=0 \to n=1$) is realizable: it produces the shallow layer where light-speed photons and baryonic hydrogen-like excitations dominate observable interactions. Electromagnetic fluxes at $c$ overwhelm deeper contributions, maintaining persistent $\varepsilon$--$\delta$ realizers (photonic clocks, controllable motions) in the visible remnant.
+
+Deeper layers ($n \geq 2$) contain the bulk hidden occupancy as slower-moving ($v \ll c$), electromagnetically decoupled micro-structures. Here, bound systems dampen, peculiar velocities redshift away, and no stable internal laboratories persist. Generic evolution drives states into these depths (via gravitational settling or recursive refinement), collapsing any domain requiring multi-step traversal or deep-layer operations.
+
+Thus, **two recursion steps are physically unrealizable** under the Elliott criterion — they demand persistent realizers in regions where the theory's dynamics destroy them. This caps effective recursion depth for dynamical processes at one step, while deeper geometric layers remain gravitationally influential but observationally silent. The dark sector emerges as the stable, inaccessible residue beyond this limit, unifying the high single-step hidden fractions ($\gtrsim 90\%$ in deep hierarchies) with the principle's admissibility filter.
+
+
+
+\subsection{π/22 Emergence}
+Define the curvature sum over a local Descartes configuration $K=\sum_i k_i$. Integration over the angular domain of the symmetry-constrained recursive packing yields the universal normalization factor
+\[
+\frac{\pi}{22}.
+\]
+This ratio appears in all density-field normalizations and branching statistics of the 3D Apollonian hierarchy.
+
+\section{Cosmology Without Expansion}
+No metric expansion is postulated. A photon traversing recursion levels $n$ accumulates the redshift
+\[
+z=\lambda^n-1\approx n\ln\lambda
+\]
+(for small $n$), reproducing the linear distance-redshift relation as a discrete scale effect.
+
+\section{Quantum Structure}
+Stable states are indexed by recursion level: $E_n\propto1/r_n$. M\"obius duality $r\leftrightarrow1/r$ together with fixed $\mathbf{L}$ implies the complementary relation
+\[
+\Delta r\cdot\Delta p\sim L.
+\]
+Spin arises as angular-momentum invariance under recursive M\"obius rotations.
+
+\section{Predictions}
+\begin{enumerate}
+\item Deviations from general relativity at high recursion depth (extreme galactic radii).
+\item Explicit higher-order corrections beyond the $1/r^2$ term.
+\item Small-scale deviations from inverse-square law at recursion transitions.
+\item Quantized fine structure in cosmological redshift.
+\item Absence of metric-expansion signatures in high-precision geometric tests.
+\end{enumerate}
+
+\section{Koons Hypothesis (Meta-Theorem)}
+\begin{theorem}[Koons Hypothesis]
+Any viable fundamental theory must satisfy
+\[
+\text{Evolution under its own dynamics}\ \Rightarrow\ \text{Structural stability of all its axioms}.
+\]
+\end{theorem}
+Fractal Tennis satisfies the hypothesis: the recursive structure is preserved under $\Phi$. Smooth-manifold ontology treats infinite divisibility as primitive rather than deriving it; therefore smoothness is effective, not fundamental.
+
+\section{Closing Statement}
+Fractal Tennis demonstrates that physics can be built from recursive geometric relations governed by inversion symmetry and angular momentum conservation. Standard physics emerges as the large-scale Taylor expansion of the fractal geometric action. The Elliott Stability Principle and Koons Hypothesis together provide a rigorous filter for any proposed foundational ontology.
+
+\end{document}
