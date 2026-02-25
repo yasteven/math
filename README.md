@@ -46,9 +46,9 @@ The papers (once finalized) live in the root directory as PDFs or LaTeX sources.
 #### PAPER 4 - FRACTAL TENNIS
 
 - Fixes the AI Bullshit in Paper 3; by adhering to Mathiccs rules
-- Calculates the dark matter fraction, fine structure, merger DM declines.
+- Properly calculates the dark matter, fine structure, merger DM declines.
 - Just need a few more math things completed until it's finished.
-
+- 
 
 ## Current Status (Feb 2026)
 - Paper 1: Written content complete ✅
