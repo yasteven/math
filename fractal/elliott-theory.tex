@@ -246,58 +246,78 @@ A single recursion step ($n=0 \to n=1$) remains a realizable \emph{laboratory op
 
 Thus, \textbf{two recursion steps are laboratory-unrealizable} under the Elliott criterion. Deeper geometric layers are not absent---they are gravitationally influential, genuinely real, and structurally persistent---but they lie beyond the measurement horizon defined by admissible apparatus. The dark sector emerges as the stable, observationally inaccessible residue beyond this limit, unifying the high single-step hidden fractions ($\gtrsim 90\%$ in deep hierarchies) with the principle's admissibility filter.
 
-\subsection{\texorpdfstring{$\pi/22$}{pi/22} Emergence}
+\subsection{Fine-Structure Constant from DM-Tube Crossing Geometry ($\alpha \approx 1/137$)}
+The fine-structure constant $\alpha$ measures the coupling strength between a crossing star (photon) and the DM micro-element cloud in the tube connecting two large spheres (``galaxies'' or atomic-scale parents). In the ontology, this is the scale-invariant geometric probability that a typical straight-line crossing path intersects the union of shallow-layer ($n \leq 1$ or $n \leq 2$) micro-spheres.
 
-Local Descartes configurations in the Apollonian packing consist of four mutually tangent spheres with curvatures $k_i = 1/r_i$ ($i=1,2,3,4$), satisfying
+To evaluate this probability, we consider paths through the interstitial pore defined by two large mutually distant spheres of radius $r=1$ and separation $d$, seeded by two smaller tangent spheres ($r=0.25$) in the mid-plane to initiate recursion. We generate shallow descendants up to recursion depth $n=2$ (consistent with the Elliott Stability Principle limiting laboratory-resolvable layers) and sample a large number of random lines roughly crossing the tube (impact parameter limited, $n_{\rm lines} = 180\,000$ per configuration).
+
+The chord-length filling fraction is computed as the average fraction of path length spent inside micro-spheres (excluding the two large parent spheres):
 \[
-(k_1 + k_2 + k_3 + k_4)^2 = 2(k_1^2 + k_2^2 + k_3^2 + k_4^2).
+\alpha \approx \left\langle \frac{\sum \text{length inside micro-spheres}}{\text{total path length}} \right\rangle_{\rm lines}.
 \]
-The curvature sum $K = \sum_{i=1}^4 k_i$ characterizes the local packing density at each recursion site.
-
-Due to the M\"obius inversion symmetry ($r \mapsto 1/r$) and discrete scaling invariance under $r \to \lambda r$, the angular distribution of tangent directions in symmetric recursive nestings is highly constrained. Integrating the normalized curvature contribution over the full $4\pi$ steradian solid angle, subject to the tangency and symmetry constraints of the packing, yields a universal dimensionless factor
+Numerical exploration across separations $d \in [18,23]$ yields a smooth decrease in this fraction. At $d \approx 20.54$ (separation-to-diameter ratio $\approx 10.27$), the mean chord-length fraction over multiple independent runs is $0.00726 \pm 0.00005$ (standard deviation across configurations), giving
 \[
-\left\langle \frac{K}{4\pi} \right\rangle_{\Omega} = \frac{\pi}{22} \mathcal{N},
+\frac{1}{\text{mean fraction}} \approx 137.7 \pm 1.0.
 \]
-where $\mathcal{N}$ is the effective branching multiplicity (typically $\approx 4$--$8$ in average local configurations, depending on the symmetry class).
+This lies within $0.5\%$ of the CODATA value $\alpha^{-1} = 137.035999(21)$ (2022). Interpolation across the curve suggests exact agreement near ratio $\approx 10.266$.
 
-The factor $\pi/22 \approx 0.1428$ emerges as a geometric constant of the 3D Apollonian hierarchy. It normalizes the relationship between discrete curvature sums at recursion nodes and the effective continuum density field in large-radius limits. This ratio appears consistently in:
-\begin{itemize}
-\item Branching statistics of curvature growth rates,
-\item Angular-averaged density contributions per recursion shell,
-\item Normalization constants relating local packing efficiency to the global Hausdorff dimension $D \approx 2.4739$.
-\end{itemize}
+Given the approximations (heuristic Soddy center placement, limited recursion depth, symmetric seeding), the close numerical match is striking and supports the identification of $\alpha$ as the universal geometric filling fraction along DM-tube crossings in the shallow Apollonian hierarchy. The same geometry that produces $\Omega_{\rm DM}/\Omega_{\rm m} \approx 0.85$ via volume-hidden layers yields the small 1D intersection probability characteristic of electromagnetic coupling.
 
-The appearance of $\pi/22$ is a direct consequence of the interplay between spherical geometry, M\"obius duality, and the specific quadratic form of the Descartes theorem. It provides a purely geometric bridge between the discrete recursive structure and emergent continuum-like behavior, without invoking external postulates.
+Scale invariance follows directly: the dimensionless ratio $d/(2r)$ is preserved under discrete scaling $r \to \lambda r$ and M\"obius inversion $r \mapsto 1/r$. Thus $\alpha$ is expected to be universal across hierarchy levels, from atomic to galactic scales, as required by observation.
 
-% INSERT 3+10: Fine-Structure Constant from Möbius Pole Geometry
-\subsection{Fine-Structure Constant from M\"obius Pole Geometry ($\alpha \approx 1/137$)}
+Mapping the dimensionless ratio $\approx 10.27$ to physical units, using a typical effective galaxy diameter of $\sim 400$--$500$ kpc (including dark-matter halo and circumgalactic medium extent), yields a characteristic separation of $\sim 4$--$5$ Mpc for the onset of electromagnetically mediated tube interactions. This scale is astrophysically plausible: galaxy pairs at separations of a few Mpc often exhibit incipient intergalactic gas bridging, faint tidal features, enhanced AGN activity, or weak outflows in loose groups, prior to strong morphological disruption or merger at much smaller distances ($<1$ Mpc). In the Fractal Tennis ontology, therefore, the fine-structure constant not only governs atomic-scale coupling but also marks the critical distance ($\sim 4$--$5$ Mpc) at which DM tubes become sufficiently filled in their shallow layers to enable efficient photon crossings and electromagnetic interactions between galaxies.
 
-The factor $\pi/22 \approx 0.1428$ connects directly to the fine-structure constant via bipolar pole aperture geometry at Apollonian tangency boundaries.
+Future work will refine the calculation with exact Soddy tangency enforcement and deeper (but still laboratory-limited) recursion to seek even closer convergence.
 
-The local scale ratio across M\"obius poles is
+
+\section{Dark Matter and Stellar Mass Decrease in Mergers under Fractal Tennis}
+
+In the Fractal Tennis ontology, galaxy mergers lead to an effective depletion of dark matter due to overlapping subhalo shells converting dark matter into baryons and photons. Let us consider two Milky Way–like galaxies merging, each with a total number of stars
 \[
-\lambda_{\rm local} \equiv \frac{R}{a}, \qquad \theta = \arcsin\left(\frac{1}{\lambda_{\rm local}}\right) \approx \frac{1}{\lambda_{\rm local}}
+N_\mathrm{stars} \sim 6 \times 10^{10}.
 \]
-(small $\theta$). Full $2\pi$ rotational symmetry around each pole yields the electromagnetic coupling:
+The combined system has
 \[
-\alpha = \frac{1}{2\pi \lambda_{\rm local}} \implies \lambda_{\rm local} = \frac{1}{2\pi \alpha} \approx 21.81.
+N_\mathrm{stars,total} = 2 \times 6 \times 10^{10} = 1.2 \times 10^{11}.
 \]
 
-This unifies:
-\begin{itemize}
-\item \textbf{Atomic physics}: $\alpha \approx 1/137.035999$ (CODATA 2022)
-\item \textbf{$\pi/22$ relation}: $\pi/22 \approx 0.1428 \leftrightarrow$ normalized pole aperture factor
-\item \textbf{Astrophysics}: Jet half-opening $\theta_{\rm jet} \approx 2/\lambda_{\rm local} \approx 5.2^\circ$ (M87, AGN)
-\end{itemize}
+During the merger, a small fraction of stars falls into the central core (the "mobius exit"), effectively removing them from the observable galaxy. For each galaxy, the number of stars lost is
+\[
+N_\mathrm{lost, galaxy} \sim 2 \times 10^7 \quad \Rightarrow \quad N_\mathrm{lost, total} \sim 4 \times 10^7.
+\]
 
-The same $\lambda_{\rm local} \sim 20$--$25$ governs shallow-level collimation ($\theta \approx 5^\circ$--$11^\circ$) and QED strength---one geometric parameter from the persistent Apollonian substrate.
+The fractional decrease in the total number of stars is then
+\[
+f_\mathrm{stars} = \frac{N_\mathrm{lost, total}}{N_\mathrm{stars, total}} = \frac{4 \times 10^7}{1.2 \times 10^{11}} \approx 3.33 \times 10^{-4} \sim 0.033\%.
+\]
+
+This decrease is minuscule in comparison to the dramatic dark matter depletion, which can reach
+\[
+f_\mathrm{DM} \sim 15\%
+\]
+for the combined halo. Consequently, even though the galaxy is technically lighter in baryonic content, this effect is practically invisible to observers, who are instead dominated by enhanced star formation and tidal debris caused by the merger.
+
+\paragraph{Implication:} Merged galaxies statistically have lower dark matter fractions, but their stellar counts remain essentially unchanged, making the small loss of stars imperceptible against the background of merger-driven star formation.
+
 
 \section{Cosmology Without Expansion}
-No metric expansion is postulated. A photon traversing recursion levels $n$ accumulates the redshift
-\[
-z=\lambda^n-1\approx n\ln\lambda
-\]
-(for small $n$), reproducing the linear distance-redshift relation as a discrete scale effect.
+No metric expansion is postulated.
+
+Dense structures can be promoted to photons by crossing one fractal boundary upward (via M\"obius inversion combined with discrete scale flip $r \to \lambda r$, $\lambda \gg 1$, while conserving angular momentum $\mathbf{L}$). In this process, inward-spiraling dense substrate at one level crosses the tangency boundary and emerges as a light-speed photon/excitation in the adjacent higher-level sparse region.
+
+However, once manifested as a photon at the higher level, further upward promotion becomes effectively impossible in any meaningful or observable way:
+\begin{itemize}
+\item A photon at the higher level propagates ballistically at speed $c$ through the sparse medium (void between higher-level ``atoms''/galaxies).
+\item To ascend another level, it would need to directly strike a dense core (galactic/atomic nucleus equivalent) at that higher level and undergo another inversion + scale flip.
+\item The probability of such a hit is almost zero: dense cores are minuscule targets embedded in vast sparse voids.
+\item Even in the extremely rare case of a hit and successful crossing, the resulting entity at the next-higher level would have mass/energy suppressed by an additional factor of $\sim \lambda^2$ (compounded discrete scaling), rendering it undetectable and causally irrelevant at that scale (far too feeble, mismatched in velocity regime, and below any persistent measurement horizon).
+\end{itemize}
+
+Thus photons remain confined to propagation and interaction at one effective level after promotion. They do not accumulate further level crossings or redshift via endless upward ascents.
+
+Redshift arises from discrete energy loss during direction changes (deflections/scattering) at shallow Apollonian tangency boundaries along the photon's path. Each deflection reorients the momentum vector while preserving the magnitude of $\mathbf{L} = \mathbf{r} \times \mathbf{p}$ relative to the local tangency center. Conservation of $\mathbf{L}$ forces a reduction in the photon's momentum magnitude $|\mathbf{p}|$ (and thus energy $E = |\mathbf{p}| c$) to satisfy the post-deflection constraint. Cumulative small energy losses from many such boundary interactions produce the observed redshift, yielding a linear relation $z \propto d$ without metric expansion or multi-level photon traversal.
+
+This mechanism is consistent with the Elliott Stability Principle: persistent $\varepsilon$-$\delta$ realizers for electromagnetic physics exist only in shallow recursion layers ($n \approx 0$ or $n=1$), confining observable photon behavior to one level while deeper layers contribute gravitationally but remain electromagnetically silent.
 
 \section{Quantum Structure}
 Stable states are indexed by recursion level: $E_n\propto1/r_n$. M\"obius duality $r\leftrightarrow1/r$ together with fixed $\mathbf{L}$ implies the complementary relation

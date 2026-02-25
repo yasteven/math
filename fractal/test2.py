@@ -58,3 +58,21 @@ compute_dark_fraction(1e-5, 0.01, sampling='log-uniform', label="3. Galaxy → V
 beta_min_orig = 1e-3
 beta_max_orig = 0.01 + 1e-3 * np.exp(3)  # ≈0.0301
 compute_dark_fraction(beta_min_orig, beta_max_orig, sampling='uniform', label="Original: Milky Way / 2 Planck Layers")
+
+
+def dark_fraction_from_beta(beta):
+    return 1 - beta ** (3 - D)
+
+# Example single galaxy beta
+beta_single = 0.05
+f_single = dark_fraction_from_beta(beta_single)
+
+# Merger increases effective beta
+k = 1.5
+beta_merged = beta_single * k
+f_merged = dark_fraction_from_beta(beta_merged)
+
+print("Single galaxy dark fraction:", f_single)
+print("Merged galaxy dark fraction:", f_merged)
+print("Dark fraction decrease:", f_single - f_merged)
+

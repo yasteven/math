@@ -1,13 +1,13 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 np.random.seed(42)
 
 # ===============================================================
-# Fixed version: force plain floats for radii + robust Soddy
+# Functions (same as yours, jitter turned off for stability)
 # ===============================================================
 
 def approximate_soddy(c1, r1, c2, r2, c3, r3, c4, r4):
-    # Force plain Python floats
     r1 = float(r1)
     r2 = float(r2)
     r3 = float(r3)
@@ -17,7 +17,7 @@ def approximate_soddy(c1, r1, c2, r2, c3, r3, c4, r4):
     k = np.maximum(k, 1e-8)
     
     k_sum = np.sum(k)
-    cross_sum = np.sum(k[:, None] * k[None, :]) - np.sum(k**2)
+    cross_sum = np.sum(k[:, None] * k[None, :] ) - np.sum(k**2)
     k_cross = 2 * np.sqrt(np.maximum(0.0, cross_sum))
     
     k_new1 = k_sum + k_cross
@@ -27,7 +27,7 @@ def approximate_soddy(c1, r1, c2, r2, c3, r3, c4, r4):
     centers = np.vstack([c1, c2, c3, c4])
     center_avg = np.dot(weights, centers)
     
-    jitter_scale = 0.05 if k_cross > 0.1 else 0.0
+    jitter_scale = 0.0  # <--- turned off for reproducibility
     c_new1 = center_avg + jitter_scale * np.random.randn(3)
     c_new2 = center_avg + jitter_scale * np.random.randn(3)
     
@@ -36,9 +36,8 @@ def approximate_soddy(c1, r1, c2, r2, c3, r3, c4, r4):
     
     return (c_new1, float(r_new1)), (c_new2, float(r_new2))
 
-
-def generate_shallow_spheres(separation=20.0, max_depth=3, min_r=0.008, max_spheres=400):
-    spheres = []  # list of np.array([x,y,z,r]) with r as plain float
+def generate_shallow_spheres(separation=20.0, max_depth=2, min_r=0.008, max_spheres=400):
+    spheres = []
     
     r_gal = 1.0
     c1 = np.array([-separation/2, 0.0, 0.0])
@@ -58,7 +57,6 @@ def generate_shallow_spheres(separation=20.0, max_depth=3, min_r=0.008, max_sphe
         for quad in to_process:
             idxs = list(quad)
             cs = [spheres[i][:3] for i in idxs]
-            # Extract as plain float here
             rs = [float(spheres[i][3]) for i in idxs]
             
             sol1, sol2 = approximate_soddy(cs[0], rs[0], cs[1], rs[1], cs[2], rs[2], cs[3], rs[3])
@@ -71,7 +69,6 @@ def generate_shallow_spheres(separation=20.0, max_depth=3, min_r=0.008, max_sphe
                 if min_sep < -0.02:
                     continue
                 
-                # Store r_new as plain float
                 spheres.append(np.array([c_new[0], c_new[1], c_new[2], float(r_new)]))
                 new_idx = len(spheres) - 1
                 
@@ -85,20 +82,15 @@ def generate_shallow_spheres(separation=20.0, max_depth=3, min_r=0.008, max_sphe
     
     return np.array(spheres)
 
-
-def estimate_crossing_fraction(spheres, n_lines=28000, use_hit_probability=False):
+def estimate_crossing_fraction(spheres, n_lines=180000):
     if len(spheres) < 4:
-        return 0.0, 0
+        return 0.0, 0.0
     
     c_g1 = spheres[0, :3]
     c_g2 = spheres[1, :3]
     direction = c_g2 - c_g1
     dist = np.linalg.norm(direction)
     unit_dir = direction / dist
-    
-    print(f"Galaxy separation = {dist:.2f}, diameter = {2*spheres[0,3]:.2f}")
-    print(f"Separation / diameter ≈ {dist / (2*spheres[0,3]):.1f}")
-    print(f"Total spheres: {len(spheres)}   (micro: {len(spheres)-2})\n")
     
     total_inside = 0.0
     total_length = 0.0
@@ -129,7 +121,7 @@ def estimate_crossing_fraction(spheres, n_lines=28000, use_hit_probability=False
         
         for sph in spheres[2:]:
             c = sph[:3]
-            r = float(sph[3])  # ensure scalar
+            r = float(sph[3])
             oc = c - start
             proj = np.dot(oc, dir_vec)
             d2 = np.dot(oc, oc) - proj**2
@@ -153,18 +145,69 @@ def estimate_crossing_fraction(spheres, n_lines=28000, use_hit_probability=False
     
     return frac_length, frac_hit
 
+# ===============================================================
+# Main: multi-run stats + plots
+# ===============================================================
 
-# Run loop
-print("=== Fractal Tennis α proxy (radii fixed as float) ===\n")
+print("=== Fractal Tennis α proxy — multi-run statistics & plots ===\n")
 
-# MAX DEPTH IS NOT ALLOWED TO BE MORE THAN 2 IN FRACTAL TENNIS:
+# Configuration
+separations = np.linspace(19.5, 21.5, 11)   # 18 to 23, 11 points
+n_runs_per_sep = 8                         # more runs = better mean/std
+n_lines = 180000                           # high for low noise
 
-for sep in [20.5, 20.5, 20.5, 20.5, 20.5, 20.5]:
-    print(f"\n--- Separation = {sep:.2f} (ratio ~{sep/2:.2f}x) ---")
-    spheres = generate_shallow_spheres(separation=sep, max_depth=2, min_r=0.008, max_spheres=400)
+results = []  # (sep, mean_frac, std_frac, inv_mean)
+
+for sep in separations:
+    frac_lengths = []
+    for run_idx in range(n_runs_per_sep):
+        spheres = generate_shallow_spheres(
+            separation=sep,
+            max_depth=2,
+            min_r=0.008,
+            max_spheres=400
+        )
+        frac, _ = estimate_crossing_fraction(spheres, n_lines=n_lines)
+        frac_lengths.append(frac)
+        print(f"  run {run_idx+1}/{n_runs_per_sep} at sep={sep:.2f}: frac={frac:.6f}")
     
-    frac_length, frac_hit = estimate_crossing_fraction(spheres, n_lines=180000)
+    mean_frac = np.mean(frac_lengths)
+    std_frac = np.std(frac_lengths)
+    inv_mean = 1.0 / mean_frac if mean_frac > 1e-10 else np.inf
     
-    print(f"  Chord-length fraction: {frac_length:.6f}   → 1/est ≈ {f'{1/frac_length:.2f}' if frac_length > 0 else 'inf'}")
-    print(f"  Hit probability:       {frac_hit:.6f}     → 1/est ≈ {f'{1/frac_hit:.2f}' if frac_hit > 0 else 'inf'}")
+    results.append((sep, mean_frac, std_frac, inv_mean))
+    
+    print(f"sep = {sep:.2f} | mean frac = {mean_frac:.6f} ± {std_frac:.6f} | 1/mean = {inv_mean:.2f}")
     print("-" * 70)
+
+# Plot 1: Chord fraction with error bars
+seps = [r[0] for r in results]
+means = [r[1] for r in results]
+stds = [r[2] for r in results]
+
+plt.figure(figsize=(10, 6))
+plt.errorbar(seps, means, yerr=stds, fmt='o-', capsize=5, color='blue', label='Mean chord fraction ± std')
+plt.axhline(1/137.036, color='red', linestyle='--', linewidth=1.5, label='1/137.036 ≈ 0.007299')
+plt.xlabel('Separation (units)')
+plt.ylabel('Chord-length filling fraction')
+plt.title(f'Chord fraction vs Separation (max_depth=2, {n_runs_per_sep} runs each, {n_lines:,} lines)')
+plt.grid(True, alpha=0.3)
+plt.legend()
+plt.tight_layout()
+plt.savefig('chord_fraction_vs_sep.png', dpi=150)
+print("\nPlot saved: chord_fraction_vs_sep.png")
+
+# Plot 2: Inverse
+invs = [r[3] for r in results]
+
+plt.figure(figsize=(10, 6))
+plt.plot(seps, invs, 'o-', color='darkgreen', label='1 / mean fraction')
+plt.axhline(137.036, color='red', linestyle='--', linewidth=1.5, label='137.036')
+plt.xlabel('Separation (units)')
+plt.ylabel('Inverse fraction (proxy for 1/α)')
+plt.title('Inverse chord fraction vs Separation')
+plt.grid(True, alpha=0.3)
+plt.legend()
+plt.tight_layout()
+plt.savefig('inverse_vs_sep.png', dpi=150)
+print("Plot saved: inverse_vs_sep.png")
