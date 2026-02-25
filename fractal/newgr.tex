@@ -1,0 +1,920 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{axiom}{Axiom}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newtheorem{criterion}{Criterion}
+
+\title{MATHICCS: A Meta-Logical Criterion for Physical Theories\\
+\large and Its Application to General Relativity}
+\author{Steven E. Elliott}
+\date{February 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We introduce MATHICCS (Mathematics, Axiomatics, and Theory-Housed Internal Consistency
+Constraints for Science), a formal meta-logical criterion for physical theories. The
+criterion requires that every axiom of a physical theory possess an \emph{internal
+epistemic realizer}: a physical apparatus, constructible from the theory's own
+ontology, capable of executing the measurement procedure the axiom demands.
+
+We apply this criterion to the Einstein Equivalence Principle (EEP), the foundational
+axiom of General Relativity (GR). The EEP is an $\varepsilon$-$\delta$ statement about
+spatial distances. GR itself defines spatial distance operationally via light travel
+time. The minimum apparatus capable of executing the EEP's $\varepsilon$-$\delta$
+distance procedure within GR's own framework is therefore a \emph{photonic mirror
+clock}: a light pulse traveling a known distance $d$ and returning, defining the local
+meter and second via the round-trip time $\Delta t = 2d/c$.
+
+This apparatus is not an external philosophical imposition. It is the measurement
+device GR's own operational definition of distance demands. We then show that GR
+predicts physical conditions under which this device cannot be constructed or
+maintained, and that those conditions are generic and persistent. The EEP therefore
+becomes physically contentless across a substantial portion of the spacetime GR
+describes, undermining GR's status as a complete physical theory of reality.
+
+We further show that GR fails a stronger criterion, the \emph{Koons Hypothesis}: a
+viable fundamental theory of reality must be such that evolution under its own dynamics
+implies the structural stability of all its axioms. GR violates this because its own
+dynamics destroy the apparatus required to give its foundational axiom physical content.
+
+No measure-theoretic machinery is required for the operational argument. However, we
+additionally demonstrate that the probabilistic form of the argument is equally
+compelling: under GR's own predicted dynamics, the probability that any given
+observer-moment falls within the thermodynamically active epoch is zero, meaning GR
+assigns measure-zero probability to the conditions required for its own derivation.
+GR cannot account for why its own discovery was possible without appealing to
+something outside its own framework.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------
+\section{Introduction}
+%----------------------------------------------------------------------
+
+A physical theory does two things. First, it provides a mathematical formalism:
+equations, geometric structures, transformation rules. Second, it asserts that this
+formalism describes physical reality. The first task is purely mathematical; the second
+requires a bridge between the formalism and observable phenomena. That bridge is
+built from measurement.
+
+Every foundational axiom of a physical theory carries an implicit measurement demand.
+When GR asserts the Einstein Equivalence Principle, it is not merely making a statement
+about the metric tensor in an abstract Riemannian manifold. It is asserting something
+about how physical experiments behave in the real universe. The EEP has physical
+content only because it predicts outcomes of measurements that can, in principle, be
+performed.
+
+The MATHICCS criterion asks a single question about any such axiom: does the theory's
+own ontology support the existence of an apparatus capable of performing the required
+measurement?
+
+If yes, the axiom is \emph{internally realizable}: the theory is self-consistent in
+the sense that it does not require external apparatus to give its axioms physical
+meaning.
+
+If no, the axiom is \emph{physically contentless} within the theory's own predicted
+universe: the theory asserts something about measurement outcomes while predicting a
+universe in which the relevant measurements cannot be performed. Such a theory has
+a structural deficiency we call \emph{self-undermining}.
+
+We demonstrate that GR is self-undermining in precisely this sense. The argument
+requires no appeal to probability, no choice of measure, and no philosophical
+controversy about the interpretation of physical theories. It requires only that we
+take GR's own operational definition of distance seriously, identify the minimum
+apparatus that definition demands, and ask what GR predicts about that apparatus.
+
+We additionally show that GR fails the stronger \emph{Koons Hypothesis}
+(Section~\ref{sec:koons}), which demands that a viable fundamental theory's own
+dynamics must preserve, not destroy, the structural conditions required for its axioms
+to have physical content. GR's dynamics actively dissolve those conditions.
+
+The paper is organized as follows. Section~\ref{sec:mathiccs} introduces the MATHICCS
+criterion. Section~\ref{sec:koons} states the Koons Hypothesis and its relationship to
+MATHICCS. Section~\ref{sec:eep} identifies the EEP's measurement demand and minimum
+realizer. Section~\ref{sec:destruction} shows GR predicts the destruction of that
+realizer. Section~\ref{sec:theorem} states and proves the self-undermining theorem.
+Section~\ref{sec:objections} addresses objections. Section~\ref{sec:implications}
+discusses implications.
+
+%----------------------------------------------------------------------
+\section{The MATHICCS Criterion}
+\label{sec:mathiccs}
+%----------------------------------------------------------------------
+
+\subsection{Physical Axioms and Their Demands}
+
+\begin{definition}[Measurement Demand]
+Let $A$ be a physical axiom of theory $\mathcal{T}$. The \emph{measurement demand}
+of $A$, written $\mathcal{D}(A)$, is the set of physical operations that must be
+performable in order for $A$ to have physical content beyond a purely mathematical
+statement.
+\end{definition}
+
+\begin{definition}[Internal Epistemic Realizer]
+Let $\mathcal{T}$ be a physical theory with ontology $\mathcal{O}$ (the set of
+physical entities the theory posits as real). An \emph{internal epistemic realizer}
+for axiom $A$ is a physical system $R$ such that:
+\begin{enumerate}[label=(\roman*)]
+\item $R$ is constructible from elements of $\mathcal{O}$ alone,
+\item $R$ is capable of executing every operation in $\mathcal{D}(A)$, and
+\item $R$ remains functionally intact under $\mathcal{T}$'s predicted dynamics for a
+      duration sufficient to complete the required operations.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[MATHICCS Validity]
+\label{def:mathiccs}
+A physical theory $\mathcal{T}$ is \emph{MATHICCS-valid} if and only if, for every
+axiom $A$ of $\mathcal{T}$, an internal epistemic realizer for $A$ exists within
+$\mathcal{T}$'s predicted universe.
+
+A theory that possesses an axiom with no internal epistemic realizer is
+\emph{MATHICCS-invalid}: it asserts physical content it cannot internally support.
+\end{definition}
+
+\begin{remark}
+MATHICCS validity is a necessary condition for a theory to constitute a complete
+physical description of reality. A MATHICCS-invalid theory may still be an excellent
+effective tool within a restricted domain; but it cannot claim to be a fundamental
+physical ontology, because it contains physical assertions that its own universe cannot
+cash out in terms of measurement.
+\end{remark}
+
+\subsection{The Criterion is Theory-Internal}
+
+A critical feature of Definition~\ref{def:mathiccs} is that the realizer must be
+constructible from the theory's \emph{own} ontology. This is not an externally imposed
+philosophical standard. It follows from the minimum requirement of scientific
+realism: a theory that asserts ``the universe is such that measurement $M$ would yield
+result $R$'' must, if taken as a description of reality rather than a conditional
+mathematical statement, allow that measurement $M$ can actually be performed by
+something inside that universe.
+
+A theory that can only be validated from outside its own ontology is not a description
+of physical reality. It is a mathematical structure that happens to fit some external
+observations. The distinction matters when a theory makes claims about regimes where
+external validation is impossible by construction.
+
+\subsection{The Probabilistic Form of the Argument}
+\label{sec:probabilistic}
+
+Beyond the binary operational question of whether a realizer \emph{exists}, there is
+a second, equally important way to state the deficiency. We include it here because it
+answers a common objection --- ``why must realizers persist globally?'' --- and
+illuminates the self-referential character of GR's failure.
+
+The question is not whether laboratories must persist forever. The question is whether
+a theory can account, from within its own dynamics, for why its own derivation was
+possible at all.
+
+If GR correctly describes the universe over $[t_{\mathrm{BB}}, +\infty)$, then a
+randomly selected observer-moment in that universe has probability zero of falling
+within the thermodynamically active epoch $[t_{\mathrm{BB}}, t_*]$. Einstein, any
+working laboratory, any instance of GR being derived or tested --- all of these are
+confined to a measure-zero slice of GR's own predicted history. GR therefore assigns
+probability zero, under its own dynamics, to the conditions required for its own
+discovery.
+
+This is not merely a statement about improbability. It is a statement about
+\emph{internal explanatory coherence}. A theory that assigns probability zero to
+the conditions of its own derivation cannot explain, from within its own framework,
+why those conditions obtained. It must either invoke an anthropic selection principle
+(which GR's formalism does not contain), or concede that GR cannot account for its own
+existence as a discovered theory without appealing to something outside itself.
+
+Importantly, this argument is not defeated by restricting attention to the present
+epoch. The objection ``we only need realizers now, and they exist now'' tacitly
+assumes that the \emph{when} of derivation is given from outside the theory. But if
+GR is the complete theory of the universe, there is no outside. The question of
+\emph{when} derivation occurs must be answerable within GR's framework --- and GR's
+framework says the probability of derivation occurring at any given time is zero in the
+limit. One cannot help oneself to ``it happened to be now'' without invoking
+something GR does not provide.
+
+We note that this probabilistic argument is complementary to, not a replacement for,
+the operational argument. The operational argument establishes that realizers are
+absent in a definite region of GR's predicted spacetime. The probabilistic argument
+establishes that GR cannot internally explain why derivation happened at all. Both
+target the same structural deficiency from different angles.
+
+%----------------------------------------------------------------------
+\section{The Koons Hypothesis}
+\label{sec:koons}
+%----------------------------------------------------------------------
+
+The MATHICCS criterion identifies a binary condition: a realizer either exists or it
+does not. The \emph{Koons Hypothesis} is a stronger dynamical requirement, demanding
+not merely that realizers exist but that the theory's own evolution preserves them.
+
+\begin{criterion}[Koons Hypothesis]
+\label{crit:koons}
+Any viable or correct fundamental theory of reality must satisfy:
+\[
+\text{Evolution under its own dynamics} \;\Rightarrow\; \text{Structural stability of all its axioms.}
+\]
+That is: the dynamical laws of the theory must be such that the physical conditions
+required to give the theory's axioms empirical content are preserved --- not destroyed
+--- under the theory's own predicted evolution.
+\end{criterion}
+
+The Koons Hypothesis is stronger than MATHICCS validity in two respects. First, it is
+a dynamical condition, not merely an existential one. MATHICCS asks whether a realizer
+exists; the Koons Hypothesis asks whether the theory's dynamics \emph{maintain} that
+existence. A theory could satisfy MATHICCS at early times while violating the Koons
+Hypothesis by predicting the subsequent destruction of its own realizers. Second, the
+Koons Hypothesis applies to the full temporal domain of the theory, not merely to some
+initial epoch.
+
+\begin{remark}
+The Koons Hypothesis can be understood as a \emph{fixed-point condition} on the
+theory's dynamics with respect to its own epistemic infrastructure. A theory satisfying
+the Koons Hypothesis has dynamics that form a kind of closed loop: the laws govern
+matter; matter instantiates the apparatus that gives the laws physical meaning; the
+laws preserve that apparatus. A theory violating the Koons Hypothesis has laws that
+destroy their own empirical grounding.
+\end{remark}
+
+\begin{remark}
+The Koons Hypothesis does not require that realizers persist in every solution of the
+theory. It requires that in the solutions the theory presents as physically realistic
+--- in particular, solutions with the observed initial conditions --- the dynamics do
+not generically destroy realizer existence. GR with $\Lambda > 0$ and observed initial
+conditions is precisely the class of solutions under consideration.
+\end{remark}
+
+\subsection{GR and the Koons Hypothesis}
+
+GR fails the Koons Hypothesis. Its dynamics do not merely fail to preserve its
+axiom-realizers; they actively and necessarily destroy them. The mechanism is explicit:
+de~Sitter expansion isolates all matter within a finite causal horizon; thermodynamic
+processes dissipate all free energy on finite timescales; no mechanism within GR's
+ontology regenerates the structural conditions required for a Photonic Mirror Clock
+(Section~\ref{sec:eep}) after $t > t_*$.
+
+This failure is not incidental. It is a consequence of GR's two most
+observationally-confirmed features: the positive cosmological constant $\Lambda > 0$
+(driving de~Sitter expansion) and the Second Law of Thermodynamics (driving irreversible
+dissipation). GR's own best-confirmed predictions jointly entail the destruction of
+its own realizers. The Koons Hypothesis failure is therefore not a contingent feature
+of particular solutions; it is a structural property of GR as a cosmological theory.
+
+Compare this to what a Koons-satisfying theory would require: its dynamics would need
+to maintain, perpetually, the thermodynamic conditions necessary for its foundational
+measurements. This is a genuine constraint on successor theories and points toward
+theories with stationary, cyclic, or otherwise realizer-preserving dynamics.
+
+%----------------------------------------------------------------------
+\section{GR's Foundational Axiom and Its Measurement Demand}
+\label{sec:eep}
+%----------------------------------------------------------------------
+
+\subsection{The Einstein Equivalence Principle}
+
+\begin{axiom}[Einstein Equivalence Principle (EEP)]
+\label{ax:eep}
+For every point $p$ in the spacetime manifold $M$ and for every $\varepsilon > 0$,
+there exists $\delta > 0$ and a coordinate system (local inertial frame) in which the
+metric satisfies
+\[
+|g_{\mu\nu}(x) - \eta_{\mu\nu}| < \varepsilon \quad \text{for all } x \in U_\delta(p),
+\]
+where $\eta_{\mu\nu}$ is the Minkowski metric. In this frame, the laws of
+special-relativistic physics hold to accuracy $\varepsilon$.
+\end{axiom}
+
+The EEP is the physical foundation of GR. It is what makes GR a theory about
+the real world rather than a theory about abstract Riemannian manifolds. Without the
+EEP, GR's field equations describe the evolution of a geometric structure with no
+physical interpretation. With the EEP, the geometry is tied to the outcomes of
+local measurements: rulers measure proper lengths, clocks measure proper times, and
+local dynamics obey SR.
+
+\subsection{The Measurement Demand of the EEP}
+
+The EEP is an $\varepsilon$-$\delta$ statement. It asserts that spatial and temporal
+distances can be measured locally to arbitrary precision $\varepsilon$ by shrinking the
+neighborhood to size $\delta(\varepsilon)$. Its measurement demand $\mathcal{D}(\mathrm{EEP})$
+therefore includes:
+
+\begin{enumerate}[label=(\roman*)]
+\item The ability to measure a spatial distance $d$ to precision $\varepsilon d$,
+\item The ability to measure a time interval $\Delta t$ to precision $\varepsilon \Delta t$,
+\item The ability to compare measurement outcomes at different points in $U_\delta(p)$,
+\item The ability to detect deviations from SR physics at level $\varepsilon$.
+\end{enumerate}
+
+Operations (i) through (iv) must be executable by a physical system located within
+the spacetime region under test. This is not optional: the EEP asserts something
+about measurements performed at $p$, so the apparatus must be at $p$.
+
+\subsection{GR's Own Definition of Distance Determines the Realizer}
+
+Here is the key step, and it requires no external philosophical input.
+
+GR defines spatial distance operationally. In GR, the proper distance between two
+events is:
+\[
+ds^2 = g_{\mu\nu}\,dx^\mu\,dx^\nu.
+\]
+In a local inertial frame, this reduces to the SR line element. The operational
+meaning of $ds$ in GR --- how one \emph{measures} a distance in the real world using
+GR's framework --- is given by light travel time. Specifically, the proper length of
+a spatial interval is defined as $c/2$ times the round-trip travel time of a light
+signal across that interval. This is not a convention that can be replaced: in GR,
+there is no distance-measuring procedure independent of light propagation. Rigid rods
+are not primitive; they are defined via the metric, which is operationalized through
+light.
+
+Therefore, the minimum physical apparatus capable of executing the EEP's
+$\varepsilon$-$\delta$ distance-measurement procedure is:
+
+\begin{definition}[Photonic Mirror Clock (PMC)]
+\label{def:pmc}
+A \emph{Photonic Mirror Clock} is a physical system consisting of:
+\begin{enumerate}[label=(\roman*)]
+\item A source capable of emitting a directed light pulse,
+\item A mirror at known separation $d$ from the source, capable of reflecting
+      the pulse back to the source,
+\item A detector at the source location capable of recording the round-trip
+      arrival time $\Delta t = 2d/c$,
+\item A record-keeping subsystem capable of storing and comparing multiple
+      round-trip measurements.
+\end{enumerate}
+This device defines the local meter (via $d$) and the local second (via $\Delta t$),
+and is capable of detecting deviations from the predicted $\Delta t = 2d/c$ at
+precision $\varepsilon$.
+\end{definition}
+
+\begin{lemma}[PMC is GR's Own Minimum Realizer]
+\label{lem:pmc}
+The Photonic Mirror Clock is the minimum internal epistemic realizer for the EEP
+within GR's own ontology. No simpler apparatus constructible from GR's ontology
+can execute the EEP's $\varepsilon$-$\delta$ distance-measurement demand.
+\end{lemma}
+
+\begin{proof}
+Any apparatus capable of measuring distance to precision $\varepsilon d$ in GR's
+framework must operationalize $ds = g_{\mu\nu}dx^\mu dx^\nu$. In GR's operational
+framework, this requires light propagation (as established above). The PMC is the
+minimum system that accomplishes this: source, mirror, detector, and record-keeper.
+Any attempt to reduce below this (e.g., remove the mirror) destroys the round-trip
+measurement and with it the ability to define $d$ operationally. Any attempt to
+remove the record-keeper destroys the ability to compare measurements across
+$U_\delta(p)$ as required by the EEP. The PMC is therefore minimal.
+
+We note that geodesic deviation --- the separation of neighboring free-fall
+trajectories --- might appear to offer a non-photonic alternative. However, monitoring
+the separation of two test masses requires measuring the distance between them, which
+reduces back to light travel time in GR's operational framework. The geodesic deviation
+apparatus is therefore a PMC under a different description, not an independent
+alternative.
+\end{proof}
+
+\begin{remark}
+We emphasize: the PMC is not an arbitrary experimental convenience. It is what GR
+demands. A referee or critic who objects to the PMC as the realizer is implicitly
+objecting to GR's own operational definition of distance. If one accepts GR's
+framework, one accepts that distance is measured via light travel time, and therefore
+one accepts that the PMC is the minimum realizer.
+\end{remark}
+
+%----------------------------------------------------------------------
+\section{GR Predicts the Destruction of Its Own Realizer}
+\label{sec:destruction}
+%----------------------------------------------------------------------
+
+We now examine what GR predicts about the existence and persistence of Photonic Mirror
+Clocks in the universe GR describes.
+
+\subsection{Requirements for PMC Existence}
+
+A Photonic Mirror Clock requires:
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{An energy source} to generate the light pulse. Photons carry energy
+      $E = hf > 0$; generating them requires a thermodynamic process consuming free
+      energy.
+\item \textbf{A reflective mirror} at a stable, known separation $d$. This requires
+      a bound material system --- atoms organized into a reflective surface --- held
+      at fixed separation against perturbations.
+\item \textbf{A detector} capable of registering photon arrival. This requires a
+      material system with an accessible energy transition (absorbing or registering
+      the photon).
+\item \textbf{A record-keeper} capable of storing and comparing arrival times to
+      precision $\varepsilon$. This requires a thermodynamically active system with
+      sufficient complexity to encode and process information.
+\end{enumerate}
+
+All four components require \emph{thermodynamically active matter}: matter with
+available free energy and organized structure at temperature above absolute zero
+(and below a threshold that would thermally destroy the organization). This is a
+single unified requirement:
+
+\begin{definition}[Thermodynamic Viability]
+A PMC is \emph{thermodynamically viable} at spacetime region $(x,t)$ if and only if
+the matter at $(x,t)$ has sufficient free energy and structural organization to
+construct and operate all four PMC components.
+\end{definition}
+
+\subsection{GR's Predictions About Thermodynamic Viability}
+
+GR, together with the observed value of the cosmological constant $\Lambda > 0$ and
+standard thermodynamics, predicts the following about thermodynamic viability in our
+universe.
+
+\subsubsection{Stellar Epoch}
+
+Thermodynamically viable matter requires nuclear or chemical free energy. Stars provide
+the dominant source. GR-consistent stellar physics predicts:
+
+\begin{itemize}
+\item Solar-mass stars: thermodynamic lifetime $\sim 10^{10}$ yr.
+\item Minimum-mass hydrogen-burning stars: thermodynamic lifetime $\sim 10^{13}$ yr.
+\end{itemize}
+
+After stellar burnout, stellar remnants (white dwarfs, neutron stars, black holes)
+cool monotonically and asymptote to zero temperature. They do not regenerate free
+energy. The thermodynamic activity of the universe's matter therefore declines
+monotonically after the stellar epoch ends.
+
+\subsubsection{De Sitter Expansion and Isolation}
+
+With $\Lambda > 0$, GR predicts exponential expansion of the scale factor:
+$a(t) \propto e^{Ht}$ where $H = \sqrt{\Lambda/3}$. This produces a cosmological
+event horizon of radius $r_H = c/H \approx 16$ Gly. As $t \to \infty$:
+
+\begin{itemize}
+\item All matter outside gravitationally bound local structures recedes beyond $r_H$
+      and becomes causally inaccessible.
+\item Within each isolated gravitational island, the matter supply is finite and
+      fixed.
+\item No thermodynamic replenishment from outside the horizon is possible.
+\end{itemize}
+
+\subsubsection{Baryonic Decay}
+
+Grand Unified Theories consistent with GR predict proton decay on timescales
+$\tau_p \sim 10^{32}$--$10^{40}$ yr~\cite{georgi1974}. Even absent proton decay,
+quantum tunneling processes convert all matter to black holes and radiation on
+timescales $\sim 10^{10^{76}}$ yr~\cite{adams1997}. Hawking radiation then
+evaporates all black holes on timescales at most $\sim 10^{100}$ yr for stellar-mass
+black holes. After these processes complete, no baryonic matter organized into
+reflective surfaces, detectors, or record-keepers remains.
+
+\subsubsection{Summary of GR's Prediction}
+
+Let $t_*$ denote the latest time at which a thermodynamically viable PMC can exist
+anywhere in the GR universe. By the above, $t_*$ is finite. An upper bound (extremely
+conservative) is $t_* \lesssim 10^{10^{76}}$ yr. GR's predicted temporal domain is
+$[t_{\mathrm{BB}}, +\infty)$.
+
+Therefore:
+
+\begin{proposition}[PMC Non-Existence]
+\label{prop:pmc}
+Under GR with $\Lambda > 0$ and standard thermodynamics, no Photonic Mirror Clock
+exists in the GR universe for $t > t_*$, where $t_*$ is finite.
+\end{proposition}
+
+\noindent The universe GR describes spends the overwhelming majority of its predicted
+existence in a state where no PMC can exist.
+
+%----------------------------------------------------------------------
+\section{The Self-Undermining Theorem}
+\label{sec:theorem}
+%----------------------------------------------------------------------
+
+\begin{theorem}[GR Self-Undermining]
+\label{thm:main}
+General Relativity, taken as a complete physical theory of the universe with
+$\Lambda > 0$, is MATHICCS-invalid and violates the Koons Hypothesis. Specifically:
+
+\begin{enumerate}[label=(\roman*)]
+\item \textup{(MATHICCS failure)} GR's foundational axiom (the EEP) has no internal
+      epistemic realizer within GR's predicted universe for $t > t_*$, where $t_*$ is
+      the finite epoch of thermodynamic viability. Since GR makes physical assertions
+      about spacetime structure for all $t \in [t_{\mathrm{BB}}, +\infty)$, it makes
+      physically contentless assertions about the entire post-thermodynamic domain.
+
+\item \textup{(Koons Hypothesis failure)} GR's own dynamics --- de~Sitter expansion
+      and thermodynamic dissipation --- do not preserve the structural stability of the
+      EEP's realizer. They destroy it. The theory's evolution actively dissolves its
+      own epistemic infrastructure.
+
+\item \textup{(Probabilistic self-reference failure)} Under GR's own dynamics, the
+      probability that a randomly selected observer-moment in the GR universe falls
+      within the thermodynamically active epoch $[t_{\mathrm{BB}}, t_*]$ is zero.
+      GR therefore assigns measure-zero probability to the conditions required for its
+      own derivation and cannot internally account for why those conditions obtained.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\textit{Part (i).} By Lemma~\ref{lem:pmc}, the minimum internal epistemic realizer for the EEP within
+GR's ontology is a Photonic Mirror Clock. By Proposition~\ref{prop:pmc}, no PMC exists for $t > t_*$.
+By Definition~\ref{def:mathiccs}, the EEP has no internal epistemic realizer for $t > t_*$.
+Since GR asserts the EEP at all points of the spacetime manifold, including those with
+$t > t_*$, GR asserts the physical content of the EEP in a regime where GR's own
+ontology cannot support the realizer that would give the EEP physical content.
+By Definition~\ref{def:mathiccs}, GR is MATHICCS-invalid.
+
+\textit{Part (ii).} By Criterion~\ref{crit:koons}, GR must satisfy: evolution under
+its own dynamics implies structural stability of all its axioms. GR's dynamics
+(de~Sitter expansion with $\Lambda > 0$ plus thermodynamic dissipation) predict the
+permanent destruction of all PMCs for $t > t_*$, where $t_*$ is finite and
+independent of initial conditions within the observed cosmological class. The dynamics
+do not preserve realizer existence; they terminate it. The Koons Hypothesis is
+therefore violated.
+
+\textit{Part (iii).} The temporal domain of GR is $[t_{\mathrm{BB}}, +\infty)$, which
+has infinite Lebesgue measure. The thermodynamically active epoch
+$[t_{\mathrm{BB}}, t_*]$ has finite Lebesgue measure $t_* - t_{\mathrm{BB}} < \infty$.
+The fraction of observer-moments in a GR universe that fall within the active epoch is
+$(t_* - t_{\mathrm{BB}}) / \infty = 0$. Under any measure on GR's temporal domain that
+assigns positive weight to intervals of positive length in the post-thermodynamic
+regime (which is required for $\mu$ to be a physically meaningful measure on an
+unbounded domain), the realizer-supporting epoch has measure zero. GR therefore
+assigns probability zero to the event ``derivation of GR is possible,'' and has no
+internal mechanism to explain why derivation occurred.
+\end{proof}
+
+\begin{remark}
+No step in part (i) invokes probability or measure theory. The argument is binary:
+a PMC either exists in a given spacetime region or it does not. Part (iii) adds the
+probabilistic form as an independent line of argument converging on the same
+conclusion.
+\end{remark}
+
+\begin{remark}
+The specific value of $t_*$ is irrelevant to parts (i) and (ii). Whether
+$t_* = 10^{13}$ yr or $t_* = 10^{10^{76}}$ yr, the conclusion is the same: for
+$t > t_*$, the PMC does not exist, the EEP is physically contentless, and the Koons
+Hypothesis is violated. The specific value of $t_*$ matters only to the probabilistic
+argument of part (iii), where any finite $t_*$ in an infinite domain yields measure
+zero.
+\end{remark}
+
+%----------------------------------------------------------------------
+\section{Objections and Responses}
+\label{sec:objections}
+%----------------------------------------------------------------------
+
+\subsection{Objection 1: ``The EEP is a local axiom; it only needs to hold where observers exist.''}
+
+\emph{Objection.} The EEP asserts that wherever an observer exists, local physics is
+SR-like. If no observer exists, the EEP is vacuously satisfied, not violated. GR does
+not assert that observers must exist everywhere.
+
+\emph{Response.} A vacuously satisfied physical axiom is not a physical axiom. It is a
+conditional mathematical statement: ``if an observer exists at $p$, then local physics
+at $p$ is SR-like.'' This is weaker than the EEP as a physical postulate. GR's claim
+is not merely conditional: GR asserts that spacetime has Lorentzian geometry, that
+this geometry is dynamically determined by matter, and that local measurements reveal
+SR physics. These are claims about the structure of the universe, not about the
+conditional behavior of hypothetical observers.
+
+More precisely: GR uses the EEP to derive the geodesic equation, the gravitational
+redshift formula, and the equivalence of gravitational and inertial mass. These
+derivations are used to make predictions about the present epoch. If the EEP is merely
+a conditional statement, these derivations carry no physical force: they describe what
+would happen if observers existed, but make no claim about whether observers do. This
+would reduce GR from a theory of physical reality to a theory of observer-dependent
+appearances. That is not what GR claims to be.
+
+Furthermore, the Koons Hypothesis directly answers the ``local validity'' objection.
+Even if one grants that the EEP need only hold locally where observers exist, the Koons
+Hypothesis demands that the theory's dynamics maintain the conditions for observer
+existence. GR's dynamics do not. A theory that is locally valid wherever observers
+exist, but whose own dynamics eliminate all observers, is not locally valid
+\emph{anywhere in its predicted future.} Local validity and dynamical stability of the
+conditions for local validity are inseparable for a complete theory.
+
+\subsection{Objection 2: ``Dyson showed that observers can persist indefinitely.''}
+
+\emph{Objection.} Dyson (1979)~\cite{dyson1979} argued that life and computation can
+persist indefinitely in an open universe by hibernation: slowing metabolism in
+proportion to the decreasing ambient temperature, using finite total energy to survive
+infinite time.
+
+\emph{Response.} Dyson's argument applies to open universes without a cosmological
+constant. With $\Lambda > 0$, Dyson's strategy fails for two independent reasons.
+
+First, de~Sitter expansion imposes a \emph{finite} event horizon $r_H = c/H$. Any
+observer is confined to a causally isolated region with finite total energy. Dyson's
+hibernation strategy requires that available energy scales down proportionally to the
+decreasing temperature; but with a finite energy reservoir and a nonzero Gibbons-Hawking
+temperature~\cite{gibbons1977}
+\[
+T_{\mathrm{GH}} = \frac{\hbar H}{2\pi k_B} \approx 10^{-30}\,\mathrm{K},
+\]
+the observer must eventually expend more energy maintaining internal order against this
+thermal bath than hibernation recovers. The finite energy budget is exhausted in
+finite time.
+
+Second, and more directly: even granting indefinitely persistent observers, a
+Dyson-hibernating observer does not constitute a PMC. The PMC requires an active light
+pulse, a reflective mirror, and a detector registering arrival time. A hibernating
+observer by definition is not actively emitting and detecting photons. The hibernation
+strategy preserves the \emph{existence} of a complex system but not its function as a
+distance-measuring apparatus. The measurement demand of the EEP requires active
+operation, not mere persistence.
+
+The Koons Hypothesis sharpens this response further. A Dyson-hibernating observer is
+not merely failing to operate a PMC; it is a system whose own dynamics are driving it
+toward eventual dissolution against the Gibbons-Hawking bath. Even the hibernating
+observer is on a finite trajectory under GR's dynamics. The Koons Hypothesis requires
+the dynamics to maintain realizer structure indefinitely, not merely to delay its
+destruction.
+
+\subsection{Objection 3: ``This applies to any theory, not specifically GR.''}
+
+\emph{Objection.} Any theory predicting eventual thermodynamic decay faces the same
+argument. MATHICCS condemns all of physics, not just GR.
+
+\emph{Response.} We accept this partially and consider it a feature, not a bug.
+MATHICCS is a \emph{general} criterion, and the Koons Hypothesis is a general
+requirement. Any theory predicting universal heat death and claiming physical validity
+over its full temporal domain faces the same audit.
+
+What MATHICCS demands is that a theory either (a) has a finite claimed domain over
+which realizers persist throughout, or (b) explicitly restricts its physical validity
+claims to the realizer-supporting epoch. Option (b) is available to GR: one can simply
+say ``GR describes the thermodynamically active epoch, and makes no physical claims
+about $t > t_*$.'' Most physicists implicitly make this restriction. MATHICCS makes it
+explicit and mandatory.
+
+The Koons Hypothesis adds a stronger requirement: a correct fundamental theory must
+have dynamics that actively preserve its realizers. This points toward a genuine
+structural requirement on successor theories: they must incorporate mechanisms
+maintaining the thermodynamic conditions for their own foundational measurements.
+Theories with cyclic, stationary, or otherwise realizer-preserving dynamics could in
+principle satisfy the Koons Hypothesis; GR with $\Lambda > 0$ cannot.
+
+\subsection{Objection 4: ``The PMC is too specific; other distance-measuring procedures exist.''}
+
+\emph{Objection.} One could measure distances using gravitational wave detectors,
+atomic clocks, or other devices not identical to a photonic mirror clock.
+
+\emph{Response.} All such devices, examined carefully, reduce to the same operational
+content: a signal (electromagnetic or gravitational) travels a known path and returns,
+and the travel time defines the distance. Gravitational wave detectors measure the
+differential light travel time in orthogonal arms --- they are PMCs. Atomic clocks
+define frequency, not distance; to convert a frequency standard to a distance
+measurement, one must still time a light signal.
+
+The PMC in Definition~\ref{def:pmc} is not a specific experimental design; it is the
+abstract minimum: a signal, a reflector, a detector, and a record-keeper. Any
+distance-measuring device in GR's framework instantiates this abstract structure. The
+argument applies to all of them equally.
+
+\subsection{Objection 5: ``GR is not claimed to be a complete theory; everyone knows it needs quantum gravity.''}
+
+\emph{Objection.} Physicists already regard GR as incomplete. MATHICCS is attacking a
+straw man.
+
+\emph{Response.} This is the most important objection and we address it directly.
+
+It is true that GR is widely regarded as incomplete at quantum scales. But this
+incompleteness is typically understood as a \emph{short-distance} or
+\emph{high-energy} problem (singularities, quantization at the Planck scale).
+MATHICCS identifies a different and independent incompleteness: a \emph{long-time},
+entirely \emph{classical} problem. GR's physical axioms lose their realizers in the
+asymptotic future, a regime that has nothing to do with quantum gravity and that
+classical GR is taken to describe with full confidence.
+
+These are orthogonal deficiencies. The standard incompleteness narrative runs:
+singularities $\to$ quantum gravity needed $\to$ UV problem. MATHICCS identifies an
+IR/asymptotic problem independent of quantization. GR could be successfully quantized
+tomorrow and the MATHICCS failure would be entirely unaffected, because it concerns
+the asymptotic classical future, not the quantum short-distance regime.
+
+Furthermore, GR is routinely applied as a complete cosmological theory of the present
+and future universe. Papers computing de~Sitter entropy, black hole information content
+in the far future, or the thermal properties of empty de~Sitter space treat GR as
+physically valid in those regimes. MATHICCS says: if you invoke GR's physical content
+(the EEP) in those regimes, you must supply an internal realizer. If you cannot, you
+are doing mathematics, not physics.
+
+\subsection{Objection 6: ``Boltzmann brains could serve as realizers in the de~Sitter phase.''}
+
+\emph{Objection.} Random thermal fluctuations in the de~Sitter phase could produce
+Boltzmann brains that instantiate a PMC momentarily. These would constitute realizers
+in the post-thermodynamic regime.
+
+\emph{Response.} Boltzmann brains fail condition (iii) of the internal epistemic
+realizer definition: they do not remain functionally intact under the theory's dynamics
+for a duration sufficient to complete the required operations. A Boltzmann fluctuation
+producing an apparent PMC exists only for the duration of the fluctuation; the same
+thermal bath that produces it immediately begins to dissolve it. A Boltzmann PMC
+cannot complete a measurement procedure, record results, and compare them, because it
+does not persist as a functional system through the relevant sequence of operations.
+
+More fundamentally: a Boltzmann-brain ``derivation'' of GR is not a legitimate
+epistemic derivation. The Boltzmann brain does not arrive at GR through a causal
+process of observation and inference; it merely instantiates a belief state that
+matches GR. Such a system does not give the EEP empirical content; it merely contains
+a representation of it. The epistemic realizer definition requires a system capable of
+executing the measurement \emph{procedure}, not merely one that contains a record
+asserting its results.
+
+%----------------------------------------------------------------------
+\section{What MATHICCS Does Not Claim}
+\label{sec:limits}
+%----------------------------------------------------------------------
+
+For clarity, we enumerate what this paper does not assert.
+
+\begin{enumerate}
+\item We do not claim GR's predictions for $t \leq t_*$ are empirically wrong. GR's
+remarkable agreement with observation within the thermodynamically active epoch is
+unaffected by this argument.
+
+\item We do not claim to identify the correct alternative theory. MATHICCS and the
+Koons Hypothesis are filters, not replacements.
+
+\item We do not claim the EEP is false. We claim it is physically contentless in
+the post-thermodynamic regime, within GR's own ontology.
+
+\item We do not invoke quantum mechanics or quantum gravity. The argument is classical:
+GR plus standard thermodynamics.
+
+\item We do not invoke probability or measure theory in the primary operational
+argument. The primary claim is binary: a PMC either exists in a given spacetime region
+or it does not. The probabilistic argument of Section~\ref{sec:probabilistic} and
+Theorem~\ref{thm:main}(iii) is a complementary line of reasoning, not a replacement
+for the operational argument.
+\end{enumerate}
+
+%----------------------------------------------------------------------
+\section{Implications}
+\label{sec:implications}
+%----------------------------------------------------------------------
+
+\subsection{The Minimum Requirement on Successor Theories}
+
+Any theory that claims to supersede GR as a complete physical ontology must satisfy
+both MATHICCS and the Koons Hypothesis. Concretely: it must predict that its own
+minimum realizers persist throughout its claimed temporal domain, or explicitly
+restrict its physical claims to the realizer-supported domain. Under the Koons
+Hypothesis, the stronger requirement applies: the theory's dynamics must actively
+maintain the conditions for its own epistemic grounding.
+
+This is a structural constraint. It does not by itself determine what the successor
+theory must look like. But it rules out any theory that, like GR, applies its
+foundational axioms universally across a domain where those axioms have no internal
+support, and any theory whose dynamics generically destroy their own realizers.
+
+\subsection{The Self-Reference Character of the Problem}
+
+There is a precise sense in which GR's deficiency is self-referential, visible from
+three angles simultaneously.
+
+Operationally: GR defines distance via light travel time; GR's dynamics eliminate all
+light-travel-time measuring apparatus; GR therefore defines distance using a procedure
+its own universe cannot perform.
+
+Dynamically (Koons): GR's laws govern matter; matter instantiates GR's realizers; but
+GR's laws destroy those realizers rather than preserving them.
+
+Probabilistically: GR's temporal domain is infinite; the conditions for GR's discovery
+occupy a finite slice; GR therefore assigns probability zero to its own discovery and
+cannot explain, from within its own framework, why derivation occurred.
+
+All three formulations target the same structural property: GR contains within its
+formalism the prediction of its own epistemological dissolution.
+
+\subsection{Connection to Known Problems}
+
+The self-undermining property identified here is related to, but distinct from,
+several known problems in foundations of physics:
+
+\begin{itemize}
+\item \textbf{The cosmological measure problem.} The measure problem asks how to
+assign probabilities to observations in an eternally inflating universe. MATHICCS's
+primary argument does not require probability: it asks only whether a realizer exists,
+not how probable it is. The probabilistic argument of Section~\ref{sec:probabilistic}
+intersects with the measure problem, but frames it as a disqualifying internal
+inconsistency rather than an open technical puzzle.
+
+\item \textbf{The Boltzmann brain problem.} MATHICCS does not rely on observer
+counting. Boltzmann brains are excluded as realizers because they fail the functional
+integrity condition of Definition~2, not because they are rare.
+
+\item \textbf{The singularity problem.} GR predicts singularities where its own
+equations break down at short distances. MATHICCS identifies an analogous breakdown at
+long times: regions where GR's equations hold mathematically but their physical
+interpretation is unsupported. The two problems are independent.
+
+\item \textbf{The UV vs.\ IR split.} The standard incompleteness of GR is a UV (short
+distance, high energy) problem. MATHICCS identifies an independent IR (long time, low
+energy) problem. A successful UV completion of GR (quantum gravity) would not resolve
+the MATHICCS failure.
+\end{itemize}
+
+%----------------------------------------------------------------------
+\section{Conclusion}
+\label{sec:conclusion}
+%----------------------------------------------------------------------
+
+We have established the following chain of reasoning, each step drawing on GR's own
+framework:
+
+\begin{enumerate}
+\item The EEP is the foundational physical axiom of GR.
+\item The EEP is an $\varepsilon$-$\delta$ statement requiring distance measurements
+      at arbitrary precision.
+\item GR defines distance operationally via light travel time.
+\item Therefore the minimum internal realizer of the EEP within GR's own ontology is
+      a Photonic Mirror Clock.
+\item GR, together with standard thermodynamics and $\Lambda > 0$, predicts the
+      permanent absence of PMCs for $t > t_*$, where $t_*$ is finite.
+\item Therefore GR's foundational axiom has no internal realizer for $t > t_*$.
+\item A physical theory whose foundational axiom has no internal realizer in a
+      substantial portion of its claimed domain is not a complete physical description
+      of reality. (MATHICCS failure.)
+\item GR's dynamics do not preserve the structural stability of its axiom-realizers;
+      they destroy them. (Koons Hypothesis failure.)
+\item GR assigns probability zero, under its own dynamics, to the conditions required
+      for its own derivation, and cannot internally account for why derivation
+      occurred. (Probabilistic self-reference failure.)
+\end{enumerate}
+
+No step in this chain requires external philosophical commitments beyond the minimal
+realist premise that physical theories must have internal support for their foundational
+claims. The argument is self-contained within GR's own framework.
+
+General Relativity, by its own predictions, destroys the apparatus required to give
+its own foundational axiom physical meaning, violates the dynamical requirement that
+a correct theory preserve its own epistemic infrastructure, and assigns measure-zero
+probability to the conditions of its own discovery. This is what we mean by
+MATHICCS-invalidity and Koons Hypothesis failure.
+
+GR commits the same epistemic error as flat-earth theory: it postulates a globally valid geometric structure --- local flatness elevated to a universal axiom --- that cannot be tested from within the domain it claims to describe. Thus, Einstein created the 20th century version of flat earth.
+
+\begin{thebibliography}{99}
+
+\bibitem{bridgman1927}
+P.~W.~Bridgman,
+\textit{The Logic of Modern Physics},
+Macmillan, New York (1927).
+
+\bibitem{mach1883}
+E.~Mach,
+\textit{The Science of Mechanics},
+Open Court (1883; English translation 1893).
+
+\bibitem{gibbons1977}
+G.~W.~Gibbons and S.~W.~Hawking,
+``Cosmological event horizons, thermodynamics, and particle creation,''
+\textit{Phys.\ Rev.\ D} \textbf{15}, 2738 (1977).
+
+\bibitem{dyson1979}
+F.~J.~Dyson,
+``Time without end: Physics and biology in an open universe,''
+\textit{Rev.\ Mod.\ Phys.} \textbf{51}, 447 (1979).
+
+\bibitem{adams1997}
+F.~C.~Adams and G.~Laughlin,
+``A dying universe: The long-term fate and evolution of astrophysical objects,''
+\textit{Rev.\ Mod.\ Phys.} \textbf{69}, 337 (1997).
+
+\bibitem{georgi1974}
+H.~Georgi and S.~L.~Glashow,
+``Unity of all elementary-particle forces,''
+\textit{Phys.\ Rev.\ Lett.} \textbf{32}, 438 (1974).
+
+\bibitem{penrose2010}
+R.~Penrose,
+\textit{Cycles of Time},
+Bodley Head, London (2010).
+
+\bibitem{smolin2013}
+L.~Smolin,
+\textit{Time Reborn},
+Houghton Mifflin Harcourt (2013).
+
+\bibitem{norton2004}
+J.~D.~Norton,
+``The hole argument,''
+\textit{Stanford Encyclopedia of Philosophy} (2004; revised 2019).
+
+\bibitem{dyson2002}
+L.~Dyson, M.~Kleban, and L.~Susskind,
+``Disturbing implications of a cosmological constant,''
+\textit{J.\ High Energy Phys.} \textbf{2002}(10), 011 (2002).
+
+\end{thebibliography}
+
+\end{document}
