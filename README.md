@@ -37,11 +37,18 @@ The papers (once finalized) live in the root directory as PDFs or LaTeX sources.
 - Proves General Relativity is MATHICCS-invalid: EEP requires persistent labs (ε–δ realizers), but GR destroys all realizers in every relevant spacetime (empty, few-body, cosmological) → **P ∧ ¬P explosion**.
 - Shows FSEP is the first (and currently only) MATHICCS-valid ontology: Apollonian boundaries are eternal internal realizers — infinite recursion → positive measure forever.
 - Derives Newtonian gravity, finite c, post-Newtonian terms, quantum discreteness from Taylor expansion of spherical inversion at boundaries.
-- Predicts observed dark matter fraction (~84–85% of total matter, baryons ~15–16%) as pure geometric series from Apollonian fractal dimension **D ≈ 2.473946** and radius ratio β ≈ 0.72.
-- Predicts fine structure constant **α ≈ 1/137.036** from bipolar pole aperture geometry (λ_local ≈ 21.81), unifying it with quasar jet collimation ~5.2°.
+- Predicts observed dark matter fraction (~84–85% of total matter, baryons ~15–16%) as pure geometric series from Apollonian fractal dimension **D ≈ 2.473946** and radius ratio β ≈ 0.72. WARNING: this is AI bullshit
+- Predicts fine structure constant **α ≈ 1/137.036** from bipolar pole aperture geometry (λ_local ≈ 21.81), unifying it with quasar jet collimation ~5.2°. WARNING: this is AI bullshit
 - Declares: **Physics must bootstrap its own mathematics from persistent internal processes — or explode.**
 - All future theories must pass the MATHICCS persistence test. No going back.
 - viXra: [coming soon]
+
+#### PAPER 4 - FRACTAL TENNIS
+
+- Fixes the AI Bullshit in Paper 3; by adhering to Mathiccs rules
+- Calculates the dark matter fraction, fine structure, merger DM declines.
+- Just need a few more math things completed until it's finished.
+
 
 ## Current Status (Feb 2026)
 - Paper 1: Written content complete ✅

@@ -270,35 +270,111 @@ Mapping the dimensionless ratio $\approx 10.27$ to physical units, using a typic
 Future work will refine the calculation with exact Soddy tangency enforcement and deeper (but still laboratory-limited) recursion to seek even closer convergence.
 
 
-\section{Dark Matter and Stellar Mass Decrease in Mergers under Fractal Tennis}
+\section{Dark Matter Fraction Decrease in Mergers under Fractal Tennis}
 
-In the Fractal Tennis ontology, galaxy mergers lead to an effective depletion of dark matter due to overlapping subhalo shells converting dark matter into baryons and photons. Let us consider two Milky Way–like galaxies merging, each with a total number of stars
+In the Fractal Tennis ontology, the dark fraction is a single-layer geometric
+quantity determined entirely by the effective child-to-parent radius ratio
+$\beta$ of the Apollonian hierarchy:
 \[
-N_\mathrm{stars} \sim 6 \times 10^{10}.
+f_{\rm dark}(\beta) = 1 - \beta^{3-D}, \qquad \alpha \equiv 3-D \approx 0.526.
 \]
-The combined system has
+The Elliott Stability Principle limits physical observability to one recursion
+layer; consequently this single evaluation is the complete, admissible
+expression---no compounding is permitted.
+
+\subsection{Merger as Beta Renormalization}
+
+A galaxy merger does not add mass uniformly. Angular momentum conservation
+during violent relaxation produces:
+\begin{itemize}
+    \item Inner stars lose angular momentum $\to$ sink toward core.
+    \item Outer stars gain angular momentum $\to$ expand halo.
+    \item Net effect: outer occupancy scale increases; inner density concentrates.
+\end{itemize}
+Since $\beta$ tracks the outer halo occupancy scale, a merger renormalizes
+$\beta \to k\beta$ with $k > 1$. Substituting:
 \[
-N_\mathrm{stars,total} = 2 \times 6 \times 10^{10} = 1.2 \times 10^{11}.
+f_{\rm dark}(k\beta) = 1 - (k\beta)^{\alpha}.
 \]
-
-During the merger, a small fraction of stars falls into the central core (the "mobius exit"), effectively removing them from the observable galaxy. For each galaxy, the number of stars lost is
+The drop in dark fraction is therefore:
 \[
-N_\mathrm{lost, galaxy} \sim 2 \times 10^7 \quad \Rightarrow \quad N_\mathrm{lost, total} \sim 4 \times 10^7.
+\boxed{\Delta f_{\rm dark} = \beta^{\alpha}(k^{\alpha} - 1)},
 \]
+derived purely from the fractal geometry with no free parameters beyond $k$,
+which is fixed by virial scaling.
 
-The fractional decrease in the total number of stars is then
+\subsection{Virial Scaling of $k$}
+
+For an equal-mass merger, total mass doubles. Under the virial relation
+$M \propto R^3$:
 \[
-f_\mathrm{stars} = \frac{N_\mathrm{lost, total}}{N_\mathrm{stars, total}} = \frac{4 \times 10^7}{1.2 \times 10^{11}} \approx 3.33 \times 10^{-4} \sim 0.033\%.
+k_{\rm virial} = 2^{1/3} \approx 1.26.
 \]
+Observed major mergers produce outer halo expansions in the range $k \approx
+1.2$--$1.5$, with strong redistribution reaching $k \approx 2$.
 
-This decrease is minuscule in comparison to the dramatic dark matter depletion, which can reach
+\subsection{Quantitative Results}
+
+Taking a representative pre-merger packing ratio $\beta = 0.05$
+(consistent with the Star $\to$ Galaxy hierarchy, $f_{\rm dark} \approx 79.3\%$):
+
+\begin{table}[h]
+\centering
+\caption{Dark fraction drop as a function of merger strength $k$,
+derived from $\Delta f = \beta^\alpha(k^\alpha - 1)$ with
+$\beta = 0.05$, $\alpha = 3-D \approx 0.526$.}
+\begin{tabular}{lcccc}
+\hline
+Scenario & $k$ & $f_{\rm pre}$ & $f_{\rm post}$ & $\Delta f$ \\
+\hline
+Pure virial ($k = 2^{1/3}$) & 1.26 & 79.32\% & 76.65\% & 2.67\% \\
+Realistic                   & 1.37 & 79.32\% & 75.60\% & 3.72\% \\
+Strong                      & 1.50 & 79.32\% & 74.40\% & 4.92\% \\
+Very strong                 & 2.00 & 79.32\% & 70.22\% & 9.10\% \\
+\hline
+\end{tabular}
+\label{tab:merger-drop}
+\end{table}
+
+The drop scales with $\beta_{\rm pre}$: galaxies with higher initial visible
+fraction (larger $\beta$) show larger absolute drops, as shown in
+Table~\ref{tab:merger-sensitivity}.
+
+\begin{table}[h]
+\centering
+\caption{Sensitivity of dark fraction drop to $\beta_{\rm pre}$, fixed $k = 1.37$.}
+\begin{tabular}{ccccc}
+\hline
+$\beta_{\rm pre}$ & $f_{\rm pre}$ & $f_{\rm post}$ & $\Delta f$ \\
+\hline
+0.01 & 91.13\% & 89.54\% & 1.60\% \\
+0.02 & 87.23\% & 84.93\% & 2.30\% \\
+0.05 & 79.32\% & 75.60\% & 3.72\% \\
+0.10 & 70.22\% & 64.86\% & 5.36\% \\
+0.20 & 57.12\% & 49.39\% & 7.72\% \\
+0.30 & 46.92\% & 37.36\% & 9.56\% \\
+\hline
+\end{tabular}
+\label{tab:merger-sensitivity}
+\end{table}
+
+\subsection{Stellar Mass}
+
+Consider two Milky Way--like galaxies each with $N_{\rm stars} \sim 6 \times
+10^{10}$ stars. Stars lost to the central Möbius exit during merger:
 \[
-f_\mathrm{DM} \sim 15\%
+N_{\rm lost, total} \sim 4 \times 10^7 \quad \Rightarrow \quad
+f_{\rm stars} = \frac{4 \times 10^7}{1.2 \times 10^{11}} \approx 0.033\%.
 \]
-for the combined halo. Consequently, even though the galaxy is technically lighter in baryonic content, this effect is practically invisible to observers, who are instead dominated by enhanced star formation and tidal debris caused by the merger.
 
-\paragraph{Implication:} Merged galaxies statistically have lower dark matter fractions, but their stellar counts remain essentially unchanged, making the small loss of stars imperceptible against the background of merger-driven star formation.
-
+\paragraph{Implication.}
+Realistic major mergers produce a dark fraction decrease of approximately
+$3\%$--$5\%$ from pure geometric virial scaling, reaching up to $\sim 9\%$
+under strong halo redistribution. This is derived from first principles via
+$\Delta f = \beta^\alpha(k^\alpha - 1)$ with no exotic matter or free
+parameters. Stellar counts remain essentially unchanged ($\lesssim 0.03\%$
+loss), consistent with observations showing merger-driven star formation
+dominating over any stellar depletion signal.
 
 \section{Cosmology Without Expansion}
 No metric expansion is postulated.
