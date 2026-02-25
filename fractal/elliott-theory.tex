@@ -3,6 +3,7 @@
 \usepackage{amsmath,amssymb,amsthm,mathrsfs}
 \usepackage{hyperref}
 \usepackage{enumitem}
+\usepackage{booktabs}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{definition}{Definition}
@@ -37,6 +38,7 @@ The ontology is the triple
 \mathcal{O} = (\mathcal{S}, \Phi, \mathcal{I}),
 \]
 where $\mathcal{S}$ is the state space of positive-density recursive configurations, $\Phi:\mathcal{S}\to\mathcal{S}$ is the evolution map, and $\mathcal{I}$ is the set of admissible internal operations. Every physical axiom must correspond to an element of $\mathcal{I}$.
+
 \subsection{Elliott Stability Principle}
 \begin{principle}[Elliott Stability]
 Let axiom $(A)$ invoke operation $P$ with domain $D_P\subseteq\mathcal{S}$. Then $(A)$ is admissible if and only if, for every generic initial state $s_0\in\mathcal{S}_{\rm generic}$,
@@ -45,6 +47,24 @@ Let axiom $(A)$ invoke operation $P$ with domain $D_P\subseteq\mathcal{S}$. Then
 \]
 That is, generic evolution must not produce states outside the axiom's own definitional domain. $\varepsilon$-$\delta$ arguments are permitted; operations whose domain collapses under $\Phi$ are forbidden.
 \end{principle}
+
+% INSERT 1: MATHICCS Axioms M1--M3
+\subsection{MATHICCS Axioms (M1--M3)}
+MATHICCS (Mathematics + Physics + Computational Consistency Substrate) provides the formal meta-logic for axiom validation:
+
+\begin{definition}[MATHICCS Axiom M1 (Persistence Criterion; Elliott Rule / MER)]
+Axiom $A$ containing mathematical process $P$ (quantifiers $\forall\varepsilon\exists\delta$, limits, smoothness, etc.) is MATHICCS-valid only if $P$ has \emph{internal persistence}: positive-measure initial states where internal realizers (clocks + apparatus + protocol) survive indefinitely under ontology dynamics.
+\end{definition}
+
+\begin{definition}[MATHICCS Axiom M2 (No External Math)]
+Physical meaning requires internal realization by persistent subsystems; external set-theoretic mathematics does not count as physical ontology.
+\end{definition}
+
+\begin{definition}[MATHICCS Axiom M3 (Ontological Self-Consistency)]
+Ontology $\mathcal{O}$ is valid only if all its axioms are MATHICCS-valid within $\mathcal{O}$ itself.
+\end{definition}
+
+Fractal Tennis satisfies M1--M3: all processes (M\"obius inversion, scale transformation, angular momentum conservation) possess eternal Apollonian boundary realizers that persist via infinite recursion.
 
 \section{Smooth-Manifold Contrast}
 Standard general relativity is formulated on a smooth differentiable manifold $(M,g_{\mu\nu})$ requiring local linear approximability:
@@ -61,21 +81,48 @@ Under MATHICCS / the Elliott Stability Principle, every such $\varepsilon$--$\de
 In General Relativity this realizer fails universally:
 
 \begin{enumerate}
-\item \textbf{Empty spacetime (Minkowski or vacuum solutions)}  
+\item \textbf{Empty spacetime (Minkowski or vacuum solutions)}
 No matter $\implies$ no clocks exist anywhere. The domain $D_P$ of the EEP's $\varepsilon$--$\delta$ process is empty from the outset. The axiom is inadmissible by the Elliott Stability Principle.
 
-\item \textbf{Non-empty spacetime evolving toward $t\to\infty$} (realistic cosmological solutions)  
+\item \textbf{Non-empty spacetime evolving toward $t\to\infty$} (realistic cosmological solutions)
 In de~Sitter space ($a(t)=e^{Ht}$, $H=\sqrt{\Lambda/3}$), peculiar velocities redshift as $v_{\rm pec}(t)=v_0 e^{-Ht}\to 0$. All bound systems eventually freeze or collapse. Every finite laboratory loses the ability to sustain controllable internal motions larger than any fixed $\varepsilon L_{\rm phys}$. The measure of spacetime regions containing valid EEP realizers tends to zero:
 \[
 \int_{\Sigma_t} F_{\rm EEP}\,\sqrt{-g}\,d^3x \to 0 \quad (t\to\infty).
 \]
 Thus generic evolution under GR dynamics drives every initial state outside the definitional domain of the EEP. The axiom is inadmissible.
 
-\item \textbf{Few-body systems}  
+\item \textbf{Few-body systems}
 Nonlinear radiation reaction and $E=mc^2$ mass loss cause all finite clocks to decohere in finite proper time. Again, the domain collapses under the dynamics.
 \end{enumerate}
 
-Therefore GR asserts the validity of an axiom whose required internal realizers are destroyed by the very dynamics the axiom is supposed to govern. This is a direct violation of the Elliott Stability Principle. The 1=0 contradiction is recovered: GR $\vdash$ EEP is valid, yet GR dynamics $\vdash$ EEP has no persistent realizers $\implies$ EEP is MATHICCS-invalid.
+Therefore GR asserts the validity of an axiom whose required internal realizers are destroyed by the very dynamics the axiom is supposed to govern. This yields the formal MATHICCS contradiction:
+
+% INSERT 2: The 1=0 Derivation
+\subsection{The 1=0 Derivation}
+\begin{enumerate}
+\item GR-Ontology $\vdash$ EEP valid axiom (G3)
+\item MATHICCS M1 $\vdash$ EEP requires Persistence($P_{\rm EEP}$)
+\item GR Dynamics $\vdash$ $\neg$(Persistence)($P_{\rm EEP}$) (all three failure modes)
+\item M1 $\vdash$ $\neg$(Persistence)($P_{\rm EEP}$)$\to$ EEP MATHICCS-invalid
+\item GR-Ontology $\vdash$ EEP valid $\land$ MATHICCS $\vdash$ EEP invalid
+\end{enumerate}
+$\implies P \land \neg P$. GR is MATHICCS-invalid by M3.
+
+\begin{theorem}[GR Ontological Explosion]
+GR violates MATHICCS M1--M3 and is inadmissible as physical ontology.
+\end{theorem}
+
+% INSERT 5: MATHICCS Compliance Statement
+\section{MATHICCS Compliance Statement}
+Fractal Tennis satisfies M1--M3 explicitly:
+
+\begin{itemize}
+\item \textbf{M1 (Persistence)}: M\"obius inversion + scale flip + $\mathbf{L}$ conservation possess internal realizers (Apollonian tangency boundaries) that persist indefinitely via infinite recursion (positive measure at every scale).
+\item \textbf{M2 (Internal)}: Boundary algebra self-executes without external mathematics.
+\item \textbf{M3 (Consistency)}: GR/QM emerge as effective approximations only where fractal averages smooth out; globally they fail exactly as MATHICCS/MER predicts.
+\end{itemize}
+
+Fractal Tennis is therefore the first MATHICCS-valid physical ontology.
 
 \section{Primitive Ontology of Fractal Tennis}
 \subsection{Space}
@@ -121,8 +168,8 @@ Expanding about large $r$:
 \[
 \frac{1}{r+\Delta r}=\frac{1}{r}-\frac{\Delta r}{r^2}+\frac{(\Delta r)^2}{r^3}-\cdots.
 \]
-Term 0 yields constant scale invariance $\to$ invariant propagation speed $c$.  
-Term 1 yields the Newtonian interaction $F(r)\propto 1/r^2$.  
+Term 0 yields constant scale invariance $\to$ invariant propagation speed $c$.
+Term 1 yields the Newtonian interaction $F(r)\propto 1/r^2$.
 Higher terms supply post-Newtonian corrections. Thus
 \[
 F(r)=-\nabla S(r)\propto\frac{1}{r^2}+\frac{\beta}{r^3}+\cdots.
@@ -147,14 +194,14 @@ Numerical evaluation across representative hierarchies (no free parameters, pure
 
 \begin{table}[h]
 \centering
-\caption{Hidden fraction across physical scales ($D \approx 2.4739$, $N=5$ layers)}
+\caption{Hidden fraction across physical scales ($D \approx 2.4739$, $N=5$ layers). \emph{The $\mathbf{\langle \beta \rangle = 5.0 \times 10^{-2}}$ (uniform) Star $\to$ Galaxy hierarchy is selected for galaxy merger dynamics: this bracketing yields $f_{\rm single} \approx 79.29\%$, accumulating to $\Omega_{\rm DM}/\Omega_{\rm m} \approx 0.85$ at effective truncation depth consistent with observation.}}
 \begin{tabular}{lccccc}
 \hline
 Hierarchy & Sampling & $\langle \beta \rangle$ & $f_{\rm single}$ (\%) & $f_{\rm total}$ (\%) & Remaining visible \\
 \hline
 Planck $\to$ Human hair & Uniform & $5.0 \times 10^{-5}$ & 99.46 & 100.0 & $4.8 \times 10^{-12}$ \\
 Planck $\to$ Human hair & Log-uniform & $1.2 \times 10^{-6}$ & 99.92 & 100.0 & $2.5 \times 10^{-16}$ \\
-Star $\to$ Galaxy & Uniform & $5.0 \times 10^{-2}$ & 79.29 & 99.96 & $3.8 \times 10^{-4}$ \\
+Star $\to$ Galaxy & Uniform & $\mathbf{5.0 \times 10^{-2}}$ & 79.29 & 99.96 & $3.8 \times 10^{-4}$ \\
 Star $\to$ Galaxy & Log-uniform & $8.9 \times 10^{-3}$ & 91.64 & 100.0 & $4.1 \times 10^{-6}$ \\
 Galaxy $\to$ Universe & Uniform & $5.1 \times 10^{-3}$ & 93.78 & 100.0 & $9.3 \times 10^{-7}$ \\
 Galaxy $\to$ Universe & Log-uniform & $1.3 \times 10^{-3}$ & 96.91 & 100.0 & $2.8 \times 10^{-8}$ \\
@@ -222,6 +269,29 @@ The factor $\pi/22 \approx 0.1428$ emerges as a geometric constant of the 3D Apo
 
 The appearance of $\pi/22$ is a direct consequence of the interplay between spherical geometry, M\"obius duality, and the specific quadratic form of the Descartes theorem. It provides a purely geometric bridge between the discrete recursive structure and emergent continuum-like behavior, without invoking external postulates.
 
+% INSERT 3+10: Fine-Structure Constant from Möbius Pole Geometry
+\subsection{Fine-Structure Constant from M\"obius Pole Geometry ($\alpha \approx 1/137$)}
+
+The factor $\pi/22 \approx 0.1428$ connects directly to the fine-structure constant via bipolar pole aperture geometry at Apollonian tangency boundaries.
+
+The local scale ratio across M\"obius poles is
+\[
+\lambda_{\rm local} \equiv \frac{R}{a}, \qquad \theta = \arcsin\left(\frac{1}{\lambda_{\rm local}}\right) \approx \frac{1}{\lambda_{\rm local}}
+\]
+(small $\theta$). Full $2\pi$ rotational symmetry around each pole yields the electromagnetic coupling:
+\[
+\alpha = \frac{1}{2\pi \lambda_{\rm local}} \implies \lambda_{\rm local} = \frac{1}{2\pi \alpha} \approx 21.81.
+\]
+
+This unifies:
+\begin{itemize}
+\item \textbf{Atomic physics}: $\alpha \approx 1/137.035999$ (CODATA 2022)
+\item \textbf{$\pi/22$ relation}: $\pi/22 \approx 0.1428 \leftrightarrow$ normalized pole aperture factor
+\item \textbf{Astrophysics}: Jet half-opening $\theta_{\rm jet} \approx 2/\lambda_{\rm local} \approx 5.2^\circ$ (M87, AGN)
+\end{itemize}
+
+The same $\lambda_{\rm local} \sim 20$--$25$ governs shallow-level collimation ($\theta \approx 5^\circ$--$11^\circ$) and QED strength---one geometric parameter from the persistent Apollonian substrate.
+
 \section{Cosmology Without Expansion}
 No metric expansion is postulated. A photon traversing recursion levels $n$ accumulates the redshift
 \[
@@ -256,5 +326,11 @@ Fractal Tennis satisfies the hypothesis: the recursive structure is preserved un
 
 \section{Closing Statement}
 Fractal Tennis demonstrates that physics can be built from recursive geometric relations governed by inversion symmetry and angular momentum conservation. Standard physics emerges as the large-scale Taylor expansion of the fractal geometric action. The Elliott Stability Principle and Koons Hypothesis together provide a rigorous filter for any proposed foundational ontology.
+
+\begin{thebibliography}{9}
+\bibitem{codata2022}
+CODATA Task Group, ``CODATA Recommended Values: 2022'', NIST (2024).
+Inverse fine-structure constant $\alpha^{-1} = 137.035999177(21)$.
+\end{thebibliography}
 
 \end{document}
