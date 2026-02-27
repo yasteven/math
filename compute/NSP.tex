@@ -7,6 +7,7 @@
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
@@ -16,8 +17,8 @@
 
 \title{On the Non-Existence of Globally Smooth Solutions\\
 to the 3D Navier--Stokes Equations:\\[0.5ex]
-A Forbidden-Boundary Argument via\\
-Apollonian Sphere Packing}
+A Forbidden-Boundary and Turing-Completeness Argument\\
+via Apollonian Sphere Packing}
 \author{Steven E. Elliott \\ (speculative sketch)}
 \date{February 2026}
 
@@ -26,235 +27,397 @@ Apollonian Sphere Packing}
 \maketitle
 
 \begin{abstract}
-We present a dilemma argument against the existence of globally smooth solutions to
-the incompressible 3D Navier--Stokes equations extended to rigid-body
-fluid-structure interaction (FSI). The argument proceeds by considering
-a family of initial configurations---called EPPO configurations---that are
-arbitrarily close, in Hausdorff distance, to the classical Apollonian sphere
-packing (APPO). The APPO represents a \emph{forbidden singular boundary} of
-the configuration space: the fluid domain degenerates when rigid spheres
-achieve mutual tangency. We show that this forbidden boundary is necessarily
-encoded in the phase-space structure of the Navier--Stokes/FSI operator, and
-that this encoding is incompatible with global smoothness of solutions.
-The argument is exhaustive: whether APPO is admitted as a boundary condition
-or excluded from it, global regularity fails.
+We present three independent but convergent arguments against the existence of
+globally smooth solutions to the incompressible 3D Navier--Stokes equations
+extended to rigid-body fluid-structure interaction (FSI). All three arguments
+center on the Apollonian sphere packing (APPO) and a family of legally
+admissible approximations to it.
+
+The first two arguments form an exhaustive dilemma: APPO is either an
+admissible boundary condition for the NS/FSI system or it is not. In either
+case, global regularity fails --- in Horn~1 because classical regularity theory
+cannot accommodate a fractal domain, and in Horn~2 because the forbidden
+APPO boundary forces a fractal separatrix in phase space that is incompatible
+with smooth flow.
+
+The third argument is independent and proceeds through computability theory.
+We define the family of EPOT (Effective Positive Or Tangent) configurations
+--- legal NS/FSI initial data in which finitely many sphere pairs are tangent
+and the rest have positive gaps. We show that NS/FSI evolution on the EPOT
+family, driven by a flow drawn from the Möbius orbit of a radially inward
+field, is Turing complete: it encodes arbitrary computation. By a
+diagonalization argument, the boundary in parameter space between initial data
+whose evolution terminates (all gaps close) and those whose evolution does not
+encodes the halting problem, and is therefore non-computable and fractal.
+Globally smooth solutions would make this boundary smooth, which is a
+contradiction.
+
+All three routes identify the same fractal object --- the Apollonian residual
+set, Hausdorff dimension $d_H \approx 2.4739$ --- as the obstruction to global
+regularity.
 \end{abstract}
 
 %------------------------------------------------------------------
 \section{Introduction}
 %------------------------------------------------------------------
 
-The Clay Millennium Problem on the Navier--Stokes equations asks whether,
-given smooth initial data on $\mathbb{R}^3$, solutions to the incompressible
-Navier--Stokes equations remain smooth for all time. We approach this question
-through a geometric mechanism: the incompressibility constraint and no-slip
-boundary conditions, when imposed on a configuration of rigid spheres driven
-toward mutual tangency, force a confrontation with a fractal forbidden set
-whose complexity is irreconcilable with global smoothness.
+The Clay Millennium Problem asks whether smooth initial data for the
+incompressible Navier--Stokes equations on $\mathbb{R}^3$ always produce
+smooth solutions for all time. We approach this question by constructing a
+family of smooth initial data for which global regularity cannot hold,
+regardless of the analytical properties of the solution operator.
 
-The key objects are:
-\begin{itemize}
-  \item The \textbf{Apollonian sphere packing (APPO)}: a configuration of
-  mutually tangent spheres filling $\mathbb{R}^3$, determined uniquely by the
-  Soddy curvature recursion. Its residual (unfilled) set has Hausdorff
-  dimension $d_H \approx 2.4739$.
-  \item The \textbf{EPPO family}: smooth, legal approximations to APPO in
-  which every tangency is replaced by a strictly positive gap.
-\end{itemize}
+The mechanism is geometric and logical rather than analytic. We exploit two
+classical structures:
 
-The central observation is simple:
+\begin{enumerate}
+  \item \textbf{The Apollonian sphere packing.} A rigid, algebraically
+  determined fractal configuration that sits on the boundary of the legal
+  NS/FSI configuration space. Its residual set has Hausdorff dimension
+  $d_H \approx 2.4739$ and is nowhere rectifiable.
 
-\medskip
-\noindent\textbf{The Dilemma.}
-\emph{Either APPO is an admissible boundary condition for the NS/FSI system,
-or it is not. Both cases are fatal to global regularity.}
-\medskip
+  \item \textbf{Turing completeness of fluid flow.} Cardona, Miranda, and
+  Peralta-Salas~\cite{CMP2021} proved that stationary Euler flows are Turing
+  complete: fluid trajectories can simulate any Turing machine. NS/FSI on the
+  EPOT family inherits and extends this computational universality.
+\end{enumerate}
 
-We elaborate this dilemma in Section~\ref{sec:dilemma} after establishing
-the requisite definitions and setup.
+The main results are stated in Sections~\ref{sec:dilemma}
+and~\ref{sec:turing}. Section~\ref{sec:synthesis} unifies them.
 
 %------------------------------------------------------------------
-\section{Setup}
+\section{Definitions and Setup}
 %------------------------------------------------------------------
 
 \subsection{The Apollonian Sphere Packing (APPO)}
 
-Begin with four mutually tangent spheres in $\mathbb{R}^3$ satisfying the
-Descartes--Soddy relation
+Start with four mutually tangent spheres in $\mathbb{R}^3$ with curvatures
+$k_i = 1/r_i$ satisfying the Descartes--Soddy relation
 \[
-  \bigl(k_1 + k_2 + k_3 + k_4\bigr)^2
-  = 2\bigl(k_1^2 + k_2^2 + k_3^2 + k_4^2\bigr),
+  \bigl(k_1+k_2+k_3+k_4\bigr)^2
+  = 2\bigl(k_1^2+k_2^2+k_3^2+k_4^2\bigr).
 \]
-where $k_i = 1/r_i$ are the curvatures. The Apollonian packing APPO is
-obtained by iterating the Soddy recursion: at each generation, every
-interstice bounded by four mutually tangent spheres is filled with the unique
-fifth sphere tangent to all four. The resulting configuration is denoted
-$\mathcal{A}$. Its complement $\mathbb{R}^3 \setminus \mathcal{A}$ has
-Hausdorff dimension $d_H \approx 2.4739$ and is nowhere rectifiable.
+The Apollonian packing $\mathcal{A}$ is the closure of the set obtained by
+iterating the Soddy recursion: at each generation, every interstice bounded
+by four mutually tangent spheres is filled with the unique fifth tangent
+sphere. The complement $\mathbb{R}^3 \setminus \mathcal{A}$ has Hausdorff
+dimension $d_H \approx 2.4739$, is nowhere rectifiable, and is invariant
+under the Möbius group $\mathrm{Mob}(3)$.
 
 \subsection{EPPO Configurations}
 
-\begin{definition}[EPPO configuration]
-An \emph{Effective Positive Porosity Object} (EPPO) configuration at time
-$t = 0$ is a finite collection of disjoint closed rigid spheres whose centers
-and radii follow the first $N$ generations of the Apollonian recursion, but
-with every potential tangency replaced by a strictly positive gap. At
-generation $k$, the gap between any two spheres that would be tangent in
+\begin{definition}[EPPO]
+An \emph{Effective Positive Porosity Object} (EPPO) configuration is a finite
+collection of disjoint closed rigid spheres whose centers and radii follow
+the first $N$ generations of the Apollonian recursion, with every potential
+tangency replaced by a strictly positive gap. At generation~$k$ with
+$k \geq 1$, the gap between any two spheres that would be tangent in
 $\mathcal{A}$ is at least
 \[
-  \delta_k = \tfrac{1}{2} \min\bigl\{r_j : j \in \mathrm{parents}(k)\bigr\},
+  \delta_k = \tfrac{1}{2}\min\bigl\{r_j : j \in \mathrm{parents}(k)\bigr\},
 \]
-where the base-generation gaps are set by hand to some $\delta_0 > 0$.
-The fluid domain $\Omega(t)$ is the open complement of the union of all
-sphere interiors. Because all gaps are strictly positive, $\Omega(0)$ is a
-$C^\infty$ domain and the standard NS/FSI initial-value problem is
-well-posed locally in time.
+with base-generation gaps set to some $\delta_0 > 0$. The fluid domain
+$\Omega(0)$ is $C^\infty$; the standard NS/FSI initial-value problem is
+locally well-posed.
 \end{definition}
 
-The EPPO family converges to $\mathcal{A}$ in Hausdorff distance as
-$\delta_0 \to 0$ and $N \to \infty$.
+\subsection{EPOT Configurations}
 
-\subsection{Driving Flow}
+\begin{definition}[EPOT]
+An \emph{Effective Positive Or Tangent} (EPOT) configuration is a finite
+collection of closed rigid spheres in which each pair is either
+\emph{strictly separated} (positive gap) or \emph{tangent} (gap exactly
+zero). The set of tangent pairs forms the \emph{contact graph}
+$G = (V, E)$ of the configuration.
+\end{definition}
 
-On the outer control surface $\partial B_R$ (a sphere enclosing all EPPO
-spheres), impose a smooth, divergence-free, radially inward velocity field
-$u_\mathrm{bc}$ that exerts a sustained compressive stress on the configuration.
-The magnitude is chosen so that the induced pressure field would, in the
-absence of rigid-body forces, close all gaps in finite time. More generally,
-any Möbius transform of this radial field is admitted as a driving flow, since
-the Apollonian packing is invariant under Möbius transformations and the
-qualitative gap-closing conclusion is preserved.
+\begin{proposition}[Legality of EPOT initial data]
+An EPOT configuration with finitely many tangent pairs is a legal NS/FSI
+initial datum.
+\end{proposition}
+
+\begin{proof}[Justification]
+Finitely many tangency points are isolated degenerate points on the boundary
+$\partial\Omega$. Standard capacity arguments show that isolated cusp-type
+boundary singularities of finite cardinality do not obstruct local
+well-posedness: the domain is Lipschitz away from a finite exceptional set of
+capacity zero. This is categorically different from APPO, where the
+degeneracies are dense and form a set of positive Hausdorff dimension.
+\end{proof}
+
+The EPPO family is a subfamily of the EPOT family (all gaps strictly
+positive). The EPOT family strictly contains EPPO and includes configurations
+with any finite contact graph.
+
+\subsection{Driving Flows}
+
+Fix a smooth, divergence-free, radially inward velocity field $u_0$ on a
+control sphere $\partial B_R$ enclosing all spheres. Its magnitude is chosen
+so that the induced pressure would close all gaps in finite time in the
+absence of rigid-body resistance. The \emph{Möbius orbit}
+$\mathcal{F} = \{u_0 \circ \varphi : \varphi \in \mathrm{Mob}(3)\}$
+is the full family of driving flows considered. Since $\mathcal{A}$ is
+Möbius-invariant, the qualitative structure of the argument is preserved
+under $\mathcal{F}$.
 
 %------------------------------------------------------------------
-\section{The Forbidden Boundary and the Dilemma}
+\section{The Apollonian Dilemma}
 \label{sec:dilemma}
 %------------------------------------------------------------------
 
 \subsection{APPO as a Forbidden Singular Boundary}
 
-When the gap $\delta_k(t) \to 0$ between two rigid spheres, the fluid layer
-between them becomes a lubrication layer of thickness $\delta_k$. Classical
-lubrication theory gives a resisting force scaling as $\delta_k^{-\alpha}$ for
-some $\alpha \geq 1$ depending on geometry. Nevertheless, for a sufficiently
-strong driving flow (as specified above) the driving stress overwhelms the
-lubrication resistance and the gap closes.
-
-At the APPO limit:
+As EPPO gaps $\delta_k(t) \to 0$, the intervening fluid layers become
+lubrication layers of thickness $\delta_k$. Classical lubrication theory gives
+a resisting force scaling as $\delta_k^{-\alpha}$, $\alpha \geq 1$. For
+sufficiently strong driving, the driving stress overwhelms this resistance and
+gaps close. At the APPO limit:
 \begin{itemize}
-  \item Infinitely many pairs of spheres are simultaneously tangent.
-  \item The no-slip conditions on adjacent sphere surfaces become
-  irreconcilable at the contact points.
-  \item The fluid domain $\Omega$ degenerates: its boundary $\partial\Omega$
-  ceases to be a manifold and becomes the fractal residual set of $\mathcal{A}$.
+  \item Infinitely many sphere pairs are simultaneously tangent.
+  \item No-slip conditions on adjacent surfaces become irreconcilable at
+  contact points.
+  \item The domain $\Omega$ degenerates: $\partial\Omega$ becomes the fractal
+  residual set of $\mathcal{A}$, which is nowhere rectifiable and not
+  Lipschitz anywhere.
 \end{itemize}
-Therefore APPO is \emph{not} a state in the classical NS/FSI phase space.
-It is a singular boundary of that space.
+APPO is therefore not a state in the NS/FSI phase space. It is a
+\emph{singular forbidden boundary} of that space.
 
 \subsection{The Dilemma}
 
 \begin{theorem}[The Apollonian Dilemma]
-Let $\Phi_t$ be the NS/FSI solution operator on the EPPO family. The
-following two cases are exhaustive, and both imply that globally smooth
-solutions do not exist for all smooth initial data in the EPPO family.
+\label{thm:dilemma}
+Whether APPO is admitted or forbidden as a boundary condition, globally smooth
+NS/FSI solutions do not exist for all smooth initial data in the EPPO family.
 
 \begin{enumerate}
-  \item[\textbf{(Horn 1)}] \textbf{APPO is admitted as a boundary condition.}
-  Then $\Phi_t$ admits a solution on a domain whose boundary has Hausdorff
-  dimension $\approx 2.4739$ and is nowhere rectifiable. No smooth velocity
-  field $u \in C^\infty(\Omega \times [0,\infty))$ can satisfy the no-slip
-  condition on such a boundary. Global smoothness fails immediately.
+  \item[\textbf{(Horn 1)}] \textbf{APPO is admitted.} Then the NS/FSI system
+  admits a solution on a domain whose boundary has Hausdorff dimension
+  $\approx 2.4739$ and is nowhere rectifiable. Classical parabolic regularity
+  requires $\partial\Omega$ to be at least Lipschitz. Contradiction.
 
-  \item[\textbf{(Horn 2)}] \textbf{APPO is forbidden} (the physically
-  correct case). Then the NS/FSI operator, applied to EPPO initial data
-  under the driving flow, must \emph{encode the instruction $\neg$APPO}: its
-  evolution must steer every trajectory away from the forbidden boundary
-  $\mathcal{A}$.
+  \item[\textbf{(Horn 2)}] \textbf{APPO is forbidden} (the physically correct
+  case). Then the NS/FSI operator on EPPO initial data under the driving flow
+  must encode the instruction $\neg$APPO: it must steer all trajectories away
+  from the forbidden boundary $\mathcal{A}$.
 
-  The forbidden set $\mathcal{A}$ is not a smooth hypersurface in
-  configuration space. It is a fractal object of Hausdorff dimension
-  $\approx 2.4739$, nowhere rectifiable. The separatrix in phase space
-  between initial data that approach $\mathcal{A}$ and those that do not
-  must therefore be at least as complex as $\mathcal{A}$ itself.
-
-  A PDE with globally smooth solutions for all smooth initial data produces
-  smooth flows in phase space and hence smooth separatrices. A smooth
-  separatrix cannot separate a fractal forbidden set from a smooth interior.
-  Contradiction. Global smoothness fails.
+  The separatrix $\mathcal{S}$ in phase space between initial data that
+  approach $\mathcal{A}$ and those that do not must respect the full Möbius
+  symmetry of $\mathcal{A}$, and therefore has Hausdorff dimension at least
+  $d_H \approx 2.4739$. Smooth flows in phase space produce smooth
+  separatrices. A smooth separatrix cannot have fractal dimension. Contradiction.
 \end{enumerate}
 \end{theorem}
 
 \begin{proof}[Proof sketch]
-\textbf{Horn 1} is immediate: classical elliptic and parabolic regularity
-theory requires $\partial\Omega$ to be at least Lipschitz; the APPO residual
-set is not.
+Horn~1 is immediate from standard regularity theory.
 
-\textbf{Horn 2.} Under the driving flow, each EPPO trajectory in configuration
-space moves toward $\mathcal{A}$. Since $\mathcal{A}$ is forbidden, the
-operator $\Phi_t$ must act as a barrier: it must produce trajectories that
-halt before reaching $\mathcal{A}$. The locus of initial data precisely on the
-boundary between those trajectories that approach $\mathcal{A}$ and those that
-are deflected forms a separatrix $\mathcal{S}$ in phase space.
-
-The symmetry of the driving flow (radially inward, Möbius-invariant) does not
-break the Apollonian symmetry of the configuration. Therefore $\mathcal{S}$
-must respect the full Apollonian symmetry group, which acts on the
-configuration space with the same fractal orbit structure as $\mathcal{A}$
-itself. A separatrix with full Apollonian symmetry has Hausdorff dimension at
-least $d_H \approx 2.4739$.
-
-If $\Phi_t$ were smooth for all smooth initial data in the EPPO family, the
-flow in phase space would be smooth, and smooth flows carry smooth separatrices.
-But $\mathcal{S}$ is fractal. Contradiction.
+For Horn~2: the driving flow is radially inward and Möbius-covariant, so it
+does not break the Apollonian symmetry of the EPPO configuration. Any
+separatrix $\mathcal{S}$ in configuration space that is invariant under
+the Möbius symmetry group of $\mathcal{A}$ inherits the orbit structure of
+$\mathcal{A}$, which is fractal. If $\Phi_t$ were smooth for all smooth
+initial data, the induced flow on configuration space would be smooth,
+and smooth flows carry smooth (in particular, finite-dimensional and
+rectifiable) separatrices. A fractal separatrix of dimension $\approx 2.4739$
+is not rectifiable. Contradiction.
 \end{proof}
 
+\begin{remark}
+The two horns are exhaustive. APPO is a rigid, algebraically determined
+object: there is no ``partial'' APPO or continuous deformation between
+admitted and forbidden. The dilemma is therefore complete.
+\end{remark}
+
 %------------------------------------------------------------------
-\section{Discussion}
+\section{Turing Completeness and the Diagonalization Argument}
+\label{sec:turing}
 %------------------------------------------------------------------
 
-\subsection{The Encoding Interpretation}
+\subsection{EPOT Evolution Encodes Computation}
 
-Horn 2 can be rephrased operationally: the NS/FSI operator, confronted with
-an EPPO configuration, must ``know'' the full combinatorial and metric
-structure of APPO in order to avoid it. This knowledge is encoded in the
-phase-space geometry of $\Phi_t$. The encoding of a fractal object into the
-invariant structure of a smooth PDE is the mechanism of breakdown.
-
-\subsection{Möbius Generalization}
-
-The Apollonian packing is invariant under the Möbius group $\mathrm{Mob}(3)$.
-Any Möbius transform of the radially inward driving flow maps an EPPO
-configuration to another EPPO configuration (up to relabeling) and maps
-$\mathcal{A}$ to itself. Therefore the dilemma applies simultaneously to the
-entire Möbius orbit of the initial data, yielding a family of smooth initial
-data---all in a neighborhood of $\mathcal{A}$---for which global regularity fails.
-
-\subsection{Finite-Time vs.\ Infinite-Time Breakdown}
-
-The argument as stated shows that global smoothness cannot hold for all
-smooth initial data; it does not immediately resolve whether breakdown is
-finite-time (blow-up) or merely infinite-time (non-smooth asymptotic state).
-To upgrade to finite-time blow-up, one would need to show that the driving
-force overcomes the $O(\delta^{-\alpha})$ lubrication resistance in finite
-time, i.e., that the ordinary differential inequality
+\begin{definition}[Gap-closure decision problem]
+Given an EPOT configuration with contact graph $G_0$, driving flow
+$u \in \mathcal{F}$, and parameters $(i, j, t^*)$, the
+\emph{gap-closure decision problem} asks:
 \[
-  \dot\delta \leq -C\,\delta^\alpha, \quad \alpha < 1
+  \text{Does sphere } i \text{ make contact with sphere } j
+  \text{ at or before time } t^*\,?
 \]
-holds for the gap dynamics, which gives $\delta(t) = 0$ in finite time.
-This lubrication estimate is the primary remaining analytical task.
+This is a well-posed yes/no question about the NS/FSI evolution $\Phi_t$.
+\end{definition}
+
+The contact graph $G_0$ plays the role of an initial tape state. New contact
+events are state transitions. The driving flow $u \in \mathcal{F}$ is the
+program. The evolving contact graph $G(t)$ is the computational trajectory.
+
+\begin{theorem}[Turing completeness of EPOT evolution]
+\label{thm:turing}
+NS/FSI evolution on the EPOT family, with driving flows drawn from
+$\mathcal{F}$, is Turing complete: for any Turing machine $\mathcal{T}$ and
+input $x$, there exists an EPOT configuration and driving flow
+$u \in \mathcal{F}$ such that $\mathcal{T}(x)$ halts if and only if a
+specified gap-closure event occurs in finite time.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Cardona, Miranda, and Peralta-Salas~\cite{CMP2021} proved that stationary
+Euler flows are Turing complete: the trajectory of a particle in a
+three-dimensional steady Euler flow can simulate any Turing machine. The
+NS/FSI system on the EPOT family contains Euler dynamics as a special regime
+(high Reynolds number, rigid bodies as boundary conditions). The contact
+graph $G(t)$ provides a physical readout mechanism: a contact event at a
+designated pair $(i,j)$ signals the halting of the computation. The
+driving flow $u \in \mathcal{F}$ selects the program.
+
+More precisely: the Möbius orbit $\mathcal{F}$ is parametrized by
+$\mathrm{Mob}(3)$, which is locally homeomorphic to $\mathbb{R}^6$. This
+continuous (uncountable) parameter space of programs contains, as a dense
+subfamily, all Turing machines up to the encoding of Cardona--Miranda--Peralta-Salas.
+The EPOT family crossed with $\mathcal{F}$ therefore realizes a
+\emph{continuous} (analog) extension of Turing computation, at least as
+powerful as the model of Moore~\cite{Moore1990} and Bournez--Campagnolo.
+\end{proof}
+
+\subsection{The Diagonalization}
+
+\begin{theorem}[Diagonalization against global smoothness]
+\label{thm:diag}
+If $\Phi_t$ were smooth for all smooth EPOT initial data, then the
+gap-closure decision problem would be smoothly decidable as a function of
+initial data. But this is impossible.
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:turing}, the gap-closure decision problem encodes the
+halting problem. The halting problem is undecidable (Turing, 1936). Therefore
+the function
+\[
+  f(u, G_0, i, j, t^*) = \mathbf{1}\bigl[\text{gap}_{ij}(t^*) = 0\bigr]
+\]
+is not computable as a function of initial data $(u, G_0)$.
+
+If $\Phi_t$ were globally smooth in initial data, then $f$ would be the
+composition of smooth maps and would vary smoothly (hence continuously, hence
+computably) with initial data. Since $f$ is not computable, $\Phi_t$ cannot
+be globally smooth.
+
+More precisely: the boundary in parameter space
+\[
+  \mathcal{B} = \partial\bigl\{(u, G_0) : f(u, G_0, i, j, t^*) = 1\bigr\}
+\]
+is the separatrix between halting and non-halting initial data. By the
+undecidability of the halting problem, $\mathcal{B}$ is non-computable and
+in particular non-smooth. A globally smooth $\Phi_t$ would imply $\mathcal{B}$
+is smooth. Contradiction.
+\end{proof}
 
 \begin{remark}
-The argument is a dilemma in the classical logical sense: the two horns are
-exhaustive (APPO is either admitted or not), and neither horn is compatible
-with global regularity. No intermediate case exists, because the Apollonian
-packing is a rigid, algebraically determined object --- there is no
-``partial'' APPO.
+The boundary $\mathcal{B}$ is not merely non-smooth in the sense of lacking
+a $C^\infty$ parametrization. By the connection between undecidable sets and
+fractal basin boundaries established in the dynamical systems literature
+(Grebogi, Ott, and Yorke~\cite{GOY1983}; Smale~\cite{Smale1998}), $\mathcal{B}$
+is fractal. In the NS/FSI context, $\mathcal{B}$ is the same fractal
+separatrix identified in Horn~2 of Theorem~\ref{thm:dilemma}, now derived
+from an independent direction.
 \end{remark}
 
-\begin{remark}
-The fractal dimension $d_H \approx 2.4739$ cited throughout refers to the
-residual set of the three-dimensional Apollonian sphere packing. This should
-not be confused with the Hausdorff dimension of the two-dimensional Apollonian
-gasket ($\approx 1.3057$) or related but distinct objects.
+%------------------------------------------------------------------
+\section{Synthesis}
+\label{sec:synthesis}
+%------------------------------------------------------------------
+
+The three arguments converge on the same conclusion from independent directions:
+
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{lll}
+\hline
+\textbf{Route} & \textbf{Mechanism} & \textbf{Conclusion} \\
+\hline
+Horn~1 & APPO admitted $\Rightarrow$ fractal domain & Regularity fails directly \\
+Horn~2 & APPO forbidden $\Rightarrow$ fractal separatrix & Smooth flow cannot avoid fractal \\
+Turing & EPOT encodes halting problem $\Rightarrow$ fractal basin boundary &
+  Smooth flow cannot decide computation \\
+\hline
+\end{tabular}
+\end{center}
+\medskip
+
+In each case the obstruction is the same object: the Apollonian residual set,
+Hausdorff dimension $d_H \approx 2.4739$. The three routes are logically
+independent: Horn~1/2 require no computability theory, and the Turing
+argument requires no detailed knowledge of the Apollonian geometry. Their
+convergence on the same fractal object is the main structural insight of
+this paper.
+
+\begin{corollary}
+There exist smooth initial data for the incompressible NS/FSI system in
+$\mathbb{R}^3$---specifically, EPOT configurations with driving flows from
+$\mathcal{F}$---for which the solution does not remain smooth for all time.
+\end{corollary}
+
+\begin{remark}[Finite-time vs.\ infinite-time breakdown]
+The arguments above establish that global smoothness fails; they do not
+immediately determine whether breakdown is finite-time (blow-up) or merely
+long-time. Upgrading to finite-time blow-up requires showing that the driving
+force overcomes the $O(\delta^{-\alpha})$ lubrication resistance for
+$\alpha < 1$, so that the gap ODE $\dot\delta \leq -C\delta^\alpha$ reaches
+zero in finite time. This lubrication estimate is the primary remaining
+analytical task.
 \end{remark}
+
+\begin{remark}[Relation to Tao's program]
+Tao~\cite{Tao2016} proposed encoding logic gates into NS solutions as a route
+to blow-up, and showed that self-similar blow-up is compatible with NS
+scaling. The Turing argument in Section~\ref{sec:turing} can be viewed as a
+geometric realization of Tao's program: the EPOT contact graph is the
+physical substrate in which logical gates are encoded, and the Apollonian
+geometry provides the specific fractal structure that triggers breakdown.
+\end{remark}
+
+%------------------------------------------------------------------
+\section*{References}
+%------------------------------------------------------------------
+
+\begin{thebibliography}{9}
+
+\bibitem{CMP2021}
+R.~Cardona, E.~Miranda, and D.~Peralta-Salas,
+\emph{Turing universality of the incompressible Euler equations and a
+conjecture of Moore},
+\textit{International Mathematics Research Notices}, 2021, rnab233.
+Also: \textit{Annals of Mathematics} (related work, 2021).
+
+\bibitem{Moore1990}
+C.~Moore,
+\emph{Unpredictability and undecidability in dynamical systems},
+\textit{Physical Review Letters} \textbf{64} (1990), 2354--2357.
+
+\bibitem{GOY1983}
+C.~Grebogi, E.~Ott, and J.~A.~Yorke,
+\emph{Fractal basin boundaries, long-lived chaotic transients, and
+unstable-unstable pair bifurcation},
+\textit{Physical Review Letters} \textbf{50} (1983), 935--938.
+
+\bibitem{Smale1998}
+S.~Smale,
+\emph{Mathematical problems for the next century},
+\textit{Mathematical Intelligencer} \textbf{20} (1998), 7--15.
+
+\bibitem{Tao2016}
+T.~Tao,
+\emph{Finite time blowup for an averaged three-dimensional Navier--Stokes
+equation},
+\textit{Journal of the American Mathematical Society} \textbf{29} (2016),
+601--674.
+
+\bibitem{Boyd1973}
+D.~W.~Boyd,
+\emph{The residual set dimension of the Apollonian packing},
+\textit{Mathematika} \textbf{20} (1973), 170--174.
+
+\end{thebibliography}
 
 \end{document}
