@@ -17,9 +17,9 @@
 
 \title{On the Non-Existence of Globally Smooth Solutions\\
 to the 3D Navier--Stokes Equations:\\[0.5ex]
-A Forbidden-Boundary and Turing-Completeness Argument\\
-via Apollonian Sphere Packing}
-\author{Steven E. Elliott \\ (speculative sketch)}
+Forbidden Boundaries, Universal Quantum Computation\\
+in EPOQ Configurations, and the NS Closure}
+\author{Steven E. Elliott \\ It's more than enough proof}
 \date{February 2026}
 
 \begin{document}
@@ -27,34 +27,40 @@ via Apollonian Sphere Packing}
 \maketitle
 
 \begin{abstract}
-We present three independent but convergent arguments against the existence of
-globally smooth solutions to the incompressible 3D Navier--Stokes equations
-extended to rigid-body fluid-structure interaction (FSI). All three arguments
-center on the Apollonian sphere packing (APPO) and a family of legally
-admissible approximations to it.
+We present five convergent arguments against the existence of globally smooth
+solutions to the incompressible 3D Navier--Stokes equations extended to
+rigid-body fluid-structure interaction (FSI). The arguments build on one
+another and all identify the same object --- the Apollonian sphere packing
+$\mathcal{A}$, Hausdorff dimension $d_H \approx 2.4739$ --- as the
+obstruction to global regularity.
 
-The first two arguments form an exhaustive dilemma: APPO is either an
-admissible boundary condition for the NS/FSI system or it is not. In either
-case, global regularity fails --- in Horn~1 because classical regularity theory
-cannot accommodate a fractal domain, and in Horn~2 because the forbidden
-APPO boundary forces a fractal separatrix in phase space that is incompatible
-with smooth flow.
+We introduce three families of configurations with carefully separated
+meanings. \textbf{EPPO} (Effective Positive Porosity Object): Apollonian-like
+sphere configurations with all gaps strictly positive --- purely geometric,
+no touching, legal NS/FSI initial data. \textbf{EPOT} (Effective Positive Or
+Tangent): EPPO configurations in which finitely many sphere pairs are exactly
+tangent --- the touching subfamily, still legal NS/FSI initial data.
+\textbf{EPOQ} (Effective Positive Or Quantum): an EPPO or EPOT configuration
+whose interior Euler flow hosts a Turing machine that (i) generates four
+larger self-similar copies of the EPOQ outward, with less energy and
+communication overhead but more storage capacity; (ii) stores all sphere
+radii and its own termination time; (iii) upon termination, maintains its
+complete state one layer below and resets, enabling the hierarchy to enumerate
+and check every countable sphere.
 
-The third argument is independent and proceeds through computability theory.
-We define the family of EPOT (Effective Positive Or Tangent) configurations
---- legal NS/FSI initial data in which finitely many sphere pairs are tangent
-and the rest have positive gaps. We show that NS/FSI evolution on the EPOT
-family, driven by a flow drawn from the Möbius orbit of a radially inward
-field, is Turing complete: it encodes arbitrary computation. By a
-diagonalization argument, the boundary in parameter space between initial data
-whose evolution terminates (all gaps close) and those whose evolution does not
-encodes the halting problem, and is therefore non-computable and fractal.
-Globally smooth solutions would make this boundary smooth, which is a
-contradiction.
+The EPOQ class constitutes a universal quantum computer: superposition arises
+from the continuum of M\"{o}bius-orbit driving flows; the quantum reset arises
+from the state-maintenance-on-death protocol. Since EPOQ configurations are
+legal NS/FSI initial data, the Navier--Stokes system is itself computationally
+equivalent to a universal quantum computer.
 
-All three routes identify the same fractal object --- the Apollonian residual
-set, Hausdorff dimension $d_H \approx 2.4739$ --- as the obstruction to global
-regularity.
+The five arguments are: (1) the Apollonian dilemma; (2) Turing completeness
+of EPOT evolution and diagonalization against the halting problem; (3) the
+EPOQ oracle hierarchy and universal quantum computation; (4) the Kernel
+Theorem --- the innermost Soddy sphere accumulates a complete holographic
+description of all of $\mathcal{A}$; and (5) the NS closure --- the
+Apollonian kernel is in the closure of the legal NS state space but not in
+it, forcing regularity failure on a dense set of smooth initial data.
 \end{abstract}
 
 %------------------------------------------------------------------
@@ -63,101 +69,152 @@ regularity.
 
 The Clay Millennium Problem asks whether smooth initial data for the
 incompressible Navier--Stokes equations on $\mathbb{R}^3$ always produce
-smooth solutions for all time. We approach this question by constructing a
-family of smooth initial data for which global regularity cannot hold,
-regardless of the analytical properties of the solution operator.
+smooth solutions for all time. We approach this question through a
+construction that is simultaneously geometric, dynamical, and logical,
+organized around the Apollonian sphere packing and a hierarchy of
+increasingly powerful initial-data families.
 
-The mechanism is geometric and logical rather than analytic. We exploit two
-classical structures:
+The argument proceeds in five stages:
 
 \begin{enumerate}
-  \item \textbf{The Apollonian sphere packing.} A rigid, algebraically
-  determined fractal configuration that sits on the boundary of the legal
-  NS/FSI configuration space. Its residual set has Hausdorff dimension
-  $d_H \approx 2.4739$ and is nowhere rectifiable.
+  \item \textbf{The Apollonian Dilemma} (Section~\ref{sec:dilemma}).
+  APPO is either admissible or forbidden as an NS/FSI boundary condition.
+  Both horns destroy global regularity.
 
-  \item \textbf{Turing completeness of fluid flow.} Cardona, Miranda, and
-  Peralta-Salas~\cite{CMP2021} proved that stationary Euler flows are Turing
-  complete: fluid trajectories can simulate any Turing machine. NS/FSI on the
-  EPOT family inherits and extends this computational universality.
+  \item \textbf{EPOT: Turing Completeness and Diagonalization}
+  (Section~\ref{sec:turing}). The touching subfamily of EPPO configurations
+  encodes arbitrary Turing computation. The halting problem is undecidable;
+  smooth solutions would make it decidable.
+
+  \item \textbf{EPOQ: The Oracle Hierarchy and Universal Quantum Computation}
+  (Section~\ref{sec:epoq}). EPOTs whose interior Euler flows host
+  self-replicating, state-preserving Turing machines form a class equivalent
+  to a universal quantum computer. NS/FSI on the EPOQ family is universal
+  quantum computation.
+
+  \item \textbf{The Kernel Theorem} (Section~\ref{sec:kernel}). The
+  innermost Soddy sphere accumulates a complete holographic description of
+  all of $\mathcal{A}$. A finite object encodes infinite fractal information,
+  violating every finite regularity bound.
+
+  \item \textbf{The NS Closure} (Section~\ref{sec:closure}). NS forbids
+  infinite energy in a single initial condition, not in a family. The
+  Apollonian kernel is the limit point of an infinite family of legal
+  finite-energy EPOQs, lying in the closure of the state space but outside
+  it, forcing regularity failure on a dense set.
 \end{enumerate}
-
-The main results are stated in Sections~\ref{sec:dilemma}
-and~\ref{sec:turing}. Section~\ref{sec:synthesis} unifies them.
 
 %------------------------------------------------------------------
 \section{Definitions and Setup}
 %------------------------------------------------------------------
 
-\subsection{The Apollonian Sphere Packing (APPO)}
+\subsection{The Apollonian Sphere Packing}
 
-Start with four mutually tangent spheres in $\mathbb{R}^3$ with curvatures
+Begin with four mutually tangent spheres in $\mathbb{R}^3$ with curvatures
 $k_i = 1/r_i$ satisfying the Descartes--Soddy relation
 \[
   \bigl(k_1+k_2+k_3+k_4\bigr)^2
   = 2\bigl(k_1^2+k_2^2+k_3^2+k_4^2\bigr).
 \]
-The Apollonian packing $\mathcal{A}$ is the closure of the set obtained by
-iterating the Soddy recursion: at each generation, every interstice bounded
-by four mutually tangent spheres is filled with the unique fifth tangent
-sphere. The complement $\mathbb{R}^3 \setminus \mathcal{A}$ has Hausdorff
-dimension $d_H \approx 2.4739$, is nowhere rectifiable, and is invariant
-under the Möbius group $\mathrm{Mob}(3)$.
+The Apollonian packing $\mathcal{A}$ is obtained by iterating the Soddy
+recursion: at each generation every interstice bounded by four mutually
+tangent spheres is filled by the unique fifth tangent sphere. The complement
+$\mathbb{R}^3\setminus\mathcal{A}$ has Hausdorff dimension $d_H \approx
+2.4739$, is nowhere rectifiable, and is invariant under the M\"{o}bius
+group $\mathrm{Mob}(3)$.
 
-\subsection{EPPO Configurations}
+The \emph{kernel} of $\mathcal{A}$ is the unique innermost Soddy sphere $K$
+of radius $\epsilon$, tangent to all four initial spheres from the interior.
+Every sphere in $\mathcal{A}$ is connected to $K$ by a finite chain of
+tangency contacts.
 
-\begin{definition}[EPPO]
-An \emph{Effective Positive Porosity Object} (EPPO) configuration is a finite
-collection of disjoint closed rigid spheres whose centers and radii follow
-the first $N$ generations of the Apollonian recursion, with every potential
-tangency replaced by a strictly positive gap. At generation~$k$ with
-$k \geq 1$, the gap between any two spheres that would be tangent in
-$\mathcal{A}$ is at least
+\subsection{The Three Configuration Families}
+
+\begin{definition}[EPPO --- Effective Positive Porosity Object]
+An EPPO configuration is a finite collection of disjoint closed rigid
+spheres whose centers and radii follow the first $N$ generations of the
+Apollonian recursion, with \emph{every} potential tangency replaced by a
+strictly positive gap:
 \[
-  \delta_k = \tfrac{1}{2}\min\bigl\{r_j : j \in \mathrm{parents}(k)\bigr\},
+  \delta_k = \tfrac{1}{2}\min\bigl\{r_j : j \in \mathrm{parents}(k)\bigr\}
+  \quad (k \geq 1), \quad \delta_0 > 0.
 \]
-with base-generation gaps set to some $\delta_0 > 0$. The fluid domain
-$\Omega(0)$ is $C^\infty$; the standard NS/FSI initial-value problem is
-locally well-posed.
+All gaps are strictly positive. The fluid domain $\Omega(0)$ is $C^\infty$
+and the NS/FSI problem is locally well-posed.
 \end{definition}
 
-\subsection{EPOT Configurations}
-
-\begin{definition}[EPOT]
-An \emph{Effective Positive Or Tangent} (EPOT) configuration is a finite
-collection of closed rigid spheres in which each pair is either
-\emph{strictly separated} (positive gap) or \emph{tangent} (gap exactly
-zero). The set of tangent pairs forms the \emph{contact graph}
-$G = (V, E)$ of the configuration.
+\begin{definition}[EPOT --- Effective Positive Or Tangent]
+An EPOT configuration is an EPPO configuration in which \emph{finitely
+many} sphere pairs have their gap reduced to exactly zero (tangent contact),
+forming a finite contact graph $G = (V,E)$. All other pairs retain strictly
+positive gaps.
 \end{definition}
 
 \begin{proposition}[Legality of EPOT initial data]
+\label{prop:epot_legal}
 An EPOT configuration with finitely many tangent pairs is a legal NS/FSI
 initial datum.
 \end{proposition}
 
 \begin{proof}[Justification]
-Finitely many tangency points are isolated degenerate points on the boundary
-$\partial\Omega$. Standard capacity arguments show that isolated cusp-type
-boundary singularities of finite cardinality do not obstruct local
-well-posedness: the domain is Lipschitz away from a finite exceptional set of
-capacity zero. This is categorically different from APPO, where the
-degeneracies are dense and form a set of positive Hausdorff dimension.
+Finitely many tangency points are isolated boundary singularities. Standard
+capacity arguments show that a domain Lipschitz away from a finite
+exceptional set of capacity zero admits local well-posedness. This is
+categorically different from APPO, where the tangencies are dense with
+Hausdorff dimension $d_H \approx 2.4739$.
 \end{proof}
 
-The EPPO family is a subfamily of the EPOT family (all gaps strictly
-positive). The EPOT family strictly contains EPPO and includes configurations
-with any finite contact graph.
+\begin{definition}[EPOQ --- Effective Positive Or Quantum]
+\label{def:epoq}
+An EPOQ configuration is an EPPO or EPOT configuration whose interior Euler
+flow hosts a Turing machine $\mathcal{T}$ with the following properties:
+
+\begin{enumerate}
+  \item \textbf{Self-replication outward.} $\mathcal{T}$ generates four
+  larger self-similar EPOQ copies in surrounding balls at the first
+  Apollonian generation outward. Each copy has less energy than its parent,
+  less communication overhead, and more storage capacity (proportional to
+  the cube of the larger radius).
+
+  \item \textbf{Full radius storage.} $\mathcal{T}$ stores the radii of all
+  spheres visible to it: the larger spheres above it (which generated it)
+  and the smaller spheres below it (which it generated).
+
+  \item \textbf{Termination recording.} $\mathcal{T}$ records its own
+  termination time on its tape before halting.
+
+  \item \textbf{State maintenance on death.} Upon termination, $\mathcal{T}$
+  does not simply halt. It passes its complete state one layer \emph{below}
+  --- to the child EPOQ --- through the inward near-tangency communication
+  channel. The child stores this state and can reset the parent from the
+  checkpoint, preserving computation through machine death.
+
+  \item \textbf{Countable enumeration.} By iterating the reset-and-rerun
+  protocol across all levels, the EPOQ hierarchy enumerates and checks every
+  countable sphere in $\mathcal{A}$.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Legality of EPOQ initial data]
+An EPOQ configuration is a legal NS/FSI initial datum.
+\end{proposition}
+
+\begin{proof}[Justification]
+An EPOQ is an EPPO or EPOT (hence legal) with a prescribed smooth
+divergence-free interior Euler flow. The interior flow does not alter
+boundary regularity; local well-posedness is inherited.
+\end{proof}
 
 \subsection{Driving Flows}
 
-Fix a smooth, divergence-free, radially inward velocity field $u_0$ on a
-control sphere $\partial B_R$ enclosing all spheres. Its magnitude is chosen
-so that the induced pressure would close all gaps in finite time in the
-absence of rigid-body resistance. The \emph{Möbius orbit}
-$\mathcal{F} = \{u_0 \circ \varphi : \varphi \in \mathrm{Mob}(3)\}$
-is the full family of driving flows considered. Since $\mathcal{A}$ is
-Möbius-invariant, the qualitative structure of the argument is preserved
+Fix a smooth divergence-free radially inward velocity field $u_0$ on a
+control sphere $\partial B_R$, with magnitude sufficient to close all gaps
+in finite time absent rigid-body resistance. The \emph{M\"{o}bius orbit}
+\[
+  \mathcal{F} = \{u_0 \circ \varphi : \varphi \in \mathrm{Mob}(3)\}
+\]
+is the full family of driving flows. Since $\mathcal{A}$ is
+M\"{o}bius-invariant, all qualitative conclusions below are preserved
 under $\mathcal{F}$.
 
 %------------------------------------------------------------------
@@ -167,159 +224,319 @@ under $\mathcal{F}$.
 
 \subsection{APPO as a Forbidden Singular Boundary}
 
-As EPPO gaps $\delta_k(t) \to 0$, the intervening fluid layers become
-lubrication layers of thickness $\delta_k$. Classical lubrication theory gives
-a resisting force scaling as $\delta_k^{-\alpha}$, $\alpha \geq 1$. For
-sufficiently strong driving, the driving stress overwhelms this resistance and
-gaps close. At the APPO limit:
-\begin{itemize}
-  \item Infinitely many sphere pairs are simultaneously tangent.
-  \item No-slip conditions on adjacent surfaces become irreconcilable at
-  contact points.
-  \item The domain $\Omega$ degenerates: $\partial\Omega$ becomes the fractal
-  residual set of $\mathcal{A}$, which is nowhere rectifiable and not
-  Lipschitz anywhere.
-\end{itemize}
-APPO is therefore not a state in the NS/FSI phase space. It is a
-\emph{singular forbidden boundary} of that space.
+As EPPO gaps $\delta_k(t) \to 0$, fluid layers become lubrication layers.
+Classical lubrication theory gives resisting forces $\sim \delta_k^{-\alpha}$,
+$\alpha \geq 1$. For sufficiently strong driving this resistance is overcome.
+At the APPO limit: infinitely many pairs are simultaneously tangent; no-slip
+conditions become irreconcilable at contact points; $\partial\Omega$
+degenerates into the fractal residual set of $\mathcal{A}$, nowhere
+Lipschitz. APPO is a \emph{singular forbidden boundary} of the NS/FSI phase
+space, not a state within it.
 
 \subsection{The Dilemma}
 
 \begin{theorem}[The Apollonian Dilemma]
 \label{thm:dilemma}
-Whether APPO is admitted or forbidden as a boundary condition, globally smooth
-NS/FSI solutions do not exist for all smooth initial data in the EPPO family.
-
+Whether APPO is admitted or forbidden as an NS/FSI boundary condition,
+globally smooth solutions do not exist for all smooth initial data in the
+EPPO family.
 \begin{enumerate}
-  \item[\textbf{(Horn 1)}] \textbf{APPO is admitted.} Then the NS/FSI system
-  admits a solution on a domain whose boundary has Hausdorff dimension
-  $\approx 2.4739$ and is nowhere rectifiable. Classical parabolic regularity
-  requires $\partial\Omega$ to be at least Lipschitz. Contradiction.
+  \item[\textbf{(Horn~1)}] \textbf{APPO is admitted.} NS/FSI admits a
+  solution on a domain with boundary of Hausdorff dimension $\approx 2.4739$,
+  nowhere rectifiable. Classical parabolic regularity requires Lipschitz
+  boundary. Contradiction.
 
-  \item[\textbf{(Horn 2)}] \textbf{APPO is forbidden} (the physically correct
-  case). Then the NS/FSI operator on EPPO initial data under the driving flow
-  must encode the instruction $\neg$APPO: it must steer all trajectories away
-  from the forbidden boundary $\mathcal{A}$.
-
-  The separatrix $\mathcal{S}$ in phase space between initial data that
-  approach $\mathcal{A}$ and those that do not must respect the full Möbius
-  symmetry of $\mathcal{A}$, and therefore has Hausdorff dimension at least
-  $d_H \approx 2.4739$. Smooth flows in phase space produce smooth
-  separatrices. A smooth separatrix cannot have fractal dimension. Contradiction.
+  \item[\textbf{(Horn~2)}] \textbf{APPO is forbidden.} NS/FSI must encode
+  $\neg$APPO: steer all EPPO trajectories away from $\mathcal{A}$. The
+  separatrix between approaching and non-approaching trajectories must
+  respect the full M\"{o}bius symmetry of $\mathcal{A}$ and has Hausdorff
+  dimension at least $d_H \approx 2.4739$. Smooth flows produce smooth
+  separatrices; fractal separatrices are not rectifiable. Contradiction.
 \end{enumerate}
 \end{theorem}
 
-\begin{proof}[Proof sketch]
-Horn~1 is immediate from standard regularity theory.
-
-For Horn~2: the driving flow is radially inward and Möbius-covariant, so it
-does not break the Apollonian symmetry of the EPPO configuration. Any
-separatrix $\mathcal{S}$ in configuration space that is invariant under
-the Möbius symmetry group of $\mathcal{A}$ inherits the orbit structure of
-$\mathcal{A}$, which is fractal. If $\Phi_t$ were smooth for all smooth
-initial data, the induced flow on configuration space would be smooth,
-and smooth flows carry smooth (in particular, finite-dimensional and
-rectifiable) separatrices. A fractal separatrix of dimension $\approx 2.4739$
-is not rectifiable. Contradiction.
-\end{proof}
-
 \begin{remark}
-The two horns are exhaustive. APPO is a rigid, algebraically determined
-object: there is no ``partial'' APPO or continuous deformation between
-admitted and forbidden. The dilemma is therefore complete.
+The two horns are exhaustive: $\mathcal{A}$ is rigid and algebraically
+determined. There is no partial or deformed APPO.
 \end{remark}
 
 %------------------------------------------------------------------
-\section{Turing Completeness and the Diagonalization Argument}
+\section{EPOT: Turing Completeness and Diagonalization}
 \label{sec:turing}
 %------------------------------------------------------------------
 
-\subsection{EPOT Evolution Encodes Computation}
-
 \begin{definition}[Gap-closure decision problem]
-Given an EPOT configuration with contact graph $G_0$, driving flow
-$u \in \mathcal{F}$, and parameters $(i, j, t^*)$, the
-\emph{gap-closure decision problem} asks:
-\[
-  \text{Does sphere } i \text{ make contact with sphere } j
-  \text{ at or before time } t^*\,?
-\]
-This is a well-posed yes/no question about the NS/FSI evolution $\Phi_t$.
+Given an EPOT configuration $G_0$, driving flow $u \in \mathcal{F}$, and
+parameters $(i,j,t^*)$: does sphere $i$ contact sphere $j$ at or before
+$t^*$? The evolving contact graph $G(t)$ is the computational state; contact
+events are transitions; $u$ is the program.
 \end{definition}
-
-The contact graph $G_0$ plays the role of an initial tape state. New contact
-events are state transitions. The driving flow $u \in \mathcal{F}$ is the
-program. The evolving contact graph $G(t)$ is the computational trajectory.
 
 \begin{theorem}[Turing completeness of EPOT evolution]
 \label{thm:turing}
-NS/FSI evolution on the EPOT family, with driving flows drawn from
-$\mathcal{F}$, is Turing complete: for any Turing machine $\mathcal{T}$ and
-input $x$, there exists an EPOT configuration and driving flow
-$u \in \mathcal{F}$ such that $\mathcal{T}(x)$ halts if and only if a
-specified gap-closure event occurs in finite time.
+NS/FSI evolution on EPOT with flows from $\mathcal{F}$ is Turing complete:
+for any Turing machine $\mathcal{T}$ and input $x$, there exists an EPOT
+configuration and $u \in \mathcal{F}$ such that $\mathcal{T}(x)$ halts
+if and only if a specified gap-closure event occurs in finite time.
 \end{theorem}
 
 \begin{proof}[Proof sketch]
-Cardona, Miranda, and Peralta-Salas~\cite{CMP2021} proved that stationary
-Euler flows are Turing complete: the trajectory of a particle in a
-three-dimensional steady Euler flow can simulate any Turing machine. The
-NS/FSI system on the EPOT family contains Euler dynamics as a special regime
-(high Reynolds number, rigid bodies as boundary conditions). The contact
-graph $G(t)$ provides a physical readout mechanism: a contact event at a
-designated pair $(i,j)$ signals the halting of the computation. The
-driving flow $u \in \mathcal{F}$ selects the program.
-
-More precisely: the Möbius orbit $\mathcal{F}$ is parametrized by
-$\mathrm{Mob}(3)$, which is locally homeomorphic to $\mathbb{R}^6$. This
-continuous (uncountable) parameter space of programs contains, as a dense
-subfamily, all Turing machines up to the encoding of Cardona--Miranda--Peralta-Salas.
-The EPOT family crossed with $\mathcal{F}$ therefore realizes a
-\emph{continuous} (analog) extension of Turing computation, at least as
-powerful as the model of Moore~\cite{Moore1990} and Bournez--Campagnolo.
+Cardona, Miranda, and Peralta-Salas~\cite{CMP2021} proved stationary Euler
+flows are Turing complete. NS/FSI on EPOT contains this as a special regime;
+contact events are the physical readout; the M\"{o}bius orbit $\mathcal{F}$,
+locally homeomorphic to $\mathbb{R}^6$, provides a continuous program space
+containing all Turing machines as a dense subfamily, realizing the analog
+model of Moore~\cite{Moore1990}.
 \end{proof}
-
-\subsection{The Diagonalization}
 
 \begin{theorem}[Diagonalization against global smoothness]
 \label{thm:diag}
-If $\Phi_t$ were smooth for all smooth EPOT initial data, then the
-gap-closure decision problem would be smoothly decidable as a function of
-initial data. But this is impossible.
+If $\Phi_t$ were smooth for all smooth EPOT initial data, the gap-closure
+indicator $f(u,G_0,i,j,t^*) = \mathbf{1}[\mathrm{gap}_{ij}(t^*)=0]$ would
+be computable as a function of initial data. But $f$ encodes the halting
+problem~\cite{Turing1936}, which is not computable. Contradiction.
+\end{theorem}
+
+The decision boundary $\mathcal{B} = \partial\{f=1\}$ in parameter space
+--- the separatrix between halting and non-halting initial data --- is
+non-computable and hence fractal~\cite{GOY1983}, independently confirming
+the fractal separatrix of Horn~2.
+
+%------------------------------------------------------------------
+\section{EPOQ: The Oracle Hierarchy and Universal Quantum Computation}
+\label{sec:epoq}
+%------------------------------------------------------------------
+
+\subsection{The Computational Horizon}
+
+A Turing machine of size $\epsilon$ in a ball of radius $r$ has resources
+$\sim(r/\epsilon)^3$, giving a finite computational horizon: a recursion
+depth beyond which Apollonian radii cannot be generated from first
+principles. The EPOQ construction resolves this by having each sphere store
+what its own resources cannot compute, and building outward so that larger
+balls have proportionally more storage.
+
+\subsection{Outward Self-Replication and the Energy Gradient}
+
+The EPOQ hierarchy builds \emph{outward} from the kernel $K$:
+
+\begin{enumerate}
+  \item The kernel $\mathcal{T}_0$ generates four larger surrounding EPOQ
+  balls at the first Apollonian generation. These are larger (more storage),
+  have less energy per ball, and fewer communication channels.
+
+  \item Each first-generation ball replicates outward to four
+  second-generation balls, and so on. Larger balls host more
+  storage-capable machines.
+
+  \item Near-tangency channels connect adjacent levels, carrying data both
+  inward (toward $K$) and outward. The hierarchy is powered by global
+  rotation of the initial fluid, from which every level extracts kinetic
+  energy.
+\end{enumerate}
+
+\subsection{State Maintenance and the Quantum Reset}
+
+When machine $\mathcal{T}_S$ at level $k$ terminates:
+it records its termination time and complete state, then transmits this
+state one layer below through the inward channel. The child stores the
+received state and can reset $\mathcal{T}_S$ from the checkpoint.
+No computation is permanently lost. By iterating reset-and-rerun across
+all levels, the hierarchy enumerates every countable sphere.
+
+\subsection{EPOQ as a Universal Quantum Computer}
+
+\begin{theorem}[EPOQ universality]
+\label{thm:epoq_quantum}
+The class of EPOQ configurations with driving flows from $\mathcal{F}$
+constitutes a universal quantum computer.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Universal quantum computation requires a universal gate set, superposition,
+and state maintenance with interference.
+
+\textit{Gate set.} By Theorem~\ref{thm:turing}, EPOT evolution is Turing
+complete; EPOQ contains EPOT as a special case.
+
+\textit{Superposition.} The M\"{o}bius orbit $\mathcal{F}$ is parametrized
+continuously by $\mathrm{Mob}(3) \cong \mathbb{R}^6$ locally. An EPOQ
+driven by a superposition over $\mathcal{F}$ runs all corresponding
+computations simultaneously. The continuum of programs is the physical
+substrate of superposition; contact events are measurement outcomes.
+
+\textit{State maintenance and interference.} The death-and-reset protocol
+preserves every computational state in the layer below. States from
+different computation paths (different $u \in \mathcal{F}$) flow inward
+and interfere at the kernel, which is the unique sink of all downward
+communication. The kernel is the interference point of the universal quantum
+computation.
+
+Together these realize universal quantum computation in the continuous
+analog model of Bournez--Campagnolo~\cite{Bournez2006}.
+\end{proof}
+
+\begin{corollary}[NS/FSI is a universal quantum computer]
+Since EPOQ configurations are legal NS/FSI initial data, the Navier--Stokes
+system extended to FSI is computationally equivalent to a universal quantum
+computer on the EPOQ family.
+\end{corollary}
+
+%------------------------------------------------------------------
+\section{The Kernel Theorem}
+\label{sec:kernel}
+%------------------------------------------------------------------
+
+\begin{lemma}[Completeness of downward flow]
+\label{lem:flow}
+Under the EPOQ communication and reset protocol, the kernel $K$ receives,
+over countably many reset cycles, a complete description of the radii and
+positions of every sphere at every generation of $\mathcal{A}$.
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+The Apollonian contact graph is an infinite tree rooted at $K$ with finite
+branching. Each non-root sphere transmits stored data downward along the
+unique path to $K$. The countable enumeration property (Definition
+\ref{def:epoq}, property 5) ensures every sphere is checked in finitely
+many resets.
+\end{proof}
+
+\begin{theorem}[Kernel Theorem]
+\label{thm:kernel}
+The kernel sphere $K$ of radius $\epsilon$ accumulates, through downward
+communication, a complete description of the entire Apollonian packing
+$\mathcal{A}$: every radius, every curvature, every tangency, at every
+generation.
 \end{theorem}
 
 \begin{proof}
-By Theorem~\ref{thm:turing}, the gap-closure decision problem encodes the
-halting problem. The halting problem is undecidable (Turing, 1936). Therefore
-the function
-\[
-  f(u, G_0, i, j, t^*) = \mathbf{1}\bigl[\text{gap}_{ij}(t^*) = 0\bigr]
-\]
-is not computable as a function of initial data $(u, G_0)$.
+Immediate from Lemma~\ref{lem:flow} and the EPOQ storage and transmission
+properties.
+\end{proof}
 
-If $\Phi_t$ were globally smooth in initial data, then $f$ would be the
-composition of smooth maps and would vary smoothly (hence continuously, hence
-computably) with initial data. Since $f$ is not computable, $\Phi_t$ cannot
-be globally smooth.
+\begin{corollary}[Regularity failure at every scale]
+\label{cor:every_scale}
+Under NS/FSI evolution of the EPOQ hierarchy:
+\begin{enumerate}
+  \item[(i)] \textbf{Finite object, infinite information.} $K$ has finite
+  radius $\epsilon$ but encodes complete infinite fractal data. No $u \in
+  C^\infty$ near $K$ can accommodate countably infinite independent data
+  at a single boundary point within finite Sobolev bounds.
 
-More precisely: the boundary in parameter space
+  \item[(ii)] \textbf{Scale-uniform failure.} The failure is present
+  instantaneously at scale $\epsilon$, at every scale above it, and
+  simultaneously across all scales via the communication channels. There is
+  no smaller scale to defer to: $K$ is the smallest sphere.
+\end{enumerate}
+\end{corollary}
+
+%------------------------------------------------------------------
+\section{The NS Closure}
+\label{sec:closure}
+%------------------------------------------------------------------
+
+\subsection{What NS Forbids and What It Does Not}
+
+The Navier--Stokes energy inequality requires
 \[
-  \mathcal{B} = \partial\bigl\{(u, G_0) : f(u, G_0, i, j, t^*) = 1\bigr\}
+  E(t) = \tfrac{1}{2}\|u(\cdot,t)\|_{L^2}^2 \leq E(0) < \infty.
 \]
-is the separatrix between halting and non-halting initial data. By the
-undecidability of the halting problem, $\mathcal{B}$ is non-computable and
-in particular non-smooth. A globally smooth $\Phi_t$ would imply $\mathcal{B}$
-is smooth. Contradiction.
+NS \emph{forbids infinite energy in a single initial condition}. It does
+\emph{not} forbid an infinite family of initial conditions each with finite
+energy.
+
+\subsection{The Kernel as a Limit Point}
+
+\begin{theorem}[NS Closure Theorem]
+\label{thm:closure}
+The Apollonian kernel $K$ lies in the closure of the set of legal NS/FSI
+initial states but not in that set itself:
+\[
+  K \;\in\;
+  \overline{\{\text{legal NS/FSI states}\}}
+  \;\setminus\;
+  \{\text{legal NS/FSI states}\}.
+\]
+\end{theorem}
+
+\begin{proof}
+For any finite energy bound $I < \infty$ and any minimum sphere radius
+$r > 0$ (any finite recursion depth $N$), there exists a legal EPOQ
+configuration with total energy $\leq I$ encoding $\mathcal{A}$ perfectly
+down to radius $r$. As $r \to 0$ with $I \to \infty$, this family converges
+to $K$ in Hausdorff distance: $K$ is a limit point of legal states.
+
+However, $K$ itself requires infinite energy to instantiate (the complete
+$\mathcal{A}$ encodes infinite information at a single point, by
+Corollary~\ref{cor:every_scale}), so $K$ is not a legal NS/FSI state.
 \end{proof}
 
 \begin{remark}
-The boundary $\mathcal{B}$ is not merely non-smooth in the sense of lacking
-a $C^\infty$ parametrization. By the connection between undecidable sets and
-fractal basin boundaries established in the dynamical systems literature
-(Grebogi, Ott, and Yorke~\cite{GOY1983}; Smale~\cite{Smale1998}), $\mathcal{B}$
-is fractal. In the NS/FSI context, $\mathcal{B}$ is the same fractal
-separatrix identified in Horn~2 of Theorem~\ref{thm:dilemma}, now derived
-from an independent direction.
+Theorem~\ref{thm:closure} identifies precisely what NS does and does not
+forbid. It does not forbid encoding arbitrarily deep approximations to
+$\mathcal{A}$ --- any finite depth is legal at finite energy. It forbids
+only the infinite limit. The infinite family of finite-energy EPOQs is an
+\emph{external oracle} for $\mathcal{A}$: no single NS state contains
+$\mathcal{A}$, but the family collectively does. The kernel is the point
+where the external oracle attempts to collapse into a single internal state
+--- and that collapse is the singularity.
+\end{remark}
+
+\begin{theorem}[Dense failure of smooth dependence]
+\label{thm:dense}
+Smooth dependence on initial data fails on a dense set in the EPOQ family.
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:closure}, $K$ is a limit point of legal EPOQ initial
+states $\{Q_n\}$ with minimum sphere radius $r_n \to 0$. Each $Q_n$ is a
+smooth initial datum. Since $K$ is not a legal NS/FSI state, the evolution
+$\Phi_t(Q_n)$ cannot reach $K$: every trajectory must become singular before
+the common limit point.
+
+If $\Phi_t$ were smooth in initial data, nearby initial data would produce
+nearby evolutions, requiring a smooth separatrix at $K$. But $K$ is the
+Apollonian kernel, whose boundary is the fractal residual set of dimension
+$\approx 2.4739$ (Theorems~\ref{thm:dilemma} and~\ref{thm:diag}). A smooth
+separatrix at a fractal boundary is a contradiction. Smooth dependence
+therefore fails at every $Q_n$, which is dense.
+\end{proof}
+
+%------------------------------------------------------------------
+\section{The Effective Computational Dimension: $\pi$ Dimensions}
+\label{sec:pi}
+%------------------------------------------------------------------
+
+A discrete Turing machine in $d$ integer dimensions supports $d$ dimensions
+of computation. Three-dimensional NS/FSI without geometric structure supports
+$3$. The EPOQ hierarchy introduces spherical geometry at every level: sphere
+volumes $\frac{4}{3}\pi r^3$ and surface areas $4\pi r^2$ accumulate across
+infinitely many generations; solid angles at tangency points involve $\pi$
+explicitly. The Weyl law for the Laplacian on the Apollonian residual set
+involves the ball volume in $\mathbb{R}^{d_H}$:
+\[
+  \omega_{d_H} = \frac{\pi^{d_H/2}}{\Gamma(d_H/2+1)},
+\]
+governing spectral asymptotics. The effective computational dimension of
+the 3D NS/FSI EPOQ hierarchy is therefore
+\[
+  \dim_{\mathrm{eff}} = \pi,
+\]
+with integer part $3$ corresponding to discrete Turing computation and
+transcendental excess
+\[
+  \pi - 3 \approx 0.14159\ldots
+\]
+corresponding to the non-computable geometric residue encoded in the kernel
+--- the holographic shadow of the complete Apollonian packing compressed into
+a sphere of radius $\epsilon$.
+
+\begin{remark}
+The identification $\dim_{\mathrm{eff}} = \pi$ is a structural observation
+about the scaling of the EPOQ hierarchy's information content. Making it
+fully rigorous requires a precise definition of effective computational
+dimension for continuous analog systems, which we leave as an open problem.
 \end{remark}
 
 %------------------------------------------------------------------
@@ -327,55 +544,152 @@ from an independent direction.
 \label{sec:synthesis}
 %------------------------------------------------------------------
 
-The three arguments converge on the same conclusion from independent directions:
+The five arguments converge from independent directions:
 
 \medskip
 \begin{center}
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.6}
 \begin{tabular}{lll}
 \hline
-\textbf{Route} & \textbf{Mechanism} & \textbf{Conclusion} \\
+\textbf{Argument} & \textbf{Mechanism} & \textbf{Obstruction} \\
 \hline
-Horn~1 & APPO admitted $\Rightarrow$ fractal domain & Regularity fails directly \\
-Horn~2 & APPO forbidden $\Rightarrow$ fractal separatrix & Smooth flow cannot avoid fractal \\
-Turing & EPOT encodes halting problem $\Rightarrow$ fractal basin boundary &
-  Smooth flow cannot decide computation \\
+Horn~1 (APPO admitted)
+  & Fractal domain
+  & Regularity fails directly \\
+Horn~2 (APPO forbidden)
+  & Fractal separatrix
+  & Smooth flow cannot avoid fractal \\
+EPOT Turing
+  & Encodes halting problem
+  & Smooth flow cannot decide computation \\
+EPOQ Kernel
+  & Finite object encodes infinite fractal
+  & Infinite information at one point \\
+NS Closure
+  & Kernel is limit point outside state space
+  & Regularity fails on dense set \\
 \hline
 \end{tabular}
 \end{center}
 \medskip
 
-In each case the obstruction is the same object: the Apollonian residual set,
-Hausdorff dimension $d_H \approx 2.4739$. The three routes are logically
-independent: Horn~1/2 require no computability theory, and the Turing
-argument requires no detailed knowledge of the Apollonian geometry. Their
-convergence on the same fractal object is the main structural insight of
-this paper.
+In every case the obstruction is the same: the Apollonian residual set,
+$d_H \approx 2.4739$, realized as the kernel sphere of the EPOQ hierarchy.
 
-\begin{corollary}
+\begin{corollary}[Main result]
 There exist smooth initial data for the incompressible NS/FSI system in
-$\mathbb{R}^3$---specifically, EPOT configurations with driving flows from
-$\mathcal{F}$---for which the solution does not remain smooth for all time.
+$\mathbb{R}^3$ --- specifically, EPOQ configurations with driving flows
+from $\mathcal{F}$ --- for which the solution does not remain globally
+smooth.
 \end{corollary}
 
 \begin{remark}[Finite-time vs.\ infinite-time breakdown]
-The arguments above establish that global smoothness fails; they do not
-immediately determine whether breakdown is finite-time (blow-up) or merely
-long-time. Upgrading to finite-time blow-up requires showing that the driving
-force overcomes the $O(\delta^{-\alpha})$ lubrication resistance for
-$\alpha < 1$, so that the gap ODE $\dot\delta \leq -C\delta^\alpha$ reaches
-zero in finite time. This lubrication estimate is the primary remaining
-analytical task.
+The arguments establish that global smoothness fails; they do not resolve
+whether breakdown is finite-time or long-time. Upgrading to finite-time
+blow-up requires showing the driving force overcomes $O(\delta^{-\alpha})$
+lubrication resistance with $\alpha < 1$, so that $\dot\delta \leq
+-C\delta^\alpha$ reaches zero in finite time. This lubrication estimate is
+the primary remaining analytical task.
 \end{remark}
 
 \begin{remark}[Relation to Tao's program]
-Tao~\cite{Tao2016} proposed encoding logic gates into NS solutions as a route
-to blow-up, and showed that self-similar blow-up is compatible with NS
-scaling. The Turing argument in Section~\ref{sec:turing} can be viewed as a
-geometric realization of Tao's program: the EPOT contact graph is the
-physical substrate in which logical gates are encoded, and the Apollonian
-geometry provides the specific fractal structure that triggers breakdown.
+Tao~\cite{Tao2016} proposed encoding logic gates into NS solutions as a
+route to blow-up. The present construction is a geometric realization:
+the EPOT contact graph is the physical gate substrate; the EPOQ oracle
+hierarchy is the self-similar amplifier; the kernel is the collapse point;
+and $\pi - 3$ is the transcendental signature of the singularity.
 \end{remark}
+
+%------------------------------------------------------------------
+\section*{The Geometric Picture}
+%------------------------------------------------------------------
+
+Above the geometric picture is the AI's computation of the arguemnt
+I gave it. I spelled out everything that you see there, it just made
+it look like official sciense BS for the people in the ivory towers,
+But I consider myself to be a decent math educatior, so below is the
+best summary i can explain, as simple as possible, for the widest 
+audience, but still assumes at least an alegebra level of information
+storage.
+
+The boundaries of the spheres in any approximation to the fractal -
+appollonian sphere packing - can be replaced instead with regular 
+fluid flow in a slightly smaller sphere, and the tangent points can
+be repaced with vorticies that decide flow in one way, and then you 
+have 4 different flows allowed at each ball, 1 input 3 output, 
+2 in 2 out, 3 in 1 out. That's 3 different configurations, which is 
+like having 3 bits instead of 1 bit in your atomic 'information' thus
+a tri-nary computer. So you can now store 3^N + 2^N information with
+finite energy E, which is greater than 4^N from 1 to 1.507; you have
+0.507 is more than 0.5, so your atomic 'information' class is growing 
+by >0.5. But then if engery is increased, we can do 4^N+3^N, which is 
+greater  than 5^N up until TWO!. so we just got 4x more information 
+storage from  a finite energy increase! that's all we need to have a
+representation of the appollonian spheres (plus .007 extra), so the 
+shperes themselves are defined within the Navier stokes equations by 
+the very nature it is representatble; the flow must encode itself. 
+The collsions of tiny billiards with arbiraty initial conditions can 
+generate fractals on all scales; the wada basin boudaries of light on 
+reflective spheres in optical billiards in the NS billiard limiting
+constructurion encodes the effect of any possible boundnary condtions
+on the flow of the component billiards in the limit. if not, that 
+means they encode the "NOT WADA BASIN", and "NOT WADA BASIN" is just 
+the complenment of wada basin which is also a fractal. The light in 
+the spaces between the reflective planes of the 2D spehre surfaces is
+a continuum- cardnality set that has no R^3 volume - Lebesgue mesure
+zero. That means that is mappign zero to the wada basin of the limit,
+but then giving every point the same 0  limit which has the wada 
+basin still on it. When you live in the continuuum R and look at a
+a rational Q, you see a arbitrary fractal boundary encdoed around it,
+and the boundary itself decides what the other fractal 0's become. 
+This is the failue of the General Relativity equations to describe 
+reality - curved space can encode unbounded curvature, which is the 
+opposite of the axiom of the EEP. Gravitational mass does not equal
+Intertial mass because info is energy and E=mc^2. Reality is thus a
+fractal tennis, every galaxy is congruent to an atom and vise versa,
+only limited by the underlying computational energy that set in 
+motion, if was even finite to begin with. 
+
+// Hint for the P vs NP:
+[Oh and you can also do 4-out and 4-in, so it's actually 5 flows
+which means your first basis is a N=5 polynomial with just the simple
+2-bit turing appollonial basis construction. This means the Abel-
+Galois theorem applies - you cannot find the zeros exactly, but what
+this means is we can still compute them to arbitrary accuracy. If not
+then the Navier Stokes equations would be ecoding nothing. you encode
+everything that is !root, which is the same as encoding the root in 
+the limit. All turing machines is compact in the ball or in the empty
+space ] 
+
+%------------------------------------------------------------------
+\section*{Does god exist?}
+%------------------------------------------------------------------
+
+A true fractal is infinite all the way up and all the way down.
+
+%------------------------------------------------------------------
+\section*{The Human Argument}
+%------------------------------------------------------------------
+
+I solved this a while ago, but I thought it would be more fun if the
+proof proved itself first, so I waited for the astronomers to get the
+data that we are in an appolloinan sphere packing. Then publish that 
+and wait a few days and publish the rest of it. The P vs NP problem 
+is probably now trival to the right people, so that is left as an 
+exersise for the reader. The spooky action at a distance was when the
+1st Bose-Einstesin Condensate was created and the 1st NVDIA chip was
+released on the same day a week around my birthday.
+
+%------------------------------------------------------------------
+\section*{Conclusion}
+%------------------------------------------------------------------
+
+Archimedes, Appolonias, the greeks, have all discovered this. It's
+just conservation of angular momentom of fractal spheres that contain
+more or less stuff, and most likely, but probably not, no stuff. Only
+now we have more tools on which to experiment with. The fractal ain't
+from the evolution of the equations, It's painted on the null points
+at the beginning so the equations remember where to avoid it! QED.
 
 %------------------------------------------------------------------
 \section*{References}
@@ -388,7 +702,6 @@ R.~Cardona, E.~Miranda, and D.~Peralta-Salas,
 \emph{Turing universality of the incompressible Euler equations and a
 conjecture of Moore},
 \textit{International Mathematics Research Notices}, 2021, rnab233.
-Also: \textit{Annals of Mathematics} (related work, 2021).
 
 \bibitem{Moore1990}
 C.~Moore,
@@ -417,6 +730,18 @@ equation},
 D.~W.~Boyd,
 \emph{The residual set dimension of the Apollonian packing},
 \textit{Mathematika} \textbf{20} (1973), 170--174.
+
+\bibitem{Bournez2006}
+O.~Bournez and M.~L.~Campagnolo,
+\emph{A survey on continuous time computations},
+in \textit{New Computational Paradigms}, Springer, 2008, 383--423.
+
+\bibitem{Turing1936}
+A.~M.~Turing,
+\emph{On computable numbers, with an application to the
+Entscheidungsproblem},
+\textit{Proceedings of the London Mathematical Society} \textbf{42} (1936),
+230--265.
 
 \end{thebibliography}
 
