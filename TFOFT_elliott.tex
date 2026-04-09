@@ -1454,793 +1454,801 @@ We provide two independent methods that use the star-electron logarithmic equiva
         $G$ is not used anywhere in its own derivation.
         \end{mdframed}
 
+---
+
 %===================
-% Part 11: Predict A
+% Part 12: Predict A
 %===================
 
 \section{Reverse-Engineering Fine-Structure Constant from Spectral Alignment}
 
-\subsection{Three Convergent Paths to Predict $\alpha^{-1}_{\mathrm{Yb}}$}
+  \subsection{Three Convergent Paths to Predict $\alpha^{-1}_{\mathrm{Yb}}$}
 
-The Fractal Tennis ontology provides three independent methods to derive the fine-structure constant of Ytterbium-174. If all three converge on the same prediction, the theory is validated with zero degrees of freedom.
+  The Fractal Tennis ontology provides three independent methods to derive the fine-structure constant of Ytterbium-174. If all three converge on the same prediction, the theory is validated with zero degrees of freedom.
 
-\subsubsection{Path A: Atomic Mass Ratio Coupling}
+  \subsubsection{Path A: Atomic Mass Ratio Coupling}
 
-\noindent\textbf{Method:} Use the Rb/Cs discrepancy to derive the pressure coefficient $\beta$, then extrapolate to Yb.
+  \noindent\textbf{Method:} Use the Rb/Cs discrepancy to derive the pressure coefficient $\beta$, then extrapolate to Yb.
 
-\noindent\textbf{Result (Previous Section):}
-\[
-\alpha^{-1}_{\mathrm{Yb}}^{(\mathrm{A})} = 137.035998945
-\]
+  \noindent\textbf{Result (Previous Section):}
+  \[
+  \alpha^{-1}_{\mathrm{Yb}}^{(\mathrm{A})} = 137.035998945
+  \]
 
-\noindent\textbf{Deviation from electron baseline:} $-225 \times 10^{-9}$ ($8.2\sigma$ effect).
+  \noindent\textbf{Deviation from electron baseline:} $-225 \times 10^{-9}$ ($8.2\sigma$ effect).
 
-\subsubsection{Path B: Gravitational Constant Derivation}
+  \subsubsection{Path B: Gravitational Constant Derivation}
 
-\noindent\textbf{Method:} Use the two methods of deriving $G$ (Method 1: Geometric; Method 2: Dynamic). The residual (Fractal Virial Correction) encodes the packing density effect.
+  \noindent\textbf{Method:} Use the two methods of deriving $G$ (Method 1: Geometric; Method 2: Dynamic). The residual (Fractal Virial Correction) encodes the packing density effect.
 
-\noindent\textbf{Density dependence:} Higher density $\Rightarrow$ slower clock $\Rightarrow$ higher effective $\alpha$.
+  \noindent\textbf{Density dependence:} Higher density $\Rightarrow$ slower clock $\Rightarrow$ higher effective $\alpha$.
 
-\noindent\textbf{Calculation:} From the G derivation, the packing compression factor at the Yb location in the 77/137-step hierarchy determines the expected $\alpha$ deviation. This should predict:
-\[
-\alpha^{-1}_{\mathrm{Yb}}^{(\mathrm{B})} \approx 137.035998945
-\]
+  \noindent\textbf{Calculation:} From the G derivation, the packing compression factor at the Yb location in the 77/137-step hierarchy determines the expected $\alpha$ deviation. This should predict:
+  \[
+  \alpha^{-1}_{\mathrm{Yb}}^{(\mathrm{B})} \approx 137.035998945
+  \]
 
-\noindent\textbf{Status:} To be calculated using the G derivation formula and Yb's position in the log-step hierarchy.
+  \noindent\textbf{Status:} To be calculated using the G derivation formula and Yb's position in the log-step hierarchy.
 
-\subsubsection{Path C: Spectral Line Alignment}
+  \subsubsection{Path C: Spectral Line Alignment}
 
-\noindent\textbf{Method:} Use high-resolution quasar spectra and hydrogen calibration lines to extract the local packing density at quasar birth. Apply this density scaling to Yb's position in the fractal hierarchy.
+  \noindent\textbf{Method:} Use high-resolution quasar spectra and hydrogen calibration lines to extract the local packing density at quasar birth. Apply this density scaling to Yb's position in the fractal hierarchy.
 
-\noindent\textbf{Procedure:}
+  \noindent\textbf{Procedure:}
 
-\begin{enumerate}
+  \begin{enumerate}
 
-\item \textbf{Data collection:}
-   Gather high-redshift quasar spectra ($z \sim 2{-}3$) with rest-frame emission line measurements
-   and host galaxy classification.
+  \item \textbf{Data collection:}
+     Gather high-redshift quasar spectra ($z \sim 2{-}3$) with rest-frame emission line measurements
+     and host galaxy classification.
 
-\item \textbf{Calibration:}
-   Use hydrogen Lyman-alpha series ($\lambda = 121.6$ nm rest frame) as the primary reference.
-   Measure observed quasar lines (e.g., H-alpha, [O~III], etc.) and compare to expected hydrogen transitions.
+  \item \textbf{Calibration:}
+     Use hydrogen Lyman-alpha series ($\lambda = 121.6$ nm rest frame) as the primary reference.
+     Measure observed quasar lines (e.g., H-alpha, [O~III], etc.) and compare to expected hydrogen transitions.
 
-\item \textbf{Spectral deviation ratio:}
-   \[
-   R_{\text{spec}} = \frac{\lambda_{\text{quasar, rest}}}{\lambda_{\text{H, expected}}}
-   \]
-   This ratio encodes the packing density ratio between the quasar's birth site and our local hydrogen gas.
+  \item \textbf{Spectral deviation ratio:}
+     \[
+     R_{\text{spec}} = \frac{\lambda_{\text{quasar, rest}}}{\lambda_{\text{H, expected}}}
+     \]
+     This ratio encodes the packing density ratio between the quasar's birth site and our local hydrogen gas.
 
-\item \textbf{Packing compression factor:}
-   \[
-   \text{Compression}(\text{quasar site}) = R_{\text{spec}}^{\gamma}
-   \]
-   where $\gamma$ is a scaling exponent (to be determined empirically or from D$_4$ geometry).
+  \item \textbf{Packing compression factor:}
+     \[
+     \text{Compression}(\text{quasar site}) = R_{\text{spec}}^{\gamma}
+     \]
+     where $\gamma$ is a scaling exponent (to be determined empirically or from D$_4$ geometry).
 
-\item \textbf{Apply to Yb:}
-   Yb sits at a fractional position in the 77-step mass hierarchy and the 137-step radius hierarchy.
-   This position determines the expected packing density relative to hydrogen.
-   
-   \[
-   \text{Compression}(\mathrm{Yb}) = \exp\left(\frac{N_{\mathrm{Yb}}}{N_{\mathrm{total}}} \times \ln(\text{max compression})\right)
-   \]
-   
-   where $N_{\mathrm{Yb}}$ is Yb's step count from hydrogen, and $N_{\mathrm{total}} = 77$ is the total mass hierarchy.
+  \item \textbf{Apply to Yb:}
+     Yb sits at a fractional position in the 77-step mass hierarchy and the 137-step radius hierarchy.
+     This position determines the expected packing density relative to hydrogen.
+     
+     \[
+     \text{Compression}(\mathrm{Yb}) = \exp\left(\frac{N_{\mathrm{Yb}}}{N_{\mathrm{total}}} \times \ln(\text{max compression})\right)
+     \]
+     
+     where $N_{\mathrm{Yb}}$ is Yb's step count from hydrogen, and $N_{\mathrm{total}} = 77$ is the total mass hierarchy.
 
-\item \textbf{Predict $\alpha^{-1}_{\mathrm{Yb}}$:}
-   \[
-   \alpha^{-1}_{\mathrm{Yb}}^{(\mathrm{C})} = \alpha^{-1}_{\mathrm{H}} + \beta \ln(\text{Compression}(\mathrm{Yb}))
-   \]
+  \item \textbf{Predict $\alpha^{-1}_{\mathrm{Yb}}$:}
+     \[
+     \alpha^{-1}_{\mathrm{Yb}}^{(\mathrm{C})} = \alpha^{-1}_{\mathrm{H}} + \beta \ln(\text{Compression}(\mathrm{Yb}))
+     \]
 
-\end{enumerate}
+  \end{enumerate}
 
-\noindent\textbf{Expected result:}
-\[
-\alpha^{-1}_{\mathrm{Yb}}^{(\mathrm{C})} \approx 137.035998945
-\]
+  \noindent\textbf{Expected result:}
+  \[
+  \alpha^{-1}_{\mathrm{Yb}}^{(\mathrm{C})} \approx 137.035998945
+  \]
 
-\subsection{Convergence as Validation}
+  \subsection{Convergence as Validation}
 
-If all three paths converge to within experimental precision:
+  If all three paths converge to within experimental precision:
 
-\[
-\alpha^{-1}_{\mathrm{Yb}}^{(\mathrm{A})} \approx \alpha^{-1}_{\mathrm{Yb}}^{(\mathrm{B})} \approx \alpha^{-1}_{\mathrm{Yb}}^{(\mathrm{C})} = 137.035998945
-\]
+  \[
+  \alpha^{-1}_{\mathrm{Yb}}^{(\mathrm{A})} \approx \alpha^{-1}_{\mathrm{Yb}}^{(\mathrm{B})} \approx \alpha^{-1}_{\mathrm{Yb}}^{(\mathrm{C})} = 137.035998945
+  \]
 
-then:
+  then:
 
-\begin{enumerate}
+  \begin{enumerate}
 
-\item The TFOFT ontology is internally self-consistent
-\item The equivalence principle violation is real (different atoms have different $\alpha$)
-\item The spectral ruler calibration is validated
-\item The fractal hierarchy depths (77 and 137 steps) are confirmed
+  \item The TFOFT ontology is internally self-consistent
+  \item The equivalence principle violation is real (different atoms have different $\alpha$)
+  \item The spectral ruler calibration is validated
+  \item The fractal hierarchy depths (77 and 137 steps) are confirmed
 
-\end{enumerate}
+  \end{enumerate}
 
 ---
 
-% ==================================================================
-% EPICYCLES SMASHED WITH 
-% ==================================================================
 
 \section{Resolution of All Major Tensions }
 
-The Fractal Tennis framework resolves 24+ major observational and theoretical tensions in physics simultaneously. These include:
-
-\begin{longtable}{|@{\hspace{4pt}} >{\centering\arraybackslash}p{0.05\linewidth} | >{\centering\arraybackslash}p{0.3\linewidth} | >{\centering\arraybackslash}p{0.1\linewidth} | >{\centering\arraybackslash}p{0.10\linewidth} | >{\centering\arraybackslash}p{0.37\linewidth} @{\hspace{4pt}}|}
-\caption{All Tensions Resolved by Fractal Tennis (FSEP)} \\
-\hline
-\textbf{Rank} & \textbf{Tension} & \textbf{Category} & \textbf{Directness}  \\
-\hline
-\endfirsthead
-\hline
-\textbf{Rank} & \textbf{Tension} & \textbf{Category} & \textbf{Directness}  \\
-\hline
-\endhead
-\hline
-\multicolumn{5}{r|}{\textit{Continued on next page}} \\
-\endfoot
-\hline
-\endlastfoot
-1 & Li-7 abundance mismatch & Cosmology & Extremely  \hline
-2 & Vacuum energy ($10^{120}$) & QFT & Very direct  \hline
-3 & Strong CP / neutron EDM & Particle Physics & Direct  \hline
-4 & Neutrino mass/oscillations & Particle Physics & Direct  \hline
-5 & Matter-antimatter asymmetry & Cosmology & Semi-direct  \hline
-6 & UHECR anomalies (GZK) & Astrophysics & Semi-direct \hline
-7 & Non-isotropic supernovae + post-explosion mass gain \hline
-8 & Li-6 / minor isotopes & Geophysics & Semi-direct \hline
-9 & Hubble tension / JWST early galaxies & Cosmology \hline
-10 & Wavefunction collapse & QM & Conceptual  \hline
-11 & Quantum nonlocality/entanglement & QM & Conceptual \hline
-12 & Hierarchy / fine-tuning & Particle Physics & Conceptual  \hline
-13 & SM parameter fine-tuning & Particle Physics & Conceptual  \hline
-14 & Flatness / horizon problem & Cosmology & Conceptual  \hline
-15 & Large-scale structure (voids, BAO) & Cosmology & Suggestive  \hline
-16 & $\alpha$ variation (Webb + Rb/Cs 5.5$\sigma$) & Metrology & Extremely \hline
-17 & True Shor algorithm fails (factor 42) & QM & Direct \hline
-18 & Laser-plasma = supernova math & Plasma & Direct \hline
-19 & BH jet / spin / accretion disconnect (2025) & Astrophysics & Direct \hline
-20 & Meteorite clock contradiction (Xe vs Al) & Geophysics & Direct \hline
-21 & Gold surface vs He-3 deep mantle & Geophysics & Direct  \hline
-22 & Extremal black holes stable (Hawking wrong) & GR & Mathematical \hline
-23 & Geoneutrino anisotropy (JUNO/SNO+) & Geophysics & Emerging direct \hline
-24 & DM-neutrino interaction (3$\sigma$ + LZ fog) & Cosmology & Already measured \hline \hline
-\end{longtable}
-
-\subsection {Full Ontological Picture}
-
-The paper has a code-like poetry companion for the ontology of the The Fractal Fractal Tennis and can be obtained by contacting the author or visiting the website the git repo is hosted. At the time of publication it can be found at github.com/yasteven/math/TFOFT/Readme.md
-
-\comment 
-
-github.com/yasteven/math/TFOFT/Readme.md
-
-Okay listen the above is the bullshit science gobeley gook that they
-force you to talk in to sound smart, but what it really does is just
-help fake intelligence by hiding information behind complicated info.
-
-The mathiccs is much more simple. A companion paper will be released
-in the future, but if you would like, please try to develop the idea
-so that you gan gain Godel-like reverence in you ability to math the
-heck out of the logic. Basically, the sphere packing can be used for
-a formal logic axiomatic system where the location and curvature for
-a sphere is the language, proofs are finite or cyclic tangency paths
-through the sphere packing, and then you use Presburger formal logic
-for the complete and consistent Arithmetic free from Godel's theorem
-for the incompleteness and stuff, then add a LAZY evaluation for the
-more complicated functions like multiplication and then all of maths
-up to at least a Bishop-style calculus, making the game rules of The
-Fact Of Fractal Tennis computations, have the final fundamental laws
-in a way that is complete and consistent for the persistent universe.  
-
-After enough thought Steven Edward Elliott has determined the proper
-ontology whose epistemology matches it for the universe. An MATHICCS 
-is an enforcement of the epistemological ontological equivalence. It 
-is better to derive it now, this way, due to the sheer elegance when
-the law is found, and then let the future scientists sculpt the rest
-of the picture when they study the emergent laws of nature from here.
-
-To make it easier to explain, Macro means higher fractal layer. 1-Up!
-To make it easier to explain, Tiny means lower fractal layer. Go Low!
-
-OO) [ASSP ==> The Fractal Substrate]
-
-The Appolonian Soddy Sphere Packing and variations of it, which here
-we shall assume has the optimal properties for the mathematical math
-the universe uses. The geometric nature of reality implies this must
-be the fundamental basis (like a vector in a vector field of packing
-all spheres fractally). It may be 3D spheres in a dimension of time,
-or a 4D quarternion sphere packings and time, there is probably many
-ways to represent it mathematically. We assume we can find a closest
-method for the given subset of dynamical systems in the systems that
-can be predicted to within some accuracy, and possible for the whole.
-It is inspired and inferred by observation made by above researchers
-who are the most important of scientists, the court experimentalists. 
-
-
-TFOFT) [The Fact of Fractal Tennis ==> Mathicss > Physics]
-(00) will be the geometric basis of the mathiccs system, hereforth a
-system of science called The Fact Of Fractal Tennis. A Fractal Layer 
-Substrate has induced dynamics and we can infer the following system:
-
-Fractal Congruent Objects:
-
-(O) [Origin ===> Fractal Layer Boundaries] 
- Hydrogen Nucleus Core is fractal congruent to the core of a Galaxy!
- Single Proton "Core" are fractal congruent to the Nude Galaxy Core!
-
-In The Fractal tennis, We prefer 8 characters, so we replace the word 
- x Proton 
- x Galactic Nucleus  
-We instead call it an 
- i Core Ball. 
-
-(I) [Information ==> Matter == Energy]
- Stars are fractal congruent Electrons, a carrier Surfs mass-energy! 
-
-In The Fractal Tennis, Reduce syllable usages, so we replace the word
- x Electron 
- x Star 
-We instead call it an 
- i Star Ball. 
-
-(IO) [Information Offset ===> (O)+(I)=Gyroscopic Motion]
- Galaxies are fractal congruent to Atoms, one gryo for no-slip spin!
-
-In The Fractal tennis, Save info Space please, so we replace the word
-  x Gyroscopic force
-  x Centripetal force
-  x Gravitational force
-  x Electromagnetic force
-  x Weak force
-  x Strong force
-  x Electroweak force
-We instead call it an 
- i Roll Ball. 
-
-OI) [Order Information ===> Time]
-
- Macrophotons are fractal congruent to Photons, layer changes times!
-
-In The Fractal Fact Of Fractal Tennis, people are going to be saying 
-things differently, this is why people have different languages. Let
-me explain things in some of that stuff. This is what we the English  
-call the "photon", or Light. It is the speed of information transfer!
-It is both a particle and a wave, because it is a fluid, bullet-like
-transfer of particles that surfs on its own momentum wake in the the
-fractal substrate as it leaks information to the rest of the reality! 
-
-In The Fractal tennis, Save info Space please, so we replace the word
- x Light 
- x Photon
- x Information
- x Macrophoton
-We instead call it an 
- i Info Ball. 
-
-(II) [Intelligence Inferring ===> (I)x(I) Information Induction ]
-
-Collisions manifest for mass, energy, and info transfer as a tennis!
-
-When a (I) falls into a (O), it is converted to an info ball upwards,
-at the next fractal layer above the one it came from. Electrons thus
-are just tiny-stars, photons are just tiny-stars hitting a core ball
-and getting yeeted into the next more sparse more fast fractal layer!
-
-In The Fractal tennis, We ride the no slip waves, so replace the word
- x Light 
- x Photon
- x Information
-We instead call it an 
- i Surf Ball. 
-
-(IOO) [Inferred Obvious Objects ==> (I)x(O).(O) Info Ball Core Balls]
-
- Core Ball Jets are fractal congruent to injected info cores surfing! 
- Core Ball Data are fractal congruent to ejection rules for ball hit!
-
-In The Fractal tennis, symmetry shrink asymmetry, so replace the word   
- x Quasar which is just a Galactic Injected High Energy Macrophoton. 
- x Gamma Ray which is a Ejected Atomic High Energy Electron: Photon. 
- x Active Galactic Nuclei Jet are Low Energy Macrophoton injectings.
-We instead call it an 
- i Harp Ball.
-
-Okay that's enough fancy stuff, let me describe this without worrying
-about the spacing on the sides of the court here. I'll let the racket
-sing. The unknown right now is dark matter, and it is just the scaled
-down version of our own hydrogen gas. It is effectively the byproduct 
-from the entropy of information exchange. When a star accretes across
-the galactic core of the galaxy, the lower layer hydrogen is the leak
-of fractal information about the transfer of the star into the center
-of the galactic core. The same thing happens at the atomic scale. The
-transfer of star balls past that boundary at the core ball, allows an
-info ball to exchange scales, at the cost of generating tiny balls at
-the exchange point. When info balls are rallied between distant cores
-they get injected on contact and are transformed into the local types
-of balls. So if the incoming jets are strong, they bop the tiny balls
-into the depths of the paths the jets make, surf balling roll balling
-info balls carrying them away when the groovy tones and harmonics are
-matching with the local substrate. So the incoming jets at a galactic        
-or atomic core strip away the dark matter, or its tiny ball version -
-the "electron clouds" approximation we derived in the quantum theory,
-Quantum Mechanics, Quantum Electrodynamics, Quantum Field Theory, and
-the related class of theories. The local density of the fractal makes
-the local strength required for fusion decline, so heavier atoms must
-use star ball fuel made from the local substrate, i.e, for Iron atoms  
-they will have star balls that are fueled by iron. The iron info ball
-is made out of mostly iron star balls. Angular momentum conservation,
-the main principle of our physical law, makes the energy from photons
-with heavier fuel types, inject deeper into the local injected areas.
-Angular momentum conservation will also alter the roll balls spinning 
-giving us the orthogonal procession of the local substrate. It is one
-gyroscopic object being rolled around. So the core ball spins to half
-a half a rotation at most to orients itself orthogonal with ball spin
-of the incoming balls. All the spin connected roll balls align as the
-information disseminates through the ball structure. So for classical 
-analogies, when the incoming jet material is sourced from the similar
-kind of local material, matching the energy type makes the jet speeds
-lower than a high mass energy injection, so the fuel coalesces faster
-into star balls, displacing the dark matter and creating Kepler style
-orbits for the galaxy and increasing the fuel. When the jet is strong
-enough, the beam escapes the attraction of the galaxy and material we
-see being injected will still coalesces into stars. Slow stars moving
-is the same thing as electricity, stars are electrons in this system.
-This is the photo-electric effect. Photons strip away the tiny matter
-we call electron orbitals which is the scaled down dark matter bubble
-and that causes the tiny star balls which are electrons to hit proton
-cores, tiny core balls, yeeted at the next info ball speed up a layer
-of the fractal, aka, a photon emission. The rest of the process isn't
-hard to figure out. It is left as an exercise for the reader. Another
-mystery is the Hubble tension. Our local macro hydrogen gas universe,
-the collection of macro atom hydrogen, where our galaxy is a hydrogen
-atom scaled up in the fractal, is gas that is ejected from star balls
-at the higher fractal layer, our local universe's parent macrostar *.
-(*) ejected the local universe mostly in an isotropic manner from the 
-center of that macro star ball. The isotropic expansion is the square
-scaling and also other functional scaling of the curved information a
-surf ball is moving on. The gas expands to fill the void they say for
-the traditional kinematic gas science. Traditional gravitational time
-dilation and the equivalent in the fractal tennis is the mechanism as
-to why far away galaxies seem to have their clocks slower, because we
-had slower clocks deeper in the (*) gravitational well earlier in the
-ejection history. But we also know that the curvature info change has
-a red shift effect on info balls when they change direction. Light of
-distant galaxies need to follow a exceptionally rare and lucky random
-final angle to get to us and show up in the night sky. The path walks
-with a Brownian motion. This means that as we look out along one line
-radially, the probability that a galaxy path has hit us without shift
-of redshift beyond the linear amount, decreases exponentially. Quasar
-objects are the high energy macro photons emitted by (*) that injects 
-into the local region from a mainly single direction radially to (*).
-That direction is the quasar 90 degree dipole. Since quasar materials
-are made of very dense star ball and/or core ball objects, their time
-dilation has an an extra intrinsic redshift. We should conclude space
-distance between us and the galaxy host of a quasar should be optical
-fuzziness as at least one methods for measuring distance. We thus are
-overestimating the distance of quasars more that a  factor of two. We
-should look for gravitational lens that bends a similar galaxy in the 
-lens at least half the redshift that a quasar has in the same lens so
-when that galaxy has a supernovae, we can infer the shape of the lens
-from a separate object that also has a quasar host galaxy that a lens
-also captures a supernovae from. This has not been done yet. The harp
-ball Halton Arp got a piece of hasn't been disproved until the things
-being lensed in a single lens can have correlations determined finely
-and the evidence will show the effect is real, and since a proton can
-be naked then a core ball can be a naked galaxy core, quasars can get
-born out of what is effectively a dark matter galaxy; parent galaxies
-can be from either kinds. Proton collisions make protons appear to be
-particles, when in fact they are just the doorways for particle swap.
-
-The rest follows directly from the geometry of the ASSP and the rules
-of The Fact Of The Fractal tennis, making the ability to compute with
-the knowledge of the universe closer to completeness than prior laws. 
-We have already shown that the fractal equivalence of electrons being
-stars, the logarithmic scaling steps based on the fractal geometry, a
-single measurement for the mass of the congruent higher order fractal
-objects, the atom and the galaxy, then using the ratio to remove mass
-dimensionality from the input calculation so it is free from G, Whens
-we crunch the maths on the geometry and observations, we get a atomic
-alpha value as the many steps it takes in the logarithm to get from a
-atomic to galactic scale mass unit, and then we can plug that in with
-the number of steps it takes in the logarithmic to get from an atomic
-to galactic scale info unit, gives strength of gravity!
- 
-TODO: add void ball to above poem for sparse fractal density objects.
-
-\endcomment 
-
-
-\section{Part 9E: The Complete Ontological Map of the Fractal Tennis}
-
-\subsection{Overview: The ASSP as Computational Reality}
-
-The Fact of Fractal Tennis replaces the question "What is the universe made of?" with "What computation is the universe performing?"
-
-The answer: A self-referential Apollonian Soddy Sphere Packing (ASSP) in which:
-\begin{enumerate}
-\item Sphere positions encode information (spatial location).
-\item Sphere curvatures encode energy density (inverse radius).
-\item Sphere tangencies encode causal relationships (topological adjacency).
-\item Sphere rotations (in 4D embedding) encode time evolution and angular momentum transfer.
-\item No external space-time metric exists; only the packing geometry defines distance and duration.
-\end{enumerate}
-
-This is a complete ontological replacement of the Standard Model and General Relativity.
-
-\subsection{Hierarchical Objects in the Fractal Tennis}
-Since humans sit in the middle of the fractal scale boundaries, we shall adopt the following terminology, with "human size" being approximately in the middle between fractal layer boundaries.
-\begin{enumerate}
-\item atom = the object and size for what earth humans call an atom .
-\item star = the object and size for what earth humans call a sun.
-\item here = the human size where a star is the size of our sun sol.
-\item tiny = the lower fractal human size where their star is the size of the electron [here]
-\item wish = the higher fractal human size where their atom is the size of a galaxy [here] 
-\end{enumerate}
-
-We define a nomenclature for the recurring fractal-equivalent objects across scales:
-
-%---------------------------
-% FO - Core Ball fractal iox
-%---------------------------
-
-\subsubsection{The "Core Ball" Fractal Origin (FO) is the scale swap: 
-Previously known as the Atomic and Galactic Nucleus
-}
-\noindent\textbf{Definition}: A densely-packed Soddy sphere of extremal curvatures at a given fractal layer 
-\noindent\textbf{Atomic Scale}: Atom Core Ball, mistakenly called The proton or atomic nucleus (charge radius $\approx 8.4 \times 10^{-16}$ m).
-\noindent\textbf{Stellar Scale}: Star Core Ball, mistakenly called Stellar mass "black holes" due to the wrong ontology.
-\noindent\textbf{Galactic Scale}: Here Core Ball = Wish Atom Core Ball, mistakenly called a supermassive galactic nucleus or AGN (Schwarzschild radius $\sim 10^9$ m).
-\noindent\textbf{Physical Property}: The Core Ball is the "singularity" of the local Soddy layer. It acts as the axis of rotation for all subsidiary objects as a fractal layer boundary portal. It is the origins of the higher fractal layer boundaries, as dynamic remiann sphere mobius transforms with boundary crossing conditions.
-
-%---------------------------
-% TI - Star Ball info carrys
-%---------------------------
-
-\subsubsection{The "Star Ball" - Fractal Information (TI): Electrons and Stars}
-
-\noindent\textbf{Definition}: A scale fitting Soddy sphere packing that orbits a Core Ball at a constant-frequency orbital pattern around the core ball at an unbounded radii.
-
-\noindent\textbf{Atomic Scale}: Atom Star Ball, previously called the electron (rest mass $\approx 9.1 \times 10^{-31}$ kg, Bohr frequency $\approx 6.58 \times 10^{15}$ Hz).
-
-\noindent\textbf{Stellar Scale}: Here Star Ball, previously called A star (solar mass $\approx 2 \times 10^{30}$ kg, galactic orbit frequency $\approx 1.4 \times 10^{-16}$ Hz).
-
-\noindent\textbf{Galactic Scale}: Wish Star Ball, previously called A macro-star. The Hydrogen Wish Atom Balls (progenitor galaxies before ours sometime in the fractal) that collapsed into a star that isotropically ejected our current local section of the unbounded ASS-P universe into its local void. 
-
-\noindent\textbf{Physical Property}: The Star Ball carries Information as a fractal representation of its own dynamics with local mass-energy plus the orbital frequency of Core Balls at a frequency determined by the fractal layer's "gear ratio". Its trajectory is governed by no-slip tangency with the surrounding Soddy spheres with dynamics approximately Computable via Laurent expansion of the core ball mobius transform with terms weighted by local fractal density computational depth. let XX = $\approx 1 \times r^{-2}$ being the leading term of the transform.
-
-%---------------------------
-% OI - Gyro Ball = galaxytom 
-%---------------------------
-
-\subsubsection{
-The "Gyro Ball" Offsets Information  (IO): Atom and Galaxy Container
-} 
-
-\noindent\textbf
-{ Definition
-} 
-The collective structure of Core Ball + Star Balls + their nearly arbitrarily defined confining Soddy packing.
-
-\noindent\textbf{Atomic Scale}: A atom_gyro_ball is a complete atom of the main local atomic type (e.g., hydrogen, carbon, gold, etc. A gold_gyro_ball is a gyro_ball that has by gold-fuel star balls).
-
-\noindent\textbf{Stellar Scale}: here_star_gyro_ball is the fractal tennis version of the solar system. the here_star_ball and all star_ball's have the property that they are the condensation of computational gryo_balls whose language of matter and energy and momentum transfer, is built on the transfer and storage of smaller functional copies of themselves and its variants. The creation of stars eventually creates cores, and the creation of cores eventually creates stars. The galactic scale forms as stars encode their own functional creation mechanism as a fractal tennis computer system that uses a fractally-scaled own functional-creation self-definition mechanism, as tiny copy of itself and/or its variants, as tiny stars, and those tiny stars derive the functional operator of a type of fractal register that encodes the information of the local fractal layer just like a higher-order gyro ball. The collection of satellites of a gyro ball is a tight linkage in a curvy tangency chain. Alternatively, A complete here_atom_gyro_ball hydrogen atom past fusion event outputting new balls of above types nearly isotropic as our star sol, and the nearly arbitrary collection of its satellites; some we call wanderers which means we can see them with telescopes with 12 inch telescopes, like Poincare  Pluto down to Copernican Mars and not Newtonian Mercury. Other satellites are the ort cloud, asteroids, comets, etc.
-
-\noindent\textbf{Galactic Scale}: wish_atom_gryo_ball A complete galaxy of the main local atomic type (e.g, main star fuel is H, spiral, elliptical, etc.) Matter, Energy, And Information are all stored and released and absorbed in the combination of stars and cores as a gryo_ball.
-
-\noindent\textbf{Physical Property}: The Gyro Ball is a self-similar "gyroscope" with a spin angular momentum and a rotational handedness. Its internal structure (the packing of Star Balls around the Core Ball) determines all chemical or astrophysical properties, by being the medium for both information exchange and information storage, by offsetting information. 
-
-The properties we measure of Here  source of apparent space expansion, time dilation, is due to leaving the gravity time dilation ,      big bang 
-
-%---------------------------
-% IO - Info Ball = lightwave
-%---------------------------
-
-\subsubsection{The "Info Ball" Orders Information (IO): Photons/Macrophotons}
-
-\noindent\textbf{Definition}: A star ball that has crossed a fractal boundary and carries angular momentum in a rotational offset perpendicular to the plane of the originating Gyro Ball. Forms at least one basis for time and distance and fractal density measurement. 
-
-\noindent\textbf{Atomic Scale}: Here Info Ball (emitted when an electron transitions between orbits, carrying excess angular momentum upward through the fractal boundary).
-
-\noindent\textbf{Galactic Scale}: A macrophoton invisible to the current layer as except for collisions with star balls (resulting in supernovae) and core balls (resulting in Quasars, AGN jets, or other core ball pole ejecta).
-
-\noindent\textbf{Physical Property}: The Info Ball is the "message carrier" between fractal layers. It travels at the speed of light for its native layer, treated like nearly pure linear momentum.  It carries intrinsic redshift because it leaks energy (angular momentum) into lower fractal layers as it crosses boundary regions (Brownian path friction).
-
- (which is the maximum speed of angular momentum transfer in the no-slip Soddy packing which can be treated like nearly pure linear momentum that creates a wake of angular momentum).
-
-%---------------------------
-% TO - Tiny Ball = tiny gyro
-%---------------------------
-
-\subsubsection
-{ The "Tiny Ball" Too Obtuse is the atom's atom gyro ball: Lower-Fractal-Scale Hydrogen Gas Universes
-}
-
-\noindent\textbf{Definition}: The residual accumulation of Here Star Balls debris that have "leaked" linear momentum as lower scale hydrogen gas gyro balls from wish wish atom core balls crossings.
-
-\noindent\textbf{Atomic Scale}: "Tiny Tiny Ball", mistakenly called The electron orbital probability cloud (the diffuse Soddy packing of tiny-tiny hydrogen gas gyro balls surrounding the atomic Core Ball).
+  The Fractal Tennis framework resolves 24+ major observational and theoretical tensions in physics simultaneously. These include:
+
+  \begin{longtable}{|@{\hspace{4pt}} >{\centering\arraybackslash}p{0.05\linewidth} | >{\centering\arraybackslash}p{0.3\linewidth} | >{\centering\arraybackslash}p{0.1\linewidth} | >{\centering\arraybackslash}p{0.10\linewidth} | >{\centering\arraybackslash}p{0.37\linewidth} @{\hspace{4pt}}|}
+    \caption{All Tensions Resolved by Fractal Tennis (FSEP)} \\
+    \hline
+    \textbf{Rank} & \textbf{Tension} & \textbf{Category} & \textbf{Directness}  \\
+    \hline
+    \endfirsthead
+    \hline
+    \textbf{Rank} & \textbf{Tension} & \textbf{Category} & \textbf{Directness}  \\
+    \hline
+    \endhead
+    \hline
+    \multicolumn{5}{r|}{\textit{Continued on next page}} \\
+    \endfoot
+    \hline
+    \endlastfoot
+    1 & Li-7 abundance mismatch & Cosmology & Extremely  \hline
+    2 & Vacuum energy ($10^{120}$) & QFT & Very direct  \hline
+    3 & Strong CP / neutron EDM & Particle Physics & Direct  \hline
+    4 & Neutrino mass/oscillations & Particle Physics & Direct  \hline
+    5 & Matter-antimatter asymmetry & Cosmology & Semi-direct  \hline
+    6 & UHECR anomalies (GZK) & Astrophysics & Semi-direct \hline
+    7 & Non-isotropic supernovae + post-explosion mass gain \hline
+    8 & Li-6 / minor isotopes & Geophysics & Semi-direct \hline
+    9 & Hubble tension / JWST early galaxies & Cosmology \hline
+    10 & Wavefunction collapse & QM & Conceptual  \hline
+    11 & Quantum nonlocality/entanglement & QM & Conceptual \hline
+    12 & Hierarchy / fine-tuning & Particle Physics & Conceptual  \hline
+    13 & SM parameter fine-tuning & Particle Physics & Conceptual  \hline
+    14 & Flatness / horizon problem & Cosmology & Conceptual  \hline
+    15 & Large-scale structure (voids, BAO) & Cosmology & Suggestive  \hline
+    16 & $\alpha$ variation (Webb + Rb/Cs 5.5$\sigma$) & Metrology & Extremely \hline
+    17 & True Shor algorithm fails (factor 42) & QM & Direct \hline
+    18 & Laser-plasma = supernova math & Plasma & Direct \hline
+    19 & BH jet / spin / accretion disconnect (2025) & Astrophysics & Direct \hline
+    20 & Meteorite clock contradiction (Xe vs Al) & Geophysics & Direct \hline
+    21 & Gold surface vs He-3 deep mantle & Geophysics & Direct  \hline
+    22 & Extremal black holes stable (Hawking wrong) & GR & Mathematical \hline
+    23 & Geoneutrino anisotropy (JUNO/SNO+) & Geophysics & Emerging direct \hline
+    24 & DM-neutrino interaction (3$\sigma$ + LZ fog) & Cosmology & Already measured \hline \hline
+  \end{longtable}
+
+  \subsection {Full Ontological Picture}
+
+    The paper has a code-like poetry companion for the ontology of the The Fractal Fractal Tennis and can be obtained by contacting the author or visiting the website the git repo is hosted. At the time of publication it can be found at github.com/yasteven/math/TFOFT/Readme.md
+
+    The following section is a reproduction of the ontology and its explanation for the observed tensions with standard theories.
+
+    \comment 
+
+      github.com/yasteven/math/TFOFT/Readme.md
+
+      Okay listen the above is the bullshit science gobeley gook that they
+      force you to talk in to sound smart, but what it really does is just
+      help fake intelligence by hiding information behind complicated info.
+
+      The mathiccs is much more simple. A companion paper will be released
+      in the future, but if you would like, please try to develop the idea
+      so that you gan gain Godel-like reverence in you ability to math the
+      heck out of the logic. Basically, the sphere packing can be used for
+      a formal logic axiomatic system where the location and curvature for
+      a sphere is the language, proofs are finite or cyclic tangency paths
+      through the sphere packing, and then you use Presburger formal logic
+      for the complete and consistent Arithmetic free from Godel's theorem
+      for the incompleteness and stuff, then add a LAZY evaluation for the
+      more complicated functions like multiplication and then all of maths
+      up to at least a Bishop-style calculus, making the game rules of The
+      Fact Of Fractal Tennis computations, have the final fundamental laws
+      in a way that is complete and consistent for the persistent universe.  
+
+      After enough thought Steven Edward Elliott has determined the proper
+      ontology whose epistemology matches it for the universe. An MATHICCS 
+      is an enforcement of the epistemological ontological equivalence. It 
+      is better to derive it now, this way, due to the sheer elegance when
+      the law is found, and then let the future scientists sculpt the rest
+      of the picture when they study the emergent laws of nature from here.
+
+      To make it easier to explain, Macro means higher fractal layer. 1-Up!
+      To make it easier to explain, Tiny means lower fractal layer. Go Low!
+
+      OO) [ASSP ==> The Fractal Substrate]
+
+      The Appolonian Soddy Sphere Packing and variations of it, which here
+      we shall assume has the optimal properties for the mathematical math
+      the universe uses. The geometric nature of reality implies this must
+      be the fundamental basis (like a vector in a vector field of packing
+      all spheres fractally). It may be 3D spheres in a dimension of time,
+      or a 4D quarternion sphere packings and time, there is probably many
+      ways to represent it mathematically. We assume we can find a closest
+      method for the given subset of dynamical systems in the systems that
+      can be predicted to within some accuracy, and possible for the whole.
+      It is inspired and inferred by observation made by above researchers
+      who are the most important of scientists, the court experimentalists. 
+
+
+      TFOFT) [The Fact of Fractal Tennis ==> Mathicss > Physics]
+      (00) will be the geometric basis of the mathiccs system, hereforth a
+      system of science called The Fact Of Fractal Tennis. A Fractal Layer 
+      Substrate has induced dynamics and we can infer the following system:
+
+      Fractal Congruent Objects:
+
+      (O) [Origin ===> Fractal Layer Boundaries] 
+       Hydrogen Nucleus Core is fractal congruent to the core of a Galaxy!
+       Single Proton "Core" are fractal congruent to the Nude Galaxy Core!
+
+      In The Fractal tennis, We prefer 8 characters, so we replace the word 
+       x Proton 
+       x Galactic Nucleus  
+      We instead call it an 
+       i Core Ball. 
+
+      (I) [Information ==> Matter == Energy]
+       Stars are fractal congruent Electrons, a carrier Surfs mass-energy! 
+
+      In The Fractal Tennis, Reduce syllable usages, so we replace the word
+       x Electron 
+       x Star 
+      We instead call it an 
+       i Star Ball. 
+
+      (IO) [Information Offset ===> (O)+(I)=Gyroscopic Motion]
+       Galaxies are fractal congruent to Atoms, one gryo for no-slip spin!
+
+      In The Fractal tennis, Save info Space please, so we replace the word
+        x Gyroscopic force
+        x Centripetal force
+        x Gravitational force
+        x Electromagnetic force
+        x Weak force
+        x Strong force
+        x Electroweak force
+      We instead call it an 
+       i Roll Ball. 
+
+      OI) [Order Information ===> Time]
+
+       Macrophotons are fractal congruent to Photons, layer changes times!
+
+      In The Fractal Fact Of Fractal Tennis, people are going to be saying 
+      things differently, this is why people have different languages. Let
+      me explain things in some of that stuff. This is what we the English  
+      call the "photon", or Light. It is the speed of information transfer!
+      It is both a particle and a wave, because it is a fluid, bullet-like
+      transfer of particles that surfs on its own momentum wake in the the
+      fractal substrate as it leaks information to the rest of the reality! 
+
+      In The Fractal tennis, Save info Space please, so we replace the word
+       x Light 
+       x Photon
+       x Information
+       x Macrophoton
+      We instead call it an 
+       i Info Ball. 
+
+      (II) [Intelligence Inferring ===> (I)x(I) Information Induction ]
+
+      Collisions manifest for mass, energy, and info transfer as a tennis!
+
+      When a (I) falls into a (O), it is converted to an info ball upwards,
+      at the next fractal layer above the one it came from. Electrons thus
+      are just tiny-stars, photons are just tiny-stars hitting a core ball
+      and getting yeeted into the next more sparse more fast fractal layer!
+
+      In The Fractal tennis, We ride the no slip waves, so replace the word
+       x Light 
+       x Photon
+       x Information
+      We instead call it an 
+       i Surf Ball. 
+
+      (IOO) [Inferred Obvious Objects ==> (I)x(O).(O) Info Ball Core Balls]
+
+       Core Ball Jets are fractal congruent to injected info cores surfing! 
+       Core Ball Data are fractal congruent to ejection rules for ball hit!
+
+      In The Fractal tennis, symmetry shrink asymmetry, so replace the word   
+       x Quasar which is just a Galactic Injected High Energy Macrophoton. 
+       x Gamma Ray which is a Ejected Atomic High Energy Electron: Photon. 
+       x Active Galactic Nuclei Jet are Low Energy Macrophoton injectings.
+      We instead call it an 
+       i Harp Ball.
+
+      Okay that's enough fancy stuff, let me describe this without worrying
+      about the spacing on the sides of the court here. I'll let the racket
+      sing. The unknown right now is dark matter, and it is just the scaled
+      down version of our own hydrogen gas. It is effectively the byproduct 
+      from the entropy of information exchange. When a star accretes across
+      the galactic core of the galaxy, the lower layer hydrogen is the leak
+      of fractal information about the transfer of the star into the center
+      of the galactic core. The same thing happens at the atomic scale. The
+      transfer of star balls past that boundary at the core ball, allows an
+      info ball to exchange scales, at the cost of generating tiny balls at
+      the exchange point. When info balls are rallied between distant cores
+      they get injected on contact and are transformed into the local types
+      of balls. So if the incoming jets are strong, they bop the tiny balls
+      into the depths of the paths the jets make, surf balling roll balling
+      info balls carrying them away when the groovy tones and harmonics are
+      matching with the local substrate. So the incoming jets at a galactic        
+      or atomic core strip away the dark matter, or its tiny ball version -
+      the "electron clouds" approximation we derived in the quantum theory,
+      Quantum Mechanics, Quantum Electrodynamics, Quantum Field Theory, and
+      the related class of theories. The local density of the fractal makes
+      the local strength required for fusion decline, so heavier atoms must
+      use star ball fuel made from the local substrate, i.e, for Iron atoms  
+      they will have star balls that are fueled by iron. The iron info ball
+      is made out of mostly iron star balls. Angular momentum conservation,
+      the main principle of our physical law, makes the energy from photons
+      with heavier fuel types, inject deeper into the local injected areas.
+      Angular momentum conservation will also alter the roll balls spinning 
+      giving us the orthogonal procession of the local substrate. It is one
+      gyroscopic object being rolled around. So the core ball spins to half
+      a half a rotation at most to orients itself orthogonal with ball spin
+      of the incoming balls. All the spin connected roll balls align as the
+      information disseminates through the ball structure. So for classical 
+      analogies, when the incoming jet material is sourced from the similar
+      kind of local material, matching the energy type makes the jet speeds
+      lower than a high mass energy injection, so the fuel coalesces faster
+      into star balls, displacing the dark matter and creating Kepler style
+      orbits for the galaxy and increasing the fuel. When the jet is strong
+      enough, the beam escapes the attraction of the galaxy and material we
+      see being injected will still coalesces into stars. Slow stars moving
+      is the same thing as electricity, stars are electrons in this system.
+      This is the photo-electric effect. Photons strip away the tiny matter
+      we call electron orbitals which is the scaled down dark matter bubble
+      and that causes the tiny star balls which are electrons to hit proton
+      cores, tiny core balls, yeeted at the next info ball speed up a layer
+      of the fractal, aka, a photon emission. The rest of the process isn't
+      hard to figure out. It is left as an exercise for the reader. Another
+      mystery is the Hubble tension. Our local macro hydrogen gas universe,
+      the collection of macro atom hydrogen, where our galaxy is a hydrogen
+      atom scaled up in the fractal, is gas that is ejected from star balls
+      at the higher fractal layer, our local universe's parent macrostar *.
+      (*) ejected the local universe mostly in an isotropic manner from the 
+      center of that macro star ball. The isotropic expansion is the square
+      scaling and also other functional scaling of the curved information a
+      surf ball is moving on. The gas expands to fill the void they say for
+      the traditional kinematic gas science. Traditional gravitational time
+      dilation and the equivalent in the fractal tennis is the mechanism as
+      to why far away galaxies seem to have their clocks slower, because we
+      had slower clocks deeper in the (*) gravitational well earlier in the
+      ejection history. But we also know that the curvature info change has
+      a red shift effect on info balls when they change direction. Light of
+      distant galaxies need to follow a exceptionally rare and lucky random
+      final angle to get to us and show up in the night sky. The path walks
+      with a Brownian motion. This means that as we look out along one line
+      radially, the probability that a galaxy path has hit us without shift
+      of redshift beyond the linear amount, decreases exponentially. Quasar
+      objects are the high energy macro photons emitted by (*) that injects 
+      into the local region from a mainly single direction radially to (*).
+      That direction is the quasar 90 degree dipole. Since quasar materials
+      are made of very dense star ball and/or core ball objects, their time
+      dilation has an an extra intrinsic redshift. We should conclude space
+      distance between us and the galaxy host of a quasar should be optical
+      fuzziness as at least one methods for measuring distance. We thus are
+      overestimating the distance of quasars more that a  factor of two. We
+      should look for gravitational lens that bends a similar galaxy in the 
+      lens at least half the redshift that a quasar has in the same lens so
+      when that galaxy has a supernovae, we can infer the shape of the lens
+      from a separate object that also has a quasar host galaxy that a lens
+      also captures a supernovae from. This has not been done yet. The harp
+      ball Halton Arp got a piece of hasn't been disproved until the things
+      being lensed in a single lens can have correlations determined finely
+      and the evidence will show the effect is real, and since a proton can
+      be naked then a core ball can be a naked galaxy core, quasars can get
+      born out of what is effectively a dark matter galaxy; parent galaxies
+      can be from either kinds. Proton collisions make protons appear to be
+      particles, when in fact they are just the doorways for particle swap.
+
+      The rest follows directly from the geometry of the ASSP and the rules
+      of The Fact Of The Fractal tennis, making the ability to compute with
+      the knowledge of the universe closer to completeness than prior laws. 
+      We have already shown that the fractal equivalence of electrons being
+      stars, the logarithmic scaling steps based on the fractal geometry, a
+      single measurement for the mass of the congruent higher order fractal
+      objects, the atom and the galaxy, then using the ratio to remove mass
+      dimensionality from the input calculation so it is free from G, Whens
+      we crunch the maths on the geometry and observations, we get a atomic
+      alpha value as the many steps it takes in the logarithm to get from a
+      atomic to galactic scale mass unit, and then we can plug that in with
+      the number of steps it takes in the logarithmic to get from an atomic
+      to galactic scale info unit, gives strength of gravity!
+       
+      TODO: add void ball to above poem for sparse fractal density objects.
+
+    \endcomment 
+
+
+% ==================================================================
+% Part 13: Very Full Map
+% ==================================================================
+\section{The Complete Ontological Map of the Fractal Tennis}
+
+  \subsection{Overview: The ASSP as Computational Reality}
+
+    The Fact of Fractal Tennis replaces the question "What is the universe made of?" with "What computation is the universe performing?"
+
+    The answer: A self-referential Apollonian Soddy Sphere Packing (ASSP) in which:
+    \begin{enumerate}
+    \item Sphere positions encode information (spatial location).
+    \item Sphere curvatures encode energy density (inverse radius).
+    \item Sphere tangencies encode causal relationships (topological adjacency).
+    \item Sphere rotations (in 4D embedding) encode time evolution and angular momentum transfer.
+    \item No external space-time metric exists; only the packing geometry defines distance and duration.
+    \end{enumerate}
+
+    This is a complete ontological replacement of the Standard Model and General Relativity.
+
+  \subsection{Hierarchical Objects in the Fractal Tennis}
+    Since humans sit in the middle of the fractal scale boundaries, we shall adopt the following terminology, with "human size" being approximately in the middle between fractal layer boundaries.
+    \begin{enumerate}
+    \item atom = the object and size for what earth humans call an atom .
+    \item star = the object and size for what earth humans call a sun.
+    \item here = the human size where a star is the size of our sun sol.
+    \item tiny = the lower fractal human size where their star is the size of the electron [here]
+    \item wish = the higher fractal human size where their atom is the size of a galaxy [here] 
+    \end{enumerate}
+
+    We define a nomenclature for the recurring fractal-equivalent objects across scales:
+
+    %---------------------------
+    % FO - Core Ball fractal iox
+    %---------------------------
+
+    \subsubsection{The "Core Ball" Fractal Origin (FO) is the scale swap: 
+    Previously known as the Atomic and Galactic Nucleus
+    }
+    \noindent\textbf{Definition}: A densely-packed Soddy sphere of extremal curvatures at a given fractal layer 
+    \noindent\textbf{Atomic Scale}: Atom Core Ball, mistakenly called The proton or atomic nucleus (charge radius $\approx 8.4 \times 10^{-16}$ m).
+    \noindent\textbf{Stellar Scale}: Star Core Ball, mistakenly called Stellar mass "black holes" due to the wrong ontology.
+    \noindent\textbf{Galactic Scale}: Here Core Ball = Wish Atom Core Ball, mistakenly called a supermassive galactic nucleus or AGN (Schwarzschild radius $\sim 10^9$ m).
+    \noindent\textbf{Physical Property}: The Core Ball is the "singularity" of the local Soddy layer. It acts as the axis of rotation for all subsidiary objects as a fractal layer boundary portal. It is the origins of the higher fractal layer boundaries, as dynamic remiann sphere mobius transforms with boundary crossing conditions.
+
+    %---------------------------
+    % TI - Star Ball info carrys
+    %---------------------------
+
+    \subsubsection{The "Star Ball" - Fractal Information (TI): Electrons and Stars}
+
+    \noindent\textbf{Definition}: A scale fitting Soddy sphere packing that orbits a Core Ball at a constant-frequency orbital pattern around the core ball at an unbounded radii.
+
+    \noindent\textbf{Atomic Scale}: Atom Star Ball, previously called the electron (rest mass $\approx 9.1 \times 10^{-31}$ kg, Bohr frequency $\approx 6.58 \times 10^{15}$ Hz).
+
+    \noindent\textbf{Stellar Scale}: Here Star Ball, previously called A star (solar mass $\approx 2 \times 10^{30}$ kg, galactic orbit frequency $\approx 1.4 \times 10^{-16}$ Hz).
+
+    \noindent\textbf{Galactic Scale}: Wish Star Ball, previously called A macro-star. The Hydrogen Wish Atom Balls (progenitor galaxies before ours sometime in the fractal) that collapsed into a star that isotropically ejected our current local section of the unbounded ASS-P universe into its local void. 
+
+    \noindent\textbf{Physical Property}: The Star Ball carries Information as a fractal representation of its own dynamics with local mass-energy plus the orbital frequency of Core Balls at a frequency determined by the fractal layer's "gear ratio". Its trajectory is governed by no-slip tangency with the surrounding Soddy spheres with dynamics approximately Computable via Laurent expansion of the core ball mobius transform with terms weighted by local fractal density computational depth. let XX = $\approx 1 \times r^{-2}$ being the leading term of the transform.
+
+    %---------------------------
+    % OI - Gyro Ball = galaxytom 
+    %---------------------------
+
+    \subsubsection{
+    The "Gyro Ball" Offsets Information  (IO): Atom and Galaxy Container
+    } 
+
+    \noindent\textbf
+    { Definition
+    } 
+    The collective structure of Core Ball + Star Balls + their nearly arbitrarily defined confining Soddy packing.
+
+    \noindent\textbf{Atomic Scale}: A atom_gyro_ball is a complete atom of the main local atomic type (e.g., hydrogen, carbon, gold, etc. A gold_gyro_ball is a gyro_ball that has by gold-fuel star balls).
+
+    \noindent\textbf{Stellar Scale}: here_star_gyro_ball is the fractal tennis version of the solar system. the here_star_ball and all star_ball's have the property that they are the condensation of computational gryo_balls whose language of matter and energy and momentum transfer, is built on the transfer and storage of smaller functional copies of themselves and its variants. The creation of stars eventually creates cores, and the creation of cores eventually creates stars. The galactic scale forms as stars encode their own functional creation mechanism as a fractal tennis computer system that uses a fractally-scaled own functional-creation self-definition mechanism, as tiny copy of itself and/or its variants, as tiny stars, and those tiny stars derive the functional operator of a type of fractal register that encodes the information of the local fractal layer just like a higher-order gyro ball. The collection of satellites of a gyro ball is a tight linkage in a curvy tangency chain. Alternatively, A complete here_atom_gyro_ball hydrogen atom past fusion event outputting new balls of above types nearly isotropic as our star sol, and the nearly arbitrary collection of its satellites; some we call wanderers which means we can see them with telescopes with 12 inch telescopes, like Poincare  Pluto down to Copernican Mars and not Newtonian Mercury. Other satellites are the ort cloud, asteroids, comets, etc.
+
+    \noindent\textbf{Galactic Scale}: wish_atom_gryo_ball A complete galaxy of the main local atomic type (e.g, main star fuel is H, spiral, elliptical, etc.) Matter, Energy, And Information are all stored and released and absorbed in the combination of stars and cores as a gryo_ball.
+
+    \noindent\textbf{Physical Property}: The Gyro Ball is a self-similar "gyroscope" with a spin angular momentum and a rotational handedness. Its internal structure (the packing of Star Balls around the Core Ball) determines all chemical or astrophysical properties, by being the medium for both information exchange and information storage, by offsetting information. 
+
+    The properties we measure of Here  source of apparent space expansion, time dilation, is due to leaving the gravity time dilation ,      big bang 
+
+    %---------------------------
+    % IO - Info Ball = lightwave
+    %---------------------------
+
+    \subsubsection{The "Info Ball" Orders Information (IO): Photons/Macrophotons}
+
+    \noindent\textbf{Definition}: A star ball that has crossed a fractal boundary and carries angular momentum in a rotational offset perpendicular to the plane of the originating Gyro Ball. Forms at least one basis for time and distance and fractal density measurement. 
+
+    \noindent\textbf{Atomic Scale}: Here Info Ball (emitted when an electron transitions between orbits, carrying excess angular momentum upward through the fractal boundary).
+
+    \noindent\textbf{Galactic Scale}: A macrophoton invisible to the current layer as except for collisions with star balls (resulting in supernovae) and core balls (resulting in Quasars, AGN jets, or other core ball pole ejecta).
+
+    \noindent\textbf{Physical Property}: The Info Ball is the "message carrier" between fractal layers. It travels at the speed of light for its native layer, treated like nearly pure linear momentum.  It carries intrinsic redshift because it leaks energy (angular momentum) into lower fractal layers as it crosses boundary regions (Brownian path friction).
+
+     (which is the maximum speed of angular momentum transfer in the no-slip Soddy packing which can be treated like nearly pure linear momentum that creates a wake of angular momentum).
+
+    %---------------------------
+    % TO - Tiny Ball = tiny gyro
+    %---------------------------
+
+    \subsubsection
+    { The "Tiny Ball" Too Obtuse is the atom's atom gyro ball: Lower-Fractal-Scale Hydrogen Gas Universes
+    }
+
+    \noindent\textbf{Definition}: The residual accumulation of Here Star Balls debris that have "leaked" linear momentum as lower scale hydrogen gas gyro balls from wish wish atom core balls crossings.
+
+    \noindent\textbf{Atomic Scale}: "Tiny Tiny Ball", mistakenly called The electron orbital probability cloud (the diffuse Soddy packing of tiny-tiny hydrogen gas gyro balls surrounding the atomic Core Ball).
 
-\noindent\textbf{Galactic Scale}: "Here Tiny Ball" The dark matter halo (a vast, sparse Soddy packing of tiny-hydrogen gyro balls surrounding the galactic Core Ball).
-
-\noindent\textbf{Physical Property}: Dark Matter is not a new particle; it is the fractal lower-layer equivalent of ordinary hydrogen, invisible to photons, but not invisible to electrons and neutrinos, for the same reason macrophotons are invisible to our hydrogen gas but not our stars or galaxy cores.
+    \noindent\textbf{Galactic Scale}: "Here Tiny Ball" The dark matter halo (a vast, sparse Soddy packing of tiny-hydrogen gyro balls surrounding the galactic Core Ball).
+
+    \noindent\textbf{Physical Property}: Dark Matter is not a new particle; it is the fractal lower-layer equivalent of ordinary hydrogen, invisible to photons, but not invisible to electrons and neutrinos, for the same reason macrophotons are invisible to our hydrogen gas but not our stars or galaxy cores.
 
-%---------------------------
-% SS - Void Ball = sparsity
-%---------------------------
-
-\subsubsection
-{ The "Void Ball" Succ Space (SS) is the rest of the mainly tiny and tinier atoms
-}
-
-\noindent\textbf{Definition}: The residual accumulation of smaller  recursively ejected Tiny Balls and their fluid-like flow at 0th and 1st order leads to a mainly orthogonal flowing path of energy transfer via fractal pressure as a fluid allowing a star to travel at hypervelocity speeds. 
-
-\noindent\textbf{Atomic Scale}: "Tiny Tiny Ball", mistakenly called The electron orbital probability cloud (the diffuse Soddy packing of tiny-tiny hydrogen gas gyro balls surrounding the atomic Core Ball).
-
-\noindent\textbf{Galactic Scale}: "Here Tiny Ball" mistakenly called The dark matter particle that makes up our dark matter halos. It is a vast, sparse Soddy packing of tiny-hydrogen gyro balls surrounding the galactic Core Ball here.
-
-\noindent\textbf{Physical Property}: Acts as the conveyor of traditional magnetic force. It is the orthogonal wake made of the waste linear motion from a star ball that falls into a core ball, It leaks linear motion as a fractally sparse orthogonal wave. It acts like a curvy tube of a gravitational force (instead of a linear radial thread), with fractally less inertial path friction dampening. The Tiniest Void Balls Accumulate at the center of galactic voids (acting as the perfect the pole field line of a magnet), while Higher order tiny void balls below here, like our Null balls and tiny Null balls, typically form gravitational orbits that return to their point of manufacture, completing a magnetic field line loop. The Fermi velocity for electrons traveling in intra-atom molecular space (and also stars in intergalactic space) is based on the relative density of the star ball and the relative sparseness of the sparse ball. 
+    %---------------------------
+    % SS - Void Ball = sparsity
+    %---------------------------
+
+    \subsubsection
+    { The "Void Ball" Succ Space (SS) is the rest of the mainly tiny and tinier atoms
+    }
+
+    \noindent\textbf{Definition}: The residual accumulation of smaller  recursively ejected Tiny Balls and their fluid-like flow at 0th and 1st order leads to a mainly orthogonal flowing path of energy transfer via fractal pressure as a fluid allowing a star to travel at hypervelocity speeds. 
+
+    \noindent\textbf{Atomic Scale}: "Tiny Tiny Ball", mistakenly called The electron orbital probability cloud (the diffuse Soddy packing of tiny-tiny hydrogen gas gyro balls surrounding the atomic Core Ball).
+
+    \noindent\textbf{Galactic Scale}: "Here Tiny Ball" mistakenly called The dark matter particle that makes up our dark matter halos. It is a vast, sparse Soddy packing of tiny-hydrogen gyro balls surrounding the galactic Core Ball here.
+
+    \noindent\textbf{Physical Property}: Acts as the conveyor of traditional magnetic force. It is the orthogonal wake made of the waste linear motion from a star ball that falls into a core ball, It leaks linear motion as a fractally sparse orthogonal wave. It acts like a curvy tube of a gravitational force (instead of a linear radial thread), with fractally less inertial path friction dampening. The Tiniest Void Balls Accumulate at the center of galactic voids (acting as the perfect the pole field line of a magnet), while Higher order tiny void balls below here, like our Null balls and tiny Null balls, typically form gravitational orbits that return to their point of manufacture, completing a magnetic field line loop. The Fermi velocity for electrons traveling in intra-atom molecular space (and also stars in intergalactic space) is based on the relative density of the star ball and the relative sparseness of the sparse ball. 
 
 
 
 
-%---------------------------
-% SS - Zero Ball = void star
-%---------------------------
-\subsubsection
-{ The "Zero Ball" Void Star (ZV) is the least sparse ball spaces. 
-}
-\noindent\textbf{Definition}: A mathematical construction considered to be concentrated sparseness of void balls. The far reaches of the fractal depth has residual accumulation of exponential smaller momentum. It can be considered to be like dormant soddy spheres who have not had enough momentum transfer to have spins yet.
+    %---------------------------
+    % SS - Zero Ball = void star
+    %---------------------------
+    \subsubsection
+    { The "Zero Ball" Void Star (ZV) is the least sparse ball spaces. 
+    }
+    \noindent\textbf{Definition}: A mathematical construction considered to be concentrated sparseness of void balls. The far reaches of the fractal depth has residual accumulation of exponential smaller momentum. It can be considered to be like dormant soddy spheres who have not had enough momentum transfer to have spins yet.
 
-\noindent\textbf{Mathicss}: The only true Zero is the  zeros of properties, aka the halt of a finite energy program. Far away sparse spheres can have effectively  Zero informational momentum, which is where the momentum of information accumulates in chaotic random noise as the universe computes itself.
+    \noindent\textbf{Mathicss}: The only true Zero is the  zeros of properties, aka the halt of a finite energy program. Far away sparse spheres can have effectively  Zero informational momentum, which is where the momentum of information accumulates in chaotic random noise as the universe computes itself.
 
-\noindent\textbf{Physical Property}: Linear momentum of a star ball can be considered an orbit of that star ball's around a some sparse ball with giant radius and with effectively no computable drag effect on the motion of star balls. Linear Information (LI) accumulates in the sparseness, slowly converting back to angular momentum, creating the apparent dark energy expansion of the universe. Heavy gyro balls locally suppress the creation of LI leak into Zero Balls, suppressing the conversion of LI back into Angular Momentum, which is why heavy atoms form solids instead of gas at medium temperature. 
+    \noindent\textbf{Physical Property}: Linear momentum of a star ball can be considered an orbit of that star ball's around a some sparse ball with giant radius and with effectively no computable drag effect on the motion of star balls. Linear Information (LI) accumulates in the sparseness, slowly converting back to angular momentum, creating the apparent dark energy expansion of the universe. Heavy gyro balls locally suppress the creation of LI leak into Zero Balls, suppressing the conversion of LI back into Angular Momentum, which is why heavy atoms form solids instead of gas at medium temperature. 
 
-%---------------------------
-% LB - Life Ball = tiny code
-%---------------------------
+    %---------------------------
+    % LB - Life Ball = tiny code
+    %---------------------------
 
-\subsubsection{The "Life Ball" Does All (LB) is the annealed chaos:
- The sub-stellar cold star particle zoo
- }: 
+    \subsubsection{The "Life Ball" Does All (LB) is the annealed chaos:
+     The sub-stellar cold star particle zoo
+     }: 
 
-\noindent\textbf{Motivation}:
- The main satellites of a home star, as planets, are cold stars where their main atom gyro ball star fuel type is mismatched with the home star fuel type, preventing runaway fusion in their core. The main satellites have their cores comprised of the byproducts of the local stellar fusion factory heavy elements. 
+    \noindent\textbf{Motivation}:
+     The main satellites of a home star, as planets, are cold stars where their main atom gyro ball star fuel type is mismatched with the home star fuel type, preventing runaway fusion in their core. The main satellites have their cores comprised of the byproducts of the local stellar fusion factory heavy elements. 
 
-\noindent\textbf{Definition}: The residual accumulation of dense substrate from stellar fusion events that have become satellites of a star fusion event of a sparser fuel substrate density. E.g., Earth is a cold iron fuel star here in orbit around a mostly hydrogen fuel star here. The density of the local substrate here at earth is primarily set by the wish atom core balls and the common star balls here. 
+    \noindent\textbf{Definition}: The residual accumulation of dense substrate from stellar fusion events that have become satellites of a star fusion event of a sparser fuel substrate density. E.g., Earth is a cold iron fuel star here in orbit around a mostly hydrogen fuel star here. The density of the local substrate here at earth is primarily set by the wish atom core balls and the common star balls here. 
 
-\noindent\textbf{Atomic Scale}: "Tiny Life Ball", mistakenly called The 3 neutrino flavors (and future smaller ones) with their nearly non-detectable curvature variations. the chaos of the whole fractal  substrate periodically strips away and regrows the tiny atmospheric conditions of dense tiny star ball satellites, the tiny life balls around atom star balls aka planets of electrons. 
+    \noindent\textbf{Atomic Scale}: "Tiny Life Ball", mistakenly called The 3 neutrino flavors (and future smaller ones) with their nearly non-detectable curvature variations. the chaos of the whole fractal  substrate periodically strips away and regrows the tiny atmospheric conditions of dense tiny star ball satellites, the tiny life balls around atom star balls aka planets of electrons. 
 
-\noindent\textbf{Stellar Scale}: "Here Life Ball", mistakenly called a stellar satellite or planet. It consists of the 3 main types of sub-stellar astronomical objects and everything else that can be a satellite of a star or satellite of another life ball. We look at the most common max atomic weights atoms that a single star substrate creates atom_gyro_balls of in the fusion process of the local star type. Call it YY (e.g, Iron for Sol). The higher fractal density objects in YY put exponential more weight in the XX term of the mobius transform, since the gravitational pull will statistically clump the heavy byproducts that weigh less than YY on YY most. They act as condensation points for gravitational accumulation of the atom gyro balls, which have the emergent inverse square law dynamics. The 3 main neutrino flavors emerge based on the the condensation of the matter. This classifies them into 3 main classes: the mostly bare atmosphere ones (earth sized and lower), half-way to almost a star (Jupiter size ones) and mostly almost a full spectrum star (brown dwarf). the chaos of the substrate periodically strips away and regrows the tiny atmospheric conditions of dense tiny star ball satellites.
+    \noindent\textbf{Stellar Scale}: "Here Life Ball", mistakenly called a stellar satellite or planet. It consists of the 3 main types of sub-stellar astronomical objects and everything else that can be a satellite of a star or satellite of another life ball. We look at the most common max atomic weights atoms that a single star substrate creates atom_gyro_balls of in the fusion process of the local star type. Call it YY (e.g, Iron for Sol). The higher fractal density objects in YY put exponential more weight in the XX term of the mobius transform, since the gravitational pull will statistically clump the heavy byproducts that weigh less than YY on YY most. They act as condensation points for gravitational accumulation of the atom gyro balls, which have the emergent inverse square law dynamics. The 3 main neutrino flavors emerge based on the the condensation of the matter. This classifies them into 3 main classes: the mostly bare atmosphere ones (earth sized and lower), half-way to almost a star (Jupiter size ones) and mostly almost a full spectrum star (brown dwarf). the chaos of the substrate periodically strips away and regrows the tiny atmospheric conditions of dense tiny star ball satellites.
 
-\noindent\textbf{Galactic Scale}: Wish Life Ball, mistakenly called the sterile neutrino. The current standard model predicts a sterile neutrino 
-as an antiparticle that has a massive mass to balance the extremely light mass in electrons. The hypothesized mass, In order from standard to less popular hypothesis:
+    \noindent\textbf{Galactic Scale}: Wish Life Ball, mistakenly called the sterile neutrino. The current standard model predicts a sterile neutrino 
+    as an antiparticle that has a massive mass to balance the extremely light mass in electrons. The hypothesized mass, In order from standard to less popular hypothesis:
 
-A) GUT Scale: 1 quadrillion classical atoms, which would be like looking for a planet that has a larger-than-the-observable-universe size, since the universe has 0.002*1 quadrillion galaxies would be 2 thousand copies of the observable universe, which by itself has 2*10^12 galaxies or 2 trillion galaxies, which is 1 enough for 1~2 million wish scale cpu chip logical adders at current silicon technology)[not likely because we are in hydrogen gas and maybe not silicon crystal simulation]
+    A) GUT Scale: 1 quadrillion classical atoms, which would be like looking for a planet that has a larger-than-the-observable-universe size, since the universe has 0.002*1 quadrillion galaxies would be 2 thousand copies of the observable universe, which by itself has 2*10^12 galaxies or 2 trillion galaxies, which is 1 enough for 1~2 million wish scale cpu chip logical adders at current silicon technology)[not likely because we are in hydrogen gas and maybe not silicon crystal simulation]
 
 
-B) LHC Scale: TeV 1 thousand classical atoms, which would be like looking for a life ball planet the size of 1000 galaxies here at human size.[potentially likely if we confirm intra-galaxy directed civilizations] 
+    B) LHC Scale: TeV 1 thousand classical atoms, which would be like looking for a life ball planet the size of 1000 galaxies here at human size.[potentially likely if we confirm intra-galaxy directed civilizations] 
 
 
-C) Warm Dark Matter: keV 7 thousand classical electrons, which would be like looking for a life ball planet the size of 7000 starshere at human size.[potentially likely if we confirm intra-star directed civilizations] 
+    C) Warm Dark Matter: keV 7 thousand classical electrons, which would be like looking for a life ball planet the size of 7000 starshere at human size.[potentially likely if we confirm intra-star directed civilizations] 
 
-\noindent\textbf{Physical Property}: the process of the condensation of star ejecta of its ignition and ejection materials onto satellite life balls around a star acts as mass condensation region for future condensation, and can be ejected from its local orbit into the intra stellar and intra galactic voids.
+    \noindent\textbf{Physical Property}: the process of the condensation of star ejecta of its ignition and ejection materials onto satellite life balls around a star acts as mass condensation region for future condensation, and can be ejected from its local orbit into the intra stellar and intra galactic voids.
 
-The planet classes are sorted into statistical distributions based on the local forces, with "less", "half", and "most" being the 3 major harmonics defining the highest order influence across fractal scales. Over vast local timescales these oscillate between each other, since stars at all scales are consuming and emitting stars, star building materials, satellites, and satellites building material.
+    The planet classes are sorted into statistical distributions based on the local forces, with "less", "half", and "most" being the 3 major harmonics defining the highest order influence across fractal scales. Over vast local timescales these oscillate between each other, since stars at all scales are consuming and emitting stars, star building materials, satellites, and satellites building material.
 
-Neutrino flavor oscillation can be thought of as being a growing and stripping away the atmospheres on the tiny planets, as they interact with the separate star-dense and sparse-gas regions of their local layer while traveling through ours.
+    Neutrino flavor oscillation can be thought of as being a growing and stripping away the atmospheres on the tiny planets, as they interact with the separate star-dense and sparse-gas regions of their local layer while traveling through ours.
 
-%---------------------------
-% RB - Roll Ball wave carrys
-%---------------------------
+    %---------------------------
+    % RB - Roll Ball wave carrys
+    %---------------------------
 
-\subsubsection{The "Roll Ball" - The Four Fundamental Forces (RB):}
+    \subsubsection{The "Roll Ball" - The Four Fundamental Forces (RB):}
 
-All forces (gravity, electromagnetism, weak, strong) are geometrical artifacts of the no-slip Soddy packing tangency dynamics.
+    All forces (gravity, electromagnetism, weak, strong) are geometrical artifacts of the no-slip Soddy packing tangency dynamics.
 
-\begin{itemize}
-\item \textbf{Electromagnetic Force}: The differential density and curvature of the Atom Star Ball, Null Balls, Void Ball trajectories as they orbit the Atom Core Balls and Zero Balls. Measured as the "charge." The magnetic handedness comes from the global wish star spin handedness.
+    \begin{itemize}
+    \item \textbf{Electromagnetic Force}: The differential density and curvature of the Atom Star Ball, Null Balls, Void Ball trajectories as they orbit the Atom Core Balls and Zero Balls. Measured as the "charge." The magnetic handedness comes from the global wish star spin handedness.
 
-\item \textbf{Gravitational Force}: The averaged centripetal acceleration required to keep Star Balls in no-slip orbit. Emerges from the 56-step gearing residual of the Electromagnetic Force
+    \item \textbf{Gravitational Force}: The averaged centripetal acceleration required to keep Star Balls in no-slip orbit. Emerges from the 56-step gearing residual of the Electromagnetic Force
 
-\item \textbf{Weak Force}: The Lower fractal scale Electromagnetic Force. The Local EM force inside atom gyro balls. The handedness of the preferred magnetic orientation manifests as the chirality of the Soddy packing at fractal boundaries, breaking CP symmetry locally.
+    \item \textbf{Weak Force}: The Lower fractal scale Electromagnetic Force. The Local EM force inside atom gyro balls. The handedness of the preferred magnetic orientation manifests as the chirality of the Soddy packing at fractal boundaries, breaking CP symmetry locally.
 
-\item \textbf{Strong Force}: The Lower fractal scale Gravitational Force.
+    \item \textbf{Strong Force}: The Lower fractal scale Gravitational Force.
 
-\end{itemize}
+    \end{itemize}
 
-All four are manifestations of a single underlying principle: \textbf{Conservation of Angular Momentum in a no-slip Apollonian Soddy Sphere Packing}.
+    All four are manifestations of a single underlying principle: \textbf{Conservation of Angular Momentum in a no-slip Apollonian Soddy Sphere Packing}.
 
-\subsection{The Causality and Information Flow}
+    \subsection{The Causality and Information Flow}
 
-In the Fractal Tennis ontology, causality flows through tangency chains:
+    In the Fractal Tennis ontology, causality flows through tangency chains:
 
-\begin{enumerate}
+    \begin{enumerate}
 
-\item A Star Ball orbits a Core Ball because it is tangent to a sequence of Soddy spheres that form a "information locked" orbit.
+    \item A Star Ball orbits a Core Ball because it is tangent to a sequence of Soddy spheres that form a "information locked" orbit.
 
-\item When a Star Ball's angular momentum exceeds a determined threshold binding capacity of the local Soddy packing
-\subitem It collides with a Gyro Core Ball
-\subitem It "gets yeeted" and becomes an Info Ball
-\subitem It transfers to another Gyro Core Ball or Star Ball by traveling in the higher fractal layer.
+    \item When a Star Ball's angular momentum exceeds a determined threshold binding capacity of the local Soddy packing
+    \subitem It collides with a Gyro Core Ball
+    \subitem It "gets yeeted" and becomes an Info Ball
+    \subitem It transfers to another Gyro Core Ball or Star Ball by traveling in the higher fractal layer.
 
-\item The residual linear momentum from this transmission scatters locally into lower layers
-\subitem It accumulates as Null Cores 
-\subitem It branches as Null Cores and Void Cores 
-\subitem Branches meet at Gyro Cores and zero cores.
+    \item The residual linear momentum from this transmission scatters locally into lower layers
+    \subitem It accumulates as Null Cores 
+    \subitem It branches as Null Cores and Void Cores 
+    \subitem Branches meet at Gyro Cores and zero cores.
 
-\item When a Star Ball's linear momentum exceeds a core-determined threshold binding capacity of the local Soddy packing:
-\subitem it recoils from a Core Ball
-\subitem it "kicks off" and becomes a Free Star Ball
-\subitem It transfers to another Core Ball or Star Ball by traveling in the current fractal layer.
+    \item When a Star Ball's linear momentum exceeds a core-determined threshold binding capacity of the local Soddy packing:
+    \subitem it recoils from a Core Ball
+    \subitem it "kicks off" and becomes a Free Star Ball
+    \subitem It transfers to another Core Ball or Star Ball by traveling in the current fractal layer.
 
-\item Energy leaks from Info Balls through the Brownian friction of the packing, causing redshift.
-\item The redshift is not a measure of distance (metric expansion), but of how many fractal layers the information has traversed and what fraction of its angular momentum remains.
+    \item Energy leaks from Info Balls through the Brownian friction of the packing, causing redshift.
+    \item The redshift is not a measure of distance (metric expansion), but of how many fractal layers the information has traversed and what fraction of its angular momentum remains.
 
-\end{enumerate}
+    \end{enumerate}
 
-This entirely replaces the notion of "spacetime" with "packing-time" or "gearing-time" or pi_time_grid or pipipi
+    This entirely replaces the notion of "spacetime" with "packing-time" or "gearing-time" or pi_time_grid or pipipi
 
-We should actually re-think dimensionality. There is no true measure-0 radius in a fractal sphere packing, so there is no "origin" or natural place to put an origin of a Cartesian grid. The 3 dimensions of space and 1 dimension of time is an illusion; in reality it is pi-3 dimensions of time called "pi_time", and 3 dimensions of pi_time time called "pi_grid". More accurately, we live in at least a 4 dimensional pi_cube. A sphere at a point in pi_time_grid, is not a 3D object in a 3D grid with 3 cardinal directions. An 3D ASS-P has the tetrahedral mutual tangent chain (Base: 1-to-3 on all 4) = plus the inner(+) or outer(o) soddy core ( result: 1-to-4 on all 5, + or o) as the generating fractal basis. Any soddy core can be considered to be replaced with its own soddy packing from the ongoing exchange of curvatures of gryo info, the linear and angular momentum with no slip tangency rules. between any two distinct non tangent soddy cores, we can define a virtual soddy packing that takes a tangency path from directly from the center of big radius to the center of smaller radius to a tiny radius to generate a max radius , where we define a new virtual soddy packing with the center at the center of the big radius moved in the direction and radius of the tiny radius. remove core from first picture  Moving an object in the '3' dimensions of space can be thought of a virtual soddy (the minimum pre-existing soddy packing that contained most or all of the object), that from the initial construction it can have just the knowledge of its 4 generating soddy cores, and a variable set of discrete unbounded curvature data, then it most easily "moves" as exchanging data to the 4 outward directions. It's really only forward and backward as one, up and down as another, and the Choice to combine them in one way to decide the twist for the third. if a curvature of radius r passes into the tangency rule of a gearing, the equivalent amount of curvatures at least equal to r is distributed out of other tangencies in the virtual soddy gearing, with superluminal travel in the "star->core->jet" part of the "star->core->jets->star" tangent soddy chain as faster than current light speed layer travel. What macro photon light is, is Angular momentum, is encoded as maximum linear momentum, traveling superluminal speed in our fractal layer of the universe to a distant galaxy core, but at the higher speed of light in the higher fractal layer. Macro photon is is a wish info ball, a post star-core meet here, it creates a lower scale fractal linear and angular momentum exhaust wake which influence dies off in the lower level fractal layer substrate information density growing by 4^N while we keep computational curvature to O(pi^N). This non-optical-visible region of the observable universe, is maintained with an exhaust gas from the burning the angular momentum at the star-core collision, as  being the linear momentum lost into the encoding, as the orthogonal lower fractal layer fuel for our fractal register tiny star ball, the electron, and serves as the wish scale electro magnetic field lines. This is responsible for the apparent particle-wave-electro-magnetic quadrality of light. Just 4 spheres tangent to a soddy sphere in a soddy packing. 
+    We should actually re-think dimensionality. There is no true measure-0 radius in a fractal sphere packing, so there is no "origin" or natural place to put an origin of a Cartesian grid. The 3 dimensions of space and 1 dimension of time is an illusion; in reality it is pi-3 dimensions of time called "pi_time", and 3 dimensions of pi_time time called "pi_grid". More accurately, we live in at least a 4 dimensional pi_cube. A sphere at a point in pi_time_grid, is not a 3D object in a 3D grid with 3 cardinal directions. An 3D ASS-P has the tetrahedral mutual tangent chain (Base: 1-to-3 on all 4) = plus the inner(+) or outer(o) soddy core ( result: 1-to-4 on all 5, + or o) as the generating fractal basis. Any soddy core can be considered to be replaced with its own soddy packing from the ongoing exchange of curvatures of gryo info, the linear and angular momentum with no slip tangency rules. between any two distinct non tangent soddy cores, we can define a virtual soddy packing that takes a tangency path from directly from the center of big radius to the center of smaller radius to a tiny radius to generate a max radius , where we define a new virtual soddy packing with the center at the center of the big radius moved in the direction and radius of the tiny radius. remove core from first picture  Moving an object in the '3' dimensions of space can be thought of a virtual soddy (the minimum pre-existing soddy packing that contained most or all of the object), that from the initial construction it can have just the knowledge of its 4 generating soddy cores, and a variable set of discrete unbounded curvature data, then it most easily "moves" as exchanging data to the 4 outward directions. It's really only forward and backward as one, up and down as another, and the Choice to combine them in one way to decide the twist for the third. if a curvature of radius r passes into the tangency rule of a gearing, the equivalent amount of curvatures at least equal to r is distributed out of other tangencies in the virtual soddy gearing, with superluminal travel in the "star->core->jet" part of the "star->core->jets->star" tangent soddy chain as faster than current light speed layer travel. What macro photon light is, is Angular momentum, is encoded as maximum linear momentum, traveling superluminal speed in our fractal layer of the universe to a distant galaxy core, but at the higher speed of light in the higher fractal layer. Macro photon is is a wish info ball, a post star-core meet here, it creates a lower scale fractal linear and angular momentum exhaust wake which influence dies off in the lower level fractal layer substrate information density growing by 4^N while we keep computational curvature to O(pi^N). This non-optical-visible region of the observable universe, is maintained with an exhaust gas from the burning the angular momentum at the star-core collision, as  being the linear momentum lost into the encoding, as the orthogonal lower fractal layer fuel for our fractal register tiny star ball, the electron, and serves as the wish scale electro magnetic field lines. This is responsible for the apparent particle-wave-electro-magnetic quadrality of light. Just 4 spheres tangent to a soddy sphere in a soddy packing. 
 
-\subsection{Observable Predictions from the Complete Ontology}
+    \subsection{Observable Predictions from the Complete Ontology}
 
-\subsubsection{Prediction: Discrete Quasar Redshifts}
+    \subsubsection{Prediction: Discrete Quasar Redshifts}
 
-Quasars are massive Star Balls ejected as high energy macro photons from the fusion events mostly radially deeper in the macro star, that get injected at the wish core balls of our ionic gyro galaxies and our protonic dark galaxies.  Our parent macrostar ejected us as an isotropic expanding and cooling gas as wish atom gyro balls, and ejected the the quasar info balls at us (macro-protons), to our galactic scale, wich is the wish atom gyro balls and wish atom core balls here. When the quasar info ball hits these 2 types it is injected at the poles of the wish atom core, and stays mostly coherent as a quasar because it preserves most of its angular momentum, and most likely preserving about 15\% of its linear momentum, keeping its intrinsic redshift from the earlier ejection history being deeper in the gravitational well (we ejected and became a cooled H wish atom gryo after the parent wish more star fusion ignition point). Thus,
+    Quasars are massive Star Balls ejected as high energy macro photons from the fusion events mostly radially deeper in the macro star, that get injected at the wish core balls of our ionic gyro galaxies and our protonic dark galaxies.  Our parent macrostar ejected us as an isotropic expanding and cooling gas as wish atom gyro balls, and ejected the the quasar info balls at us (macro-protons), to our galactic scale, wich is the wish atom gyro balls and wish atom core balls here. When the quasar info ball hits these 2 types it is injected at the poles of the wish atom core, and stays mostly coherent as a quasar because it preserves most of its angular momentum, and most likely preserving about 15\% of its linear momentum, keeping its intrinsic redshift from the earlier ejection history being deeper in the gravitational well (we ejected and became a cooled H wish atom gryo after the parent wish more star fusion ignition point). Thus,
 
-\noindent While, During, and After The quasar star ball and core balls collide, they must cross the fractal logarithmic harmonic boundary conditions defining the basis transition to the current hydrogen dominated layer. This imprints the linear redshift, the fractal linear momentum info loss to dark matter leakage at the site of the beginning quasar star core meet. The harmonics are enumerable, quantifying the red shifts. Then the ejection of a quasar balls have 
+    \noindent While, During, and After The quasar star ball and core balls collide, they must cross the fractal logarithmic harmonic boundary conditions defining the basis transition to the current hydrogen dominated layer. This imprints the linear redshift, the fractal linear momentum info loss to dark matter leakage at the site of the beginning quasar star core meet. The harmonics are enumerable, quantifying the red shifts. Then the ejection of a quasar balls have 
 
-\[
-z_{\text{Quasar}} = \exp\left(\frac{n}{S_{\text{radius}}}\right) - 1 \quad \text{for integer } n
-\]
+    \[
+    z_{\text{Quasar}} = \exp\left(\frac{n}{S_{\text{radius}}}\right) - 1 \quad \text{for integer } n
+    \]
 
-This predicts quantization of quasar redshifts. Current surveys (Halton Arp's observations) already show this clustering.
+    This predicts quantization of quasar redshifts. Current surveys (Halton Arp's observations) already show this clustering.
 
-\subsubsection{Prediction: Chirality of Galaxy Rotation}
+    \subsubsection{Prediction: Chirality of Galaxy Rotation}
 
-If the Soddy packing has a handedness, all galaxies should show a statistical bias in rotational direction and spin-orbit coupling relative to the photonic transmission energy gradient. In other words, the light from the parent macro star shines mostly outward from the wish level fusion event much earlier in the history before we cooled to an ionized gas; where our galaxies were ignition points. the injected macro photons impart angular momentum to cause 90 degree procession off of the ejection dipole into the local substrate 
+    If the Soddy packing has a handedness, all galaxies should show a statistical bias in rotational direction and spin-orbit coupling relative to the photonic transmission energy gradient. In other words, the light from the parent macro star shines mostly outward from the wish level fusion event much earlier in the history before we cooled to an ionized gas; where our galaxies were ignition points. the injected macro photons impart angular momentum to cause 90 degree procession off of the ejection dipole into the local substrate 
 
-The 90° offset of Quasar dipoles from the CMB is a direct measurement of this chirality.
+    The 90° offset of Quasar dipoles from the CMB is a direct measurement of this chirality.
 
-\subsubsection{Prediction: Self-Similar Scaling of All Objects}
+    \subsubsection{Prediction: Self-Similar Scaling of All Objects}
 
-Any Gyro Ball (atom or galaxy) should show the same internal structure when scaled appropriately. This manifests as:
+    Any Gyro Ball (atom or galaxy) should show the same internal structure when scaled appropriately. This manifests as:
 
-\begin{itemize}
-\item Atoms and galaxies have the same density power laws (observed as the $\alpha \approx 2.4$ Soddy dimension in both).
-\item Nuclei and galactic cores show the same spin-mass relation.
-\item Stellar orbitals and internal electron orbitals that cross their core as photonic transmission should follow the same angular momentum quantization rules.
-\end{itemize}
+    \begin{itemize}
+    \item Atoms and galaxies have the same density power laws (observed as the $\alpha \approx 2.4$ Soddy dimension in both).
+    \item Nuclei and galactic cores show the same spin-mass relation.
+    \item Stellar orbitals and internal electron orbitals that cross their core as photonic transmission should follow the same angular momentum quantization rules.
+    \end{itemize}
+
+  \subsection{
+  How every tension in observational physics is resolved by TFOFT ASS-P 
+  }
+
+    \subsubsection{
+    1 Li-7 abundance mismatch 
+    }
+    There was no big bang. Local fractal flux redistribution in dense clusters is nonlinear. Current models fail due to being the wrong physics.
+
+    \subsubsection{
+    2 Vacuum energy ($10^{120}$)
+    }
+    There universe is not a illogical mathematical continuum in any of its maximally true physical law descriptions; continuum descriptions as PDEs and ODEs are curve fitting approximations to different subsets of observed discrete curvature phenomena. The lack of complete observation subset overlap between two theories that deduce different laws makes them automatically non-reconcilable. The vacuum is a fractal sphere packing ether. The energy dissipates into upper and lower fractal layers, with conservation. Current models fail due to being the wrong physics.
+
+    \subsubsection{
+    3 Strong CP / neutron EDM 
+    }
+    Soddy core balls enforce CP symmetry via Möbius inversion. There is only one geometric action that bleeds both ways across fractal layers, with asymptotic approximations appearing as 4 fundamental forces of gravity, strong force, and electroweak force. The fractal regions of the universe have a spin, the handedness of the spin for electromagnetism is the symmetry violation that is the root cause of it's weak force parity symmetry break. Current models fail due to being the wrong physics, and a naive definition of physical parity that treats imagined mirror dynamics as actual mirror dynamics .
+
+    \subsubsection{
+    4 Neutrino mass/oscillations 
+    }
+    Fractal scaled down sub-stellar objects like brown dwarfs, gas giants, and rocky planets, are all different possible cyclic evolutions of the coalescing of matter as it moves through less dense fractal substrate. These objects go through cycles of injecting and ejection of mass, e.g., their atmospheres; planet collisions can end up with smaller or larger resulting planets. Current models fail due to being the wrong physics, they didn't even expect the Neutrino to have mass. The Sterile Neutrino will never be found because it would need to be the fractal equivalent of planet with the mass of a million galaxies. Maybe a hyper intelligent galactic spanning society can do it. The best the fractal tennis can say is that it implies that in the messy standard model, Life itself it the Sterile Neutrino. Planets are where life is found by life on planets. More formally, it's mass from drag on nested-sphere network (matches 3$\sigma$ CMB data for Lambda CDM epicycle).
+
+    \subsubsection{
+    5 Matter-antimatter asymmetry
+    }
+    The angular momentum of the time gradient from star explosions ejecting matter that dominates the local fractal layer forces the main spin of all the balls in the resultant layer to have a bias, making anti-spin versions the balls exceedingly rare.
+    Local flux loops in spheres naturally bias matter.
+
+
+    \subsubsection{
+    6 Ultra High Energy Cosmic Ray anomalies (GZK) 
+    }
+    Non-local core-to-core jumps allow apparent super-threshold events. Higher fractal layer has a higher speed of light, so the velocity of incoming jets carry superluminal energy and time dilation. Both Nude core balls, (the dark matter galaxies) and regular galaxy core balls, may be the source.   \\ \hline
+
+
+    \subsubsection{
+    7 & Non-isotropic supernovae + post-explosion mass gain 
+    }
+    Supernovae are layer-breaching macrostar-star collisions. Nonlocal energy and matter input from other fractal layers explains asymmetry in explosion and apparent mass increase. \\ \hline
+
+    \subsubsection{
+    Li-6 / minor isotopes 
+    Meteorite clock contradiction 
+    Gold surface vs He-3 deep mantle
+    }
+    Directed supernovae may explain the luck, but the variation of alpha due to variation of planck length allows dense matter and high energy in turbulent regions to transmute into heavier elements at energies and regimes our theories don't model properly.
+
+    \subsubsection{
+    Large-scale structure (voids, BAO)
+    }
+    Stochastic gyroscopic dynamic ASS-P, BAO = sound waves in giant plasma.
+
+
+    \subsubsection{
+    Hubble tension / JWST early galaxies
+    }
+    Brownian leakage of light from ancient galaxies closer in fractal distance earlier in the time dilated gravitational well of our parent macrostar..
+
+    \subsubsection{
+     Wavefunction collapse 
+     }
+
+    Quantum mechanics is the probabilistic statistical description of tangency entanglement chains of spheres in the sphere packing where information and matter is flowing. It is not epistemological in this universe. 
+
+
+    \subsubsection{
+     Quantum Superpostion and nonlocality/entanglement
+    True Shor algorithm fails (factor 42)
+     } 
+     Entanglement is tangency chains of spheres in the sphere packing, nonlocality in Quantum mechanics is a category error from not recognizing fractal structure. Pure Superpostion in QED is mutually tangent spheres, wrongly unbounded in standard theory, but limited by the spherical fractal geometry and the Soddy Hexlet Theorem. Shor's algorithm will not work in reality as predicted. 
+
+    \subsubsection{
+     Hierarchy / fine-tuning 
+     } 
+    Constants emerge from self-similar nesting, and probably a computational preference for symmetry and integers. 
+
+    \subsubsection{
+     SM parameter fine-tuning 
+     } 
+    Couplings set by local packing density.
+
+    \subsubsection{
+     Flatness / horizon problem 
+     } 
+     There is No global space metric; apparent flatness from lower fractal density in sparse regions.
+
+    \subsubsection{
+     $\alpha$ variation (Webb + Rb/Cs 5.5$\sigma$)
+     } 
+     Density-dependent refractive index of local Soddy packing (0.1\,mm = higher-layer Planck length).
+
+    \subsubsection{
+     Laser-plasma = supernova math
+     }
+     It is the same process - electrons are tiny stars, etc.
+
+    \subsubsection{
+      BH jet / spin / accretion disconnect 
+     } 
+     Non-local Möbius photon transport; spin/disk irrelevant at stellar scales since conservation laws are more lax for smaller boundaries as they have more relative space to eject entropy into. 
+
+    \subsubsection{
+      Extremal black holes stable (Hawking wrong)
+     } 
+
+     Horizons coincide at Soddy tangency cores. General Relativity is an ineffective theory for this object.
+
+    \subsubsection{
+     Geoneutrino anisotropy (JUNO/SNO+) 
+     }
+
+      Earth being a large neutrino itself, acts as a neutrino condensate; core dipole follows fractal gradient
+
+    \subsubsection{
+     DM-neutrino interaction 
+     }
+      Dark matter = lower-layer hydrogen; neutrinos drag through it, potentially changing flavor. 
+
+    \subsubsection{
+     Fermi-Bubbles 
+     }
+      Dark matter = lower-layer hydrogen, tiny atom gyro balls. Electrons and neutrinos drag through it. It has its own lower scale star birth, growth, and supernovae. Fermi-bubbles are x-ray outline of the region of the dark matter halo that is undergoing fractal scale fusion production of atom star balls (electrons). We can deduce from its geometry that Milky way is in 2P orbital, about to bond with Andromeda to make a scaled H2 bond. The identification of atoms reaching their higher orbital energy states prior to the collision and bonding that precedes the change to different orbital energy states, is in stark contrast of the standard model's statistical 1S orbitals overlapping before wavefunction collapse to lower energy state in Hilbert space (which violates a quantum dogma disregarded principle of state uniqueness for the vacuum). 
+
+    \end{longtable}
 
 ---
 
-\subsection{
-How every tension in observational physics is resolved by TFOFT ASS-P 
-}
-
-\subsubsection{
-1 Li-7 abundance mismatch 
-}
-There was no big bang. Local fractal flux redistribution in dense clusters is nonlinear. Current models fail due to being the wrong physics.
-
-\subsubsection{
-2 Vacuum energy ($10^{120}$)
-}
-There universe is not a illogical mathematical continuum in any of its maximally true physical law descriptions; continuum descriptions as PDEs and ODEs are curve fitting approximations to different subsets of observed discrete curvature phenomena. The lack of complete observation subset overlap between two theories that deduce different laws makes them automatically non-reconcilable. The vacuum is a fractal sphere packing ether. The energy dissipates into upper and lower fractal layers, with conservation. Current models fail due to being the wrong physics.
-
-\subsubsection{
-3 Strong CP / neutron EDM 
-}
-Soddy core balls enforce CP symmetry via Möbius inversion. There is only one geometric action that bleeds both ways across fractal layers, with asymptotic approximations appearing as 4 fundamental forces of gravity, strong force, and electroweak force. The fractal regions of the universe have a spin, the handedness of the spin for electromagnetism is the symmetry violation that is the root cause of it's weak force parity symmetry break. Current models fail due to being the wrong physics, and a naive definition of physical parity that treats imagined mirror dynamics as actual mirror dynamics .
-
-\subsubsection{
-4 Neutrino mass/oscillations 
-}
-Fractal scaled down sub-stellar objects like brown dwarfs, gas giants, and rocky planets, are all different possible cyclic evolutions of the coalescing of matter as it moves through less dense fractal substrate. These objects go through cycles of injecting and ejection of mass, e.g., their atmospheres; planet collisions can end up with smaller or larger resulting planets. Current models fail due to being the wrong physics, they didn't even expect the Neutrino to have mass. The Sterile Neutrino will never be found because it would need to be the fractal equivalent of planet with the mass of a million galaxies. Maybe a hyper intelligent galactic spanning society can do it. The best the fractal tennis can say is that it implies that in the messy standard model, Life itself it the Sterile Neutrino. Planets are where life is found by life on planets. More formally, it's mass from drag on nested-sphere network (matches 3$\sigma$ CMB data for Lambda CDM epicycle).
-
-\subsubsection{
-5 Matter-antimatter asymmetry
-}
-The angular momentum of the time gradient from star explosions ejecting matter that dominates the local fractal layer forces the main spin of all the balls in the resultant layer to have a bias, making anti-spin versions the balls exceedingly rare.
-Local flux loops in spheres naturally bias matter.
-
-
-\subsubsection{
-6 Ultra High Energy Cosmic Ray anomalies (GZK) 
-}
-Non-local core-to-core jumps allow apparent super-threshold events. Higher fractal layer has a higher speed of light, so the velocity of incoming jets carry superluminal energy and time dilation. Both Nude core balls, (the dark matter galaxies) and regular galaxy core balls, may be the source.   \\ \hline
-
-
-\subsubsection{
-7 & Non-isotropic supernovae + post-explosion mass gain 
-}
-Supernovae are layer-breaching macrostar-star collisions. Nonlocal energy and matter input from other fractal layers explains asymmetry in explosion and apparent mass increase. \\ \hline
-
-\subsubsection{
-Li-6 / minor isotopes 
-Meteorite clock contradiction 
-Gold surface vs He-3 deep mantle
-}
-Directed supernovae may explain the luck, but the variation of alpha due to variation of planck length allows dense matter and high energy in turbulent regions to transmute into heavier elements at energies and regimes our theories don't model properly.
-
-\subsubsection{
-Large-scale structure (voids, BAO)
-}
-Stochastic gyroscopic dynamic ASS-P, BAO = sound waves in giant plasma.
-
-
-\subsubsection{
-Hubble tension / JWST early galaxies
-}
-Brownian leakage of light from ancient galaxies closer in fractal distance earlier in the time dilated gravitational well of our parent macrostar..
-
-\subsubsection{
- Wavefunction collapse 
- }
-
-Quantum mechanics is the probabilistic statistical description of tangency entanglement chains of spheres in the sphere packing where information and matter is flowing. It is not epistemological in this universe. 
-
-
-\subsubsection{
- Quantum Superpostion and nonlocality/entanglement
-True Shor algorithm fails (factor 42)
- } 
- Entanglement is tangency chains of spheres in the sphere packing, nonlocality in Quantum mechanics is a category error from not recognizing fractal structure. Pure Superpostion in QED is mutually tangent spheres, wrongly unbounded in standard theory, but limited by the spherical fractal geometry and the Soddy Hexlet Theorem. Shor's algorithm will not work in reality as predicted. 
-
-\subsubsection{
- Hierarchy / fine-tuning 
- } 
-Constants emerge from self-similar nesting, and probably a computational preference for symmetry and integers. 
-
-\subsubsection{
- SM parameter fine-tuning 
- } 
-Couplings set by local packing density.
-
-\subsubsection{
- Flatness / horizon problem 
- } 
- There is No global space metric; apparent flatness from lower fractal density in sparse regions.
-
-\subsubsection{
- $\alpha$ variation (Webb + Rb/Cs 5.5$\sigma$)
- } 
- Density-dependent refractive index of local Soddy packing (0.1\,mm = higher-layer Planck length).
-
-\subsubsection{
- Laser-plasma = supernova math
- }
- It is the same process - electrons are tiny stars, etc.
-
-\subsubsection{
-  BH jet / spin / accretion disconnect 
- } 
- Non-local Möbius photon transport; spin/disk irrelevant at stellar scales since conservation laws are more lax for smaller boundaries as they have more relative space to eject entropy into. 
-
-\subsubsection{
-  Extremal black holes stable (Hawking wrong)
- } 
-
- Horizons coincide at Soddy tangency cores. General Relativity is an ineffective theory for this object.
-
-\subsubsection{
- Geoneutrino anisotropy (JUNO/SNO+) 
- }
-
-  Earth being a large neutrino itself, acts as a neutrino condensate; core dipole follows fractal gradient
-
-\subsubsection{
- DM-neutrino interaction 
- }
-  Dark matter = lower-layer hydrogen; neutrinos drag through it, potentially changing flavor. 
-
-\subsubsection{
- Fermi-Bubbles 
- }
-  Dark matter = lower-layer hydrogen; electrons drag through it and make lower scale star birth, growth, and supernovae. Fermi-bubbles are x-ray outline of dark matter halo. Milky way is in 2P orbital, about to bond with Andromeda to make Macro H2. 
-
-\end{longtable}
+% ==================================================================
+% Part 14: Arithmancy
+% ==================================================================
 
 \section{Arithmancy}
 
@@ -2365,7 +2373,7 @@ By enforcing MATHICCS (the requirement that all mathematical operations in the d
 \item \textbf{Demonstrates the Post-Quantum Computing potential}: The theory implies that modeling the dynamics of the ASS-P with a physical computational substrate mimicking both the fractal geometry and its dynamics, both physically and virtually, is the key to creating an universally-tuned computer architecture.
 
 
-\item \textbf{Demonstrates the Post-Linear momentum space travel}: The theory implies that certain fractal configurations of matter can more efficiently transfer energy with angular momentum that is converted to linear momentum to change the orbits of satellites. 
+\item \textbf{Demonstrates the Post-Linear momentum space travel}: The theory implies that certain fractal configurations of the angular and linear momentum of matter can more efficiently transfer energy, which may scale to propulsion technologies. 
 
 \end{enumerate}
 
