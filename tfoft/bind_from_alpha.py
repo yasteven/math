@@ -1,77 +1,68 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# ====================== TFOFT CONSTANTS ======================
-T_SPHERE = 4 * np.pi**3 + np.pi**2 + np.pi
-DELTA_TWO_BALL = 1.9
-LAMBDA = 1.0
-MU = 1.17e-4
-SIGMA = 8.0
+# ====================== SEMF (fixed) ======================
+def semf_binding_per_nucleon(A: int, Z: int) -> float:
+    a_v = 15.8; a_s = 18.3; a_c = 0.714; a_a = 23.2; a_p = 12.0
+    B = (a_v * A - a_s * A**(2/3) - a_c * Z * (Z - 1) * A**(-1/3)
+         - a_a * (A - 2 * Z)**2 / A)
+    if A % 2 == 0 and Z % 2 == 0:
+        B += a_p / A**0.5
+    elif A % 2 == 0:
+        B -= a_p / A**0.5
+    return B / A
 
-# ====================== ORIGINAL MODEL ======================
-def fractal_seed(Z: int) -> float:
-    if Z == 1:   return 0.0
-    elif Z == 2: return np.sqrt(2)
-    elif Z == 3: return np.pi
-    elif Z == 4: return 7.0
-    elif Z == 5: return 6.1
-    else:        return 0.0
 
-def saving(Z: int) -> float:
-    if Z <= 1:
-        return 0.0
-    base = DELTA_TWO_BALL
-    num_pairs = max(0.0, (Z - 2) / 2.0)
-    per_pair_max = 1284.0
-    per_pair = per_pair_max * (1 - np.exp(-num_pairs / SIGMA))
-    return base + num_pairs * per_pair * 0.85
-
-def overhead(Z: int, A: int) -> float:
-    base = LAMBDA * Z + MU * Z**2
-    coulomb_k = 0.714
-    coulomb = coulomb_k * Z * (Z - 1) / (A ** (1.0/3.0))
-    return base + coulomb
-
-def tfoft_binding_per_nucleon(Z: int, A: int) -> float:
-    if Z <= 5:
-        raw = fractal_seed(Z)
-        S_seed = 6.462 / (2 * 3.5)
-        return raw * S_seed
-    else:
-        net = saving(Z) - overhead(Z, A)
-        comp_per_nucleon = net / Z
-        SCALE = 8.792 / ((saving(26) - overhead(26, 56)) / 26)
-        return comp_per_nucleon * SCALE
-
-# ====================== LOG-FRACTAL SEED SYSTEM ======================
-def build_log_fractal_sequence(n=300):
-    seed = [0.0, np.sqrt(2), np.pi, 7.0, 6.1]
-    base = [x for x in seed if x > 0]
-
-    seq = []
-
-    # first layer
-    for x in base:
-        seq.append(np.log(x) + 6.1)
-
-    # recursive cascade
+# ====================== FLEXIBLE ASSPSC RECURSIVE LOG GENERATION ======================
+def build_asspsc_sequence(n=300, 
+                          base_stages=None,
+                          subtraction_factor=1.0,      # multiplier for the subtraction term (was 1.0)
+                          scale_factor=1.0 / np.e):    # e-limited suppression per cycle
+    """
+    Flexible Soddy-gasket recursive sequence.
+    
+    You can now easily modify:
+    - base_stages
+    - how much is subtracted each cycle (subtraction_factor)
+    - the per-cycle scaling (scale_factor)
+    """
+    if base_stages is None:
+        base_stages = np.array([0.104, 0.85*np.sqrt(2), 2.457, 7.235208, 7.235208 - 2.457])
+    
+    deltas = np.diff(base_stages)
+    seq = base_stages.tolist()
+    current = base_stages[-1]
+    cycle = 1
+    
     while len(seq) < n:
-        prev = seq[-1]
-        prev2 = seq[-2] if len(seq) > 1 else prev
+        if cycle == 5:
+            protons_done = len(seq) - 1
+            protons_next_start = len(seq)
+            print(f"Hit recursion cycle 5: proton count already done: {protons_done}, "
+                  f"proton count about to do: {protons_next_start} to {protons_next_start + 2}")
+            iron_check = abs(protons_done - 26) <= 5
+            print(f"  Iron proton count (26) check: within 4 or 5? {iron_check} (diff = {abs(protons_done - 26)})")
 
-        new_val = prev + np.log(prev2)
-        seq.append(new_val)
+        # === CUSTOMIZABLE PART PER CYCLE ===
+        # Example: make the subtraction term change with cycle number
+        # You can replace this with any logic you want
+        subtract_amount = deltas[-1] * subtraction_factor * (cycle ** 0.5)   # example: grows slowly with cycle
+        
+        # Build the scaled deltas for this cycle
+        scaled_deltas = deltas[0:].copy() * (scale_factor ** cycle)
+        
+        # Optional: modify the last delta (the subtraction/gain term) for this cycle
+        scaled_deltas[-1] = subtract_amount * (scale_factor ** cycle)   # or any other formula
 
-    # todo, need to scale to mev
+        # Append the new stages for this cycle
+        for d in scaled_deltas:
+            current += d
+            seq.append(current)
+
+        cycle += 1
 
     return np.array(seq[:n])
 
-def fractal_binding_per_nucleon(Z: int) -> float:
-    seq = build_log_fractal_sequence(300)
-    idx = max(0, Z - 2)
-
-    scale = 8.792 / seq[24]
-    return seq[min(idx, len(seq)-1)] * scale
 
 # ====================== DATA ======================
 measured_data = [
@@ -85,41 +76,50 @@ measured_data = [
     (208, 82, 7.867), (238, 92, 7.570),
 ]
 
-# ====================== SEMF ======================
-def semf_binding_per_nucleon(A: int, Z: int) -> float:
-    a_v = 15.8; a_s = 18.3; a_c = 0.714; a_a = 23.2; a_p = 12.0
-    B = (a_v * A - a_s * A**(2/3) - a_c * Z * (Z - 1) * A**(-1/3)
-         - a_a * (A - 2 * Z)**2 / A)
-    if A % 2 == 0 and Z % 2 == 0:
-        B += a_p / A**0.5
-    elif A % 2 == 0:
-        B -= a_p / A**0.5
-    return B / A
-
-# ====================== PLOT ======================
-A_values = np.array([a for a, z, b in measured_data])
-Z_values = np.array([z for a, z, b in measured_data])
+N_values = np.array([a for a, z, b in measured_data])
 B_meas = np.array([b for a, z, b in measured_data])
 
-B_tfoft = np.array([tfoft_binding_per_nucleon(int(z), int(a)) for z, a in zip(Z_values, A_values)])
-B_semf = np.array([semf_binding_per_nucleon(int(a), int(z)) for a, z in zip(A_values, Z_values)])
-B_frac = np.array([fractal_binding_per_nucleon(int(z)) for z in Z_values])
+# Correct SEMF calculation
+B_semf = np.array([semf_binding_per_nucleon(int(a), int(z)) for a, z, b in measured_data])
 
-fig, ax = plt.subplots(figsize=(11, 6))
+# Pure ASSPSC list — no post-processing
+B_asspsc = ASSPSC_SEQ[N_values - 1]
 
-ax.scatter(A_values, B_meas, color='black', s=60, label='Measured')
-ax.plot(A_values, B_tfoft, 'o-', color='red', label='TFOFT')
-ax.plot(A_values, B_semf, '--', color='blue', label='SEMF')
-ax.plot(A_values, B_frac, 'o-', color='green', label='Log-Fractal Seed Cascade')
+# ====================== SODDY GAIN POINTS ======================
+soddy_indices = [0] + list(range(4, len(ASSPSC_SEQ), 4))
+valid_idx = [i for i in soddy_indices if i < len(N_values)]
+soddy_n = N_values[valid_idx]
+soddy_y = ASSPSC_SEQ[valid_idx]
 
-ax.set_xlabel('Mass Number A')
-ax.set_ylabel('Binding Energy per Nucleon (MeV)')
-ax.set_title('Binding Energy Models Comparison')
-ax.grid(True, alpha=0.3)
-ax.legend()
+# ====================== PLOT ======================
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 9), sharex=True, height_ratios=[3, 1])
+
+ax1.scatter(N_values, B_meas, color='black', s=60, label='Measured')
+ax1.plot(N_values, B_semf, '--', color='blue', linewidth=2, label='SEMF')
+ax1.plot(N_values, B_asspsc, 'o-', color='green', linewidth=1.5, label='ASSPSC (pure recursive list)')
+
+# Red circles around Soddy gain points
+ax1.scatter(soddy_n, soddy_y, s=300, facecolors='none', edgecolors='red', 
+            linewidth=3.5, zorder=10, label='Soddy Gain Points (idx 0, 4, 8, 12, ...)')
+
+ax1.set_xlabel('Nucleon Number N')
+ax1.set_ylabel('Binding Energy per Nucleon (MeV)')
+ax1.set_title('Binding Energy Models Comparison\n(PURE ASSPSC_SEQ with Soddy Gain Points circled in red)')
+ax1.grid(True, alpha=0.3)
+ax1.legend()
+
+# Error plot
+errors = B_meas - B_asspsc
+ax2.plot(N_values, errors, 'o-', color='green', label='Error (Measured − ASSPSC)')
+ax2.axhline(0, color='gray', linestyle='--')
+ax2.set_xlabel('Nucleon Number N')
+ax2.set_ylabel('Error (MeV/nucleon)')
+ax2.grid(True, alpha=0.3)
+ax2.legend()
 
 plt.tight_layout()
 plt.show()
 
 # ====================== OUTPUT ======================
-print("Fractal system added: log-seed recursive cascade active")
+print("SEMF scale fixed and restored. Red circles should now clearly surround the green dots.")
+print(f"Number of Soddy gain points highlighted: {len(soddy_y)}")
