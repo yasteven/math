@@ -12,13 +12,20 @@ def semf_binding_per_nucleon(A: int, Z: int) -> float:
         B -= a_p / A**0.5
     return B / A
 
-# ====================== PURE ASSPSC RECURSIVE LOG GENERATION (no Strassen) ======================
+# ====================== PURE ASSPSC RECURSIVE LOG GENERATION ======================
 def build_asspsc_sequence(n=300):
     """
     Pure recursive Soddy-gasket progression — NO Strassen gain or overhead.
-    Normal behavior only.
+    
+    Base stages:
+    0.104 = (sqrt and strassen linear) Overhead for 1
+    1.2020 ≈ 0.85 * sqrt(2) for 2 balls
+    2.475 = ASSP fractal dim for 3 balls
+    7.425 = 4*2.475 *0.75 ≈ 4x4 Strassen for 4
+    7.425 - 2.457 = Soddy Reduction for 5
     """
-    base_stages = np.array([0.104, 0.85*np.sqrt(2), 2.457, 7.235208, 7.235208 - 2.457])
+    base_stages = np.array([0.104, 0.85 * np.sqrt(2), 2.475, 7.425, 7.425 - 2.457])
+    
     deltas = np.diff(base_stages)
     seq = base_stages.tolist()
     current = base_stages[-1]
@@ -85,12 +92,9 @@ ax1.plot(N_values, B_asspsc, 'o-', color='green', linewidth=1.5, label='ASSPSC (
 ax1.scatter(soddy_n, soddy_y, s=300, facecolors='none', edgecolors='red',
             linewidth=3.5, zorder=10, label='Soddy Gain Points (idx 0, 4, 8, ...)')
 
-# ====================== STRASSEN REGION MARKERS ======================
-# Vertical lines for the regions you want to observe
+# Strassen region markers (for visual reference only)
 ax1.axvline(x=23, color='red', linestyle='-', linewidth=2.5, alpha=0.85, label='Z=23 (Strassen region start)')
 ax1.axvline(x=27, color='red', linestyle='-', linewidth=2.5, alpha=0.85, label='Z=27 (Strassen region end)')
-
-# Double lines for the next block
 ax1.axvline(x=46, color='red', linestyle='--', linewidth=2.0, alpha=0.7)
 ax1.axvline(x=54, color='red', linestyle='--', linewidth=2.0, alpha=0.7, label='Next block 46–54')
 
@@ -109,12 +113,44 @@ ax2.set_ylabel('Error (MeV/nucleon)')
 ax2.grid(True, alpha=0.3)
 ax2.legend()
 
-
-
 plt.tight_layout()
 plt.show()
 
-# ====================== OUTPUT ======================
-print("Pure ASSPSC sequence (no Strassen gain/overhead) generated.")
-print("Vertical markers added at 23/27 and 46/54 for visual reference.")
+# ====================== OUTPUT + ERROR TABLE ======================
+print("Pure ASSPSC sequence generated successfully.")
 print(f"Sequence length: {len(ASSPSC_SEQ)}")
+
+print("\n" + "="*80)
+print("PERCENTAGE ERROR TABLE: |Measured − ASSPSC| / Measured × 100")
+print("="*80)
+print(f"{'N':>3} | {'B_meas':>8} | {'B_asspsc':>8} | {'% Error':>8}")
+print("-" * 80)
+
+percent_errors = np.zeros_like(B_meas, dtype=float)
+valid_mask = B_meas > 1e-6
+percent_errors[valid_mask] = 100 * np.abs(errors[valid_mask] / B_meas[valid_mask])
+
+for i in range(len(N_values)):
+    n = int(N_values[i])
+    b_meas = B_meas[i]
+    b_asspsc = B_asspsc[i]
+    if not valid_mask[i]:
+        print(f"{n:3d} | {b_meas:8.3f} | {b_asspsc:8.3f} | {'N/A (zero)':>8}")
+    else:
+        pe = percent_errors[i]
+        print(f"{n:3d} | {b_meas:8.3f} | {b_asspsc:8.3f} | {pe:8.3f}%")
+
+# Summary
+if np.any(valid_mask):
+    mean_pe = np.mean(percent_errors[valid_mask])
+    max_pe = np.max(percent_errors[valid_mask])
+    min_pe = np.min(percent_errors[valid_mask])
+    std_pe = np.std(percent_errors[valid_mask])
+    print("-" * 80)
+    print("SUMMARY STATISTICS (excluding N=1):")
+    print(f"Mean absolute percentage error : {mean_pe:6.3f}%")
+    print(f"Maximum absolute percentage error: {max_pe:6.3f}%")
+    print(f"Minimum absolute percentage error: {min_pe:6.3f}%")
+    print(f"Standard deviation of % error    : {std_pe:6.3f}%")
+    print(f"Number of data points analyzed   : {np.sum(valid_mask)}")
+    print("="*80)
