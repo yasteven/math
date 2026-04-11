@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# ====================== SEMF (fixed) ======================
+# ====================== SEMF ======================
 def semf_binding_per_nucleon(A: int, Z: int) -> float:
     a_v = 15.8; a_s = 18.3; a_c = 0.714; a_a = 23.2; a_p = 12.0
     B = (a_v * A - a_s * A**(2/3) - a_c * Z * (Z - 1) * A**(-1/3)
@@ -12,28 +12,19 @@ def semf_binding_per_nucleon(A: int, Z: int) -> float:
         B -= a_p / A**0.5
     return B / A
 
-
-# ====================== FLEXIBLE ASSPSC RECURSIVE LOG GENERATION ======================
-def build_asspsc_sequence(n=300, 
-                          base_stages=None,
-                          subtraction_factor=1.0,      # multiplier for the subtraction term (was 1.0)
-                          scale_factor=1.0 / np.e):    # e-limited suppression per cycle
+# ====================== PURE ASSPSC RECURSIVE LOG GENERATION (no Strassen) ======================
+def build_asspsc_sequence(n=300):
     """
-    Flexible Soddy-gasket recursive sequence.
-    
-    You can now easily modify:
-    - base_stages
-    - how much is subtracted each cycle (subtraction_factor)
-    - the per-cycle scaling (scale_factor)
+    Pure recursive Soddy-gasket progression — NO Strassen gain or overhead.
+    Normal behavior only.
     """
-    if base_stages is None:
-        base_stages = np.array([0.104, 0.85*np.sqrt(2), 2.457, 7.235208, 7.235208 - 2.457])
-    
+    base_stages = np.array([0.104, 0.85*np.sqrt(2), 2.457, 7.235208, 7.235208 - 2.457])
     deltas = np.diff(base_stages)
     seq = base_stages.tolist()
     current = base_stages[-1]
     cycle = 1
-    
+    scale_factor = 1.0 / np.e
+
     while len(seq) < n:
         if cycle == 5:
             protons_done = len(seq) - 1
@@ -43,18 +34,9 @@ def build_asspsc_sequence(n=300,
             iron_check = abs(protons_done - 26) <= 5
             print(f"  Iron proton count (26) check: within 4 or 5? {iron_check} (diff = {abs(protons_done - 26)})")
 
-        # === CUSTOMIZABLE PART PER CYCLE ===
-        # Example: make the subtraction term change with cycle number
-        # You can replace this with any logic you want
-        subtract_amount = deltas[-1] * subtraction_factor * (cycle ** 0.5)   # example: grows slowly with cycle
-        
-        # Build the scaled deltas for this cycle
+        # Pure normal scaling — no gain or overhead modification
         scaled_deltas = deltas[0:].copy() * (scale_factor ** cycle)
-        
-        # Optional: modify the last delta (the subtraction/gain term) for this cycle
-        scaled_deltas[-1] = subtract_amount * (scale_factor ** cycle)   # or any other formula
 
-        # Append the new stages for this cycle
         for d in scaled_deltas:
             current += d
             seq.append(current)
@@ -63,6 +45,9 @@ def build_asspsc_sequence(n=300,
 
     return np.array(seq[:n])
 
+
+# Build the pure sequence
+ASSPSC_SEQ = build_asspsc_sequence(300)
 
 # ====================== DATA ======================
 measured_data = [
@@ -78,8 +63,6 @@ measured_data = [
 
 N_values = np.array([a for a, z, b in measured_data])
 B_meas = np.array([b for a, z, b in measured_data])
-
-# Correct SEMF calculation
 B_semf = np.array([semf_binding_per_nucleon(int(a), int(z)) for a, z, b in measured_data])
 
 # Pure ASSPSC list — no post-processing
@@ -92,19 +75,28 @@ soddy_n = N_values[valid_idx]
 soddy_y = ASSPSC_SEQ[valid_idx]
 
 # ====================== PLOT ======================
-fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 9), sharex=True, height_ratios=[3, 1])
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(13, 9), sharex=True, height_ratios=[3, 1])
 
 ax1.scatter(N_values, B_meas, color='black', s=60, label='Measured')
 ax1.plot(N_values, B_semf, '--', color='blue', linewidth=2, label='SEMF')
 ax1.plot(N_values, B_asspsc, 'o-', color='green', linewidth=1.5, label='ASSPSC (pure recursive list)')
 
 # Red circles around Soddy gain points
-ax1.scatter(soddy_n, soddy_y, s=300, facecolors='none', edgecolors='red', 
-            linewidth=3.5, zorder=10, label='Soddy Gain Points (idx 0, 4, 8, 12, ...)')
+ax1.scatter(soddy_n, soddy_y, s=300, facecolors='none', edgecolors='red',
+            linewidth=3.5, zorder=10, label='Soddy Gain Points (idx 0, 4, 8, ...)')
+
+# ====================== STRASSEN REGION MARKERS ======================
+# Vertical lines for the regions you want to observe
+ax1.axvline(x=23, color='red', linestyle='-', linewidth=2.5, alpha=0.85, label='Z=23 (Strassen region start)')
+ax1.axvline(x=27, color='red', linestyle='-', linewidth=2.5, alpha=0.85, label='Z=27 (Strassen region end)')
+
+# Double lines for the next block
+ax1.axvline(x=46, color='red', linestyle='--', linewidth=2.0, alpha=0.7)
+ax1.axvline(x=54, color='red', linestyle='--', linewidth=2.0, alpha=0.7, label='Next block 46–54')
 
 ax1.set_xlabel('Nucleon Number N')
 ax1.set_ylabel('Binding Energy per Nucleon (MeV)')
-ax1.set_title('Binding Energy Models Comparison\n(PURE ASSPSC_SEQ with Soddy Gain Points circled in red)')
+ax1.set_title('Binding Energy Models Comparison\n(PURE ASSPSC — Strassen regions marked for observation)')
 ax1.grid(True, alpha=0.3)
 ax1.legend()
 
@@ -117,9 +109,12 @@ ax2.set_ylabel('Error (MeV/nucleon)')
 ax2.grid(True, alpha=0.3)
 ax2.legend()
 
+
+
 plt.tight_layout()
 plt.show()
 
 # ====================== OUTPUT ======================
-print("SEMF scale fixed and restored. Red circles should now clearly surround the green dots.")
-print(f"Number of Soddy gain points highlighted: {len(soddy_y)}")
+print("Pure ASSPSC sequence (no Strassen gain/overhead) generated.")
+print("Vertical markers added at 23/27 and 46/54 for visual reference.")
+print(f"Sequence length: {len(ASSPSC_SEQ)}")
