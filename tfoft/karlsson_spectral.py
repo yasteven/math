@@ -21,14 +21,21 @@ from matplotlib.colors import Normalize
 from matplotlib.cm import ScalarMappable
 from scipy.signal import lombscargle
 from collections import defaultdict
+import os
+
+# ─────────────────────────────────────────────────────────────
+# Create output directory locally (creates if it doesn't exist)
+OUTPUT_DIR = "./outputs"
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+print(f"Output directory: {OUTPUT_DIR} (created if missing)")
 
 # ─────────────────────────────────────────────────────────────
 # CONSTANTS
 # ─────────────────────────────────────────────────────────────
 C_NM_PER_S = 2.99792458e17   # speed of light in nm/s
 C_ANG_PER_S = 2.99792458e18  # speed of light in Angstrom/s
-KQ = 0.20493                  # Karlsson info-ball step (ln units)
-KM = 1.80436                  # Karlsson mass step (ln units)
+KQ = 0.20493                 # Karlsson info-ball step
+KM = 1.80436                 # Karlsson mass step
 
 # ─────────────────────────────────────────────────────────────
 # FULL LINE DATA
@@ -586,8 +593,8 @@ legend_elements = [
 ]
 fig1.legend(handles=legend_elements, loc='lower center', ncol=2, fontsize=8,
             bbox_to_anchor=(0.5, 0.0))
-plt.savefig('/mnt/user-data/outputs/fig1_element_panels.png', dpi=150, bbox_inches='tight')
-print("  Saved fig1_element_panels.png")
+plt.savefig(os.path.join(OUTPUT_DIR, 'fig1_element_panels.png'), dpi=150, bbox_inches='tight')
+print(f" Saved {OUTPUT_DIR}/fig1_element_panels.png")
 
 # ─────────────────────────────────────────────────────────────
 # FIG 2: LOMB-SCARGLE PERIODOGRAMS — all elements overlaid
@@ -633,8 +640,8 @@ for i, (name, edata) in enumerate(ELEMENTS.items()):
     ax.tick_params(labelsize=7)
     ax.set_xlim(0, periods[-1])
 
-plt.savefig('/mnt/user-data/outputs/fig2_lomb_scargle.png', dpi=150, bbox_inches='tight')
-print("  Saved fig2_lomb_scargle.png")
+plt.savefig(os.path.join(OUTPUT_DIR, 'fig2_lomb_scargle.png'), dpi=150, bbox_inches='tight')
+print(f" Saved {OUTPUT_DIR}/fig2_lomb_scargle.png")
 
 # ─────────────────────────────────────────────────────────────
 # FIG 3: CROSS-ELEMENT COMPARISON — all ln_freq lines on one axis
@@ -723,8 +730,8 @@ for i, (bval, bar) in enumerate(zip(bar_vals, bars)):
                f'{bval:.2f}{"✓" if near else "≈"}',
                va='center', fontsize=6, color='green' if near else 'orange')
 
-plt.savefig('/mnt/user-data/outputs/fig3_cross_element.png', dpi=150, bbox_inches='tight')
-print("  Saved fig3_cross_element.png")
+plt.savefig(os.path.join(OUTPUT_DIR, 'fig3_cross_element.png'), dpi=150, bbox_inches='tight')
+print(f" Saved {OUTPUT_DIR}/fig3_cross_element.png")
 
 # ─────────────────────────────────────────────────────────────
 # FIG 4: LOG-POWER BINNING DETAIL — per element, all bin modes
@@ -777,8 +784,8 @@ for col, (name, edata) in enumerate(ELEMENTS.items()):
         if col == 0:
             ax.set_ylabel('Weighted count', fontsize=6)
 
-plt.savefig('/mnt/user-data/outputs/fig4_log_binning.png', dpi=150, bbox_inches='tight')
-print("  Saved fig4_log_binning.png")
+plt.savefig(os.path.join(OUTPUT_DIR, 'fig4_log_binning.png'), dpi=150, bbox_inches='tight')
+print(f" Saved {OUTPUT_DIR}/fig4_log_binning.png")
 
 # ─────────────────────────────────────────────────────────────
 # PRINT SUMMARY TABLE
@@ -838,5 +845,10 @@ print(f"  ¹P₁/³P₀ gap = 0.371 = {0.371/KQ:.3f} k_q  (frac = {0.371/KQ - 1:
 print(f"  → ε(Z=70) ≈ {(0.332/KQ - 1.5):.3f}  → δα/α ≈ {-3*(0.332/KQ - 1.5)*0.0026:.2e}")
 print("="*80)
 
+print("\n" + "="*80)
+print("All figures successfully saved to:")
+print(f"   {os.path.abspath(OUTPUT_DIR)}/")
+print("="*80)
 plt.show()
-print("\nDone. All figures saved to /mnt/user-data/outputs/")
+print("\nAnalysis complete.")
+
