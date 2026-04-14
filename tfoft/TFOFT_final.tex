@@ -348,179 +348,381 @@ We propose a new principle of physics---MATHICCS---requiring that every mathemat
 \section{The Fractal Tennis Computer: Ontology and Derived Constants}
 
 \label{sec:ftc}
+% =====================================================================
+% PART D (SECTIONS 4.1 - 4.5): REFINED TEXT
+% The Fractal Tennis Computer: Ontology and Derived Constants
+% =====================================================================
 
-  % ------------------------------------------------------------------
-  %  STEP 1: Presburger baseline -> 137.036
-  % ------------------------------------------------------------------
+\subsection{The Presburger-ASSP Computational Machine}
 
-  \subsection{The Presburger-ASSP Computational Machine}
-    The computational complexity of a fractal computer algorithm with a Presburger basis is conjectured to be the decimal expansion of the number that represents the program or constant curvature scaling information storage required to represent it. The time it takes to copy is the time it takes to know the digits, and the copy can happen at compile time. Thus the number pi = 3.14159 is the exact time it takes for a FTC to compute the digits of pi at digit n; the information is encoded in the function that defines the digits. This is equivalent to having the time it takes to compute and copy the information at compile time being equal to its digit. The task is this: If you need to know the number pi*sqrt(2), you have to extend the Presburger computer capability from addition, to knowing pi, to knowing calculating multiplication, to knowing calculating square root, and also calculating two. The analogous classical description would be to say in Big-O notation, that O(Program_that_computes_pi) = pi on a fractal Pressburger computer. This is saying fractal dimension gives us fractal big-O notation, like how it gives us fractal dimension. Each higher-order lazy function you define creates a new fractal basis, but to remain exponentially consistent you need to keep orders of fractals constant; O_fractal_presburger(x) = 137; (FTC\_basis) O_mathiccs_higher_order_function_G(x) = y => O_mathiccs_higher_order_function_G_on_a_fractal_presburger(x) = 137 + y in G\_basis. This logical extension cost is the running big-O notation of the computational basis of the level of the stack you've built; e.g., if you're in 3D doing 3D multiplication, the basic Presburger method is the fundamental square cost - multiplying 3 x 3 matrixs is 27 multiplications. calculating sqrt to order 3 is on the order of O(n log n) is ~4 multiplications. the Pressburger exponential normalized cost for appending 3x3 (E\_Basis) is e or in the log, 1.0 for the 3*3 27 multiples cost, making square root cost approx 4/27 = 0.12; The stack cost must remain bounded to ensure exponential stability for mathiccs validity. This is equivalent to saying computational cost is a constant times the cost of the square root function in your logical basis. We want our data to remain exponentially consistent across fractal scales for Mathiccs validity. We find the minimum curvature computation for the basis of the structure generation (multiplying by constant doesn't matter at this point - just the computation we need to do after multiplying by the constant). We want it to remain exponentially bounded and self referential, so we need at least an exponential number of the minimum curvature computation for the basis. From here we treat as log scale, up a logical basis, so adding one ball definition is adding one to all the exponential layers, or multiplying by e. The Presburger costs we add reflects at all exponential scales, creating the Godel-free fractal boundary conditions. 
+  The computational complexity of a fractal-computer algorithm with a Presburger 
+  basis is conjectured to correspond to a precise mathematical function: the minimal 
+  number of logical steps (Presburger increments) required to encode and transmit the 
+  state representation of a single spherical register.
 
-    \subsubsection{Why Presburger Arithmetic, Not Peano}
+  Physical intuition: the time required to copy information equals the information 
+  content itself (measured in logical ticks). Thus, if the number $\pi = 3.14159\ldots$ 
+  represents the computational cost to specify $\pi$, then $n\pi$ is the cost to specify 
+  $n$ copies of $\pi$ simultaneously. This cost is ``baked into'' the constant at 
+  compile time.
 
-      The Standard Model and General Relativity explicitly use ZF, ZFC, Peano arithmetic (addition, multiplication, induction), etc, which by G\"odel's incompleteness theorems is incomplete, and is also able to encode self-referential paradoxes.
-      
-      In contrast, Presburger arithmetic (addition and order only; no general multiplication) is complete, consistent, and decidable (Presburger, 1929). As argued in Section~1.3, a MATHICCS-valid self-describing universe has no other option.
+  Higher-order operations build on this foundation. For instance, to compute 
+  $\pi\sqrt{2}$, the Presburger machine must extend its capability from addition to:
+  \begin{itemize}
+    \item knowing the digits of $\pi$ (cost: $\pi$),
+    \item knowing the digits of $2$ (cost: $1$ in Presburger),
+    \item knowing how to compute $\sqrt{2}$ (cost: logarithmic overhead),
+    \item knowing how to compute multiplication in this extended basis (cost: nonlinear 
+          overhead).
+  \end{itemize}
 
-    \subsubsection{Lazy Evaluation and Multiplication}
+  The key insight is that in a fractal-Presburger computer, each higher-order 
+  capability adds a multiplicative layer to the base cost. In Big-O notation on a 
+  fractal Presburger substrate:
+  \[
+    O_{\text{fractal-Presburger}}(x) = 137 + \text{(extension cost in new basis)}
+  \]
 
-      Presburger arithmetic lacks general multiplication. However, multiplication
-      by a \textbf{constant} can be implemented via repeated addition (lazy evaluation):
-      \[
-        c \times a = \underbrace{a + a + \cdots + a}_{c \text{ times}}
-      \]
-      Multiplication by a \textbf{variable} $r$ requires indirection:
-      \[
-        r \times a = \text{FUNCTION}(r,a) \quad \text{[lookup table required]}
-      \]
-      A physical system minimizes indirection. This directly determines the natural unit radius of the ASSP.
+  The base Presburger cost remains exponentially consistent across all fractal 
+  boundaries. This ensures MATHICCS validity: computational cost must remain 
+  exponentially bounded to guarantee self-referential stability.
 
-    \subsubsection{State Description Minimization: Why $r = \pi$}
+  We therefore compute the minimum curvature information necessary to specify the 
+  complete state of a single Soddy sphere in a Presburger basis. This is the 
+  fundamental computational unit.
 
-      Consider encoding the surface area of a sphere:
+  \subsubsection{Why Presburger Arithmetic, Not Peano}
 
-      \paragraph{Choice 1: $r = 1$.}
-      Surface area $= 4\pi$. Primitive symbols: $\{1,\pi\}$ (two symbols).
-      Any use of the radius requires a lookup of the symbol $1$.
+    Standard physics (the Standard Model and General Relativity) explicitly uses 
+    Zermelo--Fraenkel set theory (ZF/ZFC) and Peano arithmetic, which include 
+    general multiplication and the axiom of induction. However, by Gödel's 
+    incompleteness theorems, these systems are incomplete: there exist true statements 
+    that cannot be proven from the axioms. Moreover, Peano arithmetic can encode 
+    self-referential paradoxes (via the T-predicate and Gödel numbering).
 
-      \paragraph{Choice 2: $r = \pi$.}
-      Surface area $= 4\pi^3$. Primitive symbols: $\{\pi\}$ (one symbol).
-      The entire computation is a constant; zero additional lookups.
+    In contrast, Presburger arithmetic (addition and order only; no general 
+    multiplication) has three unique properties:
+    \begin{itemize}
+      \item \textbf{Complete}: every true statement in the language of Presburger 
+            arithmetic is provable from the axioms.
+      \item \textbf{Consistent}: no contradictions can be derived.
+      \item \textbf{Decidable}: there exists an algorithm that, given any statement, 
+            determines in finite time whether the statement is true or false.
+    \end{itemize}
 
-      By the Presburger minimization principle (Axiom P2: minimal information encoding), Choice 2 is superior. \textbf{The natural unit radius in a self-describing Presburger-ASSP system is $r = \pi$.}
+    As argued in Section~1.3, a MATHICCS-valid self-describing universe cannot be 
+    governed by a Gödel-incomplete system. Presburger arithmetic is the \textbf{unique} 
+    extension of the natural numbers satisfying all three conditions. Therefore, it is 
+    not a choice; it is the only arithmetic available to a MATHICCS-valid 
+    self-describing universe.
 
-  \subsection{Building the Data Stack: The Three Independent State Channels of a Soddy Sphere}
+  \subsubsection{Lazy Evaluation and the Role of Multiplication}
 
-    A single Soddy sphere is the minimal self-referential object. Its complete dynamical 
-    state requires three independent pieces of information.
-
-    \subsubsection{Channel 1: Surface Location ($T_S$)}
-
-      Which point on the sphere's surface is active? The cost to specify any
-      point is proportional to the total surface area:
-      \[
-        T_S = 4\pi r^2 \big|_{r=\pi} = 4\pi^3 \approx 124.025
-      \]
-      This is the \textbf{Fundamental Area Metric (FAM)}: the natural unit of surface
-      information.
-
-    \subsubsection{Channel 2: Rotational / Angular Momentum State ($T_R$)}
-
-      What is the phase of the sphere's angular momentum vector? In 4D
-      (quaternionic embedding), rotations live on the 3-sphere $S^3$.
-      The half-turn symmetry of quaternions means only one hemisphere need be
-      specified; its arc length for $r=\pi$:
-      \[
-        T_R = \pi r \big|_{r=\pi} = \pi^2 \approx 9.870
-      \]
-      This is the \textbf{Fundamental Phase Metric (FPM)}: the natural unit of
-      rotational information. We only need to compute up to the tangent pole symmetry to easily prevent multiplications that divide by zero. An epsilon bound on the hole size allows virtual Soddy computational packings that define the boundary crossing function. 
-
-    \subsubsection{Channel 3: Radial Position ($T_D$)}
-
-      What is the distance of the sphere center from a reference? The minimum
-      radial step is the sphere's own radius:
-      \[
-        T_D = r\big|_{r=\pi} = \pi \approx 3.142
-      \]
-      This is the \textbf{Fundamental Length Metric (FLM)}: the natural unit of spatial
-      displacement.
-
-  \subsection{The Fundamental Computation Cost (FAM + FPM + FLM) :  $T_{\text{sphere}} = \alpha^{-1}$}
-
-    The total information cost to fully specify a sphere's state, and thus the
-    computational cost per Presburger tick, is:
-
+    Presburger arithmetic lacks general multiplication. However, multiplication by a 
+    \textbf{constant} can be implemented via repeated addition (lazy evaluation):
     \[
-      \boxed{T_{\text{sphere}} = T_S + T_R + T_D = 4\pi^3 + \pi^2 + \pi = 137.036}
+      c \times a = \underbrace{a + a + \cdots + a}_{c \text{ times}}
     \]
 
-    Numerically: $4\pi^3 = 124.025$, $\pi^2 = 9.870$, $\pi = 3.142$,
-    sum $= 137.036$.
-
-    This is the computational complexity of a single Soddy sphere state update.
-    The fine-structure constant is its reciprocal:
-
+    Multiplication by a \textbf{variable} $r$ requires indirection: a lookup table, 
+    function call, or external register:
     \[
-      \boxed{\alpha = \frac{1}{T_{\text{sphere}}} = \frac{1}{137.036}}
+      r \times a = \text{FUNCTION\_LOOKUP}(r, a) \quad \text{[externally resolved]}
     \]
 
-    \textbf{Physical interpretation}: the fine-structure constant measures the
-    throughput rate of the info+linear+angular momentum channel per exponential Presburger basis tick on the ASSP fractal basis. Electromagnetic interaction (photon coupling to an electron) requires a simultaneous state update of both participating spheres; the probability of success per tick is $1/T_{\text{sphere}}$.
+    A physical system minimizes external references. Within the Presburger-ASSP, any 
+    multiplication by a variable incurs a global lookup cost. To minimize this cost, 
+    the system should choose a unit radius $r$ such that:
+    \begin{enumerate}
+      \item The radius itself can be expressed as a constant (no variable lookup).
+      \item All physical geometry at that scale reduces to constant multiplications.
+    \end{enumerate}
 
-    This is not a fitted parameter. It is an \textbf{emergent geometric
-    necessity} of the Presburger-ASSP.
+    This directly determines the natural unit radius of the ASSP.
 
-  % ------------------------------------------------------------------
-  %  STEP 2: The Fractal Quine -- two balls on top of 137.036
-  % ------------------------------------------------------------------
+  \subsubsection{State Description Minimization: Why $r = \pi$}
+
+    The surface area of a sphere of radius $r$ is:
+    \[
+      A = 4\pi r^2
+    \]
+
+    Consider two choices:
+
+    \paragraph{Choice 1: Unit radius $r = 1$.}
+    The surface area is $A = 4\pi$. The primitive symbols required are $\{1, \pi\}$ 
+    (two distinct symbols). Any use of the radius $r$ in further calculations requires 
+    an explicit lookup: ``what is the value of $r$?'' In Presburger terms, this is an 
+    external indirection.
+
+    \paragraph{Choice 2: Unit radius $r = \pi$.}
+    The surface area is $A = 4\pi \times \pi^2 = 4\pi^3$. The primitive symbol set 
+    reduces to $\{\pi\}$ (one symbol). Every instance of $r$ is absorbed into the 
+    constant: $A = 4\pi^3$ requires zero additional symbol lookups.
+
+    By the Presburger minimization principle (Axiom P2: minimal information encoding), 
+    Choice 2 is superior: it minimizes external indirection and thus computational cost.
+
+    \textbf{Conclusion}: The natural unit radius in a self-describing 
+    Presburger-ASSP system is:
+    \[
+      \boxed{r = \pi}
+    \]
+
+    This is not an arbitrary choice; it is the unique choice that minimizes the 
+    encoding complexity of the fundamental geometric quantities.
+
+\subsection{Building the Data Stack: The Three Independent State Channels of a Soddy Sphere}
+
+  A single Soddy sphere is the minimal self-referential object in the ASSP. Its 
+  complete dynamical state requires specification of three independent pieces of 
+  information. These correspond to three orthogonal channels through which the sphere 
+  can interact with other spheres in the packing.
+
+  \subsubsection{Channel 1: Surface Location ($T_S$)}
+
+    Which specific point on the sphere's surface is currently active---that is, 
+    involved in a tangency interaction with another sphere, or designated as a 
+    boundary location in the packing?
+
+    The cost to uniquely specify any point on the surface is proportional to the total 
+    surface area. With $r = \pi$:
+    \[
+      T_S = 4\pi r^2 \bigg|_{r=\pi} = 4\pi \times \pi^2 = 4\pi^3 \approx 124.025
+    \]
+
+    This quantity is called the \textbf{Fundamental Area Metric (FAM)}: it is the 
+    natural unit of surface information for a Soddy sphere with unit radius $\pi$.
+
+  \subsubsection{Channel 2: Rotational / Angular Momentum State ($T_R$)}
+
+    What is the phase or orientation of the sphere's angular momentum vector? 
+
+    In three spatial dimensions, rotations are naturally represented by 
+    $SO(3)$ (the rotation group). However, in the Presburger-ASSP framework, the 
+    minimal unambiguous representation uses the quaternionic embedding: rotations in 
+    3D are uniquely parameterized by points on the unit 3-sphere $S^3$ in 4D, with a 
+    2-to-1 covering (each rotation corresponds to two antipodal quaternions).
+
+    Due to this half-turn symmetry, only one hemisphere of $S^3$ need be specified; 
+    the other is redundant. The arc length of a great-circle hemisphere with radius 
+    $r = \pi$ is:
+    \[
+      T_R = \pi r \bigg|_{r=\pi} = \pi \times \pi = \pi^2 \approx 9.870
+    \]
+
+    This quantity is called the \textbf{Fundamental Phase Metric (FPM)}: it is the 
+    natural unit of rotational/angular-momentum information.
+
+    \textit{Geometric note}: We need only compute the tangent pole symmetry (the pole 
+    opposite the active tangency point) to avoid division-by-zero singularities. An 
+    infinitesimal boundary ($\varepsilon \to 0$) around the pole permits virtual 
+    Soddy packings that define the fractal boundary crossing function, without 
+    explicit singularity handling.
+
+  \subsubsection{Channel 3: Radial Position ($T_D$)}
+
+    What is the radial distance of the sphere's center from a reference point (another 
+    sphere's center, a boundary marker, or the local coordinate origin)?
+
+    The minimum resolvable radial step in the packing is one sphere radius:
+    \[
+      T_D = r \bigg|_{r=\pi} = \pi \approx 3.142
+    \]
+
+    This quantity is called the \textbf{Fundamental Length Metric (FLM)}: it is the 
+    natural unit of spatial displacement.
+
+  \subsubsection{Complete State Update: Three Channels in Parallel}
+
+    A Soddy sphere participating in the ASSP dynamics must simultaneously maintain:
+    \begin{enumerate}
+      \item Surface location info: $T_S = 4\pi^3$ (where is the tangency point?)
+      \item Rotational state: $T_R = \pi^2$ (what is the angular momentum phase?)
+      \item Radial position: $T_D = \pi$ (how far from the reference center?)
+    \end{enumerate}
+
+    All three channels are interdependent on the core boundary but independent in the sense that they describe orthogonal  degrees of freedom. A complete Presburger state update of a single sphere requires updating all three channels in a final sum.
+
+\subsection{The Fundamental Computation Cost: $T_{\text{sphere}} = \alpha^{-1}$}
+
+  The total information cost to fully specify a Soddy sphere's state is the sum of the 
+  three channel costs:
+
+  \[
+    T_{\text{sphere}} = T_S + T_R + T_D = 4\pi^3 + \pi^2 + \pi
+  \]
+
+  Numerically:
+  \begin{align*}
+    4\pi^3 &= 124.02497... \\
+    \pi^2 &= 9.86960... \\
+    \pi &= 3.14159... \\
+    \text{Sum} &= 137.03617...
+  \end{align*}
+
+  This sum represents the computational complexity---measured in Presburger 
+  addition-equivalent operations---of a single Soddy sphere state update.
+
+  \boxed{T_{\text{sphere}} = 4\pi^3 + \pi^2 + \pi = 137.036}
+
+  The fine-structure constant is the reciprocal of this computational cost:
+
+  \[
+    \boxed{\alpha = \frac{1}{T_{\text{sphere}}} = \frac{1}{137.036} \approx 1/137.036}
+  \]
+
+  \subsubsection{Physical Interpretation}
+
+    The fine-structure constant $\alpha$ measures the \textbf{throughput rate} of the 
+    combined info--linear-momentum--angular-momentum channel per Presburger basis tick 
+    on the ASSP fractal substrate.
+
+    Specifically, an electromagnetic interaction (e.g., a photon coupling to an 
+    electron, or a star coupling to a galactic core) requires a simultaneous state 
+    update of both participating spheres. The probability that both spheres complete 
+    their state update within a single Presburger tick---allowing the interaction to 
+    proceed---is:
+    \[
+      P_{\text{success}} = \alpha = \frac{1}{T_{\text{sphere}}}
+    \]
+
+    This is not a fitted parameter. It is an \textbf{emergent geometric necessity} of 
+    the Presburger-ASSP: given the requirement that information cost must be minimized 
+    (Axiom P2) and that the unit radius must be a constant (Axiom P1), the value of 
+    $\alpha$ is uniquely determined by the geometry of Soddy tangencies.
+
+    \subsubsection{Relation to Quantum Mechanics}
+
+    In standard quantum mechanics, the fine-structure constant appears as a dimensionless 
+    coupling strength in the electromagnetic interaction Lagrangian. Its value has been 
+    measured to extraordinary precision ($\alpha \approx 1/137.035999...$) but never 
+    explained from first principles.
+
+    In TFOFT, $\alpha$ emerges directly from the minimal Presburger cost of a single 
+    sphere state update. No fitting, no adjustable parameters, no external inputs.
+
+
+
+% =====================================================================
+% STEPS 2-5: REFINED TEXT
+% Sections 4.7–4.11: The Fractal Quine through Nuclear Binding Energy
+% =====================================================================
 
   \subsection{The Fractal Quine: Two Balls and the Universal Fundamental Law}
 
-    The result $T_{\text{sphere}} = 137.036$ is the complete description of a \emph{single} isolated Soddy sphere: one object, three channels, one Presburger basis cost. It is a physical constant, but it is not yet a law; a law requires a relation between objects.
+    The result $T_{\text{sphere}} = 137.036$ is the complete description of a 
+    \emph{single} isolated Soddy sphere: one object, three channels, one Presburger 
+    basis cost. It is a physical constant, but it is not yet a law; a law requires 
+    a relation between objects.
 
-    The moment a second sphere is placed in tangency with the first, something qualitatively new happens. The system is no longer a description; it becomes a \emph{self-executing program}. Specifically:
+    The moment a second sphere is placed in tangency with the first, something 
+    qualitatively new emerges. The system is no longer a mere description; it becomes 
+    a \emph{self-executing program}. Specifically:
 
     \begin{enumerate}
-      \item The first sphere (star ball) encodes angular momentum state into its surface channel $T_S = 4\pi^3$.
-      \item Tangency with the second sphere (core ball) provides the unique M\"obius-invariant coupling: the boundary condition that transfers angular momentum information outward as a linear-momentum carrier.
-      \item The fast-channel angular-momentum carrier as an (mostly)angular-and-linear momentum wave in the higher fractal layer \emph{is} the info ball; it is the photon / macrophoton, whose emission is the mechanism by which the two-ball system transfers its own state description non-locally to a third sphere (core ball or star ball) at the same fractal layer. The cost of this is the injection of dust balls in the lower fractal layer with (mostly)linear-and-angular momentum transfer and  (variably)linear-and-or-angular momentum transfer as core jets or quasars. 
-      \item Once the system is recognized, it implies relatively isolated core balls that act as nude galaxy cores can be injection points of jets and quasars. 
+      \item The first sphere (star ball) encodes angular momentum state into its 
+            surface channel $T_S = 4\pi^3$.
+      
+      \item Tangency with the second sphere (core ball) provides the unique 
+            Möbius-invariant coupling: the boundary condition that transfers angular 
+            momentum information outward as a linear-momentum carrier.
+      
+      \item The fast-channel angular-momentum carrier (a mostly angular-and-linear 
+            momentum wave in the higher fractal layer) \emph{is} the info ball; it is 
+            the photon at atomic scale or macrophoton at galactic scale. Its emission 
+            is the mechanism by which the two-ball system transfers its own state 
+            description non-locally to a third sphere (core ball or star ball) at the 
+            same fractal layer. The computational cost of this transfer is paid through 
+            the injection of dust balls into the lower fractal layer, carrying mostly 
+            linear-and-angular momentum (variably distributed) as core jets or quasars.
+      
+      \item Once recognized, this mechanism implies that relatively isolated core balls 
+            (acting as bare galactic cores at the astrophysical scale) can serve as 
+            injection points for jets and quasars.
     \end{enumerate}
  
-    This is the \textbf{fractal quine}: the two-ball system writes a copy of its own operational instructions into the info ball it emits. The info ball carries the full $T_{\text{sphere}} = 137.036$ state cost of a single sphere encoded as angular momentum, and upon absorption at a higher fractal layer it reconstitutes a new gyro ball there.
+    This is the \textbf{fractal quine}: the two-ball system writes a copy of its own 
+    operational instructions into the info ball it emits. The info ball carries the 
+    full $T_{\text{sphere}} = 137.036$ state cost of a single sphere, encoded as 
+    angular momentum. Upon absorption at a higher fractal layer, it reconstitutes a 
+    new gyro ball there.
 
     \begin{quote}
-    \textbf{One ball on top of 137.036 is a state. Two balls on top of 137.036 is a law. The two-ball tangency is the minimal configuration that generates the universal fundamental law: the fractal quine instruction set of the Presburger-ASSP.}
+    \textbf{One ball on top of 137.036 is a state. Two balls on top of 137.036 is a 
+    law. The two-ball tangency is the minimal configuration that generates the universal 
+    fundamental law: the fractal quine instruction set of the Presburger-ASSP.}
     \end{quote}
  
-    A single isolated sphere has no dynamics; it merely exists at cost $T_{\text{sphere}}$. Two tangent spheres have dynamics: angular momentum flows, the channel coupling $\alpha = 1/137.036$ governs throughput, and the system emits info balls that carry its own description forward. This is why electromagnetism is the \emph{first} derived law of the FTC: it is the tangency coupling of the minimal two-ball quine.
+    A single isolated sphere has no dynamics; it merely exists at cost 
+    $T_{\text{sphere}}$. Two tangent spheres have dynamics: angular momentum flows, 
+    the channel coupling $\alpha = 1/137.036$ governs throughput, and the system emits 
+    info balls that carry its own description forward. This is why electromagnetism is 
+    the \emph{first} derived law of the FTC: it is the tangency coupling of the minimal 
+    two-ball quine.
 
-    No prior fractal physics theory identified this. Without the quine mechanism, the fractal is a pattern; with it, the fractal is a self-running program.
-
-  % ------------------------------------------------------------------
-  %  STEP 3: Two-ball overhead -> +1.9 -> 138.936
-  % ------------------------------------------------------------------
+    No prior fractal physics theory identified this. Without the quine mechanism, the 
+    fractal is a pattern; with it, the fractal is a self-running program.
 
   \subsection{Two-Ball Computational Overhead: $T_{\text{sphere}} + 1.9 = 138.936$}
 
-    When two balls interact (forming a gyro ball), the system advances from
-    1D Presburger arithmetic to 3D Euclidean geometry. This transition has a
+    When two balls interact (forming a gyro ball), the system transitions from 
+    1D Presburger arithmetic to 3D Euclidean geometry. This transition incurs a 
     precise and computable cost.
 
     \subsubsection{Angular Momentum Sharing: Strassen Overhead}
 
-      The shared angular-momentum state of two tangent spheres requires a
-      $3 \times 3$ rotation matrix computation. In Presburger arithmetic,
-      multiplication is expensive and addition is cheap. The optimal algorithm
-      is Strassen:
+      The shared angular-momentum state of two tangent spheres requires a 
+      $3 \times 3$ rotation matrix computation. In Presburger arithmetic, 
+      multiplication is expensive and addition is cheap. The optimal algorithm for 
+      matrix multiplication is Strassen's method:
+      
       \begin{itemize}
-        \item Naive $3\times3$: 27 multiplications.
-        \item Strassen: 23 multiplications, 98 additions.
+        \item Naive $3\times3$ matrix multiplication: 27 multiplications.
+        \item Strassen algorithm: 23 multiplications, 98 additions.
         \item Efficient (addition-only) fraction: $4/27 \approx 14.8\%$.
-        \item Overhead per ball: $\Delta T_{\text{one ball}} = \tfrac{4}{27}\times T_S \approx 0.95$.
+        \item Overhead per ball: 
+              $\Delta T_{\text{one ball}} = \tfrac{4}{27} \times T_S \approx 0.95$.
         \item For two balls: $2 \times 0.95 = 1.9$.
       \end{itemize}
 
-    \subsubsection{Boundary Stabilization: M\"obius Inversion Cost}
+    \subsubsection{Boundary Stabilization: Möbius Inversion Cost}
 
-      The tangency boundary also requires a square-root (M\"obius inversion
-      distance computation) to stabilize the layer boundary:
+      The tangency boundary also requires square-root computation (Möbius inversion 
+      distance calculation) to stabilize the fractal layer boundary:
+      
       \begin{itemize}
-        \item Cost in 3D: $3\log 3 \approx 3.296$ vs.\ naive 27 multiplications.
-        \item Remaining fraction: $3.296/27 \approx 10\%$ per ball.
+        \item Cost in 3D: $3\log 3 \approx 3.296$ operations vs.\ naive 27 
+              multiplications.
+        \item Remaining fraction: $3.296 / 27 \approx 10\%$ per ball.
       \end{itemize}
 
-      This is already absorbed into the $0.95$ per ball above: the $85\%$
-      Strassen overhead and the $10\%$ M\"obius overhead together account for
-      the full $0.95$ addition-equivalent per ball. The combined two-ball
-      overhead is therefore:
+      This cost is already absorbed into the $0.95$ per ball calculated above: the 
+      $85\%$ Strassen overhead (multiplication-heavy operations) and the $10\%$ 
+      Möbius overhead (square-root operations) together comprise the full $0.95$ 
+      addition-equivalent cost per ball. The combined two-ball overhead is therefore:
 
       \begin{equation}
         \Delta T_{\text{two-ball}} = 2 \times 0.95 = 1.9
       \end{equation}
 
-      Defining our exponential Boundary conditions with two more balls naively would add 2 Orders of log steps to the Lazy Presburger Basis Computational Curvature time. But the capability it provides beyond the basis of 2 ,is the Strassen speedup in the multiplication cost of increasing the basis ''multiplication'' computation to be a 3x3 dimensional matrix multiplication; it gives us a speedup in just the boundary conditions - the base state needs to be exponentially Mathiccs stable and self-referential so we do not reduce the original 137.036... log steps. The speedup goes into the presburger programs defined at the boundaries, which cost 1.9 plus the original 137.036...
+    \subsubsection{Boundary Condition Expansion and Presburger Stability}
+
+      Adding two more balls to define the exponential boundary conditions naively would 
+      add 2 orders of logarithmic steps to the Presburger Basis Computational Curvature 
+      time. However, the capability gained beyond the two-ball basis is the Strassen 
+      speedup in multiplying the basis ``multiplication'' computation to 3D matrix 
+      multiplication. This speedup applies only to the boundary conditions—not to the 
+      base state itself.
+
+      The base state must remain exponentially bounded and MATHICCS self-referential to 
+      maintain stability. Therefore, we do not reduce the original $137.036$ logarithmic 
+      steps. The Strassen speedup is redirected into the Presburger programs defined at 
+      the boundaries, which add a cost of $1.9$ to the original $137.036$:
+
+      \begin{equation}
+        \text{Boundary program cost} = 137.036 + 1.9 = 138.936
+      \end{equation}
 
     \subsubsection{The Universal Scale Law}
 
@@ -530,61 +732,75 @@ We propose a new principle of physics---MATHICCS---requiring that every mathemat
         \label{eq:138}
       \end{equation}
 
-       The logarithm of the electron-to-solar-mass ratio equals the single-sphere Presburger cost plus the two-ball geometry overhead, to one-in-$10^6$ precision (CODATA: $138.9357$). \textbf{This is not a coincidence.} It is the Presburger two-ball overhead stamped directly into the mass hierarchy between fractal layers.
+      The natural logarithm of the electron-to-solar-mass ratio equals the single-sphere 
+      Presburger cost plus the two-ball geometry overhead, to one-in-$10^6$ precision 
+      (CODATA 2018: $138.9357$). \textbf{This is not a coincidence.} It is the Presburger 
+      two-ball overhead stamped directly into the mass hierarchy between fractal layers.
 
   \subsection{The 85\% Dark Matter Rule from Strassen Overhead}
 
-    The Strassen sharing ratio has a second direct consequence: the visible-to-dark
-    matter split. The efficient (addition-only) fraction is $4/27 \approx 14.8\%$;
-    the multiplication-heavy overhead fraction is $23/27 \approx 85.2\%$. The
-    overhead fraction does not manifest as luminous mass, it is the computational
-    cost shifted to the ``dark'' lower layer of running the shared angular-momentum register, the minimum curvature,
+    The Strassen algorithm's efficiency ratio has a second major consequence: the 
+    observed visible-to-dark-matter split.
+    
+    The efficient (addition-only) fraction is $4/27 \approx 14.8\%$; the 
+    multiplication-heavy overhead fraction is $23/27 \approx 85.2\%$. The overhead 
+    fraction does not manifest as luminous (visible) mass. Instead, it represents the 
+    computational cost of running the shared angular-momentum register at the lower 
+    fractal layer, manifesting as minimum curvature and dark matter.
 
     \begin{table}[h]
     \centering
     \begin{tabular}{|l|c|c|}
     \hline
-    \textbf{Scale} & \textbf{Visible ($4/27$)} & \textbf{Dark / Overhead ($23/27$)} \\
+    \textbf{Fractal Scale} & \textbf{Visible Mass ($4/27$)} & \textbf{Dark/Overhead ($23/27$)} \\
     \hline
-    Atom       & Electron orbits           & Electron cloud ($\sim85\%$)         \\
+    Atomic    & Electron orbits           & Electron cloud ($\sim85\%$)         \\
     \hline
-    Galaxy     & Stars \& gas              & Dark matter halo ($\sim85\%$)       \\
+    Galactic  & Stars and gas             & Dark matter halo ($\sim85\%$)       \\
     \hline
-    Universe   & Baryons + radiation       & Dark matter + dark energy ($\sim85\%$) \\
+    Cosmic    & Baryons and radiation     & Dark matter and dark energy ($\sim85\%$) \\
     \hline
     \end{tabular}
     \end{table}
 
-    This ratio is \textbf{predicted} by Presburger arithmetic, not explained post hoc. In TFOFT, angular momentum information that is not compressed in the upper scale transfer manifests as linear momentum in the lower fractal scale. The transfer of star material across a core ball is a manifestation of the implementation of a momentum conserving fractal geometric 3D Strassen algorithm.
-
-  % ------------------------------------------------------------------
-  %  STEP 4: Atom base energy (hydrogen binding), no MPSC naming
-  % ------------------------------------------------------------------
+    This ratio is \textbf{predicted} by Presburger arithmetic and Strassen geometry, 
+    not explained post hoc. In TFOFT, angular momentum information that is not 
+    compressed during the upper-scale transfer manifests as linear momentum in the 
+    lower fractal scale. The transfer of star material across a core ball is a direct 
+    manifestation of implementing a momentum-conserving, fractal-geometric, 3D Strassen 
+    algorithm.
 
   \subsection{Atom Base Energy: Deriving the Hydrogen Binding Energy}
 
     \subsubsection{The Gyro Ball Channel}
 
-      The gyro ball is defined as one star ball orbiting one core ball. It is the minimal stable fractal register. It has manifested in prior observations as the "atom" and the "galaxy". Its binding energy is set by a simple channel argument:
+      A gyro ball is defined as one star ball orbiting one core ball. It is the 
+      minimal stable fractal register in the FTC. It manifests observationally as an 
+      atom at the atomic scale and as a galaxy at the astrophysical scale. Its binding 
+      energy is determined by a simple channel-throughput argument:
 
       \begin{itemize}
-        \item The \textbf{star ball} produces angular momentum information at a
-              rate proportional to its rest energy $m_{\text{star}}c^2$.
-        \item The \textbf{core ball} absorbs that information; its consumption
-              rate ($m_{\text{core}}c^2 \gg m_{\text{star}}c^2$) means the
-              core is never the throughput bottleneck.
-        \item The \textbf{electromagnetic channel} passes exactly
-              $\alpha = 1/T_{\text{sphere}}$ of the angular momentum per
-              Presburger tick.
+        \item The \textbf{star ball} produces angular momentum information at a rate 
+              proportional to its rest energy $m_{\text{star}}c^2$.
+        
+        \item The \textbf{core ball} absorbs that information. Its consumption rate 
+              ($m_{\text{core}}c^2 \gg m_{\text{star}}c^2$) means the core is never the 
+              throughput bottleneck.
+        
+        \item The \textbf{electromagnetic channel} passes exactly 
+              $\alpha = 1/T_{\text{sphere}}$ of the angular momentum per Presburger tick.
       \end{itemize}
 
-      A complete round-trip (star ball emits, core ball absorbs) costs two channel crossings: 
+      A complete round-trip (star ball emits, core ball absorbs) requires two channel 
+      crossings: 
 
       \begin{itemize}
         \item one factor of $\alpha$ for emission,
-        \item one factor of $\alpha$ for absorption
+        \item one factor of $\alpha$ for absorption.
       \end{itemize}
-       The cost is split equally between the two balls due to conservation principles. The binding energy stabilized by completing a round-trip is therefore:
+
+      The cost is split equally between the two balls due to conservation of energy. 
+      The binding energy stabilized by completing a round-trip is therefore:
 
       \begin{equation}
         \boxed{E_{\text{atom}} = \frac{\alpha^2 \cdot m_{\text{star}} \cdot c^2}{2}
@@ -592,8 +808,8 @@ We propose a new principle of physics---MATHICCS---requiring that every mathemat
         \label{eq:atom_base}
       \end{equation}
 
-      This is the \textbf{atom base energy}: the ground-state binding energy of
-      a gyro ball from first principles.
+      This is the \textbf{atom base energy}: the ground-state binding energy of a gyro 
+      ball derived from first principles.
 
     \subsubsection{Hydrogen: Exact Verification}
 
@@ -604,27 +820,39 @@ We propose a new principle of physics---MATHICCS---requiring that every mathemat
           = \mathbf{13.606\ \text{eV}}
       \]
 
-      The known hydrogen ground-state binding energy is $13.606$ eV.
-      \textbf{The match is exact.} The proton mass does not appear because in
-      hydrogen the core absorption rate far exceeds the star emission rate; the
-      star ball alone sets the throughput ceiling. Quantum Mechanics's encoding of the angular momentum of an electron as a continuum probability cloud of the electron orbital of an atom that they quantize, was just approximating the chaotic random nature of the basic behavior of the self-consistent fractal angular momentum and information exchange running a self-annealing chaotic program with unbounded information expansion.
+      The measured hydrogen ground-state binding energy is exactly $13.606$ eV. 
+      \textbf{The match is exact.} The proton mass does not appear because in hydrogen, 
+      the core absorption rate far exceeds the star emission rate; the star ball alone 
+      sets the throughput ceiling.
+
+      \textit{Quantum mechanical interpretation}: The standard treatment of electron 
+      orbitals encodes the angular momentum of an electron as a continuum probability 
+      cloud, which is then quantized. This is an approximation to the true physics: 
+      the chaotic, self-consistent exchange of angular momentum information between 
+      star ball and core ball, running as a self-annealing dynamical program with 
+      unbounded information expansion at the lower fractal scales.
 
     \subsubsection{The Mass-Ratio Balance Condition}
 
-      Define $\mathcal{R} \equiv m_{\text{core}}/m_{\text{star}}$. For hydrogen
-      $\mathcal{R}_H = m_p/m_e = 1836.15$, so
-      $\alpha \mathcal{R}_H = 1836.15/137.036 = 13.4 \gg 1$: the core is deeply
-      in surplus, never the bottleneck.
+      Define the mass ratio $\mathcal{R} \equiv m_{\text{core}}/m_{\text{star}}$. For 
+      hydrogen, $\mathcal{R}_H = m_p/m_e = 1836.15$, which gives:
+      \[
+        \alpha \mathcal{R}_H = 1836.15 / 137.036 = 13.4 \gg 1
+      \]
 
-      The \textbf{balanced condition} is $\alpha \mathcal{R} = 1$, requiring
-      $\mathcal{R} = 137.036$. No stable atom achieves this; all real atoms are
-      star-ball limited. This confirms Eq.~\eqref{eq:atom_base} as the universal
-      zeroth-order binding energy for all atoms.
+      This large value indicates the core is deeply in surplus; it is never the 
+      throughput bottleneck.
+
+      The \textbf{balanced condition} occurs when $\alpha \mathcal{R} = 1$, requiring 
+      $\mathcal{R} = 137.036$. No stable atom achieves perfect balance; all real atoms 
+      are star-ball limited (i.e., the star ball is the throughput bottleneck). This 
+      confirms Eq.~\eqref{eq:atom_base} as the universal zeroth-order binding energy 
+      for all atoms.
 
     \subsubsection{Heavier Atoms: Local Packing Density Correction}
 
-      For atomic number $Z > 1$, the increased nuclear packing compresses the
-      effective unit radius $\pi \to \pi(1 + \varepsilon(Z))$, shifting the
+      For atomic number $Z > 1$, increased nuclear charge and packing density compress 
+      the effective unit radius: $\pi \to \pi(1 + \varepsilon(Z))$. This shifts the 
       local electromagnetic coupling:
       \[
         \alpha(Z) = \frac{1}{T_{\text{sphere}}\bigl(1+\varepsilon(Z)\bigr)^3},
@@ -632,111 +860,124 @@ We propose a new principle of physics---MATHICCS---requiring that every mathemat
         E_{\text{atom}}(Z) = \frac{\alpha(Z)^2 m_e c^2}{2}
       \]
 
-      The hydrogen atom is the perfectly balanced gyro ball. Every heavier atom
-      runs the same channel slightly out of balance because the core has grown
-      denser than the star side can compensate. The deviation from balance is
-      the correction to the atom base energy across the periodic table.
-
-  % ------------------------------------------------------------------
-  %  STEP 5: Nuclear binding energy -- Soddy fractal / nucleon argument
-  % ------------------------------------------------------------------
+      The hydrogen atom is the perfectly balanced gyro ball. Every heavier atom operates 
+      the same channel in a slightly out-of-balance regime because the core has grown 
+      denser than the star side can compensate. The deviation from perfect balance 
+      encodes the correction to binding energy across the periodic table.
 
   \subsection{Nuclear Binding Energy: The Soddy Fractal Nucleon Stack}
 
-    The nuclear binding energy curve---binding energy per nucleon as a function
-    of nucleon number $A$---is not explainable from first principles in the
-    Standard Model; it is fitted empirically (the semi-empirical Bethe--Weizs\"acker
-    formula). In TFOFT it derives directly from Soddy fractal geometry and the
-    successive appearance of inner and outer Soddy sphere cores as nucleons are
-    added.
+    The nuclear binding energy curve—binding energy per nucleon as a function of nucleon 
+    number $A$—cannot be explained from first principles in the Standard Model; instead, 
+    it is fitted empirically using the Bethe–Weizsäcker semi-empirical mass formula. In 
+    TFOFT, it derives directly from Soddy fractal geometry and the successive appearance 
+    of inner and outer Soddy sphere cores as nucleons are added.
 
     \subsubsection{The Soddy Core Concept}
 
-      In any Apollonian-Soddy sphere packing, a cluster of $n$ mutually tangent
-      spheres has a characteristic \textbf{inner Soddy sphere} that fits exactly
-      in the interstice at the centre of the cluster, and a \textbf{virtual outer
-      Soddy sphere} that circumscribes the whole cluster. The inner sphere has
-      positive curvature (it fits inside); the outer sphere has negative curvature
-      (it bends outward). Both are determined uniquely by the Soddy relation:
+      In any Apollonian-Soddy sphere packing, a cluster of $n$ mutually tangent spheres 
+      has two characteristic features:
 
+      \begin{itemize}
+        \item A \textbf{inner Soddy sphere} that fits exactly in the interstice at the 
+              center of the cluster (positive curvature, bending inward).
+        
+        \item A \textbf{virtual outer Soddy sphere} that circumscribes the whole cluster 
+              (negative curvature, bending outward).
+      \end{itemize}
+
+      Both are determined uniquely by the Soddy relation:
       \[
         \left(\sum_{i=1}^{n} k_i\right)^2 = 2\sum_{i=1}^{n} k_i^2
       \]
 
-      A cluster is \textbf{Soddy-balanced} when the inner and outer Soddy curvatures
-      are equal and opposite: the inward pressure from the inner core exactly
-      matches the outward restoring force from the virtual outer core. A balanced
-      cluster is maximally stable. An unbalanced cluster has a net radial force
-      that makes it easier to dislodge a nucleon from the surface.
+      A cluster is \textbf{Soddy-balanced} when the inner and outer Soddy curvatures are 
+      equal in magnitude and opposite in sign: the inward pressure from the inner core 
+      exactly matches the outward restoring force from the virtual outer core. A 
+      balanced cluster is maximally stable. An unbalanced cluster experiences a net 
+      radial force that makes it energetically easier to dislodge a nucleon from the 
+      surface.
 
     \subsubsection{Four Nucleons: The Tetrahedral Peak}
 
-      The minimal 3D Soddy-balanced configuration is \textbf{four mutually tangent
-      equal spheres} arranged in a regular tetrahedron. This is the unique cluster
-      for which:
+      The minimal 3D Soddy-balanced configuration is \textbf{four mutually tangent equal 
+      spheres} arranged in a regular tetrahedron. This is the unique cluster for which:
+
       \begin{enumerate}
-        \item All four nucleons are simultaneously in contact with every other.
-        \item The sparse inner Soddy core feels compression from the denser virtual outer Soddy core producing inward net radial force to stabilize the configuration .
-        \item No inner Soddy core has yet physically manifested as an actual
-              nucleon---both inner and outer cores remain \emph{virtual}, acting
-              purely as geometric pressure-balance constraints.
+        \item All four nucleons are simultaneously in contact with every other nucleon.
+        
+        \item The inward-bending inner Soddy core is compressed by the denser virtual 
+              outer Soddy core, producing an inward net radial force that stabilizes 
+              the configuration.
+        
+        \item No inner Soddy core has yet physically manifested as an actual nucleon—both 
+              inner and outer cores remain \emph{virtual}, acting purely as geometric 
+              pressure-balance constraints.
       \end{enumerate}
 
-      The tetrahedral four-nucleon cluster therefore experiences the maximum
-      restoring force and minimum dislocatability. This is why $^4$He has the
-      highest binding energy per nucleon ($\approx 7.07$ MeV/nucleon) of any
-      light nucleus, and why helium-4 is the overwhelmingly dominant product of
-      stellar nucleosynthesis: the fractal substrate selects the Soddy-balanced
-      tetrahedron as the energetically preferred endpoint.
+      The tetrahedral four-nucleon cluster therefore experiences maximum restoring force 
+      and minimal dislocatability (stability against ejection). This is why $^4$He has 
+      the highest binding energy per nucleon ($\approx 7.07$ MeV/nucleon) among all light 
+      nuclei, and why helium-4 is the overwhelmingly dominant product of stellar 
+      nucleosynthesis: the fractal substrate energetically selects the Soddy-balanced 
+      tetrahedron as the preferred endpoint.
 
     \subsubsection{Five Nucleons: First Inner Soddy Core Manifests}
 
-      Adding a fifth nucleon breaks the tetrahedral balance. The fifth nucleon inserted at the Soddy core reduces, at the current scale, the amount of interior low-pressure lower scale fractal substrate, equalizing the center with the boundaries of the other nucleons, displacing around as much sub-scale volume as it replaces, due to Archimedes principle, adds residual pressure to the outside of the system that can now more easily displace the higher-fractal-step-aligned Soddy nucleon packing aligned to the ASSP basis.  
+      Adding a fifth nucleon breaks the tetrahedral balance. The fifth nucleon, inserted 
+      at the geometric location of the Soddy core, reduces the available interior 
+      low-pressure lower-scale fractal substrate. By Archimedes' principle, the fifth 
+      nucleon displaces as much sub-scale volume as it occupies, which equalizes the 
+      pressure at the center with the boundaries of the other nucleons. This adds residual 
+      pressure to the outside of the system, making it energetically easier to displace 
+      nucleons that are aligned with the higher-fractal-step Soddy nucleon packing of 
+      the ASSP basis.
+
+      Two critical changes occur:
 
       \begin{enumerate}
-        \item \textbf{The inner Soddy core is now resolvable.} With five nucleons
-              in contact, the inner interstice has enough curvature budget for the
-              inner Soddy sphere to represent a \emph{first-iteration real packing
-              site} rather than a virtual constraint. The inner Soddy core
-              ``manifests'' as the first real sub-nuclear packing layer.
-        \item \textbf{The outer Soddy core is still virtual.} The cluster is not
-              large enough to generate a real outer Soddy circumscription; the
-              outer core remains virtual.
+        \item \textbf{The inner Soddy core becomes resolvable.} With five nucleons in 
+              contact, the inner interstice has sufficient curvature budget for the inner 
+              Soddy sphere to represent a \emph{first-iteration real packing site} rather 
+              than a virtual constraint. The inner Soddy core ``manifests'' as the first 
+              real sub-nuclear packing layer.
+        
+        \item \textbf{The outer Soddy core remains virtual.} The cluster is not large 
+              enough to generate a real outer Soddy circumscription; the outer core remains 
+              purely virtual.
       \end{enumerate}
 
-      The result is an \textbf{asymmetric Soddy balance}: real inner core pressing
-      outward, virtual outer core providing only partial restraint. The net effect
-      is a reduced binding energy per nucleon at $A = 5$---and crucially, the
-      manifested inner core is now in resonance with the substrate (it is a real
-      Soddy sphere at the same scale as the nucleons), making it energetically
-      \emph{easier} to exchange a nucleon with the substrate. This is why no
-      stable $A = 5$ nucleus exists in nature: the first inner Soddy core
-      manifestation produces an instability, not a new stable configuration.
+      The result is \textbf{asymmetric Soddy balance}: the real inner core presses outward, 
+      while the virtual outer core provides only partial restraint. The net effect is a 
+      reduced binding energy per nucleon at $A = 5$. Critically, the manifested inner core 
+      is now in resonance with the ASSP substrate (it is a real Soddy sphere at the same 
+      scale as the nucleons). This makes it energetically \emph{easier} to exchange a 
+      nucleon with the substrate. Therefore, no stable $A = 5$ nucleus exists in nature: 
+      the first inner Soddy core manifestation produces instability, not stability.
 
     \subsubsection{Logarithmic Recurrence of the Pattern}
 
-      As $A$ increases, the pattern recurs at each Soddy iteration:
+      As $A$ increases beyond 5, the pattern recurs at each new Soddy iteration:
 
       \begin{itemize}
-        \item At each new \textbf{Soddy iteration boundary} (values of $A$ at
-              which a new inner Soddy core layer first becomes geometrically
-              real), binding energy per nucleon \emph{dips} because the new
-              inner core is temporarily unbalanced against a still-virtual outer
-              core at that iteration depth.
-        \item Between iteration boundaries, additional nucleons fill the outer
-              shell of the current Soddy iteration, progressively restoring
-              balance and causing binding energy per nucleon to \emph{rise}
-              toward the next local maximum.
-        \item The local maxima correspond to \textbf{Soddy-closed shells}: values
-              of $A$ at which both the inner and outer Soddy cores at the current
-              iteration depth are simultaneously balanced (both either virtual or
-              both real at the same depth). These are the nuclear magic numbers.
+        \item At each \textbf{Soddy iteration boundary} (values of $A$ at which a new 
+              inner Soddy core layer first becomes geometrically real), binding energy 
+              per nucleon \emph{dips} because the new inner core is temporarily unbalanced 
+              against a still-virtual outer core at that iteration depth.
+        
+        \item Between iteration boundaries, additional nucleons progressively fill the 
+              outer shell of the current Soddy iteration, restoring balance and causing 
+              binding energy per nucleon to \emph{rise} toward the next local maximum.
+        
+        \item Local maxima correspond to \textbf{Soddy-closed shells}: values of $A$ at 
+              which both the inner and outer Soddy cores at the current iteration depth 
+              are simultaneously balanced (both either virtual or both real at the same 
+              depth). These configurations correspond to the observed nuclear magic numbers.
       \end{itemize}
 
-      The Soddy relation generates iteration boundaries logarithmically: each
-      successive inner Soddy core requires $\sim e$ times as many nucleons to
-      resolve as the previous one. The binding energy curve therefore has a
-      logarithmic envelope:
+      The Soddy relation generates iteration boundaries logarithmically: each successive 
+      inner Soddy core requires approximately $e$ times as many nucleons to resolve as the 
+      previous one. Therefore, the binding energy curve has a logarithmic envelope:
 
       \begin{equation}
         \frac{B(A)}{A} \approx B_0 - \frac{\beta}{\ln A}
@@ -744,134 +985,192 @@ We propose a new principle of physics---MATHICCS---requiring that every mathemat
         \label{eq:binding_log}
       \end{equation}
 
-      where $B_0 \approx 8.8$ MeV/nucleon is the asymptotic binding energy (the
-      Strassen savings at the iron-peak closed Soddy shell, $A \approx 56$) and
-      $\beta$ is a curvature coefficient set by the ratio of inner to outer Soddy
-      core curvatures at each iteration.
+      where $B_0 \approx 8.8$ MeV/nucleon is the asymptotic binding energy (the Strassen 
+      savings at the iron-peak closed Soddy shell, $A \approx 56$) and $\beta$ is a 
+      curvature coefficient determined by the ratio of inner to outer Soddy core 
+      curvatures at each iteration.
 
     \subsubsection{The Iron Peak}
 
-      Iron ($^{56}$Fe, $A = 56$) sits at the global maximum of binding energy per
-      nucleon ($\approx 8.79$ MeV/nucleon) because it is the \emph{first Soddy
-      iteration at which both the inner and outer Soddy cores are simultaneously
-      real and balanced at the same iteration depth}. The cluster is a full
-      Soddy-closed shell: inward and outward curvature pressures cancel, and the
-      nucleus is as resistant to nucleon loss as the tetrahedral $^4$He cluster
-      is at the two-body scale. The $A = 56$ closed Soddy shell is the fractal
-      analogue of the $A = 4$ tetrahedral closed shell, one iteration deeper.
+      Iron ($^{56}$Fe, $A = 56$) sits at the global maximum of binding energy per 
+      nucleon ($\approx 8.79$ MeV/nucleon) because it is the \emph{first Soddy iteration 
+      at which both the inner and outer Soddy cores are simultaneously real and balanced 
+      at the same iteration depth}. The cluster forms a complete Soddy-closed shell: 
+      inward and outward curvature pressures perfectly cancel, and the nucleus is as 
+      resistant to nucleon loss as the tetrahedral $^4$He cluster is at the two-body 
+      scale. The $A = 56$ closed Soddy shell is the fractal analogue of the $A = 4$ 
+      tetrahedral closed shell, but one iteration deeper in the ASSP hierarchy.
 
-      Beyond $A = 56$, the outer Soddy cores begin to accumulate real curvature
-      faster than the inner cores can balance them; binding energy per nucleon
-      monotonically decreases. This is why nuclear fission (splitting heavy
-      nuclei toward $A \approx 56$) and nuclear fusion (building light nuclei
-      toward $A \approx 56$) both release energy: both processes move toward the
-      global Soddy balance point.
+      Beyond $A = 56$, the outer Soddy cores begin to accumulate real curvature faster 
+      than the inner cores can balance them; binding energy per nucleon monotonically 
+      decreases. This explains why both nuclear fission (splitting heavy nuclei toward 
+      $A \approx 56$) and nuclear fusion (building light nuclei toward $A \approx 56$) 
+      release energy: both processes move toward the global Soddy balance point.
 
     \subsubsection{Summary: The Soddy Binding Energy Principle}
 
       \begin{quote}
-      \textbf{Nuclear binding energy is governed by the successive manifestation
-      of inner Soddy sphere cores as nucleons are added. The tetrahedral four-nucleon
-      cluster has maximum binding because both inner and outer Soddy cores are
-      virtual and balanced. The fifth nucleon triggers the first real inner Soddy
-      core, breaking the balance and producing the $A = 5$ gap. This pattern
-      repeats logarithmically, with Soddy-closed shells generating the magic
-      numbers and the iron peak marking the first deep-iteration fully balanced
-      Soddy shell.}
+      \textbf{Nuclear binding energy is governed by the successive manifestation of inner 
+      Soddy sphere cores as nucleons are added. The tetrahedral four-nucleon cluster has 
+      maximum binding because both inner and outer Soddy cores are virtual and perfectly 
+      balanced. The fifth nucleon triggers the first real inner Soddy core, breaking the 
+      balance and producing the $A = 5$ gap. This pattern repeats logarithmically, with 
+      Soddy-closed shells generating the observed nuclear magic numbers and the iron peak 
+      marking the first deep-iteration fully balanced Soddy shell.}
       \end{quote}
 
-  % ------------------------------------------------------------------
-  %  STEP 6: Ball ontology table
-  % ------------------------------------------------------------------
+  \subsection{The Ball Ontology: Fundamental Objects of the Fractal Tennis Computer}
 
-  \subsection{The Ball Ontology: Star Ball, Core Ball, Gyro Ball, Info Ball}
-
-    The Presburger-ASSP computer has six fundamental object types, defined by
-    their role in the fractal quine instruction set:
+    The Presburger-ASSP dynamical computer is constituted by a set of fundamental 
+    object types—approximately 5 to 9 primary types and approximately 16 or more 
+    derived virtual/implicit types—each defined by its role in the self-executing 
+    fractal quine instruction set:
 
     \begin{table}[h]
     \centering
     \begin{tabular}{|l|p{4.5cm}|p{2cm}|p{2.5cm}|}
     \hline
-    \textbf{Ball Type} & \textbf{Role in FTC} & \textbf{Atomic equiv.} & \textbf{Astro equiv.} \\
+    \textbf{Ball Type} & \textbf{Role in FTC} & \textbf{Atomic Equiv.} & \textbf{Astro. Equiv.} \\
     \hline
-    Star Ball  & Fundamental information register; stores and transfers angular
-                 momentum via rotation; the stable orbiting unit.
+    Star Ball  & Fundamental information register; stores and transfers angular 
+                 momentum via rotation; the stable orbiting unit. 
                & Electron & Star \\
     \hline
-    Core Ball  & Boundary port; equator converts incoming angular momentum into
-                 outgoing linear-momentum info balls at the higher fractal scale;
-                 poles receive info balls from non-local sources.
+
+    Core Ball  & Boundary port; equator converts incoming angular momentum into 
+                 outgoing linear-momentum info balls at the higher fractal scale; 
+                 poles receive info balls from non-local sources. 
                & Proton / Nucleus & Galactic core \\
+    
     \hline
-    Gyro Ball  & Star Ball orbiting Core Ball; the complete fractal circuit for
-                 storage and transfer of angular and linear momentum.
+    Gyro Ball  & Star Ball orbiting Core Ball; the complete fractal circuit for 
+                 storage and transfer of angular and linear momentum. 
                & Hydrogen atom & Spiral galaxy \\
-    \hline
-
-    Roll Ball & The single force enforcer, The conservation of info, angular, and linear momentum, comprised of Spin Ball, Kick Ball and Data Ball. & Strong and Weak Force & Gravity And ElectoMagnteism \\
-    \hline
-
-    Spin Ball & The angular momentum & Inertia & Inertia \\
     
     \hline
-    Kick Ball & The linear momentum & Motion & Motion \\
+    Roll Ball & Conservation enforcer for info, angular momentum, and linear momentum, 
+                 comprised of Spin Ball, Kick Ball, and Data Ball components. Acts as 
+                 the unified constraint governing all force interactions.
+               & Strong and Weak Force & Gravity and Electromagnetism \\
 
     \hline
-    Data Ball & The interior information; ball state + data & interior chaotic atomic state  & interior chaotic stellar and sub-stellar organization \\
-
-    \hline
-    Wake Ball & The Fluid Like wake made by evolving roll balls & Quantum Wave Function & EM and Gravitational Waves  \\
-
-    \hline
-    Info Ball & For Fractal scale=A, Angular-momentum from A is carried in the higher Fractal Scale A+c2 as a mostly-linear momentum Kick-Ball that encodes the original spin-ball. & Photon & Macrophoton \\
+    Spin Ball & Angular momentum carrier; the rotational state component of Roll Ball. 
+               & Inertia & Inertia \\
     
     \hline
-    Spit Ball & For Fractal scale=A, The lower power, scrambled, coherent linear momentum, mostly-Kick Ball injection from higher fractal scale A+c2 out of the A core ball poles. & Virtual Particles, Weak Force | Quantum Foam & AGN Jet | Black Hole Jet \\
+    Kick Ball & Linear momentum carrier; the translational state component of Roll Ball. 
+               & Motion & Motion \\
+
+    \hline
+    Data Ball & Interior information state; ball state plus embedded data; the chaotic 
+                 lower-layer register beneath the primary sphere. 
+               & Interior chaotic atomic state & Interior chaotic stellar and sub-stellar organization \\
+
+    \hline
+    Wake Ball & Fluid-like wake pattern generated by evolving Roll Balls; the 
+                 disturbance field propagating through the Soddy packing. 
+               & Quantum wave function & EM and gravitational waves \\
+
+    \hline
+    Info Ball & For fractal scale A: angular-momentum information from scale A is 
+                 carried in the higher fractal scale A+1 as a mostly-linear-momentum 
+                 Kick Ball that encodes the original Spin Ball state. The primary 
+                 information carrier across fractal layers. 
+               & Photon & Macrophoton \\
     
     \hline
-    Fast Ball & For Fractal scale=A, The higher power, coherent angular momentum, non-local, highly-Spin and Kick Ball injection from A+c2 out of the A core ball poles & Gamma ray & Quasar \\
-
-    \hline
-    Dust Ball & For Fractal scale=A, The linear momentum computational cost exhausted to the lower Fractal Scale A-c as lower scale gyro-balls and their constituents. & Electron cloud and virtual particle zoo & Dark matter halos, can manufacture electron class objects. \\
-
-    \hline
-    Null Core  & Condensation of lower scale A - c^N scattered lower scale layers; & Galactic Void Centers & CMB Cold Spot \\
+    Spit Ball & For fractal scale A: lower-power, scrambled, coherent linear momentum 
+                 (mostly Kick Ball) injection from higher fractal scale A+1 out of the 
+                 A core ball poles. The dissipative channel. 
+               & Virtual particles; weak force; quantum foam & AGN jet; black hole jet \\
     
     \hline
-    Code Ball  & Self-referential binding component enabling directed exchange at core boundaries. & Neutron decay products | Neutrinos & Directed stellar/galactic core processes | Planets \\
-    \hline
+    Fast Ball & For fractal scale A: higher-power, coherent angular momentum, 
+                 non-local, highly Spin and Kick Ball injection from scale A+1 out of 
+                 the A core ball poles. The constructive, high-coherence channel. 
+               & Gamma ray & Quasar \\
 
+    \hline
+    Dust Ball & For fractal scale A: linear momentum computational cost exhausted to 
+                 the lower fractal scale A−1 as lower-scale gyro-balls and their 
+                 constituents. The manifested lower-layer substrate. 
+               & Electron cloud and virtual particle zoo & Dark matter halos; can 
+                 manufacture electron-class objects \\
+
+    \hline
+    Null Core & Condensation of scattered lower-scale layers (scale A−N); regions of 
+                 minimal Soddy packing density; voids in the fractal structure. 
+               & Galactic void centers & CMB cold spot \\
+    
+    \hline
+    Code Ball & Self-referential binding component enabling directed, coherent exchange 
+                 at core boundaries; the mediator of fractal-layer communication. 
+               & Neutron decay products; neutrinos & Directed stellar/galactic core 
+                 processes; planets \\
+
+    \hline
+    Jolt Ball & Emergent higher-order dynamics at the scales between fractal layers; 
+                 transient energy redistribution events. 
+               & Atomic decay and matter state change & Local entropy increase; random 
+                 energy spikes \\
+
+
+    \hline
+    Edge Ball & The variable boundary where the dominant force regime changes roles. On earth this is approximately 0.1mm. Acts as a emergent computational boundary. & Planck Length & 0.1mm - Planck length for a Wish giant \\
+
+    \hline
     \end{tabular}
-    \caption{TFOFT Ball Ontology: the self-describing objects of the Presburger-ASSP
-             dynamical computer. These are not analogies; they are exact fractal-scale
-             equivalences governed by the same Presburger equations with only $r$ and
-             $M$ scaled.}
+    \caption{TFOFT Ball Ontology: the self-describing objects of the Presburger-ASSP dynamical computer. These are not analogies; they are exact fractal-scale equivalences governed by the same Presburger equations with only scale parameters $r$ and mass $M$ varied.}
     \end{table}
 
-    The exact cross-scale equivalences:
-    We use the 'here' prefix, to define the midway point of the fractal scales where life arises. We use the 'atom' prefix, to denote the atomic scale 'here'. We use the 'wish' prefix, to denote the scale which would consider our galact scale here to be their atomic scale. 
+    \subsubsection{Cross-Scale Equivalences and Notation}
+
+    The exact cross-scale equivalences are expressed using consistent notation. We 
+    define:
+
+    \begin{itemize}
+      \item \textbf{`atom' prefix}: refers to phenomena at the atomic scale.
+      \item \textbf{`here' prefix}: refers to the galactic/stellar scale (the midpoint of the fractal where complexity and life arise).
+      \item \textbf{`wish' prefix}: refers to the scale above the galactic scale (where our galactic scale would be the analog of an atomic scale).
+    \end{itemize}
+
+    With this notation, the fundamental cross-scale identities are:
 
     \begin{quote}
-    \textbf{(class) gyro-balls: A hydrogen-fuel galaxy is a macroscopic fractal hydrogen atom.}\\
-    \textbf{(class) star-balls: A hydrogen-fuel star is a macroscopic hydrogen-atom electron.}\\
-    \textbf{atom-info-balls: An electron falling into an atomic core is ejected as a photon.}\\
-    \textbf{wish-info-balls: A star falling into a galactic core is ejected as a macrophoton.}\\
-    \textbf{here-spit-balls: low-energy macrophoton injection is an AGN jet.}
-    \\
-    \textbf{here-fast-balls: A high-energy macrophoton injection is a quasar.}
-    \\
-    \textbf{here-dust-balls: Dark matter halos are lower scale interstellar medium.}
-    \\
-    \textbf{atom-dust-balls: Electron clouds and it's lower scale byproducts.}
-    \\
-    \textbf{atom-code-balls: The three main neutrino flavors and their subspecies.}
-    \\
-    \textbf{here-code-balls: self-annealing Mid-fractal-scale Chaotic random processes like non-linear dynamics and life}
-    \\
-    \textbf{wish-code-balls: The Rocky Planets, Gas Giants, Red giants, random other sub-stellar satellites or higher-order-networks here.}
-    \\
-    \textbf{etc: The rest of the ontology can be deduced from this basis as a simple puzzle. }
+    \textbf{Gyro-ball class}: A hydrogen-fuel galaxy is a macroscopic fractal 
+    hydrogen atom.\\
+    
+    \textbf{Star-ball class}: A hydrogen-fuel star is a macroscopic hydrogen-atom 
+    electron.\\
+    
+    \textbf{Atom-scale info balls}: An electron falling into an atomic core is 
+    ejected as a photon.\\
+    
+    \textbf{Here-scale info balls}: A star falling into a galactic core is ejected 
+    as a macrophoton.\\
+    
+    \textbf{Here-scale spit balls}: Low-energy macrophoton injection (from a galactic 
+    core) manifests as an AGN jet.\\
+    
+    \textbf{Here-scale fast balls}: High-energy macrophoton injection (from a galactic 
+    core) manifests as a quasar.\\
+    
+    \textbf{Here-scale dust balls}: Dark matter halos are lower-scale interstellar 
+    medium.\\
+    
+    \textbf{Atom-scale dust balls}: Electron clouds and their lower-scale byproducts.\\
+    
+    \textbf{Atom-scale code balls}: The three main neutrino flavors and their 
+    subspecies.\\
+    
+    \textbf{Here-scale code balls}: Self-annealing mid-fractal-scale chaotic random 
+    processes such as non-linear dynamics and life.\\
+    
+    \textbf{Wish-scale code balls}: Rocky planets, gas giants, red giants, and other 
+    sub-stellar satellites or higher-order networks at the galactic scale.\\
+    
+    \textbf{General principle}: The remainder of the ontology can be deduced from this 
+    basis as a puzzle, but may be partially or entirely spoiled by the rest of this paper.
     \end{quote}
 
   % ------------------------------------------------------------------
@@ -915,14 +1214,14 @@ We propose a new principle of physics---MATHICCS---requiring that every mathemat
       \]
       The ball emerges into the higher scale as an info ball with energy scaled
       by $\lambda^2$ (where $\lambda \approx 10^{31}$ is the inter-layer scale
-      factor).
+      factor here).
 
     \subsubsection{Angular Momentum as the Conserved Crossing Currency}
 
       At the fractal boundary, linear momentum does not survive (it depends on
       absolute velocity, which changes with scale). Energy does not survive (it
       is redshifted or blueshifted). \textbf{Angular momentum is frame-independent}:
-      it measures rotation relative to the local centre, which is scale-invariant.
+      it measures rotation relative to the local center, which is scale-invariant.
       Angular momentum is therefore the conserved quantity that carries information
       across fractal layers---the crossing currency of the FTC.
 
@@ -945,21 +1244,22 @@ We propose a new principle of physics---MATHICCS---requiring that every mathemat
       \end{enumerate}
 
       The four fundamental forces are four interaction orders of the same Soddy
-      tangency geometry, not four independent phenomena.
+      tangency geometry, not four independent phenomena. They can be thought of as one geometric action that bleeds both ways across the upper and lower fractal scale boundaries. The weak force being the tiny atomic Electro Magnetic force, the strong force being the tiny atomic Gravity.  
 
     \subsubsection{The $D_4 > \pi$ Computational Overhead}
 
-      The 4D Apollonian-Soddy sphere packing has measured fractal dimension
-      $D_4 \approx 3.6$, exceeding the 4D sphere's circularity $\pi \approx 3.14159$:
+      The 4D Apollonian-Soddy sphere packing has a variable measured fractal dimension that can be as high as $D_4 \approx 3.6$, exceeding the 4D sphere's circularity $\pi \approx 3.14159$:
       \[
         \Delta_{\text{excess}} = D_4 - \pi \approx 0.458
       \]
       This excess is the \textbf{computational overhead} of encoding self-referential
       rotation and tangency dynamics of 3D spheres through 4D time while maintaining
       self-consistency. Higher-density objects accumulate more angular momentum per
-      unit volume; the overhead manifests as information compression, not loss.
+      unit volume; the overhead manifests as information compression, not loss. If we consider our 3 dimensions plus computation time in presburger to be 3D + 3-pi Time = pt, then the computational overhead is approximately 3 * pt, matching the dimensional basis. The 4D fractal dimension variability depends on the local 3D soddy curvature, and this gives us the natural source of time dilation.
 
     \subsubsection{Gravity Emerges from Geometry}
+
+      TODO: SHOW THE MATH HERE:
 
       The inverse-square law $F = -GMm/r^2$ emerges from the Laurent expansion of
       the M\"obius map near a tangency point. The effective acceleration in the
