@@ -1,169 +1,118 @@
+import json
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.optimize import differential_evolution
-import matplotlib.animation as animation
-import json, os, sys
+from scipy.optimize import curve_fit
+from matplotlib.animation import FuncAnimation
 
-os.makedirs("./outputs", exist_ok=True)
-
-# ===================== LOAD JSON =====================
-json_path = sys.argv[1] if len(sys.argv) > 1 else "spectral_lines.json"
-
-with open(json_path, "r") as f:
-    data = json.load(f)
-
-def extract(element):
+# ---------------------------
+# Load data
+# ---------------------------
+def load_lines(json_path, element="He"):
+    with open(json_path, "r") as f:
+        data = json.load(f)
     lines = data[element]["lines"]
-    ln = np.array([l["ln_frequency"] for l in lines])
-    inten = np.array([l["intensity"] for l in lines])
+    x = np.array([l["ln_frequency"] for l in lines])
+    y = np.array([l["intensity"] for l in lines])
     labels = [l["label"] for l in lines]
-    return ln, inten, labels
+    return x, y, labels
 
-H_ln, H_int, H_labels = extract("H")
-He_ln, He_int, He_labels = extract("He")
+# ---------------------------
+# SU(2)-like periodic model
+# ---------------------------
+def su2_model(x, A, B, C, D):
+    return A * np.sin(B * x + C)**2 + D
 
-print(f"H lines: {len(H_ln)} | He lines: {len(He_ln)}")
+# ---------------------------
+# Möbius model (iterated)
+# ---------------------------
+def mobius_iter(x, a, b, c, d, n_iter):
+    z = x.copy()
+    for _ in range(int(n_iter)):
+        z = (a * z + b) / (c * z + d + 1e-9)
+    return z
 
-# ===================== EMBEDDING =====================
-def embed_complex(ln_freqs, intensities):
-    x = (ln_freqs - ln_freqs.min()) / (ln_freqs.max() - ln_freqs.min())
-    y = np.log(intensities + 1e-9)
-    y = (y - y.min()) / (y.max() - y.min())
-    return x + 1j*y
+def mobius_model(x, a, b, c, d, scale, offset):
+    return scale * mobius_iter(x, a, b, c, d, 3) + offset
 
-h_complex = embed_complex(H_ln, H_int)
-he_complex = embed_complex(He_ln, He_int)
+# ---------------------------
+# Fit + metrics
+# ---------------------------
+def fit_model(model, x, y, p0):
+    params, _ = curve_fit(model, x, y, p0=p0, maxfev=20000)
+    y_fit = model(x, *params)
+    rmse = np.sqrt(np.mean((y - y_fit)**2))
+    return params, y_fit, rmse
 
-# ===================== GEOMETRY =====================
-def sphere_dist(z1, z2):
-    return 2*np.arctan2(abs(z1-z2), 1 + abs(z1)*abs(z2))
+# ---------------------------
+# Plotting
+# ---------------------------
+def plot_results(x, y, y_su2, y_mob, labels):
+    fig, axs = plt.subplots(2, 1, figsize=(10, 8))
 
-def su2_apply(z, p):
-    a = complex(p[0], p[1])
-    b = complex(p[2], p[3])
-    norm = np.sqrt(abs(a)**2 + abs(b)**2) + 1e-12
-    a /= norm; b /= norm
-    return (a*z + b) / (-np.conj(b)*z + np.conj(a))
+    # Fit comparison
+    axs[0].scatter(x, y, label="Data")
+    axs[0].plot(x, y_su2, label="SU(2) fit")
+    axs[0].plot(x, y_mob, label="Mobius fit")
+    axs[0].legend()
+    axs[0].set_title("Fits")
 
-def mobius_apply(z, p):
-    a = complex(p[0], p[1])
-    b = complex(p[2], p[3])
-    c = complex(p[4], p[5])
-    d = complex(p[6], p[7])
-    det = a*d - b*c
-    if abs(det) > 1e-12:
-        s = np.sqrt(1/abs(det))
-        a*=s; b*=s; c*=s; d*=s
-    return (a*z + b) / (c*z + d + 1e-12)
+    # Error per line
+    err_su2 = y - y_su2
+    err_mob = y - y_mob
 
-# ===================== LOSSES =====================
-def loss(mapped):
-    err = 0
-    for m in mapped:
-        d = np.array([sphere_dist(m, q) for q in he_complex])
-        w = np.exp(-d/0.1)
-        err += np.sum(w*d)/np.sum(w)
-    return err / len(mapped)
+    axs[1].plot(err_su2, 'o-', label="SU(2) error")
+    axs[1].plot(err_mob, 'x-', label="Mobius error")
+    axs[1].legend()
+    axs[1].set_title("Error per spectral line")
 
-def loss_su2(p):
-    mapped = np.array([su2_apply(z, p) for z in h_complex])
-    return loss(mapped)
+    plt.tight_layout()
+    plt.show()
 
-def loss_gen(p):
-    mapped = np.array([mobius_apply(z, p) for z in h_complex])
-    return loss(mapped)
+# ---------------------------
+# Möbius animation
+# ---------------------------
+def animate_mobius(x, a, b, c, d):
+    fig, ax = plt.subplots()
+    z = x.copy()
+    scat = ax.scatter(range(len(z)), z)
 
-# ===================== OPTIMIZE =====================
-print("Optimizing SU(2)...")
-res_su2 = differential_evolution(loss_su2, [(-2,2)]*4, maxiter=120)
-p_su2 = res_su2.x
+    def update(frame):
+        nonlocal z
+        z = (a * z + b) / (c * z + d + 1e-9)
+        scat.set_offsets(np.c_[range(len(z)), z])
+        ax.set_title(f"Iteration {frame}")
+        return scat,
 
-print("Optimizing general Möbius...")
-res_gen = differential_evolution(loss_gen, [(-2,2)]*8, maxiter=120)
-p_gen = res_gen.x
+    anim = FuncAnimation(fig, update, frames=20, interval=300)
+    plt.show()
 
-# ===================== ANALYSIS =====================
-def per_line_error(mapped):
-    errs = []
-    for m in mapped:
-        d = np.array([sphere_dist(m, q) for q in he_complex])
-        errs.append(np.min(d))
-    return np.array(errs)
+# ---------------------------
+# Main
+# ---------------------------
+if __name__ == "__main__":
+    import sys
 
-mapped_su2 = np.array([su2_apply(z, p_su2) for z in h_complex])
-mapped_gen = np.array([mobius_apply(z, p_gen) for z in h_complex])
+    json_path = sys.argv[1]  # pass path as argument
+    element = sys.argv[2] if len(sys.argv) > 2 else "He"
 
-err_su2 = per_line_error(mapped_su2)
-err_gen = per_line_error(mapped_gen)
+    x, y, labels = load_lines(json_path, element)
 
-# ===================== PRINT =====================
-a = complex(p_su2[0], p_su2[1])
-b = complex(p_su2[2], p_su2[3])
-norm = np.sqrt(abs(a)**2 + abs(b)**2)
-a/=norm; b/=norm
+    # SU(2) fit
+    su2_p0 = [max(y), 1.0, 0.0, min(y)]
+    su2_params, y_su2, su2_rmse = fit_model(su2_model, x, y, su2_p0)
 
-print("\n=== SU(2) ===")
-print("a =", a)
-print("b =", b)
-print("mean =", err_su2.mean())
-print("max  =", err_su2.max())
+    print("\nSU(2) params:", su2_params)
+    print("SU(2) RMSE:", su2_rmse)
 
-print("\n=== GENERAL ===")
-print("mean =", err_gen.mean())
-print("max  =", err_gen.max())
+    # Möbius fit
+    mob_p0 = [1, 1, 0.1, 1, 1, 0]
+    mob_params, y_mob, mob_rmse = fit_model(mobius_model, x, y, mob_p0)
 
-# ===================== IDENTIFY DROPPED =====================
-threshold = np.percentile(err_su2, 75)  # top ~25% = outliers
-dropped_idx = np.where(err_su2 > threshold)[0]
+    print("\nMobius params:", mob_params)
+    print("Mobius RMSE:", mob_rmse)
 
-print("\nLikely dropped H lines:")
-for i in dropped_idx:
-    print(f"{i}: {H_labels[i]} | err={err_su2[i]:.4f}")
+    # Plot
+    plot_results(x, y, y_su2, y_mob, labels)
 
-# ===================== ERROR PLOT =====================
-plt.figure(figsize=(8,4))
-plt.plot(err_su2, 'o-', label="SU(2)")
-plt.plot(err_gen, 'x--', label="General")
-plt.axhline(threshold, color='red', linestyle=':', label="drop threshold")
-plt.title("Per-line error (all H lines)")
-plt.xlabel("H index")
-plt.ylabel("spherical error")
-plt.legend()
-plt.savefig("./outputs/per_line_error.png", dpi=150)
-plt.close()
-
-# ===================== OVERLAY =====================
-plt.figure(figsize=(6,6))
-plt.scatter(he_complex.real, he_complex.imag, label="He")
-plt.scatter(mapped_su2.real, mapped_su2.imag, label="SU2")
-plt.legend()
-plt.title("Final alignment")
-plt.savefig("./outputs/final_overlay.png", dpi=150)
-plt.close()
-
-# ===================== ANIMATION =====================
-def interp_su2(p, t):
-    a = complex(p[0]*t, p[1]*t)
-    b = complex(p[2]*t, p[3]*t)
-    norm = np.sqrt(abs(a)**2 + abs(b)**2) + 1e-12
-    return [a.real/norm, a.imag/norm, b.real/norm, b.imag/norm]
-
-fig, ax = plt.subplots()
-
-def update(frame):
-    ax.clear()
-    t = frame / 100
-    p_t = interp_su2(p_su2, t)
-    mapped = np.array([su2_apply(z, p_t) for z in h_complex])
-    
-    ax.scatter(he_complex.real, he_complex.imag, label="He")
-    ax.scatter(mapped.real, mapped.imag, label="H→SU2")
-    ax.set_title(f"t={t:.2f}")
-    ax.legend()
-    ax.set_xlim(-0.5,1.5)
-    ax.set_ylim(-0.5,1.5)
-
-ani = animation.FuncAnimation(fig, update, frames=100, interval=50)
-ani.save("./outputs/su2_animation.gif", dpi=120)
-
-print("\nSaved to ./outputs/")
+    # Animate Möbius
+    animate_mobius(x, *mob_params[:4])
