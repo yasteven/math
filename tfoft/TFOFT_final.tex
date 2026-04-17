@@ -429,7 +429,7 @@ with zero free parameters.
       \boxed{\alpha = \frac{1}{T_{\text{sphere}}} = \frac{1}{137.036}}
     \]
 
-    \textbf{Physical interpretation}: To be mathiccs consistent with linear self-referential dynamics, we need to track and clamp exponential growth by computing at least the same computational cost digits at every multiplicative step. So we need $C \cdot e^{137}$ of information capacity to ensure stability of the object representation, or $137$ Presburger FTC log steps. Each "Soddy Core" has a constant information storage C (can be normalized to $1$), exponential growth in its self-interaction is clamped by representing the interaction by a multiple of e. Consider a "Soddy Core" to then be the log step, so $1$ core is one e multiplication. Then operations between a representation of a ball at that log step and another is the $\alpha$ limited throughput rate of the combined info--linear-momentum--angular-momentum channel per Presburger log basis tick. An electromagnetic interaction (e.g., a photon coupling to an electron) requires a simultaneous state update of both participating spheres. The probability that both spheres complete their state update within a single Presburger tick is $P_{\text{success}} = \alpha$. This is an \textbf{emergent geometric necessity} of the Presburger-ASSP, not a fitted parameter.
+    \textbf{Physical interpretation}: $\alpha$ measures the throughput rate of the combined info--linear-momentum--angular-momentum channel per Presburger basis tick. An electromagnetic interaction (e.g., a photon coupling to an electron) requires a simultaneous state update of both participating spheres. The probability that both spheres complete their state update within a single Presburger tick is $P_{\text{success}} = \alpha$. This is an \textbf{emergent geometric necessity} of the Presburger-ASSP, not a fitted parameter.
 
   \subsection{The Mass-Channel / Info-Channel Split and the 77-Layer Self-Encoding}
 
@@ -449,7 +449,7 @@ with zero free parameters.
       \[
         S = \frac{138.936}{1.80436} = 77.000155 \approx \boxed{77\ \text{layers}}
       \]
-      This is the unique integer $S$ such that $S \times k_{\text{mass}}$ reproduces $N_{\text{mass}} = \ln(M_\odot/m_e) = 138.9357$ to one-in-$10^6$ precision. The measured mass hierarchy between an electron and a star in our physical reality is exactly 77 self-encoding steps. This is definitive proof of the ASSP fractal Presburger computer architecture.
+      This is the unique integer $S$ such that $S \times k_{\text{mass}}$ reproduces $N_{\text{mass}} = \ln(M_\odot/m_e) = 138.9357$ to one-in-$10^6$ precision. The mass hierarchy between an electron and a star is exactly 77 self-encoding steps. This is definitive proof of the ASSP fractal Presburger computer architecture.
 
     \subsubsection{The 137 -- 77 = 60 Residual: He and Fe as Fractal Garbage Collectors}
 
@@ -480,7 +480,7 @@ with zero free parameters.
       \item The first sphere (star ball) encodes angular momentum state into its surface channel $T_S = 4\pi^3$.
       \item Tangency with the second sphere (core ball) provides the unique M\"obius-invariant coupling: the boundary condition that transfers angular momentum information outward as a linear-momentum carrier.
       \item The fast-channel angular-momentum carrier (a mostly angular-and-linear momentum wave in the higher fractal layer) \emph{is} the info ball; it is the photon at atomic scale or macrophoton at galactic scale. Its emission is the mechanism by which the two-ball system transfers its own state description non-locally to a third sphere at the same fractal layer.
-      \item The computational cost of this transfer is paid through the injection of dust balls non-locally into the current fractal layer's receiving core ball as core jets or quasars, and injecting dust balls locally as tiny hydrogen at the lower fractal layer  where the star-core crossing occurs (dark matter), both carrying mostly linear-and-angular momentum.
+      \item The computational cost of this transfer is paid through the injection of dust balls into the lower fractal layer, carrying mostly linear-and-angular momentum as core jets or quasars.
     \end{enumerate}
 
     This is the \textbf{fractal quine}: the two-ball system writes a copy of its own operational instructions into the info ball it emits. The info ball carries the full $T_{\text{sphere}} = 137.036$ state cost of a single sphere, encoded as angular momentum.
@@ -495,18 +495,13 @@ with zero free parameters.
 
     \subsubsection{Angular Momentum Sharing: Strassen Overhead}
 
-      The shared angular-momentum state of two tangent spheres requires a $3\times3$ rotation matrix computation. The optimal algorithm is Strassen's method for matrix multiplication:
+      The shared angular-momentum state of two tangent spheres requires a $3\times3$ rotation matrix computation. The optimal algorithm is Strassen's method:
       \begin{itemize}
         \item Naive $3\times3$ matrix multiplication: 27 multiplications.
         \item Strassen algorithm: 23 multiplications, 98 additions.
-        \item Curvature (multiplication) fraction: $23/27 \approx 85.2\%$.
         \item Efficient (addition-only) fraction: $4/27 \approx 14.8\%$.
-        \item Overhead per ball: $\Delta T_{\text{one ball}} = \tfrac{23}{27}\times T_S \approx 0.851$.
-        \item For two balls: $2\times0.851 = 1.72$.
-        \item Overhead per info-ball: $ \Delta T_{\text{dual channel ball}} = 0.85 \times 0.85 \times 0.151 = 0.1090$.
-        \item For two balls with dual channel: $2\times0.1090 + 1.72 = 1.9290$.
-
-   %TODO: double-check math above (do 12 digits) and update below thingy to match
+        \item Overhead per ball: $\Delta T_{\text{one ball}} = \tfrac{4}{27}\times T_S \approx 0.95$.
+        \item For two balls: $2\times0.95 = 1.9$.
       \end{itemize}
 
     \subsubsection{The Universal Scale Law}
@@ -676,7 +671,7 @@ with zero free parameters.
       \textbf{Definition}: A Pipe Ball is an elongated, quasi-one-dimensional chain of Soddy tangencies in the lower fractal layer, oriented along the gradient of the here-scale angular momentum field. It acts as a \emph{magnetic field line at the galactic scale}: a low-density highway of lower-scale hydrogen substrate through which here-scale star balls can traverse sub-luminally between stellar systems and galaxies.
     \end{quote}
 
-    In standard magnetohydrodynamics, magnetic field lines are mathematical constructs. In TFOFT, galactic-scale magnetic field lines are physical: they are Pipe Balls whose geometry traces the angular momentum gradient of the local ASSP. The inter-galactic filaments of the cosmic web are the here-scale manifestation of Pipe Balls at the wish-scale. What we consider to be gravitationally collapsed dark matter sheets are the magnetic-field-line substrate of a fractal layer that uses our stars as its electrons.
+    In standard magnetohydrodynamics, magnetic field lines are mathematical constructs. In TFOFT, galactic-scale magnetic field lines are physical: they are Pipe Balls whose geometry traces the angular momentum gradient of the local ASSP. The inter-galactic filaments of the cosmic web are the here-scale manifestation of Pipe Balls at the wish-scale. They are not gravitationally collapsed dark matter sheets; they are the magnetic-field-line substrate of a fractal layer that uses our galaxies as its electrons.
 
   \subsection{The Ball Ontology: Fundamental Objects of the Fractal Tennis Computer}
 
@@ -686,34 +681,52 @@ with zero free parameters.
         \hline
         \textbf{Ball Type} & \textbf{Role in FTC} & \textbf{Atomic Equiv.} & \textbf{Astro.\ Equiv.} \\
         \hline
-        Star Ball  & Fundamental information register; stores and transfers angular momentum via rotation; the stable orbiting unit.
+        Star Ball  & Fundamental information register; stores and transfers angular
+           momentum via rotation; the stable orbiting unit.
              & Electron & Star \\
         \hline
-        Core Ball & Boundary port; equator converts incoming angular momentum into outgoing linear-momentum info balls at the higher and lower fractal scale; poles receive info balls from non-local sources. & Proton / Nucleus & Galactic core \\
+        Core Ball  & Boundary port; equator converts incoming angular momentum into
+           outgoing linear-momentum info balls at the higher fractal scale;
+           poles receive info balls from non-local sources.
+             & Proton / Nucleus & Galactic core \\
         \hline
-        Gyro Ball & Star Ball orbiting Core Ball; the complete fractal circuit for storage and transfer of fractal angular and linear momentum information. & Hydrogen atom & Spiral galaxy \\
+        Gyro Ball  & Star Ball orbiting Core Ball; the complete fractal circuit for
+           storage and transfer of angular and linear momentum.
+             & Hydrogen atom & Spiral galaxy \\
         \hline
-        Roll Ball  & Single geometric action. Conservation enforcer for info, angular momentum, and linear momentum; comprised of Spin Ball, Kick Ball, and Data Ball components.& Strong and Weak Force & Gravity and Electromagnetism \\
+        Roll Ball  & Conservation enforcer for info, angular momentum, and linear
+           momentum; comprised of Spin Ball, Kick Ball, and Data Ball
+           components.
+             & Strong and Weak Force & Gravity and Electromagnetism \\
         \hline
-        Spin Ball & Angular momentum carrier; the rotational state component of Roll Ball. & Inertia & Inertia \\
+        Spin Ball  & Angular momentum carrier; the rotational state component of Roll Ball.
+             & Inertia & Inertia \\
         \hline
-        Kick Ball  & Linear momentum carrier; the translational state component of Roll Ball. & Motion & Motion \\
+        Kick Ball  & Linear momentum carrier; the translational state component of Roll Ball.
+             & Motion & Motion \\
         \hline
-        Data Ball & Interior information state; ball state plus embedded data; the chaotic lower-layer composition register of the star-ball or gyro-ball. & Interior chaotic atomic state & Interior chaotic stellar state \\
+        Data Ball  & Interior information state; ball state plus embedded data; the chaotic
+           lower-layer register beneath the primary sphere.
+             & Interior chaotic atomic state & Interior chaotic stellar state \\
         \hline
-        Wake Ball & Fluid-like wake pattern generated by evolving Roll Balls; the disturbance field propagating through the Soddy packing. & Quantum wave function & EM and gravitational waves \\
+        Wake Ball  & Fluid-like wake pattern generated by evolving Roll Balls; the
+           disturbance field propagating through the Soddy packing.
+             & Quantum wave function & EM and gravitational waves \\
         \hline
-        Info Ball  & Angular-momentum information from scale A carried in the higher fractal scale A+1 as a mostly-linear-momentum Kick Ball. Primary information carrier across fractal layers. & Photon & Macrophoton \\
+        Info Ball  & Angular-momentum information from scale A carried in the higher
+           fractal scale A+1 as a mostly-linear-momentum Kick Ball. Primary
+           information carrier across fractal layers.
+             & Photon & Macrophoton \\
         \hline
-        Spit Ball & Lower-power, scrambled, coherent linear momentum injection from
+        Spit Ball  & Lower-power, scrambled, coherent linear momentum injection from
            higher fractal scale A+1 out of the A core ball poles.
              & Virtual particles; weak force & AGN jet \\
         \hline
-        Fast Ball & Higher-power, coherent angular momentum, non-local injection from
+        Fast Ball  & Higher-power, coherent angular momentum, non-local injection from
            scale A+1 out of the A core ball poles.
              & Gamma ray & Quasar \\
         \hline
-        Dust Ball & Linear momentum computational cost exhausted to the lower fractal
+        Dust Ball  & Linear momentum computational cost exhausted to the lower fractal
            scale A$-$1 as lower-scale gyro-balls and their constituents.
              & Electron cloud & Dark matter halos \\
         \hline
@@ -721,15 +734,20 @@ with zero free parameters.
            Soddy packing density.
              & Galactic void centers & CMB cold spot \\
         \hline
-        Code Ball  & Self-referential binding component enabling directed, coherent exchange at core boundaries.
+        Code Ball  & Self-referential binding component enabling directed, coherent
+           exchange at core boundaries.
              & Neutrinos & Life; planets; directed stellar processes \\
         \hline
-        Pipe Ball & Elongated Soddy tangency chain in lower fractal layer, oriented along angular momentum gradient; fractal magnetic field line. & Gluon field & Cosmic web filament \\
+        Pipe Ball  & Elongated Soddy tangency chain in lower fractal layer, oriented
+           along angular momentum gradient; fractal magnetic field line.
+             & Gluon field & Cosmic web filament \\
         \hline
-        Jolt Ball & Emergent higher-order dynamics at the scales between fractal layers; transient energy redistribution events. & Atomic decay & Local entropy spikes \\
+        Jolt Ball  & Emergent higher-order dynamics at the scales between fractal layers;
+           transient energy redistribution events.
+             & Atomic decay & Local entropy spikes \\
         \hline
-        Edge Ball & Variable boundary where the dominant force regime changes roles.
-           On Earth approximately 0.1~2mm.
+        Edge Ball  & Variable boundary where the dominant force regime changes roles.
+           On Earth approximately 0.1~mm.
              & Planck Length & 0.1~mm $\to$ Planck length for a Wish giant \\
         \hline
       \end{tabular}
