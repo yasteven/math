@@ -24,7 +24,7 @@ The Universe Is A Fractal Computer Defined by the \\
 Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
 \author{Steven E.\ Elliott \\
 \textbf{MATHICCS Foundation} $\to$
-\textbf{Fractal Equivalence of Stars and Electrons}}
+\textbf{Fundamental Law}}
 \date{April 2026}
 
 \begin{document}
@@ -32,23 +32,7 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
 \maketitle
 
 \begin{abstract}
-We propose a new principle of physics---MATHICCS---requiring that every mathematical
-axiom used in a physical law must correspond to an operation persistently realizable
-by a physical subsystem. Applying this criterion forces reality's geometry to be a
-discrete, self-similar, singularity-free structure: the Apollonian Soddy Sphere Packing
-(ASSP). We conjecture that the dynamics on this packing is a \emph{self-computing
-fractal}: a dynamical computer whose registers are star balls (electrons / stars),
-whose IO ports are core balls (protons / galactic cores), and whose communication
-channel is the info ball (photon / macrophoton). This fractal quine---the first
-self-describing, MATHICCS-valid physical theory---derives the fine-structure constant
-$\alpha^{-1} = 4\pi^3+\pi^2+\pi = 137.036$ from the minimal Presburger computational
-cost of a Soddy sphere state update, derives the hydrogen binding energy from a single
-IO API equation $E = \alpha^2 m_e c^2/2$, and derives the gravitational constant $G$
-from atomic structure by two independent first-principles routes. We present two
-validated predictions (25-arcminute CMB seam; Karlsson quasar log periodicity) and
-one pending falsifiable prediction ($\alpha^{-1}_{\mathrm{Yb}} = 137.035998945 \pm
-20\,\mathrm{ppb}$). The framework resolves 25+ major tensions in observational physics
-with zero free parameters.
+  We propose a new principle of physics---MATHICCS---requiring that every mathematical axiom used in a physical law must correspond to an operation persistently realizable by a physical subsystem. Applying this criterion forces reality's geometry to be a discrete, self-similar, singularity-free structure: the Apollonian Soddy Sphere Packing (ASSP). We conjecture that 3D dynamics on this packing is a \emph{self-computing fractal}: a dynamical computer whose registers are star balls (electrons / stars), and whose IO ports are core balls (protons / galactic cores), and whose communication channel is the info ball (photon / macrophoton). This fractal quine---the first self-describing, MATHICCS-valid physical theory---derives the fine-structure constant $\alpha^{-1} = 4\pi^3+\pi^2+\pi = 137.036$ from the minimal Presburger computational cost of a Soddy sphere state update, derives the hydrogen binding energy from a single IO API equation $E = \alpha^2 m_e c^2/2$, and derives the gravitational constant $G$ from atomic structure by two independent first-principles routes. We present two validated predictions (25-arcminute CMB seam; Karlsson quasar log periodicity) and one pending falsifiable prediction ($\alpha^{-1}_{\mathrm{Yb}} = 137.035998945 \pm 20\,\mathrm{ppb}$). The framework resolves 25+ major tensions in observational physics with zero free parameters.
 \end{abstract}
 
 % ==================================================================
@@ -347,7 +331,7 @@ with zero free parameters.
 
     \subsubsection{Why Presburger Arithmetic, Not Peano}
 
-      Standard physics (the Standard Model and General Relativity) explicitly uses Zermelo--Fraenkel set theory (ZF/ZFC) and Peano arithmetic, which include general multiplication and the axiom of induction. However, by G\"odel's incompleteness theorems, these systems are incomplete: there exist true statements that cannot be proven from the axioms.
+      Standard physics (the Standard Model and General Relativity) explicitly uses Zermelo--Fraenkel set theory (ZF/ZFC) and Peano arithmetic, which includes general multiplication and the axiom of induction. However, by G\"odel's incompleteness theorems, these systems are incomplete: there exist true statements that cannot be proven from the axioms.
 
       In contrast, Presburger arithmetic (addition and order only; no general multiplication) is complete, consistent, and decidable (Presburger, 1929). As argued in Section~1.3, a MATHICCS-valid self-describing universe has no other option.
 
@@ -480,7 +464,7 @@ with zero free parameters.
       \item The first sphere (star ball) encodes angular momentum state into its surface channel $T_S = 4\pi^3$.
       \item Tangency with the second sphere (core ball) provides the unique M\"obius-invariant coupling: the boundary condition that transfers angular momentum information outward as a linear-momentum carrier.
       \item The fast-channel angular-momentum carrier (a mostly angular-and-linear momentum wave in the higher fractal layer) \emph{is} the info ball; it is the photon at atomic scale or macrophoton at galactic scale. Its emission is the mechanism by which the two-ball system transfers its own state description non-locally to a third sphere at the same fractal layer.
-      \item The computational cost of this transfer is paid through the injection of dust balls into the lower fractal layer, carrying mostly linear-and-angular momentum as core jets or quasars.
+      \item The computational cost of this transfer is paid through the injection of dust balls into the lower fractal layer, carrying mostly linear-and-angular momentum as dark matter production. And the loss of fractal structure as injection of spit balls into the current fractal layer at the non-local macrophoton-core ball transfer collision.
     \end{enumerate}
 
     This is the \textbf{fractal quine}: the two-ball system writes a copy of its own operational instructions into the info ball it emits. The info ball carries the full $T_{\text{sphere}} = 137.036$ state cost of a single sphere, encoded as angular momentum.
@@ -489,31 +473,41 @@ with zero free parameters.
       \textbf{One ball on top of 137.036 is a state. Two balls on top of 137.036 is a law. The two-ball tangency is the minimal configuration that generates the universal fundamental law: the fractal quine instruction set of the Presburger-ASSP.}
     \end{quote}
 
-  \subsection{Two-Ball Computational Overhead: $T_{\text{sphere}} + 1.9 = 138.936$}
+  \subsection{Two-Ball Computational Overhead: $T_{\text{sphere}} + \Delta T_{\text{two-ball}}$}
 
     When two balls interact (forming a gyro ball), the system transitions from 1D Presburger arithmetic to 3D Euclidean geometry. This incurs a precise and computable cost.
 
     \subsubsection{Angular Momentum Sharing: Strassen Overhead}
 
-      The shared angular-momentum state of two tangent spheres requires a $3\times3$ rotation matrix computation. The optimal algorithm is Strassen's method:
-      \begin{itemize}
-        \item Naive $3\times3$ matrix multiplication: 27 multiplications.
-        \item Strassen algorithm: 23 multiplications, 98 additions.
-        \item Efficient (addition-only) fraction: $4/27 \approx 14.8\%$.
-        \item Overhead per ball: $\Delta T_{\text{one ball}} = \tfrac{4}{27}\times T_S \approx 0.95$.
-        \item For two balls: $2\times0.95 = 1.9$.
-      \end{itemize}
+    The shared angular-momentum state of two tangent spheres requires a $3\times3$ rotation matrix computation. The optimal algorithm is Strassen's method for matrix multiplication:
+    \begin{itemize}
+      \item Naive $3\times3$ matrix multiplication: 27 multiplications.
+      \item Strassen algorithm: 23 multiplications, 98 additions.
+      \item Curvature (multiplication) fraction: $23/27 \approx 0.851851851852$.
+      \item Efficient (addition-only) fraction: $4/27 \approx 0.148148148148$.
+      \item Overhead per ball: $\Delta T_{\text{one ball}} = \frac{23}{27} \approx 0.851851851852$.
+      \item For two balls: $2\Delta T_{\text{one ball}} \approx 1.703703703704$.
+      \item Overhead per info-ball: $\Delta T_{\text{dual channel ball}} = \left(\frac{23}{27}\right)^2\left(\frac{4}{27}\right) \approx 0.109581950884$.
+      \item For two balls with dual channel: $2\Delta T_{\text{dual channel ball}} + 2\Delta T_{\text{one ball}} \approx 1.922867605472$.
+    \end{itemize}
 
     \subsubsection{The Universal Scale Law}
 
-      \begin{equation}
-        \boxed{T_{\text{sphere}} + \Delta T_{\text{two-ball}}
-          = 137.036 + 1.9 = 138.936 = \ln(M_\odot / m_e)}
+     \begin{equation}
+        \boxed{
+        T_{\text{sphere}} + \Delta T_{\text{two-ball}}
+        = 137.035999... + 1.922867605472
+        = 138.958866605472...
+        }
         \label{eq:138}
       \end{equation}
 
-      The natural logarithm of the electron-to-solar-mass ratio equals the single-sphere Presburger cost plus the two-ball geometry overhead, to one-in-$10^6$ precision (CODATA 2018: $138.9357$). \textbf{This is not a coincidence.} It is the Presburger two-ball overhead stamped directly into the mass hierarchy between fractal layers.
-
+      The natural logarithm of the electron-to-solar-mass ratio is
+      \[
+      \ln\!\left(\frac{M_\odot}{m_e}\right) \approx 138.9357,
+      \]
+      and in our normalization this is close to the sum of the single-sphere Presburger cost and the two-ball geometry overhead. \textbf{We interpret this near-agreement as a nontrivial structural feature.}
+  
   \subsection{The 85\% Dark Matter Rule from Strassen Overhead}
 
     The Strassen algorithm's efficiency ratio has a major consequence: the observed visible-to-dark-matter split.
@@ -599,9 +593,9 @@ with zero free parameters.
 
       Adding a fifth nucleon breaks the tetrahedral balance. The inner Soddy core becomes resolvable as a first-iteration real packing site, while the outer Soddy core remains virtual. The asymmetric balance reduces binding energy per nucleon and makes nucleon exchange with the substrate energetically easier. Therefore, no stable $A=5$ nucleus exists in nature.
 
-    \subsubsection{The Iron Peak}
+    \subsubsection{The Iron Peak (Conjecture)}
 
-      Iron ($^{56}$Fe, $A=56$) sits at the global maximum of binding energy per nucleon ($\approx 8.79$ MeV/nucleon) because it is the first Soddy iteration at which both the inner and outer Soddy cores are simultaneously real and balanced at the same iteration depth. Beyond $A=56$, the outer Soddy cores accumulate real curvature faster than the inner cores can balance them; binding energy per nucleon monotonically decreases.
+      Iron ($^{56}$Fe, $A=56$) is conjectured to sit at the global maximum of binding energy per nucleon ($\approx 8.79$ MeV/nucleon) because it is the first Soddy iteration at which both the inner and outer Soddy cores are simultaneously real and balanced at the same iteration depth. Beyond $A=56$, the outer Soddy cores accumulate real curvature faster than the inner cores can balance them; binding energy per nucleon monotonically decreases.
 
   \subsection{Pauli Exclusion from Soddy Uniqueness (Conjecture)}
 
@@ -651,7 +645,7 @@ with zero free parameters.
 
     Neutrino oscillation is the fractal-scale equivalent of a sub-stellar object transitioning between physical regimes under changing local density and pressure. No fourth light neutrino exists because no fourth Soddy-stable sub-stellar equilibrium exists between a red dwarf and a main-sequence star --- consistent with LEP Z-boson decay width measurements.
 
-  \subsection{Wave-Particle Duality as Fractal Pilot-Wave Dynamics}
+  \subsection{Wave-Particle Duality as Fractal Pilot-Wave Dynamics (conjecture)}
 
     A star ball (electron) traversing the region near two adjacent Soddy interstices (slits) generates a Wake Ball --- a fluid-like angular-momentum disturbance propagating through the ASSP fractal substrate ahead of and around the star ball, analogous to a de Broglie pilot wave. The interference pattern arises because the Wake Ball explores both Soddy interstice paths simultaneously while the star ball follows the gradient of the Wake Ball intensity.
 
@@ -665,7 +659,7 @@ with zero free parameters.
 
   \subsection{Pipe Balls: The Fractal Magnetic Field Lines}
 
-    A derived ball type not in the primary ontology table is the \textbf{Pipe Ball}: a low-density, thread-like configuration of lower-scale dark matter substrate forming the inter- and intra-galactic filaments observable as the cosmic web.
+    A derived ball type in the primary ontology table is the \textbf{Pipe Ball}: a low-density, thread-like configuration of lower-scale dark matter substrate forming the inter- and intra-galactic filaments observable as the cosmic web.
 
     \begin{quote}
       \textbf{Definition}: A Pipe Ball is an elongated, quasi-one-dimensional chain of Soddy tangencies in the lower fractal layer, oriented along the gradient of the here-scale angular momentum field. It acts as a \emph{magnetic field line at the galactic scale}: a low-density highway of lower-scale hydrogen substrate through which here-scale star balls can traverse sub-luminally between stellar systems and galaxies.
@@ -942,17 +936,18 @@ with zero free parameters.
       \]
       \textbf{Agreement}: $77\times1.804364 = 138.936$ vs.\ CODATA $138.9357$. Precision: $5.2\times10^{-7}$ (one-in-a-million).
 
+    % TODO: update this to be full latex not ** stuff ugh, and make it more clear, we kinda repeat? 
     \subsubsection{Radius Hierarchy: Proton to Galaxy}
 
       \[
         N_{\text{radius}} = \ln\left(\frac{R_{\text{M87}}}{r_p}\right) = 84.654
       \]
 
-      The radius hierarchy is governed by the **golden ratio conjugate** $k_{\text{radius}} = 1/\varphi = \frac{\sqrt{5}-1}{2}$.
+      The radius hierarchy is governed by the \textit{golden ratio conjugate} $k_{\text{radius}} = 1/\varphi = \frac{\sqrt{5}-1}{2}$.
 
-      The unresolved $k_{\text{radius}} = 0.618$ is **not** an assumption or fudge factor. It is a **derived geometric consistency check** that falls directly out of the already-proven independent derivation of $\alpha^{-1} = 4\pi^3 + \pi^2 + \pi = 137.036$.
+      The unresolved $k_{\text{radius}} = 0.618$ is \textit{not} an assumption or fudge factor. It is a \textit{derived geometric consistency check} that falls directly out of the already-proven independent derivation of $\alpha^{-1} = 4\pi^3 + \pi^2 + \pi = 137.036$.
 
-      **Recall the three orthogonal Presburger channels that fix** $\alpha^{-1}$:
+      \textit{Recall the three orthogonal Presburger channels that fix} $\alpha^{-1}$:
 
       \[
         T_S = 4\pi^3 \quad \text{(surface / angular-momentum location)}
@@ -968,16 +963,16 @@ with zero free parameters.
         T_{\text{sphere}} = T_S + T_R + T_D = \alpha^{-1}
       \]
 
-      The **radial position channel** $T_D = \pi$ is the one that encodes the fractal-layer address of a sphere's center. In the self-similar ASSP, every fractal layer crossing is a unique Soddy tangency solution. Because the Soddy relation (Descartes theorem in 3D) is **unique** (exactly one inner and one outer solution for any four mutually tangent spheres), specifying a sphere's radial coordinate across layers is equivalent to traversing the full state-description budget of a single sphere. In other words:
+      The \textit{radial position channel} $T_D = \pi$ is the one that encodes the fractal-layer address of a sphere's center. In the self-similar ASSP, every fractal layer crossing is a unique Soddy tangency solution. Because the Soddy relation (Descartes theorem in 3D) is \textit{unique} (exactly one inner and one outer solution for any four mutually tangent spheres), specifying a sphere's radial coordinate across layers is equivalent to traversing the full state-description budget of a single sphere. In other words:
 
-      - Each radius step is a full Presburger "address lookup" that must resolve **all three channels simultaneously** to maintain tangency uniqueness and MATHICCS persistence.
-      - Therefore the total number of radius-layer crossings $S_{\text{radius}}$ between the proton-scale core and the galaxy-scale core **must equal the full computational cost per sphere**:
+      - Each radius step is a full Presburger "address lookup" that must resolve \textit{all three channels simultaneously} to maintain tangency uniqueness and MATHICCS persistence.
+      - Therefore the total number of radius-layer crossings $S_{\text{radius}}$ between the proton-scale core and the galaxy-scale core \textit{must equal the full computational cost per sphere}:
 
       \[
         S_{\text{radius}} \equiv \alpha^{-1}
       \]
 
-      This is **not** an extra postulate; it is forced by the same Presburger minimization that chose unit radius $r = \pi$ and produced $\alpha^{-1}$ in the first place.
+      This is \textit{not} an extra postulate; it is forced by the same Presburger minimization that chose unit radius $r = \pi$ and produced $\alpha^{-1}$ in the first place.
 
       **Derivation of** $k_{\text{radius}}$:
 
@@ -1462,7 +1457,7 @@ with zero free parameters.
     \textbf{Q8: What are quarks in TFOFT?}
   \end{mdframed}
 
-    Quarks are the three primary structural components of nucleons: at the here-scale they correspond to stars, galactic cores, and planets (the three Soddy-stable objects that constitute a fully-specified fractal register). Quark confinement is the fractal-scale analogue of stars being gravitationally confined within a galaxy. The gluon field is the Pipe Ball at the atomic scale: inter-nucleon low-density Soddy tangency chains (Section~4.14).
+    Quarks are the three primary structural components of nucleons: at the here-scale they correspond to stars, galactic cores, and sub-stellar objects (e.g., planets). These three Soddy-stable objects constitute a fully-specified fractal register. Quark confinement is the fractal-scale analogue of stars being gravitationally confined within a galaxy. The gluon field is the Pipe Ball at the atomic scale: inter-nucleon low-density Soddy tangency chains (Section~4.14).
 
   \begin{mdframed}
     \textbf{Q9: Is TFOFT falsifiable?}
