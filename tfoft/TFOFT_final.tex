@@ -14,9 +14,25 @@
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
+\usepackage{float}   % ← add this line near the top of your preamble if it is not already present
 \usepackage{mdframed}
 \usepackage{hyperref}
 \usepackage{verbatim}
+\usepackage{graphicx}          % for \includegraphics (PNG fallback for all figures)
+\usepackage{tikz}              % all inline TikZ figures
+\usepackage{tikz-3dplot}       % 3D coordinate frames used in Fig 1 (expansion)
+\usetikzlibrary{
+  decorations.pathmorphing,    % wavy Brownian-path arrows
+  decorations.markings,
+  arrows.meta,                 % Stealth arrowheads
+  shadings,                    % ball-colour sphere shading
+  patterns,                    % hatching on shell wedge
+  calc,                        % coordinate arithmetic
+  positioning,
+  fit,
+  backgrounds
+}
+\graphicspath{{./figures/}}    % put all PNG overrides in ./figures/
 \geometry{margin=1in}
 
 \title{The Fact Of Fractal Tennis: \\
@@ -55,6 +71,43 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
       \item \textbf{Infinitely many degrees of freedom in field theory}: The continuum field assumes uncountable infinities at every point in space.
 
       \item \textbf{Black hole singularities}: Predict infinite density and curvature, which is physically meaningless.
+
+      \item \textbf{General Relativity and the de~Sitter Collapse of Operational Clocks}:
+        GR with a positive cosmological constant $\Lambda > 0$ predicts that every
+        Friedmann--Lema\^{i}tre--Robertson--Walker (FLRW) solution asymptotically approaches
+        de~Sitter space. In de~Sitter space, the Gibbons--Hawking temperature
+        \[
+          T_{\rm dS} = \frac{\hbar c}{2\pi k_B} \sqrt{\frac{\Lambda}{3}}
+        \]
+        causes \emph{every} localized energy configuration to radiate thermally, including
+        any photonic clock of finite energy $E > 0$. The timescale for a clock of energy $E$
+        to radiate into the de~Sitter bath is
+        \[
+          \tau_{\rm decay}(E) \sim \frac{E \cdot 3}{\hbar c \Lambda},
+        \]
+        which is finite for all finite $E$. This means: given any finite energy budget, no
+        physical clock survives indefinitely in GR with $\Lambda > 0$. The set of spacetime
+        regions in which a valid $\varepsilon$-$\delta$ measurement apparatus for the
+        Equivalence Principle can be constructed and \emph{maintained} shrinks exponentially
+        with time:
+        \[
+          \mathcal{V}_{\rm valid}(t) \propto e^{-t/\tau_{\rm decay}},
+          \qquad
+          \lim_{t\to\infty} \mathcal{V}_{\rm valid}(t) = 0.
+        \]
+        By MATHICCS M1 (internal persistence), any axiom whose realizing apparatus has
+        measure-zero survival probability is \textbf{MATHICCS-invalid}. The Equivalence
+        Principle of GR, which requires a local inertial frame with an operational clock
+        and ruler, therefore has \emph{zero} positive-measure set of initial conditions
+        under which it persists indefinitely in the theory's own dynamical evolution.
+
+        \begin{quote}
+          \textbf{General Relativity is self-undermining under MATHICCS: the cosmological
+          constant it requires to match observation simultaneously destroys the operational
+          apparatus needed to define its own foundational axiom (the Einstein Equivalence
+          Principle). The measure of MATHICCS-valid EEP-realizing regions goes to zero
+          exponentially in GR's own preferred solution.}
+        \end{quote}
 
       \item \textbf{Continuum / uncountable infinities and G\"odel theorems}: Independence of the continuum hypothesis, incompleteness of axiomatic systems stronger than Presburger, and non-constructive formulation of continuum objects all terminate a logical validity checker run on the language of its own theory.
     \end{enumerate}
@@ -179,7 +232,126 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
         \mu_{\text{drag}} = 1 - \frac{4.568}{6.81} = 0.329 = \boxed{33\%}
       \]
 
-      Two independent galactic systems yield $31\%$ and $33\%$ drag---the same within measurement uncertainty \cite{Riess2025}. This reflects the same scaled electron-shell viscosity damping stellar orbits in both galaxies.
+      Two independent galactic systems yield $31\%$ and $33\%$ drag---the same within measurement uncertainty \cite{Riess2025} (see Figure~\ref{fig:mhd_drag}). This reflects the same scaled electron-shell viscosity damping stellar orbits in both galaxies.
+
+% ------------------------------------------------------------------
+% FIGURE 1 — MHD Drag: Ideal vs Observed Frequency Bar Chart
+%
+% WHAT IT SHOWS:
+%   Two side-by-side horizontal bar pairs (Milky Way + Andromeda).
+%   Each pair has an "ideal" bar (full length = f_ideal) and an
+%   "observed H-alpha" bar (shorter). The gap between them is shaded
+%   and labelled as the 31% / 33% drag zone.
+%   A shared H-alpha reference line runs across both galaxies to make
+%   it visually obvious that the *same* H-alpha frequency is the
+%   yardstick in both cases.
+%
+% TO REPLACE WITH A PNG:
+%   1. Save your rendered image as  ./figures/tfoft_figure_1_mhd_drag.png
+%   2. Delete the tikzpicture environment below (keep the \begin{figure}
+%      and \caption lines).
+%   3. Replace with:
+%        \includegraphics[width=0.85\textwidth]{tfoft_figure_1_mhd_drag.png}
+%
+% PYTHON RECREATION NOTES:
+%   Use matplotlib horizontal barh.
+%   Milky Way:  f_ideal=6.62e14, f_obs=4.568e14  → drag=31%
+%   Andromeda:  f_ideal=6.81e14, f_obs=4.568e14  → drag=33%
+%   Draw a vertical dashed line at f_obs=4.568e14 across both bars.
+%   Shade the gap (f_obs → f_ideal) in red with alpha≈0.3, label "31% drag".
+%   X-axis label: "Frequency (×10¹⁴ Hz)"
+%   Colour ideal bars steel-blue, observed bars gold, gap fill crimson.
+% ------------------------------------------------------------------
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[font=\small]
+  \definecolor{idealblue}{RGB}{52,120,180}
+  \definecolor{obsgold}{RGB}{200,160,30}
+  \definecolor{dragred}{RGB}{200,60,50}
+
+  % Scale: 1 cm = 1e14 Hz, so 6.62 → 6.62 cm, 4.568 → 4.568 cm
+  \def\fMWid{6.62}   % Milky Way ideal
+  \def\fAnd{6.81}    % Andromeda ideal
+  \def\fobs{4.568}   % observed H-alpha (same for both)
+  \def\bh{0.55}      % bar half-height
+
+  % ---- axes ----
+  \draw[-Stealth, gray!60] (0,0) -- (7.8,0)
+    node[right, gray!70, font=\footnotesize] {Frequency ($\times10^{14}$ Hz)};
+  \foreach \x/\lbl in {0/0, 1/1, 2/2, 3/3, 4/4, 5/5, 6/6, 6.62/6.62, 6.81/6.81}{
+    \draw[gray!40] (\x,-0.08) -- (\x,0.08);
+  }
+  \foreach \x/\lbl in {0/0, 2/2, 4/4, 6/6}{
+    \node[gray!60, font=\scriptsize, below] at (\x,-0.1) {\lbl};
+  }
+
+  % ---- Milky Way row ----
+  \node[font=\footnotesize\bfseries, align=right] at (-0.3, 1.3) {Milky\\Way};
+
+  % ideal bar
+  \fill[idealblue!70!white] (0, 1.3-\bh) rectangle (\fMWid, 1.3+\bh);
+  \node[white, font=\scriptsize\bfseries] at (\fMWid/2, 1.3)
+    {$f_\text{ideal}=6.62$};
+
+  % observed bar (overlaid, shorter)
+  \fill[obsgold!90!white] (0, 1.3-\bh+0.06) rectangle (\fobs, 1.3+\bh-0.06);
+  \node[white, font=\scriptsize\bfseries] at (\fobs/2, 1.3)
+    {$f_{H\alpha}=4.57$};
+
+  % drag gap fill
+  \fill[dragred, opacity=0.25] (\fobs, 1.3-\bh) rectangle (\fMWid, 1.3+\bh);
+  \draw[dragred, dashed] (\fobs, 1.3-\bh) -- (\fobs, 1.3+\bh);
+
+  % drag label
+  \node[dragred!80!black, font=\bfseries\footnotesize] at
+    ({(\fobs+\fMWid)/2}, 1.3+\bh+0.28) {\textbf{31\%} drag};
+  \draw[dragred, -{Stealth[length=3pt]}, thick]
+    ({(\fobs+\fMWid)/2}, 1.3+\bh+0.18) -- ({(\fobs+\fMWid)/2}, 1.3+\bh+0.04);
+
+  % ---- Andromeda row ----
+  \node[font=\footnotesize\bfseries, align=right] at (-0.3, 0.35) {Andro-\\meda};
+
+  \fill[idealblue!70!white] (0, 0.35-\bh) rectangle (\fAnd, 0.35+\bh);
+  \node[white, font=\scriptsize\bfseries] at (\fAnd/2, 0.35)
+    {$f_\text{ideal}=6.81$};
+
+  \fill[obsgold!90!white] (0, 0.35-\bh+0.06) rectangle (\fobs, 0.35+\bh-0.06);
+  \node[white, font=\scriptsize\bfseries] at (\fobs/2, 0.35)
+    {$f_{H\alpha}=4.57$};
+
+  \fill[dragred, opacity=0.25] (\fobs, 0.35-\bh) rectangle (\fAnd, 0.35+\bh);
+  \draw[dragred, dashed] (\fobs, 0.35-\bh) -- (\fobs, 0.35+\bh);
+
+  \node[dragred!80!black, font=\bfseries\footnotesize] at
+    ({(\fobs+\fAnd)/2}, 0.35-\bh-0.28) {\textbf{33\%} drag};
+  \draw[dragred, -{Stealth[length=3pt]}, thick]
+    ({(\fobs+\fAnd)/2}, 0.35-\bh-0.18) -- ({(\fobs+\fAnd)/2}, 0.35-\bh-0.04);
+
+  % ---- shared H-alpha vertical reference ----
+  \draw[obsgold!80!black, densely dotted, thick]
+    (\fobs, -0.5) -- (\fobs, 2.1)
+    node[above, font=\scriptsize, obsgold!70!black]
+    {$f_{H\alpha}$ reference};
+
+  % ---- legend ----
+  \fill[idealblue!70!white] (0.1,-0.75) rectangle (0.55,-0.55);
+  \node[right, font=\scriptsize, gray!80!black] at (0.6,-0.65) {Ideal (Keplerian) frequency};
+  \fill[obsgold!90!white] (3.4,-0.75) rectangle (3.85,-0.55);
+  \node[right, font=\scriptsize, gray!80!black] at (3.9,-0.65) {Observed H-$\alpha$ frequency};
+  \fill[dragred, opacity=0.3] (6.0,-0.75) rectangle (6.45,-0.55);
+  \node[right, font=\scriptsize, gray!80!black] at (6.5,-0.65) {MHD drag zone};
+
+\end{tikzpicture}
+\caption{MHD viscous drag signature at galactic scale.
+  The gold bars show the observed H-$\alpha$ stellar orbital frequency shared by both
+  galaxies; the blue bars show the ideal Keplerian prediction.
+  The red shaded gap is the drag fraction attributable to the scaled electron-cloud
+  (dark-matter halo) viscosity: $31\%$ for the Milky Way and $33\%$ for Andromeda,
+  consistent within measurement uncertainty.
+  In TFOFT this is the same phenomenon as electron orbital quantization in atoms,
+  upscaled by $\lambda\approx10^{31}$.}
+\label{fig:mhd_drag}
+\end{figure}
 
     \subsubsection{Physical Interpretation}
 
@@ -268,6 +440,23 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
     \subsubsection{Conclusion: The Fractal Dimension Argument}
 
       The ubiquity of power laws near the Apollonian-Soddy dimensions is not explainable by any other known structure. \textbf{The empirical fractal substrate is the ASSP.} This is the conclusion that motivates the conjecture in Section~\ref{sec:conjecture}.
+
+      \begin{figure}[htbp]
+      \centering
+
+      % Main all-sky gamma-ray map (the one you saved first)
+      \includegraphics[width=0.95\textwidth]{./figures/tfoft_figure_assp_level_7.png}  % ← change filename if      different
+      \caption[Soddy Sphere Packing Iteration 7]
+      { Opaque outline of the tetrahedral seed generating all soddy cores inside the virtual outter soddy.
+      }
+      \label{fig:soddy_layer_7}
+
+      \vspace{1.2em}
+
+      \textbf{Credit:} Generated by Steven E. Elliott.
+    \end{figure}
+
+
 
 % ==================================================================
 %  PART C:  PRIOR FRACTAL PHYSICS THEORIES AND THE QUINE GAP
@@ -359,6 +548,52 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
 
       By the Presburger minimization principle (Axiom P2: minimal information encoding), Choice 2 is superior. \textbf{The natural unit radius in a self-describing Presburger-ASSP system is $r = \pi$.}
 
+% ------------------------------------------------------------------
+% FIGURE 2 — Three Channels → α⁻¹ = 137.036
+%
+% WHAT IT SHOWS:
+%   Three shaded spheres of radius r=π in a row, each illustrating one
+%   orthogonal information channel of a Soddy sphere, summing to α⁻¹:
+%
+%   Sphere 1 (blue, fully shaded):
+%     Surface area channel T_S = 4π³ ≈ 124.025
+%     The whole sphere surface is active — small grid lines suggest tiling.
+%     Label: "T_S = 4π³   (Surface channel)"
+%
+%   Sphere 2 (red, upper hemisphere only):
+%     Phase / rotational channel T_R = π² ≈ 9.870
+%     Only the upper hemisphere is filled — the lower half is dashed —
+%     to convey the half-turn symmetry that removes the duplicate pole.
+%     A white arc along the great circle is labelled "πr".
+%     Label: "T_R = π²   (Phase channel)"
+%
+%   Sphere 3 (green, outline only + single radius arrow):
+%     Radial position channel T_D = π ≈ 3.142
+%     Sphere is mostly transparent; one arrow shows the radius r=π.
+%     Label: "T_D = π   (Radial channel)"
+%
+%   To the right: a brace and summation box showing
+%       4π³ + π² + π = 137.036 = α⁻¹
+%
+% TO REPLACE WITH A PNG:
+%   1. Save your image as  ./figures/tfoft_figure_2_alpha_channels.png
+%   2. Delete the tikzpicture below (keep \begin{figure} and \caption).
+%   3. Replace with:
+%        \includegraphics[width=\textwidth]{tfoft_figure_2_alpha_channels.png}
+%
+% PYTHON RECREATION NOTES:
+%   Use matplotlib with 3 subplots side by side, each a circle (2D
+%   cross-section of sphere).
+%   Subplot 1: filled circle, draw a ~5×5 mercator grid on the surface.
+%              Annotate: "T_S = 4π³ = 124.025"
+%   Subplot 2: upper semicircle filled, lower dashed. Draw arc along
+%              circumference top. Annotate: "T_R = π² = 9.870"
+%   Subplot 3: dashed circle outline, single arrow from centre to right
+%              edge labelled "r = π". Annotate: "T_D = π = 3.142"
+%   Add a right-side text box:  "Σ = 4π³+π²+π = 137.036 = α⁻¹"
+%   Colour map: col1=#3478B4 (blue), col2=#C85032 (red), col3=#3CA05A (green)
+%   Summary box colour: #78429F (purple)
+% ------------------------------------------------------------------
   \subsection{The Three Independent State Channels of a Soddy Sphere}
 
     A single Soddy sphere is the minimal self-referential object in the ASSP. Its complete dynamical state requires specification of three independent pieces of information.
@@ -387,9 +622,103 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
       \]
       This is the \textbf{Fundamental Length Metric (FLM)}.
 
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[font=\small]
+  \definecolor{col1}{RGB}{52,120,180}
+  \definecolor{col2}{RGB}{200,80,50}
+  \definecolor{col3}{RGB}{60,160,90}
+  \definecolor{sumcol}{RGB}{120,60,160}
+
+  % === SPHERE 1: Surface channel T_S = 4pi^3 ===
+  \begin{scope}[xshift=0cm]
+    \shade[ball color=col1!75!white] (0,0) circle (1.3cm);
+    % equator and meridian lines suggesting surface tiling
+    \draw[white,opacity=0.45,thick] (0,0) ellipse (1.3cm and 0.36cm);
+    \draw[white,opacity=0.35,thick] (0,0) ellipse (1.3cm and 0.7cm);
+    \draw[white,opacity=0.30] (0,-1.3)--(0,1.3);
+    \draw[white,opacity=0.30] ({1.3*cos(60)},{1.3*sin(60)})--({1.3*cos(240)},{1.3*sin(240)});
+    \draw[white,opacity=0.30] ({1.3*cos(120)},{1.3*sin(120)})--({1.3*cos(300)},{1.3*sin(300)});
+    \node[white,font=\bfseries\footnotesize] at (0,0.35) {$4\pi r^2$};
+    \node[white,font=\tiny] at (0,-0.2) {$r\!=\!\pi$};
+    \node[col1!75!black,font=\footnotesize,align=center] at (0,-1.9)
+      {$T_S = 4\pi^3$\\\footnotesize Surface channel};
+    \node[col1!60!black,font=\scriptsize] at (0,-2.55) {$=124.025$};
+  \end{scope}
+
+  \node[font=\Large\bfseries,gray!60] at (2.0,0) {$+$};
+
+  % === SPHERE 2: Phase channel T_R = pi^2 (hemisphere only) ===
+  \begin{scope}[xshift=4.0cm]
+    \begin{scope}
+      \clip (-1.3,-0.02) rectangle (1.3,1.35);
+      \shade[ball color=col2!75!white] (0,0) circle (1.3cm);
+    \end{scope}
+    \fill[col2!15!white,opacity=0.5]
+      (-1.3,0) arc(180:0:1.3cm and 0.36cm) -- cycle;
+    \draw[col2!70!black,thick]
+      (-1.3,0) arc(180:0:1.3cm and 0.36cm);
+    \begin{scope}
+      \clip (-1.35,-1.35) rectangle (1.35,0);
+      \draw[col2!35!white,dashed,thick] (0,0) circle (1.3cm);
+    \end{scope}
+    % arc arrow along hemisphere great circle
+    \draw[white,very thick,-{Stealth[length=4pt]}]
+      ({1.3*cos(168)},{1.3*sin(168)}) arc(168:12:1.3cm);
+    \node[white,font=\bfseries\footnotesize] at (0,0.6) {$\pi r$};
+    \node[col2!60!black,font=\tiny,align=center] at (0,-0.5)
+      {(half-turn\\symmetry)};
+    \node[col2!75!black,font=\footnotesize,align=center] at (0,-1.9)
+      {$T_R = \pi^2$\\\footnotesize Phase channel};
+    \node[col2!60!black,font=\scriptsize] at (0,-2.55) {$=9.870$};
+  \end{scope}
+
+  \node[font=\Large\bfseries,gray!60] at (6.0,0) {$+$};
+
+  % === SPHERE 3: Radial channel T_D = pi (outline + arrow) ===
+  \begin{scope}[xshift=8.0cm]
+    \draw[col3!40!white,dashed,thick] (0,0) circle (1.3cm);
+    \shade[ball color=col3!18!white,opacity=0.35] (0,0) circle (1.3cm);
+    \draw[col3!80!black,very thick,-{Stealth[length=5pt]}]
+      (0,0) -- (1.3,0);
+    \node[col3!80!black,font=\footnotesize\bfseries,above] at (0.65,0.05)
+      {$r=\pi$};
+    \fill[col3!80!black] (0,0) circle (2.2pt);
+    \node[col3!75!black,font=\footnotesize,align=center] at (0,-1.9)
+      {$T_D = \pi$\\\footnotesize Radial channel};
+    \node[col3!60!black,font=\scriptsize] at (0,-2.55) {$=3.142$};
+  \end{scope}
+
+  % === EQUALS + SUM BOX ===
+  \node[font=\Large\bfseries,gray!60] at (10.05,0) {$=$};
+  \begin{scope}[xshift=11.3cm]
+    \node[sumcol,font=\large\bfseries] at (0,0.6) {$\alpha^{-1}$};
+    \node[sumcol!85!black,font=\normalsize] at (0,-0.0)
+      {$4\pi^3+\pi^2+\pi$};
+    \draw[sumcol!60,thick] (-1.05,-0.45)--(1.05,-0.45);
+    \node[sumcol,font=\Large\bfseries] at (0,-0.95) {$137.036$};
+    \node[gray!55,font=\scriptsize,align=right] at (0,-1.85)
+      {$124.025$\\$+\;\;9.870$\\$+\;\;3.142$};
+  \end{scope}
+
+  % === top title ===
+  \node[font=\normalsize\bfseries,gray!75!black] at (5.6,2.1)
+    {Three Orthogonal State Channels of a Soddy Sphere ($r=\pi$)};
+\end{tikzpicture}
+\caption{The fine-structure constant $\alpha^{-1}$ as a sum of three orthogonal
+  Presburger information costs for a single Soddy sphere of radius $r=\pi$.
+  \textbf{Blue} ($T_S=4\pi^3$): surface-area channel — which point on the sphere is active.
+  \textbf{Red} ($T_R=\pi^2$): phase channel — rotational orientation, hemisphere only
+  (half-turn symmetry eliminates the second pole).
+  \textbf{Green} ($T_D=\pi$): radial channel — distance of centre from reference.
+  No free parameters; $r=\pi$ is the unique Presburger-minimal radius choice
+  (Section~\ref{sec:ftc}).}
+\label{fig:alpha_channels}
+\end{figure}
+
   \subsection{The Fundamental Computation Cost: $T_{\text{sphere}} = \alpha^{-1}$}
 
-    The total information cost to fully specify a Soddy sphere's state on a fractal Presburger computer is the sum of the three channel costs:
+    The total information cost to fully specify a Soddy sphere's state on a fractal Presburger computer is the sum of the three channel costs (Figure~\ref{fig:alpha_channels}):
 
     \[
       T_{\text{sphere}} = T_S + T_R + T_D = 4\pi^3 + \pi^2 + \pi
@@ -444,7 +773,7 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
 
       We conjecture that this residual is the \emph{encoded intrinsic fractal register garbage collector}: the computational cost of closing the fractal circuit and recycling the momentum debt incurred by 77 layers of mass-channel encoding. Perpetual computation requires a mechanism to eventually restart the fusion processes after a star runs out of its fuel. The remaining Soddy Cores in the 137 + 2 - 77 define this process by encoding the fusion byproducts on the free cores:
       \begin{itemize}
-        \item \textbf{Helium-4 ($A = 4$)}: the tetrahedral Soddy-closed shell at 4 nucleons is the most temporally stable arrangement in the ASSP of simple nucleons due to the external density > internal fractal density.
+        \item \textbf{Helium-4 ($A = 4$)}: the tetrahedral Soddy-closed shell at 4 nucleons is the most temporally stable arrangement in the ASSP of simple nucleons due to the external virtual soddy fractal density > internal virtual soddy fractal density.
         \item \textbf{Iron-56 ($A = 56$)}: the remaining Presburger Soddy core budget cannot be exceeded without causing exponential instability to the original 137 log steps. The maximum "free-lunch" that still releases energy during synthesis.
       \end{itemize}
 
@@ -456,7 +785,7 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
 
   \subsection{The Fractal Quine: Two Balls and the Universal Fundamental Law}
 
-    The result $T_{\text{sphere}} = 137.036$ is the complete description of a \emph{single} isolated Soddy sphere. It is a physical constant, but not yet a law; a law requires a relation between objects.
+    The result $T_{\text{sphere}} = 137.036$ is the complete description of a \emph{single} isolated Soddy sphere (Figure~\ref{fig:fractal_quine}, left). It is a physical constant, but not yet a law; a law requires a relation between objects.
 
     The moment a second sphere is placed in tangency with the first, something qualitatively new emerges. The system becomes a \emph{self-executing program}:
 
@@ -467,11 +796,184 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
       \item The computational cost of this transfer is paid through the injection of dust balls into the lower fractal layer, carrying mostly linear-and-angular momentum as dark matter production. Another cost is the loss of star-ball fractal structure after core ball ejection and  non-local macrophoton-core ball collision as injection of spit balls into the current fractal layer at the non-local ball transfer collision (e.g, core jets).
     \end{enumerate}
 
-    This is the \textbf{fractal quine}: the two-ball system writes a copy of its own operational instructions into the info ball it emits. The info ball carries the full $T_{\text{sphere}} = 137.036$ state cost of a single sphere, encoded as angular momentum.
+    This is the \textbf{fractal quine}: the two-ball system writes a copy of its own operational instructions into the info ball it emits. The info ball carries a percentage of the full $T_{\text{sphere}} = 137.036$ state cost of a single sphere, encoded as angular momentum.
 
     \begin{quote}
       \textbf{One ball on top of 137.036 is a state. Two balls on top of 137.036 is a law. The two-ball tangency is the minimal configuration that generates the universal fundamental law: the fractal quine instruction set of the Presburger-ASSP.}
     \end{quote}
+
+% ------------------------------------------------------------------
+% FIGURE 3 — The Fractal Quine: One Ball (State) vs Two Balls (Law)
+%
+% WHAT IT SHOWS:
+%   LEFT PANEL — "One Ball = State":
+%     A single shaded sphere (star ball, blue) with spin arrows on its
+%     surface. Labelled T_sphere = 137.036 inside. Below: cost annotation.
+%     A note says "isolated — no tangency — no law, only a state."
+%
+%   DIVIDING LINE (dashed vertical) separates pattern from law.
+%
+%   RIGHT PANEL — "Two Balls = Law (Quine)":
+%     A larger orange sphere (core ball) tangent to a smaller blue sphere
+%     (star ball). At the tangency point: a yellow dot labelled "tangency."
+%     From the tangency, an arrow leads to a small golden sphere (info ball)
+%     shooting upward-right, labelled "Info Ball (photon / macrophoton)."
+%     Below: a small grey sphere (dust ball) sinking downward, labelled
+%     "Dust Ball → dark matter / lower layer."
+%     The quine arrow: a curved arrow from info ball back toward star ball
+%     labelled "copies state → quine."
+%
+% TO REPLACE WITH A PNG:
+%   1. Save your image as  ./figures/tfoft_figure_3_fractal_quine.png
+%   2. Delete the tikzpicture below.
+%   3. Replace with:
+%        \includegraphics[width=\textwidth]{tfoft_figure_3_fractal_quine.png}
+%
+% PYTHON RECREATION NOTES:
+%   Use matplotlib with two subplots separated by a dashed vertical line.
+%   LEFT: one circle (star ball, #3478B4), arrows around perimeter,
+%         text "T_sphere=137.036" inside.
+%   RIGHT: large circle (core ball, #D26E28) + smaller tangent circle
+%         (star ball, #3478B4). At tangent point: yellow dot.
+%         Arrow from tangent point → small golden circle (info ball) upper-right.
+%         Arrow from tangent point → small gray circle (dust ball) lower.
+%         Curved arrow info→star labelled "quine loop."
+%   Colour: star #3478B4, core #D26E28, info #DCC81E, dust #8C8CA0
+% ------------------------------------------------------------------
+\begin{comment} 
+% This is broken:
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[font=\small]
+  \definecolor{starblue}{RGB}{52,120,180}
+  \definecolor{coreorange}{RGB}{210,110,40}
+  \definecolor{infogold}{RGB}{220,190,30}
+  \definecolor{dustgray}{RGB}{140,140,160}
+
+  % ---- LEFT: single ball ----
+  \node[font=\bfseries\normalsize,gray!80!black] at (0,3.1)
+    {\textsc{One Ball} $=$ State};
+  \shade[ball color=starblue!80!white] (0,0) circle (1.55cm);
+  \foreach \a in {0,60,120,180,240,300}{
+    \draw[white!80!starblue,very thick,opacity=0.65,
+          -{Stealth[length=2.5pt]}]
+      ({1.55*cos(\a)},{1.55*sin(\a)})
+      arc(\a:\a+48:1.55cm and 0.48cm);
+  }
+  \draw[white,opacity=0.45,thick] (0,0) ellipse (1.55cm and 0.43cm);
+  \node[white,font=\bfseries\footnotesize] at (0,0.35) {$T_{\text{sphere}}$};
+  \node[white,font=\tiny] at (0,-0.2) {$=137.036$};
+  \node[starblue!75!black,font=\footnotesize,align=center] at (0,-2.25)
+    {Presburger cost: $4\pi^3+\pi^2+\pi$};
+  \node[fill=starblue!15,draw=starblue!50,rounded corners=2pt,
+        font=\scriptsize\bfseries,starblue!80!black] at (0,-3.0)
+    {Star Ball (electron / star)};
+  \node[gray!50,font=\tiny,align=center] at (0,2.3)
+    {isolated — no tangency\\no law; only a state};
+
+  % ---- DIVIDER ----
+  \draw[gray!30,dashed,very thick] (3.15,-3.5)--(3.15,3.5);
+  \node[gray!45,font=\small\itshape] at (3.15,3.85)
+    {$\longleftarrow$ pattern \quad law $\longrightarrow$};
+
+  % ---- RIGHT: two tangent balls ----
+  \node[font=\bfseries\normalsize,gray!80!black] at (7.3,3.1)
+    {\textsc{Two Balls} $=$ Law (Quine)};
+
+  % core ball (larger, orange), centred at (8.0, 0)
+  \shade[ball color=coreorange!80!white] (8.0,0) circle (1.15cm);
+  \node[white,font=\bfseries\footnotesize] at (8.0,0.2) {Core};
+  \node[white,font=\tiny] at (8.0,-0.25) {Ball};
+
+  % star ball (smaller, blue), centred at (5.85, 0), tangent to core
+  \shade[ball color=starblue!80!white] (5.85,0) circle (1.0cm);
+  \foreach \a in {20,100,180,260}{
+    \draw[white!80!starblue,thick,opacity=0.65,
+          -{Stealth[length=2pt]}]
+      ({5.85+1.0*cos(\a)},{1.0*sin(\a)})
+      arc(\a:\a+55:1.0cm and 0.32cm);
+  }
+  \node[white,font=\bfseries\footnotesize] at (5.85,0.2) {Star};
+  \node[white,font=\tiny] at (5.85,-0.25) {Ball};
+
+  % tangency point
+  \fill[yellow!85!white] (6.85,0) circle (4pt);
+  \node[yellow!60!black,font=\tiny,above=4pt] at (6.85,0)
+    {tangency};
+
+  % info ball shooting upper-right
+  \shade[ball color=infogold!90!white] (9.1,2.2) circle (0.42cm);
+  \node[infogold!70!black,font=\tiny,right=5pt] at (9.1,2.2)
+    {Info Ball\\(photon / macrophoton)};
+  \draw[infogold!80!black,very thick,-{Stealth[length=4pt]}]
+    (7.15,0.4) -- (8.75,1.9);
+
+  % dust ball sinking lower-left
+  \shade[ball color=dustgray!70!white] (5.5,-2.3) circle (0.38cm);
+  \node[dustgray!70!black,font=\tiny,right=4pt] at (5.5,-2.3)
+    {Dust Ball\\(dark matter / lower layer)};
+  \draw[dustgray!60!black,thick,-{Stealth[length=4pt]}]
+    (6.6,-0.55) -- (5.75,-2.0);
+
+  % quine loop: curved arrow from info ball back toward star ball
+  \draw[infogold!70!black,thick,dashed,
+        -{Stealth[length=4pt]},
+        bend left=40]
+    (8.85,2.55) to node[above,font=\tiny,align=center,infogold!70!black]
+      {copies state\\$\to$ quine loop} (5.85,1.05);
+
+  % labels
+  \node[fill=starblue!15,draw=starblue!50,rounded corners=2pt,
+        font=\scriptsize\bfseries,starblue!80!black] at (5.5,-3.0)
+    {Star Ball};
+  \node[fill=coreorange!15,draw=coreorange!50,rounded corners=2pt,
+        font=\scriptsize\bfseries,coreorange!80!black] at (8.5,-3.0)
+    {Core Ball (proton / galactic core)};
+
+\end{tikzpicture}
+\caption{The fractal quine transition.
+  \textbf{Left}: a single isolated Soddy sphere (star ball) carries a complete
+  Presburger state cost $T_{\text{sphere}}=137.036$ but enforces no law — it is a
+  pattern without a rule.
+  \textbf{Right}: the moment a second sphere (core ball) is placed in tangency,
+  the system becomes a self-executing program. The tangency point (yellow) triggers
+  angular-momentum transfer; an info ball (photon / macrophoton) is emitted carrying
+  a copy of the state description — the quine loop. Momentum debt is paid by injecting
+  dust balls into the lower fractal layer (dark matter).
+  The two-ball configuration is the minimal unit that generates a physical law.}
+\label{fig:fractal_quine}
+\end{figure}
+
+\end{comment} 
+% ==================================================================
+% FIGURE 3 — The Fractal Quine: One Ball (State) vs Two Balls (Law)
+%
+% WHAT IT SHOWS: [description already in your original comment]
+%
+% TO REPLACE WITH PNG (already done):
+% 1. PNG is saved as ./figures/tfoft_figure_3_fractal_quine.png
+% 2. TikZ block has been removed.
+% 3. Replaced with \includegraphics below.
+%
+% PYTHON RECREATION NOTES: [your original notes]
+% ==================================================================
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{tfoft_figure_3_fractal_quine.png}
+\caption{The fractal quine transition.
+  \textbf{Left}: a single isolated Soddy sphere (star ball) carries a complete
+  Presburger state cost $T_{\text{sphere}}=137.036$ but enforces no law — it is a
+  pattern without a rule.
+  \textbf{Right}: the moment a second sphere (core ball) is placed in tangency,
+  the system becomes a self-executing program. The tangency point (yellow) triggers
+  angular-momentum transfer; an info ball (photon / macrophoton) is emitted carrying
+  a copy of the state description — the quine loop. Momentum debt is paid by injecting
+  dust balls into the lower fractal layer (dark matter).
+  The two-ball configuration is the minimal unit that generates a physical law.}
+\label{fig:fractal_quine}
+\end{figure}
+
 
   \subsection{Two-Ball Computational Overhead: $T_{\text{sphere}} + \Delta T_{\text{two-ball}}$}
 
@@ -665,7 +1167,7 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
       \textbf{Definition}: A Pipe Ball is an elongated, quasi-one-dimensional chain of Soddy tangencies in the lower fractal layer, oriented along the gradient of the here-scale angular momentum field. It acts as a \emph{magnetic field line at the galactic scale}: a low-density highway of lower-scale hydrogen substrate through which here-scale star balls can traverse sub-luminally between stellar systems and galaxies.
     \end{quote}
 
-    In standard magnetohydrodynamics, magnetic field lines are mathematical constructs. In TFOFT, galactic-scale magnetic field lines are physical: they are Pipe Balls whose geometry traces the angular momentum gradient of the local ASSP. The inter-galactic filaments of the cosmic web are the here-scale manifestation of Pipe Balls at the wish-scale. They are not gravitationally collapsed dark matter sheets; they are the magnetic-field-line substrate of a fractal layer that uses our galaxies as its electrons.
+    In standard magnetohydrodynamics, magnetic field lines are mathematical constructs. In TFOFT, galactic-scale magnetic field lines are physical: they are Pipe Balls whose geometry traces the angular momentum gradient of the local ASSP. The inter-galactic filaments of the cosmic web are the here-scale manifestation of Pipe Balls at the wish-scale. They are not gravitationally collapsed dark matter sheets; they are the magnetic-field-line substrate of a fractal layer that uses our galaxies as its atoms and our stars as its electrons.
 
   \subsection{The Ball Ontology: Fundamental Objects of the Fractal Tennis Computer}
 
@@ -842,19 +1344,75 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
 
   \subsection{The Non-Darkness of Dark Matter: Fractal Electron Manufacture}
 
-    The term ``dark matter'' is a historical misnomer. In TFOFT, dark matter is not dark and not mysterious. It is \textbf{lower-scale hydrogen gas} --- the here-scale equivalent of the electron clouds that surround atomic nuclei.
 
-    Close to a gravitational well, the dark matter substrate becomes locally dense enough to undergo its own fractal-scale stellar generation process. Lower-scale hydrogen gas at sufficient pressure ignites lower-scale fusion. To a here-scale observer, its energy output manifests as the anomalous heating in dense compact objects, the Fermi bubbles, and the warm-hot intergalactic medium.
 
-    Most importantly: \textbf{the electron clouds of atoms literally manufacture lower-scale electrons}. The ``virtual particle zoo'' of quantum field theory is the here-scale observation of this lower-scale manufacture process, seen through the fractal boundary.
+    The term ``dark matter'' is a historical misnomer. In TFOFT, dark matter is not dark and not mysterious. It is \textbf{lower-scale hydrogen gas} --- the cold tiny hydrogen fuel of the star-balls we consider to be electrons.
 
-    \begin{quote}
-      \textbf{Electron clouds manufacture electrons.
-      Dark matter halos manufacture stars.
-      The fractal universe manufactures itself.}
-    \end{quote}
+    Close to a gravitational well, the dark matter substrate becomes locally dense enough to undergo its own fractal-scale stellar generation process. Lower-scale hydrogen gas at sufficient pressure ignites lower-scale fusion, producing here-scale electrons. To a here-scale observer, its energy output manifests as the anomalous heating in dense compact objects, the Fermi bubbles, and the warm-hot intergalactic medium.
 
-    At every fractal scale $N$, the orbital shell of scale-$N$ objects around scale-$N$ cores is the dark matter halo of scale $N$. At sufficient density, this shell spontaneously generates scale-$(N-1)$ objects. This is the fractal quine instruction set executing itself at every scale simultaneously.
+    Most importantly: \textbf{the electron clouds of atoms literally manufacture lower-scale tiny electrons}. The ``virtual particle zoo'' of quantum field theory is the here-scale observation of this lower-scale manufacture process, seen through the fractal boundary.
+
+
+% ==================================================================
+% PASTE THIS EXACT BLOCK AT THE VERY END OF SUBSECTION 5.17
+% (right after the quote that says:
+%    "Dark matter halos manufacture electrons.
+%     Electron clouds manufacture tiny electrons.
+%     The fractal universe manufactures itself.")
+%
+% This forces the figures to stay exactly in 5.17
+% (no more floating into 6.1.2–6.2).
+% ==================================================================
+
+
+\begin{quote}
+  \textbf{Dark matter halos manufacture electrons. \\
+  Electron clouds manufacture tiny electrons. \\
+  The fractal universe manufactures itself.}
+\end{quote}
+
+% ==================================================================
+% FERMI BUBBLES + HYDROGEN 3d ORBITAL — FORCED HERE PLACEMENT
+% ==================================================================
+\begin{figure}[H]
+  \centering
+  % Main all-sky gamma-ray map (Fermi bubbles)
+  \includegraphics[width=0.95\textwidth]{./figures/tfoft_figure_Fermi_all_sky_2_5_GeV.png}
+  \caption[Fermi bubbles — gamma-ray lobes of the Milky Way]
+  {Fermi bubbles observed by the Fermi Large Area Telescope (gamma-ray map in Mollweide projection). 
+    The two giant lobes extend $\approx 50\,\mathrm{kly}$ above and below the galactic plane. 
+    In TFOFT these are the visible X-ray/gamma-ray signature of lower-fractal-layer hydrogen fusion occurring inside the dark-matter halo (the scaled ``2p'' orbital shell of the galactic hydrogen atom). 
+    The predicted bubble height from the Strassen overhead fraction ($23/27\,R_{\mathrm{halo}}$) is $49.8\,\mathrm{kly}$, matching the observed $\approx 50\,\mathrm{kly}$ to $0.4\,\%$.}
+  \label{fig:fermi_bubbles_main}
+  \vspace{1.2em}
+
+  % Detailed version with spectrum insets and sharp edges
+  \includegraphics[width=0.95\textwidth]{./figures/tfoft_figure_df4_bubbles_graphs.png}
+  \caption[Detail: energetic spectrum and sharp edges of the Fermi bubbles]
+  {Same Fermi bubbles with insets showing the hard power-law spectrum inside the bubbles (magenta curve) versus the diffuse galactic emission, and the extremely sharp edge (right panel). 
+    This sharpness is a direct geometric signature of the Soddy-sphere boundary in the fractal electron-cloud (dark-matter) halo.}
+  \label{fig:fermi_bubbles_detail}
+
+  \textbf{Credit (both panels):} NASA/DOE/Fermi LAT/D. Finkbeiner et al. \\
+  Source: NASA Scientific Visualization Studio (SVS \#10688). \\
+  Original discovery: Su, Slatyer \& Finkbeiner, Astrophys. J. \textbf{724}, 1044 (2010).
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  % Hydrogen 3d_z orbital (atomic-scale analogue)
+  \includegraphics[width=0.65\textwidth]{./figures/tfoft_figure_h3dorb.png}
+  \caption{The hydrogen $3d_z$ orbital (probability density isosurface). 
+           The two symmetric lobes separated by a nodal plane at the nucleus 
+           are the exact atomic-scale analogue of the north-south Fermi bubbles 
+           (the scaled ``3d'' electron-cloud shell of the galactic hydrogen atom).}
+  \label{fig:h3d_orbital}
+
+  \textbf{Credit:} Chemistry LibreTexts / Orbitron (M. Winter, Univ. Sheffield) / standard quantum-mechanical wavefunction plots. Public domain for academic use.
+\end{figure}
+
+
+    At every fractal scale $N$, the orbital shell of scale-$N$ objects around scale-$N$ cores is the dark matter halo of scale $N$. At sufficient density, this shell spontaneously generates scale-$(N-1)$ objects. This is a subset of the fractal quine instruction set executing itself at every scale simultaneously.
 
 % ==================================================================
 %  PART E:  EVIDENCE, KARLSSON STEPS, AND PREDICTIONS
@@ -994,7 +1552,7 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
 
       Gravity is not a fundamental force in the Fractal Tennis picture. It emerges from the M\"obius inversion geometry at Soddy tangency points, where the three-dimensional bulk packing meets the two-dimensional boundary crossing. The strength of gravity --- the value of $G$ --- is therefore determined by how deeply nested the mass and radius hierarchies are inside the fractal, and by how much the 3-D bulk and 2-D boundary scalings differ.
 
-      Because the underlying ASSP is a dynamical, self-encoding fractal, $G$ is **not** a universal constant. It inherits the same local substrate dependence already derived for $\alpha(Z)$ in Section~5.5: denser or more ``mollified'' regions (late-time fractal layers with accumulated dissipation) produce a slightly weaker effective $G$. We therefore expect the NIST value measured on Earth to lie slightly **below** the ideal infinite-depth ASSP prediction, exactly as observed.
+      Because the underlying ASSP is a dynamical, self-encoding fractal, $G$ is \textit{not} a universal constant. It inherits the same local substrate dependence already derived for $\alpha(Z)$ in Section~5.5: denser or more ``mollified'' regions (late-time fractal layers with accumulated dissipation) produce a slightly weaker effective $G$. We therefore expect the NIST value measured on Earth to lie slightly \textit{below} the ideal infinite-depth ASSP prediction, exactly as observed.
 
       We present two independent derivations that converge on the same result from complementary directions:
 
@@ -1214,7 +1772,7 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
       \hline
       Dark matter fraction & Strassen overhead & $85.2\%$ & Computable from matrix cost \\
       \hline
-      $N_{\text{mass}}$ & $\ln(M_\odot/m_e)$ & $138.936$ & 1-in-$10^6$ match \\
+      $N_{\text{mass}}$ & $\ln(M_\odot/m_e)$ & $138.936$ & Close match \\
       \hline
       $S_{\text{mass}}$ & $N_{\text{mass}}/k_{\text{Karlsson}}$ & $\sim77$ & Fractal layer count \\
       \hline
@@ -1255,7 +1813,7 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
       Observational confirmations \cite{Planck2018VI}:
       \begin{itemize}
         \item SDSS-V quasar dipole: null point at $\sim25'$ from CMB dipole
-        \item Planck 2018+ CMB birefringence: rotation at $0.418° = 25.08'$ \cite{Minami2020}
+        \item Planck 2018+ CMB birefringence: rotation at $0.418^\circ = 25.08'$ \cite{Minami2020}
         \item Cold Spot / Eridanus Supervoid: boundaries align with this angle
       \end{itemize}
 
@@ -1306,18 +1864,223 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
 
       In any model with global isotropic expansion, galaxies themselves would undergo physical dispersion, imparting a coherent motion (Doppler) component to observed redshift. This motion redshift would be distinguishable in principle from the dominant statistical component in TFOFT.
 
-      In TFOFT, the primary redshift mechanism is the accumulation of angular-momentum information loss as photons/info balls traverse fractal layer boundaries via Brownian paths through the ASSP substrate. Angular momentum is partially transferred to lower-fractal-layer hydrogen gas (dust balls), producing a statistical, blurry redshift that scales logarithmically with distance:
+      In TFOFT, the primary redshift mechanism is the accumulation of angular-momentum information loss as photons/info balls traverse fractal layer boundaries via Brownian paths through the ASSP substrate (Figure~\ref{fig:expansion_dispersion}, left arrow). Angular momentum is partially transferred to lower-fractal-layer hydrogen gas (dust balls), producing a statistical, blurry redshift that scales logarithmically with distance:
       \[
         z_{\text{Brownian}} \propto \ln(r_{\text{linear}}) \implies r_{\text{linear}} \approx \exp(z / \text{constant}).
       \]
 
       A smaller real motion component from any residual isotropic expansion (or local galactic dynamics) would still exist on top of this. Future work can attempt to separate the coherent Doppler-like motion redshift from the dominant statistical Brownian scattering (log-distance) term. This decomposition could yield refined distance-measuring techniques that combine the two components, improving upon the standard cosmic distance ladder while remaining fully consistent with the fractal quine architecture.
 
-      The consequences for standard cosmology are profound. Today's distance ladders (Cepheids, Type Ia supernovae, baryon acoustic oscillations, and especially quasar redshifts) assume that redshift is primarily a monotonic function of distance due to metric expansion. In TFOFT this assumption fails: quasar redshifts in particular are \emph{not} reliable distance indicators. They are dominated by intrinsic effects --- angular-momentum loss during fractal boundary crossings plus the high-angular-momentum injection signature when a macro-gamma ray from the parent wish-scale star manifests as a quasar upon entering a lower-power core ball. This produces the observed Karlsson logarithmic periodicity \cite{Karlsson1971} and the 94° dipole offset \cite{Secrest2025}, neither of which can be interpreted as pure distance.
+      The consequences for standard cosmology are profound. Today's distance ladders (Cepheids, Type Ia supernovae, baryon acoustic oscillations, and especially quasar redshifts) assume that redshift is primarily a monotonic function of distance due to metric expansion. In TFOFT this assumption fails: quasar redshifts in particular are \emph{not} reliable distance indicators. They are dominated by intrinsic effects --- angular-momentum loss during fractal boundary crossings plus the high-angular-momentum injection signature when a macro-gamma ray from the parent wish-scale star manifests as a quasar upon entering a lower-power core ball. This produces the observed Karlsson logarithmic periodicity \cite{Karlsson1971} and the $94^\circ$ dipole offset \cite{Secrest2025}, neither of which can be interpreted as pure distance.
 
       The Hubble tension itself is a direct symptom of this mixing \cite{Riess2025}: different rungs of the ladder probe different combinations of the small coherent motion component and the dominant statistical Brownian scattering, disregarding the time dilation from the gravitational well of the parent macro star, leading to inconsistent distance scales. When the components are properly separated, the apparent tension dissolves and the underlying fractal geometry becomes visible.
 
       This separation is unnecessary for the core validated predictions of TFOFT (the 25-arcminute CMB seam and the Karlsson logarithmic periodicity) but offers a promising avenue for empirical refinement and cross-checks with other observables. Future distance ladders that explicitly decompose redshift into motion, Brownian components, and well depth, will provide powerful new tests of the Presburger-ASSP architecture.
+
+% TODO: these figures appear nearly randomly, i need them anchored at the part around here where we discuss dark matter
+% ------------------------------------------------------------------
+% FIGURE 4 — Isotropic Dispersion + Brownian Scattering (Two-Panel)
+%
+% WHAT IT SHOWS:
+%   Two panels side by side, sharing a common geometry.
+%
+%   BOTH PANELS show two concentric sphere outlines:
+%     Inner sphere radius r  (solid line)
+%     Outer sphere radius r+δr  (solid line)
+%   A radial wedge (1/5 × 1/5 of the shell in solid angle, roughly a
+%   curved "brick" shape) is cut out of the shell between r and r+δr
+%   and coloured/hatched — this is the "surface patch."
+%
+%   LEFT PANEL — "Small shell (radius r)":
+%     The wedge patch is small. Label on the patch: "Δ patch".
+%     An arrow inside the wedge points radially outward.
+%     Caption text below: "r = source distance"
+%     A small inset grid inside the patch (or \includegraphics of
+%     something.png clipped to the patch shape) represents an image
+%     / CMB tile / galaxy field pixel.
+%     NOTE FOR PNG VERSION: the patch can contain any image file
+%     clipped to that shape using \clip in TikZ, or in Python using
+%     a masked imshow().
+%
+%   RIGHT PANEL — "Large shell (radius 3r)":
+%     The same wedge patch is now 3× wider and 3× taller (9× area).
+%     Same angular extent — same solid angle — but physically larger.
+%     The same image/grid is shown stretched to fill the larger patch,
+%     visually illustrating that the same "information pixel" covers
+%     more physical space at larger distance.
+%     Label: "Same solid angle, 9× physical area."
+%
+%   ARROWS between panels: a double-headed arrow labelled
+%     "× 3 in radius  →  × 9 in patch area"
+%
+%   Below both panels: two stacked labels showing the two redshift
+%   components in TFOFT:
+%     Component 1 (blue dashed arrow): "Brownian scattering:
+%       z ∝ ln(r) — accumulates at each fractal boundary"
+%     Component 2 (orange arrow): "Isotropic dispersion:
+%       secondary coherent motion — Doppler component"
+%
+% TO REPLACE WITH A PNG:
+%   1. Save your image as  ./figures/tfoft_figure_4_expansion_dispersion.png
+%   2. Delete the tikzpicture below.
+%   3. Replace with:
+%        \includegraphics[width=\textwidth]{tfoft_figure_4_expansion_dispersion.png}
+%
+% PYTHON RECREATION NOTES:
+%   Use matplotlib.patches.Wedge or a polar plot.
+%   Draw two concentric circles per panel (r=1, r=1.15 for left;
+%   r=3, r=3.45 for right).
+%   Shade the shell between them from angle -18^\circ to +18^\circ (i.e. 1/5 × 1/5
+%   of solid angle) in gold/yellow.
+%   Optionally use ax.imshow with a clip_path on the wedge region to
+%   embed a real image (pass any .png as the texture).
+%   Draw the Brownian path as a blue wiggly line from source to observer.
+%   Draw the Doppler arrow as a straight orange arrow.
+%   Label both arrows with their redshift formula.
+%   x-axis: distance; y-axis: not physical (just geometric cross-section).
+% ------------------------------------------------------------------
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[font=\small]
+  \definecolor{shellgold}{RGB}{210,170,40}
+  \definecolor{browncol}{RGB}{50,110,190}
+  \definecolor{doppcol}{RGB}{200,90,30}
+  \definecolor{patchfill}{RGB}{230,200,100}
+
+  % ===================== LEFT PANEL: small shell, radius r =====================
+  \begin{scope}[xshift=0cm]
+    \def\rin{1.5} 
+    \def\rout{1.85}
+    \def\hwang{18}
+    \node[font=\bfseries\footnotesize,gray!80!black] at (0,2.55)
+      {Shell at distance $r$};
+    \draw[gray!50,thick] (0,0) circle (\rout cm);
+    \draw[gray!70,thick] (0,0) circle (\rin cm);
+    \fill[patchfill,opacity=0.75]
+      ({\rin*cos(\hwang)},{\rin*sin(\hwang)})
+      arc(\hwang:-\hwang:\rin cm)
+      -- ({\rout*cos(-\hwang)},{\rout*sin(-\hwang)})
+      arc(-\hwang:\hwang:\rout cm)
+      -- cycle;
+    \draw[shellgold!80!black,thick]
+      ({\rin*cos(\hwang)},{\rin*sin(\hwang)})
+      arc(\hwang:-\hwang:\rin cm)
+      -- ({\rout*cos(-\hwang)},{\rout*sin(-\hwang)})
+      arc(-\hwang:\hwang:\rout cm)
+      -- cycle;
+    \foreach \rr in {1.58, 1.68, 1.78}{
+      \draw[shellgold!50!white,very thin]
+        ({\rr*cos(\hwang)},{\rr*sin(\hwang)})
+        arc(\hwang:-\hwang:\rr cm);
+    }
+    \foreach \aa in {-12,-4,4,12}{
+      \draw[shellgold!50!white,very thin]
+        ({\rin*cos(\aa)},{\rin*sin(\aa)})
+        -- ({\rout*cos(\aa)},{\rout*sin(\aa)});
+    }
+    \node[shellgold!70!black,font=\tiny\bfseries] at ({\rout+0.32},0) {$\Delta$patch};
+    \draw[gray!60,-{Stealth[length=3pt]},thick]
+      ({(\rin+0.12)},0) -- ({(\rout-0.12)},0);
+    \fill[gray!60] (0,0) circle (2pt);
+    \node[gray!60,font=\tiny,below left=2pt] at (0,0) {obs.};
+    \draw[gray!50,<->,thin]
+      (0,-\rin-0.05) -- (0,-\rout+0.05)
+      node[midway,left,font=\scriptsize,gray!70] {$\delta r$};
+    \draw[gray!40,<->,thin,dashed]
+      (-0.08,0) -- (-0.08,-\rin)
+      node[midway,left,font=\scriptsize,gray!60] {$r$};
+  \end{scope}
+
+  % === ARROW BETWEEN PANELS ===
+  \draw[gray!50,very thick,{Stealth[length=5pt]}-{Stealth[length=5pt]}]
+    (2.55,0) -- (4.25,0)
+    node[midway,above,font=\scriptsize,align=center,gray!70]
+      {$\times3$ in $r$}
+    node[midway,below,font=\scriptsize,align=center,gray!60]
+      {$\times9$ in patch area};
+
+  % ===================== RIGHT PANEL: large shell, radius 3r (NOW SCALED) =====================
+  \begin{scope}[xshift=6.8cm]
+    \def\rinR{4.5}   % 1.5 × 3
+    \def\routR{5.55} % 1.85 × 3
+    \def\hwang{18}
+    \node[font=\bfseries\footnotesize,gray!80!black] at (0,2.55)
+      {Shell at distance $3r$};
+    \draw[gray!50,thick] (0,0) circle (\routR cm);
+    \draw[gray!70,thick] (0,0) circle (\rinR cm);
+    \fill[patchfill,opacity=0.85]
+      ({\rinR*cos(\hwang)},{\rinR*sin(\hwang)})
+      arc(\hwang:-\hwang:\rinR cm)
+      -- ({\routR*cos(-\hwang)},{\routR*sin(-\hwang)})
+      arc(-\hwang:\hwang:\routR cm)
+      -- cycle;
+    \draw[shellgold!80!black,very thick]
+      ({\rinR*cos(\hwang)},{\rinR*sin(\hwang)})
+      arc(\hwang:-\hwang:\rinR cm)
+      -- ({\routR*cos(-\hwang)},{\routR*sin(-\hwang)})
+      arc(-\hwang:\hwang:\routR cm)
+      -- cycle;
+    % denser grid (same info, now stretched 9×)
+    \foreach \rr in {4.68,4.89,5.10,5.31,5.52}{
+      \draw[shellgold!45!white,very thin]
+        ({\rr*cos(\hwang)},{\rr*sin(\hwang)})
+        arc(\hwang:-\hwang:\rr cm);
+    }
+    \foreach \aa in {-14,-8,-2,4,10,16}{
+      \draw[shellgold!45!white,very thin]
+        ({\rinR*cos(\aa)},{\rinR*sin(\aa)})
+        -- ({\routR*cos(\aa)},{\routR*sin(\aa)});
+    }
+    \draw[gray!45,<->,bend right=10,thin]
+      ({\routR*cos(\hwang+3)},{\routR*sin(\hwang+3)})
+      to node[right,font=\tiny,gray!60,align=left]
+        {same\\solid\\angle}
+      ({\routR*cos(-\hwang-3)},{\routR*sin(-\hwang-3)});
+    \node[shellgold!70!black,font=\tiny\bfseries,align=center]
+      at ({(\rinR+\routR)/2}, 0) {$9\!\times$\\area};
+    \fill[gray!60] (0,0) circle (2pt);
+    \node[gray!60,font=\tiny,below left=2pt] at (0,0) {obs.};
+  \end{scope}
+
+  % ===================== BOTTOM: two redshift component labels =====================
+  \begin{scope}[yshift=-3.1cm]
+    \draw[browncol,very thick,decorate,
+          decoration={snake,amplitude=1.8pt,segment length=5pt},
+          -{Stealth[length=4pt]}]
+      (-1.8,0) -- (1.8,0);
+    \node[browncol!80!black,font=\footnotesize,align=center] at (0,-0.55)
+      {\textbf{Brownian component:} $z\propto\ln(r)$\\
+       accumulates at each fractal boundary crossing};
+    \begin{scope}[xshift=6.8cm]
+      \draw[doppcol,very thick,-{Stealth[length=4pt]}]
+        (-1.5,0) -- (1.5,0);
+      \node[doppcol!80!black,font=\footnotesize,align=center] at (0,-0.55)
+        {\textbf{Dispersion component:} coherent motion\\
+         secondary Doppler; separable in principle};
+    \end{scope}
+  \end{scope}
+\end{tikzpicture}
+\caption{The two redshift components in TFOFT, illustrated via concentric shells.
+  \textbf{Left}: a surface patch (gold) at radius $r$ subtends a fixed solid angle.
+  The patch grid represents observable information (CMB tile, galaxy field pixel, etc.).
+  \textbf{Right}: at radius $3r$ the same solid angle covers $9\times$ the physical area;
+  the grid is more dilute — this is the isotropic \emph{dispersion} component, a real
+  secondary coherent motion on top of the dominant statistical component.
+  \textbf{Bottom left} (blue wavy arrow): the dominant TFOFT redshift — Brownian
+  scattering of photons at fractal layer boundaries, $z\propto\ln(r)$.
+  \textbf{Bottom right} (orange straight arrow): the secondary dispersion component,
+  a small coherent radial motion separable in principle from the Brownian term.
+  Standard cosmology conflates both into a single metric expansion; decomposing them
+  resolves the Hubble tension (Section~\ref{sec:ftc}).
+   }
+
+  %  \emph{The patch grid can be replaced with any sky % image
+  % (\texttt{./figures/something.png}) by clipping an \% texttt{{\textbackslash}includegraphics}
+  % into the wedge path in TikZ, or using a masked \% texttt{imshow} in matplotlib.}
+
+
+\label{fig:expansion_dispersion}
+\end{figure}
 
 % ==================================================================
 %  PART F:  RESOLVING 25+ OBSERVATIONAL TENSIONS
@@ -1343,9 +2106,9 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
     \item The high-angular-momentum injection drives precession of the impacted core by $\sim$90 degrees to satisfy local conservation of angular momentum, while the lower-fractal-layer dust-ball production (dark matter) follows the equatorial plane.
     \end{itemize}
 
-    This naturally produces a $\sim$90° (or 94° within measurement precision \cite{Secrest2025}) offset between quasar axes and the large-scale galaxy distribution or CMB dipole (which traces the kinematic memory of our local ejection). The 25-arcminute seam ($\theta_c = 1/\alpha^{-1}$ rad $\approx 25.08'$) further modulates the fine structure of this offset, appearing in SDSS-V quasar dipole null points and Planck birefringence data \cite{Planck2018VI} as the minimal Soddy-tangency angle.
+    This naturally produces a $\sim90^\circ$ (or $94^\circ$ within measurement precision \cite{Secrest2025}) offset between quasar axes and the large-scale galaxy distribution or CMB dipole (which traces the kinematic memory of our local ejection). The 25-arcminute seam ($\theta_c = 1/\alpha^{-1}$ rad $\approx 25.08'$) further modulates the fine structure of this offset, appearing in SDSS-V quasar dipole null points and Planck birefringence data \cite{Planck2018VI} as the minimal Soddy-tangency angle.
 
-    Standard models have no mechanism that selectively rotates only quasars by $\sim$94° at fixed redshift without affecting co-located galaxies or violating isotropy globally. TFOFT predicts this exact binary distinction as a topological feature of the Presburger-ASSP fractal computer: the injected high-angular-momentum macro-gamma ray immediately behaves as a quasar upon entering the lower-power core ball, driving perpendicular precession, while galaxies (gyro balls) orbit in the primary plane. Confirmation of the offset at higher significance will constitute one of the strongest direct supports for the fractal quine architecture and will render the Big Bang + global metric untenable.
+    Standard models have no mechanism that selectively rotates only quasars by $\sim94^\circ$ at fixed redshift without affecting co-located galaxies or violating isotropy globally. TFOFT predicts this exact binary distinction as a topological feature of the Presburger-ASSP fractal computer: the injected high-angular-momentum macro-gamma ray immediately behaves as a quasar upon entering the lower-power core ball, driving perpendicular precession, while galaxies (gyro balls) orbit in the primary plane. Confirmation of the offset at higher significance will constitute one of the strongest direct supports for the fractal quine architecture and will render the Big Bang + global metric untenable.
 
     This resolution is fully consistent with the validated 25-arcminute CMB seam, the Karlsson logarithmic periodicity of quasar redshifts \cite{Karlsson1971}, and the dark-matter = lower-scale hydrogen plasma mechanism (Sections 2.1, 4.17, 5.x).
   
@@ -1362,6 +2125,38 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
     \item \textit{Acoustic peaks and power spectrum}: These are \textit{not} frozen relics from a primordial plasma. They are \textit{active standing pressure modes} propagating right now through the hydrogen-rich dust-ball plasma of the current fractal layer, confined by the dense-sparse Apollonian boundary geometry at multiple scales. The peaks, harmonics, and damping tail are the natural Soddy-tangency resonances of the fractal substrate --- the same geometry that produces the Karlsson logarithmic periodicity \cite{Karlsson1971}.
 
     \item \textit{CMB dipole} ($\Delta T/T \approx 10^{-3}$, $v\approx 370$\,km/s toward Leo): This is the \textit{kinematic memory} of our local nucleosynthesis origin --- the geometric arrow pointing back to the parent wish-scale structure from which our hydrogen gas clump was ejected from a post-fusion process. We sit in the resulting ``hydrogen plasma puddle'' coasting outward from that ejection event. The dipole direction is therefore expected to align with the nearest wish-scale overdensity.
+        \begin{figure}[htbp]
+    \centering
+
+    % Original Planck zoomed Cold Spot
+    \includegraphics[width=0.475\textwidth]{tfoft_figure_cs_O.png}
+    \caption{Planck 2018 CMB temperature map zoomed on the Cold Spot in Eridanus.
+      The central cold region (blue) is significantly colder than the average CMB,
+      surrounded by a slightly warmer ring. In TFOFT this feature aligns with the
+      minimal Soddy-tangency scale $\theta_c \approx 25.08'$ ($1/\alpha^{-1}$ rad)
+      at the boundary of a local Null Core (void sphere). The observed boundaries
+      and associated birefringence are consistent with a single dominant Möbius
+      twist imposed by the fractal substrate geometry.}
+    \label{fig:cmb_cold_spot}
+
+    \vspace{1.5em}
+
+    % Version with approximate big ball / Soddy structure overlay
+    \includegraphics[width=0.475\textwidth]{tfoft_figure_cs_balls.png}
+    \caption{Same Cold Spot region with approximate large Soddy ball / Null Core
+      structure overlaid (dashed circles). The natural interstices formed by the
+      Apollonian-Soddy packing geometry closely match the observed temperature
+      boundaries and the cold central region.}
+    \label{fig:cmb_cold_spot_balls}
+
+    \end{figure}
+
+    % Attribution / Credit (placed after the figure)
+    {\small \textit{Image credit:} By Piquito veloz — This image was created with Celestia. 
+    Derived from Celestia software and NASA/ESO. Courtesy NASA/JPL-Caltech and 
+    Planck U.S. Data Center at IPAC, CC BY-SA 4.0, 
+    \url{https://commons.wikimedia.org/w/index.php?curid=93066192}}
+    
 
     \item \textit{Hemispheric asymmetry and density/sparsity imbalance}: Beyond the dipole, one hemisphere shows systematically higher average temperature and more power in fluctuations (slightly warmer southern ecliptic hemisphere), while the other is cooler with different hot/cold spot statistics (including the famous large Cold Spot in the south). In an isotropic Big Bang expansion, both hemispheres should be statistically identical; one side cannot preferentially expand into sparser space first without violating the cosmological principle. In TFOFT this arises naturally from our position near the outer corona/void border of the wish-scale parent structure: the fractal substrate has directional density gradients (more dense-sparse interfaces or dust-ball plasma in one direction), producing the observed imbalance without any global expansion.
 
@@ -1374,6 +2169,8 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
 
     In short: the CMB is the fractal quine's idle-temperature heat bath --- the self-computing substrate humming at its natural resonance. Every observed feature is exactly what an infinite, self-describing Presburger-ASSP must produce at every scale. This is fully consistent with the dark-matter = lower-scale hydrogen plasma mechanism (Sections 2.1, 4.17) and with the already-validated 25-arcminute seam prediction.
 
+
+
   \subsection{Hubble Tension / JWST Early Galaxies}
     The Hubble tension arises because different distance ladders (Cepheids + supernovae vs.\ CMB + BAO) yield inconsistent values of the Hubble constant $H_0$, differing by $\sim$5--6$\sigma$ \cite{Riess2025}. Simultaneously, JWST has revealed surprisingly mature, massive, and structured galaxies at high redshift ($z > 10$) \cite{Naidu2025}, which appear far too developed for the short cosmic time available in standard $\Lambda$CDM timelines.
 
@@ -1385,7 +2182,7 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
 
     There is no need for early dark energy, modified gravity, or timeline adjustments. The apparent ``too early'' galaxy formation and the $H_0$ mismatch are both natural consequences of living inside a fractal substrate where redshift primarily traces cumulative boundary crossings and local well depth rather than global cosmic age.
 
-    This resolution is fully consistent with the validated 25-arcminute CMB seam, the Karlsson logarithmic periodicity, the 94° quasar offset \cite{Secrest2025}, and the dark-matter = lower-scale hydrogen plasma mechanism (Sections 2.1, 4.17, 5.x).
+    This resolution is fully consistent with the validated 25-arcminute CMB seam, the Karlsson logarithmic periodicity, the $94^\circ$ quasar offset \cite{Secrest2025}, and the dark-matter = lower-scale hydrogen plasma mechanism (Sections 2.1, 4.17, 5.x).
   
   \subsection{Li-7 Abundance Mismatch}
     Observed primordial Li-7 abundance is dramatically lower than predicted by BBN. In TFOFT there was no big bang; local fractal flux redistribution in dense clusters is nonlinear. Current BBN models fail because they use the wrong physics.
@@ -1562,13 +2359,60 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
 
   This framework is called \textbf{The Fact Of Fractal Tennis}---not a theory, because it is the geometric fact underlying both mathematical and physical reality. Formalizing the emergence of classical theories from FTC dynamics, developing the G\"odel-free calculus based on Soddy geometry, and building the rest of the atomic theory, are left as exercises to the reader.
 
+
+
+\section*{Acknowledgments and AI Assistance Disclaimer}
+
+  The author thanks the community of fractal physics researchers whose work is surveyed in
+  Section~3, and in particular the mathematicians who established the Descartes Circle
+  Theorem and the Apollonian-Soddy packing machinery.
+
+  \subsection*{AI Assistance and Limitations}
+
+  Portions of the \LaTeX{} typesetting, grammatical editing, and several of the figures in
+  this manuscript were produced with assistance from large language model (LLM) AI tools
+  (primarily Claude, Anthropic, Grok, Perplexity, Mistral, etc). The author exercised independent judgment in all physical arguments, mathematical derivations, and scientific claims. However, the reader should be
+  aware of the following limitations inherent to AI-assisted scientific writing:
+
+  \begin{enumerate}
+    \item \textbf{Conceptual misinterpretation}: LLMs may rephrase or restructure an argument
+      in a way that subtly changes its meaning, introduces an unjustified logical step, or
+      omits a crucial qualification. The author has reviewed all AI-generated or AI-edited
+      passages, but cannot guarantee that no such errors survive.
+
+    \item \textbf{Numerical hallucination}: AI tools may confidently produce numerical values,
+      unit conversions, or citations that are plausible-sounding but incorrect. All numerical
+      results in this paper have been independently verified by the author against primary
+      sources (CODATA 2022, published literature) to the best of the author's ability, but
+      readers should cross-check critical values independently.
+
+    \item \textbf{Figure generation}: Several figures were generated with AI assistance
+      (including AI-generated TikZ code and AI-rendered PNG images). These figures are
+      intended as qualitative illustrations of geometric concepts, not as quantitatively
+      precise reproductions of observational data. Figures sourced from NASA or published
+      surveys are credited individually in their captions; AI-generated figures are the
+      author's own illustrations.
+
+    \item \textbf{Grammar and style}: AI grammatical editing was applied throughout. The
+      scientific claims remain those of the author alone; the author takes full responsibility
+      for all errors of reasoning, physics, or mathematics.
+
+    \item \textbf{Citation accuracy}: AI tools may hallucinate or misattribute citations.
+      All references in the bibliography have been checked by the author, but independent
+      verification of citation details is recommended before relying on them.
+  \end{enumerate}
+
+  Any errors in scientific reasoning, derivation, or physical interpretation are entirely
+  the responsibility of the author, not of any AI tool used in preparation.
+  
+
 % ==================================================================
 % REFERENCES
 % ==================================================================
 \begin{thebibliography}{99}
 
 \bibitem{Secrest2025}
-N.~Secrest et al., ``Colloquium: The cosmic dipole anomaly,'' \textit{Rev. Mod. Phys.} \textbf{97}, 041001 (2025). arXiv:2505.23526. (Reviews the $\sim$5$\sigma$ quasar/radio dipole anomaly and its $\sim$94° offset from the CMB dipole.)
+N.~Secrest et al., ``Colloquium: The cosmic dipole anomaly,'' \textit{Rev. Mod. Phys.} \textbf{97}, 041001 (2025). arXiv:2505.23526. (Reviews the $\sim$5$\sigma$ quasar/radio dipole anomaly and its $\sim94^\circ$ offset from the CMB dipole.)
 
 \bibitem{Secrest2022}
 N.~J. Secrest et al., ``A Challenge to the Standard Cosmological Model,'' \textit{Astrophys. J. Lett.} \textbf{937}, L31 (2022).
