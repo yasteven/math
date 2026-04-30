@@ -1,7 +1,7 @@
 % =====================================================================
 
 % THE FACT OF FRACTAL TENNIS (TFOFT)
-% THIS IS THE FINAL DRAFT Canonical merged draft — April 2026
+% THIS IS THE FINAL DRAFT — April 2026
 % Structure: A) MATHICCS→Fractal  B) Evidence  C) Prior work + quine gap
 %            D) Ontology/FTC      E) Predictions  F) Tensions
 % =====================================================================
@@ -548,52 +548,53 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
 
       By the Presburger minimization principle (Axiom P2: minimal information encoding), Choice 2 is superior. \textbf{The natural unit radius in a self-describing Presburger-ASSP system is $r = \pi$.}
 
-% ------------------------------------------------------------------
-% FIGURE 2 — Three Channels → α⁻¹ = 137.036
-%
-% WHAT IT SHOWS:
-%   Three shaded spheres of radius r=π in a row, each illustrating one
-%   orthogonal information channel of a Soddy sphere, summing to α⁻¹:
-%
-%   Sphere 1 (blue, fully shaded):
-%     Surface area channel T_S = 4π³ ≈ 124.025
-%     The whole sphere surface is active — small grid lines suggest tiling.
-%     Label: "T_S = 4π³   (Surface channel)"
-%
-%   Sphere 2 (red, upper hemisphere only):
-%     Phase / rotational channel T_R = π² ≈ 9.870
-%     Only the upper hemisphere is filled — the lower half is dashed —
-%     to convey the half-turn symmetry that removes the duplicate pole.
-%     A white arc along the great circle is labelled "πr".
-%     Label: "T_R = π²   (Phase channel)"
-%
-%   Sphere 3 (green, outline only + single radius arrow):
-%     Radial position channel T_D = π ≈ 3.142
-%     Sphere is mostly transparent; one arrow shows the radius r=π.
-%     Label: "T_D = π   (Radial channel)"
-%
-%   To the right: a brace and summation box showing
-%       4π³ + π² + π = 137.036 = α⁻¹
-%
-% TO REPLACE WITH A PNG:
-%   1. Save your image as  ./figures/tfoft_figure_2_alpha_channels.png
-%   2. Delete the tikzpicture below (keep \begin{figure} and \caption).
-%   3. Replace with:
-%        \includegraphics[width=\textwidth]{tfoft_figure_2_alpha_channels.png}
-%
-% PYTHON RECREATION NOTES:
-%   Use matplotlib with 3 subplots side by side, each a circle (2D
-%   cross-section of sphere).
-%   Subplot 1: filled circle, draw a ~5×5 mercator grid on the surface.
-%              Annotate: "T_S = 4π³ = 124.025"
-%   Subplot 2: upper semicircle filled, lower dashed. Draw arc along
-%              circumference top. Annotate: "T_R = π² = 9.870"
-%   Subplot 3: dashed circle outline, single arrow from centre to right
-%              edge labelled "r = π". Annotate: "T_D = π = 3.142"
-%   Add a right-side text box:  "Σ = 4π³+π²+π = 137.036 = α⁻¹"
-%   Colour map: col1=#3478B4 (blue), col2=#C85032 (red), col3=#3CA05A (green)
-%   Summary box colour: #78429F (purple)
-% ------------------------------------------------------------------
+    % ------------------------------------------------------------------
+    % FIGURE 2 — Three Channels → α⁻¹ = 137.036
+    %
+    % WHAT IT SHOWS:
+    %   Three shaded spheres of radius r=π in a row, each illustrating one
+    %   orthogonal information channel of a Soddy sphere, summing to α⁻¹:
+    %
+    %   Sphere 1 (blue, fully shaded):
+    %     Surface area channel T_S = 4π³ ≈ 124.025
+    %     The whole sphere surface is active — small grid lines suggest tiling.
+    %     Label: "T_S = 4π³   (Surface channel)"
+    %
+    %   Sphere 2 (red, upper hemisphere only):
+    %     Phase / rotational channel T_R = π² ≈ 9.870
+    %     Only the upper hemisphere is filled — the lower half is dashed —
+    %     to convey the half-turn symmetry that removes the duplicate pole.
+    %     A white arc along the great circle is labelled "πr".
+    %     Label: "T_R = π²   (Phase channel)"
+    %
+    %   Sphere 3 (green, outline only + single radius arrow):
+    %     Radial position channel T_D = π ≈ 3.142
+    %     Sphere is mostly transparent; one arrow shows the radius r=π.
+    %     Label: "T_D = π   (Radial channel)"
+    %
+    %   To the right: a brace and summation box showing
+    %       4π³ + π² + π = 137.036 = α⁻¹
+    %
+    % TO REPLACE WITH A PNG:
+    %   1. Save your image as  ./figures/tfoft_figure_2_alpha_channels.png
+    %   2. Delete the tikzpicture below (keep \begin{figure} and \caption).
+    %   3. Replace with:
+    %        \includegraphics[width=\textwidth]{tfoft_figure_2_alpha_channels.png}
+    %
+    % PYTHON RECREATION NOTES:
+    %   Use matplotlib with 3 subplots side by side, each a circle (2D
+    %   cross-section of sphere).
+    %   Subplot 1: filled circle, draw a ~5×5 mercator grid on the surface.
+    %              Annotate: "T_S = 4π³ = 124.025"
+    %   Subplot 2: upper semicircle filled, lower dashed. Draw arc along
+    %              circumference top. Annotate: "T_R = π² = 9.870"
+    %   Subplot 3: dashed circle outline, single arrow from centre to right
+    %              edge labelled "r = π". Annotate: "T_D = π = 3.142"
+    %   Add a right-side text box:  "Σ = 4π³+π²+π = 137.036 = α⁻¹"
+    %   Colour map: col1=#3478B4 (blue), col2=#C85032 (red), col3=#3CA05A (green)
+    %   Summary box colour: #78429F (purple)
+    % ------------------------------------------------------------------
+
   \subsection{The Three Independent State Channels of a Soddy Sphere}
 
     A single Soddy sphere is the minimal self-referential object in the ASSP. Its complete dynamical state requires specification of three independent pieces of information.
@@ -622,99 +623,99 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
       \]
       This is the \textbf{Fundamental Length Metric (FLM)}.
 
-\begin{figure}[h]
-\centering
-\begin{tikzpicture}[font=\small]
-  \definecolor{col1}{RGB}{52,120,180}
-  \definecolor{col2}{RGB}{200,80,50}
-  \definecolor{col3}{RGB}{60,160,90}
-  \definecolor{sumcol}{RGB}{120,60,160}
+    \begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[font=\small]
+      \definecolor{col1}{RGB}{52,120,180}
+      \definecolor{col2}{RGB}{200,80,50}
+      \definecolor{col3}{RGB}{60,160,90}
+      \definecolor{sumcol}{RGB}{120,60,160}
 
-  % === SPHERE 1: Surface channel T_S = 4pi^3 ===
-  \begin{scope}[xshift=0cm]
-    \shade[ball color=col1!75!white] (0,0) circle (1.3cm);
-    % equator and meridian lines suggesting surface tiling
-    \draw[white,opacity=0.45,thick] (0,0) ellipse (1.3cm and 0.36cm);
-    \draw[white,opacity=0.35,thick] (0,0) ellipse (1.3cm and 0.7cm);
-    \draw[white,opacity=0.30] (0,-1.3)--(0,1.3);
-    \draw[white,opacity=0.30] ({1.3*cos(60)},{1.3*sin(60)})--({1.3*cos(240)},{1.3*sin(240)});
-    \draw[white,opacity=0.30] ({1.3*cos(120)},{1.3*sin(120)})--({1.3*cos(300)},{1.3*sin(300)});
-    \node[white,font=\bfseries\footnotesize] at (0,0.35) {$4\pi r^2$};
-    \node[white,font=\tiny] at (0,-0.2) {$r\!=\!\pi$};
-    \node[col1!75!black,font=\footnotesize,align=center] at (0,-1.9)
-      {$T_S = 4\pi^3$\\\footnotesize Surface channel};
-    \node[col1!60!black,font=\scriptsize] at (0,-2.55) {$=124.025$};
-  \end{scope}
+      % === SPHERE 1: Surface channel T_S = 4pi^3 ===
+      \begin{scope}[xshift=0cm]
+        \shade[ball color=col1!75!white] (0,0) circle (1.3cm);
+        % equator and meridian lines suggesting surface tiling
+        \draw[white,opacity=0.45,thick] (0,0) ellipse (1.3cm and 0.36cm);
+        \draw[white,opacity=0.35,thick] (0,0) ellipse (1.3cm and 0.7cm);
+        \draw[white,opacity=0.30] (0,-1.3)--(0,1.3);
+        \draw[white,opacity=0.30] ({1.3*cos(60)},{1.3*sin(60)})--({1.3*cos(240)},{1.3*sin(240)});
+        \draw[white,opacity=0.30] ({1.3*cos(120)},{1.3*sin(120)})--({1.3*cos(300)},{1.3*sin(300)});
+        \node[white,font=\bfseries\footnotesize] at (0,0.35) {$4\pi r^2$};
+        \node[white,font=\tiny] at (0,-0.2) {$r\!=\!\pi$};
+        \node[col1!75!black,font=\footnotesize,align=center] at (0,-1.9)
+          {$T_S = 4\pi^3$\\\footnotesize Surface channel};
+        \node[col1!60!black,font=\scriptsize] at (0,-2.55) {$=124.025$};
+      \end{scope}
 
-  \node[font=\Large\bfseries,gray!60] at (2.0,0) {$+$};
+      \node[font=\Large\bfseries,gray!60] at (2.0,0) {$+$};
 
-  % === SPHERE 2: Phase channel T_R = pi^2 (hemisphere only) ===
-  \begin{scope}[xshift=4.0cm]
-    \begin{scope}
-      \clip (-1.3,-0.02) rectangle (1.3,1.35);
-      \shade[ball color=col2!75!white] (0,0) circle (1.3cm);
-    \end{scope}
-    \fill[col2!15!white,opacity=0.5]
-      (-1.3,0) arc(180:0:1.3cm and 0.36cm) -- cycle;
-    \draw[col2!70!black,thick]
-      (-1.3,0) arc(180:0:1.3cm and 0.36cm);
-    \begin{scope}
-      \clip (-1.35,-1.35) rectangle (1.35,0);
-      \draw[col2!35!white,dashed,thick] (0,0) circle (1.3cm);
-    \end{scope}
-    % arc arrow along hemisphere great circle
-    \draw[white,very thick,-{Stealth[length=4pt]}]
-      ({1.3*cos(168)},{1.3*sin(168)}) arc(168:12:1.3cm);
-    \node[white,font=\bfseries\footnotesize] at (0,0.6) {$\pi r$};
-    \node[col2!60!black,font=\tiny,align=center] at (0,-0.5)
-      {(half-turn\\symmetry)};
-    \node[col2!75!black,font=\footnotesize,align=center] at (0,-1.9)
-      {$T_R = \pi^2$\\\footnotesize Phase channel};
-    \node[col2!60!black,font=\scriptsize] at (0,-2.55) {$=9.870$};
-  \end{scope}
+      % === SPHERE 2: Phase channel T_R = pi^2 (hemisphere only) ===
+      \begin{scope}[xshift=4.0cm]
+        \begin{scope}
+          \clip (-1.3,-0.02) rectangle (1.3,1.35);
+          \shade[ball color=col2!75!white] (0,0) circle (1.3cm);
+        \end{scope}
+        \fill[col2!15!white,opacity=0.5]
+          (-1.3,0) arc(180:0:1.3cm and 0.36cm) -- cycle;
+        \draw[col2!70!black,thick]
+          (-1.3,0) arc(180:0:1.3cm and 0.36cm);
+        \begin{scope}
+          \clip (-1.35,-1.35) rectangle (1.35,0);
+          \draw[col2!35!white,dashed,thick] (0,0) circle (1.3cm);
+        \end{scope}
+        % arc arrow along hemisphere great circle
+        \draw[white,very thick,-{Stealth[length=4pt]}]
+          ({1.3*cos(168)},{1.3*sin(168)}) arc(168:12:1.3cm);
+        \node[white,font=\bfseries\footnotesize] at (0,0.6) {$\pi r$};
+        \node[col2!60!black,font=\tiny,align=center] at (0,-0.5)
+          {(half-turn\\symmetry)};
+        \node[col2!75!black,font=\footnotesize,align=center] at (0,-1.9)
+          {$T_R = \pi^2$\\\footnotesize Phase channel};
+        \node[col2!60!black,font=\scriptsize] at (0,-2.55) {$=9.870$};
+      \end{scope}
 
-  \node[font=\Large\bfseries,gray!60] at (6.0,0) {$+$};
+      \node[font=\Large\bfseries,gray!60] at (6.0,0) {$+$};
 
-  % === SPHERE 3: Radial channel T_D = pi (outline + arrow) ===
-  \begin{scope}[xshift=8.0cm]
-    \draw[col3!40!white,dashed,thick] (0,0) circle (1.3cm);
-    \shade[ball color=col3!18!white,opacity=0.35] (0,0) circle (1.3cm);
-    \draw[col3!80!black,very thick,-{Stealth[length=5pt]}]
-      (0,0) -- (1.3,0);
-    \node[col3!80!black,font=\footnotesize\bfseries,above] at (0.65,0.05)
-      {$r=\pi$};
-    \fill[col3!80!black] (0,0) circle (2.2pt);
-    \node[col3!75!black,font=\footnotesize,align=center] at (0,-1.9)
-      {$T_D = \pi$\\\footnotesize Radial channel};
-    \node[col3!60!black,font=\scriptsize] at (0,-2.55) {$=3.142$};
-  \end{scope}
+      % === SPHERE 3: Radial channel T_D = pi (outline + arrow) ===
+      \begin{scope}[xshift=8.0cm]
+        \draw[col3!40!white,dashed,thick] (0,0) circle (1.3cm);
+        \shade[ball color=col3!18!white,opacity=0.35] (0,0) circle (1.3cm);
+        \draw[col3!80!black,very thick,-{Stealth[length=5pt]}]
+          (0,0) -- (1.3,0);
+        \node[col3!80!black,font=\footnotesize\bfseries,above] at (0.65,0.05)
+          {$r=\pi$};
+        \fill[col3!80!black] (0,0) circle (2.2pt);
+        \node[col3!75!black,font=\footnotesize,align=center] at (0,-1.9)
+          {$T_D = \pi$\\\footnotesize Radial channel};
+        \node[col3!60!black,font=\scriptsize] at (0,-2.55) {$=3.142$};
+      \end{scope}
 
-  % === EQUALS + SUM BOX ===
-  \node[font=\Large\bfseries,gray!60] at (10.05,0) {$=$};
-  \begin{scope}[xshift=11.3cm]
-    \node[sumcol,font=\large\bfseries] at (0,0.6) {$\alpha^{-1}$};
-    \node[sumcol!85!black,font=\normalsize] at (0,-0.0)
-      {$4\pi^3+\pi^2+\pi$};
-    \draw[sumcol!60,thick] (-1.05,-0.45)--(1.05,-0.45);
-    \node[sumcol,font=\Large\bfseries] at (0,-0.95) {$137.036$};
-    \node[gray!55,font=\scriptsize,align=right] at (0,-1.85)
-      {$124.025$\\$+\;\;9.870$\\$+\;\;3.142$};
-  \end{scope}
+      % === EQUALS + SUM BOX ===
+      \node[font=\Large\bfseries,gray!60] at (10.05,0) {$=$};
+      \begin{scope}[xshift=11.3cm]
+        \node[sumcol,font=\large\bfseries] at (0,0.6) {$\alpha^{-1}$};
+        \node[sumcol!85!black,font=\normalsize] at (0,-0.0)
+          {$4\pi^3+\pi^2+\pi$};
+        \draw[sumcol!60,thick] (-1.05,-0.45)--(1.05,-0.45);
+        \node[sumcol,font=\Large\bfseries] at (0,-0.95) {$137.036$};
+        \node[gray!55,font=\scriptsize,align=right] at (0,-1.85)
+          {$124.025$\\$+\;\;9.870$\\$+\;\;3.142$};
+      \end{scope}
 
-  % === top title ===
-  \node[font=\normalsize\bfseries,gray!75!black] at (5.6,2.1)
-    {Three Orthogonal State Channels of a Soddy Sphere ($r=\pi$)};
-\end{tikzpicture}
-\caption{The fine-structure constant $\alpha^{-1}$ as a sum of three orthogonal
-  Presburger information costs for a single Soddy sphere of radius $r=\pi$.
-  \textbf{Blue} ($T_S=4\pi^3$): surface-area channel — which point on the sphere is active.
-  \textbf{Red} ($T_R=\pi^2$): phase channel — rotational orientation, hemisphere only
-  (half-turn symmetry eliminates the second pole).
-  \textbf{Green} ($T_D=\pi$): radial channel — distance of centre from reference.
-  No free parameters; $r=\pi$ is the unique Presburger-minimal radius choice
-  (Section~\ref{sec:ftc}).}
-\label{fig:alpha_channels}
-\end{figure}
+      % === top title ===
+      \node[font=\normalsize\bfseries,gray!75!black] at (5.6,2.1)
+        {Three Orthogonal State Channels of a Soddy Sphere ($r=\pi$)};
+    \end{tikzpicture}
+    \caption{The fine-structure constant $\alpha^{-1}$ as a sum of three orthogonal
+      Presburger information costs for a single Soddy sphere of radius $r=\pi$.
+      \textbf{Blue} ($T_S=4\pi^3$): surface-area channel — which point on the sphere is active.
+      \textbf{Red} ($T_R=\pi^2$): phase channel — rotational orientation, hemisphere only
+      (half-turn symmetry eliminates the second pole).
+      \textbf{Green} ($T_D=\pi$): radial channel — distance of centre from reference.
+      No free parameters; $r=\pi$ is the unique Presburger-minimal radius choice
+      (Section~\ref{sec:ftc}).}
+    \label{fig:alpha_channels}
+    \end{figure}
 
   \subsection{The Fundamental Computation Cost: $T_{\text{sphere}} = \alpha^{-1}$}
 
@@ -802,177 +803,177 @@ Star=Electron+Atom=Galaxy Quine --- Solves All Major Tensions in Physics}
       \textbf{One ball on top of 137.036 is a state. Two balls on top of 137.036 is a law. The two-ball tangency is the minimal configuration that generates the universal fundamental law: the fractal quine instruction set of the Presburger-ASSP.}
     \end{quote}
 
-% ------------------------------------------------------------------
-% FIGURE 3 — The Fractal Quine: One Ball (State) vs Two Balls (Law)
-%
-% WHAT IT SHOWS:
-%   LEFT PANEL — "One Ball = State":
-%     A single shaded sphere (star ball, blue) with spin arrows on its
-%     surface. Labelled T_sphere = 137.036 inside. Below: cost annotation.
-%     A note says "isolated — no tangency — no law, only a state."
-%
-%   DIVIDING LINE (dashed vertical) separates pattern from law.
-%
-%   RIGHT PANEL — "Two Balls = Law (Quine)":
-%     A larger orange sphere (core ball) tangent to a smaller blue sphere
-%     (star ball). At the tangency point: a yellow dot labelled "tangency."
-%     From the tangency, an arrow leads to a small golden sphere (info ball)
-%     shooting upward-right, labelled "Info Ball (photon / macrophoton)."
-%     Below: a small grey sphere (dust ball) sinking downward, labelled
-%     "Dust Ball → dark matter / lower layer."
-%     The quine arrow: a curved arrow from info ball back toward star ball
-%     labelled "copies state → quine."
-%
-% TO REPLACE WITH A PNG:
-%   1. Save your image as  ./figures/tfoft_figure_3_fractal_quine.png
-%   2. Delete the tikzpicture below.
-%   3. Replace with:
-%        \includegraphics[width=\textwidth]{tfoft_figure_3_fractal_quine.png}
-%
-% PYTHON RECREATION NOTES:
-%   Use matplotlib with two subplots separated by a dashed vertical line.
-%   LEFT: one circle (star ball, #3478B4), arrows around perimeter,
-%         text "T_sphere=137.036" inside.
-%   RIGHT: large circle (core ball, #D26E28) + smaller tangent circle
-%         (star ball, #3478B4). At tangent point: yellow dot.
-%         Arrow from tangent point → small golden circle (info ball) upper-right.
-%         Arrow from tangent point → small gray circle (dust ball) lower.
-%         Curved arrow info→star labelled "quine loop."
-%   Colour: star #3478B4, core #D26E28, info #DCC81E, dust #8C8CA0
-% ------------------------------------------------------------------
-\begin{comment} 
-% This is broken:
+    % ------------------------------------------------------------------
+    % FIGURE 3 — The Fractal Quine: One Ball (State) vs Two Balls (Law)
+    %
+    % WHAT IT SHOWS:
+    %   LEFT PANEL — "One Ball = State":
+    %     A single shaded sphere (star ball, blue) with spin arrows on its
+    %     surface. Labelled T_sphere = 137.036 inside. Below: cost annotation.
+    %     A note says "isolated — no tangency — no law, only a state."
+    %
+    %   DIVIDING LINE (dashed vertical) separates pattern from law.
+    %
+    %   RIGHT PANEL — "Two Balls = Law (Quine)":
+    %     A larger orange sphere (core ball) tangent to a smaller blue sphere
+    %     (star ball). At the tangency point: a yellow dot labelled "tangency."
+    %     From the tangency, an arrow leads to a small golden sphere (info ball)
+    %     shooting upward-right, labelled "Info Ball (photon / macrophoton)."
+    %     Below: a small grey sphere (dust ball) sinking downward, labelled
+    %     "Dust Ball → dark matter / lower layer."
+    %     The quine arrow: a curved arrow from info ball back toward star ball
+    %     labelled "copies state → quine."
+    %
+    % TO REPLACE WITH A PNG:
+    %   1. Save your image as  ./figures/tfoft_figure_3_fractal_quine.png
+    %   2. Delete the tikzpicture below.
+    %   3. Replace with:
+    %        \includegraphics[width=\textwidth]{tfoft_figure_3_fractal_quine.png}
+    %
+    % PYTHON RECREATION NOTES:
+    %   Use matplotlib with two subplots separated by a dashed vertical line.
+    %   LEFT: one circle (star ball, #3478B4), arrows around perimeter,
+    %         text "T_sphere=137.036" inside.
+    %   RIGHT: large circle (core ball, #D26E28) + smaller tangent circle
+    %         (star ball, #3478B4). At tangent point: yellow dot.
+    %         Arrow from tangent point → small golden circle (info ball) upper-right.
+    %         Arrow from tangent point → small gray circle (dust ball) lower.
+    %         Curved arrow info→star labelled "quine loop."
+    %   Colour: star #3478B4, core #D26E28, info #DCC81E, dust #8C8CA0
+    % ------------------------------------------------------------------
+    \begin{comment} 
+    % This is broken:
 
-\begin{figure}[h]
-\centering
-\begin{tikzpicture}[font=\small]
-  \definecolor{starblue}{RGB}{52,120,180}
-  \definecolor{coreorange}{RGB}{210,110,40}
-  \definecolor{infogold}{RGB}{220,190,30}
-  \definecolor{dustgray}{RGB}{140,140,160}
+    \begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[font=\small]
+      \definecolor{starblue}{RGB}{52,120,180}
+      \definecolor{coreorange}{RGB}{210,110,40}
+      \definecolor{infogold}{RGB}{220,190,30}
+      \definecolor{dustgray}{RGB}{140,140,160}
 
-  % ---- LEFT: single ball ----
-  \node[font=\bfseries\normalsize,gray!80!black] at (0,3.1)
-    {\textsc{One Ball} $=$ State};
-  \shade[ball color=starblue!80!white] (0,0) circle (1.55cm);
-  \foreach \a in {0,60,120,180,240,300}{
-    \draw[white!80!starblue,very thick,opacity=0.65,
-          -{Stealth[length=2.5pt]}]
-      ({1.55*cos(\a)},{1.55*sin(\a)})
-      arc(\a:\a+48:1.55cm and 0.48cm);
-  }
-  \draw[white,opacity=0.45,thick] (0,0) ellipse (1.55cm and 0.43cm);
-  \node[white,font=\bfseries\footnotesize] at (0,0.35) {$T_{\text{sphere}}$};
-  \node[white,font=\tiny] at (0,-0.2) {$=137.036$};
-  \node[starblue!75!black,font=\footnotesize,align=center] at (0,-2.25)
-    {Presburger cost: $4\pi^3+\pi^2+\pi$};
-  \node[fill=starblue!15,draw=starblue!50,rounded corners=2pt,
-        font=\scriptsize\bfseries,starblue!80!black] at (0,-3.0)
-    {Star Ball (electron / star)};
-  \node[gray!50,font=\tiny,align=center] at (0,2.3)
-    {isolated — no tangency\\no law; only a state};
+      % ---- LEFT: single ball ----
+      \node[font=\bfseries\normalsize,gray!80!black] at (0,3.1)
+        {\textsc{One Ball} $=$ State};
+      \shade[ball color=starblue!80!white] (0,0) circle (1.55cm);
+      \foreach \a in {0,60,120,180,240,300}{
+        \draw[white!80!starblue,very thick,opacity=0.65,
+              -{Stealth[length=2.5pt]}]
+          ({1.55*cos(\a)},{1.55*sin(\a)})
+          arc(\a:\a+48:1.55cm and 0.48cm);
+      }
+      \draw[white,opacity=0.45,thick] (0,0) ellipse (1.55cm and 0.43cm);
+      \node[white,font=\bfseries\footnotesize] at (0,0.35) {$T_{\text{sphere}}$};
+      \node[white,font=\tiny] at (0,-0.2) {$=137.036$};
+      \node[starblue!75!black,font=\footnotesize,align=center] at (0,-2.25)
+        {Presburger cost: $4\pi^3+\pi^2+\pi$};
+      \node[fill=starblue!15,draw=starblue!50,rounded corners=2pt,
+            font=\scriptsize\bfseries,starblue!80!black] at (0,-3.0)
+        {Star Ball (electron / star)};
+      \node[gray!50,font=\tiny,align=center] at (0,2.3)
+        {isolated — no tangency\\no law; only a state};
 
-  % ---- DIVIDER ----
-  \draw[gray!30,dashed,very thick] (3.15,-3.5)--(3.15,3.5);
-  \node[gray!45,font=\small\itshape] at (3.15,3.85)
-    {$\longleftarrow$ pattern \quad law $\longrightarrow$};
+      % ---- DIVIDER ----
+      \draw[gray!30,dashed,very thick] (3.15,-3.5)--(3.15,3.5);
+      \node[gray!45,font=\small\itshape] at (3.15,3.85)
+        {$\longleftarrow$ pattern \quad law $\longrightarrow$};
 
-  % ---- RIGHT: two tangent balls ----
-  \node[font=\bfseries\normalsize,gray!80!black] at (7.3,3.1)
-    {\textsc{Two Balls} $=$ Law (Quine)};
+      % ---- RIGHT: two tangent balls ----
+      \node[font=\bfseries\normalsize,gray!80!black] at (7.3,3.1)
+        {\textsc{Two Balls} $=$ Law (Quine)};
 
-  % core ball (larger, orange), centred at (8.0, 0)
-  \shade[ball color=coreorange!80!white] (8.0,0) circle (1.15cm);
-  \node[white,font=\bfseries\footnotesize] at (8.0,0.2) {Core};
-  \node[white,font=\tiny] at (8.0,-0.25) {Ball};
+      % core ball (larger, orange), centred at (8.0, 0)
+      \shade[ball color=coreorange!80!white] (8.0,0) circle (1.15cm);
+      \node[white,font=\bfseries\footnotesize] at (8.0,0.2) {Core};
+      \node[white,font=\tiny] at (8.0,-0.25) {Ball};
 
-  % star ball (smaller, blue), centred at (5.85, 0), tangent to core
-  \shade[ball color=starblue!80!white] (5.85,0) circle (1.0cm);
-  \foreach \a in {20,100,180,260}{
-    \draw[white!80!starblue,thick,opacity=0.65,
-          -{Stealth[length=2pt]}]
-      ({5.85+1.0*cos(\a)},{1.0*sin(\a)})
-      arc(\a:\a+55:1.0cm and 0.32cm);
-  }
-  \node[white,font=\bfseries\footnotesize] at (5.85,0.2) {Star};
-  \node[white,font=\tiny] at (5.85,-0.25) {Ball};
+      % star ball (smaller, blue), centred at (5.85, 0), tangent to core
+      \shade[ball color=starblue!80!white] (5.85,0) circle (1.0cm);
+      \foreach \a in {20,100,180,260}{
+        \draw[white!80!starblue,thick,opacity=0.65,
+              -{Stealth[length=2pt]}]
+          ({5.85+1.0*cos(\a)},{1.0*sin(\a)})
+          arc(\a:\a+55:1.0cm and 0.32cm);
+      }
+      \node[white,font=\bfseries\footnotesize] at (5.85,0.2) {Star};
+      \node[white,font=\tiny] at (5.85,-0.25) {Ball};
 
-  % tangency point
-  \fill[yellow!85!white] (6.85,0) circle (4pt);
-  \node[yellow!60!black,font=\tiny,above=4pt] at (6.85,0)
-    {tangency};
+      % tangency point
+      \fill[yellow!85!white] (6.85,0) circle (4pt);
+      \node[yellow!60!black,font=\tiny,above=4pt] at (6.85,0)
+        {tangency};
 
-  % info ball shooting upper-right
-  \shade[ball color=infogold!90!white] (9.1,2.2) circle (0.42cm);
-  \node[infogold!70!black,font=\tiny,right=5pt] at (9.1,2.2)
-    {Info Ball\\(photon / macrophoton)};
-  \draw[infogold!80!black,very thick,-{Stealth[length=4pt]}]
-    (7.15,0.4) -- (8.75,1.9);
+      % info ball shooting upper-right
+      \shade[ball color=infogold!90!white] (9.1,2.2) circle (0.42cm);
+      \node[infogold!70!black,font=\tiny,right=5pt] at (9.1,2.2)
+        {Info Ball\\(photon / macrophoton)};
+      \draw[infogold!80!black,very thick,-{Stealth[length=4pt]}]
+        (7.15,0.4) -- (8.75,1.9);
 
-  % dust ball sinking lower-left
-  \shade[ball color=dustgray!70!white] (5.5,-2.3) circle (0.38cm);
-  \node[dustgray!70!black,font=\tiny,right=4pt] at (5.5,-2.3)
-    {Dust Ball\\(dark matter / lower layer)};
-  \draw[dustgray!60!black,thick,-{Stealth[length=4pt]}]
-    (6.6,-0.55) -- (5.75,-2.0);
+      % dust ball sinking lower-left
+      \shade[ball color=dustgray!70!white] (5.5,-2.3) circle (0.38cm);
+      \node[dustgray!70!black,font=\tiny,right=4pt] at (5.5,-2.3)
+        {Dust Ball\\(dark matter / lower layer)};
+      \draw[dustgray!60!black,thick,-{Stealth[length=4pt]}]
+        (6.6,-0.55) -- (5.75,-2.0);
 
-  % quine loop: curved arrow from info ball back toward star ball
-  \draw[infogold!70!black,thick,dashed,
-        -{Stealth[length=4pt]},
-        bend left=40]
-    (8.85,2.55) to node[above,font=\tiny,align=center,infogold!70!black]
-      {copies state\\$\to$ quine loop} (5.85,1.05);
+      % quine loop: curved arrow from info ball back toward star ball
+      \draw[infogold!70!black,thick,dashed,
+            -{Stealth[length=4pt]},
+            bend left=40]
+        (8.85,2.55) to node[above,font=\tiny,align=center,infogold!70!black]
+          {copies state\\$\to$ quine loop} (5.85,1.05);
 
-  % labels
-  \node[fill=starblue!15,draw=starblue!50,rounded corners=2pt,
-        font=\scriptsize\bfseries,starblue!80!black] at (5.5,-3.0)
-    {Star Ball};
-  \node[fill=coreorange!15,draw=coreorange!50,rounded corners=2pt,
-        font=\scriptsize\bfseries,coreorange!80!black] at (8.5,-3.0)
-    {Core Ball (proton / galactic core)};
+      % labels
+      \node[fill=starblue!15,draw=starblue!50,rounded corners=2pt,
+            font=\scriptsize\bfseries,starblue!80!black] at (5.5,-3.0)
+        {Star Ball};
+      \node[fill=coreorange!15,draw=coreorange!50,rounded corners=2pt,
+            font=\scriptsize\bfseries,coreorange!80!black] at (8.5,-3.0)
+        {Core Ball (proton / galactic core)};
 
-\end{tikzpicture}
-\caption{The fractal quine transition.
-  \textbf{Left}: a single isolated Soddy sphere (star ball) carries a complete
-  Presburger state cost $T_{\text{sphere}}=137.036$ but enforces no law — it is a
-  pattern without a rule.
-  \textbf{Right}: the moment a second sphere (core ball) is placed in tangency,
-  the system becomes a self-executing program. The tangency point (yellow) triggers
-  angular-momentum transfer; an info ball (photon / macrophoton) is emitted carrying
-  a copy of the state description — the quine loop. Momentum debt is paid by injecting
-  dust balls into the lower fractal layer (dark matter).
-  The two-ball configuration is the minimal unit that generates a physical law.}
-\label{fig:fractal_quine}
-\end{figure}
+    \end{tikzpicture}
+    \caption{The fractal quine transition.
+      \textbf{Left}: a single isolated Soddy sphere (star ball) carries a complete
+      Presburger state cost $T_{\text{sphere}}=137.036$ but enforces no law — it is a
+      pattern without a rule.
+      \textbf{Right}: the moment a second sphere (core ball) is placed in tangency,
+      the system becomes a self-executing program. The tangency point (yellow) triggers
+      angular-momentum transfer; an info ball (photon / macrophoton) is emitted carrying
+      a copy of the state description — the quine loop. Momentum debt is paid by injecting
+      dust balls into the lower fractal layer (dark matter).
+      The two-ball configuration is the minimal unit that generates a physical law.}
+    \label{fig:fractal_quine}
+    \end{figure}
 
-\end{comment} 
-% ==================================================================
-% FIGURE 3 — The Fractal Quine: One Ball (State) vs Two Balls (Law)
-%
-% WHAT IT SHOWS: [description already in your original comment]
-%
-% TO REPLACE WITH PNG (already done):
-% 1. PNG is saved as ./figures/tfoft_figure_3_fractal_quine.png
-% 2. TikZ block has been removed.
-% 3. Replaced with \includegraphics below.
-%
-% PYTHON RECREATION NOTES: [your original notes]
-% ==================================================================
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.95\textwidth]{tfoft_figure_3_fractal_quine.png}
-\caption{The fractal quine transition.
-  \textbf{Left}: a single isolated Soddy sphere (star ball) carries a complete
-  Presburger state cost $T_{\text{sphere}}=137.036$ but enforces no law — it is a
-  pattern without a rule.
-  \textbf{Right}: the moment a second sphere (core ball) is placed in tangency,
-  the system becomes a self-executing program. The tangency point (yellow) triggers
-  angular-momentum transfer; an info ball (photon / macrophoton) is emitted carrying
-  a copy of the state description — the quine loop. Momentum debt is paid by injecting
-  dust balls into the lower fractal layer (dark matter).
-  The two-ball configuration is the minimal unit that generates a physical law.}
-\label{fig:fractal_quine}
-\end{figure}
+    \end{comment} 
+    % ==================================================================
+    % FIGURE 3 — The Fractal Quine: One Ball (State) vs Two Balls (Law)
+    %
+    % WHAT IT SHOWS: [description already in your original comment]
+    %
+    % TO REPLACE WITH PNG (already done):
+    % 1. PNG is saved as ./figures/tfoft_figure_3_fractal_quine.png
+    % 2. TikZ block has been removed.
+    % 3. Replaced with \includegraphics below.
+    %
+    % PYTHON RECREATION NOTES: [your original notes]
+    % ==================================================================
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{tfoft_figure_3_fractal_quine.png}
+    \caption{The fractal quine transition.
+      \textbf{Left}: a single isolated Soddy sphere (star ball) carries a complete
+      Presburger state cost $T_{\text{sphere}}=137.036$ but enforces no law — it is a
+      pattern without a rule.
+      \textbf{Right}: the moment a second sphere (core ball) is placed in tangency,
+      the system becomes a self-executing program. The tangency point (yellow) triggers
+      angular-momentum transfer; an info ball (photon / macrophoton) is emitted carrying
+      a copy of the state description — the quine loop. Momentum debt is paid by injecting
+      dust balls into the lower fractal layer (dark matter).
+      The two-ball configuration is the minimal unit that generates a physical law.}
+    \label{fig:fractal_quine}
+    \end{figure}
 
 
   \subsection{Two-Ball Computational Overhead: $T_{\text{sphere}} + \Delta T_{\text{two-ball}}$}
