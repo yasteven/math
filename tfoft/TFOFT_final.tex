@@ -32,46 +32,13 @@ Star=Electron+Atom=Galaxy Quine}
 \maketitle
 
 \begin{abstract}
-  We propose a new principle of physics---MATHICCS---requiring that every
-  mathematical axiom used in a physical law must correspond to an operation
-  persistently realizable by a physical subsystem. Applying this criterion
-  motivates reality's geometry as a discrete, self-similar, singularity-free
-  structure: the Apollonian Soddy Sphere Packing (ASSP). We conjecture that
-  3D dynamics on this packing form a \emph{self-computing fractal}: a
-  dynamical computer whose registers are fractal-congruent objects storing
-  angular and linear momentum as cross-scale registers.
-
-  Within this proposed ontology, the fractal quine gives a candidate
-  self-describing, MATHICCS-valid physical theory. It proposes a derivation
-  of the fine-structure constant
-  \[
-  \alpha^{-1}=4\pi^3+\pi^2+\pi=137.036
-  \]
-  from the minimal Presburger computational cost of a Soddy sphere state
-  update; proposes a derivation of the hydrogen binding energy from the
-  Gyro Ball IO equation
-  \[
-  E=\alpha^2m_ec^2/2;
-  \]
-  and derives a homogeneous baseline plus local virial estimate for the
-  gravitational constant \(G\) from atomic structure by two complementary
-  first-principles routes.
-
-  The exact Apollonian boundary projection gives
-  \(N_{\rm radius}=\alpha^{-1}_{\rm ASSP}/\varphi=84.693\), leading to a
-  homogeneous ASSP gravitational baseline
-  \(G_0\approx6.40\times10^{-11}\). A dynamic clock route with the predicted
-  Fractal Virial Correction \(\mathrm{FVC}=\ln(27/2)\) gives a local
-  virialized estimate \(G_{\rm dyn}\approx6.70\times10^{-11}\), within
-  \(\sim0.4\%\) of the Earth/NIST value.
-
-  The framework also presents empirical matches involving the 77-layer
-  star/electron hierarchy, the 25-arcminute CMB seam, Karlsson quasar
-  logarithmic periodicity, and a pending falsifiable prediction
-  \(\alpha^{-1}_{\mathrm{Yb}}=137.035998945\pm20\,\mathrm{ppb}\). Throughout,
-  established background results, conjectural identifications, and derived
-  consequences within the ontology are distinguished explicitly.
+We propose a new principle of physics---MATHICCS---requiring that every mathematical axiom used in a physical law must correspond to an operation persistently realizable by a physical subsystem. Applying this criterion motivates reality's geometry as a discrete, self-similar, singularity-free structure: the Apollonian Soddy Sphere Packing (ASSP). We conjecture that 3D dynamics on this packing is a \emph{self-computing fractal}: a dynamical computer whose registers are fractal-congruent objects that store angular and linear momentum as cross-scale registers. This fractal quine is proposed as a self-describing, MATHICCS-valid physical theory: it derives the fine-structure constant
+\(\alpha^{-1}_{\rm TFOFT}=4\pi^3+\pi^2+\pi=137.036\)
+from the minimal Presburger computational cost of a Soddy sphere state update, derives the 77-layer star-electron hierarchy from the rank-23 half-boundary mass register, derives the hydrogen binding energy from the Gyro Ball IO equation
+\(E=\alpha^2m_ec^2/2\), and derives the gravitational constant \(G\) from atomic structure by two independent first-principles routes. We present empirical cross-checks involving the 25-arcminute CMB seam, Karlsson quasar logarithmic periodicity, and the observed electron/star hierarchy, together with one pending falsifiable prediction,
+\(\alpha^{-1}_{\mathrm{Yb}}=137.035998945\pm20\,\mathrm{ppb}\). The framework is presented as a zero-free-parameter ontology whose derived consequences are compared against major tensions in observational physics.
 \end{abstract}
+
 
 % ==================================================================
 %  PART A:  MATHICCS => FRACTAL GEOMETRY
@@ -364,6 +331,20 @@ physics. Rather, it proposes a specific computational-geometric ontology and
 then derives its internal consequences. The empirical question is whether
 those consequences match observation better than chance and whether the
 remaining predictions are falsified by future measurement.
+
+\paragraph{Notation convention for derived and observed quantities.}
+To prevent circular interpretation, this paper distinguishes ontology-internal
+derived quantities from empirical comparison values. A superscript or subscript
+\({\rm TFOFT}\) denotes a value derived internally from the Presburger-ASSP
+ontology and its stated geometric rules. A superscript or subscript
+\({\rm obs}\) denotes an observed astrophysical or cosmological value, while
+\({\rm meas}\) denotes a laboratory measured value. Thus
+\(k_{\rm mass}^{\rm TFOFT}\), \(T_{\rm mass}^{\rm TFOFT}\), and
+\(S_{\rm mass}^{\rm TFOFT}\) are internal derived quantities, whereas
+\(\ln(M_\odot/m_e)_{\rm obs}\), \(G_{\rm meas}\), and
+\(\alpha_{\rm meas}\) are comparison quantities. Observed quantities may test
+or calibrate the ontology, but they do not define the internal derivations
+unless explicitly labeled as empirical inputs.
 
 \subsection{The Presburger-ASSP Computational Machine}
 
@@ -671,41 +652,345 @@ least-squares CODATA input.
 \subsection{The Mass-Channel Split, 77-Layer Self-Encoding, and the He/Fe Garbage Collector}
 \label{sec:mass_channel}
 
-\subsubsection{The Natural Split}
+The mass hierarchy is not defined by the observed electron-to-solar mass ratio.
+It is the self-encoding layer count of a Star Ball mass register consisting of
+the full single-sphere state plus one half of the rank-23 curvature boundary
+needed to define that state relationally. The observed electron-to-solar
+hierarchy is therefore moved to a later cross-check: it tests whether the
+internal closure lands near the expected astrophysical scale, but it is not an
+input to the derivation.
 
-$T_{\rm sphere} = 137.036$ describes a single isolated sphere. A star ball (the mass register in the FTC) primarily encodes its own mass and rotational state---channels $T_S + T_R$---and delegates the radial position channel $T_D$ to the info ball it emits. Within the Karlsson $e$-clamping budget of 2 ln-units, the mass and info channels divide as:
+\subsubsection{The Natural Split from Rank-23 Geometry}
+\label{sec:natural_split}
+
+The isolated single-ball register is
 \[
-k_{\rm mass} + k_{\rm quasar} = 1.80436 + 0.20493 = 2.00929 \approx 2.
+T_{\rm sphere}^{\rm TFOFT}
+=
+4\pi^3+\pi^2+\pi
+=
+137.0363038.
 \]
-The theoretical channel step from the $e$-clamping split alone gives $k_{\rm mass}^{\rm theory} = 2 - 0.20493 = 1.79507$, while the empirically derived value $k_{\rm mass} = 138.936/77 = 1.80436$ agrees to within $0.5\%$. This residual is interpreted as the same local substrate correction that produces the $4\%$ offset in $G$ (Section~\ref{sec:G_deriv}) and the local-density shift in $\alpha(Z)$.
+This is the complete Presburger-ASSP state cost of one isolated Soddy sphere.
+However, a mass hierarchy is not a free-standing isolated sphere. A Star Ball
+mass register only becomes a physical register when it is relationally
+defined against a Core Ball boundary. The relevant construction is therefore
+not the full two-ball transfer register, but the one-register mass channel
+with a shared relational boundary.
 
-\subsubsection{Why 77 Layers: The Self-Encoding Layer Count}
-
-The two-ball system (one star ball, one core ball) carries a total Presburger budget of $T_{\rm sphere} + \Delta T_{\rm two\text{-}ball} \approx 138.96$ (Section~\ref{sec:strassen}), close to the observed mass hierarchy $\ln(M_\odot/m_e) = 138.936$. The number of fractal self-encoding layers is the integer $S$ such that $S \times k_{\rm mass} = 138.936$:
+The rank-23 two-ball geometry supplies the raw dual-channel leakage into the
+Info Ball channel:
 \[
-S = \frac{138.936}{1.80436} = 77.000155 \approx \boxed{77\ \text{layers}}.
+k_{\rm info}^{(0),{\rm TFOFT}}
+=
+2\left(\frac{23}{27}\right)^2\left(\frac{4}{27}\right).
 \]
-This matches the observed electron-to-solar-mass logarithm $\ln(M_\odot/m_e) = 138.9357$~\cite{CODATA2022} to one part in $10^6$, providing a nontrivial structural consistency check: the mass hierarchy between an electron and a star is exactly 77 self-encoding steps under this ontology.
-
-\subsubsection{The 137 $-$ 77 $=$ 60 Residual: He and Fe as Fractal Garbage Collectors}
-
-The nearest integer to $\alpha^{-1}$ minus the 77 self-encoding layers leaves an exact residual:
+Here \(23/27\) is the rank-23 curvature fraction relative to the naive
+\(3\times3\) multiplication count, \(4/27\) is the addition-only leakage
+fraction, and the prefactor of \(2\) counts the two directed boundary legs of
+the Core--Star transfer. Numerically,
 \[
-\lfloor\alpha^{-1}\rfloor - S_{\rm mass} = 137 - 77 = \boxed{60}.
+k_{\rm info}^{(0),{\rm TFOFT}}
+=
+2\left(\frac{23}{27}\right)^2\left(\frac{4}{27}\right)
+=
+0.2150079.
 \]
 
-We conjecture that this residual encodes the \emph{fractal register garbage collector}: the computational cost of closing the fractal circuit and recycling the momentum debt incurred by 77 layers of mass-channel encoding. Persistent computation requires a mechanism to restart fusion processes after a star has exhausted its fuel. The residual Soddy core budget is conjectured to encode the primary fusion endpoints:
-
-\begin{itemize}
-  \item \textbf{Helium-4 ($A = 4$)}: The tetrahedral Soddy-closed shell at 4 nucleons is conjectured to be the most stable arrangement of simple nucleons in the ASSP. Stability would arise because the external virtual Soddy density exceeds the internal virtual Soddy density, creating a net inward restoring force at every face of the tetrahedron.
-  \item \textbf{Iron-56 ($A = 56$)}: The maximum nucleus for which synthesis still releases energy. Beyond $A = 56$, outer Soddy cores are conjectured to accumulate real curvature faster than inner cores can balance them, and binding energy per nucleon decreases monotonically.
-\end{itemize}
-
-Together: $4 + 56 = 60 = \lfloor\alpha^{-1}\rfloor - S_{\rm mass}$.
+Within the \(e\)-clamped two-channel budget, the complementary mass step is
+therefore
+\[
+k_{\rm mass}^{\rm TFOFT}
+=
+2-k_{\rm info}^{(0),{\rm TFOFT}}
+=
+1.7849921.
+\]
+This value is derived from the rank-23 channel geometry. It is not obtained
+from \(\ln(M_\odot/m_e)_{\rm obs}\), from Karlsson periodicity, or from any
+observed mass ratio.
 
 \begin{quote}
-The two dominant nuclear fusion endpoints---helium and iron---are conjectured to be the Soddy-closed garbage-collector states encoded directly into the arithmetic of fractal self-description: the light and heavy bookends of the 60-unit momentum debt separating the fine-structure constant from the fractal layer count.
+The raw rank-23 geometry first determines the Info Ball leakage
+\(k_{\rm info}^{(0),{\rm TFOFT}}\). The mass-channel step
+\(k_{\rm mass}^{\rm TFOFT}\) is then the complementary \(e\)-clamped channel.
+Observation may later check this value, but it does not define it.
 \end{quote}
+
+\subsubsection{Why 77 Layers: The Half-Boundary Mass Register}
+\label{sec:why_77_layers}
+
+The 77-layer count follows from the fact that the Star Ball mass hierarchy is
+a one-register hierarchy that still requires a relational boundary. It is not
+the isolated single-ball limit and it is not the full two-ball quine transfer.
+
+The lower limit is the isolated sphere:
+\[
+T_{\rm lower}^{\rm TFOFT}
+=
+T_{\rm sphere}^{\rm TFOFT}
+=
+137.0363038.
+\]
+The full two-ball boundary would add a complete rank-23 curvature boundary:
+\[
+T_{\rm upper}^{\rm TFOFT}
+=
+T_{\rm sphere}^{\rm TFOFT}
++
+\left(\frac{23}{27}\right)
+=
+137.8881556.
+\]
+But the Star Ball mass register receives only half of this boundary, because
+the boundary is shared relationally between the Star Ball and the Core Ball.
+Thus the mass register is
+\[
+T_{\rm mass}^{\rm TFOFT}
+=
+T_{\rm sphere}^{\rm TFOFT}
++
+\frac12\left(\frac{23}{27}\right).
+\]
+Numerically,
+\[
+T_{\rm mass}^{\rm TFOFT}
+=
+137.0363038
++
+0.4259259
+=
+137.4622297.
+\]
+
+The self-encoding layer count is then the mass-register depth divided by the
+internally derived mass-channel step:
+\[
+S_{\rm mass}^{\rm TFOFT}
+=
+\frac{T_{\rm mass}^{\rm TFOFT}}{k_{\rm mass}^{\rm TFOFT}}
+=
+\frac{137.4622297}{1.7849921}
+=
+77.00999
+\approx
+\boxed{77}.
+\]
+
+This is the central mass-hierarchy derivation. The integer \(77\) is selected
+by the half-boundary Star Ball mass register and the rank-23 channel split
+alone. No observed mass ratio is used to solve for \(k_{\rm mass}^{\rm TFOFT}\)
+or \(S_{\rm mass}^{\rm TFOFT}\).
+
+\begin{quote}
+A single isolated sphere is a state. A full two-ball register is the quine
+transfer. The mass hierarchy sits between them: it is the Star Ball's own
+single-sphere state plus one half of the shared rank-23 curvature boundary.
+That half-boundary closure pins the self-encoding count at
+\(S_{\rm mass}^{\rm TFOFT}\approx77\).
+\end{quote}
+
+\subsubsection{Interval View of the Mass Register}
+\label{sec:mass_interval_view}
+
+The half-boundary construction places the mass register between the isolated
+single-ball limit and the full two-ball boundary limit:
+\[
+T_{\rm sphere}^{\rm TFOFT}
+<
+T_{\rm mass}^{\rm TFOFT}
+<
+T_{\rm sphere}^{\rm TFOFT}+\frac{23}{27}.
+\]
+Equivalently, in layer units,
+\[
+\frac{T_{\rm sphere}^{\rm TFOFT}}{k_{\rm mass}^{\rm TFOFT}}
+=
+76.7714,
+\]
+\[
+\frac{T_{\rm mass}^{\rm TFOFT}}{k_{\rm mass}^{\rm TFOFT}}
+=
+77.0100,
+\]
+\[
+\frac{T_{\rm sphere}^{\rm TFOFT}+\frac{23}{27}}
+{k_{\rm mass}^{\rm TFOFT}}
+=
+77.2486.
+\]
+Thus \(77\) is not selected by the lower isolated-sphere limit or by the upper
+full two-ball transfer. It is selected by the half-boundary mass register.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[x=0.095cm,y=1cm,font=\small]
+  % Axis scale: plot S-layer values from 76.65 to 77.35
+  \def\xmin{76.65}
+  \def\xmax{77.35}
+  \def\Ssingle{76.7714}
+  \def\Smass{77.0100}
+  \def\Sfull{77.2486}
+
+  % helper macro for x coordinate
+  \newcommand{\sx}[1]{({#1-\xmin})}
+
+  \draw[->,thick] (0,0) -- ({\xmax-\xmin+0.08},0)
+    node[right] {$S=T/k_{\rm mass}^{\rm TFOFT}$};
+
+  \foreach \v/\lab in {76.7/76.7,76.8/76.8,76.9/76.9,77.0/77.0,77.1/77.1,77.2/77.2,77.3/77.3}
+  {
+    \draw ({\v-\xmin},0.06) -- ({\v-\xmin},-0.06);
+    \node[below] at ({\v-\xmin},-0.06) {\scriptsize \lab};
+  }
+
+  % interval
+  \draw[very thick] ({\Ssingle-\xmin},0.35) -- ({\Sfull-\xmin},0.35);
+
+  % markers
+  \draw[thick] ({\Ssingle-\xmin},0.15) -- ({\Ssingle-\xmin},0.55);
+  \fill ({\Ssingle-\xmin},0.35) circle (2pt);
+  \node[above,align=center] at ({\Ssingle-\xmin},0.62)
+    {\scriptsize isolated\\[-2pt]\scriptsize single ball\\[-2pt]\scriptsize $76.771$};
+
+  \draw[very thick] ({\Smass-\xmin},0.08) -- ({\Smass-\xmin},0.72);
+  \fill ({\Smass-\xmin},0.35) circle (2.5pt);
+  \node[above,align=center] at ({\Smass-\xmin},0.82)
+    {\scriptsize half-boundary\\[-2pt]\scriptsize mass register\\[-2pt]\scriptsize $77.010\approx77$};
+
+  \draw[thick] ({\Sfull-\xmin},0.15) -- ({\Sfull-\xmin},0.55);
+  \fill ({\Sfull-\xmin},0.35) circle (2pt);
+  \node[above,align=center] at ({\Sfull-\xmin},0.62)
+    {\scriptsize full two-ball\\[-2pt]\scriptsize boundary\\[-2pt]\scriptsize $77.249$};
+
+  % integer 77
+  \draw[dashed] ({77.0-\xmin},-0.15) -- ({77.0-\xmin},0.78);
+  \node[below] at ({77.0-\xmin},-0.32) {\scriptsize integer closure \(77\)};
+
+  \node[align=center] at ({(77.0-\xmin)},1.55)
+    {\normalsize Star Ball mass register sits between the isolated state and full two-ball transfer};
+\end{tikzpicture}
+\caption{Interval view of the TFOFT mass-register closure. The isolated
+single-ball limit gives \(76.7714\) layer units; the full two-ball boundary
+gives \(77.2486\) layer units. The half-boundary Star Ball mass register gives
+\(S_{\rm mass}^{\rm TFOFT}=77.0100\approx77\), selecting the integer closure
+without using the observed electron-to-solar mass ratio.}
+\label{fig:mass_register_interval}
+\end{figure}
+
+\subsubsection{Observed Electron-to-Solar Hierarchy as a Cross-Check}
+\label{sec:mass_observed_crosscheck}
+
+Only after the internal mass-register closure is derived do we compare it with
+observation. The observed electron-to-solar mass logarithm is
+\[
+\ln(M_\odot/m_e)_{\rm obs}
+\approx
+138.936.
+\]
+If the TFOFT-derived integer closure \(S_{\rm mass}^{\rm TFOFT}=77\) is used
+as the layer count, this observed hierarchy corresponds to an observed
+effective step
+\[
+k_{\rm mass}^{\rm obs}
+=
+\frac{\ln(M_\odot/m_e)_{\rm obs}}{77}
+\approx
+1.80436.
+\]
+This empirical value is not used in the derivation above. It is a comparison
+quantity. The TFOFT-derived value is
+\[
+k_{\rm mass}^{\rm TFOFT}
+=
+1.7849921.
+\]
+The relative offset is
+\[
+\frac{k_{\rm mass}^{\rm obs}-k_{\rm mass}^{\rm TFOFT}}
+{k_{\rm mass}^{\rm TFOFT}}
+\approx
+1.1\%.
+\]
+Under the present ontology this offset is interpreted as a local
+astrophysical/substrate comparison residual, analogous in status to local
+virial or density corrections appearing elsewhere in the paper. The important
+logical point is that observation checks the internally derived 77-layer
+closure; it does not define it.
+
+\subsubsection{Karlsson/Quasar Periodicity as a Later Calibration, Not the Mass Derivation}
+\label{sec:karlsson_mass_note}
+
+Karlsson quasar logarithmic periodicity is not used here to derive the mass
+step or the 77-layer count. In the present organization it may be retained
+only as a later comparison, calibration layer, or phenomenological resonance
+of the Info Ball channel. The primary mass hierarchy derivation is instead:
+\[
+\text{rank-23 geometry}
+\;\Longrightarrow\;
+k_{\rm info}^{(0),{\rm TFOFT}}
+\;\Longrightarrow\;
+k_{\rm mass}^{\rm TFOFT}
+\;\Longrightarrow\;
+T_{\rm mass}^{\rm TFOFT}
+\;\Longrightarrow\;
+S_{\rm mass}^{\rm TFOFT}\approx77.
+\]
+This prevents the Karlsson value from functioning as a hidden observational
+input to the Star Ball mass-register closure.
+
+\subsubsection{The 137 $-$ 77 $=$ 60 Residual: He and Fe as Fractal Garbage Collectors}
+\label{sec:he_fe_garbage_collector}
+
+The nearest integer to the single-sphere register depth minus the derived
+integer mass closure leaves the residual
+\[
+\lfloor\alpha_{\rm TFOFT}^{-1}\rfloor
+-
+S_{\rm mass}^{\rm TFOFT}
+=
+137-77
+=
+\boxed{60}.
+\]
+
+We conjecture that this residual encodes the \emph{fractal register garbage
+collector}: the computational cost of closing the fractal circuit and
+recycling the momentum debt incurred by mass-channel self-encoding. Persistent
+computation requires a mechanism to restart fusion processes after a star has
+exhausted its fuel. The residual Soddy core budget is conjectured to encode
+the primary fusion endpoints:
+
+\begin{itemize}
+  \item \textbf{Helium-4 (\(A=4\))}: The tetrahedral Soddy-closed shell at
+  four nucleons is conjectured to be the most stable arrangement of simple
+  nucleons in the ASSP. Stability would arise because the external virtual
+  Soddy density exceeds the internal virtual Soddy density, creating a net
+  inward restoring force at every face of the tetrahedron.
+
+  \item \textbf{Iron-56 (\(A=56\))}: The maximum nucleus for which synthesis
+  still releases energy. Beyond \(A=56\), outer Soddy cores are conjectured
+  to accumulate real curvature faster than inner cores can balance them, and
+  binding energy per nucleon decreases monotonically.
+\end{itemize}
+
+Together,
+\[
+4+56=60
+=
+\lfloor\alpha_{\rm TFOFT}^{-1}\rfloor
+-
+S_{\rm mass}^{\rm TFOFT}.
+\]
+
+\begin{quote}
+The two dominant nuclear fusion endpoints---helium and iron---are conjectured
+to be the Soddy-closed garbage-collector states encoded into the arithmetic of
+fractal self-description: the light and heavy bookends of the 60-unit momentum
+debt separating the single-sphere register depth from the mass self-encoding
+layer count.
+\end{quote}
+
 
 \subsection{The Fractal Quine: Two Balls and the Universal Fundamental Law}
 \label{sec:quine}
@@ -1486,121 +1771,203 @@ At every fractal scale $N$, the orbital shell of scale-$N$ objects around scale-
 \section{Observational Evidence, Derived Constants, and Predictions}
 \label{sec:predictions}
 
-\subsection{Quasars as Info Balls and the Karlsson Logarithmic Periodicity}
+\subsection{Quasars as Candidate Info Balls and the Karlsson Logarithmic Periodicity}
 
 \subsubsection{Redshift as Angular-Momentum Loss}
 
-In the TFOFT framework, cosmological redshift is conjectured to not be the expansion of a space metric, but the accumulation of angular-momentum loss as photons traverse fractal layer boundaries. At each boundary crossing, angular momentum is partially transferred to lower-fractal-layer hydrogen gas. Since angular momentum sets the internal clock tick rate, its loss produces a frequency decrease:
+In the TFOFT framework, cosmological redshift is conjectured to be not the expansion of a space metric, but the accumulation of angular-momentum loss as photons traverse fractal layer boundaries. At each boundary crossing, angular momentum is partially transferred to lower-fractal-layer hydrogen gas. Since angular momentum sets the internal clock tick rate, its loss produces a frequency decrease:
 \[
-p = hf/c \implies \text{if } p \text{ decreases, } f \text{ decreases.}
+p = hf/c
+\qquad\Longrightarrow\qquad
+\text{if }p\text{ decreases, then }f\text{ decreases.}
 \]
-For a Brownian path through the fractal substrate:
+For a Brownian path through the fractal substrate,
 \[
 z_{\rm Brownian} \propto \ln(r_{\rm linear})
-\implies r_{\rm linear} \approx \exp(z/\text{constant}).
+\qquad\Longrightarrow\qquad
+r_{\rm linear} \approx \exp(z/\text{constant}).
 \]
 
 The fractal equivalence and the statistical nature of the two-component redshift together imply that the observable universe is, in TFOFT, a vast sphere of hydrogen gas isotropically emitted by a single parent macro-star (the wish-scale analogue of a star). All subsequent structure---galaxies, quasars, the CMB---arises from the internal dynamics of that ejected hydrogen plasma as it self-organizes into the fractal quine.
 
-\subsubsection{Quasars as Info Balls}
+\subsubsection{Karlsson Periodicity as an Empirical Info-Channel Check}
 
-A quasar is conjectured to be a high-angular-momentum macrophoton ejected from a parent macro-star entering a galactic core ball. If quasars are info balls in the FTC, their redshifts should cluster at preferred logarithmic values set by the Karlsson info-ball channel step. Karlsson (1971) found exactly this: quasar absorption redshifts cluster at preferred values spaced by $\Delta\log_{10}(1+z) = 0.089$~\cite{Karlsson1971,Mal2020}. In natural log:
+Karlsson quasar periodicity is treated here as an empirical comparison, not as an input to the mass-register derivation. Karlsson's reported logarithmic spacing is
 \[
-k_{\rm quasar} = 0.089 \times \ln 10 = \mathbf{0.20493}
-\ \text{ln units per layer.}
+\Delta\log_{10}(1+z)_{\rm obs}=0.089.
 \]
-This value is identified as the info-ball channel step of the FTC. Disputes about the Karlsson periodicity's statistical significance do not affect the two primary validated predictions of TFOFT (the 25-arcminute CMB seam and the two-route derivation of $G$), since the Karlsson constant enters as a derived consequence of the $e$-clamping principle (Section~\ref{sec:ecamp}), not as an axiom.
-
-\subsection{Deriving the Karlsson Constant and Fractal Layer Count}
-\label{sec:ecamp}
-
-\subsubsection{The $e$-Clamping Principle}
-
-When a sphere acquires a tangency to a second ball, MATHICCS M1 requires that complexity growth across layers be at most exponential. The unique MATHICCS-consistent clamp: each tangency boundary condition multiplies complexity by $e$, costing $\ln e = 1$ ln unit. The gyro ball (one core ball, one star ball) has two tangencies:
+In natural logarithmic units this is
 \[
-\text{Gyro-ball boundary budget} = 2\ \text{ln units}.
-\]
-Splitting between the mass and info channels:
-\[
-k_{\rm mass} = 2 - k_{\rm quasar} = 2 - 0.20493 = 1.79507.
+k_{\rm Karlsson}^{\rm obs}
+=
+0.089\ln 10
+=
+0.2049301.
 \]
 
-\subsubsection{Deriving $k_{\rm mass}$ and the Layer Count}
+The internally derived TFOFT Info-channel leakage is
+\[
+k_{\rm info}^{(0),{\rm TFOFT}}
+=
+2\left(\frac{23}{27}\right)^2\left(\frac{4}{27}\right)
+=
+0.2150079.
+\]
+Thus the observed Karlsson spacing lies near the internally derived Info-channel step:
+\[
+k_{\rm Karlsson}^{\rm obs}=0.2049301,
+\qquad
+k_{\rm info}^{(0),{\rm TFOFT}}=0.2150079.
+\]
+The fractional separation is
+\[
+\frac{
+k_{\rm info}^{(0),{\rm TFOFT}}-k_{\rm Karlsson}^{\rm obs}
+}{
+k_{\rm info}^{(0),{\rm TFOFT}}
+}
+\approx
+4.7\%.
+\]
 
+This near-match motivates the observational conjecture that quasars are candidate macroscopic Info Ball events. A quasar is therefore interpreted, within this conjecture, as a high-angular-momentum macrophoton-like transfer event associated with a parent macro-star entering or coupling to a galactic Core Ball. The conjecture is empirical: it is based on the proximity between an observed quasar logarithmic spacing and an independently derived TFOFT Info-channel scale.
+
+Disputes about the statistical significance of Karlsson periodicity do not affect the primary TFOFT derivations of \(\alpha^{-1}_{\rm TFOFT}\), the rank-23 half-boundary 77-layer mass closure, or the two-route derivation of \(G\). In the present paper, Karlsson periodicity is used only as an observational Info-channel comparison.
+
+\subsubsection{The Karlsson Complement as a Mass-Channel Spot Check}
+
+If the observed Karlsson spacing is treated as an empirical candidate for the Info-channel step, then its \(e\)-clamped complementary mass-channel scale is
 \[
-N_{\rm theory} = T_{\rm sphere} + \Delta T_{\rm two\text{-}ball}
-  = 137.036 + 1.923 = 138.959.
+k_{\rm mass|Karlsson}^{\rm obs}
+=
+2-k_{\rm Karlsson}^{\rm obs}
+=
+2-0.2049301
+=
+1.7950699.
 \]
-Solving $138.959/S \approx 1.795$ gives $S = 77$. The exact inertia channel step:
+Over the TFOFT integer closure \(S=77\), this gives
 \[
-k_{\rm mass} = \frac{138.936}{77} = \mathbf{1.804364}.
+77k_{\rm mass|Karlsson}^{\rm obs}
+=
+77(1.7950699)
+=
+138.2204.
 \]
-\textbf{Verification}: $k_{\rm mass} + k_{\rm quasar} = 1.80436 + 0.20493 = 2.00929 \approx 2\ \checkmark$
+
+The CODATA/solar electron-star logarithmic hierarchy is
+\[
+N_{\rm mass}^{\rm obs}
+=
+\ln(M_\odot/m_e)_{\rm obs}
+\approx
+138.93575.
+\]
+Thus the Karlsson-complement mass channel lands in the same register interval between the isolated single-sphere value and the rounded two-ball boundary:
+\[
+137.0363
+<
+138.2204
+<
+138.93575
+<
+139.
+\]
+The offset between the Karlsson-complement check and the observed electron-star hierarchy is
+\[
+138.93575-138.2204
+=
+0.7154,
+\]
+or about
+\[
+0.5\%.
+\]
+
+This is not used to derive \(S_{\rm mass}^{\rm TFOFT}\). It is a spot check: the observed Karlsson Info-channel candidate has an \(e\)-clamped complement whose 77-layer mass-channel product falls inside the same 137--139 register window as the CODATA/solar hierarchy.
+
+For comparison, the full TFOFT two-ball transfer register is
+\[
+T_{\rm two\text{-}ball}^{\rm TFOFT}
+=
+T_{\rm sphere}^{\rm TFOFT}
++
+\Delta T_{\rm two\text{-}ball}^{\rm TFOFT}
+=
+137.0363+1.9187
+=
+138.9550.
+\]
+This lies very close to the observed electron-star hierarchy:
+\[
+T_{\rm two\text{-}ball}^{\rm TFOFT}
+-
+N_{\rm mass}^{\rm obs}
+=
+138.9550-138.93575
+=
+0.0193,
+\]
+a fractional difference of approximately
+\[
+1.4\times10^{-4}
+=
+0.014\%.
+\]
+
+The hierarchy of checks is therefore
+\[
+\begin{aligned}
+T_{\rm sphere}^{\rm TFOFT} &= 137.0363,\\
+77k_{\rm mass|Karlsson}^{\rm obs} &= 138.2204,\\
+\ln(M_\odot/m_e)_{\rm obs} &= 138.93575,\\
+T_{\rm two\text{-}ball}^{\rm TFOFT} &= 138.9550.
+\end{aligned}
+\]
+All four values sit in the same register interval, with the full two-ball boundary providing the closest match to the CODATA/solar hierarchy.
 
 \subsection{Logarithmic Scale Ratios: Mass, Radius, and Time Hierarchies}
 
 \subsubsection{Mass Hierarchy: Electron to Star}
 
+The observed electron-to-solar mass hierarchy is retained here as an empirical comparison value:
 \[
-N_{\rm mass} = \ln\!\left(\frac{M_\odot}{m_e}\right) = 138.936.
+N_{\rm mass}^{\rm obs}
+=
+\ln\!\left(\frac{M_\odot}{m_e}\right)_{\rm obs}
+\approx
+138.93575.
 \]
-Agreement: $77 \times 1.804364 = 138.936$ vs.\ CODATA $138.9357$~\cite{CODATA2022}. Precision: $5.2\times10^{-7}$.
+The TFOFT-derived mass closure \(S_{\rm mass}^{\rm TFOFT}\approx77\) is derived earlier from the rank-23 half-boundary mass register, not from this observed ratio. The comparison is that the observed electron-star hierarchy lies near the full two-ball transfer register:
+\[
+N_{\rm mass}^{\rm obs}
+=
+138.93575
+\approx
+T_{\rm two\text{-}ball}^{\rm TFOFT}
+=
+138.9550.
+\]
+This agreement is treated as an observational cross-check of the mass-registerarchitecture, not as an input to the derivation.
 
 \subsubsection{Radius Hierarchy: Why the Boundary Is Apollonian, Not Soddy}
 \label{sec:radius_apollonian}
 
-The 3D bulk dynamics of the ASSP operate under the full Soddy sphere packing,
-whose Hausdorff dimension is \(D_S = 2.474\) and whose computational cost per
-sphere is \(T_{\rm sphere} = 137.036\). However, the \emph{inter-layer
-boundary} where the radius hierarchy is measured is not a 3D bulk
-interaction---it is a 2D one, and the physical reason is rooted in the
-dynamics of the gyro balls themselves.
+The 3D bulk dynamics of the ASSP operate under the full Soddy sphere packing, whose Hausdorff dimension is \(D_S = 2.474\) and whose computational cost per sphere is \(T_{\rm sphere} = 137.036\). However, the \emph{inter-layer boundary} where the radius hierarchy is measured is not a 3D bulk interaction---it is a 2D one, and the physical reason is rooted in the dynamics of the gyro balls themselves.
 
-The here-scale universe is an ensemble of gyro balls (spiral galaxies)
-embedded in a medium of lower-scale hydrogen gas (dark matter). Each gyro
-ball is a rotating disk: its angular momentum is stored and transferred
-primarily within the disk plane. When two gyro balls interact
-gravitationally---whether in a near-encounter or a slow cosmological
-drift---the dominant interaction closely resembles specular elastic collision
-rather than direct coupling. This is a known statistical result: in a gas of
-particles with long-range \(1/r^2\) interactions and equal masses, most
-encounters are hyperbolic or parabolic fly-throughs. In the center-of-mass
-frame, a gravitational deflection by angle \(\theta\) is mathematically
-equivalent to a specular elastic collision with the same deflection angle
-\cite{Lynden-Bell1967}. For equal-mass objects, the two descriptions are
-physically indistinguishable. This is the microscopic basis of violent
-relaxation and the reason virialized galaxy clusters obey
-Maxwell--Boltzmann-like velocity distributions.
+The here-scale universe is an ensemble of gyro balls (spiral galaxies) embedded in a medium of lower-scale hydrogen gas (dark matter). Each gyro ball is a rotating disk: its angular momentum is stored and transferred primarily within the disk plane. When two gyro balls interact gravitationally---whether in a near-encounter or a slow cosmological drift---the dominant interaction closely resembles specular elastic collision rather than direct coupling. This is a known statistical result: in a gas of particles with long-range \(1/r^2\) interactions and equal masses, most encounters are hyperbolic or parabolic fly-throughs. In the center-of-mass frame, a gravitational deflection by angle \(\theta\) is mathematically equivalent to a specular elastic collision with the same deflection angle \cite{Lynden-Bell1967}. For equal-mass objects, the two descriptions are physically indistinguishable. This is the microscopic basis of violent relaxation and the reason virialized galaxy clusters obey Maxwell--Boltzmann-like velocity distributions.
 
-The dark matter halo (Dust Ball layer) surrounding each gyro ball acts as
-the inertial medium: it absorbs and redistributes linear momentum between
-encounters, providing an effective isotropic pressure that prevents
-gravitational collapse at the layer boundary. This is the here-scale analogue
-of Brownian gas pressure---the ``anti-gravity'' or normal force that caps
-the full 3D Soddy dynamics at a 2D boundary.
+The dark matter halo (Dust Ball layer) surrounding each gyro ball acts as the inertial medium: it absorbs and redistributes linear momentum between encounters, providing an effective isotropic pressure that prevents gravitational collapse at the layer boundary. This is the here-scale analogue of Brownian gas pressure---the ``anti-gravity'' or normal force that caps the full 3D Soddy dynamics at a 2D boundary.
 
-The key consequence is that because the dominant inter-gyro-ball interaction
-is specular billiard-like, and because rotation selects the disk plane as
-the preferred 2D surface, the boundary dynamics at each fractal layer
-interface are governed by \textbf{2D Apollonian circle packing} rather than
-3D Soddy sphere packing. In 2D, mutually tangent circles with specular
-reflection at contact points generate Apollonian packings; this is the
-geometric content of iterated circle inversions, which are the 2D analogue
-of specular reflection. The Apollonian circle packing has Hausdorff
-dimension \(D_A = 1.305687\) and is governed by the quadratic fixed-point
-scaling relation~\cite{Boyd1973,Graham2003,Manna1991}:
+The key consequence is that because the dominant inter-gyro-ball interaction is specular billiard-like, and because rotation selects the disk plane as the preferred 2D surface, the boundary dynamics at each fractal layer interface are governed by \textbf{2D Apollonian circle packing} rather than 3D Soddy sphere packing. In 2D, mutually tangent circles with specular reflection at contact points generate Apollonian packings; this is the geometric content of iterated circle inversions, which are the 2D analogue of specular reflection. The Apollonian circle packing has Hausdorff dimension \(D_A = 1.305687\) and is governed by the quadratic fixed-point scaling relation~\cite{Boyd1973,Graham2003,Manna1991}:
 \[
 k^2+k-1=0
 \qquad\Rightarrow\qquad
 k=\frac{\sqrt{5}-1}{2}=\frac{1}{\varphi},
 \]
-where \(\varphi\) is the golden ratio. This is the natural fixed-point
-scaling of 2D specular tangency chains.
+where \(\varphi\) is the golden ratio. This is the natural fixed-point scaling of 2D specular tangency chains.
 
-The fractal dimension evidence reviewed earlier supports this assignment:
-power-law exponents near \(D_A\approx1.3\) recur specifically in systems
-with rotationally dominated or radially defined dynamics, while the 3D Soddy
-exponent \(D_S\approx2.4\) governs bulk volumetric systems.
+The fractal dimension evidence reviewed earlier supports this assignment: power-law exponents near \(D_A\approx1.3\) recur specifically in systems with rotationally dominated or radially defined dynamics, while the 3D Soddy exponent \(D_S\approx2.4\) governs bulk volumetric systems.
 
 The effective ideal fractal depth of the radius hierarchy is therefore the
 Apollonian boundary projection of the Presburger fine-structure depth:
@@ -1624,28 +1991,13 @@ N_{\rm radius}
 }
 \]
 
-This is not a fit parameter. It is the direct consequence of two independent
-results: the Presburger-derived fine-structure depth
-\(\alpha^{-1}_{\rm ASSP}=137.0363038\) (Section~\ref{sec:alpha_deriv}) and
-the Apollonian boundary condition \(k=1/\varphi\) imposed by the specular
-billiard dynamics of rotating gyro balls at the layer interface. The
-3D-to-2D projection---from full Soddy bulk to Apollonian boundary---is the
-geometric reason that the radius hierarchy uses
+This is not a fit parameter. It is the direct consequence of two independent results: the Presburger-derived fine-structure depth \(\alpha^{-1}_{\rm ASSP}=137.0363038\) (Section~\ref{sec:alpha_deriv}) and the Apollonian boundary condition \(k=1/\varphi\) imposed by the specular billiard dynamics of rotating gyro balls at the layer interface. The 3D-to-2D projection---from full Soddy bulk to Apollonian boundary---is the geometric reason that the radius hierarchy uses
 \[
 N_{\rm radius}=\alpha^{-1}_{\rm ASSP}/\varphi
 \]
 rather than \(\alpha^{-1}_{\rm ASSP}\) itself.
 
-The convergence of the radius hierarchy to the Apollonian-projected depth
-\(N_{\rm radius}=84.6931\) is presented as structural evidence that the
-star-packing geometry inside galaxies follows the same boundary-projection
-rules as the fractal radius hierarchy itself. The exact golden-ratio
-projection gives the homogeneous ASSP baseline. Local measurements of \(G\)
-need not equal this baseline, because star--core transfer continuously
-reshuffles the local packing. Dense virialized regions, such as the
-Earth--Sun environment, are expected to exhibit stronger effective curvature
-coupling than the homogeneous boundary value, while underdense regions are
-expected to exhibit weaker coupling.
+The convergence of the radius hierarchy to the Apollonian-projected depth \(N_{\rm radius}=84.6931\) is presented as structural evidence that the star-packing geometry inside galaxies follows the same boundary-projection rules as the fractal radius hierarchy itself. The exact golden-ratio projection gives the homogeneous ASSP baseline. Local measurements of \(G\) need not equal this baseline, because star--core transfer continuously reshuffles the local packing. Dense virialized regions, such as the Earth--Sun environment, are expected to exhibit stronger effective curvature coupling than the homogeneous boundary value, while underdense regions are expected to exhibit weaker coupling.
 
 \subsubsection{Time / Frequency Hierarchy}
 
@@ -1664,12 +2016,7 @@ N_{\rm time}
 
 \subsubsection{Conceptual Framework}
 
-Under this ontology, gravity emerges from Möbius inversion geometry at Soddy
-tangency points, where the three-dimensional bulk packing meets the
-two-dimensional boundary crossing. The value of \(G\) is determined by the
-depths of the mass, radius, and time hierarchies, together with the
-difference in Hausdorff dimensions between the 3D Soddy bulk and the 2D
-Apollonian gasket boundary.
+Under this ontology, gravity emerges from Möbius inversion geometry at Soddy tangency points, where the three-dimensional bulk packing meets the two-dimensional boundary crossing. The value of \(G\) is determined by the depths of the mass, radius, and time hierarchies, together with the difference in Hausdorff dimensions between the 3D Soddy bulk and the 2D Apollonian gasket boundary.
 
 We present two complementary routes:
 
