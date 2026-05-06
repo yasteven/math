@@ -1,6 +1,6 @@
 % =====================================================================
 % CLASSP: Continuum Limit of Apollonian-Soddy Sphere Packing Dynamics
-% Corrected merged draft --- May 2026
+% Revised corrected draft --- May 2026
 % =====================================================================
 \documentclass[11pt,a4paper]{article}
 
@@ -47,8 +47,7 @@ is fundamentally a finite operational computational object defined by a
 dynamical Apollonian--Soddy Sphere Packing (ASSP) fractal quine operating
 under Presburger arithmetic~\cite{Presburger1929}. In that picture, continuum
 field theories are not fundamental; they are bounded-resolution effective
-descriptions of finite tangency updates. This paper develops the first
-continuum-limit equations of the ASSP program. We define a tangency graph
+descriptions of finite tangency updates. This revised paper develops a continuum-limit skeleton of the ASSP program, with the microscopic curvature law stated in its three-dimensional sphere form. We define a tangency graph
 whose vertices are spheres, whose edges are tangencies, and whose primitive
 local clock variable is the sphere radius. Writing $u_i=\ln(R_i/R_0)$, we
 show that the radius-clock equation $\Delta_G u_i=(4\pi G/c^2)\rho_i$
@@ -133,12 +132,27 @@ The edge vector and length are
   s_{ij}=x_j-x_i,\qquad \ell_{ij}=|s_{ij}|=R_i+R_j.
   \label{eq:edge}
 \end{equation}
-The packing is recursively determined by the Descartes--Soddy curvature
-relation~\cite{Soddy1936,Graham2003}:
+The packing is recursively constrained by the three-dimensional
+Descartes--Soddy curvature relation~\cite{Soddy1936,Graham2003}.  For five
+mutually tangent spheres with curvatures $k_i=R_i^{-1}$,
 \begin{equation}
-  k_5=\sum_{i=1}^{4}k_i\pm2\sqrt{\sum_{i<j}k_i k_j},\qquad k_i=R_i^{-1}.
+  \left(\sum_{i=1}^{5}k_i\right)^2
+  =3\sum_{i=1}^{5}k_i^2.
+  \label{eq:soddy_3d}
+\end{equation}
+Solving for the fifth curvature given $k_1,\ldots,k_4$, define
+\begin{equation}
+  S=\sum_{i=1}^{4}k_i,\qquad Q=\sum_{i=1}^{4}k_i^2.
+\end{equation}
+Then
+\begin{equation}
+  k_5=\frac{S\pm\sqrt{3S^2-6Q}}{2}.
   \label{eq:soddy}
 \end{equation}
+The explicit curvature law fixes the microscopic recursive generation of the
+packing.  The continuum-limit arguments below do not require this closed-form
+recursion directly; they require the induced tangency graph, finite local
+second moments, and statistical balance/isotropy after coarse-graining.
 
 \subsection{Radius as local time}
 
@@ -227,7 +241,7 @@ spacing $h_i\sim R_i$. Under conditions~\eqref{eq:balance}--\eqref{eq:isotropy},
 \begin{proof}
 Taylor-expand $f_j=f(x_i+s_{ij})$:
 \begin{equation}
-  f_j-f_i=s_{ij}^a\partial_a f+	frac12s_{ij}^as_{ij}^b\partial_a\partial_bf
+  f_j-f_i=s_{ij}^a\partial_a f+\frac12s_{ij}^as_{ij}^b\partial_a\partial_bf
   +O(|s_{ij}|^3\nabla^3f).
   \label{eq:taylor}
 \end{equation}
@@ -302,23 +316,28 @@ whose Laurent expansion is
   +\frac{6v^2r_s^2}{r^3}-\frac{8v^2r_s^3}{r^4}+O(r_s^4/r^5).
   \label{eq:laurent}
 \end{equation}
-The successive radial powers match the hierarchy normally associated with
-flat-rotation support ($1/r$), Newtonian gravity ($1/r^2$), GR perihelion
-precession ($1/r^3$), and frame-dragging-order corrections ($1/r^4$). The
-coefficients and exact observational normalization remain part of the CLASSP
-strong-field/disk-dynamics program.
+The successive radial powers have the same scaling hierarchy normally
+associated with flat-rotation support ($1/r$), Newtonian gravity ($1/r^2$), GR
+perihelion-precession-type corrections ($1/r^3$), and higher-order
+frame-dragging-scale corrections ($1/r^4$).  This is a scaling correspondence,
+not yet a coefficient-level derivation; the coefficients and exact
+observational normalization remain part of the CLASSP strong-field/disk-dynamics
+program.
 
 \subsection{Dynamic radius field equation}
 
 The dynamical ASSP radius equation is taken to be
 \begin{equation}
-  \frac{1}{c^2}\ddot u_i-(\Delta_Gu)_i=\frac{4\pi G}{c^2}\rho_i,
+  (\Delta_Gu)_i-\frac{1}{c^2}\ddot u_i=\frac{4\pi G}{c^2}\rho_i,
   \label{eq:wave_gravity}
 \end{equation}
-whose continuum limit is the scalar wave equation
+so that the static limit reproduces Eq.~\eqref{eq:discrete_poisson}.  With
 \begin{equation}
-  \Box u=\frac{4\pi G}{c^2}\rho,\qquad
-  \Box=-\frac{1}{c^2}\partial_t^2+\nabla^2.
+  \Box=-\frac{1}{c^2}\partial_t^2+\nabla^2,
+\end{equation}
+the continuum limit is the scalar wave equation
+\begin{equation}
+  \Box u=\frac{4\pi G}{c^2}\rho.
   \label{eq:scalar_wave}
 \end{equation}
 Gravitational radiation corresponds, at this level, to propagating
@@ -369,12 +388,19 @@ This is the $1+1$-dimensional Dirac equation~\cite{Dirac1928}.
 
 \subsection{Radius-clock insertion}
 
-On the ASSP graph the local proper tick is set by the local sphere radius:
+On the ASSP graph the local proper tick is set by the local tangency step.
+For an edge $(i,j)$,
+\begin{equation}
+  \Delta\tau_{ij}\sim\frac{R_i+R_j}{c}.
+  \label{eq:tick_radius_edge}
+\end{equation}
+In a locally equal-radius coarse-grained region, $R_j\approx R_i$, this reduces
+to
 \begin{equation}
   \Delta\tau_i\sim\frac{2R_i}{c}.
   \label{eq:tick_radius}
 \end{equation}
-The mixing angle therefore becomes
+The mixing angle therefore becomes, in that local approximation,
 \begin{equation}
   \theta_i=\frac{mc^2\Delta\tau_i}{\hbar}
   \sim\frac{2mcR_i}{\hbar}=\frac{2R_i}{\lambda_C},
@@ -410,20 +436,26 @@ local balance and isotropy of tangency directions,
   \langle n^a n^b\rangle_i=\tfrac13\delta^{ab},
   \label{eq:spinor_moments}
 \end{equation}
-the continuum expansion of~\eqref{eq:assp_walk} gives the Dirac equation on
-the radius-clock metric:
+the continuum expansion of~\eqref{eq:assp_walk} is expected to give a
+curved-space Dirac equation on the radius-clock metric.  With coordinates
+$x^\mu=(t,x,y,z)$, a dimensionally explicit form is
 \begin{equation}
   \boxed{
-  i\hbar\gamma^\mu e_\mu{}^a
-  \!\left(\partial_a+\Omega_a+\frac{iq}{\hbar}A_a\right)\!\Psi
-  -mc\,\Psi=0.}
+  \left[
+  i\hbar c\,\gamma^a e_a{}^\mu
+  \!\left(\partial_\mu+\Omega_\mu+\frac{iq}{\hbar}A_\mu\right)
+  -mc^2
+  \right]\Psi=0.}
   \label{eq:dirac_curved}
 \end{equation}
-Here $e_\mu{}^a$ is the tetrad of metric~\eqref{eq:metric}, with time
-component $e_0{}^0=e^{-u}=R_0/R$; the spin connection $\Omega_a$ is the
-continuum limit of inter-sphere frame rotations; and $A_a$ arises from U(1)
-tangency edge phases. Thus the same graph that produces gravity through its
-radius-clock field produces quantum matter through its directed spinor walk.
+Here $e_a{}^\mu$ is the tetrad of metric~\eqref{eq:metric}, with the time
+component carrying the lapse factor $e^{-u}=R_0/R$; the spin connection
+$\Omega_\mu$ is the continuum limit of inter-sphere frame rotations; and
+$A_\mu$ arises from U(1) tangency edge phases.  This section is a continuum
+ansatz constrained by the walk moments, not yet a full derivation of the spin
+connection from the microscopic scattering matrices.  Thus the same graph that
+produces gravity through its radius-clock field is proposed to produce quantum
+matter through its directed spinor walk.
 
 % ===================================================================
 \section{Candidate Electromagnetic Limit from Edge-Phase Holonomies}
@@ -432,9 +464,14 @@ radius-clock field produces quantum matter through its directed spinor walk.
 
 \subsection{U(1) edge phases and discrete field strength}
 
-Assign a U(1) phase to each oriented tangency edge:
+Assign a U(1) phase to each oriented tangency edge.  Let $A_{ij}$ denote the
+line integral of the continuum gauge potential along the edge,
 \begin{equation}
-  U_{ij}^{\rm EM}=e^{iqA_{ij}/\hbar},\qquad A_{ij}=-A_{ji}.
+  A_{ij}=\int_i^j A_\mu\,dx^\mu,\qquad A_{ij}=-A_{ji}.
+\end{equation}
+The edge phase is
+\begin{equation}
+  U_{ij}^{\rm EM}=\exp\!\left(\frac{iqA_{ij}}{\hbar}\right).
   \label{eq:edge_phase}
 \end{equation}
 The gauge-covariant graph derivative is
@@ -442,15 +479,14 @@ The gauge-covariant graph derivative is
   (D_Af)_{ij}=U_{ij}^{\rm EM}f_j-f_i.
   \label{eq:cov_diff}
 \end{equation}
-The discrete field strength is the holonomy around an elementary graph cycle
+The discrete flux phase is the holonomy around an elementary graph cycle
 $C=(i_1,i_2,\ldots,i_k,i_1)$:
 \begin{equation}
   F_C=\arg\!\prod_{(ij)\in C}U_{ij}^{\rm EM}
   =\frac{q}{\hbar}\sum_{(ij)\in C}A_{ij}.
   \label{eq:holonomy}
 \end{equation}
-For a minimal three-tangency cycle, $F_C$ is the discrete analogue of magnetic
-flux through the triangle.
+For a minimal three-tangency cycle, $F_C$ is the dimensionless discrete analogue of magnetic flux through the triangle.  The corresponding continuum field-strength component is obtained only after dividing the unscaled line-integral sum by the oriented plaquette area in the coarse-grained limit.
 
 \subsection{Discrete gauge action and Maxwell limit}
 
@@ -475,11 +511,12 @@ of $\mu_0$ are left as explicit tasks for the CLASSP gauge program.
 
 \subsection{Coupling constant from register depth}
 
-The electromagnetic coupling constant enters through the Presburger register
-depth of one Soddy sphere~\cite{TFOFT2026,Soddy1936}:
+The electromagnetic coupling constant is conjectured to enter through the
+Presburger register depth of one Soddy sphere~\cite{TFOFT2026,Soddy1936}:
 \begin{equation}
-  \alpha^{-1}=4\pi^3+\pi^2+\pi=137.036,\qquad
-  \alpha=\frac{1}{T_{\rm sphere}}.
+  T_{\rm sphere}=4\pi^3+\pi^2+\pi\approx137.036304,
+  \qquad
+  \alpha\approx\frac{1}{T_{\rm sphere}}.
   \label{eq:alpha}
 \end{equation}
 Under the edge-phase ontology, $\alpha$ is the sequential-alignment probability
