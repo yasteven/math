@@ -492,22 +492,69 @@ perturbations of $u$. The tensorial sector is expected to arise from the
 coarse-grained dynamics of $\dd\ell_G^2$.
 
 % ===================================================================
-\section{Dirac Quantum Mechanics as the Directed-Tangency Continuum Limit}
+\section{Quantum Matter as a One-Dimensional Tangency-Channel Limit}
 % ===================================================================
 
-\subsection{One-dimensional Ord walk on a tangency chain}
+\subsection{Why the Dirac channel is effectively one-dimensional}
 
-The minimal case follows Ord~\cite{Ord1983} but on the ASSP tangency graph
-rather than an externally imposed lattice. Use two directed amplitudes
-$\psi_R(x,t)$ and $\psi_L(x,t)$ for right- and left-moving tangency states.
-Let the local step length be $\epsilon$ and the local proper tick be
-$\Delta\tau=\epsilon/c$. Mass enters as a local Gyro-Ball chirality-mixing
-angle:
-\begin{equation}
-  \theta=\frac{mc^2\Delta\tau}{\hbar}.
-  \label{eq:theta}
-\end{equation}
-The discrete update rule is
+The ASSP substrate is three-dimensional, but a single transfer event is not a
+three-dimensional bulk motion.  It is a directed event along an active
+tangency channel.  At the microscopic level an Info Ball either crosses the
+local tangency boundary in one orientation or in the opposite orientation.
+Thus the minimal quantum register is not a full spatial vector field; it is a
+one-dimensional transport axis equipped with a two-state internal boundary
+spin.
+
+Let \(e\) denote the active tangency direction through a local pair of tangent
+spheres.  The transfer coordinate \(x\) is distance along this channel.  The
+two internal states are written
+\[
+  \psi_R(x,t),\qquad \psi_L(x,t),
+\]
+where \(R\) and \(L\) may be read equivalently as right/left movers,
+clockwise/anti-clockwise boundary rotations, or the two signs of the local
+spin register about the tangency hole.  The transverse ASSP geometry fixes the
+local clock rate, frame orientation, and channel availability, but the local
+propagation law itself is one-dimensional.
+
+This is the key technical simplification: the Dirac structure does not first
+require a complete derivation of a \(3+1\)-dimensional continuum spin bundle.
+A single active tangency line plus a binary half-turn register is already
+enough to generate the Dirac equation in the controlled continuum limit.
+
+\subsection{Half-turn boundary register}
+
+In TFOFT the rotational state channel of a Soddy sphere is hemisphere
+restricted.  The rotational contribution to the fundamental state cost is
+\[
+  T_R=\pi r\big|_{r=\pi}=\pi^2,
+\]
+not \(2\pi^2\).  This is interpreted as a half-turn register: the physical
+update need only distinguish the two boundary orientations of the active
+rotational channel, not specify an unconstrained global rotation.
+
+For CLASSP this means that the local quantum degree of freedom is naturally
+binary.  Around a tangency hole the boundary spin decomposes into two
+orientations,
+\[
+  \Psi =
+  \begin{pmatrix}
+    \psi_+\\
+    \psi_-
+  \end{pmatrix},
+\]
+which may also be written as \(\Psi=(\psi_R,\psi_L)^T\).  The two components
+are not separate particles.  They are the two possible orientations of the same
+one-dimensional transfer process.
+
+\subsection{One-dimensional chiral walk}
+
+Let \(\epsilon\) be the spatial step along the active tangency channel and
+\(\Delta\tau\) the local proper tick.  The light-speed condition is
+\[
+  \frac{\epsilon}{\Delta\tau}=c.
+\]
+Let \(\theta\) be the local half-turn mixing angle.  The discrete update rule is
 \begin{align}
   \psi_R(x+\epsilon,t+\Delta\tau)
     &=\cos\theta\,\psi_R(x,t)-i\sin\theta\,\psi_L(x,t),
@@ -516,93 +563,407 @@ The discrete update rule is
     &=\cos\theta\,\psi_L(x,t)-i\sin\theta\,\psi_R(x,t).
   \label{eq:walk_L}
 \end{align}
-For $\theta\ll1$ and slowly varying amplitudes, Taylor-expanding
-Eqs.~\eqref{eq:walk_R}--\eqref{eq:walk_L} and using $\epsilon/\Delta\tau=c$
-and $\theta/\Delta\tau=mc^2/\hbar$ gives
+Here the streaming part moves the two boundary orientations in opposite
+directions along the channel, while the \(\theta\)-term flips the local
+orientation.  In the FTC interpretation this flip is the local half-turn of
+the boundary spin register.
+
+For \(\theta\ll1\) and slowly varying amplitudes, Taylor expansion gives
 \begin{align}
-  (\partial_t+c\partial_x)\psi_R&=-i\frac{mc^2}{\hbar}\psi_L,
+  (\partial_t+c\partial_x)\psi_R
+    &=-i\frac{\theta}{\Delta\tau}\psi_L,
+  \label{eq:chiral_R_theta}\\
+  (\partial_t-c\partial_x)\psi_L
+    &=-i\frac{\theta}{\Delta\tau}\psi_R.
+  \label{eq:chiral_L_theta}
+\end{align}
+Identifying
+\[
+  \frac{\theta}{\Delta\tau}=\frac{mc^2}{\hbar}
+\]
+yields
+\begin{align}
+  (\partial_t+c\partial_x)\psi_R
+    &=-i\frac{mc^2}{\hbar}\psi_L,
   \label{eq:chiral_R}\\
-  (\partial_t-c\partial_x)\psi_L&=-i\frac{mc^2}{\hbar}\psi_R.
+  (\partial_t-c\partial_x)\psi_L
+    &=-i\frac{mc^2}{\hbar}\psi_R.
   \label{eq:chiral_L}
 \end{align}
-Writing $\Psi=(\psi_R,\psi_L)^T$, Eqs.~\eqref{eq:chiral_R}--\eqref{eq:chiral_L}
-become
-\begin{equation}
-  \boxed{i\hbar\partial_t\Psi=-i\hbar c\,\sigma_z\partial_x\Psi+mc^2\sigma_x\Psi.}
+Writing \(\Psi=(\psi_R,\psi_L)^T\), this becomes
+\[
+  \boxed{
+  i\hbar\partial_t\Psi
+  =
+  -i\hbar c\,\sigma_z\partial_x\Psi
+  +mc^2\sigma_x\Psi.}
   \label{eq:dirac_1d}
-\end{equation}
-This is the $1+1$-dimensional Dirac equation~\cite{Dirac1928}.
+\]
+This is a representation-specific form of the \(1+1\)-dimensional Dirac
+equation.  In CLASSP it is not merely a toy model: it is the continuum limit of
+one active ASSP tangency-transfer channel.
 
 \subsection{Radius-clock insertion}
 
-On the ASSP graph the local proper tick is set by the local tangency step.
-For an edge $(i,j)$,
-\begin{equation}
+On the ASSP graph the local proper tick is set by the local tangency step.  For
+an edge \((i,j)\),
+\[
   \Delta\tau_{ij}\sim\frac{R_i+R_j}{c}.
   \label{eq:tick_radius_edge}
-\end{equation}
-In a locally equal-radius coarse-grained region, $R_j\approx R_i$, this reduces
-to
-\begin{equation}
+\]
+In a locally equal-radius coarse-grained region, \(R_j\approx R_i\), this
+reduces to
+\[
   \Delta\tau_i\sim\frac{2R_i}{c}.
   \label{eq:tick_radius}
-\end{equation}
-The mixing angle therefore becomes, in that local approximation,
-\begin{equation}
-  \theta_i=\frac{mc^2\Delta\tau_i}{\hbar}
-  \sim\frac{2mcR_i}{\hbar}=\frac{2R_i}{\lambda_C},
-  \qquad \lambda_C=\frac{\hbar}{mc},
+\]
+The mixing angle therefore becomes
+\[
+  \theta_i
+  =
+  \frac{mc^2\Delta\tau_i}{\hbar}
+  \sim
+  \frac{2mcR_i}{\hbar}
+  =
+  \frac{2R_i}{\lambda_C},
+  \qquad
+  \lambda_C=\frac{\hbar}{mc}.
   \label{eq:theta_radius}
-\end{equation}
-and mass is the chirality-reversal rate per local sphere-clock tick:
-\begin{equation}
-  \boxed{m=\frac{\hbar}{c^2}\frac{\theta_i}{\Delta\tau_i}.}
+\]
+Thus mass is the chirality-reversal rate per local sphere-clock tick:
+\[
+  \boxed{
+  m=\frac{\hbar}{c^2}\frac{\theta_i}{\Delta\tau_i}.}
   \label{eq:mass_flip}
-\end{equation}
-Massless modes ($\theta=0$) stream without flip. Massive modes undergo
-repeated reversals, producing the fractal zigzag path that Ord~\cite{Ord1983}
-showed generates quantum behavior after coarse-graining.
+\]
+Massless modes have \(\theta=0\) and stream without local orientation reversal.
+Massive modes repeatedly reverse the boundary-spin state, producing the
+fractal zigzag path whose long-wavelength limit is Dirac-like.
 
-\subsection{Three-dimensional ASSP walk and curved-space Dirac limit}
+\subsection{Radial-pole transfer and boundary spin}
 
-Assign spinor amplitudes to oriented tangency edges:
-\begin{equation}
-  \psi_{i\to j}^A(t),
-  \label{eq:spinor_edge}
-\end{equation}
-where $A$ is a spin/channel index. The local update is
-\begin{equation}
-  \psi_{i\to j}^A(t+\Delta t_i)
-  =\sum_{k\sim i}S_i{}^A{}_B(j,k)\,\psi_{k\to i}^B(t),
-  \label{eq:assp_walk}
-\end{equation}
-where the Gyro-Ball scattering matrix satisfies $S_i^\dagger S_i=I$. Under
-local balance and isotropy of tangency directions,
-\begin{equation}
-  \langle n^a\rangle_i=0,\qquad
-  \langle n^a n^b\rangle_i=\tfrac13\delta^{ab},
-  \label{eq:spinor_moments}
-\end{equation}
-the continuum expansion of~\eqref{eq:assp_walk} is expected to give a
-curved-space Dirac equation on the radius-clock metric.  With coordinates
-$x^\mu=(t,x,y,z)$, a dimensionally explicit form is
+For a near-radial transfer through a local pole of the packing, the relevant
+coordinate is not the full three-dimensional displacement vector.  It is the
+radial tangency coordinate selected by the local sphere pair.  The transfer
+``cares'' about the boundary spin around the tangency hole: clockwise versus
+anti-clockwise, or equivalently \(+\) versus \(-\).  Therefore the local quantum
+question is binary:
+\[
+  \text{Which boundary orientation is active along this channel?}
+\]
+The answer is exactly the two-component spinor used above.
+
+This is why the quantum update can be one-dimensional even though the packing
+is three-dimensional.  The three-dimensional ASSP determines which local
+channels exist and how their frames rotate from one sphere pair to the next,
+but the elementary Dirac update only needs:
+\begin{enumerate}
+  \item one active propagation coordinate \(x\),
+  \item one local clock tick \(\Delta\tau\),
+  \item one binary half-turn spin register \((+,-)\).
+\end{enumerate}
+
+\subsection{Status of the three-dimensional extension}
+
+  The result proved in this section is the effective one-dimensional channel
+  limit:
+  \[
+    \text{active tangency line}
+    +
+    \text{two-state boundary spin}
+    \quad\Longrightarrow\quad
+    \text{\(1+1\)-dimensional Dirac equation}.
+  \]
+  The full \(3+1\)-dimensional curved-space Dirac equation is not derived here.
+  It is a conjectural coarse-grained extension obtained by patching many local
+  one-dimensional tangency channels together through the rotating ASSP frame.
+
+  In that extension, a local tetrad \(e^\mu_a(x)\) records the averaged
+  orientation of nearby tangency channels, and the spin connection records the
+  frame change induced by passing from one sphere-pair channel to the next.  The
+  expected continuum form is
+  \[
+    i\hbar\gamma^a e^\mu_a
+    \left(\partial_\mu+\Omega_\mu\right)\Psi
+    =
+    mc\,\Psi,
+    \label{eq:curved_dirac_ansatz}
+  \]
+  where \(\Omega_\mu\) is the effective spin connection generated by
+  coarse-grained inter-sphere frame rotation.  Equation
+  \eqref{eq:curved_dirac_ansatz} is therefore an ansatz, not a theorem.  The
+  theorem-level result is the one-dimensional tangency-channel Dirac limit.
+
+% ===================================================================
+\section{Finite Tangency Registers, Bell Nonlocality, and Quantum Computation}
+\label{sec:finite_quantum_registers}
+% ===================================================================
+
+\subsection{Superposition as finite tangency correlation}
+
+The wavefunction is not taken here as an ontological primitive.  It is an
+effective continuum bookkeeping object used by a bounded observer who cannot
+resolve the full finite graph of mutual tangencies, chained tangencies,
+cross-layer tangencies, and radius-clock ticks.
+
+In the ASSP ontology, what ordinary quantum mechanics calls superposition is
+interpreted as an unresolved finite set of compatible tangency configurations.
+What ordinary quantum mechanics calls entanglement is interpreted as a linked
+tangency-chain constraint.  Thus
 \begin{equation}
   \boxed{
-  \left[
-  i\hbar c\,\gamma^a e_a{}^\mu
-  \!\left(\partial_\mu+\Omega_\mu+\frac{iq}{\hbar}A_\mu\right)
-  -mc^2
-  \right]\Psi=0.}
-  \label{eq:dirac_curved}
+  \text{superposition}
+  =
+  \text{unresolved finite contact alternatives},
+  }
+  \label{eq:superposition_contact}
 \end{equation}
-Here $e_a{}^\mu$ is the tetrad of metric~\eqref{eq:metric}, with the time
-component carrying the lapse factor $e^{-u}=R_0/R$; the spin connection
-$\Omega_\mu$ is the continuum limit of inter-sphere frame rotations; and
-$A_\mu$ arises from U(1) tangency edge phases.  This section is a continuum
-ansatz constrained by the walk moments, not yet a full derivation of the spin
-connection from the microscopic scattering matrices.  Thus the same graph that
-produces gravity through its radius-clock field is proposed to produce quantum
-matter through its directed spinor walk.
+and
+\begin{equation}
+  \boxed{
+  \text{entanglement}
+  =
+  \text{linked tangency-chain constraint}.
+  }
+  \label{eq:entanglement_chain}
+\end{equation}
+Full local contact corresponds to maximal local correlation.  Lower-order
+contact corresponds to lower-order correlation.  Long tangency chains
+correspond to long-distance entanglement-like correlations, and cross-layer
+tangencies correspond to apparent nonlocality relative to one emergent
+spacetime layer.
+
+There is no sharp quantum/classical boundary in this picture.  There is only a
+change of coarse-graining.  At small register depth, finite tangency
+alternatives must be treated explicitly and appear quantum-like.  At large
+register depth, the same graph relations average into classical trajectories,
+continuum fields, and effective probability densities.
+
+\subsection{Bell correlations and cross-layer tangency}
+
+CLASSP should not be read as a same-layer local hidden-variable theory.
+Bell-type experiments rule out local hidden-variable explanations of quantum
+correlations under the standard assumptions.  The ASSP proposal avoids that
+category because the relevant hidden structure is not local with respect to
+the emergent three-dimensional metric of one coarse-grained layer.
+
+The underlying causal primitive is the directed tangency graph, including
+same-layer tangency chains and cross-layer macrophoton/tangency channels.
+Therefore two objects separated in emergent space may remain adjacent, linked,
+or jointly constrained in the deeper ASSP graph.  The observed Bell correlation
+is not produced by a signal moving through ordinary space after measurement.
+It is produced by a prior or deeper graph relation whose causal adjacency is
+not captured by the same-layer Lorentz cone.
+
+Thus Bell's theorem is not violated.  Rather, one of the assumptions used to
+derive Bell inequalities is not satisfied: locality with respect to the
+emergent metric of one layer.  The model is explicitly nonlocal relative to
+emergent spacetime.  It therefore belongs, if viable, to the class of nonlocal
+hidden-structure theories, not local hidden-variable theories:
+\begin{equation}
+  \boxed{
+  \text{Bell excludes same-layer local hidden variables, not cross-layer
+  tangency adjacency.}
+  }
+  \label{eq:bell_cross_layer}
+\end{equation}
+
+No usable faster-than-light messaging is implied inside one layer, because
+ordinary observers can only access the coarse-grained projection.  The deeper
+graph may contain superluminal tangency adjacency, but controllable signaling
+is filtered by register availability, channel orientation, radius-clock
+mismatch, and the directed update order of the quine.
+
+\subsection{Soddy contact bounds and local quantum registers}
+
+The local ASSP quantum register is finite because sphere rearrangements are
+constrained by sphere-packing contact laws.  In three Euclidean dimensions, the
+strict Descartes--Soddy/Gosset closure contains five pairwise mutually tangent
+oriented spheres:
+\begin{equation}
+  N_{\rm mutual}^{(3D)}=5.
+  \label{eq:five_mutual_spheres}
+\end{equation}
+A distinct but physically important closure is the Soddy hexlet.  Given three
+mutually tangent base spheres, a chain of six additional spheres closes around
+them, with each chain sphere tangent to the three base spheres and to its two
+chain-neighbors.  This gives a natural nine-sphere local contact register,
+\begin{equation}
+  N_{\rm hexlet}=3+6=9,
+  \label{eq:hexlet_nine}
+\end{equation}
+without claiming that all nine spheres are pairwise mutually tangent.
+
+In CLASSP, the five-sphere Descartes closure is interpreted as the maximum
+local full-mutual-correlation register, while the nine-sphere hexlet is
+interpreted as a finite local rearrangement neighborhood.  Tangency chains can
+extend over arbitrary graph distance, but a single exact full-mutual local
+correlation neighborhood is bounded.
+
+The resulting hierarchy is
+\begin{align}
+  \text{pair tangency}
+  &\Longrightarrow
+  \text{two-register correlation}, \\
+  \text{full mutual Descartes contact}
+  &\Longrightarrow
+  \text{maximal exact local correlation, capped at five registers}, \\
+  \text{Soddy-hexlet closure}
+  &\Longrightarrow
+  \text{finite nine-sphere rearrangement neighborhood}, \\
+  \text{long tangency chain}
+  &\Longrightarrow
+  \text{long-distance entanglement}, \\
+  \text{cross-layer chain}
+  &\Longrightarrow
+  \text{apparent nonlocality beyond one-layer light cones}.
+\end{align}
+
+\subsection{Scale-relative causality and macrophoton transfer}
+\label{sec:scale_relative_causality}
+
+Special relativity is interpreted here as the effective causal geometry of one
+coarse-grained fractal layer.  Its invariant speed \(c\) is the limiting
+signal speed for ordinary bulk propagation inside that layer, measured using
+that layer's radius-clock field.  It is not assumed to be the invariant speed
+of every deeper or higher ASSP quine layer.
+
+Let \(R_N\) denote the characteristic radius-clock scale of layer \(N\).  The
+effective light speed measured inside that layer is written
+\begin{equation}
+  c_N\sim\frac{\Delta\ell_N}{\Delta\tau_N},
+  \label{eq:layer_c}
+\end{equation}
+where both the distance unit \(\Delta\ell_N\) and the local tick
+\(\Delta\tau_N\) are determined by the layer's ASSP geometry.  A transfer that
+is ordinary and causal on layer \(N+1\) may project into layer \(N\) as an
+apparently superluminal event:
+\begin{equation}
+  v_{\rm app}^{(N)}
+  =
+  \frac{\Delta x_N}{\Delta t_N}
+  >
+  c_N.
+  \label{eq:apparent_superluminal}
+\end{equation}
+This does not imply time travel.  Causal order is not defined by the emergent
+Lorentz cone of layer \(N\) alone, but by the directed update order of the
+underlying tangency graph.  The graph update has a direction; the lower-layer
+projection has an apparent distance and delay.  Apparent superluminality is
+therefore a cross-layer projection effect, not a closed causal loop.
+
+In the astrophysical case, a Star Ball forced into a Core Ball can excite a
+macrophoton channel.  The corresponding emission need not reappear as a jet
+from the same apparent galaxy.  In the ASSP graph, the receiving Core Ball may
+be adjacent through a higher-layer tangency relation while being distant in
+our emergent three-dimensional coordinates.  Thus an infall event near one
+black-hole/core boundary may correlate with a modulated jet event at another
+galaxy's core.  The process is nonlocal relative to the emergent metric of our
+layer, but local relative to the directed tangency update of the higher layer.
+
+\subsection{Quantum Fourier Transform as a full-mutual-contact protocol}
+
+Standard quantum computing treats the Hilbert space of \(n\) qubits as an
+ideal \(2^n\)-dimensional complex vector space.  In CLASSP, this space is not
+ontologically fundamental.  It is an effective bookkeeping representation of
+finite contact and chained-contact relations in the underlying graph.
+
+The Quantum Fourier Transform used in Shor-type order finding requires
+coherent phase correlation across the active logical register.  In the ASSP
+interpretation, exact unit-fidelity phase correlation is conjectured to require
+full mutual tangency among the active logical qubit registers.  Lower-order
+contact gives lower-order correlation; chained contact gives
+entanglement-like correlation but not exact all-to-all phase coherence.
+
+Because the strict three-dimensional Descartes--Soddy closure allows only five
+pairwise mutually tangent oriented spheres, CLASSP makes the following
+conjecture:
+\begin{conjecture}[Five-register QFT coherence bound]
+Exact full-mutual-contact Quantum Fourier Transform coherence can involve at
+most five logical qubit-registers in a single local ASSP contact neighborhood:
+\begin{equation}
+  n_{\rm QFT}^{\rm exact}\leq 5.
+  \label{eq:qft_five_bound}
+\end{equation}
+\end{conjecture}
+
+For \(n\leq5\), a fully correlated QFT-like register may be physically
+realizable in an ideal local contact neighborhood.  For \(n>5\), the
+computation must use lower-order tangencies, chained tangencies, or routed
+graph correlations.  These may still generate ordinary entanglement, but they
+are not exact full-mutual-contact correlations.  The result is a predicted
+structured error floor for large QFT-based algorithms.
+
+The difference of sphere radii makes the limitation stronger.  Even within a
+nominal five-register closure, unequal radii imply unequal local ticks,
+\begin{equation}
+  \Delta\tau_i\sim\frac{2R_i}{c}.
+\end{equation}
+A phase update with angular frequency \(\omega\) therefore accumulates a
+relative radius-clock drift
+\begin{equation}
+  \delta\phi_{ij}
+  \sim
+  \omega(\Delta\tau_i-\Delta\tau_j)
+  \sim
+  \frac{2\omega}{c}(R_i-R_j).
+  \label{eq:radius_phase_error}
+\end{equation}
+Thus full mutual tangency is necessary but not sufficient for perfect QFT
+coherence.  Equal-radius or radius-compensated contact is also required.  In
+real hardware this appears as structured phase error, not merely random
+environmental decoherence.
+
+\subsection{Shor limitation conjecture}
+
+Shor's algorithm is mathematically valid in ideal Hilbert-space quantum
+computation.  CLASSP does not dispute the formal algorithm.  It disputes the
+assumption that arbitrary-size ideal QFT coherence is physically realizable as
+an unbounded continuum Hilbert-space object.
+
+\begin{conjecture}[CLASSP Shor limitation]
+RSA-scale Shor factorization cannot be physically realized if exact order
+finding requires full-mutual-contact QFT coherence beyond the five-register
+Descartes bound.
+\label{conj:shor_limit}
+\end{conjecture}
+
+Small compiled demonstrations are not inconsistent with this conjecture.  A
+five-qubit demonstration of factoring \(N=21\), for example, lies exactly at
+the proposed full-mutual-contact ceiling.  In the CLASSP reading, such
+demonstrations are not early evidence of unlimited scalability; they may
+instead be evidence that present demonstrations have reached the maximum local
+contact order available to exact QFT-style phase correlation.
+
+This is a falsifiable conjecture, not an established theorem.  If future
+quantum computers run uncompiled, fault-tolerant Shor order finding at large
+logical register sizes with no structured finite-contact error floor, then
+Conjecture~\ref{conj:shor_limit} is falsified.  If instead large QFT circuits
+exhibit persistent, nonthermal, geometry-like phase errors that cannot be
+removed by standard error correction, the conjecture gains support.
+
+\subsection{Experimental quantum-computing signatures}
+
+Possible finite-register deviations from ideal quantum computation include:
+\begin{enumerate}[label=\textbf{Q\arabic*.}]
+  \item \textbf{Finite-register saturation:} large entangled states encounter
+        nonrandom error floors associated with finite local contact closure.
+  \item \textbf{Graph-topological decoherence:} errors correlate with hidden
+        tangency-chain rearrangements rather than independent local noise.
+  \item \textbf{Radius-clock phase noise:} chirality-flip phases drift with
+        local radius-clock fluctuations.
+  \item \textbf{Layer leakage:} strongly driven quantum systems leak
+        correlation into adjacent fractal layers, appearing as anomalous
+        decoherence or rare nonlocal synchronization.
+  \item \textbf{QFT failure mode:} QFT-based algorithms show a transition from
+        full-contact exact correlation to routed-contact approximate
+        correlation once more than five logical registers require simultaneous
+        all-to-all phase coherence.
+\end{enumerate}
+If quantum computation scales perfectly according to ideal Hilbert-space theory
+with no finite-register anomalies, CLASSP loses support.  If large entangled
+systems show structured, geometry-like, nonthermal, or nonlocal error
+correlations, CLASSP gains a possible experimental foothold.
 
 % ===================================================================
 \section{Candidate Electromagnetic Limit from Edge-Phase Holonomies}
