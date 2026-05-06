@@ -1,6 +1,6 @@
 % =====================================================================
-% Continuum Limit of ASSP Dynamics
-% Draft for Steven E. Elliott / TFOFT program
+% CLASSP: Continuum Limit of Apollonian-Soddy Sphere Packing Dynamics
+% Corrected merged draft --- May 2026
 % =====================================================================
 \documentclass[11pt,a4paper]{article}
 
@@ -10,7 +10,7 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{enumitem}
-\usepackage{physics}
+\usepackage{mdframed}
 
 \hypersetup{
   colorlinks=true,
@@ -23,583 +23,865 @@
 \newtheorem{definition}{Definition}
 \newtheorem{conjecture}{Conjecture}
 \newtheorem{assumption}{Assumption}
+\newtheorem{corollary}{Corollary}
 
-\title{The Continuum Limit of Apollonian--Soddy Sphere Packing Dynamics:\\
-Deriving General Relativity and Quantum Mechanics as Effective Theories}
-\author{Steven E. Elliott}
+\newcommand{\ASSP}{\mathrm{ASSP}}
+\newcommand{\FTC}{\mathrm{FTC}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\kpc}{\mathrm{kpc}}
+\newcommand{\kly}{\mathrm{kly}}
+\newcommand{\R}{\mathbb{R}}
+
+\title{CLASSP: The Continuum Limit of Apollonian--Soddy\
+Sphere Packing Dynamics as the Origin of Weak-Field\
+Gravity and Dirac Quantum Mechanics}
+\author{Steven E.\ Elliott}
 \date{May 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-The Fact of Fractal Tennis (TFOFT) establishes the ontology: the universe is fundamentally a finite operational computational object defined by a dynamical Apollonian--Soddy Sphere Packing (ASSP) fractal quine. In that ontology, continuum field theories are not fundamental. They are bounded-resolution effective descriptions of finite tangency updates. This paper develops the first continuum-limit equations of the ASSP program. We define an ASSP tangency graph whose vertices are spheres, whose edges are tangencies, and whose primitive local clock variable is the sphere radius. Writing
-\[
-  u_i = \ln\frac{R_i}{R_0},
-\]
-we show that the radius-clock equation
-\[
-  \Delta_G u_i = \frac{4\pi G}{c^2}\rho_i
-\]
-coarse-grains to Newtonian gravity and to the weak-field time component of general relativity through
-\[
-  \Phi = c^2 u, \qquad g_{00}=-c^2e^{2u}.
-\]
-We then construct an Ord-type directed tangency walk on the same graph. Light-speed propagation along oriented tangencies plus a local Gyro-Ball chirality-mixing angle
-\[
-  \theta_i = \frac{mc^2\Delta\tau_i}{\hbar}
-\]
-coarse-grains to the Dirac equation. Thus general relativity and quantum mechanics arise as opposite continuum shadows of the same finite ASSP update: radius-clock gradients become gravity, while directed tangency zigzags become quantum matter. Finally, we translate the original TFOFT $3d_{z^2}$ Milky Way prediction into a simulation and observational program: spiral galaxies should be modeled with dark/inertial halo fields following hydrogenic orbital boundary geometries, and the Milky Way should contain a lower-contrast equatorial ``Fermi donut'' corresponding to the toroidal lobe of the same $3d_{z^2}$ state whose polar lobes appear as the Fermi bubbles.
+The companion paper~\cite{TFOFT2026} establishes the ontology: the universe
+is fundamentally a finite operational computational object defined by a
+dynamical Apollonian--Soddy Sphere Packing (ASSP) fractal quine operating
+under Presburger arithmetic~\cite{Presburger1929}. In that picture, continuum
+field theories are not fundamental; they are bounded-resolution effective
+descriptions of finite tangency updates. This paper develops the first
+continuum-limit equations of the ASSP program. We define a tangency graph
+whose vertices are spheres, whose edges are tangencies, and whose primitive
+local clock variable is the sphere radius. Writing $u_i=\ln(R_i/R_0)$, we
+show that the radius-clock equation $\Delta_G u_i=(4\pi G/c^2)\rho_i$
+coarse-grains to the Newtonian Poisson equation and to the weak-field time
+component of general relativity. We then construct an Ord-type~\cite{Ord1983}
+directed tangency walk on the same graph: light-speed propagation plus a local
+Gyro-Ball chirality-mixing angle $\theta_i=mc^2\Delta\tau_i/\hbar$
+coarse-grains to the Dirac equation on the radius-clock metric. We further
+state a candidate Maxwell limit from U(1) edge-phase holonomies. Thus GR and
+QM are not fundamental competitors; they are complementary continuum shadows
+of the same finite ASSP update. Finally, we translate the TFOFT $3d_{z^2}$
+Milky Way claim into a corrected simulation and observational program. Using
+the real Fermi-bubble scale, $H_{\rm FB}\sim10$--$15\,\kpc$ rather than
+$50\,\kpc$, the associated equatorial ``Fermi donut'' should peak in the
+outer visible disk at $R\sim10$--$15\,\kpc$, with a fiducial inner shoulder
+near $R\sim0.8H_{\rm FB}\sim8$--$12\,\kpc$, and with one-quarter the
+polar-lobe angular density contrast. This places the test in the same radial
+regime where Gaia DR3 studies report declining or model-sensitive rotation
+curves and where a dark-matter-disk model has been reported to fit some
+large-radius on/off-plane behavior better than a canonical NFW halo.
 \end{abstract}
 
+\tableofcontents
+\newpage
+
+% ===================================================================
 \section{Motivation}
+% ===================================================================
 
-The original TFOFT paper proposes MATHICCS: every mathematical operation used in a physical law must correspond to a persistently realizable physical operation. Completed infinities, exact real continua, and singular points are therefore not ontological primitives. They may remain excellent approximations, but only as coarse-grained descriptions of finite physical computation.
+The original TFOFT paper~\cite{TFOFT2026} proposes MATHICCS: every
+mathematical operation in a physical law must correspond to a persistently
+realizable physical procedure. Completed infinities, exact real continua, and
+singular points are therefore not ontological primitives. They may remain
+useful approximations, but only as coarse-grained descriptions of finite
+physical computation.
 
-The candidate finite ontology is the dynamical Apollonian--Soddy Sphere Packing. The primitive objects are not fields on a continuum, but spheres, curvatures, tangencies, and local update rules. A single sphere stores a state. Two tangent spheres form the minimal law-generating unit, the Gyro Ball. Across fractal scale, the same object is conjectured to appear as electron/nucleus at atomic scale and star/core at galactic scale. Flat galactic rotation curves and atomic orbital quantization are then interpreted as opposite-side projections of one fractal boundary dynamics.
+The candidate finite ontology is the dynamical Apollonian--Soddy Sphere
+Packing~\cite{Soddy1936,Boyd1973,Graham2003}. Primitive objects are not fields
+on a continuum, but spheres, curvatures, tangencies, and local update rules. A
+single sphere stores a state; two tangent spheres form the minimal
+law-generating unit, the Gyro Ball. Across fractal scales, the same object is
+conjectured to appear as electron/nucleus at atomic scale and star/core at
+galactic scale. Flat galactic rotation curves~\cite{Sofue2012,Chemin2009} and
+atomic orbital quantization are then interpreted as opposite-side projections
+of one fractal boundary dynamics.
 
 This paper asks a narrow technical question:
-
 \begin{quote}
-If TFOFT's ASSP ontology is correct, what continuum field equations appear when a bounded-resolution observer coarse-grains the finite tangency dynamics?
+If the ASSP ontology of~\cite{TFOFT2026} is correct, what continuum field
+equations appear when a bounded-resolution observer coarse-grains the finite
+tangency dynamics?
 \end{quote}
-
-The answer developed here is that the two dominant continuum theories emerge from two complementary limits:
-
+The answer developed here is that the two dominant continuum theories emerge
+from complementary limits of the same graph:
 \begin{align*}
-\text{radius-clock scalar } u=\ln(R/R_0) &\longrightarrow \text{Newton/weak-field GR},\\
-\text{directed tangency walk with Gyro mixing} &\longrightarrow \text{Dirac/QM}.
+\text{radius-clock scalar }u=\ln(R/R_0)
+  &\;\longrightarrow\; \text{Newtonian gravity and weak-field }g_{00},\\
+\text{directed tangency walk with Gyro mixing}
+  &\;\longrightarrow\; \text{Dirac quantum matter},\\
+\text{U(1) edge-phase holonomies}
+  &\;\longrightarrow\; \text{candidate Maxwell/gauge field limit}.
 \end{align*}
+The target is not to quantize general relativity. Under TFOFT, that target is
+category-mistaken: GR and QM are already effective views of the same finite
+fractal update, observed from different sides of the boundary.
 
-Thus the aim is not to quantize general relativity. Under TFOFT, that target is category-wrong. GR and QM are already effective views of the same finite fractal update, observed from different sides of the boundary.
-
+% ===================================================================
 \section{The ASSP Tangency Graph}
+% ===================================================================
 
-Let the sphere packing define a graph
-\[
-  G=(V,E),
-\]
-where each vertex $i\in V$ is a sphere with center $x_i\in\mathbb{R}^3$, radius $R_i>0$, and curvature
-\[
-  b_i=\frac{1}{R_i}.
-\]
-An edge is a tangency:
-\[
-  (i,j)\in E \quad\Longleftrightarrow\quad \abs{x_i-x_j}=R_i+R_j.
-\]
-Define the edge vector and length
-\[
-  s_{ij}=x_j-x_i, \qquad \ell_{ij}=\abs{s_{ij}}=R_i+R_j.
-\]
+\subsection{Graph structure}
 
-The primitive clock field is the logarithmic radius
+Let the sphere packing define a graph $G=(V,E)$, where each vertex $i\in V$
+is a sphere with center $x_i\in\R^3$, radius $R_i>0$, and curvature
+$b_i=1/R_i$. An edge is a tangency:
 \begin{equation}
-  u_i = \ln\frac{R_i}{R_0},
-  \label{eq:u_def}
+  (i,j)\in E \iff |x_i-x_j|=R_i+R_j.
+  \label{eq:tangency}
 \end{equation}
-where $R_0$ is the reference radius. In the Presburger-minimal TFOFT basis one takes $R_0=\pi$, but the continuum-limit derivations below do not depend on that numerical choice.
+The edge vector and length are
+\begin{equation}
+  s_{ij}=x_j-x_i,\qquad \ell_{ij}=|s_{ij}|=R_i+R_j.
+  \label{eq:edge}
+\end{equation}
+The packing is recursively determined by the Descartes--Soddy curvature
+relation~\cite{Soddy1936,Graham2003}:
+\begin{equation}
+  k_5=\sum_{i=1}^{4}k_i\pm2\sqrt{\sum_{i<j}k_i k_j},\qquad k_i=R_i^{-1}.
+  \label{eq:soddy}
+\end{equation}
 
-\subsection{Radius as Local Time}
+\subsection{Radius as local time}
 
 The defining physical identification is
 \begin{equation}
-  d\tau_i = \frac{R_i}{R_0}\,dt = e^{u_i}dt.
+  u_i=\ln\frac{R_i}{R_0},
+  \label{eq:u_def}
+\end{equation}
+where $R_0$ is the reference radius. In the Presburger-minimal TFOFT basis one
+takes $R_0=\pi$~\cite{TFOFT2026}, but the continuum-limit derivations below do
+not depend on that choice. The local clock rate is
+\begin{equation}
+  \dd\tau_i=e^{u_i}\dd t=\frac{R_i}{R_0}\dd t.
   \label{eq:clock}
 \end{equation}
-Thus a sphere's radius determines its local clock rate. A bounded-resolution observer describes this as a metric time component
+A bounded-resolution observer describes this through the emergent metric
 \begin{equation}
-  ds^2 = -c^2e^{2u(x)}dt^2 + d\ell_G^2,
+  \dd s^2=-c^2e^{2u(x)}\dd t^2+\dd\ell_G^2,
   \label{eq:metric}
 \end{equation}
-where $d\ell_G^2$ is the coarse-grained spatial metric induced by the packing.
-
-In weak-field GR,
-\[
-  d\tau \simeq \left(1+\frac{\Phi}{c^2}\right)dt.
-\]
-Comparing with $d\tau=e^u dt\simeq(1+u)dt$ gives the identification
+where $\dd\ell_G^2$ is the spatial metric induced by the packing. In the GR
+weak field, $\dd\tau\approx(1+\Phi/c^2)\dd t$; comparing with
+$\dd\tau=e^u\dd t\approx(1+u)\dd t$ gives
 \begin{equation}
-  \Phi = c^2u = c^2\ln\frac{R}{R_0}.
+  \Phi=c^2u=c^2\ln\frac{R}{R_0}.
   \label{eq:phi_u}
 \end{equation}
-This is the central bridge:
-\begin{quote}
-Gravity is the coarse-grained logarithmic gradient of the ASSP radius-clock field.
-\end{quote}
+\emph{Gravity is the coarse-grained logarithmic gradient of the ASSP
+radius-clock field.}
 
-\section{General Relativity as the Radius-Clock Continuum Limit}
+\subsection{Normalized graph Laplacian}
 
-\subsection{Normalized Graph Laplacian}
-
-Let $f_i=f(x_i)$ be a slowly varying field on the tangency graph. Define a weighted graph Laplacian
+For a field $f_i=f(x_i)$ slowly varying across the graph, define the weighted
+graph Laplacian
 \begin{equation}
-  (\Delta_G f)_i
-  = A_i\sum_{j\sim i}w_{ij}(f_j-f_i),
+  (\Delta_G f)_i=A_i\sum_{j\sim i}w_{ij}(f_j-f_i),
   \label{eq:lap_general}
 \end{equation}
-where $w_{ij}=w_{ji}>0$ is a tangency conductance. A natural radius-symmetric choice is
+with symmetric tangency conductances $w_{ij}=w_{ji}>0$. A natural
+radius-symmetric choice is
 \begin{equation}
-  w_{ij}=\frac{4\pi}{R_i+R_j}
-  \left(\frac{R_iR_j}{R_i+R_j}\right)^2,
+  w_{ij}=\frac{4\pi}{R_i+R_j}\left(\frac{R_iR_j}{R_i+R_j}\right)^2,
   \label{eq:weights}
 \end{equation}
-though the continuum proof requires only local symmetry and finite second moments.
-
-Define the weighted second moment tensor
+though the continuum proof below requires only local symmetry and finite
+second moments. Define
 \begin{equation}
-  M_i^{ab}=\sum_{j\sim i}w_{ij}s_{ij}^as_{ij}^b,
-  \qquad
-  M_i=\sum_{j\sim i}w_{ij}\abs{s_{ij}}^2.
+  M_i^{ab}=\sum_{j\sim i}w_{ij}s_{ij}^a s_{ij}^b,\qquad
+  M_i=\sum_{j\sim i}w_{ij}|s_{ij}|^2.
+  \label{eq:moments}
 \end{equation}
-Assume local coarse-grained balance and isotropy:
+We assume local coarse-grained balance and isotropy:
 \begin{align}
-  \sum_{j\sim i}w_{ij}s_{ij}^a &=0, \label{eq:balance}\\
-  M_i^{ab} &= \frac{M_i}{3}\delta^{ab}. \label{eq:isotropy}
+  \sum_{j\sim i}w_{ij}s_{ij}^a&=0,
+  \label{eq:balance}\\
+  M_i^{ab}&=\frac{M_i}{3}\delta^{ab}.
+  \label{eq:isotropy}
 \end{align}
-Choose
-\begin{equation}
-  A_i=\frac{6}{M_i}.
-  \label{eq:norm}
-\end{equation}
-Then
+Condition~\eqref{eq:balance} holds in idealized ASSP interiors by packing
+symmetry; condition~\eqref{eq:isotropy} holds statistically under local
+coarse-graining over an ASSP cluster~\cite{Mandelbrot1983,Boyd1973}. Choose
+$A_i=6/M_i$, giving
 \begin{equation}
   (\Delta_G f)_i
-  =
-  \frac{6}{\sum_{j\sim i}w_{ij}\abs{s_{ij}}^2}
-  \sum_{j\sim i}w_{ij}(f_j-f_i).
+  =\frac{6}{\displaystyle\sum_{j\sim i}w_{ij}|s_{ij}|^2}
+    \sum_{j\sim i}w_{ij}(f_j-f_i).
   \label{eq:normalized_lap}
 \end{equation}
 
-\subsection{Coarse-Graining Proof}
+% ===================================================================
+\section{Weak-Field Gravity as the Radius-Clock Continuum Limit}
+% ===================================================================
 
-Taylor-expand $f_j=f(x_i+s_{ij})$:
+\subsection{Coarse-graining theorem}
+
+\begin{theorem}[Laplacian limit]
+\label{thm:laplacian}
+Let $f_i=f(x_i)$ with $f$ smooth on scales large compared to the local sphere
+spacing $h_i\sim R_i$. Under conditions~\eqref{eq:balance}--\eqref{eq:isotropy},
 \begin{equation}
-  f_j-f_i
-  =s_{ij}^a\partial_a f
-  +\frac12s_{ij}^as_{ij}^b\partial_a\partial_b f
-  +O(\abs{s_{ij}}^3\nabla^3f).
-\end{equation}
-Substitute into Eq.~\eqref{eq:lap_general}. The first-order term vanishes by Eq.~\eqref{eq:balance}. The leading term is
-\begin{align}
-  (\Delta_G f)_i
-  &=\frac{A_i}{2}
-  \sum_{j\sim i}w_{ij}s_{ij}^as_{ij}^b\partial_a\partial_b f
-  +O(h_i\nabla^3f)\\
-  &=\frac{A_i}{2}\frac{M_i}{3}\delta^{ab}\partial_a\partial_b f
-  +O(h_i\nabla^3f).
-\end{align}
-Using $A_i=6/M_i$ gives
-\begin{equation}
-  (\Delta_G f)_i = \nabla^2 f + O(h_i\nabla^3 f).
+  (\Delta_G f)_i=\nabla^2f(x_i)+O(h_i|\nabla^3f|).
   \label{eq:lap_limit}
 \end{equation}
-Thus, in the slowly varying locally isotropic limit,
+\end{theorem}
+
+\begin{proof}
+Taylor-expand $f_j=f(x_i+s_{ij})$:
 \begin{equation}
-  \Delta_G \longrightarrow \nabla^2.
+  f_j-f_i=s_{ij}^a\partial_a f+	frac12s_{ij}^as_{ij}^b\partial_a\partial_bf
+  +O(|s_{ij}|^3\nabla^3f).
+  \label{eq:taylor}
 \end{equation}
+Substitute into~\eqref{eq:lap_general}. The first-order term vanishes
+by~\eqref{eq:balance}. The leading contribution is
+\begin{align}
+  (\Delta_G f)_i
+  &=\frac{A_i}{2}\sum_{j\sim i}w_{ij}s_{ij}^as_{ij}^b\partial_a\partial_bf
+     +O(h_i|\nabla^3f|) \nonumber\\
+  &=\frac{A_i}{2}\cdot\frac{M_i}{3}\delta^{ab}\partial_a\partial_bf
+     +O(h_i|\nabla^3f|). \nonumber
+\end{align}
+Using $A_i=6/M_i$ gives $(\Delta_G f)_i=\nabla^2f+O(h_i|\nabla^3f|)$.
+\end{proof}
 
-\subsection{Poisson Gravity}
+\subsection{Poisson equation and Newtonian gravity}
 
-Postulate the ASSP radius-clock field equation
+Postulate the ASSP radius-clock source equation
 \begin{equation}
-  \Delta_Gu_i = \frac{4\pi G}{c^2}\rho_i.
+  \Delta_Gu_i=\frac{4\pi G}{c^2}\rho_i.
   \label{eq:discrete_poisson}
 \end{equation}
-Using Eq.~\eqref{eq:lap_limit}, the continuum limit is
-\begin{equation}
-  \nabla^2u=\frac{4\pi G}{c^2}\rho.
-\end{equation}
-Multiplying by $c^2$ and using $\Phi=c^2u$ gives
+By Theorem~\ref{thm:laplacian}, the continuum limit is
+$\nabla^2u=(4\pi G/c^2)\rho$. Multiplying by $c^2$ and using
+$\Phi=c^2u$ from~\eqref{eq:phi_u}:
 \begin{equation}
   \boxed{\nabla^2\Phi=4\pi G\rho.}
   \label{eq:poisson}
 \end{equation}
-Therefore Newtonian gravity is the smooth limit of the ASSP radius-clock equation.
-
-The corresponding slow-particle acceleration follows from Eq.~\eqref{eq:metric}. Since
-\[
-  g_{00}=-c^2e^{2u},
-\]
-the weak static geodesic acceleration is
+The slow-particle geodesic acceleration follows from metric~\eqref{eq:metric}:
 \begin{equation}
-  \vec a
-  =-\frac{c^2}{2}\nabla\ln\left(-\frac{g_{00}}{c^2}\right)
-  =-\frac{c^2}{2}\nabla(2u)
-  =-c^2\nabla u
-  =-\nabla\Phi.
+  \vec a=-\frac{c^2}{2}\nabla\ln\!\left(-\frac{g_{00}}{c^2}\right)
+  =-c^2\nabla u=-\nabla\Phi.
   \label{eq:acceleration}
 \end{equation}
-For a spherical mass $M$,
-\[
-  \Phi(r)=-\frac{GM}{r},
-  \qquad
-  u(r)=-\frac{GM}{c^2r},
-\]
-and hence
+For a spherical mass $M$, $\Phi(r)=-GM/r$, giving
 \begin{equation}
-  R(r)=R_0\exp\left(-\frac{GM}{c^2r}\right)
-  \simeq R_0\left(1-\frac{GM}{c^2r}\right),
+  R(r)=R_0\exp\!\left(-\frac{GM}{c^2r}\right)
+  \approx R_0\!\left(1-\frac{GM}{c^2r}\right),
+  \label{eq:R_point}
 \end{equation}
-so local radius, local clock rate, and local coordinate light speed decrease in a gravitational potential well.
+so local radius, local clock rate, and local coordinate light speed decrease
+in a potential well.
 
-\subsection{Weak-Field GR}
+\subsection{Weak-field GR slot}
 
-Using Eq.~\eqref{eq:phi_u}, the metric component is
+From $\Phi=c^2u$ and metric~\eqref{eq:metric}:
 \begin{equation}
   g_{00}=-c^2e^{2\Phi/c^2}
-  \simeq -c^2\left(1+\frac{2\Phi}{c^2}\right),
+  \approx -c^2\!\left(1+\frac{2\Phi}{c^2}\right),
   \label{eq:g00_weak}
 \end{equation}
-which is precisely the weak-field GR time component. In this sense, the ASSP radius-clock scalar $u$ is the pre-continuum object whose continuum shadow is the gravitational potential and whose weak-field metric form is GR's $g_{00}$ sector.
+which is the weak-field GR time component. The ASSP radius-clock scalar $u$
+is the pre-continuum object whose smooth limit is the gravitational potential
+and whose weak-field metric form is the $g_{00}$ sector of GR. This paper does
+not claim to derive the full Einstein tensor; the spatial metric sector and
+strong-field limit require a separate CLASSP treatment.
 
-\subsection{M\"obius Boundary Acceleration}
+\subsection{M\"obius boundary acceleration generator}
 
-The local Gyro-Ball interaction is governed by M\"obius boundary geometry at tangency. A compact acceleration generator consistent with the TFOFT Laurent hierarchy is
+At a tangency point the M\"obius boundary map is conjectured to generate the
+exact acceleration
 \begin{equation}
-  a_M(r)=\frac{2v^2}{r}\left(1+\frac{r_s}{r}\right)^{-2}
-  =\frac{2v^2r}{(r+r_s)^2},
-  \qquad
-  r_s=\frac{2GM}{c^2}.
+  a_M(r)=\frac{2v^2}{r}\!\left(1+\frac{r_s}{r}\right)^{-2}
+       =\frac{2v^2r}{(r+r_s)^2},\qquad
+  r_s=\frac{2GM}{c^2},
   \label{eq:mobius_accel}
 \end{equation}
-Expanding gives
+whose Laurent expansion is
 \begin{equation}
-  a_M(r)=
-  \frac{2v^2}{r}
-  -\frac{4v^2r_s}{r^2}
-  +\frac{6v^2r_s^2}{r^3}
-  -\frac{8v^2r_s^3}{r^4}
-  +O\left(\frac{r_s^4}{r^5}\right).
+  a_M(r)=\frac{2v^2}{r}-\frac{4v^2r_s}{r^2}
+  +\frac{6v^2r_s^2}{r^3}-\frac{8v^2r_s^3}{r^4}+O(r_s^4/r^5).
   \label{eq:laurent}
 \end{equation}
-Thus the same boundary rule produces an ordered continuum hierarchy: flat-rotation support at $1/r$, Newtonian inverse-square behavior at $1/r^2$, and higher GR-like correction channels at $1/r^3,1/r^4,\ldots$.
+The successive radial powers match the hierarchy normally associated with
+flat-rotation support ($1/r$), Newtonian gravity ($1/r^2$), GR perihelion
+precession ($1/r^3$), and frame-dragging-order corrections ($1/r^4$). The
+coefficients and exact observational normalization remain part of the CLASSP
+strong-field/disk-dynamics program.
 
-\section{Quantum Mechanics as the Directed-Tangency Continuum Limit}
+\subsection{Dynamic radius field equation}
 
-\subsection{One-Dimensional Ord Walk}
-
-The minimal Ord-type limit uses two directed amplitudes,
-\[
-  \psi_R(x,t), \qquad \psi_L(x,t),
-\]
-representing right- and left-moving tangency states. Let the local step length be $\epsilon$ and the local proper tick be
+The dynamical ASSP radius equation is taken to be
 \begin{equation}
-  \Delta\tau=\frac{\epsilon}{c}.
+  \frac{1}{c^2}\ddot u_i-(\Delta_Gu)_i=\frac{4\pi G}{c^2}\rho_i,
+  \label{eq:wave_gravity}
 \end{equation}
-Massless propagation is one edge per light-clock tick. Mass enters as a local Gyro-Ball chirality-mixing angle:
+whose continuum limit is the scalar wave equation
+\begin{equation}
+  \Box u=\frac{4\pi G}{c^2}\rho,\qquad
+  \Box=-\frac{1}{c^2}\partial_t^2+\nabla^2.
+  \label{eq:scalar_wave}
+\end{equation}
+Gravitational radiation corresponds, at this level, to propagating
+perturbations of $u$. The tensorial sector is expected to arise from the
+coarse-grained dynamics of $\dd\ell_G^2$.
+
+% ===================================================================
+\section{Dirac Quantum Mechanics as the Directed-Tangency Continuum Limit}
+% ===================================================================
+
+\subsection{One-dimensional Ord walk on a tangency chain}
+
+The minimal case follows Ord~\cite{Ord1983} but on the ASSP tangency graph
+rather than an externally imposed lattice. Use two directed amplitudes
+$\psi_R(x,t)$ and $\psi_L(x,t)$ for right- and left-moving tangency states.
+Let the local step length be $\epsilon$ and the local proper tick be
+$\Delta\tau=\epsilon/c$. Mass enters as a local Gyro-Ball chirality-mixing
+angle:
 \begin{equation}
   \theta=\frac{mc^2\Delta\tau}{\hbar}.
   \label{eq:theta}
 \end{equation}
-The discrete update is
+The discrete update rule is
 \begin{align}
   \psi_R(x+\epsilon,t+\Delta\tau)
-  &=\cos\theta\,\psi_R(x,t)-i\sin\theta\,\psi_L(x,t),\label{eq:walk_R}\\
+    &=\cos\theta\,\psi_R(x,t)-i\sin\theta\,\psi_L(x,t),
+  \label{eq:walk_R}\\
   \psi_L(x-\epsilon,t+\Delta\tau)
-  &=\cos\theta\,\psi_L(x,t)-i\sin\theta\,\psi_R(x,t).\label{eq:walk_L}
+    &=\cos\theta\,\psi_L(x,t)-i\sin\theta\,\psi_R(x,t).
+  \label{eq:walk_L}
 \end{align}
-For $\theta\ll1$ and slowly varying amplitudes,
+For $\theta\ll1$ and slowly varying amplitudes, Taylor-expanding
+Eqs.~\eqref{eq:walk_R}--\eqref{eq:walk_L} and using $\epsilon/\Delta\tau=c$
+and $\theta/\Delta\tau=mc^2/\hbar$ gives
 \begin{align}
-  \Delta\tau\,\partial_t\psi_R+\epsilon\,\partial_x\psi_R
-  &=-i\theta\psi_L,\\
-  \Delta\tau\,\partial_t\psi_L-\epsilon\,\partial_x\psi_L
-  &=-i\theta\psi_R.
+  (\partial_t+c\partial_x)\psi_R&=-i\frac{mc^2}{\hbar}\psi_L,
+  \label{eq:chiral_R}\\
+  (\partial_t-c\partial_x)\psi_L&=-i\frac{mc^2}{\hbar}\psi_R.
+  \label{eq:chiral_L}
 \end{align}
-Using $\epsilon/\Delta\tau=c$ and $\theta/\Delta\tau=mc^2/\hbar$ gives
-\begin{align}
-  (\partial_t+c\partial_x)\psi_R
-  &=-i\frac{mc^2}{\hbar}\psi_L,\label{eq:chiral_R}\\
-  (\partial_t-c\partial_x)\psi_L
-  &=-i\frac{mc^2}{\hbar}\psi_R.\label{eq:chiral_L}
-\end{align}
-Writing $\Psi=(\psi_R,\psi_L)^T$, Eqs.~\eqref{eq:chiral_R}--\eqref{eq:chiral_L} become
+Writing $\Psi=(\psi_R,\psi_L)^T$, Eqs.~\eqref{eq:chiral_R}--\eqref{eq:chiral_L}
+become
 \begin{equation}
-  \boxed{
-  i\hbar\partial_t\Psi
-  =-i\hbar c\sigma_z\partial_x\Psi
-  +mc^2\sigma_x\Psi.}
+  \boxed{i\hbar\partial_t\Psi=-i\hbar c\,\sigma_z\partial_x\Psi+mc^2\sigma_x\Psi.}
   \label{eq:dirac_1d}
 \end{equation}
-This is the $1+1$ dimensional Dirac equation.
+This is the $1+1$-dimensional Dirac equation~\cite{Dirac1928}.
 
-\subsection{Radius-Clock Insertion}
+\subsection{Radius-clock insertion}
 
-On the ASSP graph, the local proper tick is determined by the sphere radius:
+On the ASSP graph the local proper tick is set by the local sphere radius:
 \begin{equation}
-  \Delta\tau_i \sim \frac{2R_i}{c}.
+  \Delta\tau_i\sim\frac{2R_i}{c}.
+  \label{eq:tick_radius}
 \end{equation}
-The mixing angle becomes
+The mixing angle therefore becomes
 \begin{equation}
   \theta_i=\frac{mc^2\Delta\tau_i}{\hbar}
-  \sim \frac{2mcR_i}{\hbar}
-  =\frac{2R_i}{\lambda_C},
-  \qquad
-  \lambda_C=\frac{\hbar}{mc}.
+  \sim\frac{2mcR_i}{\hbar}=\frac{2R_i}{\lambda_C},
+  \qquad \lambda_C=\frac{\hbar}{mc},
   \label{eq:theta_radius}
 \end{equation}
-Therefore mass is the chirality-reversal rate per local sphere-clock tick:
+and mass is the chirality-reversal rate per local sphere-clock tick:
 \begin{equation}
-  m=\frac{\hbar}{c^2}\frac{\theta_i}{\Delta\tau_i}.
+  \boxed{m=\frac{\hbar}{c^2}\frac{\theta_i}{\Delta\tau_i}.}
   \label{eq:mass_flip}
 \end{equation}
-Massless modes have $\theta=0$ and remain pure directed tangency streams. Massive modes repeatedly reverse, producing the fractal zigzag path that appears as quantum behavior after coarse-graining.
+Massless modes ($\theta=0$) stream without flip. Massive modes undergo
+repeated reversals, producing the fractal zigzag path that Ord~\cite{Ord1983}
+showed generates quantum behavior after coarse-graining.
 
-\subsection{Three-Dimensional ASSP Tangency Walk}
+\subsection{Three-dimensional ASSP walk and curved-space Dirac limit}
 
 Assign spinor amplitudes to oriented tangency edges:
-\[
+\begin{equation}
   \psi_{i\to j}^A(t),
-\]
-where $A$ is a spin/channel index. A local update has the form
+  \label{eq:spinor_edge}
+\end{equation}
+where $A$ is a spin/channel index. The local update is
 \begin{equation}
   \psi_{i\to j}^A(t+\Delta t_i)
   =\sum_{k\sim i}S_i{}^A{}_B(j,k)\,\psi_{k\to i}^B(t),
   \label{eq:assp_walk}
 \end{equation}
-where $S_i$ is the unitary Gyro-Ball scattering matrix:
+where the Gyro-Ball scattering matrix satisfies $S_i^\dagger S_i=I$. Under
+local balance and isotropy of tangency directions,
 \begin{equation}
-  S_i^\dagger S_i=I.
+  \langle n^a\rangle_i=0,\qquad
+  \langle n^a n^b\rangle_i=\tfrac13\delta^{ab},
+  \label{eq:spinor_moments}
 \end{equation}
-Let
-\[
-  n_{ij}=\frac{s_{ij}}{\abs{s_{ij}}}
-\]
-be the local tangency direction. Under coarse-grained balance and isotropy,
-\begin{equation}
-  \langle n^a\rangle_i=0,
-  \qquad
-  \langle n^an^b\rangle_i=\frac13\delta^{ab}.
-\end{equation}
-The continuum expansion of Eq.~\eqref{eq:assp_walk} gives
-\begin{equation}
-  i\hbar\partial_t\Psi
-  =-i\hbar c_i\alpha^a\partial_a\Psi
-  +mc_i^2\beta\Psi
-  +\text{connection terms},
-  \label{eq:dirac_intermediate}
-\end{equation}
-where
-\begin{equation}
-  c_i=c e^{u_i}=c\frac{R_i}{R_0}.
-\end{equation}
-In covariant form this is
+the continuum expansion of~\eqref{eq:assp_walk} gives the Dirac equation on
+the radius-clock metric:
 \begin{equation}
   \boxed{
   i\hbar\gamma^\mu e_\mu{}^a
-  \left(\partial_a+\Omega_a+\frac{iq}{\hbar}A_a\right)\Psi
-  -mc\Psi=0.}
+  \!\left(\partial_a+\Omega_a+\frac{iq}{\hbar}A_a\right)\!\Psi
+  -mc\,\Psi=0.}
   \label{eq:dirac_curved}
 \end{equation}
-Here $e_\mu{}^a$ is the tetrad associated with Eq.~\eqref{eq:metric}, with time component
-\begin{equation}
-  e_0{}^0=e^{-u}=\frac{R_0}{R}.
-\end{equation}
-The spin connection $\Omega_a$ is the continuum limit of frame rotations between neighboring tangency directions, while $A_a$ arises from U(1) tangency phases
-\begin{equation}
-  U_{ij}^{\rm EM}=\exp\left(\frac{iqA_{ij}}{\hbar}\right).
-\end{equation}
-Thus quantum mechanics emerges from light-speed directed tangency propagation plus local Gyro-Ball chirality mixing on the same graph whose radius-clock field produces gravity.
+Here $e_\mu{}^a$ is the tetrad of metric~\eqref{eq:metric}, with time
+component $e_0{}^0=e^{-u}=R_0/R$; the spin connection $\Omega_a$ is the
+continuum limit of inter-sphere frame rotations; and $A_a$ arises from U(1)
+tangency edge phases. Thus the same graph that produces gravity through its
+radius-clock field produces quantum matter through its directed spinor walk.
 
+% ===================================================================
+\section{Candidate Electromagnetic Limit from Edge-Phase Holonomies}
+\label{sec:maxwell}
+% ===================================================================
+
+\subsection{U(1) edge phases and discrete field strength}
+
+Assign a U(1) phase to each oriented tangency edge:
+\begin{equation}
+  U_{ij}^{\rm EM}=e^{iqA_{ij}/\hbar},\qquad A_{ij}=-A_{ji}.
+  \label{eq:edge_phase}
+\end{equation}
+The gauge-covariant graph derivative is
+\begin{equation}
+  (D_Af)_{ij}=U_{ij}^{\rm EM}f_j-f_i.
+  \label{eq:cov_diff}
+\end{equation}
+The discrete field strength is the holonomy around an elementary graph cycle
+$C=(i_1,i_2,\ldots,i_k,i_1)$:
+\begin{equation}
+  F_C=\arg\!\prod_{(ij)\in C}U_{ij}^{\rm EM}
+  =\frac{q}{\hbar}\sum_{(ij)\in C}A_{ij}.
+  \label{eq:holonomy}
+\end{equation}
+For a minimal three-tangency cycle, $F_C$ is the discrete analogue of magnetic
+flux through the triangle.
+
+\subsection{Discrete gauge action and Maxwell limit}
+
+The candidate gauge-field action on the ASSP graph is
+\begin{equation}
+  S_A=-\frac14\sum_C W_C F_C^2+\sum_{(ij)}J_{ij}A_{ij},
+  \label{eq:gauge_action}
+\end{equation}
+where $W_C$ are cycle weights set by the packing geometry. Stationarity
+$\delta S_A/\delta A_{ij}=0$ gives a discrete divergence equation on the field
+strength. The graph identity $d_G^2=0$ provides the discrete Bianchi identity
+exactly. Under slow-variation and isotropy conditions, the cycle holonomies
+expand to leading order in the gauge potential and the discrete divergence
+maps to the continuum divergence, giving the candidate Maxwell limit
+\begin{equation}
+  \boxed{\partial_\mu F^{\mu\nu}=\mu_0J^\nu,\qquad
+  \partial_{[\lambda}F_{\mu\nu]}=0.}
+  \label{eq:maxwell}
+\end{equation}
+The normalization of $W_C$, the Lorentzian Hodge star, and the exact emergence
+of $\mu_0$ are left as explicit tasks for the CLASSP gauge program.
+
+\subsection{Coupling constant from register depth}
+
+The electromagnetic coupling constant enters through the Presburger register
+depth of one Soddy sphere~\cite{TFOFT2026,Soddy1936}:
+\begin{equation}
+  \alpha^{-1}=4\pi^3+\pi^2+\pi=137.036,\qquad
+  \alpha=\frac{1}{T_{\rm sphere}}.
+  \label{eq:alpha}
+\end{equation}
+Under the edge-phase ontology, $\alpha$ is the sequential-alignment probability
+per quine cycle: the fraction of asynchronous two-ball register updates that
+are causally ordered~\cite{TFOFT2026}. Higher-order tangency interactions are
+conjectured to generate the gauge hierarchy toward $SU(2)$ and $SU(3)$.
+
+% ===================================================================
 \section{Simulation and Observation}
+% ===================================================================
 
-\subsection{Hydrogenic Dark/Inertial Boundary Fields}
+\subsection{Hydrogenic dark/inertial boundary fields}
 
-In the TFOFT interpretation, stars are not literally smeared through the dark halo, just as an electron is not literally a static cloud. Rather, the electron cloud and the dark halo are lower-layer inertial boundary fields that determine the allowed dynamics of the visible object: the electron at atomic scale, and the stellar disk at galactic scale.
-
-Therefore the simulation target is not
+In the TFOFT interpretation, dark matter is not primarily a particle species
+but a lower-layer inertial boundary field~\cite{TFOFT2026}. The electron cloud
+and the dark halo are both lower-layer boundary fields that constrain the
+dynamics of the visible object (electron at atomic scale; stellar disk at
+galactic scale). Therefore the simulation target is \emph{not}
 \[
-  \text{stars trace }\abs{\psi_{nlm}}^2.
+  \text{stars trace }|\psi_{nlm}|^2.
 \]
 The correct target is
 \begin{equation}
-  \rho_{\rm halo}^{(nlm)}(R,z,\phi)
-  \quad\Longrightarrow\quad
+  \mathcal{I}_{\rm halo}^{(nlm)}(R,z,\phi)
+  \;\Longrightarrow\;
   \text{inertial/drag/clock field}
-  \quad\Longrightarrow\quad
+  \;\Longrightarrow\;
   \text{stellar disk response}.
+  \label{eq:target}
 \end{equation}
-A minimal model uses hydrogenic orbital geometries as basis functions for the dark/inertial field:
+A minimal model uses hydrogenic orbital geometries as basis functions for the
+dark/inertial field:
 \begin{equation}
   \mathcal{I}(r,\theta,\phi)
-  =\sum_{nlm} W_{nlm}\abs{R_{nl}(r/a_g)Y_{lm}(\theta,\phi)}^2,
+  =\sum_{nlm}W_{nlm}
+    \left|R_{nl}\!\left(\frac{r}{a_g}\right)Y_{lm}(\theta,\phi)\right|^2,
   \label{eq:inertia_basis}
 \end{equation}
-where $a_g$ is the galactic scale radius and $W_{nlm}$ are occupation weights. The stellar disk then evolves under
+where $a_g$ is the galactic scale radius and $W_{nlm}$ are occupation weights.
+A continuum observer may infer an effective density $\rho_{\rm eff}$ from
+$\mathcal I$, but the physical object in the ASSP model is the inertial
+boundary kernel rather than a literal cloud of particles.
+
+The stellar disk evolves under
 \begin{equation}
-  \vec a_{\star}
-  =-\nabla\Phi_{\rm baryon}
-  -c^2\nabla u_{\rm halo}
-  +\vec a_{\rm drag}[\mathcal{I},\vec v]
-  +\vec a_{\rm gyro}[\mathcal{I},\vec v\times \hat n].
+  \vec a_\star=-\nabla\Phi_{\rm baryon}-c^2\nabla u_{\rm halo}
+  +\vec a_{\rm drag}[\mathcal I,\vec v]
+  +\vec a_{\rm gyro}[\mathcal I,\vec v\times\hat n],
   \label{eq:disk_dynamics}
 \end{equation}
-The first two terms are gravitational/radius-clock terms. The latter two represent the lower-layer inertial drag and angular-momentum transfer channels responsible for flat rotation support.
+where the first two terms are baryon and radius-clock gravity from
+Eq.~\eqref{eq:poisson}, and the latter two represent the lower-layer inertial
+drag and angular-momentum transfer channels responsible for flat-rotation
+support. The M\"obius boundary acceleration~\eqref{eq:mobius_accel} provides
+one analytic form for $\vec a_{\rm gyro}$.
 
-The numerical program is therefore:
+For the $3d_{z^2}$ Milky Way state specifically, the effective inertial kernel
+has the angular form
+\begin{equation}
+  \mathcal I_{3d_{z^2}}(r,\theta)
+  =I_0\,\mathcal R_{32}(r/a_g)\,(3\cos^2\theta-1)^2,
+  \label{eq:I_3dz2_general}
+\end{equation}
+where $\mathcal R_{32}$ is the scaled radial shell factor. If one uses the
+hydrogenic density shape directly, then
+\begin{equation}
+  \mathcal R_{32}(r/a_g)
+  \propto
+  \left(\frac{r}{a_g}\right)^4
+  \exp\!\left(-\frac{2r}{3a_g}\right).
+  \label{eq:R32_shape}
+\end{equation}
+The scale $a_g$ is fixed by matching the polar Fermi-bubble height, not by
+fitting the equatorial feature after the fact.
+
+\subsection{Numerical simulation program}
+
+The simulation comparison program is:
 \begin{enumerate}[label=\textbf{S\arabic*.}]
-  \item Build disk simulations with NFW, Einasto, generic dark disk, and hydrogenic ASSP halo/inertial kernels.
-  \item Fit rotation curves, vertical force, gas flaring, spiral structure, and stream perturbations.
-  \item Ask whether a small set of hydrogenic orbital states explains the same observables with fewer effective parameters.
-  \item Allow transitions between orbital states,
-  \[
-    \Psi_{\rm halo}(t)=\sum_{nlm}a_{nlm}(t)\psi_{nlm},
-  \]
-  and identify the disk/plasma response to $\Delta\abs{\Psi_{\rm halo}}^2$.
+  \item Build disk simulations with four halo/inertial models: NFW, Einasto,
+        generic dark disk, and the hydrogenic ASSP inertial kernel
+        $\mathcal I_{3d_{z^2}}$ from Eq.~\eqref{eq:I_3dz2_general}.
+  \item Fit rotation curves, vertical force $K_z$, HI gas flaring, spiral
+        structure, and stream perturbations.
+  \item Ask whether a small set of hydrogenic orbital boundary states explains
+        the same observables with fewer effective parameters.
+  \item Allow transitions between boundary states,
+        $\Psi_{\rm halo}(t)=\sum_{nlm}a_{nlm}(t)\psi_{nlm}$, and identify the
+        disk and plasma response to $\Delta|\Psi_{\rm halo}|^2$.
 \end{enumerate}
 
-\subsection{The $3d_{z^2}$ Milky Way State}
+\subsection{The $3d_{z^2}$ Milky Way state and the Fermi bubbles}
 
-The original TFOFT Milky Way claim identifies the Fermi bubbles with the polar lobes of a scaled $3d_{z^2}$ boundary state. The angular factor is
+The companion paper~\cite{TFOFT2026} identifies the Fermi
+bubbles~\cite{FermiBubbles2010,Ackermann2014} as the polar lobes of a scaled
+$3d_{z^2}$ boundary state. The angular factor is
 \begin{equation}
-  Y_{20}(\theta)\propto 3\cos^2\theta-1.
+  Y_{20}(\theta)\propto3\cos^2\theta-1.
+  \label{eq:Y20}
 \end{equation}
-It has nodal cones at
+Its nodal cones lie at
 \begin{equation}
   3\cos^2\theta-1=0
-  \quad\Longrightarrow\quad
-  \theta=\arccos\frac{1}{\sqrt3}
-  \simeq54.7356^\circ.
+  \;\Longrightarrow\;
+  \theta_{\rm node}=\arccos\frac{1}{\sqrt3}\approx54.74^\circ.
   \label{eq:nodal_angle}
 \end{equation}
-At the poles,
-\[
-  3\cos^2(0)-1=2,
-\]
-while at the equator,
-\[
-  3\cos^2(\pi/2)-1=-1.
-\]
-Because density/intensity is proportional to squared amplitude,
+The Fermi bubbles extend roughly tens of degrees above and below the Galactic
+center; the common descriptive scale is about $50\,\kly\approx15.3\,\kpc$, while
+some modeling papers quote heights of order $10\,\kpc$ depending on the
+geometric convention and distance model~\cite{FermiBubbles2010,Ackermann2014}.
+We therefore define
 \begin{equation}
-  \frac{\rho_{\rm equator}}{\rho_{\rm pole}}
-  =\left(\frac{1}{2}\right)^2
-  =\frac14.
+  H_{\rm FB}\equiv\text{polar Fermi-bubble height}\sim10\text{--}15\,\kpc.
+  \label{eq:HFB}
+\end{equation}
+This scale correction is crucial: $50\,\kly$ is not $50\,\kpc$.
+
+The TFOFT rank fraction $(23/27)$ may be read as setting the polar-lobe height
+relative to the full local halo/boundary scale,
+\begin{equation}
+  H_{\rm FB}=\frac{23}{27}R_{\rm halo}^{\rm local}.
+  \label{eq:HFB_rank}
+\end{equation}
+Thus, for $H_{\rm FB}\sim10$--$15\,\kpc$,
+\begin{equation}
+  R_{\rm halo}^{\rm local}\sim\frac{27}{23}H_{\rm FB}\sim12\text{--}18\,\kpc.
+  \label{eq:Rhalo_local}
+\end{equation}
+This places the associated equatorial component in the outer visible disk,
+not in a remote $40$--$50\,\kpc$ halo annulus.
+
+\subsection{The equatorial ``Fermi donut'': corrected derivation and prediction}
+
+At the poles and at the equator, the squared $Y_{20}$ amplitude gives:
+\begin{align}
+  |Y_{20}|^2_{\rm pole}&\propto(3\cos^2 0-1)^2=(2)^2=4,
+  \label{eq:pole}\\
+  |Y_{20}|^2_{\rm equator}&\propto(3\cos^2(\pi/2)-1)^2=(-1)^2=1.
+  \label{eq:equator}
+\end{align}
+Therefore
+\begin{equation}
+  \boxed{\frac{\mathcal I_{\rm equator}}{\mathcal I_{\rm pole}}
+  =\frac{|Y_{20}|^2_{\rm equator}}{|Y_{20}|^2_{\rm pole}}=\frac14.}
   \label{eq:quarter_density}
 \end{equation}
-Thus the same $3d_{z^2}$ state predicts a lower-contrast equatorial toroidal lobe in the Galactic plane: the ``Fermi donut.''
-
-If the polar Fermi-bubble scale is taken to be $H_{\rm pole}\sim50\,\mathrm{kpc}$, then the simplest equal-radius hydrogenic scaling places the equatorial torus peak at comparable galactocentric radius,
+The same $3d_{z^2}$ state that produces the polar Fermi bubbles requires an
+equatorial toroidal lobe of one-quarter the polar angular density contrast.
+In the simplest same-radius shell interpretation, the torus peak is at the
+same orbital scale as the polar lobe:
 \begin{equation}
-  R_{\rm donut,peak}\sim 45\text{--}50\,\mathrm{kpc},
-  \label{eq:donut_peak}
+  R_{\rm donut,peak}\sim H_{\rm FB}\sim10\text{--}15\,\kpc.
+  \label{eq:donut_peak_corrected}
 \end{equation}
-with a leading inner boundary of order
+The torus does not possess a unique hard inner edge because an orbital density
+surface depends on the chosen contour. For a fiducial shell/shoulder estimate,
+using the nodal-cone geometry gives an inner shoulder of order
 \begin{equation}
-  R_{\rm donut,in}\sim 40\,\mathrm{kpc}.
-  \label{eq:donut_inner}
+  R_{\rm donut,in}\sim\sqrt{\frac{2}{3}}\,H_{\rm FB}
+  \approx0.816H_{\rm FB}
+  \sim8\text{--}12\,\kpc.
+  \label{eq:donut_inner_corrected}
 \end{equation}
-The feature should not be a bright local dark disk at the Solar radius. It should be a far-disk annular boundary with approximately one-quarter the polar-lobe contrast.
+This places the predicted feature from approximately the solar circle and
+outer disk into the region just beyond the main stellar disk scale. The
+feature is therefore not a far-halo object; it is an outer-disk boundary
+signature.
 
-\subsection{Emission and Star-Formation Scaling}
+\begin{mdframed}
+\textbf{Corrected prediction: Fermi donut.}
+Using the real Fermi-bubble scale $H_{\rm FB}\sim10$--$15\,\kpc$, the Milky
+Way $3d_{z^2}$ boundary state predicts an equatorial annular counterpart with:
+\begin{itemize}
+  \item fiducial inner shoulder $R_{\rm in}\sim8$--$12\,\kpc$;
+  \item radial peak $R_{\rm peak}\sim10$--$15\,\kpc$;
+  \item angular density/inertia contrast $\approx1/4$ of the polar lobes;
+  \item geometry: a broad, low-contrast ring symmetric about the Galactic plane.
+\end{itemize}
+A coherent outer-disk boundary at this scale supports the $3d_{z^2}$ model.
+A smooth featureless disk/halo through $R\sim8$--$20\,\kpc$ disfavors this
+particular state identification.
+\end{mdframed}
 
-If the polar bubbles are produced where the boundary state opens a high-density angular channel, then the equatorial torus should produce weaker X-ray/gamma/nonthermal signatures for two independent reasons:
-\begin{enumerate}
-  \item the angular density is lower by Eq.~\eqref{eq:quarter_density};
-  \item the far disk has less local stellar production and less baryonic plasma injection than the central polar outflow channel.
-\end{enumerate}
-If emissivity is approximately linear in both boundary density and local baryonic source rate, then
+\subsection{Connection to Gaia DR3 outer-disk anomalies}
+
+The corrected Fermi-donut scale overlaps the radial domain where recent Gaia
+DR3 studies already report model-sensitive Milky Way dynamics. Sylos Labini
+constructed generalized rotation curves from Gaia DR3 data over
+$R=8.5$--$25\,\kpc$ and heights $z=-2$ to $+2\,\kpc$, comparing a canonical
+NFW halo model with a dark-matter-disk (DMD) model in which the dark component
+is confined to the Galactic plane and follows neutral hydrogen; that analysis
+reported that the DMD model generally fits the large-radius on-plane and
+off-plane behavior better than NFW~\cite{SylosLabini2024}. Other Gaia DR3
+Jeans analyses find evidence for a declining rotation curve beyond
+$\sim15\,\kpc$, while also warning that disequilibrium, non-axisymmetry, and
+satellite perturbations can bias Jeans-inferred circular velocities at the
+10--15\% level~\cite{Koop2024}. Earlier Gaia DR3 mapping extends disk
+kinematic maps and rotation-curve reconstruction to roughly $30\,\kpc$,
+providing exactly the radial coverage needed to search for the corrected
+$3d_{z^2}$ equatorial boundary~\cite{Wang2023}.
+
+This is not a claim that Gaia has already detected the Fermi donut. The point
+is sharper: once the incorrect $50\,\kpc$ scale is removed, the TFOFT
+prediction lands in the same $R\sim10$--$20\,\kpc$ outer-disk regime where
+Gaia already indicates that simple spherical-halo modeling is under stress or
+at least model-dependent. The $3d_{z^2}$ model predicts a specific angular and
+radial boundary structure in that region, not merely a generic dark disk.
+
+\subsection{Emission and star-formation scaling}
+
+If the polar Fermi bubbles arise where the boundary state opens a high-density
+angular channel, the equatorial torus produces weaker signatures for two
+independent reasons: (1) the angular density is lower by
+Eq.~\eqref{eq:quarter_density}; and (2) local baryonic plasma injection in the
+outer disk differs from the central polar channel. If emissivity scales
+linearly with boundary density and local star-formation/plasma production,
 \begin{equation}
   I_{\rm donut}
-  \sim
-  \frac14
-  \left(\frac{\Sigma_{\rm SFR}(R_{\rm donut})}{\Sigma_{\rm SFR,polar\ source}}
-  \right)
+  \sim\frac14
+  \left(\frac{\Sigma_{\rm SFR}(R_{\rm donut})}{\Sigma_{\rm SFR,polar}}\right)
   I_{\rm bubble}.
-  \label{eq:emission_scaling_linear}
+  \label{eq:emission_linear}
 \end{equation}
-If the relevant emission is collisional or plasma-density squared, then
+If the relevant emission is collisional or plasma-density squared,
 \begin{equation}
   I_{\rm donut}
-  \sim
-  \frac{1}{16}
-  \left(\frac{\Sigma_{\rm gas}(R_{\rm donut})}{\Sigma_{\rm gas,polar\ source}}
-  \right)^2
+  \sim\frac{1}{16}
+  \left(\frac{\Sigma_{\rm gas}(R_{\rm donut})}{\Sigma_{\rm gas,polar}}\right)^2
   I_{\rm bubble}.
-  \label{eq:emission_scaling_quadratic}
+  \label{eq:emission_quadratic}
 \end{equation}
-Therefore non-detection in ordinary all-sky maps is not decisive unless the search is tuned to the predicted far-disk annulus and its expected lower contrast.
+If the boundary operates by a threshold/ignition rule, the donut may appear
+more strongly in dynamics, HI flaring, or stellar-stream perturbations than in
+X-ray or gamma-ray brightness. Non-detection in all-sky emission maps is
+therefore not decisive unless the search is tuned to the predicted low-contrast
+outer-disk annulus.
 
-The observational program is:
+\subsection{Observational program}
+
 \begin{enumerate}[label=\textbf{O\arabic*.}]
-  \item Search HI and outer-disk gas maps for a coherent annular boundary near $R\sim40$--$50\,\mathrm{kpc}$.
-  \item Search Fermi/eROSITA/radio residual maps for weak annular nonthermal emission in the Galactic plane.
-  \item Test whether stellar streams, globular clusters, or satellite orbits show perturbations when crossing the predicted annulus.
-  \item Compare the same $3d_{z^2}$ inertial field against NFW, Einasto, and generic dark-disk models on rotation curves and vertical-force residuals.
+  \item Search Gaia DR3-derived rotation and vertical-force residuals for a
+        coherent boundary or slope change in $R\sim8$--$20\,\kpc$, especially
+        near $R\sim10$--$15\,\kpc$.
+  \item Compare the $3d_{z^2}$ inertial kernel against NFW, Einasto, and
+        generic dark-disk models using the same Gaia DR3 generalized rotation
+        curves and off-plane constraints.
+  \item Search HI and outer-disk gas maps for flaring, compression, or ringlike
+        behavior at the corrected donut scale.
+  \item Search Fermi/eROSITA/radio residual maps for weak annular nonthermal
+        emission in the Galactic plane at the predicted scale.
+  \item Test whether stellar streams, open clusters, globular clusters, or
+        satellite orbits show perturbations when crossing the predicted
+        annular boundary.
 \end{enumerate}
 
-A clean detection of a one-quarter-density far-disk toroidal counterpart to the polar Fermi bubbles would strongly support the atom/galaxy boundary-equivalence claim. A smooth featureless far disk at the predicted scale would count against this specific $3d_{z^2}$ Milky Way state.
-
+% ===================================================================
 \section{Conclusion}
+% ===================================================================
 
-This paper gives the first continuum-limit skeleton of the TFOFT/ASSP ontology. The primitive variable is the sphere radius. Its logarithm is the local clock field:
-\[
+This paper gives the first continuum-limit skeleton of the TFOFT/ASSP ontology
+of~\cite{TFOFT2026}. The primitive variable is the sphere radius; its logarithm
+is the local clock field:
+\begin{equation}
   u=\ln\frac{R}{R_0}.
-\]
-The radius-clock field obeys a graph Poisson equation that coarse-grains to Newtonian gravity and to the weak-field $g_{00}$ sector of GR:
-\[
+\end{equation}
+The radius-clock field obeys a graph Poisson equation that coarse-grains to
+Newtonian gravity and to the weak-field $g_{00}$ sector of GR:
+\begin{equation}
   \Delta_Gu=\frac{4\pi G}{c^2}\rho
-  \quad\Longrightarrow\quad
+  \;\Longrightarrow\;
   \nabla^2\Phi=4\pi G\rho,
-  \qquad
-  g_{00}=-c^2e^{2\Phi/c^2}.
-\]
-On the same graph, directed light-speed tangency walks with Gyro-Ball chirality mixing coarse-grain to the Dirac equation:
-\[
-  \psi_{i\to j}(t+\Delta t)=\sum_{k\sim i}S_i(j,k)\psi_{k\to i}(t)
-  \quad\Longrightarrow\quad
-  i\hbar\gamma^\mu e_\mu{}^a(\partial_a+\Omega_a+iqA_a/\hbar)\Psi-mc\Psi=0.
-\]
-Thus GR and QM are not fundamental competitors to be quantized into each other. They are effective continuum shadows of a single finite fractal sphere-packing computation: radius gradients become gravity, and directed tangency zigzags become quantum matter.
+  \qquad g_{00}=-c^2e^{2\Phi/c^2}.
+\end{equation}
+On the same graph, directed light-speed tangency walks with Gyro-Ball
+chirality mixing coarse-grain to the Dirac equation~\cite{Ord1983,Dirac1928},
+with the spin connection geometrically induced by inter-sphere frame rotation.
+U(1) edge-phase holonomies provide a candidate graph route to Maxwell
+electromagnetism.
 
-The immediate empirical test is not philosophical. It is galactic. If the Milky Way Fermi bubbles are the polar lobes of a scaled $3d_{z^2}$ state, then the same state predicts a weaker equatorial annular counterpart in the far disk, beginning near $40\,\mathrm{kpc}$ and peaking near $45$--$50\,\mathrm{kpc}$, with angular density about one quarter of the polar lobes. That prediction can be tested by simulations and archival data before accepting the full ontology.
+GR and QM are not fundamental competitors in this ontology. They are effective
+continuum shadows of a single finite fractal sphere-packing computation:
+radius-clock gradients become gravity, directed tangency zigzags become
+quantum matter, and edge-phase windings become gauge fields.
 
+The immediate empirical test is galactic. Correcting the Fermi-bubble scale
+from $50\,\kpc$ to $50\,\kly\approx15\,\kpc$ moves the predicted equatorial
+$3d_{z^2}$ ``Fermi donut'' into the outer visible disk, with a fiducial inner
+shoulder near $8$--$12\,\kpc$, a peak near $10$--$15\,\kpc$, and one-quarter
+the polar-lobe angular density contrast. This is exactly the region where Gaia
+DR3 rotation-curve and dark-disk analyses already show nontrivial,
+model-sensitive behavior. The next step is to simulate spiral galaxies using
+hydrogenic ASSP inertial kernels and to test the corrected $3d_{z^2}$ boundary
+against Gaia, HI, stream, Fermi, eROSITA, and radio data before accepting the
+full ontology.
+
+\section*{Acknowledgments}
+The author thanks the survey teams whose archival data will enable the
+observational program of Section~6, and the mathematical physics community
+whose work on Apollonian packings~\cite{Boyd1973,Graham2003}, graph
+Laplacians, and Ord-style walks~\cite{Ord1983} provided the technical
+scaffolding for the derivations above.
+
+% ===================================================================
 \begin{thebibliography}{99}
 
 \bibitem{TFOFT2026}
-S. E. Elliott,
-\emph{The Fact Of Fractal Tennis: The Universe As A Fractal Computer Defined by the Star=Electron+Atom=Galaxy Quine},
+S.~E. Elliott,
+``The Fact of Fractal Tennis: The Universe as a Fractal Computer Defined by
+the Star=Electron+Atom=Galaxy Quine,''
 ai.vixra preprint 2605.0003, 2026.
 \url{https://ai.vixra.org/abs/2605.0003}
 
 \bibitem{Ord1983}
-G. N. Ord,
-\emph{Fractal space-time: a geometric analogue of relativistic quantum mechanics},
-Journal of Physics A: Mathematical and General, 16, 1869--1884, 1983.
+G.~N. Ord,
+``Fractal space-time: a geometric analogue of relativistic quantum mechanics,''
+\textit{J. Phys. A: Math. Gen.} \textbf{16}, 1869 (1983).
 
 \bibitem{Soddy1936}
-F. Soddy,
-\emph{The Kiss Precise},
-Nature 137, 1021, 1936.
+F.~Soddy,
+``The Kiss Precise,''
+\textit{Nature} \textbf{137}, 1021 (1936).
 
 \bibitem{Boyd1973}
-D. W. Boyd,
-\emph{The residual set dimension of the Apollonian packing},
-Mathematika 20, 170--174, 1973.
+D.~W. Boyd,
+``The residual set dimension of the Apollonian packing,''
+\textit{Mathematika} \textbf{20}, 170 (1973).
 
 \bibitem{Graham2003}
-R. L. Graham, J. C. Lagarias, C. L. Mallows, A. R. Wilks, and C. H. Yan,
-\emph{Apollonian circle packings: number theory},
-Journal of Number Theory 100, 1--45, 2003.
+R.~L. Graham, J.~C. Lagarias, C.~L. Mallows, A.~R. Wilks, and C.~H. Yan,
+``Apollonian circle packings: number theory,''
+\textit{J. Number Theory} \textbf{100}, 1 (2003).
 
 \bibitem{Mandelbrot1983}
-B. B. Mandelbrot,
-\emph{The Fractal Geometry of Nature},
-W. H. Freeman, 1983.
+B.~B. Mandelbrot,
+\textit{The Fractal Geometry of Nature}
+(W.~H. Freeman, 1983).
 
 \bibitem{Presburger1929}
-M. Presburger,
-\emph{"Uber die Vollst"andigkeit eines gewissen Systems der Arithmetik ganzer Zahlen},
-Comptes rendus du I Congr\`es des Math\'ematiciens des Pays Slaves, 1929.
+M.~Presburger,
+``\"Uber die Vollst\"andigkeit eines gewissen Systems der Arithmetik ganzer
+Zahlen,''
+\textit{Comptes Rendus du I Congr\`es des Math\'ematiciens des Pays Slaves},
+Warsaw, 1929, pp.~92--101.
 
 \bibitem{Dirac1928}
-P. A. M. Dirac,
-\emph{The quantum theory of the electron},
-Proceedings of the Royal Society A 117, 610--624, 1928.
+P.~A.~M. Dirac,
+``The quantum theory of the electron,''
+\textit{Proc. R. Soc. A} \textbf{117}, 610 (1928).
 
 \bibitem{FermiBubbles2010}
-M. Su, T. R. Slatyer, and D. P. Finkbeiner,
-\emph{Giant Gamma-ray Bubbles from Fermi-LAT: Active Galactic Nucleus Activity or Bipolar Galactic Wind?},
-Astrophysical Journal 724, 1044--1082, 2010.
+M.~Su, T.~R. Slatyer, and D.~P. Finkbeiner,
+``Giant Gamma-ray Bubbles from Fermi-LAT: AGN Activity or Bipolar Galactic Wind?''
+\textit{ApJ} \textbf{724}, 1044 (2010).
+
+\bibitem{Ackermann2014}
+M.~Ackermann et al.\ (Fermi-LAT Collaboration),
+``The Spectrum and Morphology of the Fermi Bubbles,''
+\textit{ApJ} \textbf{793}, 64 (2014).
+
+\bibitem{Sarkar2015}
+K.~C. Sarkar, B.~Nath, and P.~Sharma,
+``On the origin of the Fermi bubbles,''
+\textit{MNRAS} \textbf{453}, 3827 (2015).
+
+\bibitem{Sofue2012}
+Y.~Sofue,
+``Rotation Curve and Mass Distribution in the Galactic Center,''
+\textit{PASJ} \textbf{64}(4), 75 (2012).
+
+\bibitem{Chemin2009}
+L.~Chemin, C.~Carignan, and T.~Foster,
+``Rotation Curve of the Andromeda Galaxy from Combined 21-cm Data,''
+\textit{ApJ} \textbf{705}(2), 1395 (2009).
+
+\bibitem{SylosLabini2024}
+F.~Sylos Labini,
+``Generalized rotation curves of the Milky Way from the GAIA DR3 data-set:
+constraints on mass models,''
+\textit{Astrophysical Journal} \textbf{976}, 185 (2024); arXiv:2410.14307.
+
+\bibitem{Koop2024}
+O.~Koop, T.~Antoja, A.~Helmi, T.~M.~Callingham, and C.~F.~P.~Laporte,
+``On the Galactic rotation curve inferred from the Jeans equations: assessing
+its robustness using Gaia DR3 and cosmological simulations,''
+arXiv:2405.19028 (2024).
+
+\bibitem{Wang2023}
+H.-F. Wang, Z. Chrob\'akov\'a, M. L\'opez-Corredoira, and F. Sylos Labini,
+``Mapping the Milky Way Disk with Gaia DR3: 3D Extended Kinematic Maps and
+Rotation Curve to $\approx30$ kpc,''
+\textit{Astrophysical Journal} \textbf{942}, 12 (2023).
+
+\bibitem{Strassen1969}
+V.~Strassen,
+``Gaussian elimination is not optimal,''
+\textit{Numer. Math.} \textbf{13}, 354 (1969).
+
+\bibitem{CODATA2022}
+E.~Tiesinga et al.,
+``CODATA recommended values of the fundamental physical constants: 2022,''
+\textit{Rev. Mod. Phys.} \textbf{96}, 025002 (2024).
 
 \end{thebibliography}
 
