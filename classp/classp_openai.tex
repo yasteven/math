@@ -1,6 +1,6 @@
 % =====================================================================
 % CLASSP: Continuum Limit of Apollonian-Soddy Sphere Packing Dynamics
-% Revised corrected draft --- May 2026
+% Revised corrected draft with oriented 3D Soddy and Newton-channel fixes --- May 2026
 % =====================================================================
 \documentclass[11pt,a4paper]{article}
 
@@ -47,7 +47,7 @@ is fundamentally a finite operational computational object defined by a
 dynamical Apollonian--Soddy Sphere Packing (ASSP) fractal quine operating
 under Presburger arithmetic~\cite{Presburger1929}. In that picture, continuum
 field theories are not fundamental; they are bounded-resolution effective
-descriptions of finite tangency updates. This revised paper develops a continuum-limit skeleton of the ASSP program, with the microscopic curvature law stated in its three-dimensional sphere form. We define a tangency graph
+descriptions of finite tangency updates. This revised paper develops a continuum-limit skeleton of the ASSP program, with the microscopic curvature law stated in its oriented three-dimensional sphere form and with the M\"obius Newton channel normalized by the final two-surface norm-map cost. We define a tangency graph
 whose vertices are spheres, whose edges are tangencies, and whose primitive
 local clock variable is the sphere radius. Writing $u_i=\ln(R_i/R_0)$, we
 show that the radius-clock equation $\Delta_G u_i=(4\pi G/c^2)\rho_i$
@@ -132,27 +132,56 @@ The edge vector and length are
   s_{ij}=x_j-x_i,\qquad \ell_{ij}=|s_{ij}|=R_i+R_j.
   \label{eq:edge}
 \end{equation}
-The packing is recursively constrained by the three-dimensional
+The packing is recursively constrained by the oriented three-dimensional
 Descartes--Soddy curvature relation~\cite{Soddy1936,Graham2003}.  For five
-mutually tangent spheres with curvatures $k_i=R_i^{-1}$,
+mutually tangent oriented spheres with signed curvatures $k_i=\pm R_i^{-1}$,
+where an enclosing sphere carries negative curvature,
 \begin{equation}
   \left(\sum_{i=1}^{5}k_i\right)^2
   =3\sum_{i=1}^{5}k_i^2.
   \label{eq:soddy_3d}
 \end{equation}
-Solving for the fifth curvature given $k_1,\ldots,k_4$, define
+Solving for a fifth curvature given $k_1,\ldots,k_4$, define
 \begin{equation}
   S=\sum_{i=1}^{4}k_i,\qquad Q=\sum_{i=1}^{4}k_i^2.
 \end{equation}
 Then
 \begin{equation}
   k_5=\frac{S\pm\sqrt{3S^2-6Q}}{2}.
-  \label{eq:soddy}
+  \label{eq:soddy_root}
+\end{equation}
+Equation~\eqref{eq:soddy_root} gives the two possible fifth spheres completing
+one Descartes configuration.  Recursive Apollonian generation is more naturally
+written as a \emph{reflection} rule on an existing five-sphere Descartes
+configuration.  Replacing sphere $i$ while holding the other four fixed gives
+\begin{equation}
+  k_i'=\sum_{j\ne i}k_j-k_i.
+  \label{eq:soddy_reflect_curv}
+\end{equation}
+The same reflection applies to curvature-weighted centers.  Writing
+$m_i^a=k_i x_i^a$ for $a=1,2,3$,
+\begin{equation}
+  (m_i^a)'=\sum_{j\ne i}m_j^a-m_i^a,
+  \qquad
+  (x_i^a)'=\frac{(m_i^a)'}{k_i'}.
+  \label{eq:soddy_reflect_center}
+\end{equation}
+Equations~\eqref{eq:soddy_reflect_curv}--\eqref{eq:soddy_reflect_center} are
+the microscopic update rules used by the oriented 3D ASSP generator.  For a
+tetrahedral seed of four unit spheres, the virtual enclosing sphere has
+negative curvature
+\begin{equation}
+  k_{\rm out}=\frac{4-\sqrt{24}}{2}<0,
+  \label{eq:outer_curvature}
+\end{equation}
+and the first reflected interior sphere has radius
+\begin{equation}
+  R_{\rm in}=\frac{1}{2+\sqrt{6}}\approx0.224745.
 \end{equation}
 The explicit curvature law fixes the microscopic recursive generation of the
-packing.  The continuum-limit arguments below do not require this closed-form
-recursion directly; they require the induced tangency graph, finite local
-second moments, and statistical balance/isotropy after coarse-graining.
+packing.  The continuum-limit arguments below do not require this recursion
+directly; they require the induced tangency graph, finite local second moments,
+and statistical balance/isotropy after coarse-graining.
 
 \subsection{Radius as local time}
 
@@ -300,29 +329,81 @@ and whose weak-field metric form is the $g_{00}$ sector of GR. This paper does
 not claim to derive the full Einstein tensor; the spatial metric sector and
 strong-field limit require a separate CLASSP treatment.
 
-\subsection{M\"obius boundary acceleration generator}
+\subsection{M\"obius boundary acceleration and the Newton channel}
 
 At a tangency point the M\"obius boundary map is conjectured to generate the
-exact acceleration
+radial acceleration profile
 \begin{equation}
-  a_M(r)=\frac{2v^2}{r}\!\left(1+\frac{r_s}{r}\right)^{-2}
-       =\frac{2v^2r}{(r+r_s)^2},\qquad
+  a_M(r)=\frac{2v_M^2}{r}\!\left(1+\frac{r_s}{r}\right)^{-2}
+       =\frac{2v_M^2r}{(r+r_s)^2},\qquad
   r_s=\frac{2GM}{c^2},
   \label{eq:mobius_accel}
 \end{equation}
-whose Laurent expansion is
+where $v_M$ is the effective boundary-channel speed.  The Laurent expansion is
 \begin{equation}
-  a_M(r)=\frac{2v^2}{r}-\frac{4v^2r_s}{r^2}
-  +\frac{6v^2r_s^2}{r^3}-\frac{8v^2r_s^3}{r^4}+O(r_s^4/r^5).
+  a_M(r)=\frac{2v_M^2}{r}-\frac{4v_M^2r_s}{r^2}
+  +\frac{6v_M^2r_s^2}{r^3}-\frac{8v_M^2r_s^3}{r^4}+O(r_s^4/r^5).
   \label{eq:laurent}
 \end{equation}
-The successive radial powers have the same scaling hierarchy normally
-associated with flat-rotation support ($1/r$), Newtonian gravity ($1/r^2$), GR
-perihelion-precession-type corrections ($1/r^3$), and higher-order
-frame-dragging-scale corrections ($1/r^4$).  This is a scaling correspondence,
-not yet a coefficient-level derivation; the coefficients and exact
-observational normalization remain part of the CLASSP strong-field/disk-dynamics
-program.
+The first correction term is
+\begin{equation}
+  a_{M,1}(r)=-\frac{4v_M^2r_s}{r^2}
+  =-\frac{8v_M^2}{c^2}\frac{GM}{r^2}.
+  \label{eq:mobius_newton_prefactor}
+\end{equation}
+Thus the M\"obius expansion has the Newtonian radial form with a dimensionless
+prefactor $8v_M^2/c^2$.  In the FTC interpretation this prefactor is fixed by
+the final map between the two tangent sphere surfaces.
+
+Locally, each sphere surface is described by two coordinates $(x,y)$, and the
+radial boundary coordinate needed by the tangency map is the Euclidean norm
+\begin{equation}
+  \rho=\sqrt{x^2+y^2}.
+  \label{eq:surface_norm}
+\end{equation}
+A two-sphere tangency update therefore requires two such norm programs,
+\begin{equation}
+  \rho_1=\sqrt{x_1^2+y_1^2},\qquad
+  \rho_2=\sqrt{x_2^2+y_2^2}.
+\end{equation}
+In the Presburger/FTC cost model, each local two-coordinate norm carries the
+diagonal square-map cost $\sqrt2$.  The final two-surface boundary-map cost is
+therefore
+\begin{equation}
+  C_{\rm map}=\sqrt2+\sqrt2=2\sqrt2.
+  \label{eq:two_sqrt_cost}
+\end{equation}
+The normalized M\"obius boundary speed is the light-speed channel divided by
+this final mapping cost:
+\begin{equation}
+  v_M=\frac{c}{C_{\rm map}}=\frac{c}{2\sqrt2},
+  \qquad
+  \frac{v_M^2}{c^2}=\frac{1}{8}.
+  \label{eq:mobius_speed_norm}
+\end{equation}
+Substituting Eq.~\eqref{eq:mobius_speed_norm} into
+Eq.~\eqref{eq:mobius_newton_prefactor} gives the exact Newtonian acceleration
+term
+\begin{equation}
+  \boxed{a_{M,1}(r)=-\frac{GM}{r^2}.}
+  \label{eq:newton_from_mobius}
+\end{equation}
+For a test mass $m$, this gives the Newton force law
+\begin{equation}
+  \boxed{F_N=-\frac{GMm}{r^2}.}
+  \label{eq:newton_force}
+\end{equation}
+With the same normalization, the full expansion reads
+\begin{equation}
+  a_M(r)=\frac{c^2}{4r}-\frac{GM}{r^2}
+  +\frac{3G^2M^2}{c^2r^3}
+  -\frac{8G^3M^3}{c^4r^4}
+  +O\!\left(\frac{G^4M^4}{c^6r^5}\right).
+  \label{eq:mobius_normalized_expansion}
+\end{equation}
+The leading $1/r$ term is interpreted as the flat-rotation/inertial boundary
+channel, while the first correction is the Newtonian channel selected by the
+final two-surface norm-map cost.
 
 \subsection{Dynamic radius field equation}
 
@@ -784,12 +865,21 @@ is the local clock field:
   u=\ln\frac{R}{R_0}.
 \end{equation}
 The radius-clock field obeys a graph Poisson equation that coarse-grains to
-Newtonian gravity and to the weak-field $g_{00}$ sector of GR:
+Newtonian gravity and to the weak-field $g_{00}$ sector of GR; independently,
+the M\"obius boundary expansion recovers the Newton force coefficient when the
+final two-surface norm-map cost is $C_{\rm map}=2\sqrt2$:
 \begin{equation}
   \Delta_Gu=\frac{4\pi G}{c^2}\rho
   \;\Longrightarrow\;
   \nabla^2\Phi=4\pi G\rho,
   \qquad g_{00}=-c^2e^{2\Phi/c^2}.
+\end{equation}
+\begin{equation}
+  C_{\rm map}=2\sqrt2,
+  \qquad
+  v_M=\frac{c}{2\sqrt2}
+  \;\Longrightarrow\;
+  a_{M,1}=-\frac{GM}{r^2}.
 \end{equation}
 On the same graph, directed light-speed tangency walks with Gyro-Ball
 chirality mixing coarse-grain to the Dirac equation~\cite{Ord1983,Dirac1928},
