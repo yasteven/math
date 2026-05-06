@@ -1142,121 +1142,376 @@ Agreement: $77 \times 1.804364 = 138.936$ vs.\ CODATA $138.9357$~\cite{CODATA202
 \subsubsection{Radius Hierarchy: Why the Boundary Is Apollonian, Not Soddy}
 \label{sec:radius_apollonian}
 
-The 3D bulk dynamics of the ASSP operate under the full Soddy sphere packing, whose Hausdorff dimension is $D_S = 2.474$ and whose computational cost per sphere is $T_{\rm sphere} = 137.036$. However, the \emph{inter-layer boundary} where the radius hierarchy is measured is not a 3D bulk interaction---it is a 2D one, and the physical reason is rooted in the dynamics of the gyro balls themselves.
+The 3D bulk dynamics of the ASSP operate under the full Soddy sphere packing,
+whose Hausdorff dimension is \(D_S = 2.474\) and whose computational cost per
+sphere is \(T_{\rm sphere} = 137.036\). However, the \emph{inter-layer
+boundary} where the radius hierarchy is measured is not a 3D bulk
+interaction---it is a 2D one, and the physical reason is rooted in the
+dynamics of the gyro balls themselves.
 
-The here-scale universe is an ensemble of gyro balls (spiral galaxies) embedded in a medium of lower-scale hydrogen gas (dark matter). Each gyro ball is a rotating disk: its angular momentum is stored and transferred primarily within the disk plane. When two gyro balls interact gravitationally---whether in a near-encounter or a slow cosmological drift---the dominant interaction closely resembles specular elastic collision rather than direct coupling. This is a known statistical result: in a gas of particles with long-range $1/r^2$ interactions and equal masses, most encounters are hyperbolic or parabolic (fly-through). In the center-of-mass frame, a gravitational deflection by angle $\theta$ is mathematically equivalent to a specular elastic collision with the same deflection angle \cite{Lynden-Bell1967}. For equal-mass objects, the two descriptions are physically indistinguishable. This is the microscopic basis of violent relaxation (Lynden-Bell 1967) and the reason virialized galaxy clusters obey Maxwell-Boltzmann-like velocity distributions.
+The here-scale universe is an ensemble of gyro balls (spiral galaxies)
+embedded in a medium of lower-scale hydrogen gas (dark matter). Each gyro
+ball is a rotating disk: its angular momentum is stored and transferred
+primarily within the disk plane. When two gyro balls interact
+gravitationally---whether in a near-encounter or a slow cosmological
+drift---the dominant interaction closely resembles specular elastic collision
+rather than direct coupling. This is a known statistical result: in a gas of
+particles with long-range \(1/r^2\) interactions and equal masses, most
+encounters are hyperbolic or parabolic fly-throughs. In the center-of-mass
+frame, a gravitational deflection by angle \(\theta\) is mathematically
+equivalent to a specular elastic collision with the same deflection angle
+\cite{Lynden-Bell1967}. For equal-mass objects, the two descriptions are
+physically indistinguishable. This is the microscopic basis of violent
+relaxation and the reason virialized galaxy clusters obey
+Maxwell--Boltzmann-like velocity distributions.
 
-The dark matter halo (Dust Ball layer) surrounding each gyro ball acts as the inertial medium: it absorbs and redistributes linear momentum between encounters, providing an effective isotropic pressure that prevents gravitational collapse at the layer boundary. This is the here-scale analogue of Brownian gas pressure---the ``anti-gravity'' or normal force that caps the full 3D Soddy dynamics at a 2D boundary.
+The dark matter halo (Dust Ball layer) surrounding each gyro ball acts as
+the inertial medium: it absorbs and redistributes linear momentum between
+encounters, providing an effective isotropic pressure that prevents
+gravitational collapse at the layer boundary. This is the here-scale analogue
+of Brownian gas pressure---the ``anti-gravity'' or normal force that caps
+the full 3D Soddy dynamics at a 2D boundary.
 
-The key consequence: because the dominant inter-gyro-ball interaction is specular billiard-like, and because rotation selects the disk plane as the preferred 2D surface, the boundary dynamics at each fractal layer interface are governed by \textbf{2D Apollonian circle packing} rather than 3D Soddy sphere packing. In 2D, mutually tangent circles with specular reflection at contact points generate Apollonian packings; this is the geometric content of iterated circle inversions, which are the 2D analogue of specular reflection. The Apollonian circle packing (2D) has Hausdorff dimension $D_A = 1.305$ and is governed by the quadratic fixed-point scaling relation~\cite{Boyd1973,Graham2003,Manna1991}:
+The key consequence is that because the dominant inter-gyro-ball interaction
+is specular billiard-like, and because rotation selects the disk plane as
+the preferred 2D surface, the boundary dynamics at each fractal layer
+interface are governed by \textbf{2D Apollonian circle packing} rather than
+3D Soddy sphere packing. In 2D, mutually tangent circles with specular
+reflection at contact points generate Apollonian packings; this is the
+geometric content of iterated circle inversions, which are the 2D analogue
+of specular reflection. The Apollonian circle packing has Hausdorff
+dimension \(D_A = 1.305687\) and is governed by the quadratic fixed-point
+scaling relation~\cite{Boyd1973,Graham2003,Manna1991}:
 \[
-k^2 + k - 1 = 0 \quad \Rightarrow \quad k = \frac{\sqrt{5}-1}{2} = \frac{1}{\varphi},
+k^2+k-1=0
+\qquad\Rightarrow\qquad
+k=\frac{\sqrt{5}-1}{2}=\frac{1}{\varphi},
 \]
-where $\varphi$ is the golden ratio. This is the natural fixed-point scaling of 2D specular tangency chains. The fractal dimension evidence reviewed in Section~3 supports this assignment: power-law exponents near $D_A \approx 1.3$ recur specifically in systems with rotationally dominated or radially defined dynamics (galactic two-point correlation functions, river networks, coastlines), while the 3D Soddy exponent $D_S \approx 2.4$ governs bulk volumetric systems.
+where \(\varphi\) is the golden ratio. This is the natural fixed-point
+scaling of 2D specular tangency chains.
 
-The effective fractal depth of the radius hierarchy is therefore:
+The fractal dimension evidence reviewed earlier supports this assignment:
+power-law exponents near \(D_A\approx1.3\) recur specifically in systems
+with rotationally dominated or radially defined dynamics, while the 3D Soddy
+exponent \(D_S\approx2.4\) governs bulk volumetric systems.
+
+The effective ideal fractal depth of the radius hierarchy is therefore the
+Apollonian boundary projection of the Presburger fine-structure depth:
 \[
-\boxed{N_{\rm radius} = \frac{\alpha^{-1}}{\varphi} = \frac{137.036}{1.618034} \approx 84.655.}
+\alpha^{-1}_{\rm ASSP}
+=
+4\pi^3+\pi^2+\pi
+=
+137.0363038\ldots
 \]
-This is not a fit parameter. It is the direct consequence of two independent results: the Presburger-derived fine-structure constant $\alpha^{-1} = 137.036$ (Section~\ref{sec:alpha_deriv}) and the Apollonian boundary condition $k = 1/\varphi$ imposed by the specular billiard dynamics of rotating gyro balls at the layer interface. The 3D-to-2D projection---from full Soddy bulk to Apollonian boundary---is the geometric reason that $N_{\rm radius} = \alpha^{-1}/\varphi$ rather than $\alpha^{-1}$ itself.
+and
+\[
+\boxed{
+N_{\rm radius}
+=
+\frac{\alpha^{-1}_{\rm ASSP}}{\varphi}
+=
+\frac{137.0363038}{1.6180339887}
+=
+84.6931.
+}
+\]
 
-The robustness of this value is confirmed by the convergence of all measured galaxy radius choices to the same $G_{\rm ideal}$ when golden-ratio-weighted:
+This is not a fit parameter. It is the direct consequence of two independent
+results: the Presburger-derived fine-structure depth
+\(\alpha^{-1}_{\rm ASSP}=137.0363038\) (Section~\ref{sec:alpha_deriv}) and
+the Apollonian boundary condition \(k=1/\varphi\) imposed by the specular
+billiard dynamics of rotating gyro balls at the layer interface. The
+3D-to-2D projection---from full Soddy bulk to Apollonian boundary---is the
+geometric reason that the radius hierarchy uses
+\[
+N_{\rm radius}=\alpha^{-1}_{\rm ASSP}/\varphi
+\]
+rather than \(\alpha^{-1}_{\rm ASSP}\) itself.
 
-\begin{table}[h]
-\centering
-\caption{$N_{\rm radius} = 84.655$ is robust across galaxy radius choices. All golden-ratio-weighted cases converge to $G_{\rm ideal} = 6.957\times10^{-11}$ (+4.23\% above NIST). Raw (unweighted) values yield unphysical $G$, demonstrating that the Apollonian/$\varphi$ weighting is the correct geometric factor for the layer boundary.}
-\small
-\begin{tabular}{|l|l|c|c|c|}
-\hline
-\textbf{Galaxy} & \textbf{Radius choice} & \textbf{Raw $\ln(R/r_p)$} &
-  \textbf{GR-weighted $N_{\rm radius}$} & \textbf{$G$ offset from NIST} \\
-\hline
-Milky Way  & Disk (18 kpc)     & 82.478 & 84.655 & $+4.23\%$ \\
-Milky Way  & Core BH (Sgr A*)  & 57.976 & 84.655 & $+4.23\%$ \\
-Andromeda  & Disk (22 kpc)     & 82.678 & 84.655 & $+4.23\%$ \\
-Andromeda  & Core BH (M31*)    & 58.836 & 84.655 & $+4.23\%$ \\
-\hline
-\end{tabular}
-\label{tab:G_convergence}
-\end{table}
-
-The convergence of four independent radius choices---spanning five orders of magnitude from galactic core black hole to disk edge---to the same $G_{\rm ideal}$ when golden-ratio-weighted is presented as structural evidence that the star packing geometry inside galaxies follows the same Soddy sphere packing rules as the fractal radius hierarchy itself, with the Apollonian $\varphi$-weighting as the correct 2D boundary projection.
+The convergence of the radius hierarchy to the Apollonian-projected depth
+\(N_{\rm radius}=84.6931\) is presented as structural evidence that the
+star-packing geometry inside galaxies follows the same boundary-projection
+rules as the fractal radius hierarchy itself. The exact golden-ratio
+projection gives the homogeneous ASSP baseline. Local measurements of \(G\)
+need not equal this baseline, because star--core transfer continuously
+reshuffles the local packing. Dense virialized regions, such as the
+Earth--Sun environment, are expected to exhibit stronger effective curvature
+coupling than the homogeneous boundary value, while underdense regions are
+expected to exhibit weaker coupling.
 
 \subsubsection{Time / Frequency Hierarchy}
 
 \[
-N_{\rm time} = \ln\!\left(\frac{f_e}{f_s}\right)
-  = \ln\!\left(\frac{6.58\times10^{15}}{1.4\times10^{-16}}\right)
-  = 72.922.
+N_{\rm time}
+=
+\ln\!\left(\frac{f_e}{f_s}\right)
+=
+\ln\!\left(\frac{6.58\times10^{15}}{1.4\times10^{-16}}\right)
+=
+72.9217.
 \]
 
-\subsection{Deriving $G$: Two Independent First-Principles Routes}
+\subsection{Deriving \(G\): Geometric Baseline and Dynamic Virial Route}
 \label{sec:G_deriv}
 
 \subsubsection{Conceptual Framework}
 
-Under this ontology, gravity emerges from Möbius inversion geometry at Soddy tangency points, where the three-dimensional bulk packing meets the two-dimensional boundary crossing. The value of $G$ is determined by the depths of the mass and radius hierarchies and the difference in Hausdorff dimensions between the 3D Soddy bulk and the 2D Apollonian gasket boundary. We present two independent derivations:
+Under this ontology, gravity emerges from Möbius inversion geometry at Soddy
+tangency points, where the three-dimensional bulk packing meets the
+two-dimensional boundary crossing. The value of \(G\) is determined by the
+depths of the mass, radius, and time hierarchies, together with the
+difference in Hausdorff dimensions between the 3D Soddy bulk and the 2D
+Apollonian gasket boundary.
+
+We present two complementary routes:
 
 \begin{itemize}
-  \item \textbf{Method~1 (Geometric)}: uses only the mass and radius hierarchy depths weighted by the two Hausdorff dimensions.
-  \item \textbf{Method~2 (Dynamic)}: uses the radius hierarchy depth and the observed ratio of orbital frequencies across the fractal boundary.
+  \item \textbf{Method~1 (Geometric baseline):} uses the mass and radius
+  hierarchy depths weighted by the two Hausdorff dimensions. This gives the
+  homogeneous Apollonian-boundary baseline \(G_0\).
+
+  \item \textbf{Method~2 (Dynamic virial route):} uses the radius hierarchy
+  depth and the observed ratio of orbital frequencies across the fractal
+  boundary, then applies a predicted Fractal Virial Correction
+  \(\mathrm{FVC}=\ln(27/2)\). This gives the locally virialized estimate
+  \(G_{\rm dyn}\).
 \end{itemize}
 
-The geometric derivation uses the golden-ratio-weighted fractal depth $N_{\rm radius} = \alpha^{-1}/\varphi \approx 84.655$ (Section~\ref{sec:radius_apollonian}), which is derived entirely from the fine-structure constant and the Apollonian fixed-point scaling---no free parameters. No values derived from $G$ enter either derivation. All inputs are CODATA or pure geometric invariants~\cite{CODATA2022}.
+No value derived from \(G\) enters either route. The geometric route uses
+\[
+N_{\rm radius}
+=
+\frac{\alpha^{-1}_{\rm ASSP}}{\varphi}
+=
+84.6931,
+\]
+where
+\[
+\alpha^{-1}_{\rm ASSP}
+=
+4\pi^3+\pi^2+\pi
+=
+137.0363038.
+\]
 
 \subsubsection{Three Hierarchy Depths}
 
 \begin{align}
-  N_{\rm mass}   &= \ln(M_\odot/m_e) = 138.9358 \\
-  N_{\rm radius} &= \alpha^{-1}/\varphi = 84.6550 \\
-  N_{\rm time}   &= \ln(f_e/f_s) = 72.9217
+  N_{\rm mass}   &= \ln(M_\odot/m_e) = 138.9358, \\
+  N_{\rm radius} &= \alpha^{-1}_{\rm ASSP}/\varphi = 84.6931, \\
+  N_{\rm time}   &= \ln(f_e/f_s) = 72.9217.
 \end{align}
 
-The NIST target is $\ln(c^3/G\hbar) = 160.2207$~\cite{CODATA2022}.
+The CODATA/NIST Earth value corresponds to
+\[
+\ln\!\left(\frac{c^3}{G\hbar}\right)_{\rm obs}
+=
+160.2207
+\]
+using the measured value of \(G\)~\cite{CODATA2022}.
 
-\subsubsection{Method~1: Geometric Derivation}
+\subsubsection{Method~1: Geometric Baseline}
 
+The geometric baseline is
 \[
 \boxed{
-  \ln\!\left(\frac{c^3}{G\hbar}\right)
-  = (N_{\rm mass} + N_{\rm radius})
-    - (D_S - D_A)(N_{\rm mass} - N_{\rm radius})
+  \ln\!\left(\frac{c^3}{G\hbar}\right)_0
+  =
+  (N_{\rm mass}+N_{\rm radius})
+  -
+  (D_S-D_A)(N_{\rm mass}-N_{\rm radius})
 }
 \]
-where $D_A = 1.305687$ (2D Apollonian gasket)~\cite{Manna1991} and $D_S = 2.47390$ (3D Soddy packing)~\cite{Boyd1973}. RHS $= 223.5908 - 1.16821 \times 54.2808 = \mathbf{160.1793}$.
-
+where \(D_A = 1.305687\) is the 2D Apollonian gasket dimension
+\cite{Manna1991} and \(D_S = 2.47390\) is the 3D Soddy packing dimension
+\cite{Boyd1973}. With
 \[
-G_{\rm ideal} = \frac{c^3}{\hbar\,\exp(160.1793)}
-  = 6.957\times10^{-11}\ \mathrm{m^3\,kg^{-1}\,s^{-2}}
-  \quad (+4.2\%\ \text{above NIST}).
+N_{\rm mass}=138.9358,\qquad
+N_{\rm radius}=84.6931,\qquad
+D_S-D_A=1.168213,
+\]
+the result is
+\[
+\ln\!\left(\frac{c^3}{G\hbar}\right)_0
+\approx
+160.262.
 \]
 
-\subsubsection{Method~2: Dynamic Derivation}
+Thus the homogeneous ASSP geometric baseline is
+\[
+G_0
+=
+\frac{c^3}{\hbar\,\exp(160.262)}
+\approx
+6.40\times10^{-11}\ {\rm m^3\,kg^{-1}\,s^{-2}}.
+\]
 
+This is about \(4.0\%\) below the Earth/NIST value. In the FTC ontology,
+\(G_0\) is not the locally measured laboratory value. It is the homogeneous
+Apollonian-boundary baseline before local density and virial packing
+renormalization.
+
+\subsubsection{Method~2: Dynamic Clock Route and the Fractal Virial Correction}
+
+The second route starts from the dynamic radius--time hierarchy:
 \[
-\ln\!\left(\frac{c^3}{G\hbar}\right) \approx N_{\rm radius} + N_{\rm time}
-  = 157.5767.
+L_G^{\rm dyn,0}
+=
+N_{\rm radius}+N_{\rm time}
+=
+84.6931+72.9217
+=
+157.6148.
 \]
-The Fractal Virial Correction (FVC):
+
+This is not yet the local gravitational hierarchy, because the radius-clock
+system must be virialized into a bound two-ball geometry. The relevant
+Euclidean update volume for a shared three-dimensional angular-momentum
+state is the naive cubic register volume
 \[
-\mathrm{FVC} = N_{\rm mass}(1-\Delta D) + N_{\rm radius}\,\Delta D - N_{\rm time} = 2.6025.
+3^3=27.
 \]
-Both methods converge at $160.1793$.
+A bound virialized two-ball system splits total update energy between
+motion and binding, producing the usual half-factor. Therefore the Fractal
+Virial Correction is predicted to be
+\[
+\boxed{
+\mathrm{FVC}
+=
+\ln\left(\frac{3^3}{2}\right)
+=
+\ln\left(\frac{27}{2}\right)
+=
+2.60269.
+}
+\]
+
+Thus
+\[
+L_G^{\rm dyn}
+=
+N_{\rm radius}
++
+N_{\rm time}
++
+\mathrm{FVC}
+=
+84.6931
++
+72.9217
++
+2.60269
+=
+160.2175.
+\]
+
+This corresponds to
+\[
+G_{\rm dyn}
+=
+\frac{c^3}{\hbar\,\exp(160.2175)}
+\approx
+6.70\times10^{-11}\ {\rm m^3\,kg^{-1}\,s^{-2}},
+\]
+within approximately \(0.3\%\) of the Earth/NIST value.
+
+The dynamic route therefore gives the local virialized estimate, while the
+geometric route gives the homogeneous Apollonian-boundary baseline. The
+difference between them is interpreted as the effect of local packing
+density and star--core transfer shuffling.
 
 \subsubsection{Interpretation and Prediction}
 
-The +4.2\% offset between the ideal ASSP prediction and the NIST value is interpreted as a local substrate effect under this ontology: we inhabit a late dynamical fractal layer where accumulated dissipation has reduced the effective gravitational coupling, analogous to the $Z$-dependent shift $\alpha(Z)$ derived for heavier atoms. Measuring $G$ in environments of different local substrate density---on Mars, in a compact object, or in an intergalactic filament---is predicted to yield measurably different values.
+The exact Apollonian boundary projection gives a homogeneous geometric
+baseline
+\[
+G_0\approx6.40\times10^{-11},
+\]
+about \(4.0\%\) below the Earth/NIST value. The dynamic virial route, using
+the predicted Fractal Virial Correction
+\[
+\mathrm{FVC}=\ln(27/2),
+\]
+gives
+\[
+G_{\rm dyn}\approx6.70\times10^{-11},
+\]
+within approximately \(0.3\%\) of the Earth/NIST value.
+
+In the FTC ontology this is the expected ordering. The homogeneous
+Apollonian-boundary value describes an idealized average packing. The
+Earth--Sun environment is a dense, virialized, star--core packing region.
+Dense regions increase the local effective curvature throughput and
+therefore raise \(G_{\rm local}\) relative to the homogeneous baseline.
+Underdense regions, such as voids and weakly packed intergalactic regions,
+are expected to lower \(G_{\rm local}\) relative to the same baseline.
+
+Thus local shuffling is not a one-way loss term. It is a redistribution of
+curvature throughput across the ASSP. Star--core transfer moves angular
+momentum into Info Ball channels and leaves linear-momentum debt in
+lower-layer substrate, continuously reshuffling the local values of
+\(\alpha_{\rm local}\), \(D_{\rm eff,local}\), and \(G_{\rm local}\). The
+global effect is approximately zero-sum: enhancement in dense regions is
+balanced by suppression in underdense regions.
+
+The testable prediction is therefore correlated variation, not random
+laboratory scatter:
+\[
+\Delta G
+\quad\leftrightarrow\quad
+\Delta\alpha
+\quad\leftrightarrow\quad
+\Delta D_{\rm eff}.
+\]
+Measurements of \(G\) in environments with different local substrate
+density---for example Earth, Mars, compact-object environments, and
+intergalactic filaments---are predicted to yield systematically different
+effective values.
 
 \begin{mdframed}
 \centering
-\textbf{PREDICTION 3: Emergent and Locally Variable Gravitational Constant}\\[0.5em]
+\textbf{PREDICTION 3: Emergent and Locally Renormalized Gravitational Constant}\\[0.5em]
+
 \[
-G_{\rm ideal} = \frac{c^3}{\hbar\;\exp\!\bigl[
+G_0
+=
+\frac{c^3}{\hbar\;\exp\!\bigl[
   (N_{\rm mass}+N_{\rm radius})
   -(D_S-D_A)(N_{\rm mass}-N_{\rm radius})
-\bigr]} = 6.957\times10^{-11}
+\bigr]}
+\approx
+6.40\times10^{-11}
 \]
-where $N_{\rm radius} = \alpha^{-1}/\varphi$. The Earth value lies $4.2\%$ below this, consistent with a late-time, dissipation-mollified local fractal layer. Future measurements at different local substrate densities will test this predicted variation. Zero free parameters; $G$ is not used in its own derivation.
+with
+\[
+N_{\rm radius}
+=
+\frac{\alpha^{-1}_{\rm ASSP}}{\varphi}
+=
+84.6931.
+\]
+
+This is the homogeneous Apollonian-boundary baseline. The local virialized
+Earth value is obtained by adding the dynamic Fractal Virial Correction
+\[
+\mathrm{FVC}
+=
+\ln(27/2),
+\]
+giving
+\[
+G_{\rm dyn}
+\approx
+6.70\times10^{-11},
+\]
+within \(\sim0.3\%\) of the NIST value.
+
+The theory predicts that \(G\) is not a primitive universal constant but a
+locally renormalized output of the ASSP substrate. Dense, virialized
+star--core environments should measure larger \(G_{\rm local}\) than the
+homogeneous baseline, while underdense regions should measure smaller
+\(G_{\rm local}\). Zero fitted \(G\)-inputs are used.
 \end{mdframed}
 
 \subsection{NIST Spectral Evidence: Karlsson Steps Across Elements}
