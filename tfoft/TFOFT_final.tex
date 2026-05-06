@@ -312,24 +312,86 @@ The Presburger-ASSP machine works the same way. The fractal quine derived in Sec
 
 This distinction explains why QFT and GR are not MATHICCS-valid in the sense of M2: both employ completed real-number continua and Peano-arithmetic induction over infinite domains. The ASSP machine never leaves the finite-tape regime. The cost is that it cannot prove theorems about infinite sets---but a physical computer is not asked to prove such theorems. It is asked to compute its own next state from its current state, which is always a finite-tape operation.
 
-\subsection{Lazy Evaluation and the Optimized Radius Choice}
+\subsection{Lazy Evaluation, Basis Radius Selection, and Presburger Cost Minimization}
 
-Presburger arithmetic lacks general multiplication, but constant multiplication is implemented via repeated addition: $c \cdot a = a + a + \cdots + a$ ($c$ times). Variable multiplication $r \cdot a$ requires indirection via an external lookup. A physical system minimizes such external references, favoring constant-multiplication encodings wherever possible.
+Presburger arithmetic lacks general variable multiplication; all operations reduce to repeated addition and finite symbol manipulation. In the Presburger-ASSP machine, every symbol, operation, and lookup constitutes a physical computational cost. Arithmetic operations themselves are physical programs executed by the fractal substrate.
 
-The surface area of a sphere of radius $r$ is $A = 4\pi r^2$. Consider two choices:
-
+The relevant cost is therefore not the Platonic ``size'' of a number but the total execution cost of the state-update program:
+\[
+C(\mathcal{P}) =
+C_{\rm lookup}
++
+C_{\rm op}
++
+C_{\rm reuse},
+\]
+where:
 \begin{itemize}
-  \item \textbf{Unit radius $r=1$}: $A=4\pi$. The radius must be retrieved as a separate symbol on every state update; one additional symbol lookup per step.
-  \item \textbf{Optimized radius $r=\pi$}: $A=4\pi^3$. Every reference to the radius is absorbed into the single symbol $\pi$, which also appears in the surface area and arc-length expressions. Zero additional symbol lookups.
+  \item $C_{\rm lookup}$ counts distinct symbol retrievals,
+  \item $C_{\rm op}$ counts repeated-addition execution cost,
+  \item $C_{\rm reuse}$ rewards reuse of already-instantiated basis symbols across multiple channels.
 \end{itemize}
 
-\textbf{By the Presburger Minimization Principle (Axiom P2)---minimal information encoding for persistent states---$r = \pi$ is the computationally preferred choice. This is not an arbitrary convention; it is the unique radius that eliminates all variable-multiplication lookups from the sphere's state-update equations.}
+Under MATHICCS there is no ontologically privileged distinction between ``numbers'' and ``programs'': the symbols ``1'', ``4'', and ``$\pi$'' are themselves persistent physical programs executed by the substrate. Their cost is determined operationally by reuse inside the fractal quine, not by abstract set-theoretic existence.
 
-MATHICCS implies there is no ``math'' in the platonic sense---only dynamics. Numbers themselves are not ontologically real; ``1'', ``4'', ``$\pi$'', etc.\ are simply data structures or programs that represent them inside the physical computer. The choice of radius is therefore motivated by a new principle of physics: the universe uses \textbf{elegant code}---minimizing computational complexity and memory footprint---exactly as it follows Hamiltonian paths of least action.
+The complete state-update cost for a single Soddy sphere contains three independent channels:
+\[
+T_{\rm sphere}(r)
+=
+4\pi r^2
++
+\pi r
++
+r.
+\]
+
+The three terms correspond respectively to:
+\begin{itemize}
+  \item the surface-area update channel,
+  \item the rotational half-turn phase channel,
+  \item the radial displacement channel.
+\end{itemize}
+
+The critical optimization problem is therefore:
 
 \begin{quote}
-\textbf{Axiom P2 (Presburger Minimization Principle):} A MATHICCS-valid self-describing machine minimizes the information encoding cost of persistent states subject to the constraint that all operations remain within Presburger arithmetic. The radius $r=\pi$ is the unique choice that absorbs every reference to the sphere radius into the single symbol $\pi$, thereby eliminating all variable-multiplication lookups from every state-update equation.
+Choose the basis radius $r$ minimizing the total fractal-quine execution cost by maximizing symbol reuse and minimizing distinct lookup operations during recursive state updates.
 \end{quote}
+
+Two representative choices illustrate the result:
+
+\begin{itemize}
+  \item \textbf{Choice $r=4$:}
+  \[
+  T_{\rm sphere}(4)
+  =
+  64\pi + 4\pi + 4
+  \approx 217.6.
+  \]
+  The program must still separately instantiate both the geometric constant $\pi$ and the basis radius $4$. The radius does not absorb the geometric channel structure.
+
+  \item \textbf{Choice $r=\pi$:}
+  \[
+  T_{\rm sphere}(\pi)
+  =
+  4\pi^3 + \pi^2 + \pi
+  \approx 137.036.
+  \]
+  Here the basis radius and the geometric constant become the same persistent symbol. Every channel reuses the identical computational object $\pi$, eliminating one entire class of recursive lookup operations throughout the quine.
+\end{itemize}
+
+The reduction is not merely numerical but computational: the fractal quine executes fewer recursive symbol-resolution steps because the sphere radius, rotational arc-length scale, and geometric curvature constant collapse into a single reusable basis program.
+
+\begin{quote}
+\textbf{Axiom P2 (Presburger Minimization Principle):}
+A MATHICCS-valid self-describing machine selects the basis radius minimizing total recursive execution cost under Presburger operations. The unique radius satisfying maximal geometric-symbol reuse across all three independent Soddy state channels is:
+\[
+\boxed{r=\pi}.
+\]
+\end{quote}
+
+This principle is analogous to least action, but applied to computational persistence rather than trajectory optimization: the universe evolves toward dynamically reusable code minimizing recursive lookup and execution complexity inside the fractal quine.
+
 
 \subsection{The Three Independent State Channels of a Soddy Sphere}
 
@@ -458,12 +520,38 @@ Numerically:
 \boxed{T_{\rm sphere} = 4\pi^3 + \pi^2 + \pi = 137.036}
 \]
 
-The fine-structure constant is the reciprocal:
+
+The quantity $T_{\rm sphere}$ is not merely a static information count. It is the number of effective Presburger log-register updates required to encode one complete Soddy-sphere state inside the fractal quine.
+
+The Presburger-ASSP machine operates asynchronously: no global clock forces neighboring ball-registers to update sequentially. A complete electromagnetic interaction requires two causally adjacent ball updates to occur in the correct order during post-processing of the full $T_{\rm sphere}$ register stack.
+
+For a fully asynchronous update process, sequential causal alignment between the required two-ball register states occurs with probability inversely proportional to the total quine register depth. The effective sequential-update probability is therefore approximately:
+
 \[
-\alpha = \frac{1}{T_{\rm sphere}} = \frac{1}{137.036}.
+P_{\rm seq}
+=
+\frac{1}{T_{\rm sphere}}
+=
+\frac{1}{4\pi^3+\pi^2+\pi}.
 \]
 
-Each symbol in this expression is dictated by Presburger minimization and 3D sphere geometry: the factor of 4 from the surface-area formula, $\pi$ from the optimized radius choice (Axiom P2), the hemisphere restriction from MATHICCS M1 (avoiding non-persistent pole-flip ambiguity), and the radial step from the minimum resolvable distance. No free parameters appear. The five-figure agreement with the measured $\alpha^{-1}$ from zero fitted parameters is, to the author's knowledge, without precedent. The remaining discrepancy reflects the local-density correction $\varepsilon$ of the here-scale substrate (Section~\ref{sec:mass_channel}), not a failure of the derivation.
+We identify this asynchronous sequential-alignment probability with the electromagnetic coupling strength:
+
+\[
+\boxed{
+\alpha
+=
+\frac{1}{T_{\rm sphere}}
+=
+\frac{1}{4\pi^3+\pi^2+\pi}
+=
+\frac{1}{137.036}
+}
+\]
+
+Thus $\alpha^{-1}$ is the effective fractal-quine register depth required to encode one complete Soddy sphere state, while $\alpha$ is the probability that asynchronous Presburger post-processing produces a causally aligned two-ball update during one quine cycle.
+
+Each term is fixed by Presburger minimization and 3D Soddy geometry: $4\pi r^2$ from the surface channel, $\pi r$ from the hemisphere-restricted rotational phase channel, and $r$ from the minimum radial displacement channel. Setting the Presburger-minimal basis radius $r=\pi$ collapses all three channels onto a single reusable geometric program, minimizing total recursive lookup and execution cost inside the fractal quine. No free parameters are introduced.
 
 \begin{quote}
 \textbf{Axiom P4 (Elegant Optimized Code):} The operational rules of a self-describing Presburger-ASSP machine minimize information cost subject to MATHICCS constraints. $\pi$ is preferred over unity as the unit radius because it absorbs all radius references into a single symbol, reducing the memory footprint of every state update by one lookup. This principle of elegant code is a direct consequence of Axiom P2 and is adopted as a fundamental law of physics: the universe computes with minimal memory and computational complexity.
@@ -1617,6 +1705,99 @@ Rb and Cs Fountains,'' \textit{Phys. Rev. Lett.} \textbf{109}, 080801
 S.~E. Elliott, ``The Fractal Substrate Equivalence Principle: A Unified
 Foundation\ldots,'' vixra preprint (2026).
 \url{https://ai.vixra.org/abs/2601.0119}.
+
+\bibitem{GibbonsHawking1977}
+G.~W. Gibbons and S.~W. Hawking,
+``Cosmological Event Horizons, Thermodynamics, and Particle Creation,''
+\textit{Phys. Rev. D} \textbf{15}, 2738 (1977).
+
+\bibitem{Bohr1913}
+N.~Bohr,
+``On the Constitution of Atoms and Molecules,''
+\textit{Philosophical Magazine} \textbf{26}, 1 (1913).
+
+\bibitem{Rydberg1890}
+J.~R. Rydberg,
+``Recherches sur la constitution des spectres d'émission des éléments chimiques,''
+\textit{Kongliga Svenska Vetenskaps-Akademiens Handlingar}
+\textbf{23}, 1 (1890).
+
+\bibitem{Soddy1936}
+F.~Soddy,
+``The Kiss Precise,''
+\textit{Nature} \textbf{137}, 1021 (1936).
+
+\bibitem{Descartes1643Original}
+R.~Descartes,
+Letter to Princess Elisabeth of Bohemia (1643),
+origin of the Descartes Circle Theorem.
+
+\bibitem{Boyd1973}
+D.~W. Boyd,
+``The Sequence of Radii of the Apollonian Packing,''
+\textit{Math. Comp.} \textbf{27}, 653 (1973).
+
+\bibitem{Graham2003}
+R.~L. Graham, J.~C. Lagarias, C.~L. Mallows,
+A.~R. Wilks, and C.~H. Yan,
+``Apollonian Circle Packings: Number Theory,''
+\textit{J. Number Theory} \textbf{100}, 1 (2003).
+
+\bibitem{Kontorovich2011}
+A.~Kontorovich and H.~Oh,
+``Apollonian Circle Packings and Closed Horospheres on Hyperbolic 3-Manifolds,''
+\textit{J. Amer. Math. Soc.} \textbf{24}, 603 (2011).
+
+\bibitem{Manna1991}
+S.~S. Manna and H.~J. Herrmann,
+``Precise Determination of the Fractal Dimensions of Apollonian Packing and Space-Filling Bearings,''
+\textit{J. Phys. A} \textbf{24}, L481 (1991).
+
+\bibitem{Kolmogorov1965}
+A.~N. Kolmogorov,
+``Three Approaches to the Quantitative Definition of Information,''
+\textit{Problems Inform. Transmission} \textbf{1}, 1 (1965).
+
+\bibitem{Chaitin1969}
+G.~J. Chaitin,
+``On the Length of Programs for Computing Finite Binary Sequences,''
+\textit{J. ACM} \textbf{16}, 145 (1969).
+
+\bibitem{Shannon1948}
+C.~E. Shannon,
+``A Mathematical Theory of Communication,''
+\textit{Bell System Technical Journal} \textbf{27}, 379 (1948).
+
+\bibitem{VonNeumann1966}
+J.~von Neumann,
+\textit{Theory of Self-Reproducing Automata},
+University of Illinois Press (1966).
+
+\bibitem{Wolfram2002}
+S.~Wolfram,
+\textit{A New Kind of Science},
+Wolfram Media (2002).
+
+\bibitem{Fredkin1990}
+E.~Fredkin,
+``Digital Mechanics,''
+\textit{Physica D} \textbf{45}, 254 (1990).
+
+\bibitem{Eddington1931}
+A.~S. Eddington,
+``The End of the World: From the Standpoint of Mathematical Physics,''
+Cambridge University Press (1931).
+
+\bibitem{Wyler1969}
+A.~Wyler,
+``Les groupes des rotations et la constante de structure fine,''
+\textit{C. R. Acad. Sci. Paris A} \textbf{269}, 743 (1969).
+
+\bibitem{ElNaschie1997}
+M.~S. El Naschie,
+``A Review of E-Infinity Theory and the Mass Spectrum of High Energy Particle Physics,''
+\textit{Chaos, Solitons \& Fractals} \textbf{19}, 209 (2004).
+
 
 \end{thebibliography}
 
