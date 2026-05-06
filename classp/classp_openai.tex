@@ -47,7 +47,7 @@ is fundamentally a finite operational computational object defined by a
 dynamical Apollonian--Soddy Sphere Packing (ASSP) fractal quine operating
 under Presburger arithmetic~\cite{Presburger1929}. In that picture, continuum
 field theories are not fundamental; they are bounded-resolution effective
-descriptions of finite tangency updates. This revised paper develops a continuum-limit skeleton of the ASSP program, with the microscopic curvature law stated in its oriented three-dimensional sphere form and with the M\"obius Newton channel normalized by the final two-surface norm-map cost. We define a tangency graph
+descriptions of finite tangency updates. This revised paper develops a continuum-limit skeleton of the ASSP program, with the microscopic curvature law stated in its oriented three-dimensional sphere form, with the M\"obius Newton channel normalized by the final two-surface norm-map cost, and with a conjectural visual-relocation ansatz for the tensor sector. We define a tangency graph
 whose vertices are spheres, whose edges are tangencies, and whose primitive
 local clock variable is the sphere radius. Writing $u_i=\ln(R_i/R_0)$, we
 show that the radius-clock equation $\Delta_G u_i=(4\pi G/c^2)\rho_i$
@@ -63,8 +63,9 @@ Milky Way claim into a corrected simulation and observational program. Using
 the real Fermi-bubble scale, $H_{\rm FB}\sim10$--$15\,\kpc$ rather than
 $50\,\kpc$, the associated equatorial ``Fermi donut'' should peak in the
 outer visible disk at $R\sim10$--$15\,\kpc$, with a fiducial inner shoulder
-near $R\sim0.8H_{\rm FB}\sim8$--$12\,\kpc$, and with one-quarter the
-polar-lobe angular density contrast. This places the test in the same radial
+near $R\sim0.8H_{\rm FB}\sim8$--$12\,\kpc$, with one-quarter the
+polar-lobe angular density contrast, and with the relevant disk-halo boundary
+searched radially outward from the Galactic center. This places the test in the same radial
 regime where Gaia DR3 studies report declining or model-sensitive rotation
 curves and where a dark-matter-disk model has been reported to fit some
 large-radius on/off-plane behavior better than a canonical NFW halo.
@@ -325,9 +326,79 @@ From $\Phi=c^2u$ and metric~\eqref{eq:metric}:
 \end{equation}
 which is the weak-field GR time component. The ASSP radius-clock scalar $u$
 is the pre-continuum object whose smooth limit is the gravitational potential
-and whose weak-field metric form is the $g_{00}$ sector of GR. This paper does
-not claim to derive the full Einstein tensor; the spatial metric sector and
-strong-field limit require a separate CLASSP treatment.
+and whose weak-field metric form is the $g_{00}$ sector of GR. The radius-clock
+argument alone does not derive the full Einstein tensor; the next subsection
+states a conjectural visual-relocation ansatz for the tensor sector, while the
+strong-field microscopic derivation remains a separate CLASSP task.
+
+\subsection{Visual relocation ansatz for the Einstein tensor}
+\label{sec:visual_relocation}
+
+In this framework the Einstein tensor is interpreted as the continuum record of
+apparent matter relocation through a spherical tangency lens, rather than as an
+ontologically primitive smooth spacetime curvature.  The ASSP substrate is a
+locally finite network of spheres and tangencies.  A bounded observer is a local
+cluster of spheres, and distant matter is seen through shortest available
+tangency paths.  The observer's local spherical packing therefore acts as a
+lens: matter is not required to bend an underlying continuum; instead, the
+observer's visual register assigns an apparent displaced position to matter
+seen through the global tangency network.
+
+Let $\xi^a(x)$ denote the apparent relocation vector of matter at a continuum
+point $x$, measured by a local spherical observer.  A graph-level prototype is
+\begin{equation}
+  \xi_i^a=
+  \frac{1}{k_{\rm local}}
+  \sum_{j\in\Gamma_i} w_{ij}s_{ij}^a,
+  \label{eq:relocation_vector}
+\end{equation}
+where $\Gamma_i$ is the coarse-grained tangency path bundle entering the local
+observer cluster, $w_{ij}$ are tangency weights, $s_{ij}^a$ are edge vectors,
+and $k_{\rm local}$ is the signed curvature scale of the observer's local
+sphere cluster.  Exact local balance gives no net relocation; anisotropic
+matter distributions or lensing paths generate nonzero $\xi^a$.
+
+The effective relocation stress-energy is written as
+\begin{equation}
+  T_{\mu\nu}^{\rm reloc}
+  =
+  \rho\left(
+  u_\mu u_\nu
+  +\frac{1}{c^2}\xi_{(\mu}\nabla_{\nu)}\Phi
+  \right),
+  \label{eq:reloc_stress}
+\end{equation}
+where $u_\mu$ is the continuum four-velocity of the matter register and
+$\Phi=c^2u$ is the radius-clock potential.  The associated weak perturbation
+ansatz is
+\begin{align}
+  h_{0i} &=-\frac{2}{c^2}\xi_i,
+  \label{eq:reloc_h0i}\\
+  h_{ij} &=-\frac{2}{c^2}
+  \left(\delta_{ij}\Phi+\partial_i\xi_j+\partial_j\xi_i\right).
+  \label{eq:reloc_hij}
+\end{align}
+After imposing the harmonic-gauge condition associated here with coarse-grained
+tangency balance, the conjectured tensor-sector continuum equation is
+\begin{equation}
+  \boxed{
+  G_{\mu\nu}
+  =
+  \frac{8\pi G}{c^4}T_{\mu\nu}^{\rm reloc}.}
+  \label{eq:einstein_relocation}
+\end{equation}
+Here $T_{\mu\nu}^{\rm reloc}$ is the apparent stress-energy density produced
+by relocation through the observer's spherical lens.  It should not be read as
+a claim that literal smooth spacetime curvature is fundamental.  Rather,
+Eq.~\eqref{eq:einstein_relocation} is a continuum ansatz for the same bounded
+observer effect that, in the scalar sector, appears as the radius-clock
+potential.
+
+In this interpretation, black holes are approximate outer boundaries of Core
+Balls.  When tangency density around a Core Ball becomes high enough, info-ball
+paths no longer escape the local register.  This threshold appears to a
+continuum observer as an event horizon.  The model therefore replaces the
+singularity with a dense, effectively self-contained tangency boundary.
 
 \subsection{M\"obius boundary acceleration and the Newton channel}
 
@@ -782,6 +853,72 @@ A smooth featureless disk/halo through $R\sim8$--$20\,\kpc$ disfavors this
 particular state identification.
 \end{mdframed}
 
+\subsection{Directed disk-halo search cone and macro-photon leakage analogy}
+\label{sec:directed_donut_search}
+
+The annular counterpart is not predicted as an isotropic halo shell.  In the
+present interpretation it is a directed disk-halo boundary associated with the
+Sgr~A* Core-Ball channel.  The observational search should therefore emphasize
+structures moving or aligned radially away from the Galactic center through the
+outer disk, especially where the outward channel intersects the predicted
+$R\sim8$--$20\,\kpc$ annulus.
+
+The nodal-cone geometry also gives an angular search scale about the Galactic
+plane.  The nodal angle measured from the polar axis is
+\begin{equation}
+  \theta_{\rm node}=\arccos\frac{1}{\sqrt3}\approx54.74^\circ.
+\end{equation}
+The corresponding elevation above the equatorial plane is
+\begin{equation}
+  \beta_{\rm node}
+  =90^\circ-\theta_{\rm node}
+  =\arcsin\frac{1}{\sqrt3}
+  \approx35.26^\circ.
+  \label{eq:equatorial_elevation}
+\end{equation}
+Thus the disk component should be searched as a broad low-contrast band with
+angular support of order $34^\circ$--$35^\circ$ above and below the Sgr~A*
+equatorial plane, not as a razor-thin disk.  Because the equatorial component
+has only one-quarter the polar angular density contrast, the signal is expected
+to be centrally weighted rather than uniform.  A simple working model is a
+normal angular profile
+\begin{equation}
+  P(\beta)\propto
+  \exp\!\left(-\frac{\beta^2}{2\sigma_\beta^2}\right),
+  \qquad
+  \sigma_\beta\approx12^\circ,
+  \label{eq:donut_normal_angle}
+\end{equation}
+so that approximately $68$--$69\%$ of the equatorial leakage lies inside
+$|\beta|\lesssim12^\circ$.
+
+This provides a speculative analogy with ultra-high-energy ``Oh-My-God''-type
+particle events.  If an event stream lies near $\beta\approx-14^\circ$
+relative to the Sgr~A* equatorial plane, it is near a one-sigma excursion in
+Eq.~\eqref{eq:donut_normal_angle}.  In the FTC interpretation such a stream
+could be read as a small-scale Rutherford-gold-foil analogue: a macro-photon
+or micro-macro-photon transfer from the Sgr~A* Core-Ball channel is deflected
+by the lower-layer dark/inertial disk boundary.  The one-sided sign of the
+observed offset would then encode the polarity of the emitted info-ball channel
+relative to the lower-layer dark-matter leakage channel.
+
+Equivalently, the redshift of a macrophoton is modeled as a momentum leak from
+the initial ejection into the lower fractal substrate:
+\begin{equation}
+  \Delta p_{\rm macro\gamma}
+  =
+  -\Delta p_{\rm lower},
+  \qquad
+  \Delta p_{\rm lower}
+  \parallel
+  \nabla\mathcal I_{3d_{z^2}}.
+  \label{eq:macrophoton_leak}
+\end{equation}
+This subsection is a proposed observational discriminator, not a detection
+claim.  It predicts that candidate events should correlate with outward
+Sgr~A*-centered trajectories, with the low-contrast equatorial dark boundary,
+and with the sign/polarity of the Core-Ball to Info-Ball channel.
+
 \subsection{Connection to Gaia DR3 outer-disk anomalies}
 
 The corrected Fermi-donut scale overlaps the radial domain where recent Gaia
@@ -841,7 +978,8 @@ outer-disk annulus.
 \begin{enumerate}[label=\textbf{O\arabic*.}]
   \item Search Gaia DR3-derived rotation and vertical-force residuals for a
         coherent boundary or slope change in $R\sim8$--$20\,\kpc$, especially
-        near $R\sim10$--$15\,\kpc$.
+        near $R\sim10$--$15\,\kpc$, with the search geometry oriented outward
+        from the Galactic center.
   \item Compare the $3d_{z^2}$ inertial kernel against NFW, Einasto, and
         generic dark-disk models using the same Gaia DR3 generalized rotation
         curves and off-plane constraints.
@@ -852,6 +990,9 @@ outer-disk annulus.
   \item Test whether stellar streams, open clusters, globular clusters, or
         satellite orbits show perturbations when crossing the predicted
         annular boundary.
+  \item Test whether ultra-high-energy particle or photon-like event directions
+        cluster near the outward Sgr~A* equatorial channel, especially near
+        one-sigma offsets such as $\beta\sim-12^\circ$ to $-14^\circ$.
 \end{enumerate}
 
 % ===================================================================
@@ -885,7 +1026,10 @@ On the same graph, directed light-speed tangency walks with Gyro-Ball
 chirality mixing coarse-grain to the Dirac equation~\cite{Ord1983,Dirac1928},
 with the spin connection geometrically induced by inter-sphere frame rotation.
 U(1) edge-phase holonomies provide a candidate graph route to Maxwell
-electromagnetism.
+electromagnetism.  The tensor sector is represented by a visual-relocation
+ansatz in which $G_{\mu
+u}$ records apparent stress-energy generated by
+spherical tangency-lens displacement rather than fundamental smooth curvature.
 
 GR and QM are not fundamental competitors in this ontology. They are effective
 continuum shadows of a single finite fractal sphere-packing computation:
@@ -895,8 +1039,9 @@ quantum matter, and edge-phase windings become gauge fields.
 The immediate empirical test is galactic. Correcting the Fermi-bubble scale
 from $50\,\kpc$ to $50\,\kly\approx15\,\kpc$ moves the predicted equatorial
 $3d_{z^2}$ ``Fermi donut'' into the outer visible disk, with a fiducial inner
-shoulder near $8$--$12\,\kpc$, a peak near $10$--$15\,\kpc$, and one-quarter
-the polar-lobe angular density contrast. This is exactly the region where Gaia
+shoulder near $8$--$12\,\kpc$, a peak near $10$--$15\,\kpc$, one-quarter
+the polar-lobe angular density contrast, and a preferred outward orientation
+from the Galactic center. This is exactly the region where Gaia
 DR3 rotation-curve and dark-disk analyses already show nontrivial,
 model-sensitive behavior. The next step is to simulate spiral galaxies using
 hydrogenic ASSP inertial kernels and to test the corrected $3d_{z^2}$ boundary
