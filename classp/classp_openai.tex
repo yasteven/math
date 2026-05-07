@@ -32,8 +32,8 @@
 \newcommand{\kly}{\mathrm{kly}}
 \newcommand{\R}{\mathbb{R}}
 
-\title{CLASSP: The Continuum Limit of Apollonian--Soddy\
-Sphere Packing Dynamics as the Origin of Weak-Field\
+\title{CLASSP: The Continuum Limit of Apollonian--Soddy\\
+Sphere Packing Dynamics as the Origin of Weak-Field\\
 Gravity and Dirac Quantum Mechanics}
 \author{Steven E.\ Elliott}
 \date{May 2026}
@@ -58,13 +58,15 @@ radial clock field, and local frame rotations, but the controlled Dirac
 derivation itself requires only the active one-dimensional transfer channel.
 The extension to full curved \(3+1\)-dimensional spinor dynamics is therefore
 stated as a conjectural coarse-grained frame-rotation ansatz rather than as a
-proved theorem. A visual-relocation interpretation through a spherical
-tangency lens yields a conjectural route to the full Einstein tensor without
-literal spacetime curvature. The model predicts an equatorial Fermi donut in
-the Milky Way at 10 to 15 kiloparsecs with one-quarter the angular density
-contrast of the polar Fermi bubbles, placing the key observational test in the
-outer-disk region where Gaia DR3 data already show model-sensitive rotation
-curves.
+proved theorem. The paper does not assume the Einstein Equivalence Principle as fundamental:
+mass is treated as an angular-momentum register, while inertia is the linear
+momentum cost required to translate that angular-momentum system through the
+radius-clock substrate. The full Einstein tensor is therefore not derived here;
+it is deferred to a later tensor-sector program. The model predicts an
+equatorial Fermi donut in the Milky Way at 10 to 15 kiloparsecs with
+one-quarter the angular density contrast of the polar Fermi bubbles, placing
+the key observational test in the outer-disk region where Gaia DR3 data already
+show model-sensitive rotation curves.
 \end{abstract}
 \tableofcontents
 \newpage
@@ -326,74 +328,52 @@ argument alone does not derive the full Einstein tensor; the next subsection
 states a conjectural visual-relocation ansatz for the tensor sector, while the
 strong-field microscopic derivation remains a separate CLASSP task.
 
-\subsection{Visual relocation ansatz for the Einstein tensor}
-\label{sec:visual_relocation}
 
-In this framework the Einstein tensor is interpreted as the continuum record of
-apparent matter relocation through a spherical tangency lens, rather than as an
-ontologically primitive smooth spacetime curvature.  The ASSP substrate is a
-locally finite network of spheres and tangencies.  A bounded observer is a local
-cluster of spheres, and distant matter is seen through shortest available
-tangency paths.  The observer's local spherical packing therefore acts as a
-lens: matter is not required to bend an underlying continuum; instead, the
-observer's visual register assigns an apparent displaced position to matter
-seen through the global tangency network.
+\subsection{Mass, inertia, and the deferred tensor sector}
+\label{sec:no_eep_tensor_deferred}
 
-Let $\xi^a(x)$ denote the apparent relocation vector of matter at a continuum
-point $x$, measured by a local spherical observer.  A graph-level prototype is
-\begin{equation}
-  \xi_i^a=
-  \frac{1}{k_{\rm local}}
-  \sum_{j\in\Gamma_i} w_{ij}s_{ij}^a,
-  \label{eq:relocation_vector}
-\end{equation}
-where $\Gamma_i$ is the coarse-grained tangency path bundle entering the local
-observer cluster, $w_{ij}$ are tangency weights, $s_{ij}^a$ are edge vectors,
-and $k_{\rm local}$ is the signed curvature scale of the observer's local
-sphere cluster.  Exact local balance gives no net relocation; anisotropic
-matter distributions or lensing paths generate nonzero $\xi^a$.
+The radius-clock calculation above recovers the Newtonian potential and the
+weak-field time component of GR, but it does \emph{not} derive the full Einstein
+tensor.  Earlier heuristic visual-relocation language is deliberately avoided
+here because it introduces ambiguous displacement variables and stress-energy
+normalizations before the microscopic tensor-sector dynamics has been fixed.
 
-The effective relocation stress-energy is written as
-\begin{equation}
-  T_{\mu\nu}^{\rm reloc}
-  =
-  \rho\left(
-  u_\mu u_\nu
-  +\frac{1}{c^2}\xi_{(\mu}\nabla_{\nu)}\Phi
-  \right),
-  \label{eq:reloc_stress}
-\end{equation}
-where $u_\mu$ is the continuum four-velocity of the matter register and
-$\Phi=c^2u$ is the radius-clock potential.  The associated weak perturbation
-ansatz is
+The CLASSP interpretation also does not assume the Einstein Equivalence
+Principle as a primitive.  Instead:
 \begin{align}
-  h_{0i} &=-\frac{2}{c^2}\xi_i,
-  \label{eq:reloc_h0i}\\
-  h_{ij} &=-\frac{2}{c^2}
-  \left(\delta_{ij}\Phi+\partial_i\xi_j+\partial_j\xi_i\right).
-  \label{eq:reloc_hij}
+  \text{mass} &\equiv \text{a persistent angular-momentum register},
+  \label{eq:mass_angular_register}\\
+  \text{inertia} &\equiv \text{the linear-momentum cost required to translate
+  that angular-momentum register}.
+  \label{eq:inertia_linear_cost}
 \end{align}
-After imposing the harmonic-gauge condition associated here with coarse-grained
-tangency balance, the conjectured tensor-sector continuum equation is
+Thus gravitational response is not postulated as universal free fall in a
+smooth spacetime.  It is the continuum appearance of the translation cost of
+moving angular-momentum systems through a nonuniform radius-clock substrate.
+The scalar sector is captured by
 \begin{equation}
-  \boxed{
-  G_{\mu\nu}
-  =
-  \frac{8\pi G}{c^4}T_{\mu\nu}^{\rm reloc}.}
-  \label{eq:einstein_relocation}
+  \Phi=c^2\ln(R/R_0),\qquad \vec a=-\nabla\Phi,
 \end{equation}
-Here $T_{\mu\nu}^{\rm reloc}$ is the apparent stress-energy density produced
-by relocation through the observer's spherical lens.  It should not be read as
-a claim that literal smooth spacetime curvature is fundamental.  Rather,
-Eq.~\eqref{eq:einstein_relocation} is a continuum ansatz for the same bounded
-observer effect that, in the scalar sector, appears as the radius-clock
-potential.
+while the full tensor sector must come from the coarse-grained dynamics of
+spatial packing geometry, frame transport, and boundary exchange.
 
-In this interpretation, black holes are approximate outer boundaries of Core
-Balls.  When tangency density around a Core Ball becomes high enough, info-ball
-paths no longer escape the local register.  This threshold appears to a
-continuum observer as an event horizon.  The model therefore replaces the
-singularity with a dense, effectively self-contained tangency boundary.
+The future tensor-sector task is therefore to derive an effective equation of
+the schematic form
+\begin{equation}
+  G_{\mu\nu}^{\rm eff}
+  =
+  \frac{8\pi G}{c^4}T_{\mu\nu}^{\rm eff}
+\end{equation}
+from explicit ASSP update rules for curvature-weighted centers, tangency-frame
+transport, and two-ball boundary exchange.  This paper does not claim that
+result.  It claims only the controlled scalar result:
+\begin{equation}
+  \Delta_G u\to\nabla^2u,
+  \qquad
+  \Phi=c^2u,
+  \qquad
+  \nabla^2\Phi=4\pi G\rho.
+\end{equation}
 
 \subsection{M\"obius boundary acceleration and the Newton channel}
 
@@ -448,8 +428,8 @@ this final mapping cost:
   \label{eq:mobius_speed_norm}
 \end{equation}
 Substituting Eq.~\eqref{eq:mobius_speed_norm} into
-Eq.~\eqref{eq:mobius_newton_prefactor} gives the exact Newtonian acceleration
-term
+Eq.~\eqref{eq:mobius_newton_prefactor} selects the Newtonian acceleration
+normalization
 \begin{equation}
   \boxed{a_{M,1}(r)=-\frac{GM}{r^2}.}
   \label{eq:newton_from_mobius}
@@ -1098,7 +1078,11 @@ hydrogenic density shape directly, then
   \label{eq:R32_shape}
 \end{equation}
 The scale $a_g$ is fixed by matching the polar Fermi-bubble height, not by
-fitting the equatorial feature after the fact.
+fitting the equatorial feature after the fact.  If $\mathcal I$ is treated as a
+three-dimensional inertial density kernel, the radial density factor
+$r^4e^{-2r/(3a_g)}$ peaks at $r=6a_g$.  If instead one fits the shell-weighted
+radial measure $r^2\mathcal I$, the peak shifts to $r=9a_g$.  The simulations
+must state which convention is used before fitting observational data.
 
 \subsection{Numerical simulation program}
 
