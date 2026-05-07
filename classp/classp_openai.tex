@@ -42,7 +42,7 @@ Gravity and Dirac Quantum Mechanics}
 \maketitle
 
 \begin{abstract}
-The companion TFOFT paper proposes that the universe is a finite computational object defined by a dynamical Apollonian-Soddy sphere-packing fractal quine under Presburger arithmetic. This paper develops the first continuum-limit equations of that framework. The sphere radius is treated as a local clock field; its coarse-grained graph dynamics yields Newtonian gravity and the weak-field time component of general relativity. On the same tangency graph, a one-dimensional chiral transfer channel with a two-state boundary-spin register yields the 1+1 dimensional Dirac equation, with mass interpreted as the chirality-reversal rate per local radius-clock tick. The extension to full curved 3+1 dimensional spinor dynamics is stated as a frame-rotation ansatz, not a theorem. Electromagnetism is sketched as a candidate edge-phase holonomy limit. The paper also derives a corrected Milky Way prediction: if the Fermi bubbles are the polar lobes of a scaled 3dz2 boundary state, then a weaker equatorial "Fermi donut" should appear at roughly 10 to 15 kpc, with an inner shoulder near 8 to 12 kpc and one-quarter the angular density contrast of the polar lobes. This places the key observational test in the Gaia DR3 outer-disk regime.
+The companion TFOFT paper proposes that the universe is a finite computational object defined by a dynamical Apollonian-Soddy sphere-packing fractal quine under Presburger arithmetic. This paper develops the first continuum-limit equations of that framework. The sphere radius is treated as a local clock field; its coarse-grained graph dynamics yields Newtonian gravity and the weak-field time component of general relativity. On the same tangency graph, a one-dimensional chiral transfer channel with a two-state boundary-spin register yields the 1+1 dimensional Dirac equation, with mass interpreted as the chirality-reversal rate per local radius-clock tick. The extension to full curved 3+1 dimensional spinor dynamics is stated as a frame-rotation ansatz, not a theorem. Electromagnetism is sketched as lower-layer callback momentum bookkeeping whose graph form is a candidate edge-phase holonomy limit. The paper also derives a corrected Milky Way prediction: if the Fermi bubbles are the polar lobes of a scaled 3dz2 boundary state, then a weaker equatorial "Fermi donut" should appear at roughly 10 to 15 kpc, with an inner shoulder near 8 to 12 kpc and one-quarter the angular density contrast of the polar lobes. This places the key observational test in the Gaia DR3 outer-disk regime.
 
 \end{abstract}
 \tableofcontents
@@ -82,7 +82,7 @@ from complementary limits of the same graph:
   &\;\longrightarrow\; \text{Newtonian gravity and weak-field }g_{00},\\
 \text{directed tangency walk with Gyro mixing}
   &\;\longrightarrow\; \text{Dirac quantum matter},\\
-\text{U(1) edge-phase holonomies}
+\text{lower-layer callback momentum and U(1) holonomies}
   &\;\longrightarrow\; \text{candidate Maxwell/gauge field limit}.
 \end{align*}
 The target is not to quantize general relativity. Under TFOFT, that target is
@@ -301,9 +301,9 @@ From $\Phi=c^2u$ and metric~\eqref{eq:metric}:
 which is the weak-field GR time component. The ASSP radius-clock scalar $u$
 is the pre-continuum object whose smooth limit is the gravitational potential
 and whose weak-field metric form is the $g_{00}$ sector of GR. The radius-clock
-argument alone does not derive the full Einstein tensor; the next subsection
-states a conjectural visual-relocation ansatz for the tensor sector, while the
-strong-field microscopic derivation remains a separate CLASSP task.
+argument alone does not derive the full Einstein tensor; the tensor sector is
+deferred to a later microscopic derivation based on spatial packing dynamics,
+frame transport, and two-ball boundary exchange.
 
 
 \subsection{Mass, inertia, and the deferred tensor sector}
@@ -813,10 +813,93 @@ In the astrophysical case, a Star Ball forced into a Core Ball can excite a
 macrophoton channel.  The corresponding emission need not reappear as a jet
 from the same apparent galaxy.  In the ASSP graph, the receiving Core Ball may
 be adjacent through a higher-layer tangency relation while being distant in
-our emergent three-dimensional coordinates.  Thus an infall event near one
-black-hole/core boundary may correlate with a modulated jet event at another
+our emergent three-dimensional coordinates.  Thus an infall or callback event near one
+Core-Ball register may correlate with a modulated jet return value at another
 galaxy's core.  The process is nonlocal relative to the emergent metric of our
 layer, but local relative to the directed tangency update of the higher layer.
+
+
+\subsection{Core-Ball callback register and jet return values}
+\label{sec:core_callback_register}
+
+In CLASSP the object usually called a black-hole event horizon is not treated
+as an ontologically primitive spacetime surface.  It is reinterpreted as a
+\emph{Core-Ball callback register}: an addressable program boundary at which
+remote Info-Ball transfers are received, decoded, and executed as local
+precession, jet structure, and lower-layer memory allocation.  The programming
+language is deliberate.  A local jet is not primarily local angular momentum
+being expelled.  It is the visible return value of a remote angular-momentum
+callback.
+
+Let \(\Delta\vec L_{\rm rem}\) denote angular momentum carried by a mostly
+one-dimensional Info-Ball/macrophoton transfer from a remote origin, and let
+\(\hat q\) be the incoming transfer direction at the receiving Core Ball.  Let
+\(\vec S_{\rm core}\) be the receiver spin register.  The callback torque is
+modeled by the component of the remote instruction not already aligned with the
+receiver spin:
+\begin{equation}
+  \vec\tau_{\rm cb}
+  =
+  \Gamma
+  \left[
+  \Delta\vec L_{\rm rem}
+  -
+  (\Delta\vec L_{\rm rem}\cdot\hat S_{\rm core})\hat S_{\rm core}
+  \right],
+  \label{eq:callback_torque}
+\end{equation}
+so that
+\begin{equation}
+  \frac{\dd\vec S_{\rm core}}{\dd t}=\vec\tau_{\rm cb}.
+  \label{eq:core_spin_callback}
+\end{equation}
+The observed jet is the local visible trace of this receiver-side callback:
+\begin{equation}
+  \hat j_{\rm jet}\parallel\hat S_{\rm core}(t)
+  \qquad\text{or}\qquad
+  \hat j_{\rm jet}\parallel
+  \frac{\dd\hat S_{\rm core}}{\dd t},
+  \label{eq:jet_return_value}
+\end{equation}
+depending on whether the visible jet follows the instantaneous spin axis or
+the precession axis.
+
+The callback has an orientation-dependent routing efficiency.  If reflection is
+most efficient along the polar spin axis, a minimal efficiency model is
+\begin{equation}
+  \eta_{\rm cb}^{\rm polar}=(\hat q\cdot\hat S_{\rm core})^2.
+  \label{eq:callback_eff_polar}
+\end{equation}
+If reflection is most efficient through the receiver equatorial address plane,
+then
+\begin{equation}
+  \eta_{\rm cb}^{\rm eq}=1-(\hat q\cdot\hat S_{\rm core})^2.
+  \label{eq:callback_eff_equator}
+\end{equation}
+The core evolves to minimize callback routing cost,
+\begin{equation}
+  \mathcal C_{\rm cb}=1-\eta_{\rm cb},
+  \label{eq:callback_cost}
+\end{equation}
+so spinning Core-Ball equators tend to self-align for efficient reflection of
+remote Info-Ball transfers.
+
+The channel split is the same rank-23 split used in TFOFT.  The visible return
+value carries the addition-efficient channel,
+\begin{equation}
+  \Delta\vec L_{\rm return}=\frac{4}{27}\Delta\vec L_{\rm rem},
+  \label{eq:return_channel_427}
+\end{equation}
+while the rank-23 overhead is written into the lower fractal layer as memory
+allocation / inertial debt,
+\begin{equation}
+  \Delta\vec L_{\rm lower}=\frac{23}{27}\Delta\vec L_{\rm rem}.
+  \label{eq:lower_channel_2327}
+\end{equation}
+Thus a jet is not exhaust from the local disk; it is a return value produced
+when a receiving Core-Ball executes a remote angular-momentum callback.  The
+associated dark/inertial structure is the lower-layer memory allocation needed
+to execute that callback.
 
 \subsection{Quantum Fourier Transform as a full-mutual-contact protocol}
 
@@ -926,6 +1009,86 @@ correlations, CLASSP gains a possible experimental foothold.
 \section{Candidate Electromagnetic Limit from Edge-Phase Holonomies}
 \label{sec:maxwell}
 % ===================================================================
+
+
+\subsection{Electromagnetism as lower-layer callback bookkeeping}
+\label{sec:em_callback_bookkeeping}
+
+The holonomy construction below gives the graph-theoretic form of the gauge
+field.  The physical interpretation in TFOFT is that the vector potential is
+the unresolved lower-layer momentum-flow register created by Core-Ball
+callbacks.  Visible Info-Ball transfer carries the addition-efficient return
+value, while the rank-23 overhead is written into the lower fractal layer as
+orthogonal linear-momentum debt.
+
+Let \(\Delta\vec L_{\rm rem}\) be the remote angular-momentum instruction
+received at a Core-Ball callback register.  At callback radius \(r_{\rm cb}\),
+with incoming direction \(\hat q\) and local radial direction \(\hat r\), define
+an orthogonal lower-layer injection direction
+\begin{equation}
+  \hat n_\perp=
+  \frac{\hat r\times\hat q}{|\hat r\times\hat q|}.
+  \label{eq:orthogonal_injection_direction}
+\end{equation}
+The corresponding lower-layer linear-momentum write is modeled as
+\begin{equation}
+  \Delta\vec p_{\rm lower}
+  =
+  \frac{23}{27}
+  \frac{|\Delta\vec L_{\rm rem}|}{r_{\rm cb}}
+  \hat n_\perp.
+  \label{eq:lower_momentum_write}
+\end{equation}
+Equivalently, relative to the visible return channel,
+\begin{equation}
+  \Delta\vec p_{\rm lower}
+  =
+  \frac{23}{4}
+  \frac{|\Delta\vec L_{\rm return}|}{r_{\rm cb}}
+  \hat n_\perp.
+  \label{eq:lower_momentum_write_visible}
+\end{equation}
+This is not a local jet expelling local angular momentum.  It is the memory
+write cost of executing a remote callback.
+
+Let \(\vec\Pi_{\rm lower}\) be the coarse-grained lower-layer momentum density
+produced by many such callbacks.  Define the effective FTC vector potential by
+\begin{equation}
+  \vec A_{\rm FTC}=\lambda_A\vec\Pi_{\rm lower}.
+  \label{eq:A_FTC_lower_momentum}
+\end{equation}
+Then the magnetic-looking field is the curl of the lower-layer momentum-flow
+register,
+\begin{equation}
+  \vec B_{\rm eff}=\nabla\times\vec A_{\rm FTC},
+  \label{eq:B_curl_lower_momentum}
+\end{equation}
+and the electric-looking field is the time-changing callback pressure,
+\begin{equation}
+  \vec E_{\rm eff}=-\nabla\phi-\partial_t\vec A_{\rm FTC}.
+  \label{eq:E_callback_pressure}
+\end{equation}
+Thus ordinary electromagnetic language is interpreted as continuum bookkeeping
+for hidden lower-layer momentum allocation.  Intergalactic magnetic-field-line
+behavior, jet alignment, and hypervelocity-star escape corridors are expected
+to follow the same callback routing network rather than independent local
+exhaust processes.
+
+With the Lorenz-gauge condition
+\begin{equation}
+  \nabla\cdot\vec A_{\rm FTC}+\frac{1}{c^2}\partial_t\phi=0,
+  \label{eq:lorenz_ftc}
+\end{equation}
+conservation of lower-layer callback momentum propagating at speed \(c\) gives
+the candidate wave equation
+\begin{equation}
+  \left(\nabla^2-\frac{1}{c^2}\partial_t^2\right)\vec A_{\rm FTC}
+  =-\mu_0\vec J_{\rm eff},
+  \label{eq:A_wave_callback}
+\end{equation}
+where \(\vec J_{\rm eff}\) is the effective current associated with callback
+momentum writes.  This is the physical route from remote angular-momentum
+callbacks to the Maxwell holonomy limit.
 
 \subsection{U(1) edge phases and discrete field strength}
 
@@ -1342,15 +1505,16 @@ final two-surface norm-map cost is $C_{\rm map}=2\sqrt2$:
 On the same graph, directed light-speed tangency walks with Gyro-Ball
 chirality mixing coarse-grain to the Dirac equation~\cite{Ord1983,Dirac1928},
 with the spin connection geometrically induced by inter-sphere frame rotation.
-U(1) edge-phase holonomies provide a candidate graph route to Maxwell
-electromagnetism.  The tensor sector is represented by a visual-relocation
-ansatz in which $G_{\mu\nu}$ records apparent stress-energy generated by
-spherical tangency-lens displacement rather than fundamental smooth curvature.
+Lower-layer callback momentum bookkeeping and U(1) edge-phase holonomies
+provide a candidate graph route to Maxwell electromagnetism.  The tensor sector
+is not derived here; it is deferred to a microscopic treatment of spatial
+packing dynamics, frame transport, and two-ball boundary exchange.
 
 GR and QM are not fundamental competitors in this ontology. They are effective
 continuum shadows of a single finite fractal sphere-packing computation:
 radius-clock gradients become gravity, directed tangency zigzags become
-quantum matter, and edge-phase windings become gauge fields.
+quantum matter, and lower-layer callback momentum/edge-phase windings become
+gauge fields.
 
 The immediate empirical test is galactic. Correcting the Fermi-bubble scale
 from $50\,\kpc$ to $50\,\kly\approx15\,\kpc$ moves the predicted equatorial
