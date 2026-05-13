@@ -42,7 +42,7 @@ Gravity and Dirac Quantum Mechanics}
 \maketitle
 
 \begin{abstract}
-The companion TFOFT paper proposes that the universe is a finite computational object defined by a dynamical Apollonian-Soddy sphere-packing fractal quine under Presburger arithmetic. This paper develops the first continuum-limit equations of that framework. The sphere radius is treated as a local clock field; its coarse-grained graph dynamics yields Newtonian gravity and the weak-field time component of general relativity. On the same tangency graph, a one-dimensional chiral transfer channel with a two-state boundary-spin register yields the 1+1 dimensional Dirac equation, with mass interpreted as the chirality-reversal rate per local radius-clock tick. The extension to full curved 3+1 dimensional spinor dynamics is stated as a frame-rotation ansatz, not a theorem. Electromagnetism is sketched as lower-layer callback momentum bookkeeping whose graph form is a candidate edge-phase holonomy limit. The paper also derives a corrected Milky Way prediction: if the Fermi bubbles are the polar lobes of a scaled 3dz2 boundary state, then a weaker equatorial "Fermi donut" should appear at roughly 10 to 15 kpc, with an inner shoulder near 8 to 12 kpc and one-quarter the angular density contrast of the polar lobes. This places the key observational test in the Gaia DR3 outer-disk regime.
+The companion TFOFT paper proposes that the universe is a finite computational object defined by a dynamical Apollonian-Soddy sphere-packing fractal quine under Presburger arithmetic. This paper develops the first continuum-limit equations of that framework. The sphere radius is treated as a local clock field; its coarse-grained graph dynamics yields Newtonian gravity and the weak-field time component of general relativity. On the same tangency graph, a one-dimensional chiral transfer channel with a two-state boundary-spin register yields the 1+1 dimensional Dirac equation, with mass interpreted as the chirality-reversal rate per local radius-clock tick. The extension to full curved 3+1 dimensional spinor dynamics is stated as a frame-rotation ansatz, not a theorem. Electromagnetism is sketched as lower-layer callback momentum bookkeeping whose graph form is a candidate edge-phase holonomy limit. The paper also derives a testable Milky Way prediction: if the Fermi bubbles are the polar lobes of a scaled 3dz2 boundary state, then a weaker equatorial "Fermi donut" should appear at roughly 10 to 15 kpc, with an inner shoulder near 8 to 12 kpc and one-quarter the angular density contrast of the polar lobes. This places the key observational test in the Gaia DR3 outer-disk regime.
 
 \end{abstract}
 \tableofcontents
@@ -186,6 +186,30 @@ $\dd\tau=e^u\dd t\approx(1+u)\dd t$ gives
 \end{equation}
 \emph{Gravity is the coarse-grained logarithmic gradient of the ASSP
 radius-clock field.}
+
+The metric form
+\[
+  ds^2=-c^2d\tau^2+d\ell_G^2
+\]
+is consistent with the TFOFT definition of time as a Gyro-Ball clock register.
+Kepler closure supplies a quadratic period relation,
+\[
+  T_{\rm orb}^2=\frac{4\pi^2}{GM}a^3,
+\]
+so the continuum time coordinate naturally appears through a squared proper-time
+element. In CLASSP this becomes
+\[
+  d\tau=e^u dt,\qquad
+  u=\ln(R/R_0),
+\]
+and hence
+\[
+  ds^2=-c^2e^{2u}dt^2+d\ell_G^2.
+\]
+Thus the Lorentzian time term is the coarse-grained form of a squared
+Gyro-Ball orbital clock, rather than an independently postulated continuum
+time dimension.
+
 
 \subsection{Normalized graph Laplacian}
 
@@ -478,6 +502,15 @@ This is the key technical simplification: the Dirac structure does not first
 require a complete derivation of a \(3+1\)-dimensional continuum spin bundle.
 A single active tangency line plus a binary half-turn register is already
 enough to generate the Dirac equation in the controlled continuum limit.
+
+The microscopic CLASSP interaction is path-local: an Info Ball propagates along
+an actual active tangency channel.  The continuum Dirac equation is the
+long-wavelength limit of that channel update.  Consequently, the ultraviolet
+problem of continuum QFT is not present at the microscopic level; there is no
+completed continuum of arbitrarily short virtual modes to integrate over.
+When continuum observers use Feynman diagrams, the required renormalized
+parameters encode the finite ASSP cutoff, hidden lower-layer channels, and
+unresolved tangency-path structure.
 
 \subsection{Half-turn boundary register}
 
@@ -1265,7 +1298,7 @@ We therefore define
   H_{\rm FB}\equiv\text{polar Fermi-bubble height}\sim10\text{--}15\,\kpc.
   \label{eq:HFB}
 \end{equation}
-This scale correction is crucial: $50\,\kly$ is not $50\,\kpc$.
+
 
 The TFOFT rank fraction $(23/27)$ may be read as setting the polar-lobe height
 relative to the full local halo/boundary scale,
@@ -1418,7 +1451,7 @@ providing exactly the radial coverage needed to search for the corrected
 $3d_{z^2}$ equatorial boundary~\cite{Wang2023}.
 
 This is not a claim that Gaia has already detected the Fermi donut. The point
-is sharper: once the incorrect $50\,\kpc$ scale is removed, the TFOFT
+is sharper: when using the correct scale, the TFOFT
 prediction lands in the same $R\sim10$--$20\,\kpc$ outer-disk regime where
 Gaia already indicates that simple spherical-halo modeling is under stress or
 at least model-dependent. The $3d_{z^2}$ model predicts a specific angular and
@@ -1516,8 +1549,8 @@ radius-clock gradients become gravity, directed tangency zigzags become
 quantum matter, and lower-layer callback momentum/edge-phase windings become
 gauge fields.
 
-The immediate empirical test is galactic. Correcting the Fermi-bubble scale
-from $50\,\kpc$ to $50\,\kly\approx15\,\kpc$ moves the predicted equatorial
+The immediate empirical test is galactic. Using the Fermi-bubble scale
+of $50\,\kly\approx15\,\kpc$ put the predicted equatorial
 $3d_{z^2}$ ``Fermi donut'' into the outer visible disk, with a fiducial inner
 shoulder near $8$--$12\,\kpc$, a peak near $10$--$15\,\kpc$, one-quarter
 the polar-lobe angular density contrast, and a preferred outward orientation
