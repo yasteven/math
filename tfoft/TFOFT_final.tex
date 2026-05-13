@@ -33,11 +33,9 @@ Star=Electron+Atom=Galaxy Quine}
 \begin{document}
 
 \maketitle
-
 \begin{abstract}
-We propose a new principle of physics called MATHICCS, requiring that every mathematical axiom used in a physical law must correspond to an operation persistently realizable by a physical subsystem. Applying this criterion leads to a discrete, self-similar, singularity-free geometry: the Apollonian-Soddy Sphere Packing (ASSP). We conjecture that three-dimensional dynamics on this packing forms a self-computing fractal quine whose registers store angular and linear momentum as cross-scale equivalents. This framework derives the fine-structure constant as alpha inverse equals 4 pi cubed plus pi squared plus pi, or 137.036, from the minimal Presburger computational cost of a Soddy sphere state update. It derives the 77-layer star-electron hierarchy from the rank-23 half-boundary mass register, the hydrogen binding energy from the Gyro Ball equation, and the gravitational constant G from atomic structure by two independent first-principles routes. Empirical cross-checks include the 25-arcminute CMB seam, the observed electron-star hierarchy, and the near-match with Karlsson quasar logarithmic periodicity. A pending falsifiable prediction is given for the ytterbium fine-structure constant. The model is presented as a zero-free-parameter ontology whose derived consequences are compared against major tensions in observational physics.
+We propose MATHICCS, an operational criterion requiring every mathematical axiom used in a physical law to correspond to a persistently realizable physical operation. Applied to the Apollonian-Soddy Sphere Packing (ASSP), this criterion motivates a discrete, singularity-free, self-computing fractal quine whose tangency registers store angular and linear momentum across scales. The framework gives zero-parameter derivations of alpha^-1 = 4*pi^3 + pi^2 + pi = 137.036, the two-ball quine depth T_two-ball = 138.955, the electron-star logarithmic mass hierarchy ln(M_sun/m_e) = 138.936, the 77-layer self-encoding register, the hydrogen binding energy E_H = alpha^2*m_e*c^2/2 = 13.606 eV, the hydrogen 1/n^2 spectral ladder through photonic Core-Star angular-momentum transfer, and recursive ASSP accounts of the electron mass, proton mass, proton/electron mass ratio, and gravitational coupling. Gravity is obtained by two independent parameter-free routes: a homogeneous geometric baseline G0 = 6.40e-11 SI and a local virialized estimate G_dyn = 6.70e-11 SI. The same architecture yields dark/visible channel fractions 23/27 and 4/27, Karlsson-like logarithmic quasar spacing, the 25-arcminute CMB seam, and Fermi-bubble morphology. A pending ytterbium-174 fine-structure prediction provides a direct falsification test.
 \end{abstract}
-
 
 % ==================================================================
 %  PART A:  MATHICCS => FRACTAL GEOMETRY
@@ -2522,24 +2520,43 @@ The observed angular offset of the Fermi bubble lobes from the Milky Way's rotat
 
 \subsubsection{Prediction 4 (Pending): Ytterbium-174 Fine-Structure Constant}
 
-TFOFT predicts a logarithmic running of $\alpha^{-1}$ with atomic mass $M$, reflecting the Presburger-ASSP layer depth:
+TFOFT predicts a local logarithmic running of $\alpha^{-1}$ with atomic mass, calibrated by the Rb/Cs tension:
 \begin{equation}
-\alpha^{-1}(M) = \alpha^{-1}_e + \beta \ln(M/M_e),
-\quad \beta = -3.767\times10^{-7}
-\quad\text{(calibrated from Rb/Cs tension~\cite{Guena2012})}.
+\beta =
+\frac{\alpha^{-1}_{\rm Cs}-\alpha^{-1}_{\rm Rb}}
+{\ln(M_{\rm Cs}/M_{\rm Rb})}
+=
+\frac{137.035999046-137.035999206}
+{\ln(133/87)}
+\approx -3.769663894\times10^{-7}.
 \end{equation}
-For $^{174}$Yb ($\ln(M_{\rm Yb}/M_e) \approx 137.21$):
+Using $^{87}$Rb as the anchor and extrapolating to $^{174}$Yb,
 \begin{align}
-\Delta\alpha^{-1}_{\rm Yb} &\approx -5.17\times10^{-5}, \\
-\alpha^{-1}_{\rm Yb} &\approx \boxed{137.03599813 \pm 25\ \text{ppb}}.
+\Delta\alpha^{-1}_{\rm Yb}
+&=
+\beta\ln(M_{\rm Yb}/M_{\rm Rb})
+=
+(-3.769663894\times10^{-7})\ln(174/87) \\
+&\approx -2.613043727\times10^{-7}, \\
+\alpha^{-1}_{\rm Yb}
+&=
+\alpha^{-1}_{\rm Rb}
++
+\Delta\alpha^{-1}_{\rm Yb} \\
+&=
+137.035999206
+-
+0.0000002613043727 \\
+&\approx
+\boxed{137.035998944696}.
 \end{align}
-This represents a $7.8\sigma$ deviation from the electron $g-2$ baseline, falsifiable by NIST Yb-174 lattice clock measurements expected Q1--Q2 2027.
+This is a direct falsifiable prediction of the Rb/Cs-calibrated density-dependent $\alpha$ variation mechanism, testable by high-precision Yb-174 lattice-clock measurements.
 
 \textbf{Falsification criteria:}
 \begin{itemize}
-  \item $\alpha^{-1}_{\rm Yb} > 137.03599900$ ($<2\sigma$): rejects the density-dependent $\alpha$ variation mechanism.
-  \item $\alpha^{-1}_{\rm Yb} \in [137.03599788, 137.03599838]$ ($2$--$5\sigma$): supports TFOFT.
-  \item $\alpha^{-1}_{\rm Yb} < 137.03599788$ ($>5\sigma$): strong confirmation.
+  \item $\alpha^{-1}_{\rm Yb} > 137.03599900$: rejects the Rb/Cs-calibrated density-dependent $\alpha$ variation mechanism.
+  \item $\alpha^{-1}_{\rm Yb} \approx 137.035998945$: supports the Rb/Cs-calibrated TFOFT prediction.
+  \item A statistically significant value below $137.035998945$: would indicate a stronger-than-logarithmic density dependence or an additional substrate contribution.
 \end{itemize}
 
 \subsection{Implications for Cosmology: The Two-Component Redshift}
@@ -2861,7 +2878,7 @@ structure:
   the Fermi-bubble angle and extent~\cite{Su2010,Dobler2010,Ackermann2014,Sarkar2015}.
   It also gives a pending falsifiable prediction,
   \[
-  \alpha^{-1}_{\rm Yb}=137.035998945\pm20\,{\rm ppb},
+  \alpha^{-1}_{\rm Yb}=137.035998944696,
   \]
   testable by high-precision Yb-174 lattice-clock measurements.
 
