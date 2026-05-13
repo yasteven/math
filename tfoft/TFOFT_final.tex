@@ -33,8 +33,7 @@ Star=Electron+Atom=Galaxy Quine}
 \begin{document}
 
 \maketitle
-\begin{abstract}
-We propose MATHICCS, an operational criterion requiring every mathematical axiom used in a physical law to correspond to a persistently realizable physical operation. Applied to the Apollonian-Soddy Sphere Packing (ASSP), this criterion motivates a discrete, singularity-free, self-computing fractal quine whose tangency registers store angular and linear momentum across scales. The framework gives zero-parameter derivations of alpha^-1 = 4*pi^3 + pi^2 + pi = 137.036, the two-ball quine depth T_two-ball = 138.955, the electron-star logarithmic mass hierarchy ln(M_sun/m_e) = 138.936, the 77-layer self-encoding register, the hydrogen binding energy E_H = alpha^2*m_e*c^2/2 = 13.606 eV, the hydrogen 1/n^2 spectral ladder through photonic Core-Star angular-momentum transfer, and recursive ASSP accounts of the electron mass, proton mass, proton/electron mass ratio, and gravitational coupling. Gravity is obtained by two independent parameter-free routes: a homogeneous geometric baseline G0 = 6.40e-11 SI and a local virialized estimate G_dyn = 6.70e-11 SI. The same architecture yields dark/visible channel fractions 23/27 and 4/27, Karlsson-like logarithmic quasar spacing, the 25-arcminute CMB seam, and Fermi-bubble morphology. A pending ytterbium-174 fine-structure prediction provides a direct falsification test.
+\begin{abstract}We propose a new principle of physics, MATHICCS, requiring that every mathematical axiom used in a physical law must correspond to an operation persistently realizable by a physical subsystem. Applying this criterion motivates reality's geometry as a discrete, self-similar, singularity-free structure: the Apollonian Soddy Sphere Packing, or ASSP. We conjecture that 3D dynamics on this packing is a self-computing fractal: a dynamical computer whose registers are fractal-congruent objects that store angular and linear momentum as cross-scale registers. This fractal quine is proposed as a self-describing, MATHICCS-valid physical theory: it derives the fine-structure constant alpha inverse TFOFT equals 4 pi cubed plus pi squared plus pi equals 137.036 from the minimal Presburger computational cost of a Soddy sphere state update, derives the 77-layer star-electron hierarchy from the rank-23 half-boundary mass register, derives the hydrogen binding energy from the Gyro Ball IO equation E equals alpha squared times electron mass times c squared divided by 2 equals 13.606 eV, and derives the gravitational constant G from atomic structure by two independent first-principles routes. We present empirical cross-checks involving the 25-arcminute CMB seam, the observed electron-star hierarchy, and the near-match between Karlsson quasar logarithmic periodicity and the derived Info-channel leakage; the Karlsson complement also gives a 77-layer mass-channel spot check inside the same 137 to 139 register interval. We present one pending falsifiable prediction, alpha inverse Yb equals 137.035998945 with one-sigma uncertainty 0.000000045. The framework is presented as a zero-free-parameter ontology whose derived consequences are compared against major tensions in observational physics.
 \end{abstract}
 
 % ==================================================================
@@ -2532,31 +2531,67 @@ TFOFT predicts a local logarithmic running of $\alpha^{-1}$ with atomic mass, ca
 \end{equation}
 Using $^{87}$Rb as the anchor and extrapolating to $^{174}$Yb,
 \begin{align}
-\Delta\alpha^{-1}_{\rm Yb}
+r_{\rm Yb}
 &=
-\beta\ln(M_{\rm Yb}/M_{\rm Rb})
+\frac{\ln(M_{\rm Yb}/M_{\rm Rb})}
+{\ln(M_{\rm Cs}/M_{\rm Rb})}
 =
-(-3.769663894\times10^{-7})\ln(174/87) \\
-&\approx -2.613043727\times10^{-7}, \\
+\frac{\ln(174/87)}{\ln(133/87)}
+\approx 1.633082490, \\
 \alpha^{-1}_{\rm Yb}
 &=
 \alpha^{-1}_{\rm Rb}
 +
-\Delta\alpha^{-1}_{\rm Yb} \\
+r_{\rm Yb}
+\left(
+\alpha^{-1}_{\rm Cs}-\alpha^{-1}_{\rm Rb}
+\right) \\
 &=
 137.035999206
--
-0.0000002613043727 \\
++
+1.633082490
+\left(
+137.035999046-137.035999206
+\right) \\
 &\approx
-\boxed{137.035998944696}.
+137.035998944696.
 \end{align}
-This is a direct falsifiable prediction of the Rb/Cs-calibrated density-dependent $\alpha$ variation mechanism, testable by high-precision Yb-174 lattice-clock measurements.
+
+Propagating the published Rb and Cs uncertainties,
+$\sigma_{\rm Rb}=0.000000011$ and $\sigma_{\rm Cs}=0.000000027$, gives
+\begin{equation}
+\sigma_{\rm Yb}
+=
+\sqrt{
+(1-r_{\rm Yb})^2\sigma_{\rm Rb}^2
++
+r_{\rm Yb}^2\sigma_{\rm Cs}^2
+}
+\approx
+0.000000044640.
+\end{equation}
+Thus the falsifiable Yb-174 prediction is
+\begin{equation}
+\boxed{
+\alpha^{-1}_{\rm Yb}
+=
+137.035998945(45)
+}.
+\end{equation}
+
+Relative to the electron $g-2$ value
+$\alpha^{-1}_{g-2}=137.035999166(15)$, this central prediction lies
+$14.75\sigma$ below $g-2$ if only the $g-2$ uncertainty is used. Including
+the Rb/Cs calibration uncertainty gives a combined offset of approximately
+$4.70\sigma$. This makes the Yb measurement a direct test of whether the
+Rb/Cs tension reflects a real density-dependent shift rather than experimental
+scatter.
 
 \textbf{Falsification criteria:}
 \begin{itemize}
-  \item $\alpha^{-1}_{\rm Yb} > 137.03599900$: rejects the Rb/Cs-calibrated density-dependent $\alpha$ variation mechanism.
-  \item $\alpha^{-1}_{\rm Yb} \approx 137.035998945$: supports the Rb/Cs-calibrated TFOFT prediction.
-  \item A statistically significant value below $137.035998945$: would indicate a stronger-than-logarithmic density dependence or an additional substrate contribution.
+  \item $\alpha^{-1}_{\rm Yb} > 137.035999034$: outside the $2\sigma$ upper prediction band; rejects the Rb/Cs-calibrated density-dependent $\alpha$ variation mechanism.
+  \item $\alpha^{-1}_{\rm Yb} \in [137.035998855,\,137.035999034]$: within the $2\sigma$ prediction band; supports the Rb/Cs-calibrated TFOFT prediction.
+  \item $\alpha^{-1}_{\rm Yb} < 137.035998855$: outside the $2\sigma$ lower prediction band; indicates either stronger-than-logarithmic density dependence or an additional substrate contribution.
 \end{itemize}
 
 \subsection{Implications for Cosmology: The Two-Component Redshift}
