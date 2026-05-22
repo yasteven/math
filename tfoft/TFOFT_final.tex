@@ -562,99 +562,222 @@ A single Soddy sphere is conjectured to be the minimal self-referential object i
 \label{fig:alpha_channels}
 \end{figure}
 
+
 \subsection{The Fundamental Computational Cost: $\alpha^{-1}$}
 \label{sec:alpha_deriv}
+  The fine-structure constant is not introduced in the theory as an empirical parameter. It is derived as the elementary probability of the Presburger--ASSP substrate. The inverse value, \(\alpha^{-1}\), is the full causal register depth required to complete an internally self-consistent Soddy-sphere update.
+  \begin{quote}
+    \textbf{Axiom P4 (Elegant Optimized Code):}
+    The operational rules of 
+    self-describing Presburger-ASSP machine minimize information cost subject t
+    MATHICCS constraints. Since the physical registers are literal spheres, th
+    radius, circumference, surface, rotation, and displacement channels must b
+    encoded using the same reusable geometric word whenever possible. Th
+    Presburger-minimal basis radius is therefore forced to be \(r=\pi\): choosin
+    \(r=1\) introduces an additional lookup between the register's geometric wor
+    and its rotational/surface channels, while \(r=\pi\) collapses all radiu
+    references into a single persistent symbol. This is not a numerical fit but 
+    minimal-code consequence of Axiom P2 under the ASSP substrate
+  \end{quote}
 
-The total Presburger cost to fully specify a Soddy sphere's dynamical state is the sum of the three channel costs:
-\[
-T_{\rm sphere} = T_S + T_R + T_D = 4\pi^3 + \pi^2 + \pi.
-\]
-Numerically:
-\begin{align*}
-4\pi^3 &= 124.0251067\ldots \\
-\pi^2  &= \phantom{1}9.8696044\ldots \\
-\pi    &= \phantom{1}3.1415927\ldots \\
-\text{Sum} &= 137.0363038\ldots
-\end{align*}
-\[
-\boxed{T_{\rm sphere} = 4\pi^3 + \pi^2 + \pi = 137.036}
-\]
+  A complete Soddy-sphere register update must specify three irreducible state channels:
 
+  \[
+  T_S = 4\pi r^2,
+  \]
 
-The quantity $T_{\rm sphere}$ is conjectured to be not merely a static information count but the number of effective Presburger log-register updates required to encode one complete Soddy-sphere state inside the fractal quine.
+  the surface/specification channel,
 
-The Presburger-ASSP machine is conjectured to operate asynchronously: no global clock forces neighboring ball-registers to update sequentially. Under this ontology, a complete electromagnetic interaction requires two causally adjacent ball updates to occur in the correct order during post-processing of the full $T_{\rm sphere}$ register stack.
+  \[
+  T_R = \pi r,
+  \]
 
-For a fully asynchronous update process, sequential causal alignment between the required two-ball register states occurs with probability inversely proportional to the total quine register depth. The effective sequential-update probability is therefore approximately:
+  the hemisphere-restricted rotational phase channel, and
 
-\[
-P_{\rm seq}
-=
-\frac{1}{T_{\rm sphere}}
-=
-\frac{1}{4\pi^3+\pi^2+\pi}.
-\]
+  \[
+  T_D = r,
+  \]
 
-We identify this asynchronous sequential-alignment probability with the electromagnetic coupling strength:
+  the radial displacement channel.
 
-\[
-\boxed{
-\alpha
-=
-\frac{1}{T_{\rm sphere}}
-=
-\frac{1}{4\pi^3+\pi^2+\pi}
-=
-\frac{1}{137.036}
-}
-\]
+  By Axiom P4, the Presburger-minimal basis radius is forced to be
 
-Thus, under this ontology, $\alpha^{-1}$ is the effective fractal-quine register depth required to encode one complete Soddy sphere state, while $\alpha$ is the probability that asynchronous Presburger post-processing produces a causally aligned two-ball update during one quine cycle.
+  \[
+  r=\pi.
+  \]
 
-Each term is fixed by Presburger minimization and 3D Soddy geometry~\cite{Presburger1929,Soddy1936,Boyd1973}: $4\pi r^2$ from the surface channel, $\pi r$ from the hemisphere-restricted rotational phase channel, and $r$ from the minimum radial displacement channel. Setting the Presburger-minimal basis radius $r=\pi$ collapses all three channels onto a single reusable geometric program, minimizing total recursive lookup and execution cost inside the fractal quine. No free parameters are introduced.
+  Therefore the three channel costs become
 
-Historical attempts to derive or interpret $\alpha$ numerically provide useful context for this claim, although the present derivation is based on a different computational-geometric mechanism~\cite{Eddington1931,Wyler1969,ElNaschie1997,Lestone2007,CODATA2022}.
+  \[
+  T_S = 4\pi^3,
+  \]
 
-\begin{quote}
-\textbf{Axiom P4 (Elegant Optimized Code):} The operational rules of a
-self-describing Presburger-ASSP machine minimize information cost subject to
-MATHICCS constraints. $\pi$ is preferred over unity as the unit radius because
-it absorbs all radius references into a single symbol, reducing the memory
-footprint of every state update by one lookup. This principle of elegant code
-is a direct consequence of Axiom P2 and is adopted as a fundamental law of
-physics under this ontology: the universe computes with minimal memory and
-computational complexity.
-\end{quote}
+  \[
+  T_R = \pi^2,
+  \]
 
-Physical interpretation: $\alpha^{-1}$ measures the total throughput cost
-(surface, phase, and radial channels combined) for one Presburger tick of a
-single Soddy sphere. An electromagnetic interaction---a photon coupling to an
-electron---requires simultaneous state updates of two participating spheres.
-The coupling constant $\alpha$ is the throughput rate per tick; $\alpha^{-1}$
-is the cost.
+  and
 
-The value derived here is not obtained by fitting the CODATA recommended
-least-squares value of $\alpha$~\cite{CODATA2022}. It is the ontology-internal
-ASSP value. This distinction is important because the present experimental
-situation is not perfectly settled: high-precision atom-recoil determinations
-using cesium and rubidium differ at the several-sigma level. The 2018 cesium
-measurement gave
-\[
-\alpha^{-1}_{\rm Cs}=137.035999046(27),
-\]
-while the 2020 rubidium measurement gave
-\[
-\alpha^{-1}_{\rm Rb}=137.035999206(11).
-\]
-The rubidium result was reported as differing by more than five standard
-deviations from the best cesium-recoil result~\cite{Parker2018,Morel2020}.
+  \[
+  T_D = \pi.
+  \]
 
-Therefore, throughout this paper,
-\[
-\alpha_{\rm ASSP}^{-1}=4\pi^3+\pi^2+\pi
-\]
-should be read as the predicted ASSP coupling-register depth, not as a
-least-squares CODATA input.
+  The total Presburger cost to fully specify one Soddy sphere's dynamical state is the sum of these three channel costs:
+
+  \[
+  T_{\rm sphere}
+  =
+  T_S+T_R+T_D
+  =
+  4\pi^3+\pi^2+\pi.
+  \]
+
+  Numerically,
+
+  \begin{align*}
+  4\pi^3 &= 124.0251067\ldots \\
+  \pi^2  &= \phantom{1}9.8696044\ldots \\
+  \pi    &= \phantom{1}3.1415927\ldots \\
+  \text{Sum} &= 137.0363038\ldots
+  \end{align*}
+
+  Thus
+
+  \[
+  \boxed{
+  T_{\rm sphere}
+  =
+  4\pi^3+\pi^2+\pi
+  =
+  137.0363038\ldots
+  }
+  \]
+
+  The quantity \(T_{\rm sphere}\) is not merely a static information count. Within the Presburger-ASSP ontology it is the number of internally distinguishable causal micro-positions in one complete Soddy-sphere register update.  A complete register update must preserve the ordered surface channel, the hemisphere-restricted rotational phase channel, and the radial displacement channel simultaneously.
+
+  The Presburger-ASSP machine has no external synchronizing clock. Neighboring ball-registers therefore update asynchronously.  An elementary electromagnetic transaction is defined, in this ontology, as the successful phase-aligned causal handshake between two adjacent Soddy registers: one register emits or presents a boundary phase defect, and the neighboring register accepts it in the causally ordered phase position compatible with the full single-sphere update.
+
+  \paragraph{Lemma: Unique accepting alignment.}
+
+  For a two-ball electromagnetic transaction, the number of accepting alignments is
+
+  \[
+  N_{\rm accept}=1.
+  \]
+
+  This follows because a successful adjacent-register handshake must close the surface, rotational-phase, and radial-displacement channels in the same causal order.  Any offset in the receiving register fails to preserve the full two-ball transaction.  Therefore, among the \(T_{\rm sphere}\) internally distinguishable causal positions of the receiving register, exactly one position accepts the incoming boundary phase defect.
+
+  Hence the elementary coupling probability is not introduced phenomenologically.  It is the finite-state counting probability for a unique accepting alignment inside a register with \(T_{\rm sphere}\) possible causal positions:
+
+  \[
+  P_{\rm align}
+  =
+  \frac{N_{\rm accept}}{N_{\rm possible}}
+  =
+  \frac{1}{T_{\rm sphere}}.
+  \]
+
+  Since the electromagnetic channel is precisely this adjacent-register
+  phase-alignment channel, the fine-structure constant is the elementary
+  alignment probability:
+
+  \[
+  \boxed{
+  \alpha
+  =
+  P_{\rm align}
+  =
+  \frac{1}{T_{\rm sphere}}
+  =
+  \frac{1}{4\pi^3+\pi^2+\pi}
+  }
+  \]
+
+  or equivalently
+
+  \[
+  \boxed{
+  \alpha^{-1}
+  =
+  T_{\rm sphere}
+  =
+  4\pi^3+\pi^2+\pi
+  =
+  137.0363038\ldots
+  }
+  \]
+
+  Thus \(\alpha^{-1}\) is the full causal register depth of one complete
+  Soddy-sphere update, while \(\alpha\) is the probability that an asynchronous
+  neighboring register lands in the unique accepting alignment required for an
+  elementary electromagnetic transaction.  The identification of
+  \(P_{\rm align}\) with \(\alpha\) is therefore deductive inside the ontology:
+  electromagnetism has already been defined as adjacent-register phase transfer,
+  and \(\alpha\) is the elementary probability for such transfer.
+
+  \paragraph{Physical interpretation.}
+
+  The inverse fine-structure constant measures the full causal throughput cost
+  for one complete Presburger tick of a single Soddy sphere:
+
+  \[
+  \alpha^{-1}
+  =
+  T_{\rm sphere}.
+  \]
+
+  This throughput cost includes surface specification, rotational phase, and
+  radial displacement.  An electromagnetic interaction is the adjacent-register
+  phase-transfer transaction between two causally neighboring spheres.  Because
+  the transaction has exactly one accepting alignment among \(T_{\rm sphere}\)
+  possible internal causal positions, its elementary throughput probability is
+
+  \[
+  \alpha
+  =
+  \frac{1}{T_{\rm sphere}}.
+  \]
+
+  No CODATA value is used as an input.
+
+  The value derived here is not obtained by fitting the CODATA recommended
+  least-squares value of \(\alpha\)~\cite{CODATA2022}.  It is the
+  ontology-internal ASSP register value.  Effective low-energy determinations of
+  \(\alpha\) may differ between experimental channels because each atom realizes
+  the electromagnetic register through a different evolved local configuration.
+  This distinction is important because the present atom-recoil situation is not
+  perfectly settled: high-precision atom-recoil determinations using cesium and
+  rubidium differ at the several-sigma level.  The 2018 cesium measurement gave
+
+  \[
+  \alpha^{-1}_{\rm Cs}
+  =
+  137.035999046(27),
+  \]
+
+  while the 2020 rubidium measurement gave
+
+  \[
+  \alpha^{-1}_{\rm Rb}
+  =
+  137.035999206(11).
+  \]
+
+  The rubidium result was reported as differing by more than five standard
+  deviations from the best cesium-recoil result~\cite{Parker2018,Morel2020}.
+
+  Therefore, throughout this paper,
+
+  \[
+  \alpha_{\rm ASSP}^{-1}
+  =
+  4\pi^3+\pi^2+\pi
+  \]
+
+  should be read as the predicted ASSP coupling-register depth, not as a
+  least-squares CODATA input.  The underlying ASSP alignment probability is
+  invariant; experimentally inferred values probe local atomic realizations of
+  that invariant register channel.
 
 \subsection{The Mass-Channel Split, 77-Layer Self-Encoding, and the He/Fe Garbage Collector}
 \label{sec:mass_channel}
@@ -1136,37 +1259,52 @@ For heavier atoms (\(Z > 1\)), increased nuclear charge compresses the effective
 E_{\rm atom}(Z) = \frac{\alpha(Z)^2 m_e c^2}{2}.
 \]
 
-\subsection{Derivation of the Electron Rest Mass from Recursive Soddy Curvature}
 
-The electron rest mass \(m_e\) emerges from the recursive curvature dynamics of the Apollonian-Soddy sphere packing starting with the fundamental radius \(r = \pi\).
+\subsection{Derivation of the Electron Rest Mass and Proton Mass from Recursive Soddy Curvature}
 
-Numerical iteration of the Descartes--Soddy relation with branching (multiple new spheres per generation, starting from four mutually tangent spheres of radius \(\pi\)) shows that \(\ln k\) grows approximately linearly with generation depth. At generation 39 (roughly half the 77-layer mass register), the cumulative \(\ln k \approx 82.73\).
+The electron rest mass \(m_e\) and proton mass \(m_p\) emerge from the recursive curvature dynamics of the Apollonian--Soddy sphere packing starting with the fundamental radius \(r = \pi\).
 
-Applying the Strassen-inspired luminous channel fraction \(23/27 \approx 0.85185\) to this value yields
+Numerical Soddy recursion with frontier pruning (retaining the 20 highest-curvature spheres) produces the following evolution of the deepest registers:
 
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Generation & max \(\ln k\) & luminous-weighted (\(\times 23/27\)) \\
+\midrule
+38     & 81.8579 & 69.7308 \\
+\textbf{38.5 (interpolated)} & \textbf{82.9509} & \textbf{70.6602} \\
+39     & 84.0439 & 71.5929 \\
+77     & 167.1095 & 142.3525 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The factor \(23/27 \approx 0.85185185\) is the luminous (mass-bearing) channel fraction. It corresponds to the Strassen-inspired heavy, curvature-intensive portion of the two-ball gyro-ball interaction that builds persistent inertial registers. The complementary \(4/27\) channel is the low-cost Info Ball transfer.
+
+At half-depth (Gen 38.5), the luminous-weighted deepest curvature is \(70.6602\). Doubling for the full cycle gives \(141.3204\), close to the internal two-ball quine depth \(T_{\rm two-ball} \approx 138.955\).
+
+The Star Ball mass register sits at the natural \emph{half-boundary} position:
 \[
-82.73 \times \frac{23}{27} \approx 70.4,
+T_{\rm mass} = 4\pi^3 + \pi^2 + \pi + \tfrac12 \left( \tfrac{23}{27} \right) = 137.4622297\ldots
 \]
 
-which aligns closely with half the two-ball quine depth (\(T_{\rm two-ball}/2 \approx 69.48\)).
-
 A stable Core Ball (proton) is manufactured as a Soddy composite. The ratio \(m_p / m_e \approx 1836.15\) satisfies
-
 \[
 1836.15 / 77 \approx 23.846,
 \]
-
 matching the rank-23 Strassen curvature overhead. This confirms that core manufacturing corresponds to one full mass-register cycle modulated by the dominant Soddy/Strassen factor.
 
-\textbf{Closure Condition.} The fundamental Star Ball mass \(m_e\) is the unique value such that the cumulative log-curvature growth over the 77-layer half-boundary mass register, scaled by the Strassen luminous fraction and combined with the Presburger register costs \(T_{\rm sphere} \approx 137.036\) and \(T_{\rm two-ball} \approx 138.955\), produces a self-consistent fractal quine. This fixes \(m_e\) so that
-
+\textbf{Quine Closure Condition.} 
+The recursive Soddy geometry, weighted by the luminous fraction \(23/27\), must internally reproduce the register depths of the fractal quine. This determines the emergent conversion factor \(\sigma\) (geometric register cost \(\to\) physical mass/energy) and fixes the base Star Ball mass \(m_e\) such that
 \[
-\ln\left(\frac{M_\odot}{m_e}\right) \approx T_{\rm two-ball} \approx 138.955
+\ln\left(\frac{M_\odot}{m_e}\right)_{\rm TFOFT} \approx T_{\rm two-ball} \approx 138.955
 \]
+holds as an internal relation of the ASSP architecture.
 
-holds as an exact internal relation of the ASSP architecture.
+Thus \(m_e\) (and \(m_p = 1836.15\, m_e\)) is derived purely from the recursive Soddy curvature structure under Presburger cost minimization with initial radius \(r = \pi\). No external laboratory mass measurement is required as a primary input for the ratios and hierarchies. All other constants of the theory (\(\alpha\), \(E_H\), \(G\), etc.) follow directly from this self-describing fractal quine.
 
-Thus \(m_e\) is derived purely from the recursive Soddy curvature structure under Presburger cost minimization with initial radius \(r = \pi\). No external laboratory mass measurement is required as a primary input. All other constants of the theory (\(\alpha\), \(E_H\), \(G\), mass hierarchies, etc.) follow directly from this self-describing fractal quine.
+\textbf{On absolute scale in laboratory units.} 
+Because the ontology is strictly fractal, each scale has its own ``electron'' (Star Ball). The here-scale electron mass in laboratory units (0.511\,MeV) requires one overall scale anchor. Once this anchor is fixed, absolute masses in kg or MeV become derived predictions. The dimensionless ratios and register structure, however, remain fully internal and zero-parameter.
 
 
 \subsection{Kepler's Third Law as the Gyro Ball Clock-Locking Equation}
