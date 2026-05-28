@@ -1562,8 +1562,9 @@ Pipe Ball  & Elongated Soddy tangency chain in lower fractal layer, oriented alo
 \hline
 Jolt Ball  & Transient energy redistribution events at the scales between fractal layers. & Atomic decay & Local entropy spikes \\
 \hline
-Edge Ball  & Variable boundary where the dominant force regime changes. On Earth $\approx 0.1$~mm. & Planck Length & 0.1~mm (wish-scale analogue) \\
+Edge Ball  & Variable boundary where the dominant force regime changes. On Earth this transition is expected in the approximate \(0.1\)--\(2\,{\rm mm}\) range. & Planck-length analogue & \(0.1\)--\(2\,{\rm mm}\) wish-scale analogue \\
 \hline
+
 \end{longtable}
 \normalsize
 \end{center}
@@ -1989,10 +1990,16 @@ where
 \subsubsection{Three Hierarchy Depths}
 
 \begin{align}
-  N_{\rm mass}   &= \ln(M_\odot/m_e) = 138.9358, \\
+  N_{\rm mass}   &= T_{\rm two\text{-}ball} = 138.9550, \\
   N_{\rm radius} &= \alpha^{-1}_{\rm ASSP}/\varphi = 84.6931, \\
   N_{\rm time}   &= \ln(f_e/f_s) = 72.9217.
 \end{align}
+
+The observed electron--solar hierarchy,
+\[
+\ln(M_\odot/m_e)_{\rm obs}=138.9358,
+\]
+is a cross-check on the internally derived two-ball register depth, not an input to the \(G\) derivation.
 
 The CODATA/NIST Earth value corresponds to
 \[
@@ -2018,7 +2025,7 @@ where \(D_A = 1.305687\) is the 2D Apollonian gasket dimension
 \cite{Manna1991} and \(D_S = 2.47390\) is the 3D Soddy packing dimension
 \cite{Boyd1973}. With
 \[
-N_{\rm mass}=138.9358,\qquad
+N_{\rm mass}=138.9550,\qquad
 N_{\rm radius}=84.6931,\qquad
 D_S-D_A=1.168213,
 \]
@@ -2026,19 +2033,19 @@ the result is
 \[
 \ln\!\left(\frac{c^3}{G\hbar}\right)_0
 \approx
-160.262.
+160.259.
 \]
 
 Thus the homogeneous ASSP geometric baseline is
 \[
 G_0
 =
-\frac{c^3}{\hbar\,\exp(160.262)}
+\frac{c^3}{\hbar\,\exp(160.259)}
 \approx
-6.40\times10^{-11}\ {\rm m^3\,kg^{-1}\,s^{-2}}.
+6.43\times10^{-11}\ {\rm m^3\,kg^{-1}\,s^{-2}}.
 \]
 
-This sits about \(4.0\%\) below the Earth/NIST value. In the FTC ontology, \(G_0\) is the homogeneous Apollonian-boundary baseline before local density and virial packing renormalization, while the locally measured laboratory value is the dense-region realization.
+This sits about \(3.7\%\) below the Earth/NIST value. In the FTC ontology, \(G_0\) is the homogeneous Apollonian-boundary baseline before local density and virial packing renormalization, while the locally measured laboratory value is the dense-region realization.
 
 \subsubsection{Method~2: Dynamic Clock Route and the Fractal Virial Correction}
 
@@ -2354,121 +2361,6 @@ No new mediator particle is required under this ontology. The apparent neutrino-
 
 In the TFOFT framework, the observed redshift of a distant source has two components. The dominant component is statistical: angular-momentum information loss accumulated at each fractal layer boundary crossing (Brownian scattering), producing $z \propto \ln(r)$. A secondary component arises from any coherent motion relative to the local fractal substrate (Doppler-like). Standard cosmology conflates both into a single metric expansion~\cite{Planck2018VI}; decomposing them is conjectured to be the key to reconciling the observational tensions discussed in Section~\ref{sec:tensions}.
 
-\begin{figure}[h]
-\centering
-\begin{tikzpicture}[font=\small]
-  \definecolor{shellgold}{RGB}{210,170,40}
-  \definecolor{browncol}{RGB}{50,110,190}
-  \definecolor{doppcol}{RGB}{200,90,30}
-  \definecolor{patchfill}{RGB}{230,200,100}
-
-  % Left panel
-  \begin{scope}[xshift=0cm]
-    \def\rin{1.5}
-    \def\rout{1.85}
-    \def\hwang{18}
-    \node[font=\bfseries\footnotesize,gray!80!black] at (0,2.55) {Shell at distance $r$};
-    \draw[gray!50,thick] (0,0) circle (\rout cm);
-    \draw[gray!70,thick] (0,0) circle (\rin cm);
-    \fill[patchfill,opacity=0.75]
-      ({\rin*cos(\hwang)},{\rin*sin(\hwang)})
-      arc(\hwang:-\hwang:\rin cm)
-      -- ({\rout*cos(-\hwang)},{\rout*sin(-\hwang)})
-      arc(-\hwang:\hwang:\rout cm)
-      -- cycle;
-    \draw[shellgold!80!black,thick]
-      ({\rin*cos(\hwang)},{\rin*sin(\hwang)})
-      arc(\hwang:-\hwang:\rin cm)
-      -- ({\rout*cos(-\hwang)},{\rout*sin(-\hwang)})
-      arc(-\hwang:\hwang:\rout cm)
-      -- cycle;
-    \foreach \rr in {1.58,1.68,1.78}{
-      \draw[shellgold!50!white,very thin]
-        ({\rr*cos(\hwang)},{\rr*sin(\hwang)}) arc(\hwang:-\hwang:\rr cm);
-    }
-    \foreach \aa in {-12,-4,4,12}{
-      \draw[shellgold!50!white,very thin]
-        ({\rin*cos(\aa)},{\rin*sin(\aa)}) -- ({\rout*cos(\aa)},{\rout*sin(\aa)});
-    }
-    \node[shellgold!70!black,font=\tiny\bfseries] at ({\rout+0.32},0) {$\Delta$patch};
-    \draw[gray!60,-{Stealth[length=3pt]},thick] ({(\rin+0.12)},0) -- ({(\rout-0.12)},0);
-    \fill[gray!60] (0,0) circle (2pt);
-    \node[gray!60,font=\tiny,below left=2pt] at (0,0) {obs.};
-    \draw[gray!50,<->,thin] (0,-\rin-0.05) -- (0,-\rout+0.05)
-      node[midway,left,font=\scriptsize,gray!70] {$\delta r$};
-    \draw[gray!40,<->,thin,dashed] (-0.08,0) -- (-0.08,-\rin)
-      node[midway,left,font=\scriptsize,gray!60] {$r$};
-  \end{scope}
-
-  % Arrow
-  \draw[gray!50,very thick,{Stealth[length=5pt]}-{Stealth[length=5pt]}]
-    (2.55,0) -- (4.25,0)
-    node[midway,above,font=\scriptsize,align=center,gray!70] {$\times3$ in $r$}
-    node[midway,below,font=\scriptsize,align=center,gray!60] {$\times9$ in patch area};
-
-  % Right panel
-  \begin{scope}[xshift=6.8cm]
-    \def\rinR{4.5}
-    \def\routR{5.55}
-    \def\hwang{18}
-    \node[font=\bfseries\footnotesize,gray!80!black] at (0,2.55) {Shell at distance $3r$};
-    \draw[gray!50,thick] (0,0) circle (\routR cm);
-    \draw[gray!70,thick] (0,0) circle (\rinR cm);
-    \fill[patchfill,opacity=0.85]
-      ({\rinR*cos(\hwang)},{\rinR*sin(\hwang)})
-      arc(\hwang:-\hwang:\rinR cm)
-      -- ({\routR*cos(-\hwang)},{\routR*sin(-\hwang)})
-      arc(-\hwang:\hwang:\routR cm)
-      -- cycle;
-    \draw[shellgold!80!black,very thick]
-      ({\rinR*cos(\hwang)},{\rinR*sin(\hwang)})
-      arc(\hwang:-\hwang:\rinR cm)
-      -- ({\routR*cos(-\hwang)},{\routR*sin(-\hwang)})
-      arc(-\hwang:\hwang:\routR cm)
-      -- cycle;
-    \foreach \rr in {4.68,4.89,5.10,5.31,5.52}{
-      \draw[shellgold!45!white,very thin]
-        ({\rr*cos(\hwang)},{\rr*sin(\hwang)}) arc(\hwang:-\hwang:\rr cm);
-    }
-    \foreach \aa in {-14,-8,-2,4,10,16}{
-      \draw[shellgold!45!white,very thin]
-        ({\rinR*cos(\aa)},{\rinR*sin(\aa)}) -- ({\routR*cos(\aa)},{\routR*sin(\aa)});
-    }
-    \draw[gray!45,<->,bend right=10,thin]
-      ({\routR*cos(\hwang+3)},{\routR*sin(\hwang+3)})
-      to node[right,font=\tiny,gray!60,align=left] {same\\solid\\angle}
-      ({\routR*cos(-\hwang-3)},{\routR*sin(-\hwang-3)});
-    \node[shellgold!70!black,font=\tiny\bfseries,align=center]
-      at ({(\rinR+\routR)/2},0) {$9\!\times$\\area};
-    \fill[gray!60] (0,0) circle (2pt);
-    \node[gray!60,font=\tiny,below left=2pt] at (0,0) {obs.};
-  \end{scope}
-
-  % Bottom labels
-  \begin{scope}[yshift=-3.1cm]
-    \draw[browncol,very thick,decorate,
-          decoration={snake,amplitude=1.8pt,segment length=5pt},
-          -{Stealth[length=4pt]}]
-      (-1.8,0) -- (1.8,0);
-    \node[browncol!80!black,font=\footnotesize,align=center] at (0,-0.55)
-      {\textbf{Brownian component:} $z\propto\ln(r)$\\
-       accumulates at each fractal boundary crossing};
-    \begin{scope}[xshift=6.8cm]
-      \draw[doppcol,very thick,-{Stealth[length=4pt]}] (-1.5,0) -- (1.5,0);
-      \node[doppcol!80!black,font=\footnotesize,align=center] at (0,-0.55)
-        {\textbf{Dispersion component:} coherent motion\\
-         secondary Doppler; separable in principle};
-    \end{scope}
-  \end{scope}
-\end{tikzpicture}
-\caption{The two redshift components in TFOFT.
-  \textbf{Left}: a surface patch at radius $r$ subtends a fixed solid angle.
-  \textbf{Right}: at radius $3r$ the same solid angle covers $9\times$ the physical area.
-  \textbf{Bottom left} (blue wavy): the dominant Brownian scattering component, $z\propto\ln(r)$.
-  \textbf{Bottom right} (orange): the secondary dispersion / coherent-motion component.
-  Standard cosmology conflates both into a single metric expansion~\cite{Planck2018VI}; decomposing them is conjectured to resolve the Hubble tension~\cite{Riess2025}.}
-\label{fig:expansion_dispersion}
-\end{figure}
 
 % ==================================================================
 %  PART F:  SELECTED OBSERVATIONAL TENSIONS
@@ -2480,8 +2372,12 @@ In the TFOFT framework, the observed redshift of a distant source has two compon
 
 The following table summarizes the major objections raised by mainstream cosmology against non-cosmological or intrinsic-redshift interpretations of quasars, together with the resolutions provided by the complete TFOFT macro-star ejection + fractal quine framework.
 
-\begin{longtable}{|p{4.8cm}|p{9.5cm}|}
-\caption{Standard Objections vs.\ TFOFT Resolutions} \\
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{longtable}{|L{4.8cm}|L{9.5cm}|}
+\caption{Standard Objections vs.\ TFOFT Resolutions}
+\label{tab:standard_objections}\\
 \hline
 \textbf{Standard Objection} & \textbf{TFOFT Resolution} \\
 \hline
@@ -2491,31 +2387,54 @@ The following table summarizes the major objections raised by mainstream cosmolo
 \hline
 \endhead
 \hline
+\multicolumn{2}{r}{\textit{Continued on next page}}\\
+\hline
 \endfoot
+\hline
+\endlastfoot
 
-Mature, metal-rich, structured quasar host galaxies at high z (JWST) & Quasars are recycled dense galaxy cores ejected from parent macro-stars. They carry pre-existing mixed stellar populations + enriched material from the parent. The quasar phase is a compact relaxation stage that rapidly reorganizes into normal galactic structure using recycled fusion products and non-local jet inflow. JWST “early” galaxies are naturally explained as recently ejected material still relaxing. \\
+Mature, metal-rich, structured quasar host galaxies at high \(z\) (JWST) &
+Quasars are recycled dense galaxy cores ejected from parent macro-stars. They carry pre-existing mixed stellar populations and enriched material from the parent. The quasar phase is a compact relaxation stage that rapidly reorganizes into normal galactic structure using recycled fusion products and non-local jet inflow. JWST ``early'' galaxies are naturally explained as recently ejected material still relaxing. \\
+\hline
 
-Continuous Lyman-alpha forest with cosmological clustering statistics & The forest is primarily a photonic register readout of the quasar’s core-crossing birth event + its radial ejection trajectory through the fractal substrate. Secondary absorption from intervening ejected macro-H (lower-layer hydrogen) modulates the signal according to local fractal density. Uniform base pattern expected from identical hydrogen-like registers. \\
+Continuous Lyman-alpha forest with cosmological clustering statistics &
+The forest is primarily a photonic register readout of the quasar's core-crossing birth event and its radial ejection trajectory through the fractal substrate. Secondary absorption from intervening ejected macro-H, i.e. lower-layer hydrogen, modulates the signal according to local fractal density. A uniform base pattern is expected from identical hydrogen-like registers. \\
+\hline
 
-Time dilation in quasar variability and supernovae & Differential clock rates in the macro-star gravitational/fractal potential well. Quasars preserve their birth-clock redshift from manufacturing depth. \\
+Time dilation in quasar variability and supernovae &
+Differential clock rates arise in the macro-star gravitational/fractal potential well. Quasars preserve their birth-clock redshift from manufacturing depth. \\
+\hline
 
-Gravitational lensing time delays & Geometric delays + differential ejection depth / clock desynchronization between lensed images. \\
+Gravitational lensing time delays &
+The observed delays combine geometric path-length differences with differential ejection depth and clock desynchronization between lensed images. \\
+\hline
 
-Lack of statistical parent-galaxy associations in large surveys & Many quasars originate from naked cores (quiet massive black holes). Visible Arp-style associations occur when the parent core has a stellar flock. \\
+Lack of statistical parent-galaxy associations in large surveys &
+Many quasars originate from naked cores, i.e. quiet massive black holes. Visible Arp-style associations occur when the parent core has a stellar flock and connected gas trails or bridge structure. \\
+\hline
 
-Mass budget for building massive hosts & Quasars are dense recycled cores carrying substantial baryons from the parent macro-star plus non-local material inflow during crossing. No primordial gas required. \\
+Mass budget for building massive hosts &
+Quasars are dense recycled cores carrying substantial baryons from the parent macro-star plus non-local material inflow during crossing. No primordial gas reservoir is required. \\
+\hline
 
-Large-scale isotropy & Radial isotropic ejection from macro-star + fractal self-similarity appears homogeneous at our scale. Residual dipoles (CMB and quasar) remain. \\
+Large-scale isotropy &
+Radial isotropic ejection from the macro-star plus fractal self-similarity appears homogeneous at our scale. Residual dipoles, including the CMB and quasar dipoles, remain as finite-shuffling signals. \\
+\hline
 
-Quasar dipole ~94° offset from CMB dipole & Quasars have 3--5× faster ejection velocity due to higher manufacturing energy. The offset arises from angular momentum precession during parallel macro-gamma-ray core-crossing injection. \\
+Quasar dipole \(\sim94^\circ\) offset from CMB dipole &
+Quasars have \(3\)--\(5\times\) faster ejection velocity due to higher manufacturing energy. The offset arises from angular momentum precession during parallel macro-gamma-ray core-crossing injection. \\
+\hline
 
-Continuous quasar redshifts + Karlsson periodicity & Macro-gamma-ray production across continuous depths + outward motion of target macro-H smears birth locations (continuous distribution). Discrete core-crossing events produce the quantized Karlsson steps. \\
+Continuous quasar redshifts and Karlsson periodicity &
+Macro-gamma-ray production across continuous depths plus outward motion of target macro-H smears birth locations into a continuous distribution. Discrete core-crossing events produce the quantized Karlsson steps. \\
+\hline
 
 \end{longtable}
-
+\normalsize
+\end{center}
 
 % ==================================================================
-%  RESTORED FROM AI.VIXRA DRAFT: OBSERVATIONAL EVIDENCE AND DERIVED CONSTANTS
+%   OBSERVATIONAL EVIDENCE AND DERIVED CONSTANTS
 % ==================================================================
 
 
@@ -2526,7 +2445,7 @@ The observed CMB is a near-perfect 2.725~K blackbody with temperature anisotropi
 In TFOFT, no singularity or completed-infinity initial condition is required. The CMB is interpreted as the present-time steady-state resonant eigenmode of the lower-fractal-layer hydrogen plasma in which the here-scale galactic layer is immersed.
 
 \begin{itemize}
-  \item \textit{Perfect blackbody and large-scale isotropy}: The ASSP is statistically isotropic and self-similar at large scales, with no preferred center. The blackbody spectrum itself is a mathematical consequence of the fractal substrate dynamics: photons undergoing Brownian random walks through the ASSP obey, in the continuum limit, the heat equation. The observed Karlsson quantization of redshifts~\cite{Karlsson1971,Mal2020} implies quantized energy levels in this heat equation. Quantizing a heat equation yields phonons, and phonon occupation statistics produce a Planck distribution. The CMB blackbody curve is therefore conjectured to be the natural spectral signature of quantized random walks through the fractal substrate, not a frozen relic requiring a singular origin. Furthermore, the here-scale Edge Ball ($\sim0.1$\,mm) coincides with the Jeans instability length for hydrogen at the relevant density---the scale below which gravitational collapse bootstraps stellar ignition---and falls within the CMB peak wavelength range ($\sim1$--$2$\,mm). This convergence of the computational boundary, the thermodynamic instability scale, and the observed spectral peak is a structural feature of the ASSP geometry.
+  \item \textit{Perfect blackbody and large-scale isotropy}: The ASSP is statistically isotropic and self-similar at large scales, with no preferred center. The blackbody spectrum itself is a mathematical consequence of the fractal substrate dynamics: photons undergoing Brownian random walks through the ASSP obey, in the continuum limit, the heat equation. The observed Karlsson quantization of redshifts~\cite{Karlsson1971,Mal2020} implies quantized energy levels in this heat equation. Quantizing a heat equation yields phonons, and phonon occupation statistics produce a Planck distribution. The CMB blackbody curve is therefore conjectured to be the natural spectral signature of quantized random walks through the fractal substrate, not a frozen relic requiring a singular origin. Furthermore, the here-scale Edge Ball range (\(0.1\)--\(2\,{\rm mm}\)) coincides with the Jeans instability length for hydrogen at the relevant density---the scale below which gravitational collapse bootstraps stellar ignition---and falls within the CMB peak wavelength range ($\sim1$--$2$\,mm). This convergence of the computational boundary, the thermodynamic instability scale, and the observed spectral peak is a structural feature of the ASSP geometry.
   \item \textit{Acoustic peaks}: Interpreted literally as sound waves in the macro-hydrogen gas of the universe. In TFOFT the cosmic substrate is a here/wish-scale hydrogen plasma, so the CMB peak structure is an active standing-pressure spectrum confined by Apollonian boundary geometry at multiple scales. The peaks are Soddy-tangency acoustic resonances of the current fractal substrate, not merely frozen relics from a primordial sound horizon.
   \item \textit{CMB dipole}: Interpreted as the kinematic memory of our local nucleosynthesis origin---the geometric arrow pointing toward the parent wish-scale overdensity from which our local hydrogen plasma was ejected.
   \item \textit{Cosmic birefringence} ($\beta \approx 0.3^\circ$, nearly isotropic)~\cite{Minami2020}: Consistent with a single dominant Möbius boundary twist imposed by the local Null Core (void sphere). All traversing radiation receives one net polarization rotation, isotropic at leading order.
@@ -2660,12 +2579,12 @@ the gravitational attraction is computationally absent:
 \begin{equation}
 F_{\rm grav}^{\rm FTC}(d)=0.
 \end{equation}
-The remaining interaction is the outward pressure of quantized emission received through inverse-square dilution:
+The remaining interaction is the outward pressure of quantized source emission received through inverse-square dilution. This includes photon momentum, stellar wind, plasma outflow, mass loss, and material ejection, not merely idealized solar-sail radiation pressure:
 \begin{equation}
 F_{\star\star}(d)\approx F_{\rm rad}(d)>0.
 \end{equation}
 
-Thus mature source--source repulsion appears when the smooth attractive update has fallen below the finite resolution of the FTC while photonic transfer remains as quantized receiving-side pressure. The same logic applies one scale down and one scale up:
+Thus mature source--source repulsion appears when the smooth attractive update has fallen below the finite resolution of the FTC while quantized source emission remains as receiving-side pressure. The push-away term includes photons, stellar wind, plasma outflow, mass loss, and material ejection. Photonic momentum is only the cleanest component, not the whole effect. The same logic applies one scale down and one scale up:
 \begin{equation}
 \mathrm{electron} \leftrightarrow \mathrm{star},\quad
 \mathrm{proton/core} \leftrightarrow \mathrm{galaxy\ core}.
