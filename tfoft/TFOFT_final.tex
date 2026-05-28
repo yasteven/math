@@ -10,7 +10,6 @@
 \usepackage{geometry}
 \usepackage{booktabs}
 \usepackage{longtable}
-\usepackage{array}
 \usepackage{float}
 \usepackage{mdframed}
 \usepackage{hyperref}
@@ -19,6 +18,10 @@
 \usepackage{tikz}
 \usepackage{tabularx}
 \usepackage{ragged2e}
+\usepackage{array}
+\setlength{\extrarowheight}{3pt}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
 \newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
 \usetikzlibrary{calc, positioning, fit, backgrounds, arrows.meta, decorations.pathmorphing}
 \graphicspath{{./figures/}}
@@ -34,11 +37,12 @@ Star=Electron+Atom=Galaxy Quine}
 
 \maketitle
 \begin{abstract}
-  We propose a new principle of physics---MATHICCS---requiring that every mathematical axiom used in a physical law must correspond to an operation persistently realizable by a physical subsystem. Applying this criterion motivates reality's geometry as a discrete, self-similar, singularity-free structure: the Apollonian--Soddy Sphere Packing (ASSP). We conjecture that 3D dynamics on this packing is a self-computing fractal: a dynamical computer whose registers are fractal-congruent objects that store angular and linear momentum as cross-scale registers. This fractal quine is proposed as a self-describing, MATHICCS-valid physical theory. It gives zero-free-parameter derivations of the fine-structure constant \(\alpha^{-1}_{\rm TFOFT}=4\pi^3+\pi^2+\pi=137.036\), the two-ball quine depth \(T_{\rm two\text{-}ball}=138.955\), the electron--star logarithmic mass hierarchy \(\ln(M_\odot/m_e)=138.936\), the 77-layer self-encoding register, the hydrogen binding energy \(E_H=\alpha^2m_ec^2/2=13.606\,{\rm eV}\), the hydrogen \(1/n^2\) spectral ladder, the electron mass, the proton mass, the proton/electron mass ratio, and the gravitational constant \(G\) from atomic structure by two independent first-principles routes. We present empirical cross-checks involving the 25-arcminute CMB seam, the observed electron/star hierarchy, dark/visible channel fractions \(23/27\) and \(4/27\), Fermi-bubble morphology, and the near-match between Karlsson quasar logarithmic periodicity and the derived Info-channel leakage; the Karlsson complement also gives a 77-layer mass-channel spot check inside the same 137--139 register interval. We present one pending falsifiable prediction, \(\alpha^{-1}_{\rm Yb}=137.035998945\pm0.000000045\). The framework is presented as a zero-free-parameter ontology whose derived consequences are compared against major tensions in observational physics.
+  We propose a new principle of physics---MATHICCS---requiring that every mathematical axiom used in a physical law must correspond to an operation persistently realizable by a physical subsystem. Applying this criterion motivates reality's geometry as a discrete, self-similar, singularity-free structure: the Apollonian--Soddy Sphere Packing (ASSP). We conjecture that 3D dynamics on this packing is a self-computing fractal: a dynamical computer whose registers are fractal-congruent objects that process angular and linear momentum as cross-scale registers. This fractal quine is proposed as a self-consistent, MATHICCS-valid physical theory. It gives zero-free-parameter derivations of the baseline fine-structure constant \(\alpha^{-1}_{\rm TFOFT}=4\pi^3+\pi^2+\pi=137.036\), the electron--star logarithmic mass hierarchy, the electron mass, the proton mass, the proton/electron mass ratio, the 77-layer self-encoding register, the hydrogen binding energy, the hydrogen spectral ladder, and the gravitational constant \(G\) from atomic structure by two independent first-principles routes. We present empirical cross-checks involving the observed electron--star hierarchy, dark/visible channel fractions \(23/27\) and \(4/27\), Fermi-bubble morphology, the 25-arcminute CMB seam, and the near-match between Karlsson quasar logarithmic periodicity and the derived Info-channel leakage. The Karlsson complement also gives a 77-layer mass-channel spot check inside the same 137--139 register interval. We present one pending falsifiable prediction, \(\alpha^{-1}_{\rm Yb}=137.035998945\pm0.000000045\). The framework is presented as a zero-free-parameter ontology whose derived consequences are compared against major tensions in observational physics.
 \end{abstract}
 
 \begin{quote}
-\textbf{Test criterion}. The win condition for TFOFT is not whether the language resembles accepted physics. The test is whether the geometry outputs numerical constants, cross-scale register matches, and falsifiable experimental splits without adjustable parameters.
+\textbf{Test criterion.}
+A candidate fundamental law of the universe should be judged by three criteria. First, it should minimize free parameters: in golf-scoring fashion, every adjustable parameter is a penalty, because an unexplained parameter outsources part of the law to a non-provable external setter or to a deeper theory. A final law should therefore have zero, or at most one, free parameter. Second, it should derive or predict dimensionless constants rather than merely accept them as inputs. Third, it should satisfy the ordinary scientific standard of making quantitative predictions and surviving empirical tests.
 \end{quote}
 
 % ==================================================================
@@ -61,44 +65,66 @@ Modern physics often employs mathematical structures whose physical realization 
 \end{enumerate}
 
 These examples motivate a stricter criterion: a mathematical structure is physically admissible only if its defining operations can be realized by a persistent physical procedure.
-
 \subsubsection{General Relativity and the DeSitter Collapse of Operational Clocks}
 
 General relativity with $\Lambda > 0$ predicts that expanding FLRW solutions generically approach a de~Sitter-like late-time regime consistent with the observed cosmological constant~\cite{Planck2018VI}. In de~Sitter space the Gibbons--Hawking temperature~\cite{GibbonsHawking1977}
 \[
 T_{\rm dS} = \frac{\hbar c}{2\pi k_B} \sqrt{\frac{\Lambda}{3}}
 \]
-implies that any finite-energy localized configuration radiates thermally.
-The decay time of a clock of energy $E$ is finite:
+implies that finite-energy localized configurations are immersed in a horizon-temperature environment. A clock or apparatus of finite energy $E$ therefore has no eternal external reservoir from which to maintain, rebuild, or refine its operations. A characteristic decay scale may be written schematically as
 \[
 \tau_{\rm decay}(E) \sim \frac{3E}{\hbar c \Lambda}.
 \]
 
+This loss is not limited to freely expanding, unbound regions. Gravitationally bound systems do not provide permanent exceptions. In classical GR, generic nonstationary bound mass distributions carry time-dependent multipole structure and radiate gravitational waves. Unlike Newtonian gravity, GR does not give an eternally stable ideal two-body orbit: generic two-body motion has a time-dependent quadrupole moment, radiates gravitational waves, and inspirals. Bound gravitational motion is therefore a long-lived but finite reservoir of usable mechanical free energy, not a permanent foundation for an eternal limiting procedure.
+
+The local inertial frame in GR also exhibits ordinary radiative physics. The Einstein Equivalence Principle asserts that, in a sufficiently small neighborhood of any event, nongravitational physics reduces to its special-relativistic form on the local Minkowski tangent frame. Thus the same local frame used to define clocks and rods also contains the usual Maxwell and Standard Model radiation channels: accelerated charges radiate by the Larmor channel; neutral but structured matter can radiate through time-dependent electric and magnetic multipoles; rotating magnetic configurations lose energy through magnetic dipole radiation; and weak processes can carry energy away through neutrinos.
+
 \paragraph{The constructibility argument.}
- 
+
 The Einstein Equivalence Principle does not merely require that existing clocks keep ticking. It requires that \emph{at any spacetime point, in any state of motion}, one can \emph{construct} a local inertial frame by performing the limiting procedure of building ever-smaller apparatus. This is a \textbf{constructibility} claim, not a maintenance claim. The distinction matters.
- 
-For any finite energy $E > 0$, define $T_{\rm construct}(E)$ as the cosmic time after which it becomes impossible to construct---not merely maintain---a clock of energy $E$ at an arbitrary point in the expanding spacetime. Because the de~Sitter decay rate is nonzero and the accessible comoving volume available for apparatus construction shrinks due to the cosmological horizon,
-$T_{\rm construct}(E)$ is finite for every $E > 0$:
+
+For any finite energy $E > 0$, define $T_{\rm construct}(E)$ as the cosmic time after which it becomes impossible to construct---not merely maintain---a clock of energy $E$ at an arbitrary point in the expanding spacetime. Because the de~Sitter decay rate is nonzero, because bound mechanical stores are radiatively unstable in generic nonstationary configurations, and because the accessible comoving volume available for apparatus construction shrinks due to the cosmological horizon, $T_{\rm construct}(E)$ is finite for every $E > 0$:
 \[
 \exists\; T_{\rm construct}(E) < \infty \quad \forall\; E > 0.
-\] 
-Hence no clock of energy $E$ can be constructed everywhere in the universe after cosmic time $T_{\rm construct}(E)$. The set of spacetime regions in which a valid $\varepsilon$-$\delta$ measurement apparatus can be
-\emph{constructed} therefore shrinks to measure zero:
+\]
+Hence no clock of energy $E$ can be constructed everywhere in the universe after cosmic time $T_{\rm construct}(E)$. The set of spacetime regions in which a valid $\varepsilon$-$\delta$ measurement apparatus can be \emph{constructed} therefore shrinks to measure zero:
 \[
 \mathcal{V}_{\rm constructible}(t) \to 0 \quad \text{as} \quad t \to \infty.
 \]
 
-\paragraph{Why the long timescale does not rescue EEP.}
+\paragraph{Why the local limit does not rescue EEP.}
 
-A common objection notes that $\tau_{\rm decay}(E)$ for a macroscopic clock is astronomically large. This objection misidentifies what is at stake. The issue is not whether EEP fails \emph{today}, but whether it qualifies as a \emph{foundational axiom} at all. An axiom that is only constructively realizable for a finite duration $T_{\rm construct}(E) < \infty$ in a temporally unbounded universe has measure-zero validity over the full temporal domain. Foundational axioms cannot have expiration dates.
- 
-More precisely: the limiting procedure invoked by EEP---shrinking the apparatus to zero size while holding the measurement valid---itself requires that the apparatus can be constructed at each step of the limit. Once $t > T_{\rm construct}(E)$, the limit cannot be taken because the intermediate steps of the construction are physically unavailable. The logic of the limit therefore cannot be used to argue that EEP holds in the limit, since the limit procedure has already failed.
+The usual defense of EEP is a spatial limiting argument. In a small freely falling laboratory of characteristic size $L$, curvature effects enter through tidal terms, schematically
+\[
+\epsilon_{\rm tidal}(L) \sim R L^2,
+\]
+so the metric becomes Minkowskian to arbitrarily good accuracy as $L\to0$. This is the standard reason one says curvature can be transformed away at a point.
+
+MATHICCS asks a different question: can the limiting procedure itself be physically constructed and repeated inside the universe described by the same theory? The limit $L\to0$ is not a magic symbol. It is a sequence of apparatus constructions, synchronizations, refinements, and readouts. In a universe with $\Lambda>0$, the accessible region and usable free energy available for such constructions decay with cosmic time. Thus the physical support of the EEP limit is time-dependent.
+
+The conflict is between two scalings. Spatially, the local inertial approximation improves quadratically:
+\[
+\epsilon_{\rm tidal}(L)\sim R L^2.
+\]
+Temporally, the set of regions in which the required apparatus can be constructed shrinks under de~Sitter horizon dynamics:
+\[
+\mathcal{V}_{\rm constructible}(t)\sim \mathcal{V}_0 e^{-\gamma t},
+\]
+for some positive effective decay rate $\gamma$. The exact coefficient is not important here; the important point is that the constructible domain decreases monotonically to zero while the EEP limit requires an indefinitely repeatable physical construction.
+
+Thus EEP wins only as a formal spatial limit at fixed time. It does not win as a persistent physical axiom over the full future history of a $\Lambda>0$ universe. As $t\to\infty$,
+\[
+\mathcal{V}_{\rm constructible}(t)\to0,
+\]
+so the limiting procedure required to realize $L\to0$ has no positive-measure domain left on which to operate. In this sense, EEP holds nowhere in the MATHICCS sense at future infinity: not because the formal tangent space cannot be written down, but because the physical procedure that gives the tangent space operational meaning can no longer be instantiated.
+
+The long lifetime of macroscopic clocks does not change this conclusion. A large $\tau_{\rm decay}$ only delays the collapse of the constructible domain. It does not convert a finite-duration construction into a persistent axiom. Foundational axioms cannot depend on an expiring supply of physical realizers.
 
 This can be stated as a clean theorem-like result:
 
 \begin{quote}
-\textbf{Theorem-like statement.} In any spacetime with $\Lambda > 0$, for every finite energy $E > 0$ there exists a finite cosmic time $T_{\rm construct}(E)$ after which the constructive limiting procedure required by EEP cannot be carried out at an arbitrary spacetime point. Therefore EEP is not a MATHICCS-valid foundational axiom: it is an approximation with a known and finite domain of constructive validity. General relativity with $\Lambda > 0$ is thus operationally self-limiting under MATHICCS---the same cosmological constant required to match observation also destroys the persistent constructibility required to define the theory's foundational local measurements.
+\textbf{Theorem-like statement.} In any spacetime with $\Lambda>0$, the standard EEP argument gives a local spatial limit, not a persistent physical realizer. Curvature errors inside a laboratory of size $L$ fall as $O(L^2)$, but the positive-measure domain in which the required sequence of ever-smaller laboratories can be constructed decays to zero over cosmic time. Therefore, for every finite apparatus energy $E>0$, there exists a finite cosmic time $T_{\rm construct}(E)$ after which the constructive limiting procedure required by EEP cannot be carried out at an arbitrary spacetime point. Gravitational binding can delay this failure but cannot eliminate it, because generic bound systems radiate and realistic local matter fields leak energy through electromagnetic and weak channels. EEP is therefore not a MATHICCS-valid foundational axiom: it is an approximation with a finite domain of constructive validity. General relativity with $\Lambda>0$ is operationally self-limiting under MATHICCS.
 \end{quote}
 
 \subsubsection{The Role of External Formalism}
@@ -170,7 +196,7 @@ Taken together, these considerations suggest that a universe governed by MATHICC
 
 The principal motivation for the present proposal is the persistence of approximately flat galactic rotation curves, as observed in spiral galaxies including the Milky Way and Andromeda~\cite{Sofue2012,Chemin2009}, which indicates that orbital speeds remain near-constant over a substantial radial range rather than declining in the Keplerian manner expected from the visible baryonic distribution alone. At the atomic scale, a closely related regularity appears in the quantization of emission frequencies: photons are emitted only at discrete transition frequencies, with photon energy proportional to frequency through $E_{\rm photon}=h\nu$.
 
-Within the present hypothesis, these two phenomena are treated as scale-related manifestations of a common transfer mechanism. The atom provides the lower-scale electron-to-photon channel, while the galaxy core is conjectured to play the corresponding role for a star-to-macrophoton channel. The observed flat rotation curve would then arise as a lower-scale projection of a more nearly quantized energy-transfer law operating at the higher fractal level.
+Within the present hypothesis, these two phenomena are treated as scale-related manifestations of a common transfer mechanism. The atom provides the lower-scale electron-to-photon channel, while the galaxy core is conjectured to play the corresponding role for a star-to-macrophoton channel. The observed flat rotation curve would then arise as the lower-scale projection of a quantized energy-transfer law operating at the higher fractal level.
 
 The empirical case for fractal congruence between atomic and galactic scales---including a $\sim31\%$ viscous drag signature consistent with a scaled electron-shell contribution to stellar orbital dynamics---is developed in detail in the companion paper \cite{FSEquivalence2026}. The present paper takes these findings as established and proceeds to the geometric derivation.
 
@@ -193,7 +219,11 @@ Across a wide range of systems in physics, biology, economics, and geophysics, p
   \item $\alpha\approx1.3$: Apollonian gasket dimension ($D_A=1.305$)
   \item $\alpha\approx2.4$: Soddy sphere packing dimension ($D_S=2.47$)
 \end{itemize}
-The clustering is suggestive, though not by itself decisive. Under the present hypothesis, it is consistent with an underlying ASSP-like geometry. Notably, power-law exponents near $D_A \approx 1.3$ recur specifically in systems with radially-defined or rotationally-dominated dynamics (river networks, coastlines, galactic two-point correlation functions), consistent with 2D Apollonian rather than 3D Soddy geometry governing radial scaling at layer boundaries---a distinction made precise in Section~\ref{sec:radius_apollonian}.
+The important fact is not merely that power laws occur. Many mechanisms can generate approximate power laws over a narrow regime. The stronger fact is that similar exponent families recur across many apparently unrelated systems and across widely separated physical scales. Persistent scale-independent power-law behavior is the natural signature of a recursive generator. If the same scaling families appear at all observed scales, then the simplest explanation is not a collection of unrelated local mechanisms, each accidentally producing the same exponents, but a common fractal substrate.
+
+In ordinary critical phenomena, power laws usually appear near a special transition, with finite correlation length, finite scaling window, and system-specific universality class. A truly scale-independent recurrence across astrophysical, geophysical, biological, chemical, and informational systems points to a different kind of explanation: a monofractal generator, or a tightly coupled dual projection of one generator. In the present proposal the generator is not two unrelated fractals. It is the same Apollonian--Soddy recursive packing seen in two ways: the 3D bulk packing gives Soddy-like exponents near $D_S\approx2.47$, while 2D boundary layers, radial cuts, and rotational interfaces give Apollonian-like exponents near $D_A\approx1.305$.
+
+This is why the distinction between the two exponent families matters. Power-law exponents near $D_A \approx 1.3$ recur specifically in systems with radially defined, boundary-dominated, or rotationally dominated dynamics, such as river networks, coastlines, galactic two-point correlation functions, and shell-like transport structures. Exponents near $D_S\approx2.4$ recur in bulk filling, branching, packing, or filamentary systems, such as cosmic web density, interstellar structure, stellar mass functions, lung branching, and QCD-like flux tubes. Under TFOFT these are not independent coincidences. They are the 2D boundary and 3D bulk expressions of the same ASSP generator.
 
 \subsubsection{Universal Power-Law Table}
 
@@ -256,7 +286,10 @@ Internet topology & $2$--$3$ & $\approx2.4$ & Soddy \\
 
 \subsubsection{Conclusion: The Fractal Dimension Argument}
 
-The recurrence of exponents near the Apollonian and Soddy values is not, by itself, sufficient to establish a unique underlying mechanism. Nonetheless, the pattern is consistent with the ASSP as a candidate geometric substrate. This is the empirical basis for the conjecture stated in Section~\ref{sec:conjecture}.
+The recurrence of exponents near the Apollonian and Soddy values is not, by itself, sufficient to prove a unique underlying mechanism. However, identical or near-identical power-law families across many observed scales require explanation. Local mechanisms can produce local power laws; they do not naturally explain why the same exponent families keep reappearing in unrelated domains. A common recursive generator does.
+
+The ASSP supplies such a generator with one ontology rather than many fitted mechanisms. Its 3D bulk recursion produces Soddy-like scaling, while its 2D boundary cuts and radial interfaces produce Apollonian-like scaling. The observed pattern is therefore consistent with a single fractal law appearing as a dual projection: bulk versus boundary, 3D packing versus 2D interface. This is the empirical basis for the conjecture stated in Section~\ref{sec:conjecture}.
+
 
 \begin{figure}[htbp]
 \centering
@@ -371,7 +404,8 @@ The Info Ball is the photon/macrophoton in transport: the cross-scale angular-mo
 
 \begin{center}
 \small
-\begin{longtable}{|p{2.4cm}|p{6.2cm}|p{2.4cm}|p{3.0cm}|}
+\renewcommand{\arraystretch}{1.35}
+\begin{longtable}{|C{2.4cm}|L{6.2cm}|C{2.4cm}|C{3.0cm}|}
 \caption{TFOFT Ball Ontology: the conjectured self-describing objects of the Presburger--ASSP dynamical computer. Cross-scale correspondences are proposed exact fractal-scale equivalences governed by the same Presburger equations with only scale parameters $r$ and mass $M$ varied.}
 \label{tab:ball_ontology}\\
 \hline
