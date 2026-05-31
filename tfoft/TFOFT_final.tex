@@ -647,6 +647,16 @@ T_{\rm sphere}
 The three costs are added because the FTC update is a sequential finite trace: the surface address, rotational phase, and radial displacement channels must each be resolved once in the causal order of a complete update. The cost counts finite causal work performed by the register, channel by channel, under Presburger-valid operations.
 
 Exponential stability requires this finite trace to be recursively clampable. Each layer must complete its finite update before its output is used as input by the next layer. The resulting register depth near \(137\) is the exponential causal depth of a stable async sphere-register transaction inside the FTC.
+
+Equivalently, \(T_{\rm sphere}\approx137\) is not merely a linear count. It is the logarithmic depth of the causal register. A stable self-similar register with \(T_{\rm sphere}\) finite causal update positions therefore spans an exponential state range
+\[
+  \mathcal{N}_{\rm sphere}
+  \sim
+  e^{T_{\rm sphere}}
+  \approx
+  e^{137}.
+\]
+Thus the derivation of \(\alpha^{-1}\) also fixes the natural single-sphere exponential register size. The value \(137\) is the finite Presburger update cost; \(e^{137}\) is the corresponding causal state capacity across recursive fractal layers.
 \end{mdframed}
 \end{samepage}
 
@@ -1078,115 +1088,6 @@ giving
 This offset is comparable in role to the local virial and density corrections
 appearing in the \(G\) and \(\alpha(Z)\) sections.
 
-
-\subsubsection{Parent-Layer Light Speed and the \(e^{77}\) Register Check}
-\label{sec:wish_light_speed}
-
-The parent-layer light speed is derived independently from the Sol--SgrA* macro-hydrogen orbit. In a Bohr-type register, the orbital speed at level \(n\) is
-\[
-v_n=\frac{\alpha c}{n}.
-\]
-For the macro-hydrogen system, Sol is the macro electron and Sagittarius A* is the macro proton/Core Ball. The macro orbit is a high-register state, with the natural Core--Star register number set by the half-boundary mass split,
-\[
-n_{\rm macro}
-\sim
-\frac12\sqrt{\frac{M_{\rm SgrA^*}}{M_\odot}}.
-\]
-Using \(M_{\rm SgrA^*}\approx4.3\times10^6M_\odot\),
-\[
-n_{\rm macro}
-\approx
-\frac12\sqrt{4.3\times10^6}
-\approx
-1036.82.
-\]
-Sol's Galactic orbital speed is \(v_\odot\approx220\,{\rm km/s}\). Therefore
-\[
-c_{\rm wish}
-=
-\frac{n_{\rm macro}v_\odot}{\alpha}
-\approx
-\frac{(1036.82)(220\,{\rm km/s})}{1/137.036}
-\approx
-3.13\times10^7\,{\rm km/s}.
-\]
-Relative to the here-layer light speed,
-\[
-\frac{c_{\rm wish}}{c_{\rm here}}
-\approx
-104.27.
-\]
-Thus the Sol--SgrA* macro-hydrogen register independently gives
-\[
-c_{\rm wish}
-\sim
-10^2c_{\rm here}.
-\]
-
-Now compare this independently derived parent-layer speed factor with the atom-to-galaxy orbital-frequency hierarchy. The Bohr electron orbital frequency is
-\[
-f_e
-=
-\frac{\alpha c_{\rm here}}{2\pi a_0}
-\approx
-6.5797\times10^{15}\,{\rm Hz},
-\]
-while the Sun's Galactic orbital frequency, using \(R_\odot\approx8.2\,{\rm kpc}\) and \(v_\odot\approx220\,{\rm km/s}\), is
-\[
-f_\odot
-=
-\frac{v_\odot}{2\pi R_\odot}
-\approx
-1.3838\times10^{-16}\,{\rm Hz}.
-\]
-Therefore the observed here-layer orbital hierarchy is
-\[
-\Lambda_{\rm orbit}
-=
-\frac{f_e}{f_\odot}
-\approx
-4.75\times10^{31}.
-\]
-Correcting this here-layer orbital hierarchy by the independently derived parent-layer light-speed factor gives
-\[
-\Lambda_{\rm orbit}
-\left(\frac{c_{\rm wish}}{c_{\rm here}}\right)
-\approx
-(4.75\times10^{31})(104.27)
-\approx
-4.96\times10^{33}.
-\]
-The FTC mass register gives
-\[
-e^{77}
-=
-2.7585\times10^{33}.
-\]
-Thus the independently derived cross-layer orbital scale lands on the same exponential band as the \(77\)-layer FTC mass-register value:
-\[
-\Lambda_{\rm orbit}\left(\frac{c_{\rm wish}}{c_{\rm here}}\right)
-\approx
-4.96\times10^{33},
-\qquad
-e^{77}
-=
-2.7585\times10^{33}.
-\]
-The ratio is
-\[
-\frac{4.96\times10^{33}}{2.7585\times10^{33}}
-\approx
-1.80.
-\]
-This residual factor is itself geometrically meaningful: it is approximately the midpoint fractal dimension between the Apollonian boundary channel and the Soddy bulk channel,
-\[
-D_{\rm mid}
-=
-\frac{D_A+D_S}{2}
-\approx
-1.8898.
-\]
-Thus the corrected atom-to-galaxy orbital hierarchy misses the \(77\)-layer register value by a factor of order the mixed Apollonian--Soddy boundary--bulk dimension, rather than by an arbitrary scale. The important point is the ordering: \(c_{\rm wish}\sim10^2c_{\rm here}\) is derived first from the Sol--SgrA* macro-hydrogen Bohr relation, and only then used as a correction to the observed \(10^{31}\) atom-to-galaxy orbital hierarchy. The corrected hierarchy lands on the same \(10^{33}\) scale as \(e^{77}\), providing an independent register-depth cross-check rather than a fitted normalization.
 
 \subsubsection{The 137 $-$ 77 $=$ 60 Residual: He and Fe as Fractal Garbage Collectors}
 \label{sec:he_fe_garbage_collector}
@@ -3042,6 +2943,118 @@ In TFOFT, the Fermi bubbles are conjectured to be the here-scale visible signatu
 % ==================================================================
 
 \section{Cross-Scale Structure and Logarithmic Hierarchies}
+
+
+\subsection{Parent-Layer Light Speed and the \(e^{77}\) Register Check}
+\label{sec:wish_light_speed}
+
+The parent-layer light speed is derived independently from the Sol--SgrA* macro-hydrogen orbit. In a Bohr-type register, the orbital speed at level \(n\) is
+\[
+v_n=\frac{\alpha c}{n}.
+\]
+For the macro-hydrogen system, Sol is the macro electron and Sagittarius A* is the macro proton/Core Ball. The macro orbit is a high-register state, with the natural Core--Star register number set by the half-boundary mass split,
+\[
+n_{\rm macro}
+\sim
+\frac12\sqrt{\frac{M_{\rm SgrA^*}}{M_\odot}}.
+\]
+Using \(M_{\rm SgrA^*}\approx4.3\times10^6M_\odot\),
+\[
+n_{\rm macro}
+\approx
+\frac12\sqrt{4.3\times10^6}
+\approx
+1036.82.
+\]
+Sol's Galactic orbital speed is \(v_\odot\approx220\,{\rm km/s}\). Therefore
+\[
+c_{\rm wish}
+=
+\frac{n_{\rm macro}v_\odot}{\alpha}
+\approx
+\frac{(1036.82)(220\,{\rm km/s})}{1/137.036}
+\approx
+3.13\times10^7\,{\rm km/s}.
+\]
+Relative to the here-layer light speed,
+\[
+\frac{c_{\rm wish}}{c_{\rm here}}
+\approx
+104.27.
+\]
+Thus the Sol--SgrA* macro-hydrogen register independently gives
+\[
+c_{\rm wish}
+\sim
+10^2c_{\rm here}.
+\]
+
+Now compare this independently derived parent-layer speed factor with the atom-to-galaxy orbital-frequency hierarchy. The Bohr electron orbital frequency is
+\[
+f_e
+=
+\frac{\alpha c_{\rm here}}{2\pi a_0}
+\approx
+6.5797\times10^{15}\,{\rm Hz},
+\]
+while the Sun's Galactic orbital frequency, using \(R_\odot\approx8.2\,{\rm kpc}\) and \(v_\odot\approx220\,{\rm km/s}\), is
+\[
+f_\odot
+=
+\frac{v_\odot}{2\pi R_\odot}
+\approx
+1.3838\times10^{-16}\,{\rm Hz}.
+\]
+Therefore the observed here-layer orbital hierarchy is
+\[
+\Lambda_{\rm orbit}
+=
+\frac{f_e}{f_\odot}
+\approx
+4.75\times10^{31}.
+\]
+Correcting this here-layer orbital hierarchy by the independently derived parent-layer light-speed factor gives
+\[
+\Lambda_{\rm orbit}
+\left(\frac{c_{\rm wish}}{c_{\rm here}}\right)
+\approx
+(4.75\times10^{31})(104.27)
+\approx
+4.96\times10^{33}.
+\]
+The FTC mass register gives
+\[
+e^{77}
+=
+2.7585\times10^{33}.
+\]
+Thus the independently derived cross-layer orbital scale lands on the same exponential band as the \(77\)-layer FTC mass-register value:
+\[
+\Lambda_{\rm orbit}\left(\frac{c_{\rm wish}}{c_{\rm here}}\right)
+\approx
+4.96\times10^{33},
+\qquad
+e^{77}
+=
+2.7585\times10^{33}.
+\]
+The ratio is
+\[
+\frac{4.96\times10^{33}}{2.7585\times10^{33}}
+\approx
+1.80.
+\]
+This residual factor is itself geometrically meaningful: it is approximately the midpoint fractal dimension between the Apollonian boundary channel and the Soddy bulk channel,
+\[
+D_{\rm mid}
+=
+\frac{D_A+D_S}{2}
+\approx
+1.8898.
+\]
+Thus the corrected atom-to-galaxy orbital hierarchy misses the \(77\)-layer register value by a factor of order the mixed Apollonian--Soddy boundary--bulk dimension, rather than by an arbitrary scale. The important point is the ordering: \(c_{\rm wish}\sim10^2c_{\rm here}\) is derived first from the Sol--SgrA* macro-hydrogen Bohr relation, and only then used as a correction to the observed \(10^{31}\) atom-to-galaxy orbital hierarchy. The corrected hierarchy lands on the same \(10^{33}\) scale as \(e^{77}\), providing an independent register-depth cross-check rather than a fitted normalization.
+
+This subsection is not used to derive the \(77\)-layer mass register. That register was already obtained internally from the rank-23 half-boundary construction. The purpose here is different: the Sol--SgrA* macro-hydrogen relation supplies an independent cross-layer light-speed factor, and that factor carries the observed atom-to-galaxy orbital hierarchy onto the same \(e^{77}\) exponential band. The agreement is therefore a cross-scale structure check, not a normalization fit.
 
 
 \subsection{Logarithmic Scale Ratios: Mass, Radius, and Time Hierarchies}
